@@ -150,9 +150,7 @@ void initialRun(){
 int main() {
 	
 	initialRun();
-	int year = 2016;
-	makePrediction(year);
-	int year = 2020;
-	makePrediction(year);
+	makePrediction(2016);
+	makePrediction(2020);
 	return 1;
 }
