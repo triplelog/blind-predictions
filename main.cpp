@@ -47,7 +47,6 @@ extern "C" {
 
 void updateProbability(int state, double p) {
 	predictions[state] = p;
-	console_log(1);
 }
 
 void makePrediction() {

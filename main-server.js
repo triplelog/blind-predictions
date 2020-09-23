@@ -65,7 +65,7 @@ app.get(['/predict','/predict.html'],
 	function(req, res){
 		
 		
-		res.write(nunjucks.render('templates/predict.html',{
+		res.write(nunjucks.render('templates/datatable.html',{
 
 		}));
 		res.end();

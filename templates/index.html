@@ -40,9 +40,8 @@ div.container {
 {% endblock %}
 <div class="container">
 	
-	<input id="state" type="number" min="0" max="51" value="0"></input>
-	<input id="prob" type="text"></input>
-	<button onclick="update()">Update</button>
+	{% block dataTable %}
+	{% endblock %}
 	<button onclick="predictNow()">Predict</button>
 	
 </div>
@@ -63,12 +62,17 @@ myWorker.onmessage = function(e) {
 	}
 }
 function predictNow(){
+	var rows = document.querySelectorAll('#dataTable tr');
+	for (var i=0;i<rows.length;i++){
+		var state = rows[i].getAttribute('data-id');
+		var prob = parseFloat(rows[i].querySelector('input').value);
+		myWorker.postMessage(["update",state,prob]);
+	}
+	
 	myWorker.postMessage(["predict"]);
 }
 function update(){
-	var state = document.getElementById('state').value;
-	var prob = parseFloat(document.getElementById('prob').value);
-	myWorker.postMessage(["update",state,prob]);
+	
 }
 
 </script>

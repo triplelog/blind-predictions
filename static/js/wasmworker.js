@@ -25,9 +25,7 @@ onmessage = function(e) {
 		predictjs();
 	}
 	else if (message[0] == "update"){
-		console.log('update recieved');
 		updatejs(message[1],message[2]);
-		console.log('message sent');
 	}
 	postMessage(result);
 }
