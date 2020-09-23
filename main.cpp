@@ -78,7 +78,7 @@ void makePrediction() {
 			rr /= 1000;
 			int elodiff = 0;
 			int eloNum = 1;
-			int eloDen = 5;
+			int eloDen = 8;
 			if (rr < pred){ // Biden wins
 				//elodiff = 2300 - elonew[thisstate];
 				//elodiff *= eloNum;
