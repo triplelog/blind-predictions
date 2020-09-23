@@ -1,4 +1,4 @@
-initial = ['{% extends "templates/index.html" %}\n{% block dataTable %}\n<table>']
+initial = ['{% extends "templates/index.html" %}\n{% block dataTable %}\n<table id="dataTable">']
 end = ['</table>\n{% endblock %}']
 file1 = open('templates/datatable.html', 'w')
 file1.writelines(initial) 
