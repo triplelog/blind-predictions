@@ -50,6 +50,7 @@ void updateProbability(int state, double p) {
 }
 
 void makePrediction() {
+	srand(7);
 	std::vector<int> elo;
 	int i; int ii; int iii;
 	for (i = 0;i<predictions.size();i++){
@@ -124,7 +125,7 @@ void initialRun(){
 }
 
 int main() {
-	srand(time(NULL));
+	
 	initialRun();
 	makePrediction();
 	return 1;
