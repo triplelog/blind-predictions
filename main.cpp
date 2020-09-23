@@ -29,7 +29,8 @@ EM_JS(void, console_log, (int x), {
 std::map<int,std::vector<double> > correlations;
 std::vector<std::string> states;
 std::vector<int> evs;
-std::vector<double> predictions;
+std::vector<double> predictions16;
+std::vector<double> predictions20;
 int seed;
 
 int predictionToElo(double prediction){
@@ -45,14 +46,32 @@ double predictionFromElo(int elo){
 
 extern "C" {
 
-void updateProbability(int state, double p) {
-	predictions[state] = p;
+void updateProbability(int state, double p, int year) {
+	if (year == 2016){
+		predictions16[state] = p;
+	}
+	else if (year == 2020){
+		predictions20[state] = p;
+	}
+	
 }
 
-void makePrediction() {
+void makePrediction(int year) {
+	std::vector<double> predictions;
+	int i; int ii; int iii;
+	if (year == 2016){
+		for (i = 0;i<51;i++){
+			predictions.push_back(predictions16[i]);
+		}
+	}
+	else if (year == 2020){
+		for (i = 0;i<51;i++){
+			predictions.push_back(predictions20[i]);
+		}
+	}
 	srand(seed);
 	std::vector<int> elo;
-	int i; int ii; int iii;
+	
 	for (i = 0;i<predictions.size();i++){
 		//std::cout << predictionToElo(predictions[i]) << "\n";
 		elo.push_back(predictionToElo(predictions[i]));
@@ -122,7 +141,8 @@ void initialRun(){
 	states = createStates();
 	evs = createEV();
 	seed = 7;
-	predictions = createPredictions();
+	predictions16 = createPredictions16();
+	predictions20 = createPredictions20();
 	
 
 }
@@ -130,6 +150,9 @@ void initialRun(){
 int main() {
 	
 	initialRun();
-	makePrediction();
+	int year = 2016;
+	makePrediction(year);
+	int year = 2020;
+	makePrediction(year);
 	return 1;
 }

@@ -53,7 +53,30 @@ for line in lines:
 file1.writelines(end)
 
 
-initial = ['std::vector<double> createPredictions(){\nstd::vector<double> predictions;\n']
+initial = ['std::vector<double> createPredictions16(){\nstd::vector<double> predictions;\n']
+end = ['return predictions;\n}\n']
+file2 = open('predictions16.csv', 'r') 
+lines = file2.readlines() 
+
+file1.writelines(initial) 
+i = 0
+for line in lines:
+	i+=1
+	if i==1:
+		continue
+	lineSplit = line.strip().split(",")
+	pred = float(lineSplit[4])
+	if pred > .99:
+		pred = .99
+	elif pred < .01:
+		pred = .01
+	#print(lineSplit[3],pred)
+	line2 = 'predictions.push_back('+str(pred)+');\n'
+	file1.writelines([line2])
+file1.writelines(end)
+
+
+initial = ['std::vector<double> createPredictions20(){\nstd::vector<double> predictions;\n']
 end = ['return predictions;\n}\n']
 file2 = open('predictions.csv', 'r') 
 lines = file2.readlines() 
@@ -74,6 +97,8 @@ for line in lines:
 	line2 = 'predictions.push_back('+str(pred)+');\n'
 	file1.writelines([line2])
 file1.writelines(end)
+
+
 
 initial = ['std::vector<int> createEV(){\nstd::vector<int> evs;\n']
 end = ['return evs;\n}\n']
