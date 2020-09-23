@@ -83,7 +83,8 @@ void makePrediction() {
 				//elodiff = 2300 - elonew[thisstate];
 				//elodiff *= eloNum;
 				//elodiff /= eloDen;
-				elodiff = (elonew[thisstate] - 700)*eloNum/eloDen*(1-p)/p;
+				int pt = round((1-pred)*1000/pred);
+				elodiff = (elonew[thisstate] - 700)*eloNum/eloDen*pt/1000;
 				//std::cout << "Biden wins "+states[ii] << "\n";
 				bidenEV += evs[thisstate];
 			}
