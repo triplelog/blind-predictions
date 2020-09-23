@@ -64,9 +64,13 @@ myWorker.onmessage = function(e) {
 function predictNow(){
 	var rows = document.querySelectorAll('#dataTable tr');
 	for (var i=0;i<rows.length;i++){
-		var state = rows[i].getAttribute('data-id');
-		var prob = parseFloat(rows[i].querySelector('input').value);
-		myWorker.postMessage(["update",state,prob]);
+		
+		if (rows[i].querySelector('input').value != ""){
+			var state = rows[i].getAttribute('data-id');
+			var prob = parseFloat(rows[i].querySelector('input').value);
+			myWorker.postMessage(["update",state,prob]);
+		}
+		
 	}
 	
 	myWorker.postMessage(["predict"]);
