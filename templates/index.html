@@ -41,91 +41,7 @@ div.container {
 <div class="container">
 	
 
-	<input type="radio" style="display: none;" name="radio11" value="1" id="radio11-1"></input>
-	<input type="radio" style="display: none;" name="radio11" value="2" id="radio11-2"></input>
-	<input type="radio" style="display: none;" name="radio11" value="3" id="radio11-3"></input>
-	<div class="content-11">
-		{% block title11 %}
-		{% endblock %}
-		<div class="content">
-			{% block content11 %}
-			{% endblock %}
-		</div>
-	</div>
-	
-	<input type="radio" style="display: none;" name="radio13" value="1" id="radio13-1"></input>
-	<input type="radio" style="display: none;" name="radio13" value="2" id="radio13-2"></input>
-	<input type="radio" style="display: none;" name="radio13" value="3" id="radio13-3"></input>
-	<div class="content-13">
-		{% block title13 %}
-		{% endblock %}
-		<div class="content">
-			{% block content13 %}
-			{% endblock %}
-		</div>
-	</div>
-	
-	<input type="radio" style="display: none;" name="radio31" value="1" id="radio31-1"></input>
-	<input type="radio" style="display: none;" name="radio31" value="2" id="radio31-2"></input>
-	<input type="radio" style="display: none;" name="radio31" value="3" id="radio31-3"></input>
-	<div class="content-31">
-		{% block title31 %}
-		{% endblock %}
-		<div class="content">
-			{% block content31 %}
-			{% endblock %}
-		</div>
-
-	</div>
-	
-	<input type="radio" style="display: none;" name="radio33" value="1" id="radio33-1"></input>
-	<input type="radio" style="display: none;" name="radio33" value="2" id="radio33-2"></input>
-	<input type="radio" style="display: none;" name="radio33" value="3" id="radio33-3"></input>
-	<div class="content-33">
-		{% block title33 %}
-		{% endblock %}
-		<div class="content">
-			{% block content33 %}
-			{% endblock %}
-		</div>
-	</div>
-	
-	<div class="content-12">
-		{% block title12 %}
-		{% endblock %}
-		<div class="content">
-			{% block content12 %}
-			{% endblock %}
-		</div>
-	</div>
-	<div class="content-21">
-		{% block title21 %}
-		{% endblock %}
-		<div class="content">
-			{% block content21 %}
-			{% endblock %}
-		</div>
-	</div>
-	<div class="content-23">
-		<div class="content">
-			
-		</div>
-	</div>
-	<div class="content-32">
-		<div class="content">
-			
-		</div>
-	</div>
-	<div class="content-00">
-		{% block content00 %}
-		{% endblock %}
-	</div>
-	<div class="content-22">
-		<div class="content">
-			{% block content22 %}
-			{% endblock %}
-		</div>
-	</div>
+	<button onclick="predictNow()">Predict</button>
 	
 </div>
 <div id="footer">
@@ -136,6 +52,18 @@ div.container {
 {% endblock %}
 <script>
 var myWorker = new Worker('js/wasmworker.js');
+myWorker.onmessage = function(e) {
+	if (e.data == "ready"){
+		setTimeout(updateMarkdown,50);
+	}
+	else if (e.data[0] == "prediction"){
+		alert(e.data[1]);
+	}
+}
+function predictNow(){
+	myWorker.postMessage(["predict"]);
+}
+
 </script>
 </body>
 </html>

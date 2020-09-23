@@ -4,20 +4,21 @@ function cpp_ready() {
 }
 importScripts('wasmpredict.js');
 
-var lcpp = Module.cwrap("LatexIt","string",["string"]);
+var predictcpp = Module.cwrap("makePrediction","string",[]);
 
 
 
-function ljs(input){
-	lcpp(input);
+function predictjs(){
+	predictcpp();
 }
 
 
 onmessage = function(e) {
 	var message = e.data;
 	var result = [];
-	if (message[0] == "markdown"){
-		
+	if (message[0] == "predict"){
+		console.log('message recieved');
+		predictjs();
 	}
 	postMessage(result);
 }
