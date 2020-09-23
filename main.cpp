@@ -30,7 +30,8 @@ std::map<int,std::vector<double> > correlations;
 std::vector<std::string> states;
 std::vector<int> evs;
 std::vector<double> predictions;
-	
+int seed;
+
 int predictionToElo(double prediction){
 	double e = log(1/prediction-1)*-400/log(10.0);
 	return 1500+round(e);
@@ -50,7 +51,7 @@ void updateProbability(int state, double p) {
 }
 
 void makePrediction() {
-	srand(7);
+	srand(seed);
 	std::vector<int> elo;
 	int i; int ii; int iii;
 	for (i = 0;i<predictions.size();i++){
@@ -119,6 +120,7 @@ void initialRun(){
 	correlations = createCorrelations();
 	states = createStates();
 	evs = createEV();
+	seed = 7;
 	predictions = createPredictions();
 	
 
