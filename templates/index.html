@@ -40,7 +40,9 @@ div.container {
 {% endblock %}
 <div class="container">
 	
-
+	<input id="state" type="number" min="0" max="51" value="0"></input>
+	<input id="prob" type="text"></input>
+	<button onclick="update()">Update</button>
 	<button onclick="predictNow()">Predict</button>
 	
 </div>
@@ -62,6 +64,11 @@ myWorker.onmessage = function(e) {
 }
 function predictNow(){
 	myWorker.postMessage(["predict"]);
+}
+function update(){
+	var state = document.getElementById('state').value;
+	var prob = parseFloat(document.getElementById('prob').value);
+	myWorker.postMessage(["update",state,prob]);
 }
 
 </script>

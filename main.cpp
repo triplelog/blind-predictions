@@ -44,6 +44,11 @@ double predictionFromElo(int elo){
 
 extern "C" {
 
+void updateProbability(int state, double p) {
+	predictions[state] = p;
+	console_log(1);
+}
+
 void makePrediction() {
 	std::vector<int> elo;
 	int i; int ii; int iii;
