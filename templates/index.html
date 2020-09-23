@@ -134,6 +134,8 @@ div.container {
 </div>
 {% block scripts %}
 {% endblock %}
-
+<script>
+var myWorker = new Worker('js/wasmworker.js');
+</script>
 </body>
 </html>
