@@ -101,15 +101,15 @@ void makePrediction(int year) {
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
 			}
-			double pred = predictionFromElo(elonew[thisstate]);
-			//std::cout << "Biden prob for "+states[ii] + " is " << pred << " not " << predictionFromElo(elo[ii]) << "\n";
+			
+			
 			int r = rand() % 1000;
 			double rr = r;
 			rr /= 1000;
 			//convert rr to vote percentage
 			int eloR = predictionToElo(rr);
 			
-			int elodiff = round(eloR*pow(correlations[thisstate][iii],1)/10);
+			int elodiff = round(eloR*pow(correlations[thisstate][iii],1)/5);
 			if (elonew[thisstate]+eloR > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
