@@ -164,11 +164,11 @@ void makePrediction(int year) {
 					iii++; continue;
 				}
 				int c = correlationsInt[thisstate][iii];
-				if (eloR >= 10 || c >= 100 ){
-					elonew[iii]+=eloR*c/1000;
+				if (eloR >= 10 || c >= 10 ){
+					elonew[iii]+=eloR*c/100;
 				}
-				else if (eloR <= -10 || c <= -100 ){
-					elonew[iii]+=eloR*c/1000;
+				else if (eloR <= -10 || c <= -10 ){
+					elonew[iii]+=eloR*c/100;
 				}
 				iii++;
 			}
@@ -236,7 +236,7 @@ void initialRun(){
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlationsInt[i][ii] = round(pow(correlations[i][ii],5)*2200);
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],5)*220);
 		}
 	}
 	states = createStates();
