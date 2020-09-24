@@ -158,6 +158,14 @@ void makePrediction(int year) {
 		console_log(stateData[i]);
 		console_log(statePairsMI[i]);
 		console_log(stateData[i]*stateData[22]/1000);
+		double actprob = statePairsMI[i];
+		actprob /= stateData[i];
+		double nullprob = stateData[22];
+		nullprob /= 1000;
+		double diff = actprob - nullprob;
+		double cdf = .5 + diff * pow(stateData[i],.5) / 2;
+		console_log(round(cdf*1000));
+		
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
