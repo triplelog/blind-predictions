@@ -347,7 +347,7 @@ function statemousemove(evt) {
 	var currentCoords = [evt.clientX,evt.clientY];
 	var newELO = startELO+(currentCoords[0]-startCoords[0])*2;
 	currentState.rpred=newELO/2000+.5;
-	if (oldPercent -currentState.rpred>.02){
+	if (oldPercent -currentState.rpred>.02 || oldPercent -currentState.rpred< -.02){
 		oldPercent = currentState.rpred;
 		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 		orderStates();
