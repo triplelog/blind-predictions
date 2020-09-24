@@ -164,16 +164,10 @@ void makePrediction(int year) {
 					iii++; continue;
 				}
 				if (eloR >= 10 || correlationsInt[thisstate][iii] >= 100 ){
-					int p = eloR*correlationsInt[thisstate][iii];
-					if (p > 1000 || p < -1000){
-						elonew[iii]+=p/1000;
-					}
+					elonew[iii]+=eloR*correlationsInt[thisstate][iii]/1000;
 				}
 				else if (eloR <= -10 || correlationsInt[thisstate][iii] <= -100 ){
-					int p = eloR*correlationsInt[thisstate][iii];
-					if (p > 1000 || p < -1000){
-						elonew[iii]+=p/1000;
-					}
+					elonew[iii]+=eloR*correlationsInt[thisstate][iii]/1000;
 				}
 				iii++;
 			}
