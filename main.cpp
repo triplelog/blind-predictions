@@ -28,6 +28,14 @@ EM_JS(void, console_log, (int x), {
 EM_JS(void, string_log, (const char* x), {
   console.log(UTF8ToString(x));
 });
+EM_JS(void, send_map, (const char* x), {
+	var statesOut = [];
+	var statesStr = UTF8ToString(x);
+	for (var i=0;i<51;i++){
+		statesOut.push(statesStr[i])
+	}
+  	console.log(statesOut);
+});
 
 std::map<int,std::vector<double> > correlations;
 std::vector<std::string> states;
@@ -158,11 +166,24 @@ void makePrediction(int year) {
 		else {
 			evData[bidenEV]++;
 		}
+		
+		if (bidenEV == 320){
+			std::string statesOut = "";
+			for (iii=0;iii<51;iii++){
+				if (doneYet[iii]){
+					statesOut += "Y";
+				}
+				else {
+					statesOut += "N";
+				}
+			}
+			send_map(statesOut.c_str());
+		}
 	}
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
 		if (stateData[i] > 100 && stateData[i] < 900){
-			string_log(states[i].c_str());
+			//string_log(states[i].c_str());
 			//console_log(stateData[i]);
 			//console_log(statePairsMI[i]);
 			//console_log(stateData[i]*stateData[22]/1000);
@@ -173,16 +194,16 @@ void makePrediction(int year) {
 			double z = diff/stdev;
 			int diffmax = stateData[i] - stateData[i]*stateData[22]/1000;
 			double zmax = diffmax/stdev;
-			console_log(round(z*1000/zmax));
-			console_log(round(correlations[22][i]*1000));
+			//console_log(round(z*1000/zmax));
+			//console_log(round(correlations[22][i]*1000));
 		}
 		
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
-			console_log(i);
-			console_log(evData[i]);
+			//console_log(i);
+			//console_log(evData[i]);
 		}
 	}
 }
