@@ -154,16 +154,18 @@ void makePrediction(int year) {
 	}
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
-		string_log(states[i].c_str());
-		console_log(stateData[i]);
-		console_log(statePairsMI[i]);
-		console_log(stateData[i]*stateData[22]/1000);
-		double nullprob = stateData[22];
-		nullprob /= 1000;
-		int diff = statePairsMI[i] - stateData[i]*stateData[22]/1000;
-		double stdev = stateData[i]*nullprob*(1-nullprob);
-		double nsd = diff/stdev;
-		console_log(round(nsd*1000));
+		if (stateData[i] > 100 && stateData[i] < 900){
+			string_log(states[i].c_str());
+			console_log(stateData[i]);
+			//console_log(statePairsMI[i]);
+			//console_log(stateData[i]*stateData[22]/1000);
+			double nullprob = stateData[22];
+			nullprob /= 1000;
+			int diff = statePairsMI[i] - stateData[i]*stateData[22]/1000;
+			double stdev = stateData[i]*nullprob*(1-nullprob);
+			double z = diff/stdev;
+			console_log(round(z*1000));
+		}
 		
 	}
 	for (i=0;i<539;i++){
