@@ -163,7 +163,18 @@ void makePrediction(int year) {
 				if (it->second){
 					iii++; continue;
 				}
-				elonew[iii]+=eloR*correlationsInt[thisstate][iii]/1000;
+				if (eloR >= 10 || correlationsInt[thisstate][iii] >= 100 ){
+					int p = eloR*correlationsInt[thisstate][iii];
+					if (p > 1000 || p < -1000){
+						elonew[iii]+=p/1000;
+					}
+				}
+				else if (eloR <= -10 || correlationsInt[thisstate][iii] <= -100 ){
+					int p = eloR*correlationsInt[thisstate][iii];
+					if (p > 1000 || p < -1000){
+						elonew[iii]+=p/1000;
+					}
+				}
 				iii++;
 			}
 			auto a2 = std::chrono::high_resolution_clock::now();
@@ -195,7 +206,7 @@ void makePrediction(int year) {
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
 		if (stateData[i] > 100 && stateData[i] < 900){
-			string_log(states[i].c_str());
+			//string_log(states[i].c_str());
 			//console_log(stateData[i]);
 			//console_log(statePairsMI[i]);
 			//console_log(stateData[i]*stateData[22]/1000);
@@ -207,7 +218,7 @@ void makePrediction(int year) {
 			int diffmax = stateData[i] - stateData[i]*stateData[22]/1000;
 			double zmax = diffmax/stdev;
 			//console_log(round(z*1000/zmax));
-			console_log(round(correlationsInt[22][i]));
+			//console_log(round(correlationsInt[22][i]));
 		}
 		
 	}
