@@ -4,13 +4,14 @@ function cpp_ready() {
 }
 importScripts('wasmpredict.js');
 
-var predictcpp = Module.cwrap("makePrediction","string",[]);
+var predictcpp = Module.cwrap("makePrediction","string",["number"]);
 var updatecpp = Module.cwrap("updateProbability","string",["number","number","number"]);
 
 
 
 function predictjs(){
-	predictcpp();
+	predictcpp(2016);
+	predictcpp(2020);
 }
 function updatejs(state,prob,year){
 	updatecpp(state,prob,year);
