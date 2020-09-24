@@ -104,7 +104,7 @@ void makePrediction(int year) {
 		stateData[ii]=0;
 		stateMax[ii]=-2000;
 		statePairsMI[ii]=0;
-		int x = round(elo[ii]*1.0/9)+5;
+		int x = round(elo[ii]*1.0/20)+5;
 		if (x < 1){
 			x = 1;
 		}
