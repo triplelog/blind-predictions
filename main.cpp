@@ -114,14 +114,17 @@ void makePrediction(int year) {
 		int bidenEV = 0;
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
+			doneYet[ii]=false;
+		}
+		for (ii=0;ii<51;ii++){
 			//auto a1 = std::chrono::high_resolution_clock::now();
 			int thisstate = rand() % 51;
-			while (doneYet.find(thisstate) != doneYet.end()){
+			while (doneYet[thisstate]){
 				thisstate = rand() % 51;
 			}
 			//auto a2 = std::chrono::high_resolution_clock::now();
 			//durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
-			doneYet[thisstate]=false;
+			doneYet[thisstate]=true;
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
 			}
@@ -138,22 +141,8 @@ void makePrediction(int year) {
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
-				doneYet[thisstate]=true;
 				
-				if (thisstate == 22){
-					for (iii=0;iii<51;iii++){
-						if (doneYet.find(iii) != doneYet.end()){
-							if (doneYet[iii]){
-								statePairsMI[iii]++;
-							}
-						}
-					}
-				}
-				else if (doneYet.find(22) != doneYet.end()){
-					if (doneYet[22]){
-						statePairsMI[thisstate]++;
-					}
-				}
+				
 			}
 			else {
 				
@@ -168,14 +157,13 @@ void makePrediction(int year) {
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
 			iii = 0;
-			for (std::vector<int>::iterator it = correlationsInt[thisstate].begin() ; it != correlationsInt[thisstate].end(); ++it){
+			for (std::map<int,bool>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
   
 				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
-				if (doneYet.find(iii) != doneYet.end()){
-					iii++;
-					continue;
+				if (it->second){
+					iii++; continue;
 				}
-				elonew[iii]=elonew[iii]+eloR*(*it)/1000;
+				elonew[iii]=elonew[iii]+eloR*correlationsInt[thisstate][iii]/1000;
 				iii++;
 			}
 			auto a2 = std::chrono::high_resolution_clock::now();
@@ -191,7 +179,7 @@ void makePrediction(int year) {
 			evData[bidenEV]++;
 		}
 		
-		if (bidenEV == 367){
+		/*if (bidenEV == 367){
 			std::string statesOut = "";
 			for (iii=0;iii<51;iii++){
 				if (doneYet[iii]){
@@ -202,7 +190,7 @@ void makePrediction(int year) {
 				}
 			}
 			//send_map(statesOut.c_str());
-		}
+		}*/
 	}
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
