@@ -37,13 +37,13 @@ std::vector<double> predictions20;
 int seed;
 
 int predictionToElo(double prediction){
-	double e = log(1/prediction-1)*-400/log(10.0);
-	return 1500+round(e);
+	double e = log(1/prediction-1)*-75/log(10.0);
+	return round(e);
 	
 }
 double predictionFromElo(int elo){
-	double e = 1500-elo;
-	return 1.0/(1+pow(10.0,e/400));
+	double e = 0-elo;
+	return 1.0/(1+pow(10.0,e/75));
 	
 }
 
@@ -106,16 +106,17 @@ void makePrediction(int year) {
 			int r = rand() % 1000;
 			double rr = r;
 			rr /= 1000;
-			int elodiff = 0;
-			if (rr < pred){ // Biden wins
-				elodiff = round(20.0*pow((1-pred),2)*pow(evs[thisstate],.5));
-				
+			//convert rr to vote percentage
+			int eloR = predictionToElo(rr);
+			
+			int elodiff = eloR / 10;
+			if (elonew[thisstate]+eloR > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
 			}
 			else {
-				elodiff = round(-20.0*pow(pred,2)*pow(evs[thisstate],.5));
+				
 			}
 			
 			for (iii=0;iii<51;iii++){
