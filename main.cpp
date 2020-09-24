@@ -37,7 +37,7 @@ EM_JS(void, send_map, (const char* x), {
 		jsStr += statesStr[i]+"\n";
 		
 	}
-  	console.log(jsStr);
+  	//console.log(jsStr);
 });
 
 std::map<int,std::vector<double> > correlations;

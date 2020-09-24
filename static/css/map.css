@@ -1,0 +1,423 @@
+:root {
+	--block-width: 5px;
+	--bot-width: 60;
+	--side-height: 118;
+	--top-width: 185;
+}
+.gu-mirror {
+  position: fixed !important;
+  margin: 0 !important;
+  z-index: 9999 !important;
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+}
+.gu-hide {
+  display: none !important;
+}
+.gu-unselectable {
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+.gu-transit {
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+}
+@font-face {
+     font-family: 'StateFaceRegular';
+     src: url('font/webfont/stateface-regular-webfont.eot');
+     src: url('font/webfont/stateface-regular-webfont.eot?#iefix') format('embedded-opentype'),
+          url('font/webfont/stateface-regular-webfont.woff') format('woff'),
+          url('font/webfont/stateface-regular-webfont.ttf') format('truetype'),
+          url('font/webfont/stateface-regular-webfont.svg#StateFaceRegular') format('svg');
+     font-weight: normal;
+     font-style: normal;
+ }
+ 
+ .stateface:before {
+    font-family: StateFaceRegular;
+    margin: 0px;
+    font-size: 15px;
+    
+}
+
+.stateface-replace {
+
+    display: inline-block;
+    position: relative;
+    min-width: 3px;
+}
+
+.stateface-replace:before {
+    position: absolute;
+    left: -1px;
+    top: 0;
+    text-indent: 0;
+}
+
+.stateface-ak:before {
+    content: "A";
+}
+
+.stateface-al:before {
+    content: "B";
+}
+
+.stateface-ar:before {
+    content: "C";
+}
+
+.stateface-az:before {
+    content: "D";
+}
+
+.stateface-ca:before {
+    content: "E";
+}
+
+.stateface-co:before {
+    content: "F";
+}
+
+.stateface-ct:before {
+    content: "G";
+}
+
+.stateface-dc:before {
+    content: "y";
+}
+
+.stateface-de:before {
+    content: "H";
+}
+
+.stateface-fl:before {
+    content: "I";
+}
+
+.stateface-ga:before {
+    content: "J";
+}
+
+.stateface-hi:before {
+    content: "K";
+}
+
+.stateface-ia:before {
+    content: "L";
+}
+
+.stateface-id:before {
+    content: "M";
+}
+
+.stateface-il:before {
+    content: "N";
+}
+
+.stateface-in:before {
+    content: "O";
+}
+
+.stateface-ks:before {
+    content: "P";
+}
+
+.stateface-ky:before {
+    content: "Q";
+}
+
+.stateface-la:before {
+    content: "R";
+}
+
+.stateface-ma:before {
+    content: "S";
+}
+
+.stateface-md:before {
+    content: "T";
+}
+
+.stateface-me:before {
+    content: "U";
+}
+
+.stateface-mi:before {
+    content: "V";
+}
+
+.stateface-mn:before {
+    content: "W";
+}
+
+.stateface-mo:before {
+    content: "X";
+}
+
+.stateface-ms:before {
+    content: "Y";
+}
+
+.stateface-mt:before {
+    content: "Z";
+}
+
+.stateface-nc:before {
+    content: "a";
+}
+
+.stateface-nd:before {
+    content: "b";
+}
+
+.stateface-ne:before {
+    content: "c";
+}
+
+.stateface-nh:before {
+    content: "d";
+}
+
+.stateface-nj:before {
+    content: "e";
+}
+
+.stateface-nm:before {
+    content: "f";
+}
+
+.stateface-nv:before {
+    content: "g";
+}
+
+.stateface-ny:before {
+    content: "h";
+}
+
+.stateface-oh:before {
+    content: "i";
+}
+
+.stateface-ok:before {
+    content: "j";
+}
+
+.stateface-or:before {
+    content: "k";
+}
+
+.stateface-pa:before {
+    content: "l";
+}
+
+.stateface-ri:before {
+    content: "m";
+}
+
+.stateface-sc:before {
+    content: "n";
+}
+
+.stateface-sd:before {
+    content: "o";
+}
+
+.stateface-tn:before {
+    content: "p";
+}
+
+.stateface-tx:before {
+    content: "q";
+}
+
+.stateface-us:before {
+    content: "z";
+}
+
+.stateface-ut:before {
+    content: "r";
+}
+
+.stateface-va:before {
+    content: "s";
+}
+
+.stateface-vt:before {
+    content: "t";
+}
+
+.stateface-wa:before {
+    content: "u";
+}
+
+.stateface-wi:before {
+    content: "v";
+}
+
+.stateface-wv:before {
+    content: "w";
+}
+
+.stateface-wy:before {
+    content: "x";
+}
+
+
+#mapHolder {
+	position: relative;
+}
+.rep {
+	color: black;
+	background-color: red;
+}
+.pres-cell.dem {
+	color: white;
+	background-color: blue;
+	border-color: white;
+}
+
+
+.presSpanBL {
+	background-color: rgba(0,0,0,.2);
+	width: calc( var(--block-width) * var(--bot-width));
+	left: calc( 20px + 0px);
+	height: calc( var(--block-width) * 3);
+	position: absolute;
+	top: calc( 20px + var(--block-width) * var(--side-height));
+}
+.presSpanL {
+	background-color: rgba(0,0,0,.1);
+	width: calc( var(--block-width) * 3);
+	left: 20px;
+	height: calc( var(--block-width) * var(--side-height));
+	position: absolute;
+	top: 20px;
+}
+.presSpanT {
+	background-color: rgba(0,0,0,.2);
+	width: calc( var(--block-width) * var(--top-width));
+	left: calc( 20px + var(--block-width) * 3);
+	height: calc( var(--block-width) * 3);
+	position: absolute;
+	top: 20px;
+	
+}
+.at269 {
+	background-color: rgba(255,0,0,1);
+	width: calc( var(--block-width) * 1);
+	left: calc( 20px + var(--block-width) * (272 - var(--side-height) - var(--bot-width)));
+	height: calc( var(--block-width) * 7);
+	position: absolute;
+	top: calc( 20px - var(--block-width) * 2);
+	
+}
+.at270 {
+	background-color: rgba(255,225,255,1);
+	width: calc( var(--block-width) * 1);
+	left: calc( 20px + var(--block-width) * (273 - var(--side-height) - var(--bot-width)));
+	height: calc( var(--block-width) * 7);
+	position: absolute;
+	top: calc( 20px - var(--block-width) * 2);
+	
+}
+.at271 {
+	background-color: rgba(0,0,255,1);
+	width: calc( var(--block-width) * 1);
+	left: calc( 20px + var(--block-width) * (274 - var(--side-height) - var(--bot-width)));
+	height: calc( var(--block-width) * 7);
+	position: absolute;
+	top: calc( 20px - var(--block-width) * 2);
+	
+}
+.presSpanR {
+	background-color: rgba(0,0,0,.1);
+	width: calc( var(--block-width) * 3);
+	left: calc( 20px + var(--block-width) * var(--top-width));
+	height: calc( var(--block-width) * var(--side-height));
+	position: absolute;
+	top: calc( 20px + var(--block-width) * 3);
+	
+}
+.presSpanBR {
+	background-color: rgba(0,0,0,.2);
+	width: calc( var(--block-width) * (var(--bot-width) - 3));
+	left: calc( 20px + var(--block-width) * (var(--top-width) + 3 - var(--bot-width)));
+	height: calc( var(--block-width) * 3);
+	position: absolute;
+	top: calc( 20px + var(--block-width) * var(--side-height));
+}
+
+
+.pres-cell {
+	border: 1px solid black;
+	text-align: center;
+	height: calc( var(--block-width) * 3 - 0px);
+	width: calc( var(--block-width) * 3 - 0px);
+	position: absolute;
+}
+.insideSpan {
+	display: inline-block;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0);
+	left: 0px;
+	top:0px;
+	position: absolute;
+	border: 0px;
+}
+
+#pvSlider {
+	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
+	left: calc( 20px + var(--block-width) * (var(--bot-width) + 2));
+	position: absolute;
+	top: calc( 20px + var(--block-width) * var(--side-height));
+	height: calc( var(--block-width) * 3 - 0px);
+	margin: 0px;
+	padding: 0px;
+}
+.slider {
+	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
+	background: black;
+	margin: 0px;
+	padding: 0px;
+	top: 0px;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: calc( var(--block-width) * 3 - 0px);
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: calc( var(--block-width) * 3 - 0px);
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+#electoralMap {
+	background-color: rgba(0,0,0,.25);
+	width: calc( var(--block-width) * (var(--top-width) - 7));
+	left: calc( 20px + var(--block-width) * 5);
+	height: calc( var(--block-width) * (var(--side-height) - 7));
+	position: absolute;
+	top: calc( 20px + var(--block-width) * 5);
+}
+ 
+.mapSVG {
+
+	width: calc( var(--block-width) * (var(--side-height) - 7) * 1.6);
+	left: 0px;
+	height: calc( var(--block-width) * (var(--side-height) - 7));
+	position: absolute;
+	top: 0px;
+	stroke: white;
+	stroke-width: .33;
+}

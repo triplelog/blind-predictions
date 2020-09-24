@@ -1,0 +1,369 @@
+var electoralData = [{'abbrev': 'dc', 'votes16': 295553, 'ev10': 3, 'pres08': 0.06599232, 'pres12': 0.07412351, 'rperc': 0.04304812}, {'abbrev': 'hi', 'votes16': 395738, 'ev10': 4, 'pres08': 0.27006274, 'pres12': 0.28296151, 'rperc': 0.32558663}, {'abbrev': 'ca', 'votes16': 13237598, 'ev10': 55, 'pres08': 0.3772155, 'pres12': 0.38127189, 'rperc': 0.33871779}, {'abbrev': 'vt', 'votes16': 273942, 'ev10': 3, 'pres08': 0.31100818, 'pres12': 0.31752741, 'rperc': 0.34813574}, {'abbrev': 'ma', 'votes16': 3086089, 'ev10': 11, 'pres08': 0.36802922, 'pres12': 0.38214319, 'rperc': 0.35348721}, {'abbrev': 'md', 'votes16': 2621097, 'ev10': 10, 'pres08': 0.37069913, 'pres12': 0.36678274, 'rperc': 0.3598375}, {'abbrev': 'ny', 'votes16': 6906931, 'ev10': 29, 'pres08': 0.34236143, 'pres12': 0.33957305, 'rperc': 0.36588494}, {'abbrev': 'il', 'votes16': 5236744, 'ev10': 20, 'pres08': 0.37265736, 'pres12': 0.41422477, 'rperc': 0.40979949}, {'abbrev': 'wa', 'votes16': 2964465, 'ev10': 12, 'pres08': 0.41247973, 'pres12': 0.42371702, 'rperc': 0.41213069}, {'abbrev': 'ri', 'votes16': 433068, 'ev10': 4, 'pres08': 0.35801862, 'pres12': 0.35983254, 'rperc': 0.41689296}, {'abbrev': 'nj', 'votes16': 3750211, 'ev10': 14, 'pres08': 0.4213537, 'pres12': 0.41048034, 'rperc': 0.4271581}, {'abbrev': 'ct', 'votes16': 1570787, 'ev10': 7, 'pres08': 0.38681662, 'pres12': 0.41227423, 'rperc': 0.42858452}, {'abbrev': 'or', 'votes16': 1784509, 'ev10': 7, 'pres08': 0.41586279, 'pres12': 0.43728833, 'rperc': 0.43844161}, {'abbrev': 'de', 'votes16': 420730, 'ev10': 3, 'pres08': 0.37361861, 'pres12': 0.40553045, 'rperc': 0.44001379}, {'abbrev': 'nm', 'votes16': 704901, 'ev10': 5, 'pres08': 0.423351, 'pres12': 0.44704795, 'rperc': 0.45349205}, {'abbrev': 'va', 'votes16': 3750916, 'ev10': 13, 'pres08': 0.46817416, 'pres12': 0.48032623, 'rperc': 0.47173624}, {'abbrev': 'co', 'votes16': 2541354, 'ev10': 9, 'pres08': 0.45449365, 'pres12': 0.47252012, 'rperc': 0.47316667}, {'abbrev': 'me', 'votes16': 693328, 'ev10': 4, 'pres08': 0.41170475, 'pres12': 0.42140079, 'rperc': 0.48403209}, {'abbrev': 'nv', 'votes16': 1051318, 'ev10': 6, 'pres08': 0.43613262, 'pres12': 0.46592458, 'rperc': 0.48706291}, {'abbrev': 'mn', 'votes16': 2690654, 'ev10': 10, 'pres08': 0.44770625, 'pres12': 0.46058774, 'rperc': 0.49168306}, {'abbrev': 'nh', 'votes16': 694316, 'ev10': 4, 'pres08': 0.45131459, 'pres12': 0.47166248, 'rperc': 0.49802972}, {'abbrev': 'mi', 'votes16': 4548382, 'ev10': 16, 'pres08': 0.41628698, 'pres12': 0.45199468, 'rperc': 0.50117668}, {'abbrev': 'pa', 'votes16': 5897174, 'ev10': 20, 'pres08': 0.44770296, 'pres12': 0.47268066, 'rperc': 0.50375536}, {'abbrev': 'wi', 'votes16': 2787820, 'ev10': 10, 'pres08': 0.42944322, 'pres12': 0.4653657, 'rperc': 0.50407989}, {'abbrev': 'fl', 'votes16': 9122861, 'ev10': 29, 'pres08': 0.4858034, 'pres12': 0.49557748, 'rperc': 0.50618835}, {'abbrev': 'az', 'votes16': 2413568, 'ev10': 11, 'pres08': 0.54313901, 'pres12': 0.5461338, 'rperc': 0.51890023}, {'abbrev': 'nc', 'votes16': 4551947, 'ev10': 15, 'pres08': 0.49834037, 'pres12': 0.51034035, 'rperc': 0.51903746}, {'abbrev': 'ga', 'votes16': 3967067, 'ev10': 16, 'pres08': 0.52628336, 'pres12': 0.53956649, 'rperc': 0.52661173}, {'abbrev': 'oh', 'votes16': 5235169, 'ev10': 18, 'pres08': 0.47666159, 'pres12': 0.48485943, 'rperc': 0.54267685}, {'abbrev': 'tx', 'votes16': 8562915, 'ev10': 38, 'pres08': 0.55935937, 'pres12': 0.58007897, 'rperc': 0.54713226}, {'abbrev': 'ia', 'votes16': 1454652, 'ev10': 6, 'pres08': 0.45151222, 'pres12': 0.47040648, 'rperc': 0.55063548}, {'abbrev': 'sc', 'votes16': 2010762, 'ev10': 9, 'pres08': 0.54544429, 'pres12': 0.55308255, 'rperc': 0.57460256}, {'abbrev': 'ak', 'votes16': 279841, 'ev10': 3, 'pres08': 0.61064785, 'pres12': 0.5731529, 'rperc': 0.58385655}, {'abbrev': 'ms', 'votes16': 1185845, 'ev10': 6, 'pres08': 0.56641931, 'pres12': 0.55801899, 'rperc': 0.59089847}, {'abbrev': 'mo', 'votes16': 2665579, 'ev10': 10, 'pres08': 0.50067579, 'pres12': 0.54778667, 'rperc': 0.59818561}, {'abbrev': 'in', 'votes16': 2590412, 'ev10': 11, 'pres08': 0.49478047, 'pres12': 0.55200375, 'rperc': 0.6011731}, {'abbrev': 'la', 'votes16': 1958792, 'ev10': 8, 'pres08': 0.59457174, 'pres12': 0.58746826, 'rperc': 0.60171677}, {'abbrev': 'mt', 'votes16': 456949, 'ev10': 3, 'pres08': 0.51169403, 'pres12': 0.57034232, 'rperc': 0.61109664}, {'abbrev': 'ks', 'votes16': 1098023, 'ev10': 6, 'pres08': 0.57612276, 'pres12': 0.61113327, 'rperc': 0.6111147}, {'abbrev': 'ut', 'votes16': 825885, 'ev10': 6, 'pres08': 0.64526361, 'pres12': 0.74626189, 'rperc': 0.62382898}, {'abbrev': 'ne', 'votes16': 780455, 'ev10': 5, 'pres08': 0.57609074, 'pres12': 0.6112939, 'rperc': 0.63547674}, {'abbrev': 'tn', 'votes16': 2393620, 'ev10': 11, 'pres08': 0.57631472, 'pres12': 0.60351072, 'rperc': 0.63624343}, {'abbrev': 'ar', 'votes16': 1065366, 'ev10': 6, 'pres08': 0.60171721, 'pres12': 0.62154405, 'rperc': 0.64285138}, {'abbrev': 'al', 'votes16': 2047802, 'ev10': 9, 'pres08': 0.60890903, 'pres12': 0.61216229, 'rperc': 0.64374144}, {'abbrev': 'ky', 'votes16': 1831825, 'ev10': 8, 'pres08': 0.58233428, 'pres12': 0.61542772, 'rperc': 0.65670629}, {'abbrev': 'sd', 'votes16': 345179, 'ev10': 3, 'pres08': 0.54295707, 'pres12': 0.59218499, 'rperc': 0.65971858}, {'abbrev': 'id', 'votes16': 598820, 'ev10': 4, 'pres08': 0.6302459, 'pres12': 0.66421387, 'rperc': 0.68310177}, {'abbrev': 'ok', 'votes16': 1369511, 'ev10': 7, 'pres08': 0.65645081, 'pres12': 0.6677232, 'rperc': 0.69304737}, {'abbrev': 'nd', 'votes16': 310552, 'ev10': 3, 'pres08': 0.54408656, 'pres12': 0.60111208, 'rperc': 0.69809243}, {'abbrev': 'wv', 'votes16': 678165, 'ev10': 5, 'pres08': 0.56673744, 'pres12': 0.63674298, 'rperc': 0.72161052}, {'abbrev': 'wy', 'votes16': 230392, 'ev10': 3, 'pres08': 0.66562023, 'pres12': 0.71160634, 'rperc': 0.7570532}];
+var stateStart = '';
+var stateCurrent = '';
+var demoMult = 1.0;
+document.addEventListener("dragstart", function(event) {
+  stateStart = event.target.id;
+  console.log(stateStart);
+}, false);
+document.addEventListener("mouseup", function(event) {
+  stateStart = '';
+  document.removeEventListener("mousemove", statemousemove);
+}, false);
+
+var slider = document.getElementById("myRange");
+slider.oninput = function() {
+	if (this.value<=1000){
+	  demoMult = this.value/1000.0;
+	}
+	else {
+		demoMult = this.value/1000.0;
+	}
+  orderStates();
+}
+
+
+function orderStates() {
+	var totalEV = 0;
+	var totalHV = 0;
+	var demwidth = 0;
+	var swingwidth = 0;
+	var demVote = 0;
+	var repVote = 0;
+	var botW = 60;
+	var sideH = 118;
+	var topW = 185;
+	document.getElementById('pres2016BL').innerHTML = '';
+	document.getElementById('pres2016L').innerHTML = '';
+	document.getElementById('pres2016T').innerHTML = '';
+	document.getElementById('pres2016R').innerHTML = '';
+	document.getElementById('pres2016BR').innerHTML = '';
+	for (var i=0;i<electoralData.length;i++) {
+
+		totalEV += parseInt(electoralData[i]['ev10']);
+		totalHV += parseInt(electoralData[i]['ev10'])-2;
+		
+		var presyear = electoralData[i]['rperc']*demoMult;
+		
+		
+		repVote += parseInt(electoralData[i]['votes16'])*(presyear);
+		demVote += parseInt(electoralData[i]['votes16'])*(1-(presyear));
+		
+		var newspan = document.createElement("div");
+		newspan.classList.add("pres-cell");
+		newspan.classList.add("stateface");
+		newspan.classList.add("stateface-replace");
+		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
+		if (presyear>=.5) {
+			newspan.classList.add("rep"); 
+			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = 'red';
+			}
+		}
+		else {
+			newspan.classList.add("dem");
+			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = 'blue';
+			}
+		}
+		newspan.id='state-'+electoralData[i]['abbrev'];
+		newspan.addEventListener("mouseover", function(event) {
+		  // prevent default to allow drop
+		  event.preventDefault();
+		  if (event.target.classList.contains("stateface") && stateStart != '' && stateCurrent != event.target.id) {
+			stateCurrent = event.target.id;
+			reorderED(stateStart,stateCurrent);
+		  }
+
+		}, false);
+		
+		
+		var insideSpan = document.createElement('span');
+		insideSpan.classList.add('insideSpan');
+		insideSpan.classList.add("pres-cell");
+		insideSpan.classList.add("stateface");
+		insideSpan.classList.add("stateface-replace");
+		insideSpan.classList.add("stateface-"+electoralData[i]['abbrev']);
+		if (presyear>=.5) {insideSpan.classList.add("rep");}
+		else {insideSpan.classList.add("dem");}
+		insideSpan.id='state-'+electoralData[i]['abbrev'];
+		insideSpan.setAttribute('draggable', true);
+		newspan.appendChild(insideSpan);
+		
+		
+		if (totalEV - parseInt(electoralData[i]['ev10']) >= botW + sideH + topW+sideH) {
+			newspan.style.right = 'calc('+(totalEV-parseInt(electoralData[i]['ev10'])-botW-sideH-topW-sideH)+' * var(--block-width) )';
+			newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 0px 0px 1px';
+			if (totalEV - parseInt(electoralData[i]['ev10']) == botW+sideH+topW+sideH) {
+				newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 2px)';
+				newspan.style.borderWidth = '0px 1px 0px 1px';
+			}
+			document.getElementById('pres2016BR').appendChild(newspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) >= botW + sideH + topW && totalEV <= botW+sideH+topW+sideH) {
+			newspan.style.top = 'calc('+(totalEV-parseInt(electoralData[i]['ev10'])-botW-sideH-topW)+' * var(--block-width) )';
+			newspan.style.height = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 0px 1px 0px';
+			if (totalEV == botW+sideH+topW+sideH) {
+				newspan.style.height = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 0px)';
+				newspan.style.borderWidth = '0px 0px 0px 0px';
+			}
+			if (totalEV - parseInt(electoralData[i]['ev10']) == botW+sideH+topW) {
+				newspan.style.height = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 2px)';
+				newspan.style.borderWidth = '1px 0px 1px 0px';
+			}
+			document.getElementById('pres2016R').appendChild(newspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) >= botW + sideH && totalEV <= botW+sideH+topW) {
+			newspan.style.left = 'calc('+(totalEV-parseInt(electoralData[i]['ev10'])-botW-sideH)+' * var(--block-width) )';
+			newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 1px 0px 0px';
+			if (totalEV == botW+sideH+topW) {
+				newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 0px)';
+				newspan.style.borderWidth = '0px 0px 0px 0px';
+			}
+			if (totalEV - parseInt(electoralData[i]['ev10']) == botW+sideH) {
+				newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 2px)';
+				newspan.style.borderWidth = '0px 1px 0px 1px';
+			}
+			document.getElementById('pres2016T').appendChild(newspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) >= botW && totalEV <= botW+sideH) {
+			newspan.style.top = 'calc('+(botW + sideH - totalEV)+' * var(--block-width) )';
+			newspan.style.height = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '1px 0px 0px 0px';
+			if (totalEV == botW+sideH) {
+				newspan.style.height = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 0px)';
+				newspan.style.borderWidth = '0px 0px 0px 0px';
+			}
+			if (totalEV - parseInt(electoralData[i]['ev10']) == botW) {
+				newspan.style.height = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 2px)';
+				newspan.style.borderWidth = '1px 0px 1px 0px';
+			}
+			document.getElementById('pres2016L').appendChild(newspan);
+		}
+		else if (totalEV <= botW) {
+			newspan.style.left = 'calc('+(botW - totalEV)+' * var(--block-width) )';
+			newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 0px 0px 1px';
+			if (totalEV == botW) {
+				newspan.style.width = 'calc('+parseInt(electoralData[i]['ev10'])+' * var(--block-width) - 0px)';
+				newspan.style.borderWidth = '0px 0px 0px 0px';
+			}
+			document.getElementById('pres2016BL').appendChild(newspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW && totalEV >= botW){
+			//bottom left and left
+			let blWidth = botW-(totalEV-parseInt(electoralData[i]['ev10']));
+			let lWidth = parseInt(electoralData[i]['ev10']) - blWidth;
+			newerspan = newspan.cloneNode(true);
+			
+			newspan.style.bottom = '0px';
+			newspan.style.height = 'calc('+lWidth+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '1px 0px 0px 0px';
+			newspan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			insideSpan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			document.getElementById('pres2016L').appendChild(newspan);
+			
+			newerspan.style.left = '0px';
+			newerspan.style.width = 'calc('+blWidth+' * var(--block-width) - 0px)';
+			newerspan.style.borderWidth = '0px 0px 0px 0px';
+			document.getElementById('pres2016BL').appendChild(newerspan);
+			console.log(newerspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW + sideH && totalEV >= botW + sideH){
+			//left and top
+			let blWidth = botW+sideH-(totalEV-parseInt(electoralData[i]['ev10']));
+			let lWidth = parseInt(electoralData[i]['ev10']) - blWidth;
+			newerspan = newspan.cloneNode(true);
+			
+			newspan.style.left = '0px';
+			newspan.style.width = 'calc('+lWidth+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 1px 0px 0px';
+			newspan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			insideSpan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			document.getElementById('pres2016T').appendChild(newspan);
+			
+			newerspan.style.top = '0px';
+			newerspan.style.height = 'calc('+blWidth+' * var(--block-width) - 0px)';
+			newerspan.style.borderWidth = '0px 0px 0px 0px';
+			document.getElementById('pres2016L').appendChild(newerspan);
+			console.log(newerspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW + sideH + topW && totalEV >= botW + sideH + topW){
+			//top and right
+			let blWidth = botW+sideH+topW-(totalEV-parseInt(electoralData[i]['ev10']));
+			let lWidth = parseInt(electoralData[i]['ev10']) - blWidth;
+			newerspan = newspan.cloneNode(true);
+			
+			newspan.style.top = '0px';
+			newspan.style.height = 'calc('+lWidth+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 0px 1px 0px';
+			newspan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			insideSpan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			document.getElementById('pres2016R').appendChild(newspan);
+			
+			newerspan.style.right = '0px';
+			newerspan.style.width = 'calc('+blWidth+' * var(--block-width) - 0px)';
+			newerspan.style.borderWidth = '0px 0px 0px 0px';
+			document.getElementById('pres2016T').appendChild(newerspan);
+			console.log(newerspan);
+		}
+		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW + sideH + topW + sideH && totalEV >= botW + sideH + topW + sideH){
+			//right and bottom right
+			let blWidth = botW+sideH+topW+sideH-(totalEV-parseInt(electoralData[i]['ev10']));
+			let lWidth = parseInt(electoralData[i]['ev10']) - blWidth;
+			newerspan = newspan.cloneNode(true);
+			
+			newspan.style.right = '0px';
+			newspan.style.width = 'calc('+lWidth+' * var(--block-width) - 1px)';
+			newspan.style.borderWidth = '0px 0px 0px 1px';
+			newspan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			insideSpan.classList.remove("stateface-"+electoralData[i]['abbrev']);
+			document.getElementById('pres2016BR').appendChild(newspan);
+			
+			newerspan.style.bottom = '0px';
+			newerspan.style.height = 'calc('+blWidth+' * var(--block-width) - 0px)';
+			newerspan.style.borderWidth = '0px 0px 0px 0px';
+			document.getElementById('pres2016R').appendChild(newerspan);
+			console.log(newerspan);
+		}
+			
+			
+			
+			
+
+
+
+	}
+	
+	if (demVote>repVote) {
+		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote))/10+'%';
+	}
+	else {
+		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote))/10+'%';
+	}
+}
+orderStates();
+
+function reorderED(state1,state2) {
+	if (state1==state2) {return 0;}
+	console.log(state1,state2);
+	var state1idx = -1;
+	var state2idx = -1;
+	var pres1 = -1;
+	var pres2 = -1;
+	electoralData.sort((a, b) => parseFloat(a.rperc) - parseFloat(b.rperc));
+	for (var i=0;i<electoralData.length;i++){
+		if ('state-'+electoralData[i]['abbrev']==state1){
+			state1idx = i;
+			pres1 = electoralData[i]['rperc'];
+		}
+		if ('state-'+electoralData[i]['abbrev']==state2){
+			state2idx = i;
+			pres2 = electoralData[i]['rperc'];
+		}
+	}
+	if (state1idx> -1 && state2idx>-1){
+		
+		if (pres1 < pres2) {
+			for (var i=state1idx+1;i<state2idx+1;i++) {
+				let rVotes = electoralData[i]['rperc']*electoralData[i]['votes16']+electoralData[state1idx]['rperc']*electoralData[state1idx]['votes16'];
+				if (electoralData[i]['votes16'] < electoralData[state1idx]['votes16']) {
+					let x = (rVotes - electoralData[i]['votes16']*electoralData[state1idx]['rperc'])/electoralData[state1idx]['votes16'];
+					electoralData[i]['rperc']=electoralData[state1idx]['rperc'];
+					electoralData[state1idx]['rperc']=x;
+				}
+				else {
+					let x = (rVotes - electoralData[state1idx]['votes16']*electoralData[i]['rperc'])/electoralData[i]['votes16'];
+					electoralData[state1idx]['rperc']=electoralData[i]['rperc'];
+					electoralData[i]['rperc']=x;
+				}
+				
+				console.log(electoralData[state1idx]['abbrev'],electoralData[state1idx]['rperc'],electoralData[state2idx]['abbrev'],electoralData[state2idx]['rperc']);
+			}
+		}
+		else if (pres1 > pres2) {
+			for (var i=state2idx+1;i<state1idx+1;i++) {
+				let rVotes = electoralData[i]['rperc']*electoralData[i]['votes16']+electoralData[state2idx]['rperc']*electoralData[state2idx]['votes16'];
+				if (electoralData[i]['votes16'] < electoralData[state2idx]['votes16']) {
+					let x = (rVotes - electoralData[i]['votes16']*electoralData[state2idx]['rperc'])/electoralData[state2idx]['votes16'];
+					electoralData[i]['rperc']=electoralData[state2idx]['rperc'];
+					electoralData[state2idx]['rperc']=x;
+				}
+				else {
+					let x = (rVotes - electoralData[state2idx]['votes16']*electoralData[i]['rperc'])/electoralData[i]['votes16'];
+					electoralData[state2idx]['rperc']=electoralData[i]['rperc'];
+					electoralData[i]['rperc']=x;
+				}
+				console.log(electoralData[state1idx]['abbrev'],electoralData[state1idx]['rperc'],electoralData[state2idx]['abbrev'],electoralData[state2idx]['rperc']);
+			}
+		}
+		electoralData.sort((a, b) => parseFloat(a.rperc) - parseFloat(b.rperc));
+		orderStates();
+	}
+}
+
+//var stateData = {"02": {"abbrev": "AK", "name": "Alaska", "pop": 721523, "reps": 1, "ev": 3, "1976": {"dem": 44058, "gop": 71555, "oth": 6785}, "1980": {"dem": 41842, "gop": 86112, "oth": 18479}, "1984": {"dem": 62007, "gop": 138377, "oth": 6378}, "1988": {"dem": 72584, "gop": 119251, "oth": 5484}, "1992": {"dem": 78294, "gop": 102000, "oth": 73481}, "1996": {"dem": 80380, "gop": 122746, "oth": 26333}, "2000": {"dem": 79004, "gop": 167398, "oth": 28747}, "2004": {"dem": 111025, "gop": 190889, "oth": 5069}, "2008": {"dem": 123594, "gop": 193841, "oth": 3783}, "2012": {"dem": 122640, "gop": 164676, "oth": 7392}, "2016": {"dem": 116454, "gop": 163387, "oth": 18725}}, "01": {"abbrev": "AL", "name": "Alabama", "pop": 4802982, "reps": 7, "ev": 9, "1976": {"dem": 659170, "gop": 504070, "oth": 9198}, "1980": {"dem": 636730, "gop": 654192, "oth": 16481}, "1984": {"dem": 551899, "gop": 872849, "oth": 9504}, "1988": {"dem": 549506, "gop": 815576, "oth": 8460}, "1992": {"dem": 690080, "gop": 804283, "oth": 183109}, "1996": {"dem": 662165, "gop": 769044, "oth": 95030}, "2000": {"dem": 692611, "gop": 941173, "oth": 25896}, "2004": {"dem": 693933, "gop": 1176394, "oth": 12190}, "2008": {"dem": 813479, "gop": 1266546, "oth": 16089}, "2012": {"dem": 795696, "gop": 1255925, "oth": 18706}, "2016": {"dem": 729547, "gop": 1318255, "oth": 44467}}, "05": {"abbrev": "AR", "name": "Arkansas", "pop": 2926229, "reps": 4, "ev": 6, "1976": {"dem": 498604, "gop": 267903, "oth": 639}, "1980": {"dem": 398041, "gop": 403164, "oth": 22468}, "1984": {"dem": 338646, "gop": 534774, "oth": 2221}, "1988": {"dem": 349237, "gop": 466578, "oth": 5146}, "1992": {"dem": 505823, "gop": 337324, "oth": 99132}, "1996": {"dem": 475171, "gop": 325416, "oth": 69884}, "2000": {"dem": 422768, "gop": 472940, "oth": 13421}, "2004": {"dem": 469953, "gop": 572898, "oth": 6171}, "2008": {"dem": 422310, "gop": 638017, "oth": 12882}, "2012": {"dem": 394409, "gop": 647744, "oth": 16276}, "2016": {"dem": 380494, "gop": 684872, "oth": 29829}}, "04": {"abbrev": "AZ", "name": "Arizona", "pop": 6412700, "reps": 9, "ev": 11, "1976": {"dem": 295602, "gop": 418642, "oth": 19229}, "1980": {"dem": 246843, "gop": 529688, "oth": 76952}, "1984": {"dem": 333854, "gop": 681416, "oth": 10585}, "1988": {"dem": 454029, "gop": 702541, "oth": 13351}, "1992": {"dem": 543050, "gop": 572086, "oth": 353741}, "1996": {"dem": 653288, "gop": 622073, "oth": 112072}, "2000": {"dem": 685341, "gop": 781652, "oth": 45645}, "2004": {"dem": 893524, "gop": 1104294, "oth": 11856}, "2008": {"dem": 1034707, "gop": 1230111, "oth": 12555}, "2012": {"dem": 1025232, "gop": 1233654, "oth": 32100}, "2016": {"dem": 1161167, "gop": 1252401, "oth": 106327}}, "06": {"abbrev": "CA", "name": "California", "pop": 37341989, "reps": 53, "ev": 55, "1976": {"dem": 3742284, "gop": 3882244, "oth": 56388}, "1980": {"dem": 3082943, "gop": 4522994, "oth": 739618}, "1984": {"dem": 3922519, "gop": 5467009, "oth": 49951}, "1988": {"dem": 4702233, "gop": 5054917, "oth": 70105}, "1992": {"dem": 5121325, "gop": 3630574, "oth": 2296006}, "1996": {"dem": 5119835, "gop": 3828381, "oth": 697847}, "2000": {"dem": 5861203, "gop": 4567429, "oth": 418707}, "2004": {"dem": 6745485, "gop": 5509826, "oth": 50165}, "2008": {"dem": 8274473, "gop": 5011781, "oth": 108381}, "2012": {"dem": 7854285, "gop": 4839958, "oth": 143221}, "2016": {"dem": 8753788, "gop": 4483810, "oth": 478500}}, "08": {"abbrev": "CO", "name": "Colorado", "pop": 5044930, "reps": 7, "ev": 9, "1976": {"dem": 460801, "gop": 584278, "oth": 26047}, "1980": {"dem": 368009, "gop": 652264, "oth": 130633}, "1984": {"dem": 454975, "gop": 821817, "oth": 11257}, "1988": {"dem": 621453, "gop": 728177, "oth": 15482}, "1992": {"dem": 629681, "gop": 562850, "oth": 366010}, "1996": {"dem": 671152, "gop": 691848, "oth": 99629}, "2000": {"dem": 738227, "gop": 883748, "oth": 91434}, "2004": {"dem": 1001732, "gop": 1101255, "oth": 12718}, "2008": {"dem": 1288576, "gop": 1073589, "oth": 13350}, "2012": {"dem": 1323101, "gop": 1185243, "oth": 35545}, "2016": {"dem": 1338870, "gop": 1202484, "oth": 144121}}, "09": {"abbrev": "CT", "name": "Connecticut", "pop": 3581628, "reps": 5, "ev": 7, "1976": {"dem": 647895, "gop": 719261, "oth": 10309}, "1980": {"dem": 541732, "gop": 677210, "oth": 171807}, "1984": {"dem": 569597, "gop": 890877, "oth": 4826}, "1988": {"dem": 676584, "gop": 750241, "oth": 14071}, "1992": {"dem": 682318, "gop": 578313, "oth": 348771}, "1996": {"dem": 735740, "gop": 483109, "oth": 139523}, "2000": {"dem": 816015, "gop": 561094, "oth": 64452}, "2004": {"dem": 857488, "gop": 693826, "oth": 12969}, "2008": {"dem": 997772, "gop": 629428, "oth": 19162}, "2012": {"dem": 905083, "gop": 634892, "oth": 12340}, "2016": {"dem": 897572, "gop": 673215, "oth": 48676}}, "11": {"abbrev": "DC", "name": "Washington, D.C.", "pop": 600000, "reps": 1, "ev": 3, "1976": {"dem": 137818, "gop": 27873, "oth": 1656}, "1980": {"dem": 130231, "gop": 23313, "oth": 16131}, "1984": {"dem": 180408, "gop": 29009, "oth": 809}, "1988": {"dem": 159407, "gop": 27590, "oth": 3064}, "1992": {"dem": 192619, "gop": 20698, "oth": 9681}, "1996": {"dem": 158220, "gop": 17339, "oth": 4780}, "2000": {"dem": 171923, "gop": 18073, "oth": 10576}, "2004": {"dem": 202970, "gop": 21256, "oth": 1485}, "2008": {"dem": 245800, "gop": 17367, "oth": 1138}, "2012": {"dem": 267070, "gop": 21381, "oth": 2458}, "2016": {"dem": 282830, "gop": 12723, "oth": 6551}}, "10": {"abbrev": "DE", "name": "Delaware", "pop": 900877, "reps": 1, "ev": 3, "1976": {"dem": 122461, "gop": 109780, "oth": 2432}, "1980": {"dem": 105754, "gop": 111252, "oth": 16288}, "1984": {"dem": 101656, "gop": 152190, "oth": 269}, "1988": {"dem": 108647, "gop": 139639, "oth": 1162}, "1992": {"dem": 126054, "gop": 102313, "oth": 59213}, "1996": {"dem": 140355, "gop": 99062, "oth": 28719}, "2000": {"dem": 180068, "gop": 137288, "oth": 8307}, "2004": {"dem": 200152, "gop": 171660, "oth": 2153}, "2008": {"dem": 255459, "gop": 152374, "oth": 2401}, "2012": {"dem": 242584, "gop": 165484, "oth": 3882}, "2016": {"dem": 235603, "gop": 185127, "oth": 14757}}, "12": {"abbrev": "FL", "name": "Florida", "pop": 18900773, "reps": 27, "ev": 29, "1976": {"dem": 1636000, "gop": 1469531, "oth": 23643}, "1980": {"dem": 1419475, "gop": 2046951, "oth": 189692}, "1984": {"dem": 1448816, "gop": 2730350, "oth": 885}, "1988": {"dem": 1656701, "gop": 2618885, "oth": 19796}, "1992": {"dem": 2071698, "gop": 2173310, "oth": 1053067}, "1996": {"dem": 2546870, "gop": 2244536, "oth": 483870}, "2000": {"dem": 2912253, "gop": 2912790, "oth": 97488}, "2004": {"dem": 3583544, "gop": 3964522, "oth": 32971}, "2008": {"dem": 4282074, "gop": 4045624, "oth": 28124}, "2012": {"dem": 4237756, "gop": 4163447, "oth": 44726}, "2016": {"dem": 4504975, "gop": 4617886, "oth": 207043}}, "13": {"abbrev": "GA", "name": "Georgia", "pop": 9727566, "reps": 14, "ev": 16, "1976": {"dem": 979409, "gop": 483743, "oth": 0}, "1980": {"dem": 890955, "gop": 654168, "oth": 36055}, "1984": {"dem": 706628, "gop": 1068722, "oth": 753}, "1988": {"dem": 714792, "gop": 1081331, "oth": 8435}, "1992": {"dem": 1008966, "gop": 995252, "oth": 309657}, "1996": {"dem": 1053849, "gop": 1080843, "oth": 146337}, "2000": {"dem": 1116230, "gop": 1419720, "oth": 36332}, "2004": {"dem": 1366149, "gop": 1914254, "oth": 18387}, "2008": {"dem": 1844123, "gop": 2048759, "oth": 28731}, "2012": {"dem": 1773827, "gop": 2078688, "oth": 45324}, "2016": {"dem": 1877963, "gop": 2089104, "oth": 125306}}, "15": {"abbrev": "HI", "name": "Hawaii", "pop": 1366862, "reps": 2, "ev": 4, "1976": {"dem": 147375, "gop": 140003, "oth": 3923}, "1980": {"dem": 135879, "gop": 130112, "oth": 32021}, "1984": {"dem": 147154, "gop": 185050, "oth": 2167}, "1988": {"dem": 192364, "gop": 158625, "oth": 1999}, "1992": {"dem": 179310, "gop": 136822, "oth": 53003}, "1996": {"dem": 205012, "gop": 113943, "oth": 27358}, "2000": {"dem": 205286, "gop": 137845, "oth": 21623}, "2004": {"dem": 231708, "gop": 194191, "oth": 1737}, "2008": {"dem": 325871, "gop": 120566, "oth": 3825}, "2012": {"dem": 306658, "gop": 121015, "oth": 3840}, "2016": {"dem": 266891, "gop": 128847, "oth": 15954}}, "19": {"abbrev": "IA", "name": "Iowa", "pop": 3053787, "reps": 4, "ev": 6, "1976": {"dem": 619931, "gop": 632864, "oth": 20057}, "1980": {"dem": 508672, "gop": 676026, "oth": 115633}, "1984": {"dem": 605620, "gop": 703088, "oth": 6248}, "1988": {"dem": 670557, "gop": 545355, "oth": 3526}, "1992": {"dem": 586353, "gop": 504891, "oth": 253468}, "1996": {"dem": 620258, "gop": 492644, "oth": 105159}, "2000": {"dem": 638517, "gop": 634373, "oth": 37459}, "2004": {"dem": 741898, "gop": 751957, "oth": 6149}, "2008": {"dem": 828940, "gop": 682379, "oth": 8014}, "2012": {"dem": 822544, "gop": 730617, "oth": 12926}, "2016": {"dem": 653669, "gop": 800983, "oth": 59186}}, "16": {"abbrev": "ID", "name": "Idaho", "pop": 1573499, "reps": 2, "ev": 4, "1976": {"dem": 126549, "gop": 204151, "oth": 5935}, "1980": {"dem": 110192, "gop": 290699, "oth": 27058}, "1984": {"dem": 108510, "gop": 297523, "oth": 2823}, "1988": {"dem": 147272, "gop": 253881, "oth": 5313}, "1992": {"dem": 137013, "gop": 202645, "oth": 130395}, "1996": {"dem": 165443, "gop": 256595, "oth": 62518}, "2000": {"dem": 138637, "gop": 336937, "oth": 12292}, "2004": {"dem": 181098, "gop": 409235, "oth": 3844}, "2008": {"dem": 236440, "gop": 403012, "oth": 7175}, "2012": {"dem": 212787, "gop": 420911, "oth": 9453}, "2016": {"dem": 189765, "gop": 409055, "oth": 60748}}, "17": {"abbrev": "IL", "name": "Illinois", "pop": 12864380, "reps": 18, "ev": 20, "1976": {"dem": 2271295, "gop": 2364269, "oth": 55939}, "1980": {"dem": 1981413, "gop": 2358049, "oth": 346754}, "1984": {"dem": 2086499, "gop": 2707103, "oth": 10086}, "1988": {"dem": 2215940, "gop": 2310939, "oth": 14944}, "1992": {"dem": 2453350, "gop": 1734096, "oth": 840515}, "1996": {"dem": 2341744, "gop": 1587021, "oth": 346408}, "2000": {"dem": 2589026, "gop": 2019421, "oth": 103759}, "2004": {"dem": 2891550, "gop": 2345946, "oth": 32442}, "2008": {"dem": 3419348, "gop": 2031179, "oth": 30948}, "2012": {"dem": 3019512, "gop": 2135216, "oth": 56229}, "2016": {"dem": 3090729, "gop": 2146015, "oth": 209596}}, "18": {"abbrev": "IN", "name": "Indiana", "pop": 6501582, "reps": 9, "ev": 11, "1976": {"dem": 1014714, "gop": 1183958, "oth": 14048}, "1980": {"dem": 844197, "gop": 1255656, "oth": 111639}, "1984": {"dem": 841481, "gop": 1377230, "oth": 7617}, "1988": {"dem": 860643, "gop": 1297763, "oth": 10215}, "1992": {"dem": 848420, "gop": 989375, "oth": 455934}, "1996": {"dem": 887424, "gop": 1006693, "oth": 224299}, "2000": {"dem": 901980, "gop": 1245836, "oth": 18997}, "2004": {"dem": 969011, "gop": 1479438, "oth": 18058}, "2008": {"dem": 1374039, "gop": 1345648, "oth": 29257}, "2012": {"dem": 1152887, "gop": 1420543, "oth": 50111}, "2016": {"dem": 1033126, "gop": 1557286, "oth": 133993}}, "20": {"abbrev": "KS", "name": "Kansas", "pop": 2863813, "reps": 4, "ev": 6, "1976": {"dem": 430421, "gop": 502752, "oth": 13185}, "1980": {"dem": 326150, "gop": 566812, "oth": 68231}, "1984": {"dem": 333149, "gop": 677296, "oth": 3564}, "1988": {"dem": 422636, "gop": 554049, "oth": 16359}, "1992": {"dem": 390434, "gop": 449951, "oth": 312358}, "1996": {"dem": 387659, "gop": 583245, "oth": 92639}, "2000": {"dem": 399276, "gop": 622332, "oth": 37459}, "2004": {"dem": 434993, "gop": 736456, "oth": 9348}, "2008": {"dem": 514765, "gop": 699655, "oth": 10598}, "2012": {"dem": 440726, "gop": 692634, "oth": 20456}, "2016": {"dem": 427005, "gop": 671018, "oth": 55406}}, "21": {"abbrev": "KY", "name": "Kentucky", "pop": 4350606, "reps": 6, "ev": 8, "1976": {"dem": 615717, "gop": 531852, "oth": 8308}, "1980": {"dem": 617417, "gop": 635274, "oth": 31127}, "1984": {"dem": 539539, "gop": 821702, "oth": 3129}, "1988": {"dem": 580368, "gop": 734281, "oth": 4494}, "1992": {"dem": 665104, "gop": 617178, "oth": 203944}, "1996": {"dem": 636614, "gop": 623283, "oth": 120396}, "2000": {"dem": 638923, "gop": 872520, "oth": 23118}, "2004": {"dem": 712733, "gop": 1069439, "oth": 8856}, "2008": {"dem": 751985, "gop": 1048462, "oth": 15378}, "2012": {"dem": 679370, "gop": 1087190, "oth": 17063}, "2016": {"dem": 628854, "gop": 1202971, "oth": 53752}}, "22": {"abbrev": "LA", "name": "Louisiana", "pop": 4553962, "reps": 6, "ev": 8, "1976": {"dem": 661365, "gop": 587446, "oth": 10058}, "1980": {"dem": 708453, "gop": 792853, "oth": 26345}, "1984": {"dem": 651586, "gop": 1037299, "oth": 9502}, "1988": {"dem": 717460, "gop": 883702, "oth": 18612}, "1992": {"dem": 815971, "gop": 733386, "oth": 211478}, "1996": {"dem": 927837, "gop": 712586, "oth": 123293}, "2000": {"dem": 792344, "gop": 927871, "oth": 20473}, "2004": {"dem": 820299, "gop": 1102169, "oth": 7032}, "2008": {"dem": 782989, "gop": 1148275, "oth": 9368}, "2012": {"dem": 809141, "gop": 1152262, "oth": 18157}, "2016": {"dem": 780154, "gop": 1178638, "oth": 37978}}, "25": {"abbrev": "MA", "name": "Massachusetts", "pop": 6559644, "reps": 9, "ev": 11, "1976": {"dem": 1429475, "gop": 1030276, "oth": 65637}, "1980": {"dem": 1053802, "gop": 1057631, "oth": 382539}, "1984": {"dem": 1239606, "gop": 1310936, "oth": 7998}, "1988": {"dem": 1401415, "gop": 1194635, "oth": 24251}, "1992": {"dem": 1318639, "gop": 805039, "oth": 630731}, "1996": {"dem": 1571509, "gop": 718058, "oth": 227206}, "2000": {"dem": 1616487, "gop": 878502, "oth": 173564}, "2004": {"dem": 1803800, "gop": 1071109, "oth": 15067}, "2008": {"dem": 1904097, "gop": 1108854, "oth": 28841}, "2012": {"dem": 1921290, "gop": 1188314, "oth": 30920}, "2016": {"dem": 1995196, "gop": 1090893, "oth": 138018}}, "24": {"abbrev": "MD", "name": "Maryland", "pop": 5789929, "reps": 8, "ev": 10, "1976": {"dem": 759612, "gop": 672661, "oth": 0}, "1980": {"dem": 726161, "gop": 680606, "oth": 119537}, "1984": {"dem": 787935, "gop": 879918, "oth": 5721}, "1988": {"dem": 826304, "gop": 876167, "oth": 6748}, "1992": {"dem": 988571, "gop": 707094, "oth": 281414}, "1996": {"dem": 966207, "gop": 681530, "oth": 115812}, "2000": {"dem": 1144008, "gop": 813827, "oth": 53768}, "2004": {"dem": 1334493, "gop": 1024703, "oth": 11854}, "2008": {"dem": 1629467, "gop": 959862, "oth": 14713}, "2012": {"dem": 1677844, "gop": 971869, "oth": 30195}, "2016": {"dem": 1677928, "gop": 943169, "oth": 79605}}, "23": {"abbrev": "ME", "name": "Maine", "pop": 1333074, "reps": 2, "ev": 4, "1976": {"dem": 232279, "gop": 236320, "oth": 10874}, "1980": {"dem": 220974, "gop": 238522, "oth": 53327}, "1984": {"dem": 214515, "gop": 336500, "oth": 1292}, "1988": {"dem": 243569, "gop": 307131, "oth": 2700}, "1992": {"dem": 263420, "gop": 206504, "oth": 206820}, "1996": {"dem": 312788, "gop": 186378, "oth": 85970}, "2000": {"dem": 319951, "gop": 286616, "oth": 37127}, "2004": {"dem": 396842, "gop": 330201, "oth": 8069}, "2008": {"dem": 421923, "gop": 295273, "oth": 10636}, "2012": {"dem": 401306, "gop": 292276, "oth": 11578}, "2016": {"dem": 357735, "gop": 335593, "oth": 38105}}, "26": {"abbrev": "MI", "name": "Michigan", "pop": 9911626, "reps": 14, "ev": 16, "1976": {"dem": 1696714, "gop": 1893742, "oth": 47905}, "1980": {"dem": 1661532, "gop": 1915225, "oth": 275223}, "1984": {"dem": 1529638, "gop": 2251571, "oth": 10055}, "1988": {"dem": 1675783, "gop": 1965486, "oth": 18336}, "1992": {"dem": 1871182, "gop": 1554940, "oth": 824813}, "1996": {"dem": 1989653, "gop": 1481212, "oth": 336670}, "2000": {"dem": 2170418, "gop": 1953139, "oth": 84165}, "2004": {"dem": 2479183, "gop": 2313746, "oth": 24035}, "2008": {"dem": 2872579, "gop": 2048639, "oth": 33085}, "2012": {"dem": 2564569, "gop": 2115256, "oth": 21897}, "2016": {"dem": 2268839, "gop": 2279543, "oth": 172136}}, "27": {"abbrev": "MN", "name": "Minnesota", "pop": 5314879, "reps": 8, "ev": 10, "1976": {"dem": 1070440, "gop": 819395, "oth": 35490}, "1980": {"dem": 954173, "gop": 873268, "oth": 174997}, "1984": {"dem": 1036364, "gop": 1032603, "oth": 3865}, "1988": {"dem": 1109471, "gop": 962337, "oth": 5403}, "1992": {"dem": 1020997, "gop": 747841, "oth": 562506}, "1996": {"dem": 1120380, "gop": 766395, "oth": 257698}, "2000": {"dem": 1168266, "gop": 1109659, "oth": 126696}, "2004": {"dem": 1445014, "gop": 1346695, "oth": 18683}, "2008": {"dem": 1573354, "gop": 1275409, "oth": 30152}, "2012": {"dem": 1546167, "gop": 1320225, "oth": 35098}, "2016": {"dem": 1367705, "gop": 1322949, "oth": 112972}}, "29": {"abbrev": "MO", "name": "Missouri", "pop": 6011478, "reps": 8, "ev": 10, "1976": {"dem": 998387, "gop": 927443, "oth": 24029}, "1980": {"dem": 931182, "gop": 1074181, "oth": 77920}, "1984": {"dem": 848583, "gop": 1274188, "oth": 0}, "1988": {"dem": 1001619, "gop": 1084953, "oth": 6656}, "1992": {"dem": 1053873, "gop": 811159, "oth": 518741}, "1996": {"dem": 1025935, "gop": 890016, "oth": 217188}, "2000": {"dem": 1111138, "gop": 1189924, "oth": 38515}, "2004": {"dem": 1259171, "gop": 1455713, "oth": 9831}, "2008": {"dem": 1441911, "gop": 1445814, "oth": 17813}, "2012": {"dem": 1223796, "gop": 1482440, "oth": 43151}, "2016": {"dem": 1071068, "gop": 1594511, "oth": 97359}}, "28": {"abbrev": "MS", "name": "Mississippi", "pop": 2978240, "reps": 4, "ev": 6, "1976": {"dem": 381329, "gop": 366846, "oth": 6678}, "1980": {"dem": 429281, "gop": 441089, "oth": 12036}, "1984": {"dem": 352192, "gop": 582377, "oth": 2336}, "1988": {"dem": 363921, "gop": 557890, "oth": 6387}, "1992": {"dem": 400258, "gop": 487793, "oth": 85626}, "1996": {"dem": 394022, "gop": 439838, "oth": 53427}, "2000": {"dem": 404614, "gop": 572844, "oth": 8735}, "2004": {"dem": 457766, "gop": 672660, "oth": 3175}, "2008": {"dem": 554662, "gop": 724597, "oth": 4011}, "2012": {"dem": 562949, "gop": 710746, "oth": 6676}, "2016": {"dem": 485131, "gop": 700714, "oth": 14435}}, "30": {"abbrev": "MT", "name": "Montana", "pop": 994416, "reps": 1, "ev": 3, "1976": {"dem": 149259, "gop": 173703, "oth": 5772}, "1980": {"dem": 118032, "gop": 206814, "oth": 29281}, "1984": {"dem": 146742, "gop": 232450, "oth": 5185}, "1988": {"dem": 168936, "gop": 190412, "oth": 5047}, "1992": {"dem": 154507, "gop": 144207, "oth": 107225}, "1996": {"dem": 167922, "gop": 179652, "oth": 55229}, "2000": {"dem": 137126, "gop": 240178, "oth": 24437}, "2004": {"dem": 173710, "gop": 266063, "oth": 6168}, "2008": {"dem": 231667, "gop": 242763, "oth": 10638}, "2012": {"dem": 201839, "gop": 267928, "oth": 14165}, "2016": {"dem": 177709, "gop": 279240, "oth": 28037}}, "37": {"abbrev": "NC", "name": "North Carolina", "pop": 9565781, "reps": 13, "ev": 15, "1976": {"dem": 927365, "gop": 741960, "oth": 5607}, "1980": {"dem": 875635, "gop": 915018, "oth": 52800}, "1984": {"dem": 824287, "gop": 1346481, "oth": 3794}, "1988": {"dem": 890167, "gop": 1237258, "oth": 5682}, "1992": {"dem": 1114042, "gop": 1134661, "oth": 357864}, "1996": {"dem": 1107849, "gop": 1225938, "oth": 168059}, "2000": {"dem": 1257692, "gop": 1631163, "oth": 13891}, "2004": {"dem": 1525849, "gop": 1961166, "oth": 11731}, "2008": {"dem": 2142651, "gop": 2128474, "oth": 25722}, "2012": {"dem": 2178391, "gop": 2270395, "oth": 44515}, "2016": {"dem": 2189316, "gop": 2362631, "oth": 130126}}, "38": {"abbrev": "ND", "name": "North Dakota", "pop": 675905, "reps": 1, "ev": 3, "1976": {"dem": 136078, "gop": 153684, "oth": 3698}, "1980": {"dem": 79189, "gop": 193695, "oth": 23640}, "1984": {"dem": 104429, "gop": 200336, "oth": 1278}, "1988": {"dem": 127739, "gop": 166559, "oth": 1315}, "1992": {"dem": 99168, "gop": 136244, "oth": 71084}, "1996": {"dem": 106905, "gop": 125050, "oth": 32515}, "2000": {"dem": 95284, "gop": 174852, "oth": 10459}, "2004": {"dem": 111052, "gop": 196651, "oth": 3756}, "2008": {"dem": 141278, "gop": 168601, "oth": 4189}, "2012": {"dem": 124966, "gop": 188320, "oth": 5238}, "2016": {"dem": 93758, "gop": 216794, "oth": 21434}}, "31": {"abbrev": "NE", "name": "Nebraska", "pop": 1831825, "reps": 3, "ev": 5, "1976": {"dem": 233293, "gop": 359219, "oth": 9383}, "1980": {"dem": 166424, "gop": 419214, "oth": 44854}, "1984": {"dem": 187866, "gop": 460054, "oth": 2079}, "1988": {"dem": 259235, "gop": 397956, "oth": 2534}, "1992": {"dem": 216864, "gop": 343678, "oth": 174104}, "1996": {"dem": 236761, "gop": 363467, "oth": 71278}, "2000": {"dem": 231780, "gop": 433862, "oth": 24540}, "2004": {"dem": 254328, "gop": 512814, "oth": 5780}, "2008": {"dem": 333319, "gop": 452979, "oth": 5406}, "2012": {"dem": 302081, "gop": 475064, "oth": 11109}, "2016": {"dem": 284494, "gop": 495961, "oth": 38946}}, "33": {"abbrev": "NH", "name": "New Hampshire", "pop": 1321445, "reps": 2, "ev": 4, "1976": {"dem": 147645, "gop": 185935, "oth": 4095}, "1980": {"dem": 108864, "gop": 221705, "oth": 49693}, "1984": {"dem": 120347, "gop": 267050, "oth": 735}, "1988": {"dem": 163696, "gop": 281537, "oth": 4502}, "1992": {"dem": 209040, "gop": 202484, "oth": 121337}, "1996": {"dem": 246166, "gop": 196486, "oth": 48387}, "2000": {"dem": 266348, "gop": 273559, "oth": 22198}, "2004": {"dem": 340511, "gop": 331237, "oth": 4479}, "2008": {"dem": 384826, "gop": 316534, "oth": 3503}, "2012": {"dem": 369561, "gop": 329918, "oth": 8212}, "2016": {"dem": 348526, "gop": 345790, "oth": 30777}}, "34": {"abbrev": "NJ", "name": "New Jersey", "pop": 8807501, "reps": 12, "ev": 14, "1976": {"dem": 1444653, "gop": 1509688, "oth": 32717}, "1980": {"dem": 1147364, "gop": 1546557, "oth": 234632}, "1984": {"dem": 1261323, "gop": 1933630, "oth": 8404}, "1988": {"dem": 1320352, "gop": 1743192, "oth": 9953}, "1992": {"dem": 1436206, "gop": 1356865, "oth": 521829}, "1996": {"dem": 1652361, "gop": 1103099, "oth": 320400}, "2000": {"dem": 1788850, "gop": 1284173, "oth": 114203}, "2004": {"dem": 1911430, "gop": 1670003, "oth": 30258}, "2008": {"dem": 2215422, "gop": 1613207, "oth": 21298}, "2012": {"dem": 2122786, "gop": 1478088, "oth": 21035}, "2016": {"dem": 2148278, "gop": 1601933, "oth": 72477}}, "35": {"abbrev": "NM", "name": "New Mexico", "pop": 2067273, "reps": 3, "ev": 5, "1976": {"dem": 201148, "gop": 211419, "oth": 2462}, "1980": {"dem": 167826, "gop": 250779, "oth": 29459}, "1984": {"dem": 201769, "gop": 307101, "oth": 4459}, "1988": {"dem": 244497, "gop": 270341, "oth": 3368}, "1992": {"dem": 261617, "gop": 212824, "oth": 91895}, "1996": {"dem": 273495, "gop": 232751, "oth": 32257}, "2000": {"dem": 286783, "gop": 286417, "oth": 21251}, "2004": {"dem": 370942, "gop": 376930, "oth": 4053}, "2008": {"dem": 472422, "gop": 346832, "oth": 5327}, "2012": {"dem": 415335, "gop": 335788, "oth": 27788}, "2016": {"dem": 385234, "gop": 319667, "oth": 74541}}, "32": {"abbrev": "NV", "name": "Nevada", "pop": 2709432, "reps": 4, "ev": 6, "1976": {"dem": 92479, "gop": 101273, "oth": 5108}, "1980": {"dem": 66666, "gop": 155017, "oth": 17651}, "1984": {"dem": 91655, "gop": 188770, "oth": 2292}, "1988": {"dem": 132738, "gop": 206040, "oth": 3520}, "1992": {"dem": 189148, "gop": 175828, "oth": 132580}, "1996": {"dem": 203974, "gop": 199244, "oth": 43986}, "2000": {"dem": 279978, "gop": 301575, "oth": 15008}, "2004": {"dem": 397190, "gop": 418690, "oth": 4838}, "2008": {"dem": 533736, "gop": 412827, "oth": 6267}, "2012": {"dem": 531373, "gop": 463567, "oth": 10968}, "2016": {"dem": 539260, "gop": 512058, "oth": 37384}}, "36": {"abbrev": "NY", "name": "New York", "pop": 19421055, "reps": 27, "ev": 29, "1976": {"dem": 3244165, "gop": 2825913, "oth": 274878}, "1980": {"dem": 2728372, "gop": 2637700, "oth": 467801}, "1984": {"dem": 3001285, "gop": 3376519, "oth": 288244}, "1988": {"dem": 3255487, "gop": 2838414, "oth": 243457}, "1992": {"dem": 3346894, "gop": 2041690, "oth": 1090721}, "1996": {"dem": 3649630, "gop": 1738707, "oth": 503458}, "2000": {"dem": 3942215, "gop": 2258577, "oth": 244030}, "2004": {"dem": 4180755, "gop": 2806993, "oth": 155574}, "2008": {"dem": 4645332, "gop": 2418323, "oth": 170475}, "2012": {"dem": 4324228, "gop": 2223397, "oth": 262035}, "2016": {"dem": 4379789, "gop": 2527142, "oth": 292392}}, "39": {"abbrev": "OH", "name": "Ohio", "pop": 11568495, "reps": 16, "ev": 18, "1976": {"dem": 2009959, "gop": 2000626, "oth": 58267}, "1980": {"dem": 1752414, "gop": 2206545, "oth": 254472}, "1984": {"dem": 1825440, "gop": 2678559, "oth": 24180}, "1988": {"dem": 1939629, "gop": 2416549, "oth": 12017}, "1992": {"dem": 1984942, "gop": 1894310, "oth": 1036426}, "1996": {"dem": 2148222, "gop": 1859883, "oth": 483207}, "2000": {"dem": 2183628, "gop": 2350363, "oth": 148353}, "2004": {"dem": 2741165, "gop": 2859764, "oth": 26616}, "2008": {"dem": 2940044, "gop": 2677820, "oth": 46242}, "2012": {"dem": 2827621, "gop": 2661407, "oth": 49493}, "2016": {"dem": 2394164, "gop": 2841005, "oth": 198733}}, "40": {"abbrev": "OK", "name": "Oklahoma", "pop": 3764882, "reps": 5, "ev": 7, "1976": {"dem": 532442, "gop": 545708, "oth": 14101}, "1980": {"dem": 402026, "gop": 695570, "oth": 38284}, "1984": {"dem": 385080, "gop": 861530, "oth": 9066}, "1988": {"dem": 483423, "gop": 678367, "oth": 6261}, "1992": {"dem": 473066, "gop": 592929, "oth": 319878}, "1996": {"dem": 488105, "gop": 582315, "oth": 130788}, "2000": {"dem": 474276, "gop": 744337, "oth": 9014}, "2004": {"dem": 503966, "gop": 959792, "oth": 0}, "2008": {"dem": 502496, "gop": 960165, "oth": 0}, "2012": {"dem": 443547, "gop": 891325, "oth": 0}, "2016": {"dem": 420375, "gop": 949136, "oth": 83481}}, "41": {"abbrev": "OR", "name": "Oregon", "pop": 3848606, "reps": 5, "ev": 7, "1976": {"dem": 490407, "gop": 492120, "oth": 40207}, "1980": {"dem": 456890, "gop": 571044, "oth": 112389}, "1984": {"dem": 536479, "gop": 685700, "oth": 4348}, "1988": {"dem": 616206, "gop": 560126, "oth": 14811}, "1992": {"dem": 621314, "gop": 475757, "oth": 354091}, "1996": {"dem": 649641, "gop": 538152, "oth": 121221}, "2000": {"dem": 720342, "gop": 713577, "oth": 77357}, "2004": {"dem": 943163, "gop": 866831, "oth": 8956}, "2008": {"dem": 1037291, "gop": 738475, "oth": 18614}, "2012": {"dem": 970488, "gop": 754175, "oth": 24089}, "2016": {"dem": 1002106, "gop": 782403, "oth": 94231}}, "42": {"abbrev": "PA", "name": "Pennsylvania", "pop": 12734905, "reps": 18, "ev": 20, "1976": {"dem": 2328677, "gop": 2205604, "oth": 50584}, "1980": {"dem": 1937540, "gop": 2261872, "oth": 292921}, "1984": {"dem": 2228131, "gop": 2584323, "oth": 21628}, "1988": {"dem": 2194944, "gop": 2300087, "oth": 19158}, "1992": {"dem": 2239164, "gop": 1791841, "oth": 902667}, "1996": {"dem": 2215819, "gop": 1801169, "oth": 430984}, "2000": {"dem": 2485967, "gop": 2281127, "oth": 103392}, "2004": {"dem": 2938095, "gop": 2793847, "oth": 21185}, "2008": {"dem": 3276363, "gop": 2655885, "oth": 42977}, "2012": {"dem": 2990274, "gop": 2680434, "oth": 49991}, "2016": {"dem": 2926441, "gop": 2970733, "oth": 146715}}, "44": {"abbrev": "RI", "name": "Rhode Island", "pop": 1055247, "reps": 2, "ev": 4, "1976": {"dem": 227636, "gop": 181249, "oth": 715}, "1980": {"dem": 198342, "gop": 154793, "oth": 59819}, "1984": {"dem": 197106, "gop": 212080, "oth": 510}, "1988": {"dem": 225123, "gop": 177761, "oth": 825}, "1992": {"dem": 213299, "gop": 131601, "oth": 105045}, "1996": {"dem": 233050, "gop": 104683, "oth": 43723}, "2000": {"dem": 249508, "gop": 130555, "oth": 25052}, "2004": {"dem": 259760, "gop": 169046, "oth": 4651}, "2008": {"dem": 296571, "gop": 165391, "oth": 4829}, "2012": {"dem": 279677, "gop": 157204, "oth": 4388}, "2016": {"dem": 252525, "gop": 180543, "oth": 14746}}, "45": {"abbrev": "SC", "name": "South Carolina", "pop": 4645975, "reps": 7, "ev": 9, "1976": {"dem": 450807, "gop": 346149, "oth": 2996}, "1980": {"dem": 428220, "gop": 439277, "oth": 13868}, "1984": {"dem": 344459, "gop": 615539, "oth": 4359}, "1988": {"dem": 370554, "gop": 606443, "oth": 4935}, "1992": {"dem": 525514, "gop": 577507, "oth": 119257}, "1996": {"dem": 506152, "gop": 573339, "oth": 36913}, "2000": {"dem": 566037, "gop": 786892, "oth": 20279}, "2004": {"dem": 661669, "gop": 937974, "oth": 5520}, "2008": {"dem": 862449, "gop": 1034896, "oth": 7283}, "2012": {"dem": 865941, "gop": 1071645, "oth": 16321}, "2016": {"dem": 855373, "gop": 1155389, "oth": 49204}}, "46": {"abbrev": "SD", "name": "South Dakota", "pop": 819761, "reps": 1, "ev": 3, "1976": {"dem": 147068, "gop": 151505, "oth": 1619}, "1980": {"dem": 103855, "gop": 198343, "oth": 21431}, "1984": {"dem": 116113, "gop": 200267, "oth": 1150}, "1988": {"dem": 145560, "gop": 165415, "oth": 2016}, "1992": {"dem": 124888, "gop": 136718, "oth": 73295}, "1996": {"dem": 139333, "gop": 150543, "oth": 32478}, "2000": {"dem": 118804, "gop": 190700, "oth": 3322}, "2004": {"dem": 149244, "gop": 232584, "oth": 4320}, "2008": {"dem": 170924, "gop": 203054, "oth": 4267}, "2012": {"dem": 145039, "gop": 210610, "oth": 5795}, "2016": {"dem": 117458, "gop": 227721, "oth": 20850}}, "47": {"abbrev": "TN", "name": "Tennessee", "pop": 6375431, "reps": 9, "ev": 11, "1976": {"dem": 825879, "gop": 633969, "oth": 5769}, "1980": {"dem": 783051, "gop": 787761, "oth": 35991}, "1984": {"dem": 711714, "gop": 990212, "oth": 3072}, "1988": {"dem": 679794, "gop": 947233, "oth": 8938}, "1992": {"dem": 933521, "gop": 841300, "oth": 199968}, "1996": {"dem": 909146, "gop": 863530, "oth": 121239}, "2000": {"dem": 981720, "gop": 1061949, "oth": 32084}, "2004": {"dem": 1036477, "gop": 1384375, "oth": 16428}, "2008": {"dem": 1087437, "gop": 1479178, "oth": 33134}, "2012": {"dem": 960709, "gop": 1462330, "oth": 23001}, "2016": {"dem": 870695, "gop": 1522925, "oth": 100618}}, "48": {"abbrev": "TX", "name": "Texas", "pop": 25268418, "reps": 36, "ev": 38, "1976": {"dem": 2082319, "gop": 1953300, "oth": 20118}, "1980": {"dem": 1881147, "gop": 2510705, "oth": 111613}, "1984": {"dem": 1949276, "gop": 3433428, "oth": 14613}, "1988": {"dem": 2352748, "gop": 3036829, "oth": 30355}, "1992": {"dem": 2281815, "gop": 2496071, "oth": 1354781}, "1996": {"dem": 2459683, "gop": 2736167, "oth": 378537}, "2000": {"dem": 2433746, "gop": 3799639, "oth": 137994}, "2004": {"dem": 2832704, "gop": 4526917, "oth": 38787}, "2008": {"dem": 3528633, "gop": 4479328, "oth": 56116}, "2012": {"dem": 3308124, "gop": 4569843, "oth": 88580}, "2016": {"dem": 3877868, "gop": 4685047, "oth": 283492}}, "49": {"abbrev": "UT", "name": "Utah", "pop": 2770765, "reps": 4, "ev": 6, "1976": {"dem": 182110, "gop": 337908, "oth": 13304}, "1980": {"dem": 124266, "gop": 439687, "oth": 30284}, "1984": {"dem": 155369, "gop": 469105, "oth": 2447}, "1988": {"dem": 207343, "gop": 428442, "oth": 7473}, "1992": {"dem": 183429, "gop": 322632, "oth": 203400}, "1996": {"dem": 221633, "gop": 361911, "oth": 66461}, "2000": {"dem": 203053, "gop": 515096, "oth": 35850}, "2004": {"dem": 241199, "gop": 663742, "oth": 11305}, "2008": {"dem": 327670, "gop": 596030, "oth": 12012}, "2012": {"dem": 251813, "gop": 740600, "oth": 12572}, "2016": {"dem": 310674, "gop": 515211, "oth": 255060}}, "51": {"abbrev": "VA", "name": "Virginia", "pop": 8037736, "reps": 11, "ev": 13, "1976": {"dem": 813896, "gop": 836554, "oth": 17802}, "1980": {"dem": 752174, "gop": 989609, "oth": 95418}, "1984": {"dem": 796250, "gop": 1337078, "oth": 13307}, "1988": {"dem": 859799, "gop": 1309162, "oth": 14312}, "1992": {"dem": 1038650, "gop": 1150517, "oth": 348639}, "1996": {"dem": 1091060, "gop": 1138350, "oth": 159861}, "2000": {"dem": 1217290, "gop": 1437490, "oth": 59398}, "2004": {"dem": 1454742, "gop": 1716959, "oth": 11032}, "2008": {"dem": 1959532, "gop": 1725005, "oth": 11483}, "2012": {"dem": 1971820, "gop": 1822522, "oth": 31216}, "2016": {"dem": 1981473, "gop": 1769443, "oth": 118274}}, "50": {"abbrev": "VT", "name": "Vermont", "pop": 630337, "reps": 1, "ev": 3, "1976": {"dem": 77798, "gop": 100387, "oth": 4001}, "1980": {"dem": 81952, "gop": 94628, "oth": 31761}, "1984": {"dem": 95730, "gop": 135865, "oth": 1002}, "1988": {"dem": 115775, "gop": 124331, "oth": 1134}, "1992": {"dem": 133592, "gop": 88122, "oth": 65991}, "1996": {"dem": 137894, "gop": 80352, "oth": 31024}, "2000": {"dem": 149022, "gop": 119775, "oth": 20374}, "2004": {"dem": 184067, "gop": 121180, "oth": 4494}, "2008": {"dem": 219262, "gop": 98974, "oth": 3339}, "2012": {"dem": 199239, "gop": 92698, "oth": 3487}, "2016": {"dem": 178573, "gop": 95369, "oth": 22899}}, "53": {"abbrev": "WA", "name": "Washington", "pop": 6753369, "reps": 10, "ev": 12, "1976": {"dem": 717323, "gop": 777732, "oth": 36986}, "1980": {"dem": 650193, "gop": 865244, "oth": 185073}, "1984": {"dem": 798352, "gop": 1051670, "oth": 8844}, "1988": {"dem": 933516, "gop": 903835, "oth": 17240}, "1992": {"dem": 993037, "gop": 731234, "oth": 541780}, "1996": {"dem": 1123323, "gop": 840712, "oth": 201003}, "2000": {"dem": 1247652, "gop": 1108864, "oth": 103002}, "2004": {"dem": 1510201, "gop": 1304894, "oth": 23283}, "2008": {"dem": 1750848, "gop": 1229216, "oth": 29489}, "2012": {"dem": 1755396, "gop": 1290670, "oth": 42202}, "2016": {"dem": 1742718, "gop": 1221747, "oth": 160879}}, "55": {"abbrev": "WI", "name": "Wisconsin", "pop": 5698230, "reps": 8, "ev": 10, "1976": {"dem": 1040232, "gop": 1004987, "oth": 34943}, "1980": {"dem": 981584, "gop": 1088845, "oth": 160657}, "1984": {"dem": 995740, "gop": 1198584, "oth": 4883}, "1988": {"dem": 1126794, "gop": 1047499, "oth": 15042}, "1992": {"dem": 1041066, "gop": 930855, "oth": 544479}, "1996": {"dem": 1071971, "gop": 845029, "oth": 227339}, "2000": {"dem": 1242987, "gop": 1237279, "oth": 94070}, "2004": {"dem": 1489504, "gop": 1478120, "oth": 17272}, "2008": {"dem": 1677211, "gop": 1262393, "oth": 17605}, "2012": {"dem": 1620985, "gop": 1410966, "oth": 29383}, "2016": {"dem": 1382536, "gop": 1405284, "oth": 106674}}, "54": {"abbrev": "WV", "name": "West Virginia", "pop": 1859815, "reps": 3, "ev": 5, "1976": {"dem": 435864, "gop": 314726, "oth": 0}, "1980": {"dem": 367462, "gop": 334206, "oth": 31691}, "1984": {"dem": 328125, "gop": 405483, "oth": 996}, "1988": {"dem": 341016, "gop": 310065, "oth": 2230}, "1992": {"dem": 331001, "gop": 241974, "oth": 108829}, "1996": {"dem": 327812, "gop": 233946, "oth": 71639}, "2000": {"dem": 295497, "gop": 336475, "oth": 10680}, "2004": {"dem": 326541, "gop": 423778, "oth": 4063}, "2008": {"dem": 303857, "gop": 397466, "oth": 7219}, "2012": {"dem": 238269, "gop": 417655, "oth": 6302}, "2016": {"dem": 188794, "gop": 489371, "oth": 23004}}, "56": {"abbrev": "WY", "name": "Wyoming", "pop": 568300, "reps": 1, "ev": 3, "1976": {"dem": 62239, "gop": 92717, "oth": 1387}, "1980": {"dem": 49427, "gop": 110700, "oth": 12072}, "1984": {"dem": 53370, "gop": 133241, "oth": 2357}, "1988": {"dem": 67113, "gop": 106867, "oth": 2026}, "1992": {"dem": 68160, "gop": 79347, "oth": 51263}, "1996": {"dem": 77934, "gop": 105388, "oth": 25928}, "2000": {"dem": 60481, "gop": 147947, "oth": 2724}, "2004": {"dem": 70776, "gop": 167629, "oth": 3372}, "2008": {"dem": 82868, "gop": 164958, "oth": 3717}, "2012": {"dem": 69286, "gop": 170962, "oth": 5326}, "2016": {"dem": 55973, "gop": 174419, "oth": 13287}}};
+
+//var STATE_FIPS = Object.keys(stateData);
+
+
+
+var startCoords = [0,0];
+var startDemVotes = 0;
+var startGopVotes = 0;
+var currentState = {};
+
+for (var i=0;i<51;i++) {
+	document.getElementById('svg-'+electoralData[i]['abbrev']).addEventListener("mousedown", statemousedown);
+}
+
+
+function statemousedown(evt) {
+  var myState = evt.target.id.substring(4,);
+
+	for (var i=0; i<electoralData.length; ++i) {
+		if (electoralData[i]['abbrev'] == myState) {
+	  		currentState = electoralData[i];
+	  		break;
+	  	}
+	}
+  
+  //drawChart(d.key);
+  startCoords[0]= evt.clientX;
+  startCoords[1]= evt.clientY;
+  
+  startDemVotes = (1-currentState.rperc)*currentState['votes16']+0;
+  startGopVotes = currentState.rperc*currentState['votes16']+0;
+  console.log(startDemVotes, startGopVotes);
+  document.addEventListener("mousemove", statemousemove);
+}
+
+function statemousemove(evt) {
+	
+	var currentCoords = [evt.clientX,evt.clientY];
+	if (currentCoords[0]>startCoords[0]) {
+		currentState.rperc= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
+	}
+	else {
+		currentState.rperc= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
+	}
+	
+	var demPercent = Math.floor((1-currentState.rperc) * 20) * 5;
+	demPercent = Math.floor((1-currentState.rperc) * 100) * 5 - 200;
+	if (demPercent < 0){
+		demPercent = 0;
+	}
+	else if (demPercent > 95) {
+		demPercent = 95;
+	}
+
+	electoralData.sort((a, b) => parseFloat(a.rperc) - parseFloat(b.rperc));
+	orderStates();
+	//div.attr('class',"state-boundary dem-" + demPercent + '-state state'+d.key);
+	//d3.selectAll(".state"+d.key).attr('class',"state-boundary dem-" + demPercent + '-state state'+d.key);
+	//updateTotals();
+	
+}
