@@ -38,7 +38,7 @@ EM_JS(void, send_map, (const char* x), {
 			jsStr += "1\n";
 		}
 		else {
-			jsStr += "1\n";
+			jsStr += "0\n";
 		}
 		
 	}
