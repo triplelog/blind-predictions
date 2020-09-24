@@ -352,7 +352,7 @@ function statemousemove(evt) {
 	//else {
 	//	currentState.rpred= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
 	//}
-	var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+	var dprob = 1.0/(1+Math.pow(10.0,newELO/75));
 	
 
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
