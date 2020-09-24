@@ -113,7 +113,7 @@ void makePrediction(int year) {
 				
 				//std::cout << "Biden wins "+states[ii] << "\n";
 				bidenEV += evs[thisstate];
-				stateData[ii]++;
+				stateData[thisstate]++;
 			}
 			else {
 				//elodiff = 700 - elonew[thisstate];
