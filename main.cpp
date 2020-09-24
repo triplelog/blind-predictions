@@ -84,9 +84,11 @@ void makePrediction(int year) {
 	std::map<int,int> evData;
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
+	std::map<int,int> statePairsMI;
 	for (ii=0;ii<51;ii++){
 		stateData[ii]=0;
 		stateMax[ii]=-2000;
+		statePairsMI[ii]=0;
 	}
 	for (i=0;i<1000;i++){
 		std::vector<int> elonew = elo;
@@ -97,7 +99,7 @@ void makePrediction(int year) {
 			while (doneYet.find(thisstate) != doneYet.end()){
 				thisstate = rand() % 51;
 			}
-			doneYet[thisstate]=true;
+			doneYet[thisstate]=false;
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
 			}
@@ -114,6 +116,21 @@ void makePrediction(int year) {
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
+				doneYet[thisstate]=true;
+				if (doneYet.find(22) != doneYet.end()){
+					if (doneYet[22]){
+						statePairsMI[thisstate]++;
+					}
+				}
+				else if (thisstate == 22){
+					for (iii=0;iii<51;iii++){
+						if (doneYet.find(iii) != doneYet.end()){
+							if (doneYet[iii]){
+								statePairsMI[iii]++;
+							}
+						}
+					}
+				}
 			}
 			else {
 				
@@ -138,6 +155,7 @@ void makePrediction(int year) {
 	for (i=0;i<51;i++){
 		string_log(states[i].c_str());
 		console_log(stateData[i]);
+		console_log(statePairsMI[i]);
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
