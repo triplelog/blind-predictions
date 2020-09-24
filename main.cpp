@@ -167,7 +167,7 @@ void makePrediction(int year) {
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
 			for (iii=0;iii<51;iii++){
-				int elodiff = round(eloR*correlations[thisstate][iii]);
+				int elodiff = eloR;//round(eloR*correlations[thisstate][iii]);
 				elonew[iii]=elonew[iii]+elodiff;
 			}
 			auto a2 = std::chrono::high_resolution_clock::now();
