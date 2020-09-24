@@ -74,20 +74,34 @@ for state in statesOrdered:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="D">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
-			line += '<td>'+str(state["2012"])+'</td>'
+			if state["2012"] > .5:
+				line += '<td>+'+str(round(state["2012"]*2000-1000)/10.0)+'</td>'
+			else:
+				line += '<td>-'+str(round(1000-state["2012"]*2000)/10.0)+'</td>'
+			
 		else:
-			line += '<td>'+str(state["2016"])+'</td>'
-		line += '<td>'+str(state["pred"])+'</td>'
+			if state["2016"] > .5:
+				line += '<td>+'+str(round(state["2016"]*2000-1000)/10.0)+'</td>'
+			else:
+				line += '<td>-'+str(round(1000-state["2016"]*2000)/10.0)+'</td>'
+		line += '<td>+'+str(round(state["pred"]*2000-1000)/10.0)+'</td>'
 		line += '<td><input type="text"></input></td>'
 		line += '</tr>'
 	else:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="R">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
-			line += '<td>'+str(1-state["2012"])+'</td>'
+			if state["2012"] < .5:
+				line += '<td>+'+str(round((1-state["2012"])*2000-1000)/10.0)+'</td>'
+			else:
+				line += '<td>-'+str(round(1000-(1-state["2012"])*2000)/10.0)+'</td>'
+			
 		else:
-			line += '<td>'+str(1-state["2016"])+'</td>'
-		line += '<td>'+str(1-state["pred"])+'</td>'
+			if state["2016"] < .5:
+				line += '<td>+'+str(round((1-state["2016"])*2000-1000)/10.0)+'</td>'
+			else:
+				line += '<td>-'+str(round(1000-(1-state["2016"])*2000)/10.0)+'</td>'
+		line += '<td>+'+str(round((1-state["pred"])*2000-1000)/10.0)+'</td>'
 		line += '<td><input type="text"></input></td>'
 		line += '</tr>'
 	file1.writelines([line])
