@@ -50,6 +50,7 @@ std::vector<std::string> states;
 std::vector<int> evs;
 std::vector<double> predictions16;
 std::vector<double> predictions20;
+long long durationRand;
 int seed;
 
 int predictionToElo(double prediction, int counter){
@@ -112,10 +113,13 @@ void makePrediction(int year) {
 		int bidenEV = 0;
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
+			auto a1 = std::chrono::high_resolution_clock::now();
 			int thisstate = rand() % 51;
 			while (doneYet.find(thisstate) != doneYet.end()){
 				thisstate = rand() % 51;
 			}
+			auto a2 = std::chrono::high_resolution_clock::now();
+			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 			doneYet[thisstate]=false;
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
@@ -186,7 +190,7 @@ void makePrediction(int year) {
 					statesOut += "N";
 				}
 			}
-			send_map(statesOut.c_str());
+			//send_map(statesOut.c_str());
 		}
 	}
 	console_log(bidenWins);
@@ -230,8 +234,17 @@ void initialRun(){
 	states = createStates();
 	evs = createEV();
 	seed = 7;
+	durationRand = 0;
+	
+	auto a11 = std::chrono::high_resolution_clock::now();
 	predictions16 = createPredictions16();
+	console_log(durationRand/1000000);
+	durationRand = 0;
 	predictions20 = createPredictions20();
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationRand/1000000);
+	console_log(durationTotal);
 	
 
 }
