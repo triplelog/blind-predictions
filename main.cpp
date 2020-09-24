@@ -137,7 +137,7 @@ void makePrediction(int year) {
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
 		string_log(states[i].c_str());
-		console_log(stateMax[i]);
+		console_log(stateData[i]);
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
