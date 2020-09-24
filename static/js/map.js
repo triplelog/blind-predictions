@@ -65,7 +65,7 @@ function orderStates() {
 		else {
 			newspan.classList.add("dem");
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = 'blue';
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
 		}
 		newspan.id='state-'+electoralData[i]['abbrev'];
