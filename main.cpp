@@ -167,9 +167,12 @@ void makePrediction(int year) {
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
-			for (iii=0;iii<51;iii++){
+			iii = 0;
+			for (std::vector<int>::iterator it = correlationsInt[thisstate].begin() ; it != correlationsInt[thisstate].end(); ++it)
+  
 				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
-				elonew[iii]=elonew[iii]+eloR*1234/1000;
+				elonew[iii]=elonew[iii]+eloR*(*it)/1000;
+				iii++;
 			}
 			auto a2 = std::chrono::high_resolution_clock::now();
 			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
