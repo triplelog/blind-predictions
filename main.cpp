@@ -164,7 +164,10 @@ void makePrediction(int year) {
 			int diff = statePairsMI[i] - stateData[i]*stateData[22]/1000;
 			double stdev = stateData[i]*nullprob*(1-nullprob);
 			double z = diff/stdev;
-			console_log(round(z*1000));
+			int diffmax = stateData[i] - stateData[i]*stateData[22]/1000;
+			double zmax = diffmax/stdev;
+			console_log(round(z*1000/zmax));
+			console_log(round(correlations[22][i]*1000));
 		}
 		
 	}
