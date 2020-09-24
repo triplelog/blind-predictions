@@ -108,18 +108,18 @@ void makePrediction(int year) {
 			rr /= 1000;
 			int elodiff = 0;
 			if (rr < pred){ // Biden wins
-				elodiff = round(7.0*(1-pred)*evs[thisstate]);
+				elodiff = round(5.0*(1-pred)*evs[thisstate]);
 				
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
 			}
 			else {
-				elodiff = round(-7.0*(pred)*evs[thisstate]);
+				elodiff = round(-5.0*(pred)*evs[thisstate]);
 			}
 			
 			for (iii=0;iii<51;iii++){
-				elonew[iii]=elonew[iii]+round(elodiff*pow(correlations[thisstate][iii],.8));
+				elonew[iii]=elonew[iii]+round(elodiff*pow(correlations[thisstate][iii],.5));
 			}
 		}
 		if (bidenEV >= 270){
