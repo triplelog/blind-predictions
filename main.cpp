@@ -171,6 +171,10 @@ void makePrediction(int year) {
 			for (std::vector<int>::iterator it = correlationsInt[thisstate].begin() ; it != correlationsInt[thisstate].end(); ++it){
   
 				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
+				if (doneYet.find(iii) != doneYet.end()){
+					iii++;
+					continue;
+				}
 				elonew[iii]=elonew[iii]+eloR*(*it)/1000;
 				iii++;
 			}
