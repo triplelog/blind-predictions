@@ -109,7 +109,7 @@ void makePrediction(int year) {
 			//convert rr to vote percentage
 			int eloR = predictionToElo(rr);
 			
-			int elodiff = eloR / 7;
+			int elodiff = round(eloR*pow(correlations[thisstate][iii],1)/10);
 			if (elonew[thisstate]+eloR > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
@@ -120,7 +120,7 @@ void makePrediction(int year) {
 			}
 			
 			for (iii=0;iii<51;iii++){
-				elonew[iii]=elonew[iii]+round(elodiff*pow(correlations[thisstate][iii],1));
+				elonew[iii]=elonew[iii]+elodiff;
 			}
 		}
 		if (bidenEV >= 270){
