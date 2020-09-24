@@ -66,10 +66,10 @@ for line in lines:
 		continue
 	lineSplit = line.strip().split(",")
 	pred = float(lineSplit[4])
-	if pred > .99:
-		pred = .99
-	elif pred < .01:
-		pred = .01
+	if pred > .999:
+		pred = .999
+	elif pred < .001:
+		pred = .001
 	#print(lineSplit[3],pred)
 	line2 = 'predictions.push_back('+str(pred)+');\n'
 	file1.writelines([line2])
@@ -89,10 +89,10 @@ for line in lines:
 		continue
 	lineSplit = line.strip().split(",")
 	pred = float(lineSplit[7])
-	if pred > .99:
-		pred = .99
-	elif pred < .01:
-		pred = .01
+	if pred > .999:
+		pred = .999
+	elif pred < .001:
+		pred = .001
 	#print(lineSplit[3],pred)
 	line2 = 'predictions.push_back('+str(pred)+');\n'
 	file1.writelines([line2])
