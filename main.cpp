@@ -176,7 +176,7 @@ void makePrediction(int year) {
 			evData[bidenEV]++;
 		}
 		
-		if (bidenEV == 320){
+		if (bidenEV == 367){
 			std::string statesOut = "";
 			for (iii=0;iii<51;iii++){
 				if (doneYet[iii]){
@@ -186,13 +186,13 @@ void makePrediction(int year) {
 					statesOut += "N";
 				}
 			}
-			//send_map(statesOut.c_str());
+			send_map(statesOut.c_str());
 		}
 	}
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
 		if (stateData[i] > 100 && stateData[i] < 900){
-			string_log(states[i].c_str());
+			//string_log(states[i].c_str());
 			//console_log(stateData[i]);
 			//console_log(statePairsMI[i]);
 			//console_log(stateData[i]*stateData[22]/1000);
@@ -203,16 +203,16 @@ void makePrediction(int year) {
 			double z = diff/stdev;
 			int diffmax = stateData[i] - stateData[i]*stateData[22]/1000;
 			double zmax = diffmax/stdev;
-			console_log(round(z*1000/zmax));
-			console_log(round(correlations[22][i]*1000));
+			//console_log(round(z*1000/zmax));
+			//console_log(round(correlations[22][i]*1000));
 		}
 		
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
-			console_log(i);
-			console_log(evData[i]);
+			//console_log(i);
+			//console_log(evData[i]);
 		}
 	}
 }
@@ -224,7 +224,7 @@ void initialRun(){
 	int i; int ii;
 	for (i=0;i<51;i++){
 		for (ii=0;ii<51;ii++){
-			correlations[i][ii] = pow(correlations[i][ii],5)*2;
+			correlations[i][ii] = pow(correlations[i][ii],5)*2.2;
 		}
 	}
 	states = createStates();
