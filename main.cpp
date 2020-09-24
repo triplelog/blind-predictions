@@ -138,7 +138,7 @@ void makePrediction(int year) {
 			}
 			
 			for (iii=0;iii<51;iii++){
-				int elodiff = round(eloR*pow(correlations[thisstate][iii],10)*pow(.5+correlations[thisstate][iii]/2,6)*pow(.67+correlations[thisstate][iii]/3,4)*pow(.75+correlations[thisstate][iii]/4,2)*5);
+				int elodiff = round(eloR*correlations[thisstate][iii]);
 				elonew[iii]=elonew[iii]+elodiff;
 			}
 		}
@@ -184,6 +184,12 @@ void makePrediction(int year) {
 
 void initialRun(){
 	correlations = createCorrelations();
+	int i; int ii;
+	for (i=0;i<51;i++){
+		for (ii=0;ii<51;ii++){
+			correlations[i][ii] = pow(correlations[i][ii],10)*pow(.5+correlations[i][ii]/2,6)*pow(.67+correlations[i][ii]/3,4)*pow(.75+correlations[i][ii]/4,2)*5;
+		}
+	}
 	states = createStates();
 	evs = createEV();
 	seed = 7;
