@@ -105,7 +105,7 @@ void makePrediction(int year) {
 			int eloNum = 1;
 			int eloDen = 20;
 			if (rr < pred){ // Biden wins
-				elodiff = 2300 - elonew[thisstate];
+				//elodiff = 2300 - elonew[thisstate];
 				elodiff *= eloNum;
 				elodiff /= eloDen;
 				//int pt = round((1-pred)*1000/pred);
@@ -116,7 +116,7 @@ void makePrediction(int year) {
 				stateData[ii]++;
 			}
 			else {
-				elodiff = 700 - elonew[thisstate];
+				//elodiff = 700 - elonew[thisstate];
 				elodiff *= eloNum;
 				elodiff /= eloDen;
 				//std::cout << "Biden loses "+states[ii] << "\n";
