@@ -43,7 +43,7 @@ int predictionToElo(double prediction){
 }
 double predictionFromElo(int elo){
 	double e = 1500-elo;
-	return 1/(1+pow(10,e/400));
+	return 1.0/(1+pow(10.0,e/400));
 	
 }
 
@@ -120,9 +120,9 @@ void makePrediction(int year) {
 				elodiff *= eloNum;
 				elodiff /= eloDen;
 			}
-			elodiff = 0;
+			
 			for (iii=0;iii<51;iii++){
-				elonew[iii]=elonew[iii]+elodiff*correlations[thisstate][iii];
+				elonew[iii]=elonew[iii]+round(elodiff*correlations[thisstate][iii]*correlations[thisstate][iii]);
 			}
 		}
 		if (bidenEV >= 270){
