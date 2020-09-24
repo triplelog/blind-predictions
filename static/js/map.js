@@ -42,8 +42,9 @@ function orderStates() {
 		totalEV += parseInt(electoralData[i]['ev10']);
 		totalHV += parseInt(electoralData[i]['ev10'])-2;
 		
-		var presyear = electoralData[i]['rperc']*demoMult;
-		
+		var presyear = electoralData[i]['rpred']*demoMult;
+		var elo = (presyear-.5)*2000;
+		var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 		
 		repVote += parseInt(electoralData[i]['votes16'])*(presyear);
 		demVote += parseInt(electoralData[i]['votes16'])*(1-(presyear));
@@ -53,7 +54,7 @@ function orderStates() {
 		newspan.classList.add("stateface");
 		newspan.classList.add("stateface-replace");
 		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
-		if (presyear>=.5) {
+		if (dprob<.5) {
 			newspan.classList.add("rep"); 
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = 'red';
@@ -253,53 +254,53 @@ function reorderED(state1,state2) {
 	var state2idx = -1;
 	var pres1 = -1;
 	var pres2 = -1;
-	electoralData.sort((a, b) => parseFloat(a.rperc) - parseFloat(b.rperc));
+	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	for (var i=0;i<electoralData.length;i++){
 		if ('state-'+electoralData[i]['abbrev']==state1){
 			state1idx = i;
-			pres1 = electoralData[i]['rperc'];
+			pres1 = electoralData[i]['rpred'];
 		}
 		if ('state-'+electoralData[i]['abbrev']==state2){
 			state2idx = i;
-			pres2 = electoralData[i]['rperc'];
+			pres2 = electoralData[i]['rpred'];
 		}
 	}
 	if (state1idx> -1 && state2idx>-1){
 		
 		if (pres1 < pres2) {
 			for (var i=state1idx+1;i<state2idx+1;i++) {
-				let rVotes = electoralData[i]['rperc']*electoralData[i]['votes16']+electoralData[state1idx]['rperc']*electoralData[state1idx]['votes16'];
+				let rVotes = electoralData[i]['rpred']*electoralData[i]['votes16']+electoralData[state1idx]['rpred']*electoralData[state1idx]['votes16'];
 				if (electoralData[i]['votes16'] < electoralData[state1idx]['votes16']) {
-					let x = (rVotes - electoralData[i]['votes16']*electoralData[state1idx]['rperc'])/electoralData[state1idx]['votes16'];
-					electoralData[i]['rperc']=electoralData[state1idx]['rperc'];
-					electoralData[state1idx]['rperc']=x;
+					let x = (rVotes - electoralData[i]['votes16']*electoralData[state1idx]['rpred'])/electoralData[state1idx]['votes16'];
+					electoralData[i]['rpred']=electoralData[state1idx]['rpred'];
+					electoralData[state1idx]['rpred']=x;
 				}
 				else {
-					let x = (rVotes - electoralData[state1idx]['votes16']*electoralData[i]['rperc'])/electoralData[i]['votes16'];
-					electoralData[state1idx]['rperc']=electoralData[i]['rperc'];
-					electoralData[i]['rperc']=x;
+					let x = (rVotes - electoralData[state1idx]['votes16']*electoralData[i]['rpred'])/electoralData[i]['votes16'];
+					electoralData[state1idx]['rpred']=electoralData[i]['rpred'];
+					electoralData[i]['rpred']=x;
 				}
 				
-				console.log(electoralData[state1idx]['abbrev'],electoralData[state1idx]['rperc'],electoralData[state2idx]['abbrev'],electoralData[state2idx]['rperc']);
+				console.log(electoralData[state1idx]['abbrev'],electoralData[state1idx]['rpred'],electoralData[state2idx]['abbrev'],electoralData[state2idx]['rpred']);
 			}
 		}
 		else if (pres1 > pres2) {
 			for (var i=state2idx+1;i<state1idx+1;i++) {
-				let rVotes = electoralData[i]['rperc']*electoralData[i]['votes16']+electoralData[state2idx]['rperc']*electoralData[state2idx]['votes16'];
+				let rVotes = electoralData[i]['rpred']*electoralData[i]['votes16']+electoralData[state2idx]['rpred']*electoralData[state2idx]['votes16'];
 				if (electoralData[i]['votes16'] < electoralData[state2idx]['votes16']) {
-					let x = (rVotes - electoralData[i]['votes16']*electoralData[state2idx]['rperc'])/electoralData[state2idx]['votes16'];
-					electoralData[i]['rperc']=electoralData[state2idx]['rperc'];
-					electoralData[state2idx]['rperc']=x;
+					let x = (rVotes - electoralData[i]['votes16']*electoralData[state2idx]['rpred'])/electoralData[state2idx]['votes16'];
+					electoralData[i]['rpred']=electoralData[state2idx]['rpred'];
+					electoralData[state2idx]['rpred']=x;
 				}
 				else {
-					let x = (rVotes - electoralData[state2idx]['votes16']*electoralData[i]['rperc'])/electoralData[i]['votes16'];
-					electoralData[state2idx]['rperc']=electoralData[i]['rperc'];
-					electoralData[i]['rperc']=x;
+					let x = (rVotes - electoralData[state2idx]['votes16']*electoralData[i]['rpred'])/electoralData[i]['votes16'];
+					electoralData[state2idx]['rpred']=electoralData[i]['rpred'];
+					electoralData[i]['rpred']=x;
 				}
-				console.log(electoralData[state1idx]['abbrev'],electoralData[state1idx]['rperc'],electoralData[state2idx]['abbrev'],electoralData[state2idx]['rperc']);
+				console.log(electoralData[state1idx]['abbrev'],electoralData[state1idx]['rpred'],electoralData[state2idx]['abbrev'],electoralData[state2idx]['rpred']);
 			}
 		}
-		electoralData.sort((a, b) => parseFloat(a.rperc) - parseFloat(b.rperc));
+		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 		orderStates();
 	}
 }
@@ -334,8 +335,8 @@ function statemousedown(evt) {
   startCoords[0]= evt.clientX;
   startCoords[1]= evt.clientY;
   
-  startDemVotes = (1-currentState.rperc)*currentState['votes16']+0;
-  startGopVotes = currentState.rperc*currentState['votes16']+0;
+  startDemVotes = (1-currentState.rpred)*currentState['votes16']+0;
+  startGopVotes = currentState.rpred*currentState['votes16']+0;
   console.log(startDemVotes, startGopVotes);
   document.addEventListener("mousemove", statemousemove);
 }
@@ -344,14 +345,14 @@ function statemousemove(evt) {
 	
 	var currentCoords = [evt.clientX,evt.clientY];
 	if (currentCoords[0]>startCoords[0]) {
-		currentState.rperc= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
+		currentState.rpred= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
 	}
 	else {
-		currentState.rperc= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
+		currentState.rpred= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
 	}
 	
-	var demPercent = Math.floor((1-currentState.rperc) * 20) * 5;
-	demPercent = Math.floor((1-currentState.rperc) * 100) * 5 - 200;
+	var demPercent = Math.floor((1-currentState.rpred) * 20) * 5;
+	demPercent = Math.floor((1-currentState.rpred) * 100) * 5 - 200;
 	if (demPercent < 0){
 		demPercent = 0;
 	}
@@ -359,7 +360,7 @@ function statemousemove(evt) {
 		demPercent = 95;
 	}
 
-	electoralData.sort((a, b) => parseFloat(a.rperc) - parseFloat(b.rperc));
+	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	orderStates();
 	//div.attr('class',"state-boundary dem-" + demPercent + '-state state'+d.key);
 	//d3.selectAll(".state"+d.key).attr('class',"state-boundary dem-" + demPercent + '-state state'+d.key);
