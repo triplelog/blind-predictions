@@ -108,14 +108,14 @@ void makePrediction(int year) {
 			rr /= 1000;
 			int elodiff = 0;
 			if (rr < pred){ // Biden wins
-				elodiff = round(100.0*(1-pred));
+				elodiff = round(200.0*(1-pred));
 				
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
 			}
 			else {
-				elodiff = round(100.0*(pred));
+				elodiff = round(200.0*(pred));
 			}
 			
 			for (iii=0;iii<51;iii++){
