@@ -157,6 +157,7 @@ void makePrediction(int year) {
 		string_log(states[i].c_str());
 		console_log(stateData[i]);
 		console_log(statePairsMI[i]);
+		console_log(stateData[i]*stateData[22]/1000);
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
