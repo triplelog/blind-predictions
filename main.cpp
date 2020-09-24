@@ -138,7 +138,7 @@ void makePrediction(int year) {
 			}
 			
 			for (iii=0;iii<51;iii++){
-				int elodiff = round(eloR*pow(correlations[thisstate][iii],10)*1);
+				int elodiff = round(eloR*pow(correlations[thisstate][iii],5)*1);
 				elonew[iii]=elonew[iii]+elodiff;
 			}
 		}
