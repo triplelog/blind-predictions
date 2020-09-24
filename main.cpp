@@ -34,7 +34,13 @@ EM_JS(void, send_map, (const char* x), {
 	var jsStr = "";
 	for (var i=0;i<51;i++){
 		statesOut.push(statesStr[i]);
-		jsStr += "\n";
+		if (statesStr[i] == "Y"){
+			jsStr += "1\n";
+		}
+		else {
+			jsStr += "1\n";
+		}
+		
 	}
   	console.log(jsStr);
 });
