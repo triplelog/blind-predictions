@@ -109,14 +109,14 @@ void makePrediction(int year) {
 				//elodiff *= eloNum;
 				//elodiff /= eloDen;
 				int pt = round((1-pred)*1000/pred);
-				//elodiff = (elonew[thisstate] - 700)*eloNum/eloDen*pt/1000;
+				elodiff = (elonew[thisstate] - 700)*eloNum/eloDen*pt/1000;
 				
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
 			}
 			else {
-				//elodiff = 700 - elonew[thisstate];
+				elodiff = 700 - elonew[thisstate];
 				elodiff *= eloNum;
 				elodiff /= eloDen;
 			}
