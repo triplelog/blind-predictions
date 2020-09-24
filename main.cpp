@@ -34,12 +34,7 @@ EM_JS(void, send_map, (const char* x), {
 	var jsStr = "";
 	for (var i=0;i<51;i++){
 		statesOut.push(statesStr[i]);
-		if (statesStr[i] == "Y"){
-			jsStr += "1\n";
-		}
-		else {
-			jsStr += "0\n";
-		}
+		jsStr += statesStr[i]+"\n";
 		
 	}
   	console.log(jsStr);
@@ -104,11 +99,21 @@ void makePrediction(int year) {
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
 	std::map<int,int> statePairsMI;
+	std::string statesOut = "";
 	for (ii=0;ii<51;ii++){
 		stateData[ii]=0;
 		stateMax[ii]=-2000;
 		statePairsMI[ii]=0;
+		int x = round(elo[ii]*1.0/9)+5;
+		if (x < 1){
+			x = 1;
+		}
+		if (x > 9){
+			x = 9;
+		}
+		statesOut += std::to_string(x);
 	}
+	send_map(statesOut.c_str());
 	for (i=0;i<1000;i++){
 		std::vector<int> elonew = elo;
 		int bidenEV = 0;
@@ -164,10 +169,7 @@ void makePrediction(int year) {
 					iii++; continue;
 				}
 				int c = correlationsInt[thisstate][iii];
-				if (eloR >= 10 || c >= 10 ){
-					elonew[iii]+=eloR*c/100;
-				}
-				else if (eloR <= -10 || c <= -10 ){
+				if (eloR <= -10 || eloR >= 10 || c >= 10 ){
 					elonew[iii]+=eloR*c/100;
 				}
 				iii++;
@@ -185,18 +187,7 @@ void makePrediction(int year) {
 			evData[bidenEV]++;
 		}
 		
-		/*if (bidenEV == 367){
-			std::string statesOut = "";
-			for (iii=0;iii<51;iii++){
-				if (doneYet[iii]){
-					statesOut += "Y";
-				}
-				else {
-					statesOut += "N";
-				}
-			}
-			//send_map(statesOut.c_str());
-		}*/
+		
 	}
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
