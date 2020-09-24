@@ -142,6 +142,8 @@ void makePrediction(int year) {
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
+			console_log(i);
+			console_log(evData[i]);
 		}
 	}
 }
