@@ -194,7 +194,7 @@ void initialRun(){
 	int i; int ii;
 	for (i=0;i<51;i++){
 		for (ii=0;ii<51;ii++){
-			correlations[i][ii] = .02+1.0/(1.1-correlations[i][ii]);
+			correlations[i][ii] = .02+.4/(1.01-correlations[i][ii]);
 		}
 	}
 	states = createStates();
