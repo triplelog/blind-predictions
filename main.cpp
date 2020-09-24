@@ -113,13 +113,13 @@ void makePrediction(int year) {
 		int bidenEV = 0;
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
-			auto a1 = std::chrono::high_resolution_clock::now();
+			//auto a1 = std::chrono::high_resolution_clock::now();
 			int thisstate = rand() % 51;
 			while (doneYet.find(thisstate) != doneYet.end()){
 				thisstate = rand() % 51;
 			}
-			auto a2 = std::chrono::high_resolution_clock::now();
-			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
+			//auto a2 = std::chrono::high_resolution_clock::now();
+			//durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 			doneYet[thisstate]=false;
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
@@ -165,10 +165,13 @@ void makePrediction(int year) {
 				eloR = round(pow(eloR,.8-ii/150));
 			}
 			
+			auto a1 = std::chrono::high_resolution_clock::now();
 			for (iii=0;iii<51;iii++){
 				int elodiff = round(eloR*correlations[thisstate][iii]);
 				elonew[iii]=elonew[iii]+elodiff;
 			}
+			auto a2 = std::chrono::high_resolution_clock::now();
+			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 		}
 		if (bidenEV >= 270){
 			bidenWins++;
