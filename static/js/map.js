@@ -314,8 +314,7 @@ function reorderED(state1,state2) {
 
 
 var startCoords = [0,0];
-var startDemVotes = 0;
-var startGopVotes = 0;
+var startELO = 0;
 var currentState = {};
 
 for (var i=0;i<51;i++) {
@@ -337,35 +336,26 @@ function statemousedown(evt) {
   startCoords[0]= evt.clientX;
   startCoords[1]= evt.clientY;
   
-  startDemVotes = (1-currentState.rpred)*currentState['votes16']+0;
-  startGopVotes = currentState.rpred*currentState['votes16']+0;
-  console.log(startDemVotes, startGopVotes);
+  startELO = (currentState.rpred-.5)*2000;
+  console.log(startELO);
   document.addEventListener("mousemove", statemousemove);
 }
 
 function statemousemove(evt) {
 	
 	var currentCoords = [evt.clientX,evt.clientY];
-	if (currentCoords[0]>startCoords[0]) {
-		currentState.rpred= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
-	}
-	else {
-		currentState.rpred= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
-	}
+	var newELO = startELO+currentCoords[0]-startCoords[0];
+	currentState.rpred=newELO/2000+.5;
+	//if (currentCoords[0]>startCoords[0]) {/
+		//currentState.rpred= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
+	//}
+	//else {
+	//	currentState.rpred= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
+	//}
+	var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 	
-	var demPercent = Math.floor((1-currentState.rpred) * 20) * 5;
-	demPercent = Math.floor((1-currentState.rpred) * 100) * 5 - 200;
-	if (demPercent < 0){
-		demPercent = 0;
-	}
-	else if (demPercent > 95) {
-		demPercent = 95;
-	}
 
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	orderStates();
-	//div.attr('class',"state-boundary dem-" + demPercent + '-state state'+d.key);
-	//d3.selectAll(".state"+d.key).attr('class',"state-boundary dem-" + demPercent + '-state state'+d.key);
-	//updateTotals();
 	
 }
