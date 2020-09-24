@@ -187,7 +187,7 @@ void initialRun(){
 	int i; int ii;
 	for (i=0;i<51;i++){
 		for (ii=0;ii<51;ii++){
-			correlations[i][ii] = pow(correlations[i][ii],10)*pow(.5+correlations[i][ii]/2,6)*pow(.67+correlations[i][ii]/3,4)*pow(.75+correlations[i][ii]/4,2)*5;
+			correlations[i][ii] = .1+pow(correlations[i][ii],10)*pow(.5+correlations[i][ii]/2,6)*pow(.67+correlations[i][ii]/3,4)*pow(.75+correlations[i][ii]/4,2)*5;
 		}
 	}
 	states = createStates();
