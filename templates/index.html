@@ -68,7 +68,11 @@ function predictNow(){
 		if (rows[i].querySelector('input').value != ""){
 			var state = rows[i].getAttribute('data-id');
 			var year = rows[i].getAttribute('data-year');
+			var party = rows[i].getAttribute('data-party');
 			var prob = parseFloat(rows[i].querySelector('input').value);
+			if (party == "R"){
+				prob = 1-parseFloat(rows[i].querySelector('input').value);
+			}
 			myWorker.postMessage(["update",state,prob,year]);
 		}
 		

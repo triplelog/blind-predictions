@@ -70,15 +70,26 @@ for state in states20.keys():
 	i+=1	
 
 for state in statesOrdered:
-	line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'">'
-	#line += '<td>'+state["name"]+'</td>'
-	if state["year"] == 2016:
-		line += '<td>'+str(state["2012"])+'</td>'
+	if state["pred"]>.5:
+		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="D">'
+		#line += '<td>'+state["name"]+'</td>'
+		if state["year"] == 2016:
+			line += '<td>'+str(state["2012"])+'</td>'
+		else:
+			line += '<td>'+str(state["2016"])+'</td>'
+		line += '<td>'+str(state["pred"])+'</td>'
+		line += '<td><input type="text"></input></td>'
+		line += '</tr>'
 	else:
-		line += '<td>'+str(state["2016"])+'</td>'
-	line += '<td>'+str(state["pred"])+'</td>'
-	line += '<td><input type="text"></input></td>'
-	line += '</tr>'
+		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="R">'
+		#line += '<td>'+state["name"]+'</td>'
+		if state["year"] == 2016:
+			line += '<td>'+str(1-state["2012"])+'</td>'
+		else:
+			line += '<td>'+str(1-state["2016"])+'</td>'
+		line += '<td>'+str(1-state["pred"])+'</td>'
+		line += '<td><input type="text"></input></td>'
+		line += '</tr>'
 	file1.writelines([line])
 
 file1.writelines(end)
