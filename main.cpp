@@ -31,10 +31,12 @@ EM_JS(void, string_log, (const char* x), {
 EM_JS(void, send_map, (const char* x), {
 	var statesOut = [];
 	var statesStr = UTF8ToString(x);
+	var jsStr = "";
 	for (var i=0;i<51;i++){
-		statesOut.push(statesStr[i])
+		statesOut.push(statesStr[i]);
+		jsStr += "\n";
 	}
-  	console.log(statesOut);
+  	console.log(jsStr);
 });
 
 std::map<int,std::vector<double> > correlations;
@@ -54,6 +56,8 @@ double predictionFromElo(int elo){
 	return 1.0/(1+pow(10.0,e/75));
 	
 }
+
+
 
 extern "C" {
 
