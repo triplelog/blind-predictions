@@ -109,7 +109,7 @@ void makePrediction(int year) {
 			//convert rr to vote percentage
 			int eloR = predictionToElo(rr);
 			
-			int elodiff = eloR / 15;
+			int elodiff = eloR;
 			if (elonew[thisstate]+eloR > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
