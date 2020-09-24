@@ -55,7 +55,9 @@ function orderStates() {
 		newspan.classList.add("stateface-replace");
 		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
 		if (dprob<.5) {
-			newspan.classList.add("rep"); 
+			newspan.classList.add("rep");
+			
+			newspan.style.backgroundColor = "hsl(0,50,"+(dprob*100)+")";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = 'red';
 			}
