@@ -224,7 +224,7 @@ void initialRun(){
 	int i; int ii;
 	for (i=0;i<51;i++){
 		for (ii=0;ii<51;ii++){
-			correlations[i][ii] = pow(correlations[i][ii],4)*2;
+			correlations[i][ii] = pow(correlations[i][ii],4)*5;
 		}
 	}
 	states = createStates();
