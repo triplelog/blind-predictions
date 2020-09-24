@@ -57,9 +57,9 @@ function orderStates() {
 		if (dprob<.5) {
 			newspan.classList.add("rep");
 			
-			newspan.style.background = "hsl(0,50,"+(dprob*100)+")";
+			//newspan.style.background = "hsl(0,50,"+(dprob*100)+")";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = 'red';
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "hsl(0,50,"+(dprob*100)+")";
 			}
 		}
 		else {
