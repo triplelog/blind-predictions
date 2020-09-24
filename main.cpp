@@ -117,18 +117,19 @@ void makePrediction(int year) {
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
 				doneYet[thisstate]=true;
-				if (doneYet.find(22) != doneYet.end()){
-					if (doneYet[22]){
-						statePairsMI[thisstate]++;
-					}
-				}
-				else if (thisstate == 22){
+				
+				if (thisstate == 22){
 					for (iii=0;iii<51;iii++){
 						if (doneYet.find(iii) != doneYet.end()){
 							if (doneYet[iii]){
 								statePairsMI[iii]++;
 							}
 						}
+					}
+				}
+				else if (doneYet.find(22) != doneYet.end()){
+					if (doneYet[22]){
+						statePairsMI[thisstate]++;
 					}
 				}
 			}
