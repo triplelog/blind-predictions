@@ -25,6 +25,9 @@
 EM_JS(void, console_log, (int x), {
   console.log(x);
 });
+EM_JS(void, string_log, (const char* x), {
+  console.log(UTF8ToString(x));
+});
 
 std::map<int,std::vector<double> > correlations;
 std::vector<std::string> states;
@@ -79,6 +82,10 @@ void makePrediction(int year) {
 	//predict one state at a time
 	int bidenWins = 0;
 	std::map<int,int> evData;
+	std::map<int,int> stateData;
+	for (ii=0;ii<51;ii++){
+		stateData[ii]=0;
+	}
 	for (i=0;i<1000;i++){
 		std::vector<int> elonew = elo;
 		int bidenEV = 0;
@@ -105,6 +112,7 @@ void makePrediction(int year) {
 				elodiff = (elonew[thisstate] - 700)*eloNum/eloDen*pt/1000;
 				//std::cout << "Biden wins "+states[ii] << "\n";
 				bidenEV += evs[thisstate];
+				stateData[ii]++;
 			}
 			else {
 				elodiff = 700 - elonew[thisstate];
@@ -127,6 +135,10 @@ void makePrediction(int year) {
 		}
 	}
 	console_log(bidenWins);
+	for (i=0;i<51;i++){
+		string_log(states[i].c_str());
+		console_log(stateData[i]);
+	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
