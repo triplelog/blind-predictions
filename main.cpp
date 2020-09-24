@@ -155,8 +155,8 @@ void makePrediction(int year) {
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
 		if (stateData[i] > 100 && stateData[i] < 900){
-			string_log(states[i].c_str());
-			console_log(stateData[i]);
+			//string_log(states[i].c_str());
+			//console_log(stateData[i]);
 			//console_log(statePairsMI[i]);
 			//console_log(stateData[i]*stateData[22]/1000);
 			double nullprob = stateData[22];
@@ -166,16 +166,16 @@ void makePrediction(int year) {
 			double z = diff/stdev;
 			int diffmax = stateData[i] - stateData[i]*stateData[22]/1000;
 			double zmax = diffmax/stdev;
-			console_log(round(z*1000/zmax));
-			console_log(round(correlations[22][i]*1000));
+			//console_log(round(z*1000/zmax));
+			//console_log(round(correlations[22][i]*1000));
 		}
 		
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
-			//console_log(i);
-			//console_log(evData[i]);
+			console_log(i);
+			console_log(evData[i]);
 		}
 	}
 }
