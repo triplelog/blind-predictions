@@ -315,6 +315,7 @@ function reorderED(state1,state2) {
 
 var startCoords = [0,0];
 var startELO = 0;
+var oldPercent = 0;
 var currentState = {};
 
 for (var i=0;i<51;i++) {
@@ -337,7 +338,7 @@ function statemousedown(evt) {
   startCoords[1]= evt.clientY;
   
   startELO = (currentState.rpred-.5)*2000;
-  console.log(startELO);
+  oldPercent = currentState.rpred;
   document.addEventListener("mousemove", statemousemove);
 }
 
@@ -346,16 +347,11 @@ function statemousemove(evt) {
 	var currentCoords = [evt.clientX,evt.clientY];
 	var newELO = startELO+(currentCoords[0]-startCoords[0])*2;
 	currentState.rpred=newELO/2000+.5;
-	//if (currentCoords[0]>startCoords[0]) {/
-		//currentState.rpred= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
-	//}
-	//else {
-	//	currentState.rpred= 1-Math.round((100-currentCoords[0]+startCoords[0])*startDemVotes/100)/currentState['votes16'];
-	//}
-	var dprob = 1.0/(1+Math.pow(10.0,newELO/75));
-	
+	if (oldPercent -currentState.rpred>.02){
+		oldPercent = currentState.rpred;
+		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
+		orderStates();
+	}
 
-	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
-	orderStates();
 	
 }
