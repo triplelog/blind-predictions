@@ -83,8 +83,10 @@ void makePrediction(int year) {
 	int bidenWins = 0;
 	std::map<int,int> evData;
 	std::map<int,int> stateData;
+	std::map<int,int> stateMax;
 	for (ii=0;ii<51;ii++){
 		stateData[ii]=0;
+		stateMax[ii]=0;
 	}
 	for (i=0;i<1000;i++){
 		std::vector<int> elonew = elo;
@@ -96,29 +98,24 @@ void makePrediction(int year) {
 				thisstate = rand() % 51;
 			}
 			doneYet[thisstate]=true;
+			if (elonew[thisstate]>stateMax[thisstate]){
+				stateMax[thisstate]=elonew[thisstate];
+			}
 			double pred = predictionFromElo(elonew[thisstate]);
 			//std::cout << "Biden prob for "+states[ii] + " is " << pred << " not " << predictionFromElo(elo[ii]) << "\n";
 			int r = rand() % 1000;
 			double rr = r;
 			rr /= 1000;
 			int elodiff = 0;
-			int eloNum = 1;
-			int eloDen = 10;
 			if (rr < pred){ // Biden wins
-				//elodiff = 2300 - elonew[thisstate];
-				//elodiff *= eloNum;
-				//elodiff /= eloDen;
-				int pt = round((1-pred)*1000/pred);
-				elodiff = (elonew[thisstate] - 700)*eloNum/eloDen*pt/1000;
+				elodiff = round(100.0*(1-pred));
 				
 				
 				bidenEV += evs[thisstate];
 				stateData[thisstate]++;
 			}
 			else {
-				elodiff = 700 - elonew[thisstate];
-				elodiff *= eloNum;
-				elodiff /= eloDen;
+				elodiff = round(100.0*(pred));
 			}
 			
 			for (iii=0;iii<51;iii++){
@@ -137,8 +134,8 @@ void makePrediction(int year) {
 	}
 	console_log(bidenWins);
 	for (i=0;i<51;i++){
-		//string_log(states[i].c_str());
-		//console_log(stateData[i]);
+		string_log(states[i].c_str());
+		console_log(stateMax[i]);
 	}
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
