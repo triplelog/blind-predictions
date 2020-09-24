@@ -344,7 +344,7 @@ function statemousedown(evt) {
 function statemousemove(evt) {
 	
 	var currentCoords = [evt.clientX,evt.clientY];
-	var newELO = startELO+currentCoords[0]-startCoords[0];
+	var newELO = startELO+(currentCoords[0]-startCoords[0])*5;
 	currentState.rpred=newELO/2000+.5;
 	//if (currentCoords[0]>startCoords[0]) {/
 		//currentState.rpred= Math.round((100+Math.pow(currentCoords[0]-startCoords[0],1.1))*startGopVotes/100)/currentState['votes16'];
