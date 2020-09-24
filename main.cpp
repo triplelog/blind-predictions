@@ -155,10 +155,10 @@ void makePrediction(int year) {
 			}
 			
 			if (eloR < 0){
-				eloR = -1*round(pow(-1*eloR,.5));
+				eloR = -1*round(pow(-1*eloR,.9-ii/100));
 			}
 			else {
-				eloR = round(pow(eloR,.5));
+				eloR = round(pow(eloR,.9-ii/100));
 			}
 			
 			for (iii=0;iii<51;iii++){
