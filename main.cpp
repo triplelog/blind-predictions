@@ -155,10 +155,10 @@ void makePrediction(int year) {
 			}
 			
 			if (eloR < 0){
-				eloR = -1*round(pow(-1*eloR,.9-ii/100));
+				eloR = -1*round(pow(-1*eloR,.8-ii/150));
 			}
 			else {
-				eloR = round(pow(eloR,.9-ii/100));
+				eloR = round(pow(eloR,.8-ii/150));
 			}
 			
 			for (iii=0;iii<51;iii++){
@@ -224,7 +224,7 @@ void initialRun(){
 	int i; int ii;
 	for (i=0;i<51;i++){
 		for (ii=0;ii<51;ii++){
-			correlations[i][ii] = pow(correlations[i][ii],5);
+			correlations[i][ii] = pow(correlations[i][ii],5)*1.5;
 		}
 	}
 	states = createStates();
