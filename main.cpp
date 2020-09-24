@@ -46,6 +46,7 @@ EM_JS(void, send_map, (const char* x), {
 });
 
 std::map<int,std::vector<double> > correlations;
+std::map<int,std::vector<int> > correlationsInt;
 std::vector<std::string> states;
 std::vector<int> evs;
 std::vector<double> predictions16;
@@ -167,10 +168,8 @@ void makePrediction(int year) {
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
 			for (iii=0;iii<51;iii++){
-				if (doneYet.find(iii) == doneYet.end()){
-					int elodiff = round(eloR*correlations[thisstate][iii]);
-					elonew[iii]=elonew[iii]+elodiff;
-				}
+				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
+				elonew[iii]=elonew[iii]+eloR*correlationsInt[thisstate][iii]/1000;
 			}
 			auto a2 = std::chrono::high_resolution_clock::now();
 			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
@@ -232,8 +231,11 @@ void initialRun(){
 	correlations = createCorrelations();
 	int i; int ii;
 	for (i=0;i<51;i++){
+		std::vector<int> v;
+		v.resize(51);
+		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlations[i][ii] = pow(correlations[i][ii],5)*2.2;
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],5)*2200);
 		}
 	}
 	states = createStates();
