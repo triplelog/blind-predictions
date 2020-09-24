@@ -120,6 +120,7 @@ void makePrediction(int year) {
 				elodiff *= eloNum;
 				elodiff /= eloDen;
 			}
+			elodiff = 0;
 			for (iii=0;iii<51;iii++){
 				elonew[iii]=elonew[iii]+elodiff*correlations[thisstate][iii];
 			}
