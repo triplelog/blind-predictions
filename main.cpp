@@ -86,7 +86,7 @@ void makePrediction(int year) {
 	std::map<int,int> stateMax;
 	for (ii=0;ii<51;ii++){
 		stateData[ii]=0;
-		stateMax[ii]=0;
+		stateMax[ii]=-2000;
 	}
 	for (i=0;i<1000;i++){
 		std::vector<int> elonew = elo;
@@ -109,7 +109,7 @@ void makePrediction(int year) {
 			//convert rr to vote percentage
 			int eloR = predictionToElo(rr);
 			
-			int elodiff = eloR / 10;
+			int elodiff = eloR / 6;
 			if (elonew[thisstate]+eloR > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
