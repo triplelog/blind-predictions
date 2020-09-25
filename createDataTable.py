@@ -1,6 +1,6 @@
-initial = ['{% extends "templates/index.html" %}\n{% block dataTable %}\n<table id="dataTable">']
+initial = ['{% extends "templates/electoral.html" %}\n{% block dataTable %}\n<table id="dataTable">']
 end = ['</table>\n{% endblock %}']
-file1 = open('templates/datatable.html', 'w')
+file1 = open('templates/electoraltable.html', 'w')
 file1.writelines(initial) 
  
 print("hello")
@@ -85,7 +85,7 @@ for state in statesOrdered:
 			else:
 				line += '<td>-'+str(round(1000-state["2016"]*2000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["pred"]*2000-1000)/10.0)+'</td>'
-		line += '<td><input type="text"></input></td>'
+		line += '<td><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D"></input></td>'
 		line += '</tr>'
 	else:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="R">'
@@ -102,7 +102,7 @@ for state in statesOrdered:
 			else:
 				line += '<td>-'+str(round(1000-(1-state["2016"])*2000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["pred"])*2000-1000)/10.0)+'</td>'
-		line += '<td><input type="text"></input></td>'
+		line += '<td><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R"></input></td>'
 		line += '</tr>'
 	file1.writelines([line])
 
