@@ -435,6 +435,7 @@ myWorker.onmessage = function(e) {
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
 		var tw = parseInt(e.data.T);
+		orderStates();
 		document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
 		document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
 		document.getElementById('dwinp').style.textDecoration = "none";
