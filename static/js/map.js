@@ -327,10 +327,10 @@ for (var i=0;i<51;i++) {
 function statemousedown(evt) {
 	var myState;
 	var el = evt.target;
-	if (el.tagName != 'G'){
+	if (el.tagName.toUpperCase() != 'G'){
 		el = el.parentElement;
 	}
-	if (el.tagName != 'G'){
+	if (el.tagName.toUpperCase() != 'G'){
 		console.log(el.tagName);
 		return;
 	}
