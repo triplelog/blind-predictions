@@ -253,7 +253,13 @@ function orderStates() {
 	
 	if (demVote>repVote) {
 		pvel.style.color = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
-		pvel.style.background = "hsl(240,0%,"+(-100+(2*dprob)*100)+"%)";
+		if (demelo>100){
+			pvel.style.background = "white";
+		}
+		else {
+			pvel.style.background = "black";
+		}
+		
 		pvel.textContent = 'D+'+parseInt(demelo)/10+'%';
 		
 	}
