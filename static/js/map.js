@@ -331,6 +331,7 @@ function statemousedown(evt) {
 		el = el.parentElement;
 	}
 	if (el.tagName != 'G'){
+		console.log(el.tagName);
 		return;
 	}
   	myState = el.id.substring(4,);
