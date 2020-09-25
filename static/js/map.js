@@ -402,8 +402,8 @@ myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
 		
 	}
-	else if (e.data[0] == "prediction"){
-		
+	else if (e.data['type'] == "wins"){
+		console.log(e.data);
 	}
 }
 function predictNow(){

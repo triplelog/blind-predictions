@@ -39,6 +39,12 @@ EM_JS(void, send_map, (const char* x), {
 	}
   	//console.log(jsStr);
 });
+EM_JS(void, send_results, (const char* x), {
+	var xStr = UTF8ToString(x).split(",");
+	wins["D"]=xStr[0];
+	wins["R"]=xStr[1];
+	wins["T"]=xStr[2];
+});
 
 std::map<int,std::vector<double> > correlations;
 std::map<int,std::vector<int> > correlationsInt;
@@ -94,7 +100,9 @@ void makePrediction(int year) {
 		elo.push_back(predictionToElo(predictions[i],0));
 	}
 	//predict one state at a time
-	int bidenWins = 0;
+	int dWins = 0;
+	int rWins = 0;
+	int ties = 0;
 	std::map<int,int> evData;
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
@@ -178,7 +186,13 @@ void makePrediction(int year) {
 			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 		}
 		if (bidenEV >= 270){
-			bidenWins++;
+			dWins++;
+		}
+		else if (bidenEV <= 268){
+			rWins++;
+		}
+		else {
+			ties++;
 		}
 		if (evData.find(bidenEV) == evData.end()){
 			evData[bidenEV] = 1;
@@ -189,7 +203,12 @@ void makePrediction(int year) {
 		
 		
 	}
-	console_log(bidenWins);
+	console_log(dWins);
+	std::string resultStr = "";
+	resultStr += std::to_string(dWins)+",";
+	resultStr += std::to_string(rWins)+",";
+	resultStr += std::to_string(ties);
+	send_results(resultStr.c_str());
 	for (i=0;i<51;i++){
 		if (stateData[i] > 100 && stateData[i] < 900){
 			//string_log(states[i].c_str());

@@ -10,8 +10,10 @@ var updatecpp = Module.cwrap("updateProbability","string",["number","number","nu
 
 
 function predictjs(){
+	var wins = {};
 	predictcpp(2016);
-	predictcpp(2020);
+	return wins;
+	//predictcpp(2020);
 }
 function updatejs(state,prob,year){
 	updatecpp(state,prob,year);
@@ -22,13 +24,13 @@ onmessage = function(e) {
 	var message = e.data;
 	var result = [];
 	if (message[0] == "predict"){
-		console.log('message recieved');
-		predictjs();
+		var wins = predictjs();
+		wins['type']="wins";
+		postMessage(wins);
 	}
 	else if (message[0] == "update"){
 		updatejs(message[1],message[2],message[3]);
 	}
-	postMessage(result);
 }
 
 
