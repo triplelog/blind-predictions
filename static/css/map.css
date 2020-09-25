@@ -390,6 +390,7 @@
 	position: absolute;
 	left: calc( 50% - 30px );
 	top: 0px;
+	pointer-events: none;
 }
 .slider {
 	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
