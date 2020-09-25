@@ -244,9 +244,11 @@ function orderStates() {
 	var pvel = document.getElementById('popularVote');
 	var demelo = 1000*(demVote-repVote)/(demVote+repVote);
 	var dprob = 1.0/(1+Math.pow(10.0,-1*demelo/75));
+	pv.style.left = "calc( "+(100*demoMult-50)+"% - 30px)";
 	if (demVote>repVote) {
 		pvel.style.color = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 		pvel.textContent = 'D+'+parseInt(demelo)/10+'%';
+		
 	}
 	else {
 		pvel.style.color = "hsl(0,100%,"+(50+dprob*100)+"%)";

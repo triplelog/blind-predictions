@@ -389,6 +389,8 @@
 #popularVote {
 	position: absolute;
 	left: calc( 50% - 30px );
+	width: 60px;
+	text-align: center;
 	top: 0px;
 	pointer-events: none;
 }
