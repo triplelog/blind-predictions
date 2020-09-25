@@ -467,4 +467,15 @@ function predictNow(){
 	myWorker.postMessage(["predict",100]);
 	myWorker.postMessage(["predict",1000]);
 }
+function toggleSmall() {
+	var els = document.querySelectorAll('.doubleSize');
+	for (var i=0;i<els.length;i++){
+		if (els[i].style.display == 'none'){
+			els[i].style.removeProperty('display');
+		}
+		else {
+			els[i].style.display = 'none';
+		}
+	}
+}
 
