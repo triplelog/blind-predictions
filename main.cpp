@@ -41,9 +41,11 @@ EM_JS(void, send_map, (const char* x), {
 });
 EM_JS(void, send_results, (const char* x), {
 	var xStr = UTF8ToString(x).split(",");
+	var wins = {};
 	wins["D"]=xStr[0];
 	wins["R"]=xStr[1];
 	wins["T"]=xStr[2];
+	updateWins(wins);
 });
 EM_JS(void, send_ready, (), {
   cpp_ready();
@@ -220,14 +222,17 @@ void makePrediction(int year, int n) {
 			evData[bidenEV]++;
 		}
 		
+		if (i % 100 == 99){
+			std::string resultStr = "";
+			resultStr += std::to_string(dWins)+",";
+			resultStr += std::to_string(rWins)+",";
+			resultStr += std::to_string(ties);
+			send_results(resultStr.c_str());
+		}
 		
 	}
 	console_log(dWins);
-	std::string resultStr = "";
-	resultStr += std::to_string(dWins)+",";
-	resultStr += std::to_string(rWins)+",";
-	resultStr += std::to_string(ties);
-	send_results(resultStr.c_str());
+	
 	for (i=0;i<51;i++){
 		if (stateData[i] > n/10 && stateData[i] < n*9/10){
 			//string_log(states[i].c_str());

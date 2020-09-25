@@ -436,7 +436,7 @@ myWorker.onmessage = function(e) {
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
 		var tw = parseInt(e.data.T);
-		if (dw+rw+tw < 100){
+		if (dw+rw+tw < 1000){
 			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
 			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
 		}
