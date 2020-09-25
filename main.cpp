@@ -83,7 +83,7 @@ void updateProbability(int state, double p, int year) {
 	
 }
 
-void makePrediction(int year) {
+void makePrediction(int year, int n) {
 	std::vector<double> predictions;
 	int i; int ii; int iii;
 	if (year == 2016){
@@ -125,7 +125,7 @@ void makePrediction(int year) {
 		statesOut += std::to_string(x);
 	}
 	send_map(statesOut.c_str());
-	for (i=0;i<1000;i++){
+	for (i=0;i<n;i++){
 		std::vector<int> elonew = elo;
 		int bidenEV = 0;
 		std::map<int,bool> doneYet;
@@ -229,17 +229,17 @@ void makePrediction(int year) {
 	resultStr += std::to_string(ties);
 	send_results(resultStr.c_str());
 	for (i=0;i<51;i++){
-		if (stateData[i] > 100 && stateData[i] < 900){
+		if (stateData[i] > n/10 && stateData[i] < n*9/10){
 			//string_log(states[i].c_str());
 			//console_log(stateData[i]);
 			//console_log(statePairsMI[i]);
 			//console_log(stateData[i]*stateData[22]/1000);
 			double nullprob = stateData[22];
-			nullprob /= 1000;
-			int diff = statePairsMI[i] - stateData[i]*stateData[22]/1000;
+			nullprob /= n;
+			int diff = statePairsMI[i] - stateData[i]*stateData[22]/n;
 			double stdev = stateData[i]*nullprob*(1-nullprob);
 			double z = diff/stdev;
-			int diffmax = stateData[i] - stateData[i]*stateData[22]/1000;
+			int diffmax = stateData[i] - stateData[i]*stateData[22]/n;
 			double zmax = diffmax/stdev;
 			//console_log(round(z*1000/zmax));
 			//console_log(round(correlationsInt[22][i]));
@@ -285,10 +285,10 @@ int main() {
 	initialRun();
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
-	//makePrediction(2016);
+	//makePrediction(2016,100);
 	//console_log(durationRand/1000000);
 	durationRand = 0;
-	//makePrediction(2020);
+	//makePrediction(2020,100);
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	//console_log(durationRand/1000000);

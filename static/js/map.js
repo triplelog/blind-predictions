@@ -436,8 +436,15 @@ myWorker.onmessage = function(e) {
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
 		var tw = parseInt(e.data.T);
-		document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
-		document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
+		if (dw+rw+tw < 100){
+			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
+			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
+		}
+		else {
+			document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
+			document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
+		}
+		
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
 	}
@@ -457,6 +464,7 @@ function predictNow(){
 		
 	}
 	
-	myWorker.postMessage(["predict"]);
+	myWorker.postMessage(["predict",100]);
+	myWorker.postMessage(["predict",1000]);
 }
 

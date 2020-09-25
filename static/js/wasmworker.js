@@ -4,14 +4,14 @@ function cpp_ready() {
 }
 importScripts('wasmpredict.js');
 
-var predictcpp = Module.cwrap("makePrediction","string",["number"]);
+var predictcpp = Module.cwrap("makePrediction","string",["number","number"]);
 var updatecpp = Module.cwrap("updateProbability","string",["number","number","number"]);
 
 
 var wins = {};
-function predictjs(){
+function predictjs(n){
 	wins = {};
-	predictcpp(2016);
+	predictcpp(2016,n);
 	return wins;
 	//predictcpp(2020);
 }
@@ -24,7 +24,13 @@ onmessage = function(e) {
 	var message = e.data;
 	var result = [];
 	if (message[0] == "predict"){
-		var wins = predictjs();
+		if (message[1]){
+			wins = predictjs(message[1]);
+		}
+		else {
+			wins = predictjs(100);
+		}
+		
 		wins['type']="wins";
 		postMessage(wins);
 	}
