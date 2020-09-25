@@ -327,11 +327,10 @@ for (var i=0;i<51;i++) {
 function statemousedown(evt) {
 	var myState;
 	var el = evt.target;
-	if (el.tagName.toUpperCase() != 'G'){
+	if (!el.id || el.id.substr(0,4) != 'svg-'){
 		el = el.parentElement;
 	}
-	if (el.tagName.toUpperCase() != 'G'){
-		console.log(el.tagName);
+	if (!el.id || el.id.substr(0,4) != 'svg-'){
 		return;
 	}
   	myState = el.id.substring(4,);
@@ -344,8 +343,6 @@ function statemousedown(evt) {
 
   	startCoords[0]= evt.clientX;
   	startCoords[1]= evt.clientY;
-	console.log(startCoords);
-	console.log(currentState.rpred);
   	startELO = (currentState.rpred-.5)*2000;
   	oldPercent = currentState.rpred;
   	document.addEventListener("mousemove", statemousemove);
