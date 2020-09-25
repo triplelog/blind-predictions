@@ -32,6 +32,8 @@ function orderStates() {
 	var botW = 60;
 	var sideH = 118;
 	var topW = 185;
+	document.getElementById('dwinp').textContent = "???%";
+	document.getElementById('rwinp').textContent = "???%";
 	document.getElementById('pres2016BL').innerHTML = '';
 	document.getElementById('pres2016L').innerHTML = '';
 	document.getElementById('pres2016T').innerHTML = '';
@@ -412,7 +414,7 @@ myWorker.onmessage = function(e) {
 	}
 }
 function predictNow(){
-
+	
 	for (var i=0;i<51;i++){
 
 		var state = stateMap[electoralData[i].abbrev];
