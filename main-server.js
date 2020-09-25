@@ -25,7 +25,9 @@ const options = {
 var express = require('express');
 var app = express();
 app.use('/',express.static('static'));
-
+app.use(myParser.urlencoded({ extended: true }));
+app.use(myParser.json());
+app.use(myParser.raw());
 
 const server1 = https.createServer(options, app);
 
