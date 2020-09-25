@@ -2,10 +2,8 @@ var stateStart = '';
 var stateCurrent = '';
 var demoMult = 1.0;
 document.addEventListener("dragstart", function(event) {
-  document.getElementById('dwinp').style.textDecoration = "line-through";
-  document.getElementById('rwinp').style.textDecoration = "line-through";
   stateStart = event.target.id;
-  console.log(stateStart);
+  //console.log(stateStart);
 }, false);
 document.addEventListener("mouseup", function(event) {
   stateStart = '';
@@ -377,6 +375,8 @@ function statemousedown(evt) {
   	startELO = (currentState.rpred-.5)*2000;
   	oldPercent = currentState.rpred;
   	document.addEventListener("mousemove", statemousemove);
+  	document.getElementById('dwinp').style.textDecoration = "line-through";
+    document.getElementById('rwinp').style.textDecoration = "line-through";
 }
 
 function statemousemove(evt) {
