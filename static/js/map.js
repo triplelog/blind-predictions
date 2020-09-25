@@ -2,6 +2,8 @@ var stateStart = '';
 var stateCurrent = '';
 var demoMult = 1.0;
 document.addEventListener("dragstart", function(event) {
+  document.getElementById('dwinp').style.textDecoration = "line-through";
+  document.getElementById('rwinp').style.textDecoration = "line-through";
   stateStart = event.target.id;
   console.log(stateStart);
 }, false);
@@ -12,6 +14,8 @@ document.addEventListener("mouseup", function(event) {
 
 var slider = document.getElementById("myRange");
 slider.oninput = function() {
+	document.getElementById('dwinp').style.textDecoration = "line-through";
+    document.getElementById('rwinp').style.textDecoration = "line-through";
 	if (this.value<=1000){
 	  demoMult = this.value/1000.0;
 	}
@@ -19,6 +23,7 @@ slider.oninput = function() {
 		demoMult = this.value/1000.0;
 	}
   orderStates();
+  
 }
 
 
@@ -32,8 +37,6 @@ function orderStates() {
 	var botW = 60;
 	var sideH = 118;
 	var topW = 185;
-	document.getElementById('dwinp').textContent = "???%";
-	document.getElementById('rwinp').textContent = "???%";
 	document.getElementById('pres2016BL').innerHTML = '';
 	document.getElementById('pres2016L').innerHTML = '';
 	document.getElementById('pres2016T').innerHTML = '';
@@ -411,6 +414,8 @@ myWorker.onmessage = function(e) {
 		var tw = parseInt(e.data.T);
 		document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
 		document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
+		document.getElementById('dwinp').style.textDecoration = "none";
+  		document.getElementById('rwinp').style.textDecoration = "none";
 	}
 }
 function predictNow(){
