@@ -443,7 +443,7 @@ input[type=range].slider::-moz-range-thumb {
 	stroke-width: 3;
 }
 #svg-hi polygon {
-	stroke-width: 2;
+	stroke-width: 1.5;
 }
 #simulations {
 	position: absolute;

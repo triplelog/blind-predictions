@@ -360,6 +360,10 @@ function statemousedown(evt) {
 		el = el.parentElement;
 	}
 	if (!el.id || el.id.substr(0,4) != 'svg-'){
+		myState = "";
+		currentState = {};
+		startCoords = [0,0];
+		document.removeEventListener("mousemove", statemousemove);
 		return;
 	}
   	myState = el.id.substring(4,);
