@@ -76,7 +76,7 @@ app.get(['/electoral','/electoral.html'],
 	function(req, res){
 		
 		
-		res.write(nunjucks.render('templates/electoral.html',{
+		res.write(nunjucks.render('templates/electoraltable.html',{
 
 		}));
 		res.end();
