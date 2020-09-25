@@ -157,8 +157,24 @@ void makePrediction(int year) {
 				
 				
 			}
-			else {
-				
+			if (thisstate == 21){//Maine
+				if (elonew[thisstate]+eloR > -100){ //Biden wins 1st
+					bidenEV++;
+				}
+				if (elonew[thisstate]+eloR > 100){ //Biden wins 2nd
+					bidenEV++;
+				}
+			}
+			if (thisstate == 29){//Nebraska
+				if (elonew[thisstate]+eloR > -60){ //Biden wins 1st
+					bidenEV++;
+				}
+				if (elonew[thisstate]+eloR > -200){ //Biden wins 2nd
+					bidenEV++;
+				}
+				if (elonew[thisstate]+eloR > 300){ //Biden wins 3rd
+					bidenEV++;
+				}
 			}
 			
 			if (eloR < 0){
@@ -251,6 +267,8 @@ void initialRun(){
 	}
 	states = createStates();
 	evs = createEV();
+	evs[21]=2;
+	evs[29]=2;
 	seed = 7;
 	durationRand = 0;
 	predictions16 = createPredictions16();

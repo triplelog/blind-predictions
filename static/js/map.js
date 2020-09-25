@@ -64,6 +64,10 @@ function orderStates() {
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 			}
+			if (electoralData[i]['abbrev'] == 'me'){
+				document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+				document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+			}
 		}
 		else {
 			newspan.classList.add("dem");
@@ -72,6 +76,7 @@ function orderStates() {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
 		}
+		
 		newspan.id='state-'+electoralData[i]['abbrev'];
 		newspan.addEventListener("mouseover", function(event) {
 		  // prevent default to allow drop
