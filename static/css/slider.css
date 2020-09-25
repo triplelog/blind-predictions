@@ -23,6 +23,8 @@ input[type=range]::-ms-track {
   color: transparent;
 }
 
+
+
 input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   border: 1px solid #000000;
@@ -54,6 +56,23 @@ input[type=range]::-ms-thumb {
   width: 16px;
   border-radius: 3px;
   background: #ffffff;
+  cursor: pointer;
+}
+
+
+input[type=range].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: calc( var(--block-width) * 3 - 0px);
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+input[type=range].slider::-moz-range-thumb {
+  width: 25px;
+  height: calc( var(--block-width) * 3 - 0px);
+  background: #4CAF50;
   cursor: pointer;
 }
 
