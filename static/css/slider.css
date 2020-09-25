@@ -76,21 +76,47 @@ input[type=range].slider::-moz-range-thumb {
   cursor: pointer;
 }
 
-
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: white;
+  background: #367ebd;
 }
 
+input[type=range]::-moz-range-track {
+  width: 100%;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
 input[type=range]::-ms-fill-lower {
-  background: blue;
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type=range]:focus::-ms-fill-lower {
-  background: blue;
+  background: #3071a9;
 }
 input[type=range]::-ms-fill-upper {
-  background: red;
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
 }
 input[type=range]:focus::-ms-fill-upper {
-  background: red;
+  background: #367ebd;
 }
