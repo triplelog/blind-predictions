@@ -404,8 +404,11 @@ myWorker.onmessage = function(e) {
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
-		document.getElementById('dwinp').textContent = Math.round(1000*e.data.D/(e.data.D+e.data.R+e.data.T))/10+"%";
-		document.getElementById('rwinp').textContent = Math.round(1000*e.data.R/(e.data.D+e.data.R+e.data.T))/10+"%";
+		var dw = parseInt(e.data.D);
+		var rw = parseInt(e.data.R);
+		var tw = parseInt(e.data.T);
+		document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
+		document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
 	}
 }
 function predictNow(){
