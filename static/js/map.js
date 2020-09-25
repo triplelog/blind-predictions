@@ -244,16 +244,21 @@ function orderStates() {
 	var pvel = document.getElementById('popularVote');
 	var demelo = 1000*(demVote-repVote)/(demVote+repVote);
 	var dprob = 1.0/(1+Math.pow(10.0,-1*demelo/75));
+	if (demoMult < 1){
+		pvel.style.left = "calc( "+(100*demoMult-50)+"% - 30px + "+(80-80*demoMult)+"px)";
+	}
+	else {
+		pvel.style.left = "calc( "+(100*demoMult-50)+"% - 30px - "+(80*demoMult-80)+"px)";
+	}
 	
 	if (demVote>repVote) {
 		pvel.style.color = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 		pvel.textContent = 'D+'+parseInt(demelo)/10+'%';
-		pvel.style.left = "calc( "+(100*demoMult-50)+"% - 30px + 40px)";
+		
 	}
 	else {
 		pvel.style.color = "hsl(0,100%,"+(50+dprob*100)+"%)";
 		pvel.textContent = 'R+'+parseInt(-1*demelo)/10+'%';
-		pvel.style.left = "calc( "+(100*demoMult-50)+"% - 30px - 40px)";
 	}
 }
 orderStates();
