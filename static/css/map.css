@@ -8,7 +8,7 @@
 	:root {--block-width: .45vw;}
 }
 @media (min-aspect-ratio: 16/9) {
-	:root {--block-width: .75vh;}
+	:root {--block-width: .7vh;}
 }
 
 .gu-mirror {

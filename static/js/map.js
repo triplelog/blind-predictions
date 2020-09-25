@@ -325,22 +325,28 @@ for (var i=0;i<51;i++) {
 
 
 function statemousedown(evt) {
-  var myState = evt.target.id.substring(4,);
-
+	var myState;
+	var el = evt.target;
+	if (el.tagName != 'G'){
+		el = el.parentElement;
+	}
+	if (el.tagName != 'G'){
+		return;
+	}
+  	var myState = el.id.substring(4,);
 	for (var i=0; i<electoralData.length; ++i) {
 		if (electoralData[i]['abbrev'] == myState) {
 	  		currentState = electoralData[i];
 	  		break;
 	  	}
 	}
+
+  	startCoords[0]= evt.clientX;
+  	startCoords[1]= evt.clientY;
   
-  //drawChart(d.key);
-  startCoords[0]= evt.clientX;
-  startCoords[1]= evt.clientY;
-  
-  startELO = (currentState.rpred-.5)*2000;
-  oldPercent = currentState.rpred;
-  document.addEventListener("mousemove", statemousemove);
+  	startELO = (currentState.rpred-.5)*2000;
+  	oldPercent = currentState.rpred;
+  	document.addEventListener("mousemove", statemousemove);
 }
 
 function statemousemove(evt) {
