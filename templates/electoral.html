@@ -42,7 +42,7 @@ div.container {
 	<form action="../map" method="post">
 	{% block dataTable %}
 	{% endblock %}
-	<button onclick="predictNow()" type="submit">Predict</button>
+	<button type="submit">Submit</button>
 	</form>
 </div>
 <div id="footer">
@@ -52,34 +52,7 @@ div.container {
 {% block scripts %}
 {% endblock %}
 <script>
-var myWorker = new Worker('js/wasmworker.js');
-myWorker.onmessage = function(e) {
-	if (e.data == "ready"){
-		setTimeout(updateMarkdown,50);
-	}
-	else if (e.data[0] == "prediction"){
-		alert(e.data[1]);
-	}
-}
-function predictNow(){
-	var rows = document.querySelectorAll('#dataTable tr');
-	for (var i=0;i<rows.length;i++){
-		
-		if (rows[i].querySelector('input').value != ""){
-			var state = rows[i].getAttribute('data-id');
-			var year = rows[i].getAttribute('data-year');
-			var party = rows[i].getAttribute('data-party');
-			var prob = parseFloat(rows[i].querySelector('input').value);
-			if (party == "R"){
-				prob = 1-parseFloat(rows[i].querySelector('input').value);
-			}
-			myWorker.postMessage(["update",state,prob,year]);
-		}
-		
-	}
-	
-	myWorker.postMessage(["predict"]);
-}
+
 
 
 </script>
