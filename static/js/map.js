@@ -346,7 +346,7 @@ function statemousedown(evt) {
 function statemousemove(evt) {
 	
 	var currentCoords = [evt.clientX,evt.clientY];
-	var newELO = startELO+(currentCoords[0]-startCoords[0])*3;
+	var newELO = startELO+(currentCoords[0]-startCoords[0])*2;
 	currentState.rpred=newELO/2000+.5;
 	if (oldPercent -currentState.rpred>.005 || oldPercent -currentState.rpred< -.005){
 		oldPercent = currentState.rpred;
