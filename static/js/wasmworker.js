@@ -8,9 +8,9 @@ var predictcpp = Module.cwrap("makePrediction","string",["number"]);
 var updatecpp = Module.cwrap("updateProbability","string",["number","number","number"]);
 
 
-
+var wins = {};
 function predictjs(){
-	var wins = {};
+	wins = {};
 	predictcpp(2016);
 	return wins;
 	//predictcpp(2020);
