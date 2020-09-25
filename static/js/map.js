@@ -433,6 +433,7 @@ myWorker.onmessage = function(e) {
 		setTimeout(predictNow,50);
 	}
 	else if (e.data['type'] == "wins"){
+		console.log(e.data);
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
 		var tw = parseInt(e.data.T);
@@ -478,4 +479,5 @@ function toggleSmall() {
 		}
 	}
 }
+toggleSmall();
 

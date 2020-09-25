@@ -45,6 +45,10 @@ EM_JS(void, send_results, (const char* x), {
 	wins["D"]=xStr[0];
 	wins["R"]=xStr[1];
 	wins["T"]=xStr[2];
+	wins["DH"]=xStr[3];
+	wins["RH"]=xStr[4];
+	wins["TH"]=xStr[5];
+	wins["ME"]=xStr[6];
 	updateWins(wins);
 });
 EM_JS(void, send_ready, (), {
@@ -105,9 +109,9 @@ void makePrediction(int year, int n) {
 		elo.push_back(predictionToElo(predictions[i],0));
 	}
 	//predict one state at a time
-	int dWins = 0;
-	int rWins = 0;
-	int ties = 0;
+	int dWins[4] = {0,0,0,0};
+	int rWins[4] = {0,0,0,0};
+	int ties[4] = {0,0,0,0};
 	std::map<int,int> evData;
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
@@ -130,6 +134,7 @@ void makePrediction(int year, int n) {
 	for (i=0;i<n;i++){
 		std::vector<int> elonew = elo;
 		int bidenEV = 0;
+		int dHEV = 0;
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
 			doneYet[ii]=false;
@@ -158,27 +163,28 @@ void makePrediction(int year, int n) {
 			if (elonew[thisstate]+eloR > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
+				dHEV += evs[thisstate]-2;
 				stateData[thisstate]++;
 				
 				
 			}
 			if (thisstate == 21){//Maine
 				if (elonew[thisstate]+eloR > -100){ //Biden wins 1st
-					bidenEV++;
+					bidenEV++; dHEV++;
 				}
 				if (elonew[thisstate]+eloR > 100){ //Biden wins 2nd
-					bidenEV++;
+					bidenEV++; dHEV++;
 				}
 			}
 			if (thisstate == 29){//Nebraska
 				if (elonew[thisstate]+eloR > -60){ //Biden wins 1st
-					bidenEV++;
+					bidenEV++; dHEV++;
 				}
 				if (elonew[thisstate]+eloR > -200){ //Biden wins 2nd
-					bidenEV++;
+					bidenEV++; dHEV++;
 				}
 				if (elonew[thisstate]+eloR > 300){ //Biden wins 3rd
-					bidenEV++;
+					bidenEV++; dHEV++;
 				}
 			}
 			
@@ -207,13 +213,22 @@ void makePrediction(int year, int n) {
 			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 		}
 		if (bidenEV >= 270){
-			dWins++;
+			dWins[0]++;
 		}
 		else if (bidenEV <= 268){
-			rWins++;
+			rWins[0]++;
 		}
 		else {
-			ties++;
+			ties[0]++;
+		}
+		if (dHEV >= 219){
+			dWins[1]++;
+		}
+		else if (dHEV <= 217){
+			rWins[1]++;
+		}
+		else {
+			ties[1]++;
 		}
 		if (evData.find(bidenEV) == evData.end()){
 			evData[bidenEV] = 1;
@@ -224,9 +239,24 @@ void makePrediction(int year, int n) {
 		
 		if (i % 100 == 99){
 			std::string resultStr = "";
-			resultStr += std::to_string(dWins)+",";
-			resultStr += std::to_string(rWins)+",";
-			resultStr += std::to_string(ties);
+			resultStr += std::to_string(dWins[0])+",";
+			resultStr += std::to_string(rWins[0])+",";
+			resultStr += std::to_string(ties[0])+",";
+			resultStr += std::to_string(dWins[1])+",";
+			resultStr += std::to_string(rWins[1])+",";
+			resultStr += std::to_string(ties[1])+",";
+			int medEV = 0;
+			int count = 0;
+			for (ii=0;ii<539;ii++){
+				if (evData.find(ii) != evData.end()){
+					count+= evData[ii];
+				}
+				if (count >= i/2){
+					medEV = ii;
+					break;
+				}
+			}
+			resultStr += std::to_string(medEV);
 			send_results(resultStr.c_str());
 		}
 		
