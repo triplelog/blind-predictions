@@ -386,6 +386,11 @@
 	margin: 0px;
 	padding: 0px;
 }
+#popularVote {
+	position: absolute;
+	left: calc( 50% - 30px );
+	top: 0px;
+}
 .slider {
 	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
 	background: black;
