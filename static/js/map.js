@@ -64,6 +64,7 @@ function orderStates() {
 		}
 		else {
 			newspan.classList.add("dem");
+			newspan.style.background = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
@@ -354,4 +355,42 @@ function statemousemove(evt) {
 	}
 
 	
+}
+
+var myWorker = new Worker('js/wasmworker.js');
+var stateList = [];
+var stateMap = {};
+for (var i=0;i<51;i++){
+	stateList.push(electoralData[i].abbrev);
+}
+stateList.sort();
+console.log(stateList);
+for (var i=0;i<51;i++){
+	stateMap[stateList[i]]=i;
+}
+console.log(stateMap);
+myWorker.onmessage = function(e) {
+	if (e.data == "ready"){
+		
+	}
+	else if (e.data[0] == "prediction"){
+		
+	}
+}
+function predictNow(){
+
+	for (var i=0;i<51;i++){
+
+		var state = stateMap[electoralData[i].abbrev];
+		var year = "2016";
+		var rpred = electoralData[i].rpred*demoMult;
+		var elo = (rpred-.5)*2000;
+		var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+
+		myWorker.postMessage(["update",state,dprob,year]);
+
+		
+	}
+	
+	myWorker.postMessage(["predict"]);
 }
