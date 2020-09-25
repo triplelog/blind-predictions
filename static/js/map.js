@@ -57,7 +57,7 @@ function orderStates() {
 		if (dprob<.5) {
 			newspan.classList.add("rep");
 			
-			//newspan.style.background = "hsl(0,50,"+(dprob*100)+")";
+			newspan.style.background = "hsl(0,100%,"+(50+dprob*100)+"%)";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 			}
@@ -347,12 +347,10 @@ function statemousemove(evt) {
 	var currentCoords = [evt.clientX,evt.clientY];
 	var newELO = startELO+(currentCoords[0]-startCoords[0])*3;
 	currentState.rpred=newELO/2000+.5;
-	if (oldPercent -currentState.rpred>.01 || oldPercent -currentState.rpred< -.01){
+	if (oldPercent -currentState.rpred>.005 || oldPercent -currentState.rpred< -.005){
 		oldPercent = currentState.rpred;
-		console.log(currentState.rpred);
 		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 		orderStates();
-		console.log(currentState.rpred);
 	}
 
 	
