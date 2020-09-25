@@ -429,7 +429,7 @@ for (var i=0;i<51;i++){
 }
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
-		document.setTimeout(50,predictNow);
+		setTimeout(predictNow,50);
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
