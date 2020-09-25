@@ -264,10 +264,10 @@ int main() {
 	initialRun();
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
-	makePrediction(2016);
+	//makePrediction(2016);
 	//console_log(durationRand/1000000);
 	durationRand = 0;
-	makePrediction(2020);
+	//makePrediction(2020);
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	//console_log(durationRand/1000000);
