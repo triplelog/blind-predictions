@@ -443,4 +443,7 @@ input[type=range].slider::-moz-range-thumb {
 	position: absolute;
 	left: calc( var(--block-width) * 2);
 	bottom: calc( var(--block-width) * 2);
+	width: calc( var(--block-width) * 20);
+	height: calc( var(--block-width) * 20);
+	border: 1px solid white;
 }
