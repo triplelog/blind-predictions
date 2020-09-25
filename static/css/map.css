@@ -5,10 +5,10 @@
 	--top-width: 185;
 }
 @media (max-aspect-ratio: 16/9) {
-	:root {--block-width: .5vw;}
+	:root {--block-width: .45vw;}
 }
 @media (min-aspect-ratio: 16/9) {
-	:root {--block-width: .8vh;}
+	:root {--block-width: .75vh;}
 }
 
 .gu-mirror {
