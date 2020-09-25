@@ -439,8 +439,11 @@ input[type=range].slider::-moz-range-thumb {
 	stroke: white;
 	stroke-width: .33;
 }
-#svg-ak polygon, #svg-hi polygon {
+#svg-ak polygon {
 	stroke-width: 3;
+}
+#svg-hi polygon {
+	stroke-width: 2;
 }
 #simulations {
 	position: absolute;
