@@ -429,7 +429,7 @@ for (var i=0;i<51;i++){
 }
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
-		
+		document.setTimeout(50,predictNow);
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
@@ -459,4 +459,4 @@ function predictNow(){
 	
 	myWorker.postMessage(["predict"]);
 }
-predictNow();
+

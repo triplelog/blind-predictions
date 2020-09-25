@@ -45,6 +45,9 @@ EM_JS(void, send_results, (const char* x), {
 	wins["R"]=xStr[1];
 	wins["T"]=xStr[2];
 });
+EM_JS(void, send_ready, (), {
+  cpp_ready();
+});
 
 std::map<int,std::vector<double> > correlations;
 std::map<int,std::vector<int> > correlationsInt;
@@ -290,6 +293,7 @@ int main() {
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	//console_log(durationRand/1000000);
 	//console_log(durationTotal);
+	send_ready();
 	
 	return 1;
 }
