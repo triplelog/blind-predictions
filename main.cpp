@@ -261,7 +261,7 @@ void makePrediction(int year, int n) {
 		}
 		
 	}
-	console_log(dWins);
+	//console_log(dWins[0]);
 	
 	for (i=0;i<51;i++){
 		if (stateData[i] > n/10 && stateData[i] < n*9/10){
