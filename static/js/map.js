@@ -404,6 +404,8 @@ myWorker.onmessage = function(e) {
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
+		document.getElementById('dwinp').textContent = Math.round(1000*e.data.D/(e.data.D+e.data.R+e.data.T))/10+"%";
+		document.getElementById('rwinp').textContent = Math.round(1000*e.data.R/(e.data.D+e.data.R+e.data.T))/10+"%";
 	}
 }
 function predictNow(){
