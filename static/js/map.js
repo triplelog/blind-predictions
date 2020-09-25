@@ -75,21 +75,21 @@ function orderStates() {
 		if (electoralData[i]['abbrev'] == 'me'){
 			var dprobd1 = 1.0/(1+Math.pow(10.0,(elo-100)/75));
 			var dprobd2 = 1.0/(1+Math.pow(10.0,(elo+100)/75));
-			if (dprob1<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(0,100%,"+(50+dprob1*100)+"%)";}
-			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(240,100%,"+(50+(1-dprob1)*100)+"%)";}
-			if (dprob2<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(0,100%,"+(50+dprob2*100)+"%)";}
-			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(240,100%,"+(50+(1-dprob2)*100)+"%)";}
+			if (dprobd1<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(0,100%,"+(50+dprobd1*100)+"%)";}
+			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(240,100%,"+(50+(1-dprobd1)*100)+"%)";}
+			if (dprobd2<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(0,100%,"+(50+dprobd2*100)+"%)";}
+			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(240,100%,"+(50+(1-dprobd2)*100)+"%)";}
 		}
 		else if (electoralData[i]['abbrev'] == 'ne'){
 			var dprobd1 = 1.0/(1+Math.pow(10.0,(elo-60)/75));
 			var dprobd2 = 1.0/(1+Math.pow(10.0,(elo-200)/75));
 			var dprobd3 = 1.0/(1+Math.pow(10.0,(elo+300)/75));
-			if (dprob1<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(0,100%,"+(50+dprob1*100)+"%)";}
-			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(240,100%,"+(50+(1-dprob1)*100)+"%)";}
-			if (dprob2<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(0,100%,"+(50+dprob2*100)+"%)";}
-			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(240,100%,"+(50+(1-dprob2)*100)+"%)";}
-			if (dprob3<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'3').style.fill = "hsl(0,100%,"+(50+dprob3*100)+"%)";}
-			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'3').style.fill = "hsl(240,100%,"+(50+(1-dprob3)*100)+"%)";}
+			if (dprobd1<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(0,100%,"+(50+dprobd1*100)+"%)";}
+			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'1').style.fill = "hsl(240,100%,"+(50+(1-dprobd1)*100)+"%)";}
+			if (dprobd2<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(0,100%,"+(50+dprobd2*100)+"%)";}
+			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'2').style.fill = "hsl(240,100%,"+(50+(1-dprobd2)*100)+"%)";}
+			if (dprobd3<.5) { document.getElementById('svg-'+electoralData[i]['abbrev']+'3').style.fill = "hsl(0,100%,"+(50+dprobd3*100)+"%)";}
+			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'3').style.fill = "hsl(240,100%,"+(50+(1-dprobd3)*100)+"%)";}
 		}
 		
 		newspan.id='state-'+electoralData[i]['abbrev'];
