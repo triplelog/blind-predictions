@@ -330,7 +330,6 @@ function statemousedown(evt) {
 	if (el.tagName != 'G'){
 		el = el.parentElement;
 	}
-	console.log(el);
 	if (el.tagName != 'G'){
 		return;
 	}
@@ -344,7 +343,8 @@ function statemousedown(evt) {
 
   	startCoords[0]= evt.clientX;
   	startCoords[1]= evt.clientY;
-  
+	console.log(startCoords);
+	console.log(currentState.rpred);
   	startELO = (currentState.rpred-.5)*2000;
   	oldPercent = currentState.rpred;
   	document.addEventListener("mousemove", statemousemove);
