@@ -459,3 +459,4 @@ function predictNow(){
 	
 	myWorker.postMessage(["predict"]);
 }
+predictNow();
