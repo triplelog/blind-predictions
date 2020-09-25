@@ -364,11 +364,9 @@ for (var i=0;i<51;i++){
 	stateList.push(electoralData[i].abbrev);
 }
 stateList.sort();
-console.log(stateList);
 for (var i=0;i<51;i++){
 	stateMap[stateList[i]]=i;
 }
-console.log(stateMap);
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
 		

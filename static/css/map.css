@@ -272,9 +272,11 @@
 }
 .rep {
 	color: black;
+	text-shadow: 0px 0px 2px #DDDDDD;
 }
 .pres-cell.dem {
 	color: white;
+	text-shadow: 0px 0px 2px #222222;
 	border-color: white;
 }
 
