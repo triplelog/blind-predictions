@@ -172,7 +172,7 @@ function orderStates() {
 			newerspan.style.width = 'calc('+blWidth+' * var(--block-width) - 0px)';
 			newerspan.style.borderWidth = '0px 0px 0px 0px';
 			document.getElementById('pres2016BL').appendChild(newerspan);
-			console.log(newerspan);
+			//console.log(newerspan);
 		}
 		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW + sideH && totalEV >= botW + sideH){
 			//left and top
@@ -191,7 +191,7 @@ function orderStates() {
 			newerspan.style.height = 'calc('+blWidth+' * var(--block-width) - 0px)';
 			newerspan.style.borderWidth = '0px 0px 0px 0px';
 			document.getElementById('pres2016L').appendChild(newerspan);
-			console.log(newerspan);
+			//console.log(newerspan);
 		}
 		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW + sideH + topW && totalEV >= botW + sideH + topW){
 			//top and right
@@ -210,7 +210,7 @@ function orderStates() {
 			newerspan.style.width = 'calc('+blWidth+' * var(--block-width) - 0px)';
 			newerspan.style.borderWidth = '0px 0px 0px 0px';
 			document.getElementById('pres2016T').appendChild(newerspan);
-			console.log(newerspan);
+			//console.log(newerspan);
 		}
 		else if (totalEV - parseInt(electoralData[i]['ev10']) < botW + sideH + topW + sideH && totalEV >= botW + sideH + topW + sideH){
 			//right and bottom right
@@ -229,7 +229,7 @@ function orderStates() {
 			newerspan.style.height = 'calc('+blWidth+' * var(--block-width) - 0px)';
 			newerspan.style.borderWidth = '0px 0px 0px 0px';
 			document.getElementById('pres2016R').appendChild(newerspan);
-			console.log(newerspan);
+			//console.log(newerspan);
 		}
 			
 			
@@ -349,8 +349,10 @@ function statemousemove(evt) {
 	currentState.rpred=newELO/2000+.5;
 	if (oldPercent -currentState.rpred>.02 || oldPercent -currentState.rpred< -.02){
 		oldPercent = currentState.rpred;
+		console.log(currentState.rpred);
 		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 		orderStates();
+		console.log(currentState.rpred);
 	}
 
 	
