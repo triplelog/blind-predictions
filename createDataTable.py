@@ -140,6 +140,7 @@ i = 0
 for state in states16.keys():
 	prod = (.5-states16[state]["2012"])**2+(.5-states16[state]["pred"])**2
 	if len(senateData[state.lower()][2016])== 0:
+		i+=1
 		continue
 	if len(senateData[state.lower()][2010])> 0:
 		states16[state]["sLast"]=senateData[state.lower()][2010][0]
@@ -169,6 +170,7 @@ i = 0
 for state in states20.keys():
 	prod = (.5-states20[state]["2016"])**2+(.5-states20[state]["pred"])**2
 	if len(senateData[state.lower()][2014])== 0:
+		i+=1
 		continue
 	if len(senateData[state.lower()][2014])> 0:
 		states20[state]["sLast"]=senateData[state.lower()][2014][0]
