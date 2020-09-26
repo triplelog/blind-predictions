@@ -158,7 +158,6 @@ app.post(['/map','/map.html'],
 				}
 				
 			}
-			eData[i].rpred = eData[i].rpred16;
 			eData[i].pres16 = eData[i].rperc;
 			delete eData[i].rperc;
 		}

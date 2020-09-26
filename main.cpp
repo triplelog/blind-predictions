@@ -176,10 +176,10 @@ void makePrediction(int year, int n) {
 			}
 			if (thisstate == 21){//Maine
 				if (elonew[thisstate]+eloR > -100){ //Biden wins 1st
-					bidenEV++; dHEV++; dVEPEV+=12;
+					bidenEV++; dHEV++; dVEPEV+=10;
 				}
 				if (elonew[thisstate]+eloR > 100){ //Biden wins 2nd
-					bidenEV++; dHEV++; dVEPEV+=12;
+					bidenEV++; dHEV++; dVEPEV+=10;
 				}
 			}
 			if (thisstate == 29){//Nebraska
@@ -236,10 +236,10 @@ void makePrediction(int year, int n) {
 		else {
 			ties[1]++;
 		}
-		if (dVEPEV >= 2180){
+		if (dVEPEV >= 2182){
 			dWins[2]++;
 		}
-		else if (dVEPEV <= 2179){
+		else if (dVEPEV <= 2181){
 			rWins[2]++;
 		}
 		else {
