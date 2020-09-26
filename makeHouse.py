@@ -400,7 +400,6 @@ for cd in allPres:
 	
 line += '{% endblock %}'
 file1.writelines([line])
-file1.writelines(end)
 file1.close()
 print(natadv)
 print(expDemSeats)
