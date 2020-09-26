@@ -74,16 +74,10 @@ for state in statesOrdered:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="D">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
-			if state["2012"] > .5:
-				line += '<td>+'+str(round(state["2012"]*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-state["2012"]*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round(state["2012"]*2000-1000)/10.0)+'</td>'
 			
 		else:
-			if state["2016"] > .5:
-				line += '<td>+'+str(round(state["2016"]*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-state["2016"]*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round(state["2016"]*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["pred"]*2000-1000)/10.0)+'</td>'
 		line += '<td><input style="display: none;" value="'+str(round(state["pred"]*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D"></input></td>'
 		line += '</tr>'
@@ -91,19 +85,14 @@ for state in statesOrdered:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="R">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
-			if state["2012"] < .5:
-				line += '<td>+'+str(round((1-state["2012"])*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-(1-state["2012"])*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round((1-state["2012"])*2000-1000)/10.0)+'</td>'
 			
 		else:
-			if state["2016"] < .5:
-				line += '<td>+'+str(round((1-state["2016"])*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-(1-state["2016"])*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round((1-state["2016"])*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["pred"])*2000-1000)/10.0)+'</td>'
 		line += '<td><input style="display: none;" value="'+str(round((1-state["pred"])*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R"></input></td>'
 		line += '</tr>'
+	line = line.replace('+-','-')
 	file1.writelines([line])
 
 file1.writelines(end)
@@ -210,16 +199,10 @@ for state in statesOrdered:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="D">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
-			if state["2012"] > .5:
-				line += '<td>+'+str(round(state["2012"]*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-state["2012"]*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round(state["2012"]*2000-1000)/10.0)+'</td>'
 			
 		else:
-			if state["2016"] > .5:
-				line += '<td>+'+str(round(state["2016"]*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-state["2016"]*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round(state["2016"]*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["pred"]*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["sOther"])*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["sLast"])*2000-1000)/10.0)+'</td>'
@@ -229,21 +212,15 @@ for state in statesOrdered:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="R">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
-			if state["2012"] < .5:
-				line += '<td>+'+str(round((1-state["2012"])*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-(1-state["2012"])*2000)/10.0)+'</td>'
-			
+			line += '<td>+'+str(round((1-state["2012"])*2000-1000)/10.0)+'</td>'
 		else:
-			if state["2016"] < .5:
-				line += '<td>+'+str(round((1-state["2016"])*2000-1000)/10.0)+'</td>'
-			else:
-				line += '<td>-'+str(round(1000-(1-state["2016"])*2000)/10.0)+'</td>'
+			line += '<td>+'+str(round((1-state["2016"])*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["pred"])*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["sOther"]*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["sLast"]*2000-1000)/10.0)+'</td>'
 		line += '<td><input style="display: none;" value="'+str(round((1-state["pred"])*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R"></input></td>'
 		line += '</tr>'
+	line = line.replace('+-','-')
 	file1.writelines([line])
 
 file1.writelines(end)
