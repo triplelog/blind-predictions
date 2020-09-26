@@ -40,16 +40,39 @@ div.container {
 {% endblock %}
 <div class="container">
 	<form action="../map" method="post">
-		Create a formula to predict the national generic partisan advantage. 
-		<ul>
-			<li>P16 represents the presidential election results in 2016.</li>
-			<li>P20 represents expected presidential results in 2020.</li> 
-			<li>HA16 represents the adjusted house advantage in 2016.</li> 
-			<li>HA18 represents the adjusted house advantage in 2018.</li> 
-			<li>HA20 represents generic ballot polling in 2020.</li> 
-		</ul>
-		Each variable is percentage difference of vote share between the two major parties. So if one party wins 54% of the vote and the other wins 46%, then the value would be 8.
-		<textarea id="nationalFormula" name="national">(HA20+(P20-P16+HA16))/2</textarea>
+		<div style="border: 1px solid black;">
+			Create a formula to predict the national generic partisan advantage. 
+			<ul>
+				<li>P16 represents the presidential election results in 2016.</li>
+				<li>P20 represents expected presidential results in 2020.</li> 
+				<li>HA16 represents the adjusted house advantage in 2016.</li> 
+				<li>HA18 represents the adjusted house advantage in 2018.</li> 
+				<li>HA20 represents generic ballot polling in 2020.</li> 
+			</ul>
+			Each variable is percentage difference of vote share between the two major parties. So if one party wins 54% of the vote and the other wins 46%, then the value would be 8.
+			<textarea id="nationalFormula" name="national">(HA20+(P20-P16+HA16))/2</textarea>
+		</div>
+		<div style="border: 1px solid black;">
+			Create a formula to predict the generic partisan advantage for each state. 
+			<ul>
+				<li>P16 represents 2016 presidential results for the state compared to the national average.</li>
+				<li>P20 represents 2020 expected presidential results for the state compared to the expected national average.</li> 
+				<li>N represents the national generic partisan advantage computed above.</li>
+			</ul>
+			
+			<textarea id="stateFormula" name="state">N+(P20+P16)/2</textarea>
+		</div>
+		<div style="border: 1px solid black;">
+			Create a formula to predict the generic partisan advantage for each district. 
+			<ul>
+				<li>P16 represents 2016 presidential results for the district compared to the state average.</li>
+				<li>H16 represents 2016 house results for the district compared to the state adjusted advantage.</li>
+				<li>H18 represents 2018 house results for the district compared to the state adjusted advantage.</li>
+				<li>S represents the state generic partisan advantage computed above.</li>
+			</ul>
+			
+			<textarea id="districtFormula" name="district">S+(H18+H16+2*P16)/4</textarea>
+		</div>
 	<button type="submit">Submit</button>
 	</form>
 </div>
@@ -61,7 +84,7 @@ div.container {
 {% endblock %}
 <script>
 
-
+var houseData = {% block houseData %}{% endblock %};
 
 </script>
 </body>

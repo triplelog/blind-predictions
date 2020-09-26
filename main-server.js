@@ -100,7 +100,7 @@ app.get(['/house','/house.html'],
 	function(req, res){
 		
 		
-		res.write(nunjucks.render('templates/house.html',{
+		res.write(nunjucks.render('templates/housedata.html',{
 
 		}));
 		res.end();
