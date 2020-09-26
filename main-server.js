@@ -103,6 +103,30 @@ app.get(['/map','/map.html'],
 	}
 );
 
+app.get(['/housemap','/housemap.html'],
+	function(req, res){
+		
+
+		res.write(nunjucks.render('templates/housemap.html',{
+			//electoralData: eData,
+
+		}));
+		res.end();
+	}
+);
+
+app.get(['/senatemap','/senatemap.html'],
+	function(req, res){
+		
+
+		res.write(nunjucks.render('templates/senatemap.html',{
+			//electoralData: eData,
+
+		}));
+		res.end();
+	}
+);
+
 app.post(['/map','/map.html'],
 	function(req, res){
 		var userData16 = {};
