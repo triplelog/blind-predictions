@@ -96,6 +96,17 @@ app.get(['/senate','/senate.html'],
 	}
 );
 
+app.get(['/house','/house.html'],
+	function(req, res){
+		
+		
+		res.write(nunjucks.render('templates/house.html',{
+
+		}));
+		res.end();
+	}
+);
+
 app.get(['/map','/map.html'],
 	function(req, res){
 		
