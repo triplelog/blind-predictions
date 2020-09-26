@@ -138,7 +138,7 @@ while (presExpDemSeats < expDemSeats -1 or presExpDemSeats > expDemSeats + 1):
 	counter+=1
 	if (counter>10000):
 		break
-houseData['HA18']=round(houseData['P16']+presadj,1)
+houseData['HA18']=round(houseData['P16']+presadj,2)
 
 
 
@@ -203,7 +203,7 @@ for myYear in [2016]:
 		counter+=1
 		if (counter>10000):
 			break
-	houseData['HA16']=round(houseData['P16']+presadj,1)
+	houseData['HA16']=round(houseData['P16']+presadj,2)
 
 	
 for myYear in [2012]:
@@ -266,7 +266,7 @@ for myYear in [2012]:
 		counter+=1
 		if (counter>10000):
 			break
-	houseData['HA12']=round(houseData['P12']+presadj,1)
+	houseData['HA12']=round(houseData['P12']+presadj,2)
 
 
 for myYear in [2014]:
@@ -329,7 +329,7 @@ for myYear in [2014]:
 		counter+=1
 		if (counter>10000):
 			break
-	houseData['HA14']=round(houseData['P12']+presadj,1)
+	houseData['HA14']=round(houseData['P12']+presadj,2)
 
 
 for state in predPres:
@@ -342,11 +342,11 @@ houseData["states"]={}
 for state in stateData.keys():
 	dpres16 = stateData[state]["2016"]["dem"]*1.0/(stateData[state]["2016"]["dem"]+stateData[state]["2016"]["gop"])
 	dmov16 = (dpres16-.5)*200
-	dlean16 = dmov16-houseData['P16']
+	dlean16 = round(dmov16-houseData['P16'],2)
 	#stateData[state]["L16"]=dlean16
 	dpres12 = stateData[state]["2012"]["dem"]*1.0/(stateData[state]["2012"]["dem"]+stateData[state]["2012"]["gop"])
 	dmov12 = (dpres12-.5)*200
-	dlean12 = dmov12-houseData['P12']
+	dlean12 = round(dmov12-houseData['P12'],2)
 	#stateData[state]["L12"]=dlean12
 	
 	#stateData[state]["LP20"]=stateData[state]["P2020"]-houseData['PP20']
@@ -360,18 +360,18 @@ for cd in allPres:
 		cdID = stateAbbrev+'-'+str(int(cd[1][3:]))
 	
 	dmov16 = (districts[cdID]['pres16']-50)*2
-	lean16 = dmov16 - houseData["states"][stateAbbrev.upper()]["L16"]+houseData["P16"]
+	lean16 = round(dmov16 - houseData["states"][stateAbbrev.upper()]["L16"]+houseData["P16"],2)
 	dmov12 = (districts[cdID]['pres12']-50)*2
-	lean12 = dmov12 - houseData["states"][stateAbbrev.upper()]["L12"]+houseData["P12"]
+	lean12 = round(dmov12 - houseData["states"][stateAbbrev.upper()]["L12"]+houseData["P12"],2)
 	
 	dhmov18 = districts[cdID]['house18']/10
-	leanH18 = dhmov18 - (houseData["states"][stateAbbrev.upper()]["L16"]-2*houseData["P16"]+houseData["HA18"])
+	leanH18 = round(dhmov18 - (houseData["states"][stateAbbrev.upper()]["L16"]-2*houseData["P16"]+houseData["HA18"]),2)
 	dhmov16 = districts[cdID]['house16']/10
-	leanH16 = dhmov16 - (houseData["states"][stateAbbrev.upper()]["L16"]-2*houseData["P16"]+houseData["HA16"])
+	leanH16 = round(dhmov16 - (houseData["states"][stateAbbrev.upper()]["L16"]-2*houseData["P16"]+houseData["HA16"]),2)
 	dhmov14 = districts[cdID]['house14']/10
-	leanH14 = dhmov14 - (houseData["states"][stateAbbrev.upper()]["L12"]-2*houseData["P12"]+houseData["HA14"])
+	leanH14 = round(dhmov14 - (houseData["states"][stateAbbrev.upper()]["L12"]-2*houseData["P12"]+houseData["HA14"]),2)
 	dhmov12 = districts[cdID]['house12']/10
-	leanH12 = dhmov12 - (houseData["states"][stateAbbrev.upper()]["L12"]-2*houseData["P12"]+houseData["HA12"])
+	leanH12 = round(dhmov12 - (houseData["states"][stateAbbrev.upper()]["L12"]-2*houseData["P12"]+houseData["HA12"]),2)
 	
 	houseData["states"][stateAbbrev.upper()]["districts"][cdID]={'L16':lean16,'L12':lean12,"HL16":leanH16,"HL18":leanH18}
 
