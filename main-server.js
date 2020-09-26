@@ -85,6 +85,17 @@ app.get(['/electoral','/electoral.html'],
 	}
 );
 
+app.get(['/senate','/senate.html'],
+	function(req, res){
+		
+		
+		res.write(nunjucks.render('templates/senatetable.html',{
+
+		}));
+		res.end();
+	}
+);
+
 app.get(['/map','/map.html'],
 	function(req, res){
 		
