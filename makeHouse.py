@@ -375,7 +375,7 @@ for cd in allPres:
 	
 	houseData["states"][stateAbbrev.upper()]["districts"][cdID]={'L16':lean16,'L12':lean12,"HL16":leanH16,"HL18":leanH18}
 
-initial = ['{% extends "templates/house.html" %}\n']
+initial = ['{% extends "templates/housemap.html" %}\n']
 end = ['{% endblock %}']
 file1 = open('templates/housedata.html', 'w')
 file1.writelines(initial) 

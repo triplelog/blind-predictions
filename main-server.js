@@ -100,7 +100,7 @@ app.get(['/house','/house.html'],
 	function(req, res){
 		
 		
-		res.write(nunjucks.render('templates/housedata.html',{
+		res.write(nunjucks.render('templates/house.html',{
 
 		}));
 		res.end();
@@ -128,8 +128,20 @@ app.get(['/map','/map.html'],
 app.get(['/housemap','/housemap.html'],
 	function(req, res){
 		
+		
+		res.write(nunjucks.render('templates/housedata.html',{
+			//electoralData: eData,
 
-		res.write(nunjucks.render('templates/housemap.html',{
+		}));
+		res.end();
+	}
+);
+
+app.post(['/housemap','/housemap.html'],
+	function(req, res){
+		console.log(req.body);
+		
+		res.write(nunjucks.render('templates/housedata.html',{
 			//electoralData: eData,
 
 		}));
