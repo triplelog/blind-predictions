@@ -350,7 +350,7 @@ for state in stateData.keys():
 	#stateData[state]["L12"]=dlean12
 	
 	#stateData[state]["LP20"]=stateData[state]["P2020"]-houseData['PP20']
-	houseData["states"][stateData[state]["abbrev"]]={"L16":dlean16,"L12":dlean12,"LP20":stateData[state]["P2020"]-houseData['PP20'],"districts":{}}
+	houseData["states"][stateData[state]["abbrev"]]={"L16":dlean16,"L12":dlean12,"LP20":round(stateData[state]["P2020"]-houseData['PP20'],2),"districts":{}}
 
 for cd in allPres:
 	stateAbbrev = cd[1][:2].lower()
