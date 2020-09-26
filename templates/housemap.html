@@ -1991,22 +1991,7 @@
 <script>
 var houseData = {% block houseData %}{% endblock %};
 
-var expDemSeats = 0;
-for (state in houseData.states){
-	for (district in houseData.states[state].districts){
-		var cdID = district
-		var stateData = houseData["states"][state];
-		var districtData = stateData["districts"][cdID]
-		var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
-		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
-		var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
-	
-		var preselo = disadv*10;
-		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/75));
-	}
-	
-	
-}  
+ 
 </script>
 
 <script src="../js/housemap.js"></script>

@@ -3,28 +3,37 @@ var cdArray = Object.keys(resultsData);
 var resultsArray = [];
 var baseData = 'pred20';
 
+var expDemSeats = 0;
+for (state in houseData.states){
+	for (district in houseData.states[state].districts){
+		var cdID = district;
+		var stateData = houseData["states"][state];
+		var districtData = stateData["districts"][cdID];
+		var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
+		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
+		var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
+	
+		var preselo = disadv*10;
+		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/75));
+		resultsData[cdID]=1.0/(1.0+Math.pow(10.0,-1*preselo/75));
+	}
+	
+	
+} 
+
 for (var i=0;i<435;i++){
 	var myOb = resultsData[cdArray[i]];
 	myOb['abbrev']=cdArray[i];
 	myOb['pred20']=myOb['house18'];
 	resultsArray.push(myOb);
-	if (resultsData[cdArray[i]].house18 < 35.0) {
-		document.getElementById(cdArray[i]).style.fill = 'rgb(0,0,250)';
-	}
-	else if (resultsData[cdArray[i]].house18 < 45.0) {
-		document.getElementById(cdArray[i]).style.fill = 'rgb(30,120,250)';
-	}
-	else if (resultsData[cdArray[i]].house18 < 50.0) {
-		document.getElementById(cdArray[i]).style.fill = 'rgb(115,196,250)';
-	}
-	else if (resultsData[cdArray[i]].house18 < 55.0) {
-		document.getElementById(cdArray[i]).style.fill = 'rgb(246,176,176)';
-	}
-	else if (resultsData[cdArray[i]].house18 < 65.0) {
-		document.getElementById(cdArray[i]).style.fill = 'rgb(246,100,100)';
+	
+
+	var dprob = resultsData[cdArray[i]];
+	if (dprob < .5) {
+		document.getElementById(cdArray[i]).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 	}
 	else {
-		document.getElementById(cdArray[i]).style.fill = 'rgb(255,0,0)';
+		document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 	}
 }
 
@@ -60,87 +69,6 @@ slider.oninput = function() {
 	}
 	else {
 	  demoAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var urbanslider = document.getElementById("urbanRange");
-urbanslider.oninput = function() {
-	if (this.value<=0){
-	  urbanAdd = this.value/10.0;
-	}
-	else {
-	  urbanAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var suburbanslider = document.getElementById("suburbanRange");
-suburbanslider.oninput = function() {
-	if (this.value<=0){
-	  suburbanAdd = this.value/10.0;
-	}
-	else {
-	  suburbanAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var ruralslider = document.getElementById("ruralRange");
-ruralslider.oninput = function() {
-	if (this.value<=0){
-	  ruralAdd = this.value/10.0;
-	}
-	else {
-	  ruralAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-
-var twentyslider = document.getElementById("twentyRange");
-twentyslider.oninput = function() {
-	if (this.value<=0){
-	  twentyAdd = this.value/10.0;
-	}
-	else {
-	  twentyAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var thirtyslider = document.getElementById("thirtyRange");
-thirtyslider.oninput = function() {
-	if (this.value<=0){
-	  thirtyAdd = this.value/10.0;
-	}
-	else {
-	  thirtyAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var fortyslider = document.getElementById("fortyRange");
-fortyslider.oninput = function() {
-	if (this.value<=0){
-	  fortyAdd = this.value/10.0;
-	}
-	else {
-	  fortyAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var fiftyslider = document.getElementById("fiftyRange");
-fiftyslider.oninput = function() {
-	if (this.value<=0){
-	  fiftyAdd = this.value/10.0;
-	}
-	else {
-	  fiftyAdd = this.value/10.0;
-	}
-  reorderStates();
-}
-var sixtyslider = document.getElementById("sixtyRange");
-sixtyslider.oninput = function() {
-	if (this.value<=0){
-	  sixtyAdd = this.value/10.0;
-	}
-	else {
-	  sixtyAdd = this.value/10.0;
 	}
   reorderStates();
 }
@@ -214,12 +142,12 @@ function reorderStates(startI=0,endI=435) {
 	var topW = 150;
 	
 
-	resultsArray.sort((a, b) => parseFloat(a[baseData]+urbanAdd*a['urban']+suburbanAdd*a['suburban']+ruralAdd*a['rural']+twentyAdd*a['twenty']+thirtyAdd*a['thirty']+fortyAdd*a['forty']+fiftyAdd*a['fifty']+sixtyAdd*a['sixty']) - parseFloat(b[baseData]+urbanAdd*b['urban']+suburbanAdd*b['suburban']+ruralAdd*b['rural']+twentyAdd*b['twenty']+thirtyAdd*b['thirty']+fortyAdd*b['forty']+fiftyAdd*b['fifty']+sixtyAdd*b['sixty']));
+	resultsArray.sort((a, b) => parseFloat(a[baseData]) - parseFloat(b[baseData]));
 
 	for (var i=0;i<435;i++) {
 		var cdData = resultsArray[i];
 		
-		var presyear = cdData[baseData]+demoAdd+urbanAdd*cdData['urban']+suburbanAdd*cdData['suburban']+ruralAdd*cdData['rural']+twentyAdd*cdData['twenty']+thirtyAdd*cdData['thirty']+fortyAdd*cdData['forty']+fiftyAdd*cdData['fifty']+sixtyAdd*cdData['sixty'];
+		var presyear = cdData[baseData]+demoAdd;
 
 		if (presyear >100){
 			presyear = 100;
@@ -237,7 +165,7 @@ function reorderStates(startI=0,endI=435) {
 		if (2==2) {
 			totalEV += 1;
 			
-			var presyear = cdData[baseData]+demoAdd+urbanAdd*cdData['urban']+suburbanAdd*cdData['suburban']+ruralAdd*cdData['rural']+twentyAdd*cdData['twenty']+thirtyAdd*cdData['thirty']+fortyAdd*cdData['forty']+fiftyAdd*cdData['fifty']+sixtyAdd*cdData['sixty'];
+			var presyear = cdData[baseData]+demoAdd;
 
 			if (presyear >100){
 				presyear = 100;
@@ -445,8 +373,8 @@ function reorderED(state1,state2) {
 		
 		if (state1idx<state2idx) {
 			for (var i=state1idx+1;i<state2idx+1;i++) {
-				const x = resultsArray[i][baseData]+demoAdd+urbanAdd*resultsArray[i]['urban']+suburbanAdd*resultsArray[i]['suburban']+ruralAdd*resultsArray[i]['rural']+twentyAdd*resultsArray[i]['twenty']+thirtyAdd*resultsArray[i]['thirty']+fortyAdd*resultsArray[i]['forty']+fiftyAdd*resultsArray[i]['fifty']+sixtyAdd*resultsArray[i]['sixty'];
-				const y = resultsArray[state1idx][baseData]+demoAdd+urbanAdd*resultsArray[state1idx]['urban']+suburbanAdd*resultsArray[state1idx]['suburban']+ruralAdd*resultsArray[state1idx]['rural']+twentyAdd*resultsArray[state1idx]['twenty']+thirtyAdd*resultsArray[state1idx]['thirty']+fortyAdd*resultsArray[state1idx]['forty']+fiftyAdd*resultsArray[state1idx]['fifty']+sixtyAdd*resultsArray[state1idx]['sixty'];
+				const x = resultsArray[i][baseData]+demoAdd;
+				const y = resultsArray[state1idx][baseData]+demoAdd;
 				
 				if (y<x) {
 					resultsArray[i][baseData]-=(x-y)/2+.01;
@@ -457,8 +385,8 @@ function reorderED(state1,state2) {
 		}
 		else  {
 			for (var i=state1idx-1;i>state2idx-1;i--) {
-				const x = resultsArray[i][baseData]+demoAdd+urbanAdd*resultsArray[i]['urban']+suburbanAdd*resultsArray[i]['suburban']+ruralAdd*resultsArray[i]['rural']+twentyAdd*resultsArray[i]['twenty']+thirtyAdd*resultsArray[i]['thirty']+fortyAdd*resultsArray[i]['forty']+fiftyAdd*resultsArray[i]['fifty']+sixtyAdd*resultsArray[i]['sixty'];
-				const y = resultsArray[state1idx][baseData]+demoAdd+urbanAdd*resultsArray[state1idx]['urban']+suburbanAdd*resultsArray[state1idx]['suburban']+ruralAdd*resultsArray[state1idx]['rural']+twentyAdd*resultsArray[state1idx]['twenty']+thirtyAdd*resultsArray[state1idx]['thirty']+fortyAdd*resultsArray[state1idx]['forty']+fiftyAdd*resultsArray[state1idx]['fifty']+sixtyAdd*resultsArray[state1idx]['sixty'];
+				const x = resultsArray[i][baseData]+demoAdd;
+				const y = resultsArray[state1idx][baseData]+demoAdd;
 				
 				if (y>x) {
 					resultsArray[i][baseData]+=(y-x)/2+.01;
@@ -482,7 +410,7 @@ function clickstate(stateid) {
 			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'inline-block';
 			
 		
-			var presyear = cdData[baseData]+demoAdd+urbanAdd*cdData['urban']+suburbanAdd*cdData['suburban']+ruralAdd*cdData['rural']+twentyAdd*cdData['twenty']+thirtyAdd*cdData['thirty']+fortyAdd*cdData['forty']+fiftyAdd*cdData['fifty']+sixtyAdd*cdData['sixty'];
+			var presyear = cdData[baseData]+demoAdd;
 			if (presyear >100){presyear = 100;}
 			if (presyear <0){presyear = 0;}
 		
