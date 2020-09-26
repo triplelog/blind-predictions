@@ -131,7 +131,7 @@ for line in lines:
 	if i==1:
 		continue
 	lineSplit = line.strip().split(",")
-	ev = int(lineSplit[9])
+	ev = int(lineSplit[10])
 
 	line2 = 'vepevs.push_back('+str(ev)+');\n'
 	file1.writelines([line2])
