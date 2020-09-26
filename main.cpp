@@ -48,7 +48,10 @@ EM_JS(void, send_results, (const char* x), {
 	wins["DH"]=xStr[3];
 	wins["RH"]=xStr[4];
 	wins["TH"]=xStr[5];
-	wins["ME"]=xStr[6];
+	wins["DV"]=xStr[6];
+	wins["RV"]=xStr[7];
+	wins["TV"]=xStr[8];
+	wins["ME"]=xStr[9];
 	updateWins(wins);
 });
 EM_JS(void, send_ready, (), {
@@ -59,6 +62,7 @@ std::map<int,std::vector<double> > correlations;
 std::map<int,std::vector<int> > correlationsInt;
 std::vector<std::string> states;
 std::vector<int> evs;
+std::vector<int> vepevs;
 std::vector<double> predictions16;
 std::vector<double> predictions20;
 long long durationRand;
@@ -135,6 +139,7 @@ void makePrediction(int year, int n) {
 		std::vector<int> elonew = elo;
 		int bidenEV = 0;
 		int dHEV = 0;
+		int dVEPEV = 0;
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
 			doneYet[ii]=false;
@@ -164,27 +169,28 @@ void makePrediction(int year, int n) {
 				
 				bidenEV += evs[thisstate];
 				dHEV += evs[thisstate]-2;
+				dVEPEV += vepevs[thisstate];
 				stateData[thisstate]++;
 				
 				
 			}
 			if (thisstate == 21){//Maine
 				if (elonew[thisstate]+eloR > -100){ //Biden wins 1st
-					bidenEV++; dHEV++;
+					bidenEV++; dHEV++; dVEPEV+=10;
 				}
 				if (elonew[thisstate]+eloR > 100){ //Biden wins 2nd
-					bidenEV++; dHEV++;
+					bidenEV++; dHEV++; dVEPEV+=10;
 				}
 			}
 			if (thisstate == 29){//Nebraska
 				if (elonew[thisstate]+eloR > -60){ //Biden wins 1st
-					bidenEV++; dHEV++;
+					bidenEV++; dHEV++; dVEPEV+=9;
 				}
 				if (elonew[thisstate]+eloR > -200){ //Biden wins 2nd
-					bidenEV++; dHEV++;
+					bidenEV++; dHEV++; dVEPEV+=9;
 				}
 				if (elonew[thisstate]+eloR > 300){ //Biden wins 3rd
-					bidenEV++; dHEV++;
+					bidenEV++; dHEV++; dVEPEV+=9;
 				}
 			}
 			
@@ -230,6 +236,15 @@ void makePrediction(int year, int n) {
 		else {
 			ties[1]++;
 		}
+		if (dVEPEV >= 2182){
+			dWins[2]++;
+		}
+		else if (dVEPEV <= 2181){
+			rWins[2]++;
+		}
+		else {
+			ties[2]++;
+		}
 		if (evData.find(bidenEV) == evData.end()){
 			evData[bidenEV] = 1;
 		}
@@ -242,9 +257,14 @@ void makePrediction(int year, int n) {
 			resultStr += std::to_string(dWins[0])+",";
 			resultStr += std::to_string(rWins[0])+",";
 			resultStr += std::to_string(ties[0])+",";
+			
 			resultStr += std::to_string(dWins[1])+",";
 			resultStr += std::to_string(rWins[1])+",";
 			resultStr += std::to_string(ties[1])+",";
+			
+			resultStr += std::to_string(dWins[2])+",";
+			resultStr += std::to_string(rWins[2])+",";
+			resultStr += std::to_string(ties[2])+",";
 			int medEV = 0;
 			int count = 0;
 			for (ii=0;ii<539;ii++){
@@ -305,8 +325,11 @@ void initialRun(){
 	}
 	states = createStates();
 	evs = createEV();
+	vepevs = createVEPEV();
 	evs[21]=2;
 	evs[29]=2;
+	vepevs[21]=0;
+	vepevs[29]=0;
 	seed = 7;
 	durationRand = 0;
 	predictions16 = createPredictions16();

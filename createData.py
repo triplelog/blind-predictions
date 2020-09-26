@@ -117,4 +117,25 @@ for line in lines:
 	line2 = 'evs.push_back('+str(ev)+');\n'
 	file1.writelines([line2])
 file1.writelines(end)
+
+
+initial = ['std::vector<int> createVEPEV(){\nstd::vector<int> vepevs;\n']
+end = ['return vepevs;\n}\n']
+file2 = open('2018vep.csv', 'r') 
+lines = file2.readlines() 
+
+file1.writelines(initial) 
+i = 0
+for line in lines:
+	i+=1
+	if i==1:
+		continue
+	lineSplit = line.strip().split(",")
+	ev = int(lineSplit[9])
+
+	line2 = 'vepevs.push_back('+str(ev)+');\n'
+	file1.writelines([line2])
+file1.writelines(end)
 file1.close()
+
+
