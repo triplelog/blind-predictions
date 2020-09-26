@@ -14,8 +14,8 @@ for (state in houseData.states){
 		var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
 	
 		var preselo = disadv*10;
-		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/75));
-		resultsData[cdID]=1.0/(1.0+Math.pow(10.0,-1*preselo/75));
+		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/100));
+		resultsData[cdID]=1.0/(1.0+Math.pow(10.0,-1*preselo/100));
 	}
 	
 	
