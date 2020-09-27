@@ -25,7 +25,7 @@ for (var i=0;i<435;i++){
 	var myOb = resultsData[cdArray[i]];
 	myOb['abbrev']=cdArray[i];
 	resultsArray.push(myOb);
-	
+	console.log(myOb[baseData]/20+50,100-myOb['pres16']);
 
 	var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/150));
 	if (dprob < .5) {
@@ -362,7 +362,6 @@ function draghandler(e){
 	e = e || window.event;
 	var dragX = e.pageX;
 
-	console.log("X: "+dragX+" startX: "+startX);
 	for (var i=0;i<435;i++) {
 		var cdData = resultsArray[i];
 		if (cdData['abbrev']==districtToDrag) {
