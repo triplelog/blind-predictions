@@ -317,7 +317,7 @@ orderStates();
 reorderStates();
 
 
-function clickstate(stateid) {
+/*function clickstate(stateid) {
 	var demVote = 0;
 	var repVote = 0;
 	for (var i=0;i<435;i++) {
@@ -350,6 +350,8 @@ function clickstate(stateid) {
 		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)-10*nationalAdj)/10+'%';
 	}
 }
+*/
+
 function clickdistrict(districtid) {
 
 	for (var i=0;i<435;i++) {
