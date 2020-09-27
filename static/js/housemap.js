@@ -53,6 +53,7 @@ for (var i=0;i<200;i++){
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 		}
 	}
+	console.log(expDem218,adj218);
 }
 console.log(expDem218);
 console.log(adj218);
