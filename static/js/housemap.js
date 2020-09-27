@@ -28,10 +28,10 @@ for (state in houseData.states){
 var adj218 = 0;
 for (var i=0;i<200;i++){
 	if (expDem218 < 217){
-		adj218 += 1;
+		adj218 += .1;
 	}
 	else if (expDem218 > 219){
-		adj218 -= 1;
+		adj218 -= .1;
 	}
 	else {
 		break;
