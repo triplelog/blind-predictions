@@ -6,84 +6,98 @@ var baseData = 'pred20';
 var expDemSeats = 0;
 var expDem218 = 0;
 var eloDenom = 125;
-var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
-for (state in houseData.states){
-	var stateData = houseData["states"][state];
-	var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
-	for (district in houseData.states[state].districts){
-		var cdID = district;
-		
-		var districtData = stateData["districts"][cdID];
-		
-		
-		var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
-	
-		var preselo = disadv*10;
-		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
-		expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
-		resultsData[cdID]["pred20"]=preselo;
-	}
-}
-
 var adj218 = 0;
-for (var i=0;i<200;i++){
-	if (expDem218 < 217.5){
-		adj218 += .1;
-	}
-	else if (expDem218 > 218.5){
-		adj218 -= .1;
-	}
-	else {
-		break;
-	}
-	var expDem218 = 0;
-	
+var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
+var demVote = 0;
+var repVote = 0;
+var nationalAdj = 0;
+var stateStart = '';
+var stateCurrent = '';
+var demoAdd = 0.0;
+function resetDistricts() {
+	natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
 	for (state in houseData.states){
 		var stateData = houseData["states"][state];
-		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2 + adj218;
+		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
 		for (district in houseData.states[state].districts){
 			var cdID = district;
 		
 			var districtData = stateData["districts"][cdID];
 		
-		
 			var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
 	
 			var preselo = disadv*10;
+			expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
+			resultsData[cdID]["pred20"]=preselo;
 		}
 	}
+
+
+	for (var i=0;i<500;i++){
+		if (expDem218 < 217.5){
+			adj218 += .1;
+		}
+		else if (expDem218 > 218.5){
+			adj218 -= .1;
+		}
+		else {
+			break;
+		}
+		var expDem218 = 0;
+	
+		for (state in houseData.states){
+			var stateData = houseData["states"][state];
+			var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2 + adj218;
+			for (district in houseData.states[state].districts){
+				var cdID = district;
+		
+				var districtData = stateData["districts"][cdID];
+		
+		
+				var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
+	
+				var preselo = disadv*10;
+				expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
+			}
+		}
+	}
+
+	var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
+	console.log(natadv+adj218, demProb218);
+
+	demVote = 0;
+	repVote = 0;
+	for (var i=0;i<435;i++){
+		var myOb = resultsData[cdArray[i]];
+		myOb['abbrev']=cdArray[i];
+		resultsArray.push(myOb);
+	
+		var dperc1 = myOb[baseData]/20+50;
+	
+		demVote += myOb['votes16']*(dperc1);
+		repVote += myOb['votes16']*(100.0-(dperc1));
+
+		var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/eloDenom));
+		if (dprob < .5) {
+			document.getElementById(cdArray[i]).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+		}
+		else {
+			document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+		}
+	}
+	nationalAdj = natadv - 100*(demVote-repVote)/(demVote+repVote);
+	slider.value = 0;
+	demoAdd = 0;
+	orderStates();
+	reorderStates();
+	
 }
 
-var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
-console.log(natadv+adj218, demProb218);
-
-demVote = 0;
-repVote = 0;
-for (var i=0;i<435;i++){
-	var myOb = resultsData[cdArray[i]];
-	myOb['abbrev']=cdArray[i];
-	resultsArray.push(myOb);
-	
-	var dperc1 = myOb[baseData]/20+50;
-	
-	demVote += myOb['votes16']*(dperc1);
-	repVote += myOb['votes16']*(100.0-(dperc1));
-
-	var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/eloDenom));
-	if (dprob < .5) {
-		document.getElementById(cdArray[i]).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
-	}
-	else {
-		document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
-	}
-}
-var nationalAdj = natadv - 100*(demVote-repVote)/(demVote+repVote)
 
 
-var stateStart = '';
-var stateCurrent = '';
-var demoAdd = 0.0;
+
+
 
 document.addEventListener("dragstart", function(event) {
   stateStart = event.target.id;
@@ -108,6 +122,7 @@ slider.oninput = function() {
   reorderStates();
 }
 
+resetDistricts();
 
 function orderStates() {
 	
@@ -372,44 +387,7 @@ function reorderStates(startI=0,endI=435) {
 		pvel.textContent = 'R+'+parseInt(-1*demelo)/10+'%';
 	}
 }
-orderStates();
-reorderStates();
 
-
-/*function clickstate(stateid) {
-	var demVote = 0;
-	var repVote = 0;
-	for (var i=0;i<435;i++) {
-		var cdData = resultsArray[i];
-		
-		if (cdData['abbrev'].substr(0,2)==stateid) {
-			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'inline-block';
-			
-		
-			var presyear = cdData[baseData]-demoAdd;
-			var dperc = presyear/20+50;
-			if (dperc>99){
-				dperc=99;
-			}
-			else if (dperc < 1){
-				dperc=1;
-			}
-		
-			demVote += cdData['votes16']*(dperc);
-			repVote += cdData['votes16']*(100.0-(dperc));
-		}
-		else {
-			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'none';
-		}
-	}
-	if (1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj>0) {
-		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
-	}
-	else {
-		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)-10*nationalAdj)/10+'%';
-	}
-}
-*/
 
 function clickdistrict(districtid) {
 
