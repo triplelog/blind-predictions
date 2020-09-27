@@ -121,6 +121,7 @@ function orderStates() {
 		document.getElementById('extra2016BR').appendChild(extraspan);
 
 	}
+	
 }
 function reorderStates(startI=0,endI=435) {
 	var totalEV = startI;
@@ -306,11 +307,35 @@ function reorderStates(startI=0,endI=435) {
 		}
 	}
 	
-	if (1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj>0) {
-		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
+
+	var pvel = document.getElementById('popularVote');
+	var demelo = 1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj;
+	var dprob = 1.0/(1+Math.pow(10.0,-1*demelo/75));
+
+	pvel.style.left = "calc( "+(50*demoAdd/250+50)+"% - 38px + "+(-40*demoAdd/250)+"px)";
+
+	
+	if (demVote>repVote) {
+		pvel.style.color = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+		if (demelo>30){
+			pvel.style.background = "white";
+		}
+		else {
+			pvel.style.background = "black";
+		}
+		
+		pvel.textContent = 'D+'+parseInt(demelo)/10+'%';
+		
 	}
 	else {
-		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)-10*nationalAdj)/10+'%';
+		pvel.style.color = "hsl(0,100%,"+(50+dprob*100)+"%)";
+		if (demelo<-30){
+			pvel.style.background = "white";
+		}
+		else {
+			pvel.style.background = "black";
+		}
+		pvel.textContent = 'R+'+parseInt(-1*demelo)/10+'%';
 	}
 }
 orderStates();
