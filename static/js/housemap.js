@@ -4,13 +4,16 @@ var resultsArray = [];
 var baseData = 'pred20';
 
 var expDemSeats = 0;
+var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
 for (state in houseData.states){
+	var stateData = houseData["states"][state];
+	var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
 	for (district in houseData.states[state].districts){
 		var cdID = district;
-		var stateData = houseData["states"][state];
+		
 		var districtData = stateData["districts"][cdID];
-		var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
-		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
+		
+		
 		var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
 	
 		var preselo = disadv*10;
@@ -41,8 +44,8 @@ for (var i=0;i<435;i++){
 		document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 	}
 }
-var nationalAdj = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2 - 100*(demVote-repVote)/(demVote+repVote)
-console.log(nationalAdj);
+var nationalAdj = natadv - 100*(demVote-repVote)/(demVote+repVote)
+
 
 var stateStart = '';
 var stateCurrent = '';
@@ -304,10 +307,10 @@ function reorderStates(startI=0,endI=435) {
 	}
 	
 	if (demVote>repVote) {
-		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote))/10+'%';
+		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 	else {
-		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote))/10+'%';
+		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 }
 orderStates();
@@ -341,10 +344,10 @@ function clickstate(stateid) {
 		}
 	}
 	if (demVote>repVote) {
-		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote))/10+'%';
+		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 	else {
-		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote))/10+'%';
+		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 }
 function clickdistrict(districtid) {
