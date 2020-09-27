@@ -315,7 +315,7 @@ function reorderStates(startI=0,endI=435) {
 	pvel.style.left = "calc( "+(50*demoAdd/250+50)+"% - 38px + "+(-40*demoAdd/250)+"px)";
 
 	
-	if (demVote>repVote) {
+	if (demelo>0) {
 		pvel.style.color = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 		if (demelo>30){
 			pvel.style.background = "white";
