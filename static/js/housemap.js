@@ -310,7 +310,7 @@ function reorderStates(startI=0,endI=435) {
 		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 	else {
-		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
+		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)-10*nationalAdj)/10+'%';
 	}
 }
 orderStates();
@@ -347,7 +347,7 @@ function clickstate(stateid) {
 		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 	else {
-		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
+		document.getElementById('popularVote').textContent = 'R+'+parseInt(1000*(repVote-demVote)/(demVote+repVote)-10*nationalAdj)/10+'%';
 	}
 }
 function clickdistrict(districtid) {
