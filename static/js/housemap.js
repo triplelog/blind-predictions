@@ -134,16 +134,16 @@ function reorderStates(startI=0,endI=435) {
 	var topW = 150;
 	
 
-	resultsArray.sort((a, b) => parseFloat(a[baseData]) - parseFloat(b[baseData]));
+	resultsArray.sort((a, b) => parseFloat(-1*a[baseData]) - parseFloat(-1*b[baseData]));
 
 	for (var i=0;i<435;i++) {
 		var cdData = resultsArray[i];
 		
-		var presyear = cdData[baseData]+demoAdd;
+		var presyear = cdData[baseData]-demoAdd;
 
 		
-		repVote += cdData['votes16']*(presyear/20+50);
-		demVote += cdData['votes16']*(100.0-(presyear/20+50));
+		demVote += cdData['votes16']*(presyear/20+50);
+		repVote += cdData['votes16']*(100.0-(presyear/20+50));
 	}
 	for (var i=startI;i<endI;i++) {
 		var cdData = resultsArray[i];
@@ -151,7 +151,7 @@ function reorderStates(startI=0,endI=435) {
 		if (2==2) {
 			totalEV += 1;
 			
-			var presyear = cdData[baseData]+demoAdd;
+			var presyear = cdData[baseData]-demoAdd;
 
 			
 			
@@ -184,13 +184,13 @@ function reorderStates(startI=0,endI=435) {
 			
 			var predSpan = newspan.childNodes[0];
 
-			if (presyear>0) {
-				predSpan.style.background = 'red';
-				extraspan.style.background = 'red'; 
+			if (dprob < .5) {
+				predSpan.style.background = "hsl(0,100%,"+(50+dprob*100)+"%)";
+				extraspan.style.background = "hsl(0,100%,"+(50+dprob*100)+"%)";
 			}
 			else {
-				predSpan.style.background = 'blue';
-				extraspan.style.background = 'blue';
+				predSpan.style.background = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+				extraspan.style.background = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
 			
 			if (totalEV - 1 >= botW + sideH + topW+sideH) {
@@ -296,11 +296,6 @@ function reorderStates(startI=0,endI=435) {
 				
 			}
 			
-			
-			
-			
-			
-
 
 		}
 	}
@@ -340,8 +335,8 @@ function reorderED(state1,state2) {
 		
 		if (state1idx<state2idx) {
 			for (var i=state1idx+1;i<state2idx+1;i++) {
-				const x = resultsArray[i][baseData]+demoAdd;
-				const y = resultsArray[state1idx][baseData]+demoAdd;
+				const x = resultsArray[i][baseData]-demoAdd;
+				const y = resultsArray[state1idx][baseData]-demoAdd;
 				
 				if (y<x) {
 					resultsArray[i][baseData]-=(x-y)/2+.01;
@@ -352,8 +347,8 @@ function reorderED(state1,state2) {
 		}
 		else  {
 			for (var i=state1idx-1;i>state2idx-1;i--) {
-				const x = resultsArray[i][baseData]+demoAdd;
-				const y = resultsArray[state1idx][baseData]+demoAdd;
+				const x = resultsArray[i][baseData]-demoAdd;
+				const y = resultsArray[state1idx][baseData]-demoAdd;
 				
 				if (y>x) {
 					resultsArray[i][baseData]+=(y-x)/2+.01;
@@ -377,10 +372,10 @@ function clickstate(stateid) {
 			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'inline-block';
 			
 		
-			var presyear = cdData[baseData]+demoAdd;
+			var presyear = cdData[baseData]-demoAdd;
 		
-			repVote += cdData['votes16']*(presyear/20+50);
-			demVote += cdData['votes16']*(100.0-(presyear/20+50));
+			demVote += cdData['votes16']*(presyear/20+50);
+			repVote += cdData['votes16']*(100.0-(presyear/20+50));
 		}
 		else {
 			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'none';
@@ -418,7 +413,7 @@ function draghandler(e){
 	for (var i=0;i<435;i++) {
 		var cdData = resultsArray[i];
 		if (cdData['abbrev']==districtToDrag) {
-			cdData[baseData]+=(dragX-startX)/5;
+			cdData[baseData]-=(dragX-startX);
 		}
 
 	}
