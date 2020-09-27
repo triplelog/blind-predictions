@@ -4,6 +4,7 @@ var resultsArray = [];
 var baseData = 'pred20';
 
 var expDemSeats = 0;
+var expDem218 = 0;
 var eloDenom = 125;
 var natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
 for (state in houseData.states){
@@ -19,11 +20,45 @@ for (state in houseData.states){
 	
 		var preselo = disadv*10;
 		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
+		expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 		resultsData[cdID]["pred20"]=preselo;
 	}
+}
+
+var adj218 = 0;
+for (var i=0;i<200;i++){
+	if (expDem218 < 217){
+		adj218 += 1;
+	}
+	else if (expDem218 > 219){
+		adj218 -= 1;
+	}
+	else {
+		break;
+	}
+	var expDem218 = 0;
 	
+	for (state in houseData.states){
+		var stateData = houseData["states"][state];
+		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2 + adj218;
+		for (district in houseData.states[state].districts){
+			var cdID = district;
+		
+			var districtData = stateData["districts"][cdID];
+		
+		
+			var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
 	
-} 
+			var preselo = disadv*10;
+			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
+			resultsData[cdID]["pred20"]=preselo;
+		}
+	}
+}
+console.log(expDem218);
+console.log(adj218);
+
+
 
 demVote = 0;
 repVote = 0;
