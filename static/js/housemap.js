@@ -66,10 +66,10 @@ document.addEventListener("mouseup", function(event) {
 var slider = document.getElementById("myRange");
 slider.oninput = function() {
 	if (this.value<=0){
-	  demoAdd = this.value/10.0;
+	  demoAdd = this.value;
 	}
 	else {
-	  demoAdd = this.value/10.0;
+	  demoAdd = this.value;
 	}
   reorderStates();
 }
