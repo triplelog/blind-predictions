@@ -306,7 +306,7 @@ function reorderStates(startI=0,endI=435) {
 		}
 	}
 	
-	if (demVote>repVote) {
+	if (1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj>0) {
 		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 	else {
@@ -343,7 +343,7 @@ function clickstate(stateid) {
 			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'none';
 		}
 	}
-	if (demVote>repVote) {
+	if (1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj>0) {
 		document.getElementById('popularVote').textContent = 'D+'+parseInt(1000*(demVote-repVote)/(demVote+repVote)+10*nationalAdj)/10+'%';
 	}
 	else {
