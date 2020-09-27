@@ -55,7 +55,7 @@ for (var i=0;i<200;i++){
 	}
 }
 
-var demProb218 = 1.0/(1.0+Math.pow(10.0,-10*adj218/75));
+var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
 console.log(natadv+adj218, demProb218);
 
 demVote = 0;
