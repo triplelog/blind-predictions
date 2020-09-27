@@ -367,23 +367,42 @@ function clickdistrict(districtid) {
 }
 var startX;
 var districtToDrag;
+var oldPred;
+var currentI;
 function draghandler(e){
 	e = e || window.event;
 	var dragX = e.pageX;
-
-	for (var i=0;i<435;i++) {
-		var cdData = resultsArray[i];
-		if (cdData['abbrev']==districtToDrag) {
-			cdData[baseData]-=(dragX-startX);
+	
+	var cdData = resultsArray[currentI];
+	var newPred = cdData[baseData] - (dragX-startX);
+	if (newPred < oldPred - 2 || newPred > oldPred + 2){
+		cdData[baseData]-=(dragX-startX);
+		oldPred = newPred;
+		reorderStates();
+		for (var i=0;i<435;i++) {
+			var cdDatan = resultsArray[i];
+			if (cdDatan['abbrev']==districtToDrag) {
+				oldPred = cdDatan[baseData];
+				currentI = i;
+				break;
+			}
 		}
-
+		startX = dragX;
 	}
-	reorderStates();
-	startX = dragX;
+
+	
 }
 
 function dragdistrict(event) {
 	districtToDrag = event.target.id;
+	for (var i=0;i<435;i++) {
+		var cdData = resultsArray[i];
+		if (cdData['abbrev']==districtToDrag) {
+			oldPred = cdData[baseData];
+			currentI = i;
+			break;
+		}
+	}
 	e = event || window.event;
 	startX = e.pageX;
 	
