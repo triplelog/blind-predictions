@@ -4,11 +4,11 @@
 	--side-height: 96;
 	--top-width: 150;
 }
-@media (max-aspect-ratio: 16/9) {
-	:root {--block-width: .45vw;}
+@media (max-aspect-ratio: 3/2) {
+	:root {--block-width: .6vw;}
 }
-@media (min-aspect-ratio: 16/9) {
-	:root {--block-width: .7vh;}
+@media (min-aspect-ratio: 3/2) {
+	:root {--block-width: .9vh;}
 }
 
 @font-face {
