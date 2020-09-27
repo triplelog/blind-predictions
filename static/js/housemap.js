@@ -32,10 +32,10 @@ for (var i=0;i<435;i++){
 	var dperc2 = 100-myOb['pres16'];
 	//console.log(myOb[baseData]/20+50,100-myOb['pres16']);
 	
-	demVote[0] += cdData['votes16']*(dperc1);
-	repVote[0] += cdData['votes16']*(100.0-(dperc1));
-	demVote[1] += cdData['votes16']*(dperc2);
-	repVote[1] += cdData['votes16']*(100.0-(dperc2));
+	demVote[0] += myOb['votes16']*(dperc1);
+	repVote[0] += myOb['votes16']*(100.0-(dperc1));
+	demVote[1] += myOb['votes16']*(dperc2);
+	repVote[1] += myOb['votes16']*(100.0-(dperc2));
 	console.log(demVote[0]/repVote[0],demVote[1]/repVote[1]);
 
 	var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/150));
