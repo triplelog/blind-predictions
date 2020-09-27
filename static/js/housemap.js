@@ -21,11 +21,22 @@ for (state in houseData.states){
 	
 } 
 
+demVote = [0,0];
+repVote = [0,0];
 for (var i=0;i<435;i++){
 	var myOb = resultsData[cdArray[i]];
 	myOb['abbrev']=cdArray[i];
 	resultsArray.push(myOb);
-	console.log(myOb[baseData]/20+50,100-myOb['pres16']);
+	
+	var dperc1 = myOb[baseData]/20+50;
+	var dperc2 = 100-myOb['pres16'];
+	//console.log(myOb[baseData]/20+50,100-myOb['pres16']);
+	
+	demVote[0] += cdData['votes16']*(dperc1);
+	repVote[0] += cdData['votes16']*(100.0-(dperc1));
+	demVote[1] += cdData['votes16']*(dperc2);
+	repVote[1] += cdData['votes16']*(100.0-(dperc2));
+	console.log(demVote[0]/repVote[0],demVote[1]/repVote[1]);
 
 	var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/150));
 	if (dprob < .5) {
