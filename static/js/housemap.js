@@ -131,10 +131,16 @@ function reorderStates(startI=0,endI=435) {
 		var cdData = resultsArray[i];
 		
 		var presyear = cdData[baseData]-demoAdd;
-
+		var dperc = presyear/20+50;
+		if (dperc>99){
+			dperc=99;
+		}
+		else if (dperc < 1){
+			dperc=1;
+		}
 		
-		demVote += cdData['votes16']*(presyear/20+50);
-		repVote += cdData['votes16']*(100.0-(presyear/20+50));
+		demVote += cdData['votes16']*(dperc);
+		repVote += cdData['votes16']*(100.0-(dperc));
 	}
 	for (var i=startI;i<endI;i++) {
 		var cdData = resultsArray[i];
@@ -313,9 +319,16 @@ function clickstate(stateid) {
 			
 		
 			var presyear = cdData[baseData]-demoAdd;
+			var dperc = presyear/20+50;
+			if (dperc>99){
+				dperc=99;
+			}
+			else if (dperc < 1){
+				dperc=1;
+			}
 		
-			demVote += cdData['votes16']*(presyear/20+50);
-			repVote += cdData['votes16']*(100.0-(presyear/20+50));
+			demVote += cdData['votes16']*(dperc);
+			repVote += cdData['votes16']*(100.0-(dperc));
 		}
 		else {
 			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'none';
