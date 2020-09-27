@@ -467,6 +467,15 @@
 	margin: 0px;
 	padding: 0px;
 }
+#popularVote {
+	position: absolute;
+	left: calc( 50% - 38px );
+	width: 76px;
+	height: 16px;
+	text-align: center;
+	top: 0px;
+	pointer-events: none;
+}
 .slider {
 	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
 	background: black;
@@ -474,21 +483,7 @@
 	padding: 0px;
 	top: 0px;
 }
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: calc( var(--block-width) * 3 - 0px);
-  background: #4CAF50;
-  cursor: pointer;
-}
 
-.slider::-moz-range-thumb {
-  width: 25px;
-  height: calc( var(--block-width) * 3 - 0px);
-  background: #4CAF50;
-  cursor: pointer;
-}
 
 #electoralMap {
 	background-color: rgba(0,0,0,.25);
