@@ -14,8 +14,8 @@ for (state in houseData.states){
 		var disadv = stadv + (districtData["HL18"]+districtData["HL16"]+2*districtData["L16"])/4;
 	
 		var preselo = disadv*10;
-		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/100));
-		resultsData[cdID]=1.0/(1.0+Math.pow(10.0,-1*preselo/100));
+		expDemSeats += 1.0/(1.0+Math.pow(10.0,-1*preselo/150));
+		resultsData[cdID]["pred20"]=preselo;
 	}
 	
 	
@@ -24,11 +24,10 @@ for (state in houseData.states){
 for (var i=0;i<435;i++){
 	var myOb = resultsData[cdArray[i]];
 	myOb['abbrev']=cdArray[i];
-	myOb['pred20']=myOb['house18'];
 	resultsArray.push(myOb);
 	
 
-	var dprob = resultsData[cdArray[i]];
+	var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/150));
 	if (dprob < .5) {
 		document.getElementById(cdArray[i]).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 	}
@@ -42,14 +41,7 @@ for (var i=0;i<435;i++){
 var stateStart = '';
 var stateCurrent = '';
 var demoAdd = 0.0;
-var urbanAdd = 0.0;
-var suburbanAdd = 0.0;
-var ruralAdd = 0.0;
-var twentyAdd = 0.0;
-var thirtyAdd = 0.0;
-var fortyAdd = 0.0;
-var fiftyAdd = 0.0;
-var sixtyAdd = 0.0;
+
 document.addEventListener("dragstart", function(event) {
   stateStart = event.target.id;
   document.getElementById('e'+stateStart.substr(1)).style.display = 'inline-block';
@@ -149,15 +141,9 @@ function reorderStates(startI=0,endI=435) {
 		
 		var presyear = cdData[baseData]+demoAdd;
 
-		if (presyear >100){
-			presyear = 100;
-		}
-		if (presyear <0){
-			presyear = 0;
-		}
 		
-		repVote += cdData['votes16']*(presyear);
-		demVote += cdData['votes16']*(100.0-(presyear));
+		repVote += cdData['votes16']*(presyear/20+50);
+		demVote += cdData['votes16']*(100.0-(presyear/20+50));
 	}
 	for (var i=startI;i<endI;i++) {
 		var cdData = resultsArray[i];
@@ -167,33 +153,14 @@ function reorderStates(startI=0,endI=435) {
 			
 			var presyear = cdData[baseData]+demoAdd;
 
-			if (presyear >100){
-				presyear = 100;
-			}
-			if (presyear <0){
-				presyear = 0;
-			}
 			
 			
-			
-			
-			if (presyear < 35.0) {
-				document.getElementById(cdData['abbrev']).style.fill = 'rgb(0,0,250)';
-			}
-			else if (presyear < 45.0) {
-				document.getElementById(cdData['abbrev']).style.fill = 'rgb(30,120,250)';
-			}
-			else if (presyear < 50.0) {
-				document.getElementById(cdData['abbrev']).style.fill = 'rgb(115,196,250)';
-			}
-			else if (presyear < 55.0) {
-				document.getElementById(cdData['abbrev']).style.fill = 'rgb(246,176,176)';
-			}
-			else if (presyear < 65.0) {
-				document.getElementById(cdData['abbrev']).style.fill = 'rgb(246,100,100)';
+			var dprob = 1.0/(1.0+Math.pow(10.0,-1*presyear/150));
+			if (dprob < .5) {
+				document.getElementById(cdData['abbrev']).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 			}
 			else {
-				document.getElementById(cdData['abbrev']).style.fill = 'rgb(255,0,0)';
+				document.getElementById(cdData['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
 			
 			
@@ -217,7 +184,7 @@ function reorderStates(startI=0,endI=435) {
 			
 			var predSpan = newspan.childNodes[0];
 
-			if (presyear>=50.0) {
+			if (presyear>0) {
 				predSpan.style.background = 'red';
 				extraspan.style.background = 'red'; 
 			}
@@ -411,11 +378,9 @@ function clickstate(stateid) {
 			
 		
 			var presyear = cdData[baseData]+demoAdd;
-			if (presyear >100){presyear = 100;}
-			if (presyear <0){presyear = 0;}
 		
-			repVote += cdData['votes16']*(presyear);
-			demVote += cdData['votes16']*(100.0-(presyear));
+			repVote += cdData['votes16']*(presyear/20+50);
+			demVote += cdData['votes16']*(100.0-(presyear/20+50));
 		}
 		else {
 			document.getElementById('edistrict-'+cdData['abbrev']).style.display = 'none';
