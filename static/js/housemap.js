@@ -165,6 +165,7 @@ function reorderStates(startI=0,endI=435) {
 			var dprob = 1.0/(1.0+Math.pow(10.0,-1*presyear/150));
 			if (dprob < .5) {
 				document.getElementById(cdData['abbrev']).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+				document.getElementById(cdData['abbrev']).style.color = "black";
 			}
 			else {
 				document.getElementById(cdData['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
