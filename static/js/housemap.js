@@ -27,10 +27,10 @@ for (state in houseData.states){
 
 var adj218 = 0;
 for (var i=0;i<200;i++){
-	if (expDem218 < 217){
+	if (expDem218 < 217.5){
 		adj218 += .1;
 	}
-	else if (expDem218 > 219){
+	else if (expDem218 > 218.5){
 		adj218 -= .1;
 	}
 	else {
@@ -53,10 +53,8 @@ for (var i=0;i<200;i++){
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 		}
 	}
-	console.log(expDem218,adj218);
 }
-console.log(expDem218);
-console.log(adj218);
+console.log(natadv+adj218);
 
 
 
