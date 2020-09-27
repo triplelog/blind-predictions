@@ -21,22 +21,17 @@ for (state in houseData.states){
 	
 } 
 
-demVote = [0,0];
-repVote = [0,0];
+demVote = 0;
+repVote = 0;
 for (var i=0;i<435;i++){
 	var myOb = resultsData[cdArray[i]];
 	myOb['abbrev']=cdArray[i];
 	resultsArray.push(myOb);
 	
 	var dperc1 = myOb[baseData]/20+50;
-	var dperc2 = 100-myOb['pres16'];
-	//console.log(myOb[baseData]/20+50,100-myOb['pres16']);
 	
-	demVote[0] += myOb['votes16']*(dperc1);
-	repVote[0] += myOb['votes16']*(100.0-(dperc1));
-	demVote[1] += myOb['votes16']*(dperc2);
-	repVote[1] += myOb['votes16']*(100.0-(dperc2));
-	console.log(demVote[0]/repVote[0],demVote[1]/repVote[1]);
+	demVote += myOb['votes16']*(dperc1);
+	repVote += myOb['votes16']*(100.0-(dperc1));
 
 	var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/150));
 	if (dprob < .5) {
@@ -46,8 +41,8 @@ for (var i=0;i<435;i++){
 		document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 	}
 }
-
-
+var nationalAdj = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2 - 100*(demVote-repVote)/(demVote+repVote)
+console.log(nationalAdj);
 
 var stateStart = '';
 var stateCurrent = '';
