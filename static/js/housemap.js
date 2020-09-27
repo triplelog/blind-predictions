@@ -75,15 +75,6 @@ function orderStates() {
 		newspan.classList.add("pres-cell");
 		
 		newspan.id='odistrict-'+cdData['abbrev'];
-		newspan.addEventListener("mouseover", function(event) {
-		  // prevent default to allow drop
-		  event.preventDefault();
-		  if (stateStart != '' && stateCurrent != event.target.id) {
-			stateCurrent = event.target.id;
-			reorderED(stateStart.substr(1),stateCurrent.substr(1));
-		  }
-
-		}, false);
 		
 		var extraspan = document.createElement("div");
 		extraspan.classList.add("extra-cell");
@@ -310,57 +301,6 @@ function reorderStates(startI=0,endI=435) {
 orderStates();
 reorderStates();
 
-function reorderED(state1,state2) {
-	if (state1==state2) {return 0;}
-	
-	var state1idx = -1;
-	var state2idx = -1;
-	var pres1 = -1;
-	var pres2 = -1;
-
-	for (var i=0;i<resultsArray.length;i++){
-		if ('district-'+resultsArray[i]['abbrev']==state1){
-			state1idx = i;
-			pres1 = resultsArray[i][baseData];
-		}
-		if ('district-'+resultsArray[i]['abbrev']==state2){
-			state2idx = i;
-			pres2 = resultsArray[i][baseData];
-		}
-	}
-
-	console.log(state1,state2,state1idx, state2idx);
-
-	if (state1idx> -1 && state2idx>-1){
-		
-		if (state1idx<state2idx) {
-			for (var i=state1idx+1;i<state2idx+1;i++) {
-				const x = resultsArray[i][baseData]-demoAdd;
-				const y = resultsArray[state1idx][baseData]-demoAdd;
-				
-				if (y<x) {
-					resultsArray[i][baseData]-=(x-y)/2+.01;
-					resultsArray[state1idx][baseData]+=(x-y)/2+.01;
-				}
-			}
-			reorderStates(Math.max(0,state1idx-20),Math.min(435,state2idx+20));
-		}
-		else  {
-			for (var i=state1idx-1;i>state2idx-1;i--) {
-				const x = resultsArray[i][baseData]-demoAdd;
-				const y = resultsArray[state1idx][baseData]-demoAdd;
-				
-				if (y>x) {
-					resultsArray[i][baseData]+=(y-x)/2+.01;
-					resultsArray[state1idx][baseData]-=(y-x)/2+.01;
-				}
-
-			}
-			reorderStates(Math.max(0,state2idx-20),Math.min(435,state1idx+20));
-		}
-		
-	}
-}
 
 function clickstate(stateid) {
 	var demVote = 0;
