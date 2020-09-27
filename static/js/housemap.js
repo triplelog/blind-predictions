@@ -51,7 +51,6 @@ for (var i=0;i<200;i++){
 	
 			var preselo = disadv*10;
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
-			resultsData[cdID]["pred20"]=preselo;
 		}
 	}
 }
