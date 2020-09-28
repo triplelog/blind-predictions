@@ -16,7 +16,7 @@
 
 
   <link href="../css/senatemap.css" rel="stylesheet">
-  
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	
 
@@ -622,7 +622,9 @@
 
 				</g>
 				</svg>
-				
+					<div id="simulationsChart">
+					
+					</div>
 					<div id="simulations">
 						Dem Win: <span id="dwinp">???%</span><br />
 						Rep Win: <span id="rwinp">???%</span><br />
@@ -657,7 +659,7 @@
 
 
   
-
+<script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
 <script>
 var senateData = {{ senateData | dump | safe }};
 </script>

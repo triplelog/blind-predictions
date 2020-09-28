@@ -3,7 +3,6 @@ var senateArray = [];
 for (var i=0;i<Object.keys(senateData).length;i++) {
 	if (Object.keys(senateData)[i] != 'dc'){
 		if (senateData[Object.keys(senateData)[i]][2014].length>0) {
-			console.log(Object.keys(senateData)[i], senateData[Object.keys(senateData)[i]]['rpred']);
 			senateArray.push({'abbrev':Object.keys(senateData)[i],'pred20':senateData[Object.keys(senateData)[i]]['rpred'],'act14':senateData[Object.keys(senateData)[i]][2014][0]});
 			if (senateData[Object.keys(senateData)[i]]['pres16']>.5){
 				var elo = (senateData[Object.keys(senateData)[i]]['pres16']-.5)*2000;
@@ -60,7 +59,7 @@ for (var i=0;i<Object.keys(senateData).length;i++) {
 			}
 		}
 		else {
-			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fillOpacity = '1';
+			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fillOpacity = '0';
 			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fill = 'white';
 		}
 	}
@@ -252,10 +251,34 @@ myWorker.onmessage = function(e) {
 		document.getElementById('dwinp').textContent = "";
 		document.getElementById('rwinp').textContent = "";
 		for (var i in histS){
-			document.getElementById('dwinp').textContent += (35+i)+":"+histS[i]+", ";
+			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
+  		var data = {
+		  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		  series: [
+			[5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
+			[3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
+		  ]
+		};
+
+		var options = {
+		  seriesBarDistance: 10
+		};
+
+		var responsiveOptions = [
+		  ['screen and (max-width: 640px)', {
+			seriesBarDistance: 5,
+			axisX: {
+			  labelInterpolationFnc: function (value) {
+				return value[0];
+			  }
+			}
+		  }]
+		];
+
+		new Chartist.Bar('#simulationsChart', data, options, responsiveOptions);
 	}
 }
 function predictNow(){

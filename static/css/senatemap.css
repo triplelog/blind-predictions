@@ -352,3 +352,11 @@
 	height: calc( var(--block-width) * 10);
 	border: 1px solid white;
 }
+#simulationsChart {
+	position: absolute;
+	top: calc( var(--block-width) * 1);
+	left: calc( 50% - var(--block-width) * 5);
+	width: calc( var(--block-width) * 10);
+	height: calc( var(--block-width) * 5);
+	border: 1px solid white;
+}
