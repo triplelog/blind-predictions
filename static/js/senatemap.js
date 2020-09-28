@@ -257,11 +257,24 @@ myWorker.onmessage = function(e) {
 			[]
 		  ]
 		};
+		var demTotal = [];
+		var minSeats = 100;
 		for (var i in histS){
 			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
-			data.labels.push(35+parseInt(i));
-			data.series[0].push(histS[i]);
-			data.series[1].push(histS[i]);
+			if (demTotal.length == 0){
+				demTotal.push(histS[i]);
+			}
+			else {
+				demTotal.push(histS[i]+demTotal[demTotal.length-1]);
+			}
+			if (35+parseInt(i)<minSeats){
+				minSeats = 35+parseInt(i);
+			}
+		}
+		for (var i=6;i<16;i++){	
+			data.labels.push(minSeats+i);
+			data.series[0].push(demTotal[i]);
+			data.series[1].push(demTotal[i]);
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
