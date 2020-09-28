@@ -91,21 +91,21 @@ Map verticalSeam(Map m){
 			if (left>mid){
 				if (left>right){
 					newMax[i] = left+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i-1].push(i);
+					newSeams[i]=oldSeams[i-1].push_back(i);
 				}
 				else {
 					newMax[i] = right+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i+1].push(i);
+					newSeams[i]=oldSeams[i+1].push_back(i);
 				}
 			}
 			else {
 				if (mid>right){
 					newMax[i] = mid+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i].push(i);
+					newSeams[i]=oldSeams[i].push_back(i);
 				}
 				else {
 					newMax[i] = right+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i+1].push(i);
+					newSeams[i]=oldSeams[i+1].push_back(i);
 				}
 			}
 		}
