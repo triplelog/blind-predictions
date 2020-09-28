@@ -75,7 +75,7 @@ function resetDistricts() {
 function computeWin(){
 	adj218 = 0;
 	expDem218 = 0;
-	for (var i=0;i<500;i++){
+	for (var ii=0;ii<500;ii++){
 		if (expDem218 < 217.5){
 			adj218 += .1;
 		}
