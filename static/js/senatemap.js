@@ -262,6 +262,7 @@ myWorker.onmessage = function(e) {
 		var minDem = 100;
 		var max10 = 0;
 		var startI = 0;
+		var total = 0;
 		for (var i in histS){
 			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
 			if (demTotal.length == 0){
@@ -281,10 +282,11 @@ myWorker.onmessage = function(e) {
 					startI = demTotal.length-10;
 				}
 			}
+			total += parseInt(histS[i]);
 		}
 		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
 			if (i > minDem+demTotal.length-1){
-				repTotal[100-i-1]=1000;
+				repTotal[100-i-1]=total;
 			}
 			else if (i < minDem){
 				repTotal[100-i-1]=0;
@@ -295,8 +297,8 @@ myWorker.onmessage = function(e) {
 		}
 		for (var i=startI;i<startI+10;i++){	
 			data.labels.push(""+(minDem+i));
-			data.series[0].push(1000 - demTotal[i-1]);
-			data.series[1].push(repTotal[minDem+i-1]);
+			data.series[0].push(Math.round(100*(total - demTotal[i-1])/total));
+			data.series[1].push(Math.round(100*repTotal[minDem+i-1]/total));
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
@@ -307,8 +309,8 @@ myWorker.onmessage = function(e) {
 		  
 		  axisY: {
 		  	type: Chartist.FixedScaleAxis,
-			ticks: [0, 200, 400, 600, 800,1000],
-			high: 1000,
+			ticks: [0, 20, 40, 60, 80,100],
+			high: 100,
 		  	low: 0,
 		  	//divisor: 250,
 		  }
