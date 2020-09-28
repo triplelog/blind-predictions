@@ -48,7 +48,7 @@ EM_JS(void, send_ready, (), {
 
 long long durationRand;
 int seed;
-
+bool killCarve;
 
 
 
@@ -127,6 +127,10 @@ Map horizontalSeam(Map m){
 			removeSeam = oldSeams[ii];
 		}
 	}
+	if (maxSeam <=0){
+		killCarve = true;
+		return m;
+	}
 	for(i=0;i<w;i++){
 		console_log(removeSeam[i]);
 		for(ii=removeSeam[i];ii<h-1;ii++){
@@ -195,12 +199,17 @@ Map verticalSeam(Map m){
 			removeSeam = oldSeams[i];
 		}
 	}
+	if (maxSeam <=0){
+		killCarve = true;
+		return m;
+	}
 	for(ii=0;ii<h;ii++){
 		console_log(removeSeam[ii]);
 		for(i=removeSeam[ii];i<w-1;i++){
 			m.pointMap[i][ii]=m.pointMap[i+1][ii];
 		}
 	}
+
 	m.width--;
 	return m;
 }
@@ -235,6 +244,7 @@ void initialRun(){
 	std::map<int,std::map<int,Point>> pointMap;
 	std::map<int,int> xCount;
 	std::map<int,int> yCount;
+	killCarve = false;
 	for(i=0;i<1000;i++){
 		xCount[i]=0;
 		yCount[i]=0;
@@ -274,14 +284,21 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	m = verticalSeam(m);
+	for (i=0;i<50;i++){
+		if (!killCarve){
+			m = verticalSeam(m);
+		}
+		if (!killCarve){
+			m = horizontalSeam(m);
+		}
+	}
+	
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
 	console_log(m.height);
-	m = horizontalSeam(m);
-	console_log(m.width);
-	console_log(m.height);
+	
+	
 	console_log(durationTotal);
 }
 
