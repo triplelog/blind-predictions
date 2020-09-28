@@ -316,7 +316,7 @@ myWorker.onmessage = function(e) {
 			}
 			total += parseInt(histS[i]);
 		}
-		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
+		for (var i=99;i>=1;i--){
 			if (i > minDem+demTotal.length-1){
 				repTotal[100-i-1]=0;
 			}
