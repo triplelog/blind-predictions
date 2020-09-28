@@ -147,7 +147,7 @@ Map fillBlanks(Map m) {
 				Point t;
 				t.x = i;
 				t.y = ii;
-				t.val = 1;
+				t.val = rand() % 100;
 				m.pointMap[i][ii] = t;
 			}
 		}
@@ -201,9 +201,14 @@ void initialRun(){
 	m.height = 100;
 	
 	m = fillBlanks(m);
+	
+	auto a11 = std::chrono::high_resolution_clock::now();
 	m = verticalSeam(m);
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
 	console_log(m.height);
+	console_log(durationTotal);
 }
 
 int main() {
