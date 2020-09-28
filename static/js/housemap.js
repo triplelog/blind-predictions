@@ -77,10 +77,10 @@ function computeWin(){
 	expDem218 = 0;
 	for (var ii=0;ii<100;ii++){
 		if (expDem218 < 217.5){
-			adj218 += .1;
+			adj218 += 1;
 		}
 		else if (expDem218 > 218.5){
-			adj218 -= .1;
+			adj218 -= 1;
 		}
 		else {
 			break;
