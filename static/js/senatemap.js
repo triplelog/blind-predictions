@@ -182,6 +182,7 @@ function orderStates() {
 			}
 		}
 	}
+	document.getElementById('simulationsChart').style.opacity = "0";
 }
 orderStates();
 
@@ -268,8 +269,6 @@ myWorker.onmessage = function(e) {
 	else if (e.data['type'] == "wins"){
 		
 		var histS = e.data.HistogramS;
-		document.getElementById('dwinp').textContent = "";
-		document.getElementById('rwinp').textContent = "";
 		var data = {
 		  labels: [],
 		  series: [
@@ -284,7 +283,6 @@ myWorker.onmessage = function(e) {
 		var startI = 0;
 		var total = 0;
 		for (var i in histS){
-			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
 			if (demTotal.length == 0){
 				demTotal.push(parseInt(histS[i]));
 			}
@@ -320,8 +318,7 @@ myWorker.onmessage = function(e) {
 			data.series[0].push(Math.round(100*(total - demTotal[i-1])/total));
 			data.series[1].push(Math.round(100*repTotal[minDem+i-1]/total));
 		}
-		document.getElementById('dwinp').style.textDecoration = "none";
-  		document.getElementById('rwinp').style.textDecoration = "none";
+		document.getElementById('simulationsChart').style.opacity = "1";
   		
 
 		var options = {
