@@ -245,18 +245,12 @@ myWorker.onmessage = function(e) {
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
-		var dw = parseInt(e.data.D);
-		var rw = parseInt(e.data.R);
-		var tw = parseInt(e.data.T);
-		if (dw+rw+tw < 1000){
-			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
-			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
+		var histS = parseInt(e.data.histogramS);
+		document.getElementById('dwinp').textContent = "";
+		document.getElementById('rwinp').textContent = "";
+		for (var i in histS){
+			document.getElementById('dwinp').textContent += i+":"+histS[i]+", ";
 		}
-		else {
-			document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
-			document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
-		}
-		
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
 	}
