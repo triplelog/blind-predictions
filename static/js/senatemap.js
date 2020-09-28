@@ -304,11 +304,13 @@ myWorker.onmessage = function(e) {
 
 		var options = {
 		  seriesBarDistance: 10,
-		  high: 1000,
-		  low: 0,
-		  divisor: 100,
+		  
 		  axisY: {
-			ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+		  	type: Chartist.FixedScaleAxis,
+			//ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+			high: 1000,
+		  	low: 0,
+		  	divisor: 100,
 		  }
 		};
 
