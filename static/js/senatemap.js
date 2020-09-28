@@ -3,6 +3,7 @@ var senateArray = [];
 for (var i=0;i<Object.keys(senateData).length;i++) {
 	if (Object.keys(senateData)[i] != 'dc'){
 		if (senateData[Object.keys(senateData)[i]][2014].length>0) {
+			console.log(Object.keys(senateData)[i], senateData[Object.keys(senateData)[i]]['rpred']);
 			senateArray.push({'abbrev':Object.keys(senateData)[i],'pred20':senateData[Object.keys(senateData)[i]]['rpred'],'act14':senateData[Object.keys(senateData)[i]][2014][0]});
 			if (senateData[Object.keys(senateData)[i]]['pres16']>.5){
 				var elo = (senateData[Object.keys(senateData)[i]]['pres16']-.5)*2000;
@@ -248,12 +249,9 @@ myWorker.onmessage = function(e) {
 	else if (e.data['type'] == "wins"){
 		
 		var histS = e.data.HistogramS;
-		console.log(e.data);
-		console.log(histS);
 		document.getElementById('dwinp').textContent = "";
 		document.getElementById('rwinp').textContent = "";
 		for (var i in histS){
-			console.log(i);
 			document.getElementById('dwinp').textContent += (35+i)+":"+histS[i]+", ";
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
