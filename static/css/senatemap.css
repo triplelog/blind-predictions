@@ -355,8 +355,8 @@
 #simulationsChart {
 	position: absolute;
 	top: calc( var(--block-width) * 1);
-	left: calc( 50% - var(--block-width) * 5);
-	width: calc( var(--block-width) * 10);
-	height: calc( var(--block-width) * 5);
+	left: calc( 50% - var(--block-width) * 10);
+	width: calc( var(--block-width) * 20);
+	height: calc( var(--block-width) * 6);
 	border: 1px solid white;
 }
