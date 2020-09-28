@@ -57,10 +57,7 @@ function resetDistricts() {
 	}
 
 	
-	computeWin();
-	var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
-	console.log(natadv+adj218, demProb218);
-	document.getElementById('dwinp').textContent = Math.round(demProb218*100,1)+"%";
+	
 	
 	
 	nationalAdj = natadv - 100*(demVote-repVote)/(demVote+repVote);
@@ -168,6 +165,7 @@ function orderStates() {
 		document.getElementById('extra2016BR').appendChild(extraspan);
 
 	}
+	
 	
 }
 function reorderStates(startI=0,endI=435) {
@@ -384,6 +382,10 @@ function reorderStates(startI=0,endI=435) {
 		}
 		pvel.textContent = 'R+'+parseInt(-1*demelo)/10+'%';
 	}
+	computeWin();
+	var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
+	console.log(natadv+adj218, demProb218);
+	document.getElementById('dwinp').textContent = Math.round(demProb218*100,1)+"%";
 }
 
 
