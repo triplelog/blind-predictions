@@ -346,9 +346,9 @@
 
 #simulations {
 	position: absolute;
-	right: calc( var(--block-width) * 2);
-	bottom: calc( var(--block-width) * 2);
-	width: calc( var(--block-width) * 30);
-	height: calc( var(--block-width) * 30);
+	right: calc( var(--block-width) * 1);
+	bottom: calc( var(--block-width) * 1);
+	width: calc( var(--block-width) * 10);
+	height: calc( var(--block-width) * 10);
 	border: 1px solid white;
 }

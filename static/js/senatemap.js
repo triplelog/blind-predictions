@@ -263,11 +263,12 @@ myWorker.onmessage = function(e) {
 }
 function predictNow(){
 
-	for (var i=0;i<51;i++){
+	for (var i=0;i<50;i++){
 
 		var state = stateMap[senateArray[i].abbrev];
 		var year = "2016";
-		var rpred = senateArray["pred20"];
+		var rpred = senateArray[i]["pred20"];
+		console.log(rpred);
 		if (rpred){
 			var elo = (rpred-.5)*2000;
 			var dprob = 1.0/(1+Math.pow(10.0,elo/75));
@@ -279,13 +280,10 @@ function predictNow(){
 			console.log(senateArray[i].abbrev,dprob);
 			myWorker.postMessage(["update",state,dprob,year]);
 		}
-		
-
-		
 
 		
 	}
-	
+	myWorker.postMessage(["update",stateMap['dc'],.001,"2016"]);
 	myWorker.postMessage(["predict",100]);
 	myWorker.postMessage(["predict",1000]);
 }
