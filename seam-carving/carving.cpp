@@ -69,15 +69,61 @@ struct Map {
 	int height;
 };
 
+
+Map verticalSeam(Map m){
+	int i;
+	int ii;
+	std::map<int,int> oldMax;
+	std::map<int,int> newMax;
+	std::map<int,std::vector<int> > oldSeams;
+	std::map<int,std::vector<int> > newSeams;
+	for(i=0;i<m.width;i++){
+		oldMax[i]=m.pointMap[i][0].val;
+		oldSeams[i]={i};
+	}
+	for(ii=1;ii<m.height;ii++){
+		for(i=0;i<m.width;i++){
+			int left = -10000000;
+			if (i>0){left = oldMax[i-1];}
+			int mid = oldMax[i];
+			int right = -10000000;
+			if (i+1<m.width){right = oldMax[i+1];}
+			if (left>mid){
+				if (left>right){
+					newMax[i] = left+m.pointMap[i][ii].val;
+					newSeams[i]=oldSeams[i-1].push(i);
+				}
+				else {
+					newMax[i] = right+m.pointMap[i][ii].val;
+					newSeams[i]=oldSeams[i+1].push(i);
+				}
+			}
+			else {
+				if (mid>right){
+					newMax[i] = mid+m.pointMap[i][ii].val;
+					newSeams[i]=oldSeams[i].push(i);
+				}
+				else {
+					newMax[i] = right+m.pointMap[i][ii].val;
+					newSeams[i]=oldSeams[i+1].push(i);
+				}
+			}
+		}
+		oldSeams = newSeams;
+		oldMax = newMax;
+	}
+	return m;
+}
+
 Map fillBlanks(Map m) {
 	int i;
 	int ii;
-	for(i=0;i<10;i++){
+	for(i=0;i<m.width;i++){
 		if (m.pointMap.find(i) == m.pointMap.end()){
 			std::map<int,Point> t;
 			m.pointMap[i] = t;
 		}
-		for(ii=0;ii<10;ii++){
+		for(ii=0;ii<m.height;ii++){
 			if (m.pointMap[i].find(ii) == m.pointMap[i].end()){
 				Point t;
 				t.x = i;
@@ -87,6 +133,7 @@ Map fillBlanks(Map m) {
 			}
 		}
 	}
+	return m;
 }
 
 void initialRun(){
@@ -135,6 +182,9 @@ void initialRun(){
 	m.height = 100;
 	
 	m = fillBlanks(m);
+	m = verticalSeam(m);
+	console_log(m.width);
+	console_log(m.height);
 }
 
 int main() {
