@@ -82,14 +82,16 @@ Map verticalSeam(Map m){
 		oldMax[i]=m.pointMap[i][0].val;
 		oldSeams[i]={i};
 	}
-	for(ii=1;ii<m.height;ii++){
-		for(i=0;i<m.width;i++){
+	int h = m.height;
+	int w = m.width;
+	for(ii=1;ii<h;ii++){
+		for(i=0;i<w;i++){
 			int left = -10000000;
 			if (i>0){left = oldMax[i-1];}
 			int mid = oldMax[i];
 			int right = -10000000;
 			int newI = i;
-			if (i+1<m.width){right = oldMax[i+1];}
+			if (i+1<w){right = oldMax[i+1];}
 			if (left>mid){
 				if (left>right){
 					newMax[i] = left+m.pointMap[i][ii].val;
@@ -110,10 +112,8 @@ Map verticalSeam(Map m){
 					newI = i+1;
 				}
 			}
-			newSeams[i].resize(0);
-			for (iii=0;iii<oldSeams[newI].size();iii++){
-				newSeams[i].push_back(oldSeams[newI][iii]);
-			}
+			
+			newSeams[i] = oldSeams[newI];
 			newSeams[i].push_back(i);
 		}
 		oldSeams = newSeams;
