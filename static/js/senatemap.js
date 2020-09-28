@@ -103,6 +103,7 @@ function orderStates() {
 				var elo = (presyear-.5)*2000+demoAdd;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				if (dprob<.5) {
+					console.log(senateArray[i]['abbrev'],elo,dprob);
 					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 					var newspan = document.createElement("span");
 					newspan.classList.add("pres-cell");
