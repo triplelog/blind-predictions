@@ -244,11 +244,13 @@ myWorker.onmessage = function(e) {
 		setTimeout(predictNow,50);
 	}
 	else if (e.data['type'] == "wins"){
-		console.log(e.data);
+		
 		var histS = e.data.histogramS;
+		console.log(histS);
 		document.getElementById('dwinp').textContent = "";
 		document.getElementById('rwinp').textContent = "";
 		for (var i in histS){
+			console.log(i);
 			document.getElementById('dwinp').textContent += i+":"+histS[i]+", ";
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
