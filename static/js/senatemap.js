@@ -260,6 +260,8 @@ myWorker.onmessage = function(e) {
 		var demTotal = [];
 		var repTotal = {};
 		var minDem = 100;
+		var max10 = 0;
+		var startI = 0;
 		for (var i in histS){
 			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
 			if (demTotal.length == 0){
@@ -271,6 +273,13 @@ myWorker.onmessage = function(e) {
 			
 			if (35+parseInt(i)<minDem){
 				minDem = 35+parseInt(i);
+			}
+			if (demTotal.length >= 10){
+				var diff = demTotal[demTotal.length-1] - demTotal[demTotal.length-10];
+				if (diff > max10){
+					max10 = diff;
+					startI = demTotal.length-10;
+				}
 			}
 		}
 		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
@@ -284,12 +293,11 @@ myWorker.onmessage = function(e) {
 				repTotal[100-i-1]=demTotal[i-minDem];
 			}
 		}
-		for (var i=6;i<16;i++){	
+		for (var i=startI;i<startI+10;i++){	
 			data.labels.push(""+(minDem+i));
 			data.series[0].push(1000 - demTotal[i-1]);
 			data.series[1].push(repTotal[minDem+i-1]);
 		}
-		console.log(data);
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
   		
