@@ -115,6 +115,9 @@ lines = file2.readlines()
 file20 = open('data/economist2020.csv', 'r') 
 lines20 = file20.readlines() 
 
+filesen20 = open('data/senate_state_toplines_2020.csv', 'r') 
+linessen20 = filesen20.readlines() 
+
 states16 = {}
 states20 = {}
 count = 0
@@ -127,6 +130,7 @@ for line in lines:
 		states16[lineSplit[1]]={"2012":float(lineSplit[7])}
 	elif lineSplit[0] == "2016":
 		states16[lineSplit[1]]["pred"]=float(lineSplit[2])
+		states16[lineSplit[1]]["spred"]=float(lineSplit[2])
 		states20[lineSplit[1]]={"2016":float(lineSplit[7])}
 i = 0
 for line in lines20:
@@ -135,13 +139,24 @@ for line in lines20:
 	if i > 1:
 		states20[lineSplit[3]]["pred"]=float(lineSplit[6])
 
+i = 0
+forecastdate = linessen20[1].strip().split(",")[3]
+for line in linessen20:
+	i+=1
+	lineSplit = line.strip().split(",")
+	if i > 1 and lineSplit[0] == "2020" and lineSplit[3] == forecastdate:
+		states20[lineSplit[2][0:2]]["spred"]=float(lineSplit[32])/(float(lineSplit[32])+float(lineSplit[37]))#D percentage
+	elif i > 1 and not lineSplit[3] == forecastdate:
+		break
+states20["HI"]["spred"]=.999		
 statesOrdered = []
 i = 0
 for state in states16.keys():
-	prod = (.5-states16[state]["2012"])**2+(.5-states16[state]["pred"])**2
+	
 	if len(senateData[state.lower()][2016])== 0:
 		i+=1
 		continue
+	prod = (.5-states16[state]["2012"])**2+(.5-states16[state]["pred"])**2
 	if len(senateData[state.lower()][2010])> 0:
 		states16[state]["sLast"]=senateData[state.lower()][2010][0]
 	else:
@@ -168,10 +183,11 @@ for state in states16.keys():
 	i+=1
 i = 0	
 for state in states20.keys():
-	prod = (.5-states20[state]["2016"])**2+(.5-states20[state]["pred"])**2
+	
 	if len(senateData[state.lower()][2014])== 0:
 		i+=1
 		continue
+	prod = (.5-states20[state]["2016"])**2+(.5-states20[state]["spred"])**2
 	if len(senateData[state.lower()][2014])> 0:
 		states20[state]["sLast"]=senateData[state.lower()][2014][0]
 		
@@ -197,7 +213,7 @@ for state in states20.keys():
 	i+=1	
 
 for state in statesOrdered:
-	if state["pred"]>.5:
+	if state["spred"]>.5:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="D">'
 		#line += '<td>'+state["name"]+'</td>'
 		if state["year"] == 2016:
@@ -208,7 +224,10 @@ for state in statesOrdered:
 		line += '<td>+'+str(round(state["pred"]*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["sOther"])*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round((1-state["sLast"])*2000-1000)/10.0)+'</td>'
-		line += '<td><input style="display: none;" value="'+str(round(state["pred"]*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D"></input></td>'
+		line += '<td>+'+str(round((state["spred"])*2000-1000)/10.0)+'</td>'
+		line += '<td><input style="display: none;" value="'+str(round(state["spred"]*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D"></input></td>'
+		line += '<input style="display: none;" value="'+str(round(state["pred"]*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-D-poll-pres"></input>'
+		
 		line += '</tr>'
 	else:
 		line = '\n<tr data-id="'+str(state["id"])+'" data-year="'+str(state["year"])+'" data-party="R">'
@@ -220,7 +239,10 @@ for state in statesOrdered:
 		line += '<td>+'+str(round((1-state["pred"])*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["sOther"]*2000-1000)/10.0)+'</td>'
 		line += '<td>+'+str(round(state["sLast"]*2000-1000)/10.0)+'</td>'
-		line += '<td><input style="display: none;" value="'+str(round((1-state["pred"])*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R"></input></td>'
+		line += '<td>+'+str(round((1-state["spred"])*2000-1000)/10.0)+'</td>'
+		line += '<td><input style="display: none;" value="'+str(round((1-state["spred"])*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R-poll"></input><input type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R"></input></td>'
+		line += '<input style="display: none;" value="'+str(round((1-state["pred"])*2000-1000)/10.0)+'" type="text" name="'+str(state["name"])+'-'+str(state["year"])+'-R-poll-pres"></input>'
+		
 		line += '</tr>'
 	line = line.replace('+-','-')
 	file1.writelines([line])
