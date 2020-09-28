@@ -95,7 +95,6 @@ function orderStates() {
 	document.getElementById('pres2016R').innerHTML = '';
 	document.getElementById('pres2016TL').innerHTML = '';
 	document.getElementById('pres2016L').innerHTML = '';
-	console.log(demoAdd);
 	for (var i=0;i<senateArray.length;i++) {
 		if (2==2) {
 			if (2==2) {
@@ -103,7 +102,6 @@ function orderStates() {
 				var elo = (presyear-.5)*2000+demoAdd;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				if (dprob<.5) {
-					console.log(senateArray[i]['abbrev'],elo,dprob);
 					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 					var newspan = document.createElement("span");
 					newspan.classList.add("pres-cell");
@@ -204,11 +202,11 @@ for (var i=0;i<senateArray.length;i++) {
 
 var slider = document.getElementById("myRange");
 slider.oninput = function() {
-	if (this.value<=0){
-	  demoAdd = this.value;
+	if (parseInt(this.value)<=0){
+	  demoAdd = parseInt(this.value);
 	}
 	else {
-	  demoAdd = this.value;
+	  demoAdd = parseInt(this.value);
 	}
   orderStates();
 }
