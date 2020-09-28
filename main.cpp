@@ -52,6 +52,7 @@ EM_JS(void, send_results, (const char* x), {
 	wins["RV"]=xStr[7];
 	wins["TV"]=xStr[8];
 	wins["ME"]=xStr[9];
+	wins["MS"]=xStr[10];
 	updateWins(wins);
 });
 EM_JS(void, send_ready, (), {
@@ -117,6 +118,7 @@ void makePrediction(int year, int n) {
 	int rWins[4] = {0,0,0,0};
 	int ties[4] = {0,0,0,0};
 	std::map<int,int> evData;
+	std::map<int,int> senateData;
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
 	std::map<int,int> statePairsMI;
@@ -140,6 +142,7 @@ void makePrediction(int year, int n) {
 		int bidenEV = 0;
 		int dHEV = 0;
 		int dVEPEV = 0;
+		int dSen = 0;
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
 			doneYet[ii]=false;
@@ -171,6 +174,7 @@ void makePrediction(int year, int n) {
 				dHEV += evs[thisstate]-2;
 				dVEPEV += vepevs[thisstate];
 				stateData[thisstate]++;
+				dSen++;
 				
 				
 			}
@@ -251,6 +255,12 @@ void makePrediction(int year, int n) {
 		else {
 			evData[bidenEV]++;
 		}
+		if (senData.find(dSen) == senData.end()){
+			senData[dSen] = 1;
+		}
+		else {
+			senData[dSen]++;
+		}
 		
 		if (i % 100 == 99){
 			std::string resultStr = "";
@@ -270,6 +280,18 @@ void makePrediction(int year, int n) {
 			for (ii=0;ii<539;ii++){
 				if (evData.find(ii) != evData.end()){
 					count+= evData[ii];
+				}
+				if (count >= i/2){
+					medEV = ii;
+					break;
+				}
+			}
+			resultStr += std::to_string(medEV)+",";
+			medEV = 0;
+			count = 0;
+			for (ii=0;ii<51;ii++){
+				if (senData.find(ii) != senData.end()){
+					count+= senData[ii];
 				}
 				if (count >= i/2){
 					medEV = ii;
