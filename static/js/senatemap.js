@@ -14,6 +14,16 @@ for (var i=0;i<Object.keys(senateData).length;i++) {
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer6').style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
+			if (senateData[Object.keys(senateData)[i]]['pred20']>.5){
+				var elo = (senateData[Object.keys(senateData)[i]]['pred20']-.5)*2000;
+				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer1').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+			}
+			else {
+				var elo = (senateData[Object.keys(senateData)[i]]['pred20']-.5)*2000;
+				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer1').style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+			}
 			/*if (senateData[Object.keys(senateData)[i]]['pres12']>.5){
 				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer2').style.fill = 'red';
 			}
@@ -59,8 +69,8 @@ for (var i=0;i<Object.keys(senateData).length;i++) {
 			}
 		}
 		else {
-			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fillOpacity = '0';
-			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fill = 'white';
+			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fillOpacity = '1';
+			document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-inner').style.fill = 'rgb(192,192,192)';
 		}
 	}
 }
