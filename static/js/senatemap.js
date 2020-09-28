@@ -1,4 +1,5 @@
 var senateArray = [];
+var demoAdd = 0.0;
 
 for (var i=0;i<Object.keys(senateData).length;i++) {
 	if (Object.keys(senateData)[i] != 'dc'){
@@ -198,7 +199,7 @@ for (var i=0;i<senateArray.length;i++) {
 
 }
 
-var demoAdd = 0.0;
+
 var slider = document.getElementById("myRange");
 slider.oninput = function() {
 	if (this.value<=0){
