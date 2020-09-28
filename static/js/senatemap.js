@@ -318,10 +318,10 @@ myWorker.onmessage = function(e) {
 		}
 		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
 			if (i > minDem+demTotal.length-1){
-				repTotal[100-i-1]=total;
+				repTotal[100-i-1]=0;
 			}
 			else if (i < minDem){
-				repTotal[100-i-1]=0;
+				repTotal[100-i-1]=total;
 			}
 			else {
 				repTotal[100-i-1]=demTotal[i-minDem];
