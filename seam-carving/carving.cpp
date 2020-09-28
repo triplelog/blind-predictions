@@ -60,7 +60,34 @@ extern "C" {
 struct Point {
 	int x;
 	int y;
+	int val;
 };
+
+struct Map {
+	std::map<int,std::map<int,Point> > pointMap;
+	int width;
+	int height;
+};
+
+Map fillBlanks(Map m) {
+	int i;
+	int ii;
+	for(i=0;i<10;i++){
+		if (m.pointMap.find(i) == m.pointMap.end()){
+			std::map<int,Point> t;
+			m.pointMap[i] = t;
+		}
+		for(ii=0;ii<10;ii++){
+			if (m.pointMap[i].find(ii) == m.pointMap[i].end()){
+				Point t;
+				t.x = i;
+				t.y = ii;
+				t.val = 1;
+				m.pointMap[i][ii] = t;
+			}
+		}
+	}
+}
 
 void initialRun(){
 	seed = 7;
@@ -68,6 +95,7 @@ void initialRun(){
 	int i;
 	int ii;
 	std::map<int,Point> points;
+	std::map<int,std::map<int,Point>> pointMap;
 	std::map<int,int> xCount;
 	std::map<int,int> yCount;
 	for(i=0;i<1000;i++){
@@ -97,9 +125,16 @@ void initialRun(){
 		}
 		p.x = newX;
 		p.y = newY;
-		points[i] = p;
+		p.val = -1000000;
+		pointMap[p.x][p.y] = p;
 	}
-
+	
+	Map m;
+	m.pointMap = pointMap;
+	m.width = 100;
+	m.height = 100;
+	
+	m = fillBlanks(m);
 }
 
 int main() {
