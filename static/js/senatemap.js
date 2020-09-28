@@ -262,10 +262,10 @@ myWorker.onmessage = function(e) {
 		for (var i in histS){
 			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
 			if (demTotal.length == 0){
-				demTotal.push(histS[i]);
+				demTotal.push(parseInt(histS[i]));
 			}
 			else {
-				demTotal.push(histS[i]+demTotal[demTotal.length-1]);
+				demTotal.push(parseInt(histS[i])+demTotal[demTotal.length-1]);
 			}
 			if (35+parseInt(i)<minSeats){
 				minSeats = 35+parseInt(i);
