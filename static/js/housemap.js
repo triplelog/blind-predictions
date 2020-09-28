@@ -75,7 +75,7 @@ function resetDistricts() {
 function computeWin(){
 	adj218 = 0;
 	expDem218 = 0;
-	for (var ii=0;ii<500;ii++){
+	for (var ii=0;ii<100;ii++){
 		if (expDem218 < 217.5){
 			adj218 += .1;
 		}
@@ -91,6 +91,7 @@ function computeWin(){
 			var preselo = resultsArray[i]["pred20"] + adj218;
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 		}
+		console.log(expDem218);
 	}
 }
 
