@@ -310,7 +310,7 @@ myWorker.onmessage = function(e) {
 			//ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900],
 			high: 1000,
 		  	low: 0,
-		  	divisor: 100,
+		  	divisor: 250,
 		  }
 		};
 
