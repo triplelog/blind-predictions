@@ -354,14 +354,17 @@
 }
 #simulationsChart {
 	position: absolute;
-	top: calc( var(--block-width) * .5);
+	top: calc( var(--block-width) * 0);
 	left: calc( 50% - var(--block-width) * 14);
 	width: calc( var(--block-width) * 25);
-	height: calc( var(--block-width) * 8);
+	height: calc( var(--block-width) * 9);
 }
 .ct-series-a .ct-bar {
   stroke: blue;
 }
 .ct-series-b .ct-bar {
   stroke: red;
+}
+.ct-label.ct-vertical {
+	margin-top: .375rem;
 }
