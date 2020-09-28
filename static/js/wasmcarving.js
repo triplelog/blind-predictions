@@ -2,9 +2,12 @@
 function cpp_ready() {
 	postMessage("ready");
 }
+var points = [];
+var pointsOut = [];
 importScripts('wasmcarve.js');
 
-
+console.log(points);
+console.log(pointsOut);
 
 
 
