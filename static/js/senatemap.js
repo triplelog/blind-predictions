@@ -269,7 +269,7 @@ myWorker.onmessage = function(e) {
 				demTotal.push(parseInt(histS[i])+demTotal[demTotal.length-1]);
 			}
 			if (repTotal[65-parseInt(i)+1]){
-				repTotal[65-parseInt(i)]=[65-parseInt(i)+1]+parseInt(histS[i]);
+				repTotal[65-parseInt(i)]=repTotal[65-parseInt(i)+1]+parseInt(histS[i]);
 			}
 			else {
 				repTotal[65-parseInt(i)] = parseInt(histS[i]);
