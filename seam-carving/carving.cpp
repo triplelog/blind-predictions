@@ -111,7 +111,7 @@ Map verticalSeam(Map m){
 				}
 			}
 			newSeams[i].resize(0);
-			for (iii=0;iii<oldSeams[newI].length();iii++){
+			for (iii=0;iii<oldSeams[newI].size();iii++){
 				newSeams[i].push_back(oldSeams[newI][iii]);
 			}
 			newSeams[i].push_back(i);
