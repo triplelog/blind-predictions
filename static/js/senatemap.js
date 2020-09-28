@@ -227,3 +227,65 @@ function statemousemove(evt) {
 	//updateTotals();
 	
 }
+
+
+var myWorker = new Worker('js/wasmworker.js');
+var stateList = [];
+var stateMap = {};
+for (var i=0;i<Object.keys(senateData).length;i++) {
+	stateList.push(Object.keys(senateData)[i]);
+}
+stateList.sort();
+for (var i=0;i<51;i++){
+	stateMap[stateList[i]]=i;
+}
+myWorker.onmessage = function(e) {
+	if (e.data == "ready"){
+		setTimeout(predictNow,50);
+	}
+	else if (e.data['type'] == "wins"){
+		console.log(e.data);
+		var dw = parseInt(e.data.D);
+		var rw = parseInt(e.data.R);
+		var tw = parseInt(e.data.T);
+		if (dw+rw+tw < 1000){
+			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
+			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
+		}
+		else {
+			document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
+			document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
+		}
+		
+		document.getElementById('dwinp').style.textDecoration = "none";
+  		document.getElementById('rwinp').style.textDecoration = "none";
+	}
+}
+function predictNow(){
+
+	for (var i=0;i<51;i++){
+
+		var state = stateMap[senateArray[i].abbrev];
+		var year = "2016";
+		var rpred = senateArray["pred20"];
+		if (rpred){
+			var elo = (rpred-.5)*2000;
+			var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+			console.log(senateArray[i].abbrev,dprob);
+			myWorker.postMessage(["update",state,dprob,year]);
+		}
+		else {
+			var dprob = .001;
+			console.log(senateArray[i].abbrev,dprob);
+			myWorker.postMessage(["update",state,dprob,year]);
+		}
+		
+
+		
+
+		
+	}
+	
+	myWorker.postMessage(["predict",100]);
+	myWorker.postMessage(["predict",1000]);
+}
