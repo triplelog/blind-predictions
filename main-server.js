@@ -187,22 +187,22 @@ app.post(['/senatemap','/senatemap.html'],
 		for (var i in eData){
 			console.log(eData[i]);
 			eData[i].rpred = eData[i].pres16;
-			if (userData20[eData[i].abbrev]){
-				if (userData20[eData[i].abbrev].party == 'R'){
-					eData[i].rpred = userData20[eData[i].abbrev].user/200+.5;
+			if (userData20[i]){
+				if (userData20[i].party == 'R'){
+					eData[i].rpred = userData20[i].user/200+.5;
 				}
-				else if (userData20[eData[i].abbrev].party == 'D'){
-					eData[i].rpred = .5-userData20[eData[i].abbrev].user/200;
+				else if (userData20[i].party == 'D'){
+					eData[i].rpred = .5-userData20[i].user/200;
 				}
 				
 			}
 			eData[i].rpred16 = eData[i].pres16;
-			if (userData16[eData[i].abbrev]){
-				if (userData16[eData[i].abbrev].party == 'R'){
-					eData[i].rpred16 = userData16[eData[i].abbrev].user/200+.5;
+			if (userData16[i]){
+				if (userData16[i].party == 'R'){
+					eData[i].rpred16 = userData16[i].user/200+.5;
 				}
-				else if (userData16[eData[i].abbrev].party == 'D'){
-					eData[i].rpred16 = .5-userData16[eData[i].abbrev].user/200;
+				else if (userData16[i].party == 'D'){
+					eData[i].rpred16 = .5-userData16[i].user/200;
 				}
 				
 			}
