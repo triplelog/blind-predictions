@@ -270,7 +270,7 @@ void initialRun(){
 		}
 		p.x = newX;
 		p.y = newY;
-		p.val = -1000000;
+		p.val = -1000000-i;
 		pointMap[p.x][p.y] = p;
 	}
 	
@@ -295,7 +295,12 @@ void initialRun(){
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
 	console_log(m.height);
-	
+	for(i=0;i<m.width;i++){
+		for(ii=0;ii<m.height;ii++){
+			console_log(m.pointMap[i][ii].val);
+		}
+		console_log(1111111);
+	}
 	
 	console_log(durationTotal);
 }
