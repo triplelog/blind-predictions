@@ -128,9 +128,13 @@ Map verticalSeam(Map m){
 			removeSeam = oldSeams[i];
 		}
 	}
-	for(ii=0;ii<m.height;ii++){
+	for(ii=0;ii<h;ii++){
 		console_log(removeSeam[ii]);
+		for(i=removeSeam[ii];i<w-1;i++){
+			m.pointMap[i][ii]=m.pointMap[i+1][ii];
+		}
 	}
+	m.width--;
 	return m;
 }
 
