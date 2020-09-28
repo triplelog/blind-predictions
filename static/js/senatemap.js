@@ -250,25 +250,29 @@ myWorker.onmessage = function(e) {
 		var histS = e.data.HistogramS;
 		document.getElementById('dwinp').textContent = "";
 		document.getElementById('rwinp').textContent = "";
+		var data = {
+		  labels: [],
+		  series: [
+			[],
+			[]
+		  ]
+		};
 		for (var i in histS){
 			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
+			data.labels.push(35+parseInt(i));
+			data.series[0].push(histS[i]);
+			data.series[1].push(histS[i]);
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
-  		var data = {
-		  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-		  series: [
-			[5, 4, 3, 7, 5, 10, 3, 4, 8, 10, 6, 8],
-			[3, 2, 9, 5, 4, 6, 4, 6, 7, 8, 7, 4]
-		  ]
-		};
+  		
 
 		var options = {
 		  seriesBarDistance: 10
 		};
 
 		var responsiveOptions = [
-		  ['screen and (max-width: 640px)', {
+		  ['screen and (max-width: 1640px)', {
 			seriesBarDistance: 5,
 			axisX: {
 			  labelInterpolationFnc: function (value) {
