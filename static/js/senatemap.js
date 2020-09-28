@@ -182,7 +182,7 @@ function orderStates() {
 			}
 		}
 	}
-	document.getElementById('simulationsChart').style.opacity = "0";
+	document.getElementById('simulationsChart').style.opacity = ".5";
 }
 orderStates();
 
