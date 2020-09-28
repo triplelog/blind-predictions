@@ -297,7 +297,7 @@ myWorker.onmessage = function(e) {
 
 		
 
-		new Chartist.Bar('#simulationsChart', data, options, responsiveOptions);
+		new Chartist.Bar('#simulationsChart', data, options);
 	}
 }
 function predictNow(){
