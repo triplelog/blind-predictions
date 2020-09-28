@@ -85,7 +85,7 @@ function computeWin(){
 		var expDem218 = 0;
 	
 		for (var i=0;i<435;i++){
-			var preselo = resultsArray[i]["pred20"] + adj218*10;
+			var preselo = resultsArray[i]["pred20"] - demoAdd + adj218*10;
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 		}
 	}
@@ -383,7 +383,6 @@ function reorderStates(startI=0,endI=435) {
 	}
 	computeWin();
 	var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
-	console.log(natadv+adj218, demProb218);
 	document.getElementById('dwinp').textContent = Math.round(demProb218*100,1)+"%";
 }
 
