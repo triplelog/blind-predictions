@@ -268,15 +268,19 @@ myWorker.onmessage = function(e) {
 			else {
 				demTotal.push(parseInt(histS[i])+demTotal[demTotal.length-1]);
 			}
-			if (repTotal[65-parseInt(i)+1]){
-				repTotal[65-parseInt(i)]=repTotal[65-parseInt(i)+1]+parseInt(histS[i]);
-			}
-			else {
-				repTotal[65-parseInt(i)] = parseInt(histS[i]);
-			}
+			
 			if (35+parseInt(i)<minDem){
 				minDem = 35+parseInt(i);
 			}
+		}
+		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
+			if (repTotal[100-i+1]){
+				repTotal[100-i]=repTotal[100-i+1]+parseInt(histS[i]);
+			}
+			else {
+				repTotal[100-i] = parseInt(histS[i]);
+			}
+			console.log(repTotal);
 		}
 		for (var i=6;i<16;i++){	
 			data.labels.push(""+(minDem+i));
@@ -293,6 +297,9 @@ myWorker.onmessage = function(e) {
 		  high: 1000,
 		  low: 0,
 		  divisor: 100,
+		  axisY: {
+			ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900]
+		  }
 		};
 
 		
