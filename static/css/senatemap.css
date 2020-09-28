@@ -359,3 +359,9 @@
 	width: calc( var(--block-width) * 25);
 	height: calc( var(--block-width) * 8);
 }
+.ct-series-a .ct-bar {
+  stroke: blue;
+}
+.ct-series-b .ct-bar {
+  stroke: red;
+}
