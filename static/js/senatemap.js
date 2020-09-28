@@ -273,7 +273,7 @@ myWorker.onmessage = function(e) {
 		}
 		for (var i=6;i<16;i++){	
 			data.labels.push(""+(minSeats+i));
-			data.series[0].push(1000-demTotal[i-1]);
+			data.series[0].push(demTotal[i]);
 			data.series[1].push(demTotal[i]);
 		}
 		console.log(data);
