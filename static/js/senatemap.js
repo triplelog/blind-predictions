@@ -98,7 +98,7 @@ function orderStates() {
 		if (2==2) {
 			if (2==2) {
 				var presyear = senateArray[i]['pred20'];
-				var elo = (presyear-.5)*2000;
+				var elo = (presyear-.5)*2000+demoAdd;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				if (dprob<.5) {
 					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
@@ -142,7 +142,7 @@ function orderStates() {
 		if (2==2) {
 			if (2==2) {
 				var presyear = senateArray[i]['pred20'];
-				var elo = (presyear-.5)*2000;
+				var elo = (presyear-.5)*2000+demoAdd;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				if (dprob>=.5) {
 					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
@@ -197,6 +197,19 @@ for (var i=0;i<senateArray.length;i++) {
 	document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').addEventListener("mousedown", statemousedown);
 
 }
+
+var demoAdd = 0.0;
+var slider = document.getElementById("myRange");
+slider.oninput = function() {
+	if (this.value<=0){
+	  demoAdd = this.value;
+	}
+	else {
+	  demoAdd = this.value;
+	}
+  orderStates();
+}
+
 
 document.addEventListener("mouseup", function(event) {
   stateStart = '';
@@ -351,7 +364,7 @@ function predictNow(){
 		var year = "2016";
 		var rpred = senateArray[i]["pred20"];
 		if (rpred){
-			var elo = (rpred-.5)*2000;
+			var elo = (rpred-.5)*2000+demoAdd;
 			var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 			myWorker.postMessage(["update",state,dprob,year]);
 		}
