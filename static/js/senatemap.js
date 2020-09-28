@@ -274,13 +274,20 @@ myWorker.onmessage = function(e) {
 			}
 		}
 		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
-			repTotal[100-i-1]=demTotal[i-minDem];
-			console.log(repTotal);
+			if (i > minDem+demTotal.length-1){
+				repTotal[100-i-1]=1000;
+			}
+			else if (i < minDem){
+				repTotal[100-i-1]=0;
+			}
+			else {
+				repTotal[100-i-1]=demTotal[i-minDem];
+			}
 		}
 		for (var i=6;i<16;i++){	
 			data.labels.push(""+(minDem+i));
 			data.series[0].push(1000 - demTotal[i-1]);
-			data.series[1].push(repTotal[100-(minDem+i)]);
+			data.series[1].push(repTotal[minDem+i]);
 		}
 		console.log(data);
 		document.getElementById('dwinp').style.textDecoration = "none";
