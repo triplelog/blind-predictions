@@ -307,10 +307,10 @@ myWorker.onmessage = function(e) {
 		  
 		  axisY: {
 		  	type: Chartist.FixedScaleAxis,
-			//ticks: [0, 100, 200, 300, 400, 500, 600, 700, 800, 900],
+			ticks: [0, 200, 400, 600, 800],
 			high: 1000,
 		  	low: 0,
-		  	divisor: 250,
+		  	//divisor: 250,
 		  }
 		};
 
