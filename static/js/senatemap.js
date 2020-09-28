@@ -276,6 +276,8 @@ myWorker.onmessage = function(e) {
 			data.series[0].push(demTotal[i]);
 			data.series[1].push(demTotal[i]);
 		}
+		console.log(data);
+		console.log(demTotal);
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
   		
