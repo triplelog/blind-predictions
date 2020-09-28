@@ -193,7 +193,7 @@ app.post(['/senatemap','/senatemap.html'],
 				}
 				else if (userData20[i].party == 'D'){
 					eData[i].rpred = .5-userData20[i].user/200;
-					eData[i].pres20 = userData20[i].user/200+.5;
+					eData[i].pres20 = .5-userData20[i].user/200;
 				}
 				
 			}
