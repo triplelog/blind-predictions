@@ -68,7 +68,7 @@ function resetDistricts() {
 
 	var demProb218 = 1.0/(1.0+Math.pow(10.0,10*adj218/75));
 	console.log(natadv+adj218, demProb218);
-	document.getElementById('dwinp').textContent = demProb218+"%";
+	document.getElementById('dwinp').textContent = Math.round(demProb218*100,1)+"%";
 	demVote = 0;
 	repVote = 0;
 	for (var i=0;i<435;i++){
