@@ -64,9 +64,9 @@ EM_JS(void, send_results, (const char* x), {
 			maxH = i;
 		}
 	}
-	var histS = [];
+	var histS = {};
 	for (var i=minH;i<=maxH;i++){
-		histS.push(hist[i]);
+		histS[i]=hist[i];
 	}
 	wins["HistogramS"]=histS;
 	updateWins(wins);
