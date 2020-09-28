@@ -358,6 +358,6 @@ function predictNow(){
 
 		
 	}
-	myWorker.postMessage(["predict",100]);
+
 	myWorker.postMessage(["predict",1000]);
 }

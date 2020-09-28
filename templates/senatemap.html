@@ -18,6 +18,7 @@
   
   <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
   <link href="../css/senatemap.css" rel="stylesheet">
+  <link href="css/slider.css" rel="stylesheet">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	
 
@@ -627,12 +628,14 @@
 					
 					</div>
 					<div id="simulations">
-						Dem Win: <span id="dwinp">???%</span><br />
-						Rep Win: <span id="rwinp">???%</span><br />
 						
 						<button onclick="predictNow()">Update</button>
 						<button onclick="resetDistricts()">Reset</button>
 					</div>
+				</span>
+				<span id="pvSlider">
+					<input type="range" min="-500" max="500" value="0" class="slider" id="myRange">
+					<span id="popularVote"></span>
 				</span>
 			
 			</div>
