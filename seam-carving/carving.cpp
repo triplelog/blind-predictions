@@ -132,7 +132,6 @@ Map horizontalSeam(Map m){
 		return m;
 	}
 	for(i=0;i<w;i++){
-		console_log(removeSeam[i]);
 		for(ii=removeSeam[i];ii<h-1;ii++){
 			m.pointMap[i][ii]=m.pointMap[i][ii+1];
 		}
@@ -204,7 +203,6 @@ Map verticalSeam(Map m){
 		return m;
 	}
 	for(ii=0;ii<h;ii++){
-		console_log(removeSeam[ii]);
 		for(i=removeSeam[ii];i<w-1;i++){
 			m.pointMap[i][ii]=m.pointMap[i+1][ii];
 		}
@@ -284,7 +282,7 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	for (i=0;i<50;i++){
+	for (i=0;i<100;i++){
 		if (!killCarve){
 			m = verticalSeam(m);
 		}
