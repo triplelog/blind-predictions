@@ -18,7 +18,6 @@
 #include <thread>
 #include <future>
 
-#include "data.cpp"
 
 #include <emscripten/emscripten.h>
 
