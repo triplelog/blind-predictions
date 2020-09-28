@@ -73,6 +73,7 @@ struct Map {
 Map verticalSeam(Map m){
 	int i;
 	int ii;
+	int iii;
 	std::map<int,int> oldMax;
 	std::map<int,int> newMax;
 	std::map<int,std::vector<int> > oldSeams;
@@ -87,27 +88,33 @@ Map verticalSeam(Map m){
 			if (i>0){left = oldMax[i-1];}
 			int mid = oldMax[i];
 			int right = -10000000;
+			int newI = i;
 			if (i+1<m.width){right = oldMax[i+1];}
 			if (left>mid){
 				if (left>right){
 					newMax[i] = left+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i-1].push_back(i);
+					newI = i-1;
 				}
 				else {
 					newMax[i] = right+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i+1].push_back(i);
+					newI = i+1;
 				}
 			}
 			else {
 				if (mid>right){
 					newMax[i] = mid+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i].push_back(i);
+					newI = i;
 				}
 				else {
 					newMax[i] = right+m.pointMap[i][ii].val;
-					newSeams[i]=oldSeams[i+1].push_back(i);
+					newI = i+1;
 				}
 			}
+			newSeams[i].resize(0);
+			for (iii=0;iii<oldSeams[newI].length();iii++){
+				newSeams[i].push_back(oldSeams[newI][iii]);
+			}
+			newSeams[i].push_back(i);
 		}
 		oldSeams = newSeams;
 		oldMax = newMax;
