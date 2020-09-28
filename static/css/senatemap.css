@@ -370,10 +370,10 @@
 }
 
 #pvSlider {
-	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
-	left: calc( 20px + var(--block-width) * (var(--bot-width) + 2));
+	width: calc( 30vw);
+	left: calc( 50% - 15vw);
 	position: absolute;
-	top: calc( 18.5px + var(--block-width) * var(--side-height));
+	top: calc( 2 * var(--block-width) + var(--block-width) * var(--side-height));
 	height: calc( var(--block-width) * 3 - 0px);
 	margin: 0px;
 	padding: 0px;
@@ -388,7 +388,7 @@
 	pointer-events: none;
 }
 .slider {
-	width: calc( var(--block-width) * (var(--top-width) + 3 - var(--bot-width) - var(--bot-width) - 4));
+	width: calc( 30vw );
 	background: black;
 	margin: 0px;
 	padding: 0px;
