@@ -370,10 +370,10 @@
 }
 
 #pvSlider {
-	width: calc( 30vw);
-	left: calc( 50% - 15vw);
+	width: calc( 20vw + 200px);
+	left: calc( 50% - 10vw - 100px);
 	position: absolute;
-	top: calc( 2 * var(--block-width) + var(--block-width) * var(--side-height));
+	top: calc( 3 * var(--block-width) + var(--block-width) * var(--side-height));
 	height: calc( var(--block-width) * 3 - 0px);
 	margin: 0px;
 	padding: 0px;
@@ -388,7 +388,7 @@
 	pointer-events: none;
 }
 .slider {
-	width: calc( 30vw );
+	width: calc( 20vw + 200px );
 	background: black;
 	margin: 0px;
 	padding: 0px;
