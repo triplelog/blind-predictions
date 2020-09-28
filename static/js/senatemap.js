@@ -245,7 +245,7 @@ myWorker.onmessage = function(e) {
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
-		var histS = parseInt(e.data.histogramS);
+		var histS = e.data.histogramS;
 		document.getElementById('dwinp').textContent = "";
 		document.getElementById('rwinp').textContent = "";
 		for (var i in histS){
