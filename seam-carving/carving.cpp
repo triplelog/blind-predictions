@@ -69,6 +69,73 @@ struct Map {
 	int height;
 };
 
+Map horizontalSeam(Map m){
+	int i;
+	int ii;
+	int iii;
+	std::map<int,int> oldMax;
+	std::map<int,int> newMax;
+	std::map<int,std::vector<int> > oldSeams;
+	std::map<int,std::vector<int> > newSeams;
+	for(ii=0;ii<m.height;ii++){
+		oldMax[ii]=m.pointMap[0][ii].val;
+		oldSeams[ii]={ii};
+	}
+	int h = m.height;
+	int w = m.width;
+	for(i=1;i<w;i++){
+		for(ii=0;ii<h;ii++){
+			int top = -10000000;
+			if (ii>0){top = oldMax[ii-1];}
+			int mid = oldMax[ii];
+			int bottom = -10000000;
+			int newI = ii;
+			if (ii+1<h){bottom = oldMax[ii+1];}
+			if (top>mid){
+				if (top>bottom){
+					newMax[ii] = top+m.pointMap[i][ii].val;
+					newI = ii-1;
+				}
+				else {
+					newMax[ii] = bottom+m.pointMap[i][ii].val;
+					newI = ii+1;
+				}
+			}
+			else {
+				if (mid>bottom){
+					newMax[ii] = mid+m.pointMap[i][ii].val;
+					newI = ii;
+				}
+				else {
+					newMax[ii] = bottom+m.pointMap[i][ii].val;
+					newI = ii+1;
+				}
+			}
+			
+			newSeams[ii] = oldSeams[newI];
+			newSeams[ii].push_back(ii);
+		}
+		oldSeams = newSeams;
+		oldMax = newMax;
+	}
+	
+	int maxSeam = 0;
+	std::vector<int> removeSeam;
+	for (ii=0;ii<h;ii++){
+		if (oldMax[ii]>maxSeam){
+			maxSeam = oldMax[ii];
+			removeSeam = oldSeams[ii];
+		}
+	}
+	for(i=0;i<w;i++){
+		console_log(removeSeam[i]);
+		for(ii=removeSeam[i];ii<h-1;ii++){
+			m.pointMap[i][ii]=m.pointMap[i][ii+1];
+		}
+	}
+	m.height--;
+	return m;
+}
 
 Map verticalSeam(Map m){
 	int i;
@@ -122,7 +189,7 @@ Map verticalSeam(Map m){
 	
 	int maxSeam = 0;
 	std::vector<int> removeSeam;
-	for (i=0;i<m.width;i++){
+	for (i=0;i<w;i++){
 		if (oldMax[i]>maxSeam){
 			maxSeam = oldMax[i];
 			removeSeam = oldSeams[i];
@@ -210,6 +277,9 @@ void initialRun(){
 	m = verticalSeam(m);
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(m.width);
+	console_log(m.height);
+	m = horizontalSeam(m);
 	console_log(m.width);
 	console_log(m.height);
 	console_log(durationTotal);
