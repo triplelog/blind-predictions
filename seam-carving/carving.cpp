@@ -27,6 +27,10 @@ EM_JS(void, console_log, (int x), {
 EM_JS(void, string_log, (const char* x), {
   console.log(UTF8ToString(x));
 });
+EM_JS(void, display_points, (), {
+	console.log(points);
+	console.log(pointsOut);
+});
 EM_JS(void, add_point, (const char* x), {
 	var pointSplit = UTF8ToString(x).split(",");
 	points.push({"x":pointSplit[0],"y":pointSplit[1],"val":pointSplit[2]});	
@@ -307,6 +311,7 @@ void initialRun(){
 	}
 	
 	console_log(durationTotal);
+	display_points();
 }
 
 int main() {
