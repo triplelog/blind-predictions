@@ -53,7 +53,22 @@ EM_JS(void, send_results, (const char* x), {
 	wins["TV"]=xStr[8];
 	wins["ME"]=xStr[9];
 	wins["MS"]=xStr[10];
-	wins["HistogramS"]=xStr[11].split("|");
+	var hist = xStr[11].split("|");
+	var minH = 51;
+	var maxH = 0;
+	for (var i=0;i<hist.length;i++){
+		if (hist[i]>0 && i < minH){
+			minH = i;
+		}
+		else if (hist[i]>0 && i > maxH){
+			maxH = i;
+		}
+	}
+	var histS = [];
+	for (var i=minH;i<=maxH;i++){
+		histS.push(hist[i]);
+	}
+	wins["HistogramS"]=histS;
 	updateWins(wins);
 });
 EM_JS(void, send_ready, (), {
@@ -300,7 +315,7 @@ void makePrediction(int year, int n) {
 				}
 			}
 			resultStr += std::to_string(medEV)+",";
-			for (ii=0;ii<25;ii++){
+			for (ii=0;ii<51;ii++){
 				if (senateData.find(ii) != senateData.end()){
 					resultStr += std::to_string(senateData[ii])+"|";
 				}
