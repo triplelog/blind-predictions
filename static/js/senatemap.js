@@ -14,13 +14,13 @@ for (var i=0;i<Object.keys(senateData).length;i++) {
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer6').style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
-			if (senateData[Object.keys(senateData)[i]]['pred20']>.5){
-				var elo = (senateData[Object.keys(senateData)[i]]['pred20']-.5)*2000;
+			if (senateData[Object.keys(senateData)[i]]['pres20']>.5){
+				var elo = (senateData[Object.keys(senateData)[i]]['pres20']-.5)*2000;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer1').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 			}
 			else {
-				var elo = (senateData[Object.keys(senateData)[i]]['pred20']-.5)*2000;
+				var elo = (senateData[Object.keys(senateData)[i]]['pres20']-.5)*2000;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 				document.getElementById(Object.keys(senateData)[i].toUpperCase()+'-outer1').style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 			}
@@ -346,7 +346,6 @@ function predictNow(){
 		if (rpred){
 			var elo = (rpred-.5)*2000;
 			var dprob = 1.0/(1+Math.pow(10.0,elo/75));
-			console.log(senateArray[i].abbrev,dprob);
 			myWorker.postMessage(["update",state,dprob,year]);
 		}
 
