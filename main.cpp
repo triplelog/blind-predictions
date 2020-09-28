@@ -53,6 +53,7 @@ EM_JS(void, send_results, (const char* x), {
 	wins["TV"]=xStr[8];
 	wins["ME"]=xStr[9];
 	wins["MS"]=xStr[10];
+	wins["HistogramS"]=xStr[11].split("|");
 	updateWins(wins);
 });
 EM_JS(void, send_ready, (), {
@@ -298,7 +299,16 @@ void makePrediction(int year, int n) {
 					break;
 				}
 			}
-			resultStr += std::to_string(medEV);
+			resultStr += std::to_string(medEV)+",";
+			for (ii=0;ii<25;ii++){
+				if (senateData.find(ii) != senateData.end()){
+					resultStr += std::to_string(senateData[ii])+"|";
+				}
+				else {
+					resultStr += "0|";
+				}
+			}
+			resultStr += "0";
 			send_results(resultStr.c_str());
 		}
 		
