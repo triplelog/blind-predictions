@@ -95,6 +95,7 @@ function orderStates() {
 	document.getElementById('pres2016R').innerHTML = '';
 	document.getElementById('pres2016TL').innerHTML = '';
 	document.getElementById('pres2016L').innerHTML = '';
+	console.log(demoAdd);
 	for (var i=0;i<senateArray.length;i++) {
 		if (2==2) {
 			if (2==2) {
