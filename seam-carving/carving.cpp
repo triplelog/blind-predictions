@@ -119,6 +119,18 @@ Map verticalSeam(Map m){
 		oldSeams = newSeams;
 		oldMax = newMax;
 	}
+	
+	int maxSeam = 0;
+	std::vector<int> removeSeam;
+	for (i=0;i<m.width;i++){
+		if (oldMax[i]>maxSeam){
+			maxSeam = oldMax[i];
+			removeSeam = oldSeams[i];
+		}
+	}
+	for(ii=0;ii<m.height;ii++){
+		console_log(removeSeam[ii]);
+	}
 	return m;
 }
 
