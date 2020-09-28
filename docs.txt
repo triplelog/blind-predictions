@@ -1,0 +1,21 @@
+~/emsdk/upstream/emscripten/em++ main.cpp -o static/js/wasmpredict.js -s WASM=1 -s NO_EXIT_RUNTIME=1 -s EXPORTED_FUNCTIONS='["_makePrediction","_updateProbability","_main"]' -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' -s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=512MB -s TOTAL_STACK=256MB
+
+
+https://projects.fivethirtyeight.com/2020-general-data/senate_state_toplines_2020.csv
+-for 538 senate projections
+-save as data/senate_state_toplines_2020.csv
+
+https://projects.fivethirtyeight.com/2020-general-data/presidential_state_toplines_2020.csv
+-for 538 presidential projections
+-save as data/presidential_state_toplines_2020.csv
+
+https://cdn.economistdatateam.com/us-2020-forecast/data/president/economist_model_output.zip
+-for economist presidential projections
+-use output/site_data/state_averages_and_predictions_topline.csv
+-save as data/economist2020.csv
+
+
+python3 createData.py
+python3 loadData.py
+python3 makeHouse.py
+python3 createDataTable.py

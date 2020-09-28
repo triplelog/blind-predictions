@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    {% block meta %}
+    <meta name="description" content=".">    <title>Blind Predictions</title>  
+    {% endblock %}
+    
+<link rel="icon" type="image/png" href="../img/fav.png">
+
+{% block stylesheets %}
+{% endblock %}
+
+
+<style>
+div.container {
+	{% block borderRadius %}
+	{% endblock %}
+}
+
+
+
+{% block titleCSS %}
+{% endblock %}
+
+
+{% block moreCSS %}
+{% endblock %}
+
+
+
+</style>
+
+</head>
+<body>
+
+{% block bodyStart %}
+{% endblock %}
+<div class="container">
+	<form action="../senatemap" method="post">
+	{% block dataTable %}
+	{% endblock %}
+	<button type="submit">Submit</button>
+	</form>
+</div>
+<div id="footer">
+	{% block footer %}
+	{% endblock %}
+</div>
+{% block scripts %}
+{% endblock %}
+<script>
+
+
+
+</script>
+</body>
+</html>

@@ -99,7 +99,7 @@ file1.writelines(end)
 file1.close()
 
 
-initial = ['{% extends "templates/electoral.html" %}\n{% block dataTable %}\n<table id="dataTable">']
+initial = ['{% extends "templates/senate.html" %}\n{% block dataTable %}\n<table id="dataTable">']
 end = ['</table>\n{% endblock %}']
 file1 = open('templates/senatetable.html', 'w')
 file1.writelines(initial) 
