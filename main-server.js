@@ -157,6 +157,9 @@ app.post(['/senatemap','/senatemap.html'],
 			if (req.body[i] != ''){
 				var p = parseFloat(req.body[i]);
 				var state = i.split('-');
+				if (state.length > 4){
+					continue;
+				}
 				if (state[1]=="2016"){
 					userData16[state[0].toLowerCase()]={'party':state[2],'user':p};
 				}
