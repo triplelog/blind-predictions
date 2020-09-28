@@ -88,7 +88,7 @@ function computeWin(){
 		var expDem218 = 0;
 	
 		for (var i=0;i<435;i++){
-			var preselo = resultsArray[i]["pred20"] + adj218;
+			var preselo = resultsArray[i]["pred20"]*10 + adj218;
 			expDem218 += 1.0/(1.0+Math.pow(10.0,-1*preselo/eloDenom));
 		}
 		console.log(expDem218);
