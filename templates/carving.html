@@ -68,8 +68,12 @@
   
 
 <script>
+var points = [];
+var pointsOut = [];
 var myWorker = new Worker('js/wasmcarving.js');
 
+console.log(points);
+console.log(pointsOut);
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
 		setTimeout(predictNow,50);

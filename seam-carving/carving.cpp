@@ -27,15 +27,16 @@ EM_JS(void, console_log, (int x), {
 EM_JS(void, string_log, (const char* x), {
   console.log(UTF8ToString(x));
 });
-EM_JS(void, send_map, (const char* x), {
-	var statesOut = [];
-	var statesStr = UTF8ToString(x);
-	var jsStr = "";
-	for (var i=0;i<51;i++){
-		statesOut.push(statesStr[i]);
-		jsStr += statesStr[i]+"\n";
-		
+EM_JS(void, add_point, (const char* x), {
+	var pointSplit = UTF8ToString(x).split(",");
+	points.push({"x":pointSplit[0],"y":pointSplit[1],"val":pointSplit[2]});	
+});
+EM_JS(void, add_pointOut, (const char* x), {
+	var pointSplit = UTF8ToString(x).split(",");
+	if (parseInt(pointSplit[2])*-1-1000000>=0){
+		pointsOut.push({"x":pointSplit[0],"y":pointSplit[1],"val":parseInt(pointSplit[2])*-1-1000000});	
 	}
+	
 });
 EM_JS(void, send_results, (const char* x), {
 	var xStr = UTF8ToString(x).split(",");
@@ -272,6 +273,8 @@ void initialRun(){
 		p.y = newY;
 		p.val = -1000000-i;
 		pointMap[p.x][p.y] = p;
+		std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val);
+		add_point(pointStr.c_str());
 	}
 	
 	Map m;
@@ -297,9 +300,10 @@ void initialRun(){
 	console_log(m.height);
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
-			console_log(m.pointMap[i][ii].val);
+			Point p = m.pointMap[i][ii];
+			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val);
+			add_pointOut(pointStr.c_str());
 		}
-		console_log(1111111);
 	}
 	
 	console_log(durationTotal);
