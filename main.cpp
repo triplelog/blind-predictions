@@ -255,11 +255,11 @@ void makePrediction(int year, int n) {
 		else {
 			evData[bidenEV]++;
 		}
-		if (senData.find(dSen) == senData.end()){
-			senData[dSen] = 1;
+		if (senateData.find(dSen) == senateData.end()){
+			senateData[dSen] = 1;
 		}
 		else {
-			senData[dSen]++;
+			senateData[dSen]++;
 		}
 		
 		if (i % 100 == 99){
@@ -290,8 +290,8 @@ void makePrediction(int year, int n) {
 			medEV = 0;
 			count = 0;
 			for (ii=0;ii<51;ii++){
-				if (senData.find(ii) != senData.end()){
-					count+= senData[ii];
+				if (senateData.find(ii) != senateData.end()){
+					count+= senateData[ii];
 				}
 				if (count >= i/2){
 					medEV = ii;
