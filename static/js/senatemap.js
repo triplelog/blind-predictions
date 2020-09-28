@@ -258,7 +258,8 @@ myWorker.onmessage = function(e) {
 		  ]
 		};
 		var demTotal = [];
-		var minSeats = 100;
+		var repTotal = {};
+		var minDem = 100;
 		for (var i in histS){
 			document.getElementById('dwinp').textContent += (35+parseInt(i))+":"+histS[i]+", ";
 			if (demTotal.length == 0){
@@ -267,35 +268,34 @@ myWorker.onmessage = function(e) {
 			else {
 				demTotal.push(parseInt(histS[i])+demTotal[demTotal.length-1]);
 			}
-			if (35+parseInt(i)<minSeats){
-				minSeats = 35+parseInt(i);
+			if (repTotal[65-parseInt(i)+1]){
+				repTotal[65-parseInt(i)]=[65-parseInt(i)+1]+parseInt(histS[i]);
+			}
+			else {
+				repTotal[65-parseInt(i)] = parseInt(histS[i]);
+			}
+			if (35+parseInt(i)<minDem){
+				minDem = 35+parseInt(i);
 			}
 		}
 		for (var i=6;i<16;i++){	
-			data.labels.push(""+(minSeats+i));
+			data.labels.push(""+(minDem+i));
 			data.series[0].push(1000 - demTotal[i-1]);
-			data.series[1].push(demTotal[i]);
+			data.series[1].push(repTotal[100-(minDem+i)]);
 		}
 		console.log(data);
-		console.log(demTotal);
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
   		
 
 		var options = {
-		  seriesBarDistance: 10
+		  seriesBarDistance: 10,
+		  high: 1000,
+		  low: 0,
+		  divisor: 100,
 		};
 
-		var responsiveOptions = [
-		  ['screen and (max-width: 640px)', {
-			seriesBarDistance: 5,
-			axisX: {
-			  labelInterpolationFnc: function (value) {
-				return value[0];
-			  }
-			}
-		  }]
-		];
+		
 
 		new Chartist.Bar('#simulationsChart', data, options, responsiveOptions);
 	}
