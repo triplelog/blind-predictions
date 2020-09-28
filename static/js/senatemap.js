@@ -3,7 +3,7 @@ var senateArray = [];
 for (var i=0;i<Object.keys(senateData).length;i++) {
 	if (Object.keys(senateData)[i] != 'dc'){
 		if (senateData[Object.keys(senateData)[i]][2014].length>0) {
-			senateArray.push({'abbrev':Object.keys(senateData)[i],'pred20':senateData[Object.keys(senateData)[i]]['pres16'],'act14':senateData[Object.keys(senateData)[i]][2014][0]});
+			senateArray.push({'abbrev':Object.keys(senateData)[i],'pred20':senateData[Object.keys(senateData)[i]]['rpred'],'act14':senateData[Object.keys(senateData)[i]][2014][0]});
 			if (senateData[Object.keys(senateData)[i]]['pres16']>.5){
 				var elo = (senateData[Object.keys(senateData)[i]]['pres16']-.5)*2000;
 				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
@@ -78,9 +78,10 @@ function orderStates() {
 		if (2==2) {
 			if (2==2) {
 				var presyear = senateArray[i]['pred20'];
-
-				if (presyear>=.5) {
-					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = 'red';
+				var elo = (presyear-.5)*2000;
+				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+				if (dprob<.5) {
+					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
 					var newspan = document.createElement("span");
 					newspan.classList.add("pres-cell");
 					newspan.classList.add("stateface");
@@ -121,9 +122,10 @@ function orderStates() {
 		if (2==2) {
 			if (2==2) {
 				var presyear = senateArray[i]['pred20'];
-
-				if (presyear<.5) {
-					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = 'blue';
+				var elo = (presyear-.5)*2000;
+				var dprob = 1.0/(1+Math.pow(10.0,elo/75));
+				if (dprob>=.5) {
+					document.getElementById(senateArray[i]['abbrev'].toUpperCase()+'-inner').style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
 					var newspan = document.createElement("span");
 					newspan.classList.add("pres-cell");
 					newspan.classList.add("stateface");
@@ -252,7 +254,7 @@ myWorker.onmessage = function(e) {
 		document.getElementById('rwinp').textContent = "";
 		for (var i in histS){
 			console.log(i);
-			document.getElementById('dwinp').textContent += i+":"+histS[i]+", ";
+			document.getElementById('dwinp').textContent += (35+i)+":"+histS[i]+", ";
 		}
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
