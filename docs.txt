@@ -19,3 +19,12 @@ python3 createData.py
 python3 loadData.py
 python3 makeHouse.py
 python3 createDataTable.py
+
+
+
+
+
+
+
+#Carving
+~/emsdk/upstream/emscripten/em++ seam-carving/carving.cpp -o static/js/wasmcarve.js -s WASM=1 -s NO_EXIT_RUNTIME=1 -s EXPORTED_FUNCTIONS='["_main"]' -s EXTRA_EXPORTED_RUNTIME_METHODS='["cwrap"]' -s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=512MB -s TOTAL_STACK=256MB
