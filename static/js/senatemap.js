@@ -274,7 +274,7 @@ myWorker.onmessage = function(e) {
 			}
 		}
 		for (var i=minDem+demTotal.length-1;i>=minDem;i--){
-			repTotal[100-i]=1000-demTotal[i-minDem];
+			repTotal[100-i-1]=demTotal[i-minDem];
 			console.log(repTotal);
 		}
 		for (var i=6;i<16;i++){	
