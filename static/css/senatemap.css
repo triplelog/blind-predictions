@@ -4,7 +4,7 @@
 	--top-width: 27;
 }
 @media (max-aspect-ratio: 4/3) {
-	:root {--block-width: 2vw;}
+	:root {--block-width: 1.6vw;}
 }
 @media (min-aspect-ratio: 4/3) {
 	:root {--block-width: 2.5vh;}
