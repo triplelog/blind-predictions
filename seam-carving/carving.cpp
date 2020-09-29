@@ -81,6 +81,60 @@ struct Map {
 	int height;
 };
 
+
+Map fillBlanks(Map m) {
+	int i;
+	int ii;
+	int ix;
+	int iy;
+	int count = 0;
+	for(i=0;i<m.width;i++){
+		if (m.pointMap.find(i) == m.pointMap.end()){
+			std::map<int,Point> t;
+			m.pointMap[i] = t;
+		}
+	}
+	for(i=0;i<m.width;i++){
+		for(ii=0;ii<m.height;ii++){
+			if (m.pointMap[i].find(ii) == m.pointMap[i].end() || m.pointMap[i][ii].val>=0){
+				Point t;
+				t.x = i;
+				t.y = ii;
+				int minX = i-1;
+				int minY = ii-1;
+				int maxX = i+1;
+				int maxY = ii+1;
+				if (minX<0){minX =0;}
+				if (minY<0){minY =0;}
+				if (maxX>=m.width){maxX =m.width-1;}
+				if (maxY>=m.height){maxY =m.height-1;}
+				int maxD = 128;
+				for (ix=minX;ix<=maxX;ix++){
+					for (iy=minY;iy<=maxY;iy++){
+						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
+							if (m.pointMap[ix][iy].val<0){
+								//int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
+								//if (d < minD){
+								//	minD = d;
+								//}
+								maxD /= 2;
+							}
+						}
+					}
+				}
+				t.val = maxD;
+				m.pointMap[i][ii] = t;
+			}
+			else {
+				count++;
+			}
+		}
+	}
+	console_log(count);
+	return m;
+}
+
+
 Map splitHorizontal(Map m, int sz){
 	int h = m.height;
 	int ii;
@@ -518,6 +572,8 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else {
 				for(ii=0;ii<h;ii++){
+					console_log(removeSeam[ii]);
+					m = fillBlanks(m);
 					if (removeSeam[ii] == m.width){
 					
 					}
@@ -532,6 +588,7 @@ Map verticalSeam(Map m, int n, int l){
 						p.val = 1;
 						m.pointMap[m.width-1][ii]=p;
 					}
+					m = fillBlanks(m);
 					
 				}
 			}
@@ -542,57 +599,6 @@ Map verticalSeam(Map m, int n, int l){
 	return m;
 }
 
-Map fillBlanks(Map m) {
-	int i;
-	int ii;
-	int ix;
-	int iy;
-	int count = 0;
-	for(i=0;i<m.width;i++){
-		if (m.pointMap.find(i) == m.pointMap.end()){
-			std::map<int,Point> t;
-			m.pointMap[i] = t;
-		}
-	}
-	for(i=0;i<m.width;i++){
-		for(ii=0;ii<m.height;ii++){
-			if (m.pointMap[i].find(ii) == m.pointMap[i].end() || m.pointMap[i][ii].val>=0){
-				Point t;
-				t.x = i;
-				t.y = ii;
-				int minX = i-1;
-				int minY = ii-1;
-				int maxX = i+1;
-				int maxY = ii+1;
-				if (minX<0){minX =0;}
-				if (minY<0){minY =0;}
-				if (maxX>=m.width){maxX =m.width-1;}
-				if (maxY>=m.height){maxY =m.height-1;}
-				int maxD = 128;
-				for (ix=minX;ix<=maxX;ix++){
-					for (iy=minY;iy<=maxY;iy++){
-						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
-							if (m.pointMap[ix][iy].val<0){
-								//int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
-								//if (d < minD){
-								//	minD = d;
-								//}
-								maxD /= 2;
-							}
-						}
-					}
-				}
-				t.val = maxD;
-				m.pointMap[i][ii] = t;
-			}
-			else {
-				count++;
-			}
-		}
-	}
-	console_log(count);
-	return m;
-}
 
 void initialRun(){
 	seed = 7;
@@ -765,15 +771,15 @@ void initialRun(){
 			m = verticalSeam(m,1,-1);
 		}
 		m = fillBlanks(m);
-		if (!killCarveH){
-			m = horizontalSeam(m,1,-1);
-		}
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
+		//if (!killCarveH){
+		//	m = horizontalSeam(m,1,-1);
+		//}
+		//m = fillBlanks(m);
+		//console_log(m.width);
+		//console_log(m.height);
 		console_log(0);
 	}
-	
+	/*
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
@@ -857,7 +863,7 @@ void initialRun(){
 		console_log(m.height);
 		console_log(-2);
 	}
-
+	*/
 	
 	
 	a22 = std::chrono::high_resolution_clock::now();
