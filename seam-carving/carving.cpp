@@ -317,10 +317,10 @@ Map fillBlanks(Map m) {
 				Point t;
 				t.x = i;
 				t.y = ii;
-				int minX = i-3;
-				int minY = ii-3;
-				int maxX = i+3;
-				int maxY = ii+3;
+				int minX = i-2;
+				int minY = ii-2;
+				int maxX = i+2;
+				int maxY = ii+2;
 				if (minX<0){minX =0;}
 				if (minY<0){minY =0;}
 				if (maxX>=m.width){maxX =m.width-1;}
