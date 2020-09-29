@@ -359,6 +359,7 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 		}
 		else {
+			console_log(maxSeam);
 			if (maxSeam <=1000000*l){
 				killCarveH = true;
 				return m;
