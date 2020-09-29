@@ -222,6 +222,7 @@ Map horizontalSeam(Map m, int n, int l){
 			int top = -10000000;
 			if (ii%modn>0){top = oldMax[ii-1];}
 			int maxv = top;
+			int newv = m.pointMap[i][ii].val;
 			int newI = ii-1;
 			int mid = oldMax[ii];
 			if (mid > maxv){
@@ -253,21 +254,23 @@ Map horizontalSeam(Map m, int n, int l){
 			if (l == 0){
 				if (maxv >= 0){
 					if (newI == ii){
-						maxv = h-1;//zig zag is good
+						newv = h-1;//zig zag is good
 					}
 					else {
-						maxv = h;
+						newv = h;
 					}
 				}
 				else {
 					for (iiii=2;iiii<h;iiii++){
 						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
-							maxv = h-iiii;
+							maxv = oldMax[ii-iiii];
+							newv = h-iiii;
 							newI = ii-iiii;
 							break;
 						}
 						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
-							maxv = h-iiii;
+							maxv = oldMax[ii+iiii];
+							newv = h-iiii;
 							newI = ii+iiii;
 							break;
 						}
@@ -277,43 +280,47 @@ Map horizontalSeam(Map m, int n, int l){
 			else if (l < 0){
 				if (maxv >= 0){
 					if (newI == ii){
-						maxv = h-1;//zig zag is good
+						newv = h-1;//zig zag is good
 					}
 					else {
-						maxv = h;
+						newv = h;
 					}
 				}
 				else {
 					for (iiii=2;iiii<h;iiii++){
 						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
-							maxv = h-iiii;
+							maxv = oldMax[ii-iiii];
+							newv = h-iiii;
 							newI = ii-iiii;
 							break;
 						}
 						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
-							maxv = h-iiii;
+							maxv = oldMax[ii+iiii];
+							newv = h-iiii;
 							newI = ii+iiii;
 							break;
 						}
 					}
 				}
 				
-				if (maxv >= 0){
+				if (newv >= 0){
 				
 				}
 				else {
-					maxv = -1000000;
+					newv = -1000000;
+					maxv = oldMax[ii];
 					newI = ii;
 					skip = true;
 				}
 			}
 			
 			
-			newMax[ii] = maxv+m.pointMap[i][ii].val;
+			newMax[ii] = maxv+newv;
 
 			
 			newSeams[ii] = oldSeams[newI];
 			if (skip){
+				//newSeams[ii][newSeams[ii].size()-1]=h;
 				newSeams[ii].push_back(h);
 			}
 			else {
@@ -359,7 +366,6 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 		}
 		else {
-			console_log(maxSeam);
 			if (maxSeam <=1000000*l){
 				killCarveH = true;
 				return m;
@@ -466,21 +472,23 @@ Map verticalSeam(Map m, int n, int l){
 			if (l == 0){
 				if (maxv >= 0){
 					if (newI == i){
-						maxv = w-1;//zig zag is good
+						newv = w-1;//zig zag is good
 					}
 					else {
-						maxv = w;
+						newv = w;
 					}
 				}
 				else {
 					for (iiii=2;iiii<w;iiii++){
 						if (i%modn>=iiii && oldMax[i-iiii] >= 0){
-							maxv = w-iiii;
+							mpv = oldMax[i-iiii];
+							newv = w-iiii;
 							newI = i-iiii;
 							break;
 						}
 						if (i+iiii<w && (i+iiii) % modn>0 && oldMax[i+iiii] >= 0){
-							maxv = w-iiii;
+							mpv = oldMax[i+iiii];
+							newv = w-iiii;
 							newI = i+iiii;
 							break;
 						}
@@ -763,7 +771,7 @@ void initialRun(){
 	}
 	
 
-	
+	/*
 	killCarveV = false;
 	killCarveH = false;
 	vertThreads=2;
@@ -779,7 +787,7 @@ void initialRun(){
 		console_log(m.height);
 		console_log(0);
 	}
-	
+	*/
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
@@ -805,7 +813,7 @@ void initialRun(){
 		console_log(m.width);
 		console_log(m.height);
 	}
-	
+	/*
 	killCarveV = false;
 	killCarveH = false;
 	vertThreads=2;
@@ -883,7 +891,7 @@ void initialRun(){
 		console_log(m.width);
 		console_log(m.height);
 	}
-	
+	*/
 	
 	
 	a22 = std::chrono::high_resolution_clock::now();
