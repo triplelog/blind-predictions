@@ -59,7 +59,8 @@ EM_JS(void, send_ready, (), {
 
 long long durationRand;
 int seed;
-bool killCarve;
+bool killCarveV;
+bool killCarveH;
 int vertThreads;
 int horzThreads;
 
@@ -190,7 +191,7 @@ Map horizontalSeam(Map m, int n){
 			}
 		}
 		if (maxSeam <=0 && n == 1){
-			killCarve = true;
+			killCarveH = true;
 			return m;
 		}
 		else if (maxSeam <= 0 && iii< n-1){
@@ -277,7 +278,7 @@ Map verticalSeam(Map m, int n){
 			}
 		}
 		if (maxSeam <=0 && n == 1){
-			killCarve = true;
+			killCarveV = true;
 			return m;
 		}
 		else if (maxSeam <= 0 && iii< n-1){
@@ -354,7 +355,8 @@ void initialRun(){
 	std::map<int,std::map<int,Point>> pointMap;
 	std::map<int,int> xCount;
 	std::map<int,int> yCount;
-	killCarve = false;
+	killCarveV = false;
+	killCarveH = false;
 	int np = 400;
 	for(i=0;i<10000;i++){
 		xCount[i]=0;
@@ -404,10 +406,10 @@ void initialRun(){
 			vertThreads-=5;
 			horzThreads-=5;
 		}
-		if (!killCarve){
+		if (!killCarveV){
 			m = verticalSeam(m,vertThreads);
 		}
-		if (!killCarve){
+		if (!killCarveH){
 			m = horizontalSeam(m,horzThreads);
 		}
 	}
@@ -416,25 +418,26 @@ void initialRun(){
 	if (m.width > m.height){
 		m = splitHorizontal(m);
 		vertThreads = 5;
-		killCarve = false;
+		killCarveV = false;
 		m = verticalSeam(m,vertThreads);
 	}
 	else {
 		m = splitVertical(m);
 		horzThreads = 5;
-		killCarve = false;
+		killCarveH = false;
 		m = horizontalSeam(m,horzThreads);
 	}
 	console_log(m.width);
 	console_log(m.height);
-	killCarve = false;
+	killCarveV = false;
+	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
 	for (i=0;i<np;i++){
-		if (!killCarve){
+		if (!killCarveV){
 			m = verticalSeam(m,vertThreads);
 		}
-		if (!killCarve){
+		if (!killCarveH){
 			m = horizontalSeam(m,horzThreads);
 		}
 	}
