@@ -520,7 +520,15 @@ Map verticalSeam(Map m, int n, int l){
 			
 			newMax[i] = maxv+mpv;
 
-			
+			if (oldSeams.find(newI) == oldSeams.end()){
+				console_log(newI);
+				console_log(i);
+			}
+			else if (oldSeams[newI][0] < -1000){
+				console_log(newI);
+				console_log(i);
+				console_log(-10);
+			}
 			newSeams[i] = oldSeams[newI];
 			if (skip){
 				newSeams[i].push_back(w);
