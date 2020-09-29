@@ -451,6 +451,8 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
+	
+	
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
@@ -488,6 +490,40 @@ void initialRun(){
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
 		if (m.width > m.height){
+			m = splitHorizontal(m,1);
+			vertThreads = 5;
+			killCarveV = false;
+			m = verticalSeam(m,vertThreads);
+		}
+		else {
+			m = splitVertical(m,1);
+			horzThreads = 5;
+			killCarveH = false;
+			m = horizontalSeam(m,horzThreads);
+		}
+		console_log(m.width);
+		console_log(m.height);
+		killCarveV = false;
+		killCarveH = false;
+		vertThreads=2;
+		horzThreads=2;
+		for (i=0;i<np;i++){
+			if (!killCarveV){
+				m = verticalSeam(m,vertThreads);
+			}
+			if (!killCarveH){
+				m = horizontalSeam(m,horzThreads);
+			}
+		}
+		console_log(m.width);
+		console_log(m.height);
+	}
+	
+	
+	oldArea = m.height*m.width+1;
+	while (m.width*m.height<oldArea){
+		oldArea = m.height*m.width;
+		if (m.width > m.height){
 			m = splitHorizontal(m,3);
 			vertThreads = 5;
 			killCarveV = false;
@@ -517,7 +553,6 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
@@ -533,7 +568,6 @@ void initialRun(){
 			killCarveH = false;
 			m = horizontalSeam(m,horzThreads);
 		}
-
 		console_log(m.width);
 		console_log(m.height);
 		killCarveV = false;
