@@ -325,12 +325,12 @@ Map fillBlanks(Map m) {
 				if (minY<0){minY =0;}
 				if (maxX>=m.width){maxX =m.width-1;}
 				if (maxY>=m.height){maxY =m.height-1;}
-				int minD = 21;
+				int minD = 20;
 				for (ix=minX;ix<=maxX;ix++){
 					for (iy=minY;iy<=maxY;iy++){
 						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
 							if (m.pointMap[ix][iy].val<0){
-								int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy)+2;
+								int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
 								if (d < minD){
 									minD = d;
 								}
