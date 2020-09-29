@@ -404,8 +404,8 @@ void initialRun(){
 	console_log(durationTotal);
 	
 	a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 25;
-	horzThreads = 25;
+	vertThreads = 28;
+	horzThreads = 28;
 	for (i=0;i<np;i++){
 		if (vertThreads>3){
 			vertThreads-=3;
@@ -431,6 +431,9 @@ void initialRun(){
 		}
 		console_log(m.width);
 		console_log(m.height);
+		if (i%3 == 2){
+			m = fillBlanks(m);
+		}
 	}
 	
 	int oldArea = m.height*m.width+1;
