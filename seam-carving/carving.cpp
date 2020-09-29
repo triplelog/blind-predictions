@@ -451,7 +451,7 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	int oldArea = m.height*m.width+1;
+	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
 		if (m.width > m.height){
@@ -484,7 +484,7 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	int oldArea = m.height*m.width+1;
+	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
 		if (m.width > m.height){
@@ -518,7 +518,7 @@ void initialRun(){
 	}
 	
 	
-	int oldArea = m.height*m.width+1;
+	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
 		m = splitHorizontal(m,2);
