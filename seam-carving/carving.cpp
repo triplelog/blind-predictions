@@ -462,7 +462,7 @@ void initialRun(){
 	a11 = std::chrono::high_resolution_clock::now();
 	m = fillBlanks(m);
 	a22 = std::chrono::high_resolution_clock::now();
-	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
 	
 	oldArea = m.height*m.width+1;
