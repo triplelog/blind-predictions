@@ -137,6 +137,15 @@ Map horizontalSeam(Map m, int n, int l){
 	std::map<int,std::vector<int> > newSeams;
 	for(ii=0;ii<m.height;ii++){
 		oldMax[ii]=m.pointMap[0][ii].val;
+		if (l==0){
+			if (m.pointMap[0][ii].val >= 0){
+				oldMax[ii]=m.height;
+			}
+			else {
+				oldMax[ii]=-10000000;
+			}
+			
+		}
 		oldSeams[ii]={ii};
 	}
 	int h = m.height;
@@ -160,7 +169,46 @@ Map horizontalSeam(Map m, int n, int l){
 				newI = ii+1;
 			}
 			
-
+			/*if (l == 2){
+				top = -10000000;
+				if (ii%modn>1){top = oldMax[ii-2];}
+				if (top > maxv){
+					maxv = top;
+					newI = ii-2;
+				}
+				bottom = -10000000;
+				if (ii+2<h && (ii+2) % modn>0){bottom = oldMax[ii+2];}
+				if (bottom > maxv){
+					maxv = bottom;
+					newI = ii+2;
+				}
+			}*/
+			if (l == 0){
+				if (maxv >= 0){
+					if (newI == ii){
+						maxv = h;
+					}
+					else {
+						maxv = h-1;
+					}
+				}
+				else {
+					for (iiii=2;iiii<h;iiii++){
+						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
+							maxv = h-iiii;
+							newI = ii-iiii;
+							break;
+						}
+						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
+							maxv = h-iiii;
+							newI = ii+iiii;
+							break;
+						}
+					}
+				}
+			}
+			
+			
 			newMax[ii] = maxv+m.pointMap[i][ii].val;
 
 			
@@ -209,12 +257,22 @@ Map verticalSeam(Map m, int n, int l){
 	int i;
 	int ii;
 	int iii;
+	int iiii;
 	std::map<int,int> oldMax;
 	std::map<int,int> newMax;
 	std::map<int,std::vector<int> > oldSeams;
 	std::map<int,std::vector<int> > newSeams;
 	for(i=0;i<m.width;i++){
 		oldMax[i]=m.pointMap[i][0].val;
+		if (l==0){
+			if (m.pointMap[i][0].val >= 0){
+				oldMax[i]=m.width;
+			}
+			else {
+				oldMax[i]=-10000000;
+			}
+			
+		}
 		oldSeams[i]={i};
 	}
 	int h = m.height;
@@ -236,6 +294,45 @@ Map verticalSeam(Map m, int n, int l){
 			if (right > maxv){
 				maxv = right;
 				newI = i+1;
+			}
+			
+			/*if (l == 2){
+				left = -10000000;
+				if (i%modn>1){left = oldMax[i-2];}
+				if (left > maxv){
+					maxv = left;
+					newI = i-2;
+				}
+				right = -10000000;
+				if (i+2<w && (i+2) % modn>0){right = oldMax[i+2];}
+				if (right > maxv){
+					maxv = right;
+					newI = i+2;
+				}
+			}*/
+			if (l == 0){
+				if (maxv >= 0){
+					if (newI == i){
+						maxv = w;
+					}
+					else {
+						maxv = w-1;
+					}
+				}
+				else {
+					for (iiii=2;iiii<w;iiii++){
+						if (i%modn>=iiii && oldMax[i-iiii] >= 0){
+							maxv = w-iiii;
+							newI = i-iiii;
+							break;
+						}
+						if (i+iiii<w && (i+iiii) % modn>0 && oldMax[i+iiii] >= 0){
+							maxv = w-iiii;
+							newI = i+iiii;
+							break;
+						}
+					}
+				}
 			}
 			
 			newMax[i] = maxv+m.pointMap[i][ii].val;
@@ -524,7 +621,7 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	/*
+	
 	killCarveV = false;
 	killCarveH = false;
 	vertThreads=2;
@@ -539,7 +636,7 @@ void initialRun(){
 	}
 	console_log(m.width);
 	console_log(m.height);
-	*/
+	
 	
 	a22 = std::chrono::high_resolution_clock::now();
 	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
