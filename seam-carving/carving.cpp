@@ -357,7 +357,7 @@ void initialRun(){
 	std::map<int,int> yCount;
 	killCarveV = false;
 	killCarveH = false;
-	int np = 500;
+	int np = 250;
 	for(i=0;i<10000;i++){
 		xCount[i]=0;
 		yCount[i]=0;
@@ -396,11 +396,15 @@ void initialRun(){
 	m.width = np;
 	m.height = np;
 	
-	m = fillBlanks(m);
-	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 60;
-	horzThreads = 60;
+	m = fillBlanks(m);
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationTotal);
+	
+	a11 = std::chrono::high_resolution_clock::now();
+	vertThreads = 25;
+	horzThreads = 25;
 	for (i=0;i<np;i++){
 		if (vertThreads>3){
 			vertThreads-=3;
@@ -521,8 +525,8 @@ void initialRun(){
 	}
 	
 	
-	auto a22 = std::chrono::high_resolution_clock::now();
-	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	a22 = std::chrono::high_resolution_clock::now();
+	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
 	console_log(m.height);
 	set_maxX(m.width);
