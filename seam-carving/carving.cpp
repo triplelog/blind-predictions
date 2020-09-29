@@ -131,6 +131,7 @@ Map horizontalSeam(Map m, int n, int l){
 	int i;
 	int ii;
 	int iii;
+	int iiii;
 	std::map<int,int> oldMax;
 	std::map<int,int> newMax;
 	std::map<int,std::vector<int> > oldSeams;
