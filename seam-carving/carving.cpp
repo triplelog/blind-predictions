@@ -547,6 +547,7 @@ Map fillBlanks(Map m) {
 	int ii;
 	int ix;
 	int iy;
+	int count = 0;
 	for(i=0;i<m.width;i++){
 		if (m.pointMap.find(i) == m.pointMap.end()){
 			std::map<int,Point> t;
@@ -584,8 +585,12 @@ Map fillBlanks(Map m) {
 				t.val = maxD;
 				m.pointMap[i][ii] = t;
 			}
+			else {
+				count++;
+			}
 		}
 	}
+	console_log(count);
 	return m;
 }
 
