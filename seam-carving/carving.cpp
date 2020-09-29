@@ -208,7 +208,7 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 			else {
 				oldMax[ii]=-1000000;
-				oldSeams[ii]={m.height};
+				oldSeams[ii][0]=m.height;
 			}
 			
 		}
@@ -411,7 +411,7 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else {
 				oldMax[i]=-1000000;
-				oldSeams[i]={m.width};
+				oldSeams[i][0]=m.width;
 			}
 			
 		}
