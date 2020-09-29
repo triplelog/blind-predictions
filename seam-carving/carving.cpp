@@ -524,7 +524,7 @@ Map verticalSeam(Map m, int n, int l){
 				console_log(newI);
 				console_log(i);
 			}
-			else if (oldSeams[newI][0] < -1000){
+			else if (oldSeams[newI][0] > 1000){
 				console_log(newI);
 				console_log(i);
 				console_log(-10);
