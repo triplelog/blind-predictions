@@ -642,7 +642,7 @@ void initialRun(){
 		}
 		p.x = newX;
 		p.y = newY;
-		p.val = -1000000-i;
+		p.val = -1000000;
 		pointMap[p.x][p.y] = p;
 		std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val);
 		//add_point(pointStr.c_str());
