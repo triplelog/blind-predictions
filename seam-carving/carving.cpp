@@ -96,7 +96,7 @@ Map splitHorizontal(Map m, int sz){
 				Point p;
 				p.x = i;
 				p.y = ii;
-				p.val = 1;
+				p.val = 100;
 				m.pointMap[i][ii]=p;
 			}
 		}
@@ -119,7 +119,7 @@ Map splitVertical(Map m, int sz){
 				Point p;
 				p.x = i;
 				p.y = ii;
-				p.val = 1;
+				p.val = 100;
 				m.pointMap[i][ii]=p;
 			}
 		}
