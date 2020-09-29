@@ -543,6 +543,9 @@ Map verticalSeam(Map m, int n, int l){
 	//std::vector<int> removeSeams;
 	for (iii=n-1;iii>=0;iii--){
 		int maxSeam = 0;
+		if (l<0){
+			maxSeam =1000000*l;
+		}
 		std::vector<int> removeSeam;
 		int maxX = (iii+1)*modn;
 		if (maxX > w){
