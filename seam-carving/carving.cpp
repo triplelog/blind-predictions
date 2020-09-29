@@ -305,7 +305,7 @@ void initialRun(){
 	auto a11 = std::chrono::high_resolution_clock::now();
 	for (i=0;i<100;i++){
 		if (!killCarve){
-			m = verticalSeam(m,2);
+			m = verticalSeam(m,1);
 		}
 		if (!killCarve){
 			m = horizontalSeam(m);
