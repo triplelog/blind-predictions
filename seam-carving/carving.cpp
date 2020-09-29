@@ -96,7 +96,7 @@ Map splitHorizontal(Map m, int sz){
 				Point p;
 				p.x = i;
 				p.y = ii;
-				p.val = 0;
+				p.val = 1;
 				m.pointMap[i][ii]=p;
 			}
 		}
@@ -119,7 +119,7 @@ Map splitVertical(Map m, int sz){
 				Point p;
 				p.x = i;
 				p.y = ii;
-				p.val = 0;
+				p.val = 1;
 				m.pointMap[i][ii]=p;
 			}
 		}
@@ -325,12 +325,12 @@ Map fillBlanks(Map m) {
 				if (minY<0){minY =0;}
 				if (maxX>=m.width){maxX =m.width-1;}
 				if (maxY>=m.height){maxY =m.height-1;}
-				int minD = 20;
+				int minD = 21;
 				for (ix=minX;ix<=maxX;ix++){
 					for (iy=minY;iy<=maxY;iy++){
 						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
 							if (m.pointMap[ix][iy].val<0){
-								int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
+								int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy)+2;
 								if (d < minD){
 									minD = d;
 								}
