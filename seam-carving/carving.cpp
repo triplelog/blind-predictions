@@ -365,8 +365,7 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 			else {
 				for(i=0;i<w;i++){
-					if (removeSeam[i] == m.height){
-					
+					if (removeSeam[i] == m.height || m.pointMap[i][removeSeam[i]].val < 0){
 					}
 					else {
 						for(ii=removeSeam[i];ii<m.height-1;ii++){
@@ -577,8 +576,6 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else {
 				for(ii=0;ii<h;ii++){
-					console_log(removeSeam[ii]);
-					m = fillBlanks(m);
 					if (removeSeam[ii] == m.width || m.pointMap[removeSeam[ii]][ii].val < 0){
 						
 					}
@@ -594,7 +591,6 @@ Map verticalSeam(Map m, int n, int l){
 						p.val = 1;
 						m.pointMap[m.width-1][ii]=p;
 					}
-					m = fillBlanks(m);
 					
 				}
 			}
@@ -772,17 +768,15 @@ void initialRun(){
 	vertThreads=2;
 	horzThreads=2;
 	for (i=0;i<1;i++){
-		m = fillBlanks(m);
 		if (!killCarveV){
 			m = verticalSeam(m,1,-1);
 		}
+		if (!killCarveH){
+			m = horizontalSeam(m,1,-1);
+		}
 		m = fillBlanks(m);
-		//if (!killCarveH){
-		//	m = horizontalSeam(m,1,-1);
-		//}
-		//m = fillBlanks(m);
-		//console_log(m.width);
-		//console_log(m.height);
+		console_log(m.width);
+		console_log(m.height);
 		console_log(0);
 	}
 	/*
