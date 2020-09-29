@@ -708,7 +708,7 @@ void initialRun(){
 	}
 	
 	
-	oldArea = m.height*m.width+1;
+	int oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
 		if (m.width > m.height){
