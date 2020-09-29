@@ -167,7 +167,7 @@ Map verticalSeam(Map m, int n){
 			int mid = oldMax[i];
 			int right = -10000000;
 			int newI = i;
-			if (i+1<w && i+1 % modn>0){right = oldMax[i+1];}
+			if (i+1<w && (i+1) % modn>0){right = oldMax[i+1];}
 			
 			if (left>mid){
 				if (left>right){
