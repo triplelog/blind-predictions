@@ -3,8 +3,20 @@ function cpp_ready() {
 	postMessage("ready");
 	
 }
+
+function displayNow() {
+	var svg = '<svg viewBox="0 0 '+maxX+' '+maxY+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
+	for (var i=0;i<jsPoints.length;i++){
+		svg += '<circle r="1" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="rgb('+(parseInt(jsPoints[i].ox)*250/200)+',0,'+(parseInt(jsPoints[i].oy)*250/200)+')" stroke="none">';
+	}
+	svg += '</svg>';
+	postMessage(svg);
+}
 var points = [];
 var pointsOut = [];
+var jsPoints;
+var maxX;
+var maxY;
 importScripts('wasmcarve.js');
 
 

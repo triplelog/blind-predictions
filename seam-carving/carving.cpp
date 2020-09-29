@@ -27,9 +27,15 @@ EM_JS(void, console_log, (int x), {
 EM_JS(void, string_log, (const char* x), {
   console.log(UTF8ToString(x));
 });
+EM_JS(void, set_maxX, (int x), {
+  maxX = x;
+});
+EM_JS(void, set_maxY, (int y), {
+  maxY = y;
+});
 EM_JS(void, display_points, (), {
-	console.log(points);
-	console.log(pointsOut);
+	jsPoints = pointsOut;
+	displayNow();
 });
 EM_JS(void, add_point, (const char* x), {
 	var pointSplit = UTF8ToString(x).split(",");
@@ -303,11 +309,12 @@ void initialRun(){
 	std::map<int,int> xCount;
 	std::map<int,int> yCount;
 	killCarve = false;
+	int np = 200;
 	for(i=0;i<10000;i++){
 		xCount[i]=0;
 		yCount[i]=0;
 	}
-	for (i=0;i<400;i++){
+	for (i=0;i<np;i++){
 		int x = rand() % 10000;
 		int y = rand() % 10000;
 		Point p;
@@ -318,7 +325,7 @@ void initialRun(){
 		yCount[y]++;
 	}
 	
-	for(i=0;i<400;i++){
+	for(i=0;i<np;i++){
 		Point p = points[i];
 		int newX = 0;
 		for (ii=0;ii<p.x;ii++){
@@ -338,18 +345,18 @@ void initialRun(){
 	
 	Map m;
 	m.pointMap = pointMap;
-	m.width = 400;
-	m.height = 400;
+	m.width = np;
+	m.height = np;
 	
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 80;
-	horzThreads = 80;
-	for (i=0;i<400;i++){
+	vertThreads = 20;
+	horzThreads = 20;
+	for (i=0;i<np;i++){
 		if (i%100==99){
-			vertThreads-=20;
-			horzThreads-=20;
+			vertThreads-=5;
+			horzThreads-=5;
 		}
 		if (!killCarve){
 			m = verticalSeam(m,vertThreads);
@@ -363,6 +370,8 @@ void initialRun(){
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
 	console_log(m.height);
+	set_maxX(m.width);
+	set_maxY(m.height);
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
 			Point p = m.pointMap[i][ii];
