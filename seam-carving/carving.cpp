@@ -760,12 +760,15 @@ void initialRun(){
 	vertThreads=2;
 	horzThreads=2;
 	for (i=0;i<1;i++){
+		m = fillBlanks(m);
 		if (!killCarveV){
 			m = verticalSeam(m,1,-1);
 		}
+		m = fillBlanks(m);
 		if (!killCarveH){
 			m = horizontalSeam(m,1,-1);
 		}
+		m = fillBlanks(m);
 		console_log(m.width);
 		console_log(m.height);
 		console_log(0);
