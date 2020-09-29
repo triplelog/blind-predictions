@@ -145,7 +145,7 @@ Map horizontalSeam(Map m){
 	return m;
 }
 
-Map verticalSeam(Map m){
+Map verticalSeam(Map m, int n){
 	int i;
 	int ii;
 	int iii;
@@ -159,14 +159,15 @@ Map verticalSeam(Map m){
 	}
 	int h = m.height;
 	int w = m.width;
+	int modn = w / n;
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int left = -10000000;
-			if (i>0){left = oldMax[i-1];}
+			if (i%modn>0){left = oldMax[i-1];}
 			int mid = oldMax[i];
 			int right = -10000000;
 			int newI = i;
-			if (i+1<w){right = oldMax[i+1];}
+			if (i+1<w && i+1 % modn>0){right = oldMax[i+1];}
 			if (left>mid){
 				if (left>right){
 					newMax[i] = left+m.pointMap[i][ii].val;
@@ -195,25 +196,37 @@ Map verticalSeam(Map m){
 		oldMax = newMax;
 	}
 	
-	int maxSeam = 0;
-	std::vector<int> removeSeam;
-	for (i=0;i<w;i++){
-		if (oldMax[i]>maxSeam){
-			maxSeam = oldMax[i];
-			removeSeam = oldSeams[i];
+	for (iii=0;iii<n;iii++){
+		int maxSeam = 0;
+		std::vector<int> removeSeam;
+		int maxX = (iii+1)*modn;
+		if (maxX > w){
+			maxX = w;
 		}
-	}
-	if (maxSeam <=0){
-		killCarve = true;
-		return m;
-	}
-	for(ii=0;ii<h;ii++){
-		for(i=removeSeam[ii];i<w-1;i++){
-			m.pointMap[i][ii]=m.pointMap[i+1][ii];
+		for (i=iii*modn;i<maxX;i++){
+			if (oldMax[i]>maxSeam){
+				maxSeam = oldMax[i];
+				removeSeam = oldSeams[i];
+			}
+		}
+		if (maxSeam <=0 && n == 1){
+			killCarve = true;
+			return m;
+		}
+		else if (maxSeam <= 0 && iii< n-1){
+			return verticalSeam(m,n-1);
+		}
+		else if (maxSeam > 0){
+			for(ii=0;ii<h;ii++){
+				for(i=removeSeam[ii];i<m.width-1;i++){
+					m.pointMap[i][ii]=m.pointMap[i+1][ii];
+				}
+			}
+			m.width--;
 		}
 	}
 
-	m.width--;
+	
 	return m;
 }
 
@@ -291,7 +304,7 @@ void initialRun(){
 	auto a11 = std::chrono::high_resolution_clock::now();
 	for (i=0;i<100;i++){
 		if (!killCarve){
-			m = verticalSeam(m);
+			m = verticalSeam(m,2);
 		}
 		if (!killCarve){
 			m = horizontalSeam(m);
