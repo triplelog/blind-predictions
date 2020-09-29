@@ -629,7 +629,7 @@ void initialRun(){
 	std::map<int,int> yCount;
 	killCarveV = false;
 	killCarveH = false;
-	int np = 250;
+	int np = 500;
 	for(i=0;i<10000;i++){
 		xCount[i]=0;
 		yCount[i]=0;
@@ -675,8 +675,8 @@ void initialRun(){
 	console_log(durationTotal);
 	
 	a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 28;
-	horzThreads = 28;
+	vertThreads = 60;
+	horzThreads = 60;
 	for (i=0;i<np;i++){
 		if (vertThreads>3){
 			vertThreads-=3;
@@ -707,41 +707,6 @@ void initialRun(){
 		}
 	}
 	
-	int oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
-		if (m.width > m.height){
-			m = splitHorizontal(m,3);
-			vertThreads = 5;
-			killCarveV = false;
-			m = verticalSeam(m,vertThreads,1);
-		}
-		else {
-			m = splitVertical(m,3);
-			horzThreads = 5;
-			killCarveH = false;
-			m = horizontalSeam(m,horzThreads,1);
-		}
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,1,0);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,1,0);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-		
-
 	
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
@@ -780,179 +745,7 @@ void initialRun(){
 	}
 	
 
-	/*
-	killCarveV = false;
-	killCarveH = false;
-	vertThreads=2;
-	horzThreads=2;
-	for (i=0;i<2;i++){
-		if (!killCarveV){
-			m = verticalSeam(m,1,-1);
-		}
-		if (!killCarveH){
-			m = horizontalSeam(m,1,-1);
-		}
-		console_log(m.width);
-		console_log(m.height);
-		console_log(0);
-	}
-	*/
-	oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
 
-		m = splitHorizontal(m,2);
-		m = splitVertical(m,2);
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
-
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,1,0);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,1,0);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-	
-	oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
-
-		m = splitHorizontal(m,2);
-		m = splitVertical(m,2);
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
-
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,vertThreads,1);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads,1);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-	
-	oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
-
-		m = splitHorizontal(m,1);
-		m = splitVertical(m,1);
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
-
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,1,0);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,1,0);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-	/*
-	killCarveV = false;
-	killCarveH = false;
-	vertThreads=2;
-	horzThreads=2;
-	for (i=0;i<5;i++){
-		if (!killCarveV){
-			m = verticalSeam(m,1,-2);
-		}
-		if (!killCarveH){
-			m = horizontalSeam(m,1,-2);
-		}
-		console_log(m.width);
-		console_log(m.height);
-		console_log(-1);
-	}
-	
-	oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
-
-		m = splitHorizontal(m,1);
-		m = splitVertical(m,1);
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
-
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,vertThreads,1);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads,1);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-	
-	killCarveV = false;
-	killCarveH = false;
-	vertThreads=2;
-	horzThreads=2;
-	for (i=0;i<5;i++){
-		if (!killCarveV){
-			m = verticalSeam(m,1,-8);
-		}
-		if (!killCarveH){
-			m = horizontalSeam(m,1,-8);
-		}
-		console_log(m.width);
-		console_log(m.height);
-		console_log(-2);
-	}
-	
-	oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
-
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,1,0);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,1,0);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-	*/
 	
 	
 	a22 = std::chrono::high_resolution_clock::now();
