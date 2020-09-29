@@ -344,12 +344,12 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 40;
-	horzThreads = 40;
+	vertThreads = 80;
+	horzThreads = 80;
 	for (i=0;i<400;i++){
 		if (i%100==99){
-			vertThreads-=5;
-			horzThreads-=5;
+			vertThreads-=20;
+			horzThreads-=20;
 		}
 		if (!killCarve){
 			m = verticalSeam(m,vertThreads);
