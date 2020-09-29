@@ -310,11 +310,11 @@ Map horizontalSeam(Map m, int n, int l){
 					}
 				}
 				
-				if (newv >= 0){
+				if (maxv >= 0){
 				
 				}
 				else {
-					newv = -1000000;
+					mpv = -1000000;
 					maxv = oldMax[ii];
 					newI = ii;
 					skip = true;
