@@ -195,7 +195,7 @@ Map verticalSeam(Map m, int n){
 		oldSeams = newSeams;
 		oldMax = newMax;
 	}
-	
+	int diff = 1;
 	for (iii=0;iii<n;iii++){
 		int maxSeam = 0;
 		std::vector<int> removeSeam;
@@ -219,10 +219,11 @@ Map verticalSeam(Map m, int n){
 		else if (maxSeam > 0){
 			for(ii=0;ii<h;ii++){
 				for(i=removeSeam[ii];i<m.width-1;i++){
-					m.pointMap[i][ii]=m.pointMap[i+1][ii];
+					m.pointMap[i][ii]=m.pointMap[i+diff][ii];
 				}
 			}
 			m.width--;
+			diff++;
 		}
 	}
 
