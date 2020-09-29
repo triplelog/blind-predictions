@@ -189,7 +189,7 @@ Map horizontalSeam(Map m, int n, int l){
 		}
 		else if (maxSeam <= 0 && iii< n-1){
 			horzThreads/=2;
-			return horizontalSeam(m,horzThreads);
+			return horizontalSeam(m,horzThreads,l);
 		}
 		else if (maxSeam > 0){
 			for(i=0;i<w;i++){
@@ -268,7 +268,7 @@ Map verticalSeam(Map m, int n, int l){
 		}
 		else if (maxSeam <= 0 && iii< n-1){
 			vertThreads/=2;
-			return verticalSeam(m,vertThreads);
+			return verticalSeam(m,vertThreads,l);
 		}
 		else if (maxSeam > 0){
 			for(ii=0;ii<h;ii++){
