@@ -517,12 +517,23 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	
+	m = splitHorizontal(m,2);
+	m = splitVertical(m,2);
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
-		m = splitHorizontal(m,2);
-		m = splitVertical(m,2);
+		if (m.width > m.height){
+			m = splitHorizontal(m,1);
+			vertThreads = 5;
+			killCarveV = false;
+			m = verticalSeam(m,vertThreads);
+		}
+		else {
+			m = splitVertical(m,1);
+			horzThreads = 5;
+			killCarveH = false;
+			m = horizontalSeam(m,horzThreads);
+		}
 
 		console_log(m.width);
 		console_log(m.height);
