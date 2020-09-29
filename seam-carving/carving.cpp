@@ -583,7 +583,7 @@ Map verticalSeam(Map m, int n, int l){
 						
 					}
 					else {
-						console_log(m.pointMap[removeSeam[ii]][ii]);
+						console_log(m.pointMap[removeSeam[ii]][ii].val);
 						int count = 0;
 						for(i=removeSeam[ii];i<m.width-1;i++){
 							if (m.pointMap[i][ii] < 0){count++;}
