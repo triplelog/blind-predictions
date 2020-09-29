@@ -809,7 +809,7 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<2;i++){
+	for (i=0;i<5;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-2);
 		}
@@ -851,7 +851,7 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<2;i++){
+	for (i=0;i<5;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-2);
 		}
