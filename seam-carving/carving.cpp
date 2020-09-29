@@ -222,7 +222,6 @@ Map verticalSeam(Map m, int n){
 					console_log(w);
 					console_log(n);
 					console_log(iii);
-					console_log(diff);
 					console_log(removeSeam[ii]);
 				}
 				for(i=removeSeam[ii];i<m.width-1;i++){
