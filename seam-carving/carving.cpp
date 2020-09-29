@@ -313,7 +313,7 @@ Map fillBlanks(Map m) {
 	}
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
-			if (m.pointMap[i].find(ii) == m.pointMap[i].end()){
+			if (m.pointMap[i].find(ii) == m.pointMap[i].end() || m.pointMap[i][ii].val>=0){
 				Point t;
 				t.x = i;
 				t.y = ii;
@@ -325,7 +325,7 @@ Map fillBlanks(Map m) {
 				if (minY<0){minY =0;}
 				if (maxX>=m.width){maxX =m.width-1;}
 				if (maxY>=m.height){maxY =m.height-1;}
-				int maxD = 9;
+				int maxD = 128;
 				for (ix=minX;ix<=maxX;ix++){
 					for (iy=minY;iy<=maxY;iy++){
 						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
@@ -334,7 +334,7 @@ Map fillBlanks(Map m) {
 								//if (d < minD){
 								//	minD = d;
 								//}
-								maxD -= 1;
+								maxD /= 2;
 							}
 						}
 					}
@@ -458,6 +458,12 @@ void initialRun(){
 		console_log(m.width);
 		console_log(m.height);
 	}
+	
+	a11 = std::chrono::high_resolution_clock::now();
+	m = fillBlanks(m);
+	a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationTotal);
 	
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
