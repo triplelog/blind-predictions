@@ -408,10 +408,10 @@ void initialRun(){
 	horzThreads = 25;
 	for (i=0;i<np;i++){
 		if (vertThreads>3){
-			vertThreads-=3;
+			vertThreads=3;
 		}
 		if (horzThreads>3){
-			horzThreads-=3;
+			horzThreads=3;
 		}
 		if (!killCarveV){
 			m = verticalSeam(m,vertThreads);
