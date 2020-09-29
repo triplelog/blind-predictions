@@ -517,8 +517,7 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	m = splitHorizontal(m,2);
-	m = splitVertical(m,2);
+
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
