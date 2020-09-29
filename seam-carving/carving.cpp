@@ -317,28 +317,29 @@ Map fillBlanks(Map m) {
 				Point t;
 				t.x = i;
 				t.y = ii;
-				int minX = i-2;
-				int minY = ii-2;
-				int maxX = i+2;
-				int maxY = ii+2;
+				int minX = i-1;
+				int minY = ii-1;
+				int maxX = i+1;
+				int maxY = ii+1;
 				if (minX<0){minX =0;}
 				if (minY<0){minY =0;}
 				if (maxX>=m.width){maxX =m.width-1;}
 				if (maxY>=m.height){maxY =m.height-1;}
-				int minD = 20;
+				int maxD = 9;
 				for (ix=minX;ix<=maxX;ix++){
 					for (iy=minY;iy<=maxY;iy++){
 						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
 							if (m.pointMap[ix][iy].val<0){
-								int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
-								if (d < minD){
-									minD = d;
-								}
+								//int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
+								//if (d < minD){
+								//	minD = d;
+								//}
+								maxD -= 1;
 							}
 						}
 					}
 				}
-				t.val = minD;
+				t.val = maxD;
 				m.pointMap[i][ii] = t;
 			}
 		}
