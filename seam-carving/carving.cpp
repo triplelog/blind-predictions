@@ -168,6 +168,7 @@ Map verticalSeam(Map m, int n){
 			int right = -10000000;
 			int newI = i;
 			if (i+1<w && i+1 % modn>0){right = oldMax[i+1];}
+			
 			if (left>mid){
 				if (left>right){
 					newMax[i] = left+m.pointMap[i][ii].val;
@@ -188,7 +189,11 @@ Map verticalSeam(Map m, int n){
 					newI = i+1;
 				}
 			}
-			
+			if (w == 58){
+				if (newI == 29){
+					console_log(i);
+				}
+			}
 			newSeams[i] = oldSeams[newI];
 			newSeams[i].push_back(i);
 		}
