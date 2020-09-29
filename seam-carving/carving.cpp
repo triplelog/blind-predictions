@@ -303,7 +303,7 @@ Map horizontalSeam(Map m, int n, int l){
 		}
 		else {
 			if (maxSeam <=1000000*l){
-				killCarveV = true;
+				killCarveH = true;
 				return m;
 			}
 			else {
@@ -369,7 +369,7 @@ Map verticalSeam(Map m, int n, int l){
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int mpv = m.pointMap[i][ii].val;
-			if (l >= 0 && m.pointMap[i][ii].val<0){
+			if (l >= 0 && mpv<0){
 				newMax[i] = mpv;
 				newSeams[i] = oldSeams[i];
 				newSeams[i].push_back(i);
