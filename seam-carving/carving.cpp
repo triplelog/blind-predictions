@@ -344,8 +344,8 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 10;
-	horzThreads = 10;
+	vertThreads = 20;
+	horzThreads = 20;
 	for (i=0;i<200;i++){
 		if (i%100==99){
 			vertThreads-=5;
