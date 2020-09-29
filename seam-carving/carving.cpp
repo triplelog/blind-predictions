@@ -307,7 +307,7 @@ void initialRun(){
 		xCount[i]=0;
 		yCount[i]=0;
 	}
-	for (i=0;i<200;i++){
+	for (i=0;i<400;i++){
 		int x = rand() % 10000;
 		int y = rand() % 10000;
 		Point p;
@@ -318,7 +318,7 @@ void initialRun(){
 		yCount[y]++;
 	}
 	
-	for(i=0;i<200;i++){
+	for(i=0;i<400;i++){
 		Point p = points[i];
 		int newX = 0;
 		for (ii=0;ii<p.x;ii++){
@@ -338,15 +338,15 @@ void initialRun(){
 	
 	Map m;
 	m.pointMap = pointMap;
-	m.width = 200;
-	m.height = 200;
+	m.width = 400;
+	m.height = 400;
 	
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 20;
-	horzThreads = 20;
-	for (i=0;i<200;i++){
+	vertThreads = 40;
+	horzThreads = 40;
+	for (i=0;i<400;i++){
 		if (i%100==99){
 			vertThreads-=5;
 			horzThreads-=5;
