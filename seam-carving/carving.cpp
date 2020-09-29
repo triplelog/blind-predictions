@@ -315,7 +315,11 @@ Map horizontalSeam(Map m, int n, int l){
 						for(ii=removeSeam[i];ii<m.height-1;ii++){
 							m.pointMap[i][ii]=m.pointMap[i][ii+1];
 						}
-						m.pointMap[i][m.height-1].val=1;
+						Point p;
+						p.x = i;
+						p.y = m.height-1;
+						p.val = 1;
+						m.pointMap[i][m.height-1]=p;
 					}
 					
 				}
@@ -522,7 +526,11 @@ Map verticalSeam(Map m, int n, int l){
 					
 							m.pointMap[i][ii]=m.pointMap[i+1][ii];
 						}
-						m.pointMap[m.width-1][ii].val=1;
+						Point p;
+						p.x = m.width-1;
+						p.y = ii;
+						p.val = 1;
+						m.pointMap[m.width-1][ii]=p;
 					}
 					
 				}
@@ -746,7 +754,7 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<3;i++){
+	for (i=0;i<1;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-1);
 		}
@@ -788,7 +796,7 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<3;i++){
+	for (i=0;i<1;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-2);
 		}
@@ -830,7 +838,7 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<3;i++){
+	for (i=0;i<1;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-2);
 		}
