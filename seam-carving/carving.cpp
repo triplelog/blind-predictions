@@ -187,10 +187,10 @@ Map horizontalSeam(Map m, int n, int l){
 			if (l == 0){
 				if (maxv >= 0){
 					if (newI == ii){
-						maxv = h;
+						maxv = h-1;//zig zag is good
 					}
 					else {
-						maxv = h-1;
+						maxv = h;
 					}
 				}
 				else {
@@ -314,10 +314,10 @@ Map verticalSeam(Map m, int n, int l){
 			if (l == 0){
 				if (maxv >= 0){
 					if (newI == i){
-						maxv = w;
+						maxv = w-1;//zig zag is good
 					}
 					else {
-						maxv = w-1;
+						maxv = w;
 					}
 				}
 				else {
