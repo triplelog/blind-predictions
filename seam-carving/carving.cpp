@@ -325,7 +325,6 @@ Map horizontalSeam(Map m, int n, int l){
 	}
 	for (iii=n-1;iii>=0;iii--){
 		int maxSeam = 0;
-		int maxSeam = 0;
 		if (l<0){
 			maxSeam =1000000*l;
 		}
