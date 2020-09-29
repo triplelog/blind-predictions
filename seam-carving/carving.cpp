@@ -552,8 +552,7 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	m = splitHorizontal(m,2);
-	m = splitVertical(m,2);
+
 	killCarveV = false;
 	killCarveH = false;
 	vertThreads=2;
