@@ -231,12 +231,12 @@ Map horizontalSeam(Map m, int n, int l){
 				}
 				else {
 					for (iiii=2;iiii<h;iiii++){
-						if (i%modn>=iiii && oldMax[ii-iiii] >= 0){
+						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
 							maxv = h-iiii;
 							newI = ii-iiii;
 							break;
 						}
-						if (i+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
+						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
 							maxv = h-iiii;
 							newI = ii+iiii;
 							break;
