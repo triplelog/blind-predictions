@@ -219,10 +219,16 @@ Map horizontalSeam(Map m, int n, int l){
 	int modn = h / n;
 	for(i=1;i<w;i++){
 		for(ii=0;ii<h;ii++){
+			int mpv = m.pointMap[i][ii].val;
+			if (l >= 0 && mpv<0){
+				newMax[i] = mpv;
+				newSeams[i] = oldSeams[i];
+				newSeams[i].push_back(i);
+				continue;
+			}
 			int top = -10000000;
 			if (ii%modn>0){top = oldMax[ii-1];}
 			int maxv = top;
-			int newv = m.pointMap[i][ii].val;
 			int newI = ii-1;
 			int mid = oldMax[ii];
 			if (mid > maxv){
@@ -252,25 +258,26 @@ Map horizontalSeam(Map m, int n, int l){
 			}*/
 			bool skip = false;
 			if (l == 0){
+				
 				if (maxv >= 0){
 					if (newI == ii){
-						newv = h-1;//zig zag is good
+						mpv = h-1;//zig zag is good
 					}
 					else {
-						newv = h;
+						mpv = h;
 					}
 				}
 				else {
 					for (iiii=2;iiii<h;iiii++){
 						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
 							maxv = oldMax[ii-iiii];
-							newv = h-iiii;
+							mpv = h-iiii;
 							newI = ii-iiii;
 							break;
 						}
 						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
 							maxv = oldMax[ii+iiii];
-							newv = h-iiii;
+							mpv = h-iiii;
 							newI = ii+iiii;
 							break;
 						}
@@ -315,7 +322,7 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 			
 			
-			newMax[ii] = maxv+newv;
+			newMax[ii] = maxv+mpv;
 
 			
 			newSeams[ii] = oldSeams[newI];
@@ -346,7 +353,7 @@ Map horizontalSeam(Map m, int n, int l){
 				removeSeam = oldSeams[ii];
 			}
 		}
-		
+
 		if (l >= 0){
 			if (maxSeam <=0 && n == 1){
 				killCarveH = true;
