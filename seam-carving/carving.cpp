@@ -265,16 +265,26 @@ Map verticalSeam(Map m, int n, int l){
 	std::map<int,std::vector<int> > newSeams;
 	for(i=0;i<m.width;i++){
 		oldMax[i]=m.pointMap[i][0].val;
+		oldSeams[i]={i};
 		if (l==0){
 			if (m.pointMap[i][0].val >= 0){
 				oldMax[i]=m.width;
 			}
 			else {
-				oldMax[i]=-10000000;
+				oldMax[i]=-1000000;
+			}
+		}
+		else if (l < 0){
+			if (m.pointMap[i][0].val >= 0){
+				oldMax[i]=m.width;
+			}
+			else {
+				oldMax[i]=-1000000;
+				oldSeams[i]={m.width};
 			}
 			
 		}
-		oldSeams[i]={i};
+		
 	}
 	int h = m.height;
 	int w = m.width;
@@ -311,6 +321,7 @@ Map verticalSeam(Map m, int n, int l){
 					newI = i+2;
 				}
 			}*/
+			bool skip = false;
 			if (l == 0){
 				if (maxv >= 0){
 					if (newI == i){
@@ -335,12 +346,50 @@ Map verticalSeam(Map m, int n, int l){
 					}
 				}
 			}
+			else if (l < 0){
+				if (maxv >= 0){
+					if (newI == i){
+						maxv = w-1;//zig zag is good
+					}
+					else {
+						maxv = w;
+					}
+				}
+				else {
+					for (iiii=2;iiii<w;iiii++){
+						if (i%modn>=iiii && oldMax[i-iiii] >= 0){
+							maxv = w-iiii;
+							newI = i-iiii;
+							break;
+						}
+						if (i+iiii<w && (i+iiii) % modn>0 && oldMax[i+iiii] >= 0){
+							maxv = w-iiii;
+							newI = i+iiii;
+							break;
+						}
+					}
+				}
+				
+				if (maxv >= 0){
+				
+				}
+				else {
+					maxv = -1000000;
+					newI = i;
+					skip = true;
+				}
+			}
 			
 			newMax[i] = maxv+m.pointMap[i][ii].val;
 
 			
 			newSeams[i] = oldSeams[newI];
-			newSeams[i].push_back(i);
+			if (skip){
+				newSeams[i].push_back(w);
+			}
+			else {
+				newSeams[i].push_back(i);
+			}
 		}
 		oldSeams = newSeams;
 		oldMax = newMax;
@@ -359,22 +408,49 @@ Map verticalSeam(Map m, int n, int l){
 				removeSeam = oldSeams[i];
 			}
 		}
-		if (maxSeam <=0 && n == 1){
-			killCarveV = true;
-			return m;
-		}
-		else if (maxSeam <= 0 && iii< n-1){
-			vertThreads/=2;
-			return verticalSeam(m,vertThreads,l);
-		}
-		else if (maxSeam > 0){
-			for(ii=0;ii<h;ii++){
-				for(i=removeSeam[ii];i<m.width-1;i++){
+		if (l >= 0){
+			if (maxSeam <=0 && n == 1){
+				killCarveV = true;
+				return m;
+			}
+			else if (maxSeam <= 0 && iii< n-1){
+				vertThreads/=2;
+				return verticalSeam(m,vertThreads,l);
+			}
+			else if (maxSeam > 0){
+				for(ii=0;ii<h;ii++){
+					for(i=removeSeam[ii];i<m.width-1;i++){
 					
-					m.pointMap[i][ii]=m.pointMap[i+1][ii];
+						m.pointMap[i][ii]=m.pointMap[i+1][ii];
+					}
+				}
+				m.width--;
+			}
+		}
+		else {
+			if (maxSeam <=1000000*l){
+				killCarveV = true;
+				return m;
+			}
+			else {
+				for(ii=0;ii<h;ii++){
+					if (removeSeam[ii] == m.width){
+					
+					}
+					else {
+						for(i=removeSeam[ii];i<m.width-1;i++){
+					
+							m.pointMap[i][ii]=m.pointMap[i+1][ii];
+						}
+						Point p;
+						p.x = m.width-1;
+						p.y = ii;
+						p.val = 1;
+						m.pointMap[m.width-1][ii]=p;
+					}
+					
 				}
 			}
-			m.width--;
 		}
 	}
 
@@ -622,6 +698,8 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
+
+	
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
@@ -637,7 +715,7 @@ void initialRun(){
 		horzThreads=2;
 		for (i=0;i<np;i++){
 			if (!killCarveV){
-				m = verticalSeam(m,1,0);
+				m = verticalSeam(m,1,-1);
 			}
 			if (!killCarveH){
 				m = horizontalSeam(m,1,0);
