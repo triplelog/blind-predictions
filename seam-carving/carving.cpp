@@ -746,13 +746,16 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<np;i++){
+	for (i=0;i<3;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-1);
 		}
 		if (!killCarveH){
 			m = horizontalSeam(m,1,-1);
 		}
+		console_log(m.width);
+		console_log(m.height);
+		console_log(0);
 	}
 	
 	oldArea = m.height*m.width+1;
@@ -785,13 +788,16 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<np;i++){
+	for (i=0;i<3;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-2);
 		}
 		if (!killCarveH){
 			m = horizontalSeam(m,1,-2);
 		}
+		console_log(m.width);
+		console_log(m.height);
+		console_log(-1);
 	}
 	
 	oldArea = m.height*m.width+1;
@@ -824,13 +830,16 @@ void initialRun(){
 	killCarveH = false;
 	vertThreads=2;
 	horzThreads=2;
-	for (i=0;i<np;i++){
+	for (i=0;i<3;i++){
 		if (!killCarveV){
 			m = verticalSeam(m,1,-2);
 		}
 		if (!killCarveH){
 			m = horizontalSeam(m,1,-2);
 		}
+		console_log(m.width);
+		console_log(m.height);
+		console_log(-2);
 	}
 
 	
