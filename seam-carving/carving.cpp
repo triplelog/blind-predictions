@@ -38,7 +38,7 @@ EM_JS(void, add_point, (const char* x), {
 EM_JS(void, add_pointOut, (const char* x), {
 	var pointSplit = UTF8ToString(x).split(",");
 	if (parseInt(pointSplit[2])*-1-1000000>=0){
-		pointsOut.push({"x":pointSplit[0],"y":pointSplit[1],"val":parseInt(pointSplit[2])*-1-1000000});	
+		pointsOut.push({"x":pointSplit[3],"y":pointSplit[4],"ox":pointSplit[0],"oy":pointSplit[1]});	
 	}
 	
 });
@@ -333,7 +333,7 @@ void initialRun(){
 		p.val = -1000000-i;
 		pointMap[p.x][p.y] = p;
 		std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val);
-		add_point(pointStr.c_str());
+		//add_point(pointStr.c_str());
 	}
 	
 	Map m;
@@ -362,7 +362,7 @@ void initialRun(){
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
 			Point p = m.pointMap[i][ii];
-			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val);
+			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii);
 			add_pointOut(pointStr.c_str());
 		}
 	}
