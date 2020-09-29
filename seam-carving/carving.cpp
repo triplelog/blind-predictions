@@ -357,7 +357,7 @@ void initialRun(){
 	std::map<int,int> yCount;
 	killCarveV = false;
 	killCarveH = false;
-	int np = 400;
+	int np = 200;
 	for(i=0;i<10000;i++){
 		xCount[i]=0;
 		yCount[i]=0;
@@ -399,8 +399,8 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 50;
-	horzThreads = 50;
+	vertThreads = 20;
+	horzThreads = 20;
 	for (i=0;i<np;i++){
 		if (vertThreads>5){
 			vertThreads-=5;
