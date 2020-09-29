@@ -55,7 +55,7 @@ long long durationRand;
 int seed;
 bool killCarve;
 int vertThreads;
-
+int horzThreads;
 
 extern "C" {
 
@@ -74,7 +74,7 @@ struct Map {
 	int height;
 };
 
-Map horizontalSeam(Map m){
+Map horizontalSeam(Map m, int n){
 	int i;
 	int ii;
 	int iii;
@@ -88,14 +88,15 @@ Map horizontalSeam(Map m){
 	}
 	int h = m.height;
 	int w = m.width;
+	int modn = h / n;
 	for(i=1;i<w;i++){
 		for(ii=0;ii<h;ii++){
 			int top = -10000000;
-			if (ii>0){top = oldMax[ii-1];}
+			if (ii%modn>0){top = oldMax[ii-1];}
 			int mid = oldMax[ii];
 			int bottom = -10000000;
 			int newI = ii;
-			if (ii+1<h){bottom = oldMax[ii+1];}
+			if (ii+1<h && (ii+1)%modn>0){bottom = oldMax[ii+1];}
 			if (top>mid){
 				if (top>bottom){
 					newMax[ii] = top+m.pointMap[i][ii].val;
@@ -123,25 +124,38 @@ Map horizontalSeam(Map m){
 		oldSeams = newSeams;
 		oldMax = newMax;
 	}
+	for (iii=n-1;iii>=0;iii--){
+		int maxSeam = 0;
+		std::vector<int> removeSeam;
+		int maxY = (iii+1)*modn;
+		if (maxY > h){
+			maxY = h;
+		}
+		for (ii=iii*modn;ii<maxY;ii++){
+			if (oldMax[ii]>maxSeam){
+				maxSeam = oldMax[ii];
+				removeSeam = oldSeams[ii];
+			}
+		}
+		if (maxSeam <=0 && n == 1){
+			killCarve = true;
+			return m;
+		}
+		else if (maxSeam <= 0 && iii< n-1){
+			horzThreads--;
+			return horizontalSeam(m,n-1);
+		}
+		else if (maxSeam > 0){
+			for(i=0;i<w;i++){
+				for(ii=removeSeam[i];ii<m.height-1;ii++){
+					m.pointMap[i][ii]=m.pointMap[i][ii+1];
+				}
+			}
+			m.height--;
+		}
+	}
 	
-	int maxSeam = 0;
-	std::vector<int> removeSeam;
-	for (ii=0;ii<h;ii++){
-		if (oldMax[ii]>maxSeam){
-			maxSeam = oldMax[ii];
-			removeSeam = oldSeams[ii];
-		}
-	}
-	if (maxSeam <=0){
-		killCarve = true;
-		return m;
-	}
-	for(i=0;i<w;i++){
-		for(ii=removeSeam[i];ii<h-1;ii++){
-			m.pointMap[i][ii]=m.pointMap[i][ii+1];
-		}
-	}
-	m.height--;
+	
 	return m;
 }
 
@@ -189,14 +203,7 @@ Map verticalSeam(Map m, int n){
 					newI = i+1;
 				}
 			}
-			if (w == 58){
-				if (newI == 29){
-					console_log(i);
-					console_log(newMax[i]);
-					console_log(right);
-					console_log(i+1 % modn);
-				}
-			}
+			
 			newSeams[i] = oldSeams[newI];
 			newSeams[i].push_back(i);
 		}
@@ -227,13 +234,6 @@ Map verticalSeam(Map m, int n){
 		}
 		else if (maxSeam > 0){
 			for(ii=0;ii<h;ii++){
-				if (m.pointMap[removeSeam[ii]][ii].val<0){
-					console_log(h);
-					console_log(w);
-					console_log(n);
-					console_log(iii);
-					console_log(removeSeam[ii]);
-				}
 				for(i=removeSeam[ii];i<m.width-1;i++){
 					
 					m.pointMap[i][ii]=m.pointMap[i+1][ii];
@@ -320,15 +320,13 @@ void initialRun(){
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
 	vertThreads = 2;
+	horzThreads = 2;
 	for (i=0;i<100;i++){
 		if (!killCarve){
 			m = verticalSeam(m,vertThreads);
 		}
 		if (!killCarve){
-			m = horizontalSeam(m);
-		}
-		if (!killCarve){
-			m = horizontalSeam(m);
+			m = horizontalSeam(m,horzThreads);
 		}
 	}
 	
