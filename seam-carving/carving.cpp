@@ -287,23 +287,23 @@ Map horizontalSeam(Map m, int n, int l){
 			else if (l < 0){
 				if (maxv >= 0){
 					if (newI == ii){
-						newv = h-1;//zig zag is good
+						mpv = h-1;//zig zag is good
 					}
 					else {
-						newv = h;
+						mpv = h;
 					}
 				}
 				else {
 					for (iiii=2;iiii<h;iiii++){
 						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
 							maxv = oldMax[ii-iiii];
-							newv = h-iiii;
+							mpv = h-iiii;
 							newI = ii-iiii;
 							break;
 						}
 						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
 							maxv = oldMax[ii+iiii];
-							newv = h-iiii;
+							mpv = h-iiii;
 							newI = ii+iiii;
 							break;
 						}
