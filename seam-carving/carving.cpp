@@ -417,32 +417,38 @@ void initialRun(){
 		console_log(m.width);
 		console_log(m.height);
 	}
-	
-	if (m.width > m.height){
-		m = splitHorizontal(m);
-		vertThreads = 5;
-		killCarveV = false;
-		m = verticalSeam(m,vertThreads);
-	}
-	else {
-		m = splitVertical(m);
-		horzThreads = 5;
-		killCarveH = false;
-		m = horizontalSeam(m,horzThreads);
-	}
-	console_log(m.width);
-	console_log(m.height);
-	killCarveV = false;
-	killCarveH = false;
-	vertThreads=2;
-	horzThreads=2;
-	for (i=0;i<np;i++){
-		if (!killCarveV){
+
+	int oldArea = m.height*m.width+1;
+	while (m.width*m.height<oldArea){
+		oldArea = m.height*m.width;
+		if (m.width > m.height){
+			m = splitHorizontal(m);
+			vertThreads = 5;
+			killCarveV = false;
 			m = verticalSeam(m,vertThreads);
 		}
-		if (!killCarveH){
+		else {
+			m = splitVertical(m);
+			horzThreads = 5;
+			killCarveH = false;
 			m = horizontalSeam(m,horzThreads);
 		}
+		console_log(m.width);
+		console_log(m.height);
+		killCarveV = false;
+		killCarveH = false;
+		vertThreads=2;
+		horzThreads=2;
+		for (i=0;i<np;i++){
+			if (!killCarveV){
+				m = verticalSeam(m,vertThreads);
+			}
+			if (!killCarveH){
+				m = horizontalSeam(m,horzThreads);
+			}
+		}
+		console_log(m.width);
+		console_log(m.height);
 	}
 	
 	auto a22 = std::chrono::high_resolution_clock::now();
