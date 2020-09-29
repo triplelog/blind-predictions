@@ -801,8 +801,34 @@ void initialRun(){
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
 
-		m = splitHorizontal(m,1);
-		m = splitVertical(m,1);
+		m = splitHorizontal(m,2);
+		m = splitVertical(m,2);
+		m = fillBlanks(m);
+		console_log(m.width);
+		console_log(m.height);
+
+		killCarveV = false;
+		killCarveH = false;
+		vertThreads=2;
+		horzThreads=2;
+		for (i=0;i<np;i++){
+			if (!killCarveV){
+				m = verticalSeam(m,vertThreads,0);
+			}
+			if (!killCarveH){
+				m = horizontalSeam(m,horzThreads,0);
+			}
+		}
+		console_log(m.width);
+		console_log(m.height);
+	}
+	
+	oldArea = m.height*m.width+1;
+	while (m.width*m.height<oldArea){
+		oldArea = m.height*m.width;
+
+		m = splitHorizontal(m,2);
+		m = splitVertical(m,2);
 		m = fillBlanks(m);
 		console_log(m.width);
 		console_log(m.height);
@@ -817,6 +843,32 @@ void initialRun(){
 			}
 			if (!killCarveH){
 				m = horizontalSeam(m,horzThreads,1);
+			}
+		}
+		console_log(m.width);
+		console_log(m.height);
+	}
+	
+	oldArea = m.height*m.width+1;
+	while (m.width*m.height<oldArea){
+		oldArea = m.height*m.width;
+
+		m = splitHorizontal(m,1);
+		m = splitVertical(m,1);
+		m = fillBlanks(m);
+		console_log(m.width);
+		console_log(m.height);
+
+		killCarveV = false;
+		killCarveH = false;
+		vertThreads=2;
+		horzThreads=2;
+		for (i=0;i<np;i++){
+			if (!killCarveV){
+				m = verticalSeam(m,vertThreads,0);
+			}
+			if (!killCarveH){
+				m = horizontalSeam(m,horzThreads,0);
 			}
 		}
 		console_log(m.width);
