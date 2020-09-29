@@ -192,6 +192,7 @@ Map verticalSeam(Map m, int n){
 			if (w == 58){
 				if (newI == 29){
 					console_log(i);
+					console_log(newMax[i]);
 				}
 			}
 			newSeams[i] = oldSeams[newI];
