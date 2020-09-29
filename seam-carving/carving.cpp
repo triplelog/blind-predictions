@@ -309,6 +309,9 @@ void initialRun(){
 		if (!killCarve){
 			m = horizontalSeam(m);
 		}
+		if (!killCarve){
+			m = horizontalSeam(m);
+		}
 	}
 	
 	auto a22 = std::chrono::high_resolution_clock::now();
