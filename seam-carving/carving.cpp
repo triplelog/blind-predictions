@@ -80,6 +80,52 @@ struct Map {
 	int height;
 };
 
+Map splitHorizontal(Map m){
+	int h = m.height;
+	int ii;
+	int i;
+	for(ii=h*2-2;ii>=0;ii--){
+		if (ii%2 == 0){
+			for (i=0;i<m.width;i++){
+				m.pointMap[i][ii]=m.pointMap[i][ii/2];
+			}
+		}
+		else {
+			for (i=0;i<m.width;i++){
+				Point p;
+				p.x = i;
+				p.y = ii;
+				p.val = 1;
+				m.pointMap[i][ii]=p;
+			}
+		}
+	}
+	m.height = m.height*2-1;
+	return m;
+}
+Map splitVertical(Map m){
+	int w = m.width;
+	int ii;
+	int i;
+	for(i=w*2-2;i>=0;i--){
+		if (i%2 == 0){
+			for (ii=0;ii<m.height;ii++){
+				m.pointMap[i][ii]=m.pointMap[i/2][ii];
+			}
+		}
+		else {
+			for (ii=0;ii<m.height;ii++){
+				Point p;
+				p.x = i;
+				p.y = ii;
+				p.val = 1;
+				m.pointMap[i][ii]=p;
+			}
+		}
+	}
+	m.width = m.width*2-1;
+	return m;
+}
 Map horizontalSeam(Map m, int n){
 	int i;
 	int ii;
@@ -358,6 +404,33 @@ void initialRun(){
 			vertThreads-=5;
 			horzThreads-=5;
 		}
+		if (!killCarve){
+			m = verticalSeam(m,vertThreads);
+		}
+		if (!killCarve){
+			m = horizontalSeam(m,horzThreads);
+		}
+	}
+	console_log(m.width);
+	console_log(m.height);
+	if (m.width > m.height){
+		m = splitHorizontal(m);
+		vertThreads = 5;
+		killCarve = false;
+		m = verticalSeam(m,vertThreads);
+	}
+	else {
+		m = splitVertical(m);
+		horzThreads = 5;
+		killCarve = false;
+		m = horizontalSeam(m,horzThreads);
+	}
+	console_log(m.width);
+	console_log(m.height);
+	killCarve = false;
+	vertThreads=2;
+	horzThreads=2;
+	for (i=0;i<np;i++){
 		if (!killCarve){
 			m = verticalSeam(m,vertThreads);
 		}
