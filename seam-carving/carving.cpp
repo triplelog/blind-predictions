@@ -96,7 +96,7 @@ Map splitHorizontal(Map m, int sz){
 				Point p;
 				p.x = i;
 				p.y = ii;
-				p.val = 100;
+				p.val = 1;
 				m.pointMap[i][ii]=p;
 			}
 		}
@@ -119,7 +119,7 @@ Map splitVertical(Map m, int sz){
 				Point p;
 				p.x = i;
 				p.y = ii;
-				p.val = 100;
+				p.val = 1;
 				m.pointMap[i][ii]=p;
 			}
 		}
@@ -413,6 +413,9 @@ void initialRun(){
 		}
 		if (!killCarveH){
 			m = horizontalSeam(m,horzThreads);
+		}
+		if (killCarveV && killCarveH){
+			break;
 		}
 		console_log(m.width);
 		console_log(m.height);
