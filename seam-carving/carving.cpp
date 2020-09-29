@@ -250,17 +250,42 @@ Map verticalSeam(Map m, int n){
 Map fillBlanks(Map m) {
 	int i;
 	int ii;
+	int ix;
+	int iy;
 	for(i=0;i<m.width;i++){
 		if (m.pointMap.find(i) == m.pointMap.end()){
 			std::map<int,Point> t;
 			m.pointMap[i] = t;
 		}
+	}
+	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
 			if (m.pointMap[i].find(ii) == m.pointMap[i].end()){
 				Point t;
 				t.x = i;
 				t.y = ii;
-				t.val = rand() % 100;
+				int minX = i-3;
+				int minY = ii-3;
+				int maxX = i+3;
+				int maxY = ii+3;
+				if (minX<0){minX =0;}
+				if (minY<0){minY =0;}
+				if (maxX>=m.width){maxX =m.width-1;}
+				if (maxY>=m.height){maxY =m.height-1;}
+				int minD = 20;
+				for (ix=minX;ix<=maxX;ix++){
+					for (iy=minY;iy<=maxY;iy++){
+						if (m.pointMap[ix].find(iy) != m.pointMap[ix].end()){
+							if (m.pointMap[ix][iy].val<0){
+								int d = (i-ix)*(i-ix)+(ii-iy)*(ii-iy);
+								if (d < minD){
+									minD = d;
+								}
+							}
+						}
+					}
+				}
+				t.val = minD;
 				m.pointMap[i][ii] = t;
 			}
 		}
