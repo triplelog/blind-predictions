@@ -127,7 +127,7 @@ Map splitVertical(Map m, int sz){
 	m.width = m.width*sz-sz+1;
 	return m;
 }
-Map horizontalSeam(Map m, int n){
+Map horizontalSeam(Map m, int n, int l){
 	int i;
 	int ii;
 	int iii;
@@ -146,30 +146,23 @@ Map horizontalSeam(Map m, int n){
 		for(ii=0;ii<h;ii++){
 			int top = -10000000;
 			if (ii%modn>0){top = oldMax[ii-1];}
+			int maxv = top;
+			int newI = ii-1;
 			int mid = oldMax[ii];
+			if (mid > maxv){
+				maxv = mid;
+				newI = ii;
+			}
 			int bottom = -10000000;
-			int newI = ii;
 			if (ii+1<h && (ii+1)%modn>0){bottom = oldMax[ii+1];}
-			if (top>mid){
-				if (top>bottom){
-					newMax[ii] = top+m.pointMap[i][ii].val;
-					newI = ii-1;
-				}
-				else {
-					newMax[ii] = bottom+m.pointMap[i][ii].val;
-					newI = ii+1;
-				}
+			if (bottom > maxv){
+				maxv = bottom;
+				newI = ii+1;
 			}
-			else {
-				if (mid>bottom){
-					newMax[ii] = mid+m.pointMap[i][ii].val;
-					newI = ii;
-				}
-				else {
-					newMax[ii] = bottom+m.pointMap[i][ii].val;
-					newI = ii+1;
-				}
-			}
+			
+
+			newMax[ii] = maxv+m.pointMap[i][ii].val;
+
 			
 			newSeams[ii] = oldSeams[newI];
 			newSeams[ii].push_back(ii);
@@ -212,7 +205,7 @@ Map horizontalSeam(Map m, int n){
 	return m;
 }
 
-Map verticalSeam(Map m, int n){
+Map verticalSeam(Map m, int n, int l){
 	int i;
 	int ii;
 	int iii;
@@ -231,31 +224,23 @@ Map verticalSeam(Map m, int n){
 		for(i=0;i<w;i++){
 			int left = -10000000;
 			if (i%modn>0){left = oldMax[i-1];}
+			int maxv = left;
+			int newI = i-1;
 			int mid = oldMax[i];
+			if (mid > maxv){
+				maxv = mid;
+				newI = i;
+			}
 			int right = -10000000;
 			int newI = i;
 			if (i+1<w && (i+1) % modn>0){right = oldMax[i+1];}
+			if (right > maxv){
+				maxv = right;
+				newI = i+1;
+			}
 			
-			if (left>mid){
-				if (left>right){
-					newMax[i] = left+m.pointMap[i][ii].val;
-					newI = i-1;
-				}
-				else {
-					newMax[i] = right+m.pointMap[i][ii].val;
-					newI = i+1;
-				}
-			}
-			else {
-				if (mid>right){
-					newMax[i] = mid+m.pointMap[i][ii].val;
-					newI = i;
-				}
-				else {
-					newMax[i] = right+m.pointMap[i][ii].val;
-					newI = i+1;
-				}
-			}
+			newMax[i] = maxv+m.pointMap[i][ii].val;
+
 			
 			newSeams[i] = oldSeams[newI];
 			newSeams[i].push_back(i);
@@ -421,10 +406,10 @@ void initialRun(){
 		}
 		
 		if (!killCarveV){
-			m = verticalSeam(m,vertThreads);
+			m = verticalSeam(m,vertThreads,1);
 		}
 		if (!killCarveH){
-			m = horizontalSeam(m,horzThreads);
+			m = horizontalSeam(m,horzThreads,1);
 		}
 		if (killCarveV && killCarveH){
 			break;
@@ -443,13 +428,13 @@ void initialRun(){
 			m = splitHorizontal(m,3);
 			vertThreads = 5;
 			killCarveV = false;
-			m = verticalSeam(m,vertThreads);
+			m = verticalSeam(m,vertThreads,1);
 		}
 		else {
 			m = splitVertical(m,3);
 			horzThreads = 5;
 			killCarveH = false;
-			m = horizontalSeam(m,horzThreads);
+			m = horizontalSeam(m,horzThreads,1);
 		}
 		m = fillBlanks(m);
 		console_log(m.width);
@@ -460,41 +445,16 @@ void initialRun(){
 		horzThreads=2;
 		for (i=0;i<np;i++){
 			if (!killCarveV){
-				m = verticalSeam(m,vertThreads);
+				m = verticalSeam(m,vertThreads,1);
 			}
 			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads);
+				m = horizontalSeam(m,horzThreads,1);
 			}
 		}
 		console_log(m.width);
 		console_log(m.height);
 	}
-	
-	oldArea = m.height*m.width+1;
-	while (m.width*m.height<oldArea){
-		oldArea = m.height*m.width;
-
-		m = splitHorizontal(m,3);
-		m = splitVertical(m,3);
-		m = fillBlanks(m);
-		console_log(m.width);
-		console_log(m.height);
-		killCarveV = false;
-		killCarveH = false;
-		vertThreads=2;
-		horzThreads=2;
-		for (i=0;i<np;i++){
-			if (!killCarveV){
-				m = verticalSeam(m,vertThreads);
-			}
-			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads);
-			}
-		}
-		console_log(m.width);
-		console_log(m.height);
-	}
-	
+		
 
 	
 	oldArea = m.height*m.width+1;
@@ -504,13 +464,13 @@ void initialRun(){
 			m = splitHorizontal(m,2);
 			vertThreads = 5;
 			killCarveV = false;
-			m = verticalSeam(m,vertThreads);
+			m = verticalSeam(m,vertThreads,1);
 		}
 		else {
 			m = splitVertical(m,2);
 			horzThreads = 5;
 			killCarveH = false;
-			m = horizontalSeam(m,horzThreads);
+			m = horizontalSeam(m,horzThreads,1);
 		}
 		m = fillBlanks(m);
 		console_log(m.width);
@@ -521,10 +481,10 @@ void initialRun(){
 		horzThreads=2;
 		for (i=0;i<np;i++){
 			if (!killCarveV){
-				m = verticalSeam(m,vertThreads);
+				m = verticalSeam(m,vertThreads,1);
 			}
 			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads);
+				m = horizontalSeam(m,horzThreads,1);
 			}
 		}
 		console_log(m.width);
@@ -538,13 +498,13 @@ void initialRun(){
 			m = splitHorizontal(m,1);
 			vertThreads = 5;
 			killCarveV = false;
-			m = verticalSeam(m,vertThreads);
+			m = verticalSeam(m,vertThreads,1);
 		}
 		else {
 			m = splitVertical(m,1);
 			horzThreads = 5;
 			killCarveH = false;
-			m = horizontalSeam(m,horzThreads);
+			m = horizontalSeam(m,horzThreads,1);
 		}
 		m = fillBlanks(m);
 		console_log(m.width);
@@ -555,16 +515,32 @@ void initialRun(){
 		horzThreads=2;
 		for (i=0;i<np;i++){
 			if (!killCarveV){
-				m = verticalSeam(m,vertThreads);
+				m = verticalSeam(m,vertThreads,1);
 			}
 			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads);
+				m = horizontalSeam(m,horzThreads,1);
 			}
 		}
 		console_log(m.width);
 		console_log(m.height);
 	}
 	
+	/*
+	killCarveV = false;
+	killCarveH = false;
+	vertThreads=2;
+	horzThreads=2;
+	for (i=0;i<np;i++){
+		if (!killCarveV){
+			m = verticalSeam(m,vertThreads,2);
+		}
+		if (!killCarveH){
+			m = horizontalSeam(m,horzThreads,2);
+		}
+	}
+	console_log(m.width);
+	console_log(m.height);
+	*/
 	
 	a22 = std::chrono::high_resolution_clock::now();
 	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
