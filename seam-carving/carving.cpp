@@ -195,7 +195,7 @@ Map horizontalSeam(Map m, int n){
 			return m;
 		}
 		else if (maxSeam <= 0 && iii< n-1){
-			horzThreads--;
+			horzThreads/=2;
 			return horizontalSeam(m,n-1);
 		}
 		else if (maxSeam > 0){
@@ -282,7 +282,7 @@ Map verticalSeam(Map m, int n){
 			return m;
 		}
 		else if (maxSeam <= 0 && iii< n-1){
-			vertThreads--;
+			vertThreads/=2;
 			return verticalSeam(m,n-1);
 		}
 		else if (maxSeam > 0){
@@ -399,12 +399,16 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 40;
-	horzThreads = 40;
+	vertThreads = 50;
+	horzThreads = 50;
 	for (i=0;i<np;i++){
 		if (i%100==99){
-			vertThreads-=5;
-			horzThreads-=5;
+			if (vertThreads>5){
+				vertThreads-=5;
+			}
+			if (horzThreads>5){
+				horzThreads-=5;
+			}
 		}
 		if (!killCarveV){
 			m = verticalSeam(m,vertThreads);
