@@ -221,9 +221,9 @@ Map horizontalSeam(Map m, int n, int l){
 		for(ii=0;ii<h;ii++){
 			int mpv = m.pointMap[i][ii].val;
 			if (l >= 0 && mpv<0){
-				newMax[i] = mpv;
-				newSeams[i] = oldSeams[i];
-				newSeams[i].push_back(i);
+				newMax[ii] = mpv;
+				newSeams[ii] = oldSeams[ii];
+				newSeams[ii].push_back(ii);
 				continue;
 			}
 			int top = -10000000;
