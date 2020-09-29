@@ -416,9 +416,10 @@ void initialRun(){
 		if (!killCarveH){
 			m = horizontalSeam(m,horzThreads);
 		}
+		console_log(m.width);
+		console_log(m.height);
 	}
-	console_log(m.width);
-	console_log(m.height);
+	
 	if (m.width > m.height){
 		m = splitHorizontal(m);
 		vertThreads = 5;
