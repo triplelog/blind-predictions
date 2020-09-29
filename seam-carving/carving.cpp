@@ -813,10 +813,10 @@ void initialRun(){
 		horzThreads=2;
 		for (i=0;i<np;i++){
 			if (!killCarveV){
-				m = verticalSeam(m,vertThreads,0);
+				m = verticalSeam(m,1,0);
 			}
 			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads,0);
+				m = horizontalSeam(m,1,0);
 			}
 		}
 		console_log(m.width);
@@ -865,10 +865,10 @@ void initialRun(){
 		horzThreads=2;
 		for (i=0;i<np;i++){
 			if (!killCarveV){
-				m = verticalSeam(m,vertThreads,0);
+				m = verticalSeam(m,1,0);
 			}
 			if (!killCarveH){
-				m = horizontalSeam(m,horzThreads,0);
+				m = horizontalSeam(m,1,0);
 			}
 		}
 		console_log(m.width);
