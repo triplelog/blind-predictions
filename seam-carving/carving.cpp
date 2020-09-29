@@ -218,7 +218,13 @@ Map verticalSeam(Map m, int n){
 		}
 		else if (maxSeam > 0){
 			for(ii=0;ii<h;ii++){
+				if (m.pointMap[removeSeam[ii]-diff][ii].val<0){
+					console_log(h);
+					console_log(w);
+					console_log(n);
+				}
 				for(i=removeSeam[ii]-diff;i<m.width-1;i++){
+					
 					m.pointMap[i][ii]=m.pointMap[i+1][ii];
 				}
 			}
