@@ -54,7 +54,7 @@ EM_JS(void, send_ready, (), {
 long long durationRand;
 int seed;
 bool killCarve;
-
+int vertThreads;
 
 
 extern "C" {
@@ -195,6 +195,7 @@ Map verticalSeam(Map m, int n){
 		oldSeams = newSeams;
 		oldMax = newMax;
 	}
+	//std::vector<int> removeSeams;
 	for (iii=n-1;iii>=0;iii--){
 		int maxSeam = 0;
 		std::vector<int> removeSeam;
@@ -213,6 +214,7 @@ Map verticalSeam(Map m, int n){
 			return m;
 		}
 		else if (maxSeam <= 0 && iii< n-1){
+			vertThreads--;
 			return verticalSeam(m,n-1);
 		}
 		else if (maxSeam > 0){
@@ -309,9 +311,10 @@ void initialRun(){
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
+	vertThreads = 2;
 	for (i=0;i<100;i++){
 		if (!killCarve){
-			m = verticalSeam(m,2);
+			m = verticalSeam(m,vertThreads);
 		}
 		if (!killCarve){
 			m = horizontalSeam(m);
