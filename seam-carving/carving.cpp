@@ -307,7 +307,7 @@ void initialRun(){
 		xCount[i]=0;
 		yCount[i]=0;
 	}
-	for (i=0;i<1000;i++){
+	for (i=0;i<200;i++){
 		int x = rand() % 10000;
 		int y = rand() % 10000;
 		Point p;
@@ -318,7 +318,7 @@ void initialRun(){
 		yCount[y]++;
 	}
 	
-	for(i=0;i<1000;i++){
+	for(i=0;i<200;i++){
 		Point p = points[i];
 		int newX = 0;
 		for (ii=0;ii<p.x;ii++){
@@ -338,18 +338,18 @@ void initialRun(){
 	
 	Map m;
 	m.pointMap = pointMap;
-	m.width = 1000;
-	m.height = 1000;
+	m.width = 200;
+	m.height = 200;
 	
 	m = fillBlanks(m);
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 25;
-	horzThreads = 25;
-	for (i=0;i<1000;i++){
+	vertThreads = 10;
+	horzThreads = 10;
+	for (i=0;i<200;i++){
 		if (i%100==99){
-			vertThreads-=2;
-			horzThreads-=2;
+			vertThreads-=5;
+			horzThreads-=5;
 		}
 		if (!killCarve){
 			m = verticalSeam(m,vertThreads);
