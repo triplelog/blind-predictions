@@ -552,6 +552,23 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
+	m = splitHorizontal(m,2);
+	m = splitVertical(m,2);
+	killCarveV = false;
+	killCarveH = false;
+	vertThreads=2;
+	horzThreads=2;
+	for (i=0;i<np;i++){
+		if (!killCarveV){
+			m = verticalSeam(m,vertThreads);
+		}
+		if (!killCarveH){
+			m = horizontalSeam(m,horzThreads);
+		}
+	}
+	console_log(m.width);
+	console_log(m.height);
+	
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
