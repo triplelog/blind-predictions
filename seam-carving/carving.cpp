@@ -325,6 +325,10 @@ Map horizontalSeam(Map m, int n, int l){
 	}
 	for (iii=n-1;iii>=0;iii--){
 		int maxSeam = 0;
+		int maxSeam = 0;
+		if (l<0){
+			maxSeam =1000000*l;
+		}
 		std::vector<int> removeSeam;
 		int maxY = (iii+1)*modn;
 		if (maxY > h){
@@ -520,15 +524,6 @@ Map verticalSeam(Map m, int n, int l){
 			
 			newMax[i] = maxv+mpv;
 
-			if (oldSeams.find(newI) == oldSeams.end()){
-				console_log(newI);
-				console_log(i);
-			}
-			else if (oldSeams[newI][0] > 1000){
-				console_log(newI);
-				console_log(i);
-				console_log(-10);
-			}
 			newSeams[i] = oldSeams[newI];
 			if (skip){
 				newSeams[i].push_back(w);
@@ -583,8 +578,6 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else {
 				for(ii=0;ii<h;ii++){
-					console_log(removeSeam[ii]);
-					m = fillBlanks(m);
 					if (removeSeam[ii] == m.width){
 					
 					}
@@ -599,7 +592,6 @@ Map verticalSeam(Map m, int n, int l){
 						p.val = 1;
 						m.pointMap[m.width-1][ii]=p;
 					}
-					m = fillBlanks(m);
 					
 				}
 			}
