@@ -448,6 +448,7 @@ void initialRun(){
 			killCarveH = false;
 			m = horizontalSeam(m,horzThreads);
 		}
+		m = fillBlanks(m);
 		console_log(m.width);
 		console_log(m.height);
 		killCarveV = false;
@@ -466,11 +467,7 @@ void initialRun(){
 		console_log(m.height);
 	}
 	
-	a11 = std::chrono::high_resolution_clock::now();
-	m = fillBlanks(m);
-	a22 = std::chrono::high_resolution_clock::now();
-	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(durationTotal);
+
 	
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
@@ -487,6 +484,7 @@ void initialRun(){
 			killCarveH = false;
 			m = horizontalSeam(m,horzThreads);
 		}
+		m = fillBlanks(m);
 		console_log(m.width);
 		console_log(m.height);
 		killCarveV = false;
@@ -520,6 +518,7 @@ void initialRun(){
 			killCarveH = false;
 			m = horizontalSeam(m,horzThreads);
 		}
+		m = fillBlanks(m);
 		console_log(m.width);
 		console_log(m.height);
 		killCarveV = false;
