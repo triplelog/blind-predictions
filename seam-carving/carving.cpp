@@ -577,8 +577,10 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else {
 				for(ii=0;ii<h;ii++){
+					console_log(removeSeam[ii]);
+					m = fillBlanks(m);
 					if (removeSeam[ii] == m.width){
-					
+						console_log(-10);
 					}
 					else {
 						for(i=removeSeam[ii];i<m.width-1;i++){
@@ -591,6 +593,7 @@ Map verticalSeam(Map m, int n, int l){
 						p.val = 1;
 						m.pointMap[m.width-1][ii]=p;
 					}
+					m = fillBlanks(m);
 					
 				}
 			}
