@@ -774,12 +774,11 @@ void initialRun(){
 		if (!killCarveH){
 			m = horizontalSeam(m,1,-1);
 		}
-		m = fillBlanks(m);
 		console_log(m.width);
 		console_log(m.height);
 		console_log(0);
 	}
-	/*
+	
 	oldArea = m.height*m.width+1;
 	while (m.width*m.height<oldArea){
 		oldArea = m.height*m.width;
@@ -863,7 +862,7 @@ void initialRun(){
 		console_log(m.height);
 		console_log(-2);
 	}
-	*/
+	
 	
 	
 	a22 = std::chrono::high_resolution_clock::now();
