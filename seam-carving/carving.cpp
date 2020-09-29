@@ -196,7 +196,7 @@ Map horizontalSeam(Map m, int n){
 		}
 		else if (maxSeam <= 0 && iii< n-1){
 			horzThreads/=2;
-			return horizontalSeam(m,n-1);
+			return horizontalSeam(m,horzThreads);
 		}
 		else if (maxSeam > 0){
 			for(i=0;i<w;i++){
@@ -283,7 +283,7 @@ Map verticalSeam(Map m, int n){
 		}
 		else if (maxSeam <= 0 && iii< n-1){
 			vertThreads/=2;
-			return verticalSeam(m,n-1);
+			return verticalSeam(m,vertThreads);
 		}
 		else if (maxSeam > 0){
 			for(ii=0;ii<h;ii++){
@@ -402,13 +402,11 @@ void initialRun(){
 	vertThreads = 50;
 	horzThreads = 50;
 	for (i=0;i<np;i++){
-		if (i%100==99){
-			if (vertThreads>5){
-				vertThreads-=5;
-			}
-			if (horzThreads>5){
-				horzThreads-=5;
-			}
+		if (vertThreads>5){
+			vertThreads-=5;
+		}
+		if (horzThreads>5){
+			horzThreads-=5;
 		}
 		if (!killCarveV){
 			m = verticalSeam(m,vertThreads);
