@@ -853,10 +853,10 @@ void initialRun(){
 	horzThreads=2;
 	for (i=0;i<5;i++){
 		if (!killCarveV){
-			m = verticalSeam(m,1,-2);
+			m = verticalSeam(m,1,-8);
 		}
 		if (!killCarveH){
-			m = horizontalSeam(m,1,-2);
+			m = horizontalSeam(m,1,-8);
 		}
 		console_log(m.width);
 		console_log(m.height);
