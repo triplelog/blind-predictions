@@ -6906,6 +6906,7 @@ Map horizontalStitch(Map m, int n, int l){
 				for(ii=m.height;ii>removeSeam[i];ii--){
 					m.pixels[i][ii]=m.pixels[i][ii-1];
 				}
+				m.pixels[i][removeSeam[i]].county =m.pixels[i][removeSeam[i]+1].county;
 				m.pixels[i][removeSeam[i]].val =m.pixels[i][removeSeam[i]+1].val;
 				m.pixels[i][removeSeam[i]].val /= 2;
 				m.pixels[i][removeSeam[i]+1].val /= 2;
@@ -6987,6 +6988,7 @@ Map verticalStitch(Map m, int n, int l){
 				
 					m.pixels[i][ii]=m.pixels[i-1][ii];
 				}
+				m.pixels[removeSeam[ii]][ii].county=m.pixels[removeSeam[ii]+1][ii].county;
 				m.pixels[removeSeam[ii]][ii].val=m.pixels[removeSeam[ii]+1][ii].val;
 				m.pixels[removeSeam[ii]][ii].val/=2;
 				m.pixels[removeSeam[ii]+1][ii].val/=2;
