@@ -5399,7 +5399,7 @@ void initialRun(){
 	
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (iii=0;iii<6;iii++){
+	for (iii=0;iii<51;iii++){
 		vertThreads = 1 + (rand() % 20);
 		horzThreads = 1 + (rand() % 20);
 		if (iii%5 == 0){
