@@ -5320,7 +5320,7 @@ void initialRun(){
 	
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (iii=0;iii<5;iii++){
+	for (iii=0;iii<51;iii++){
 		vertThreads = 1 + (rand() % 20);
 		horzThreads = 1 + (rand() % 20);
 		if (iii%5 == 0){
@@ -5337,7 +5337,6 @@ void initialRun(){
 		m = horizontalSeam(m,horzThreads,1);
 		m = verticalStitch(m,vertThreads,1);
 		m = horizontalStitch(m,horzThreads,1);
-		console_log(sum(m));
 	}
 	
 	
