@@ -137,8 +137,7 @@ file1.writelines(['std::map<int,Point> points; int i=0;\n'])
 
 pixelMap = {}
 for precinct in precincts:
-	if 2==2:
-		continue
+
 	roundedX = round(precincts[precinct]['x']*100)
 	roundedY = round(precincts[precinct]['y']*100)
 	try:
@@ -154,26 +153,10 @@ for precinct in precincts:
 		pixelMap[roundedX*1000+roundedY]['d16']=0
 		pixelMap[roundedX*1000+roundedY]['r16']=0
 
-for precinct in precincts16:
-	roundedX = round(precincts16[precinct]['x']*100)
-	roundedY = round(precincts16[precinct]['y']*100)
-	try:
-		pixelMap[roundedX*1000+roundedY]['d']+=int(precincts16[precinct]['d16'])
-		pixelMap[roundedX*1000+roundedY]['r']+=int(precincts[precinct]['r16'])
-	except:
-		pixelMap[roundedX*1000+roundedY]={}
-		pixelMap[roundedX*1000+roundedY]['d']=int(precincts16[precinct]['d16'])
-		pixelMap[roundedX*1000+roundedY]['r']=int(precincts16[precinct]['r16'])
-		pixelMap[roundedX*1000+roundedY]['x']=round(precincts16[precinct]['x']*100)
-		pixelMap[roundedX*1000+roundedY]['y']=round(precincts16[precinct]['y']*100)
-		pixelMap[roundedX*1000+roundedY]['county']=int(precincts16[precinct]['county'])
-		pixelMap[roundedX*1000+roundedY]['d16']=0
-		pixelMap[roundedX*1000+roundedY]['r16']=0
 		
 missingP = 0
 for precinct in precincts16:
-	if 2 == 2:
-		continue
+
 	roundedX = round(precincts16[precinct]['x']*100)
 	roundedY = round(precincts16[precinct]['y']*100)
 	try:
@@ -187,10 +170,10 @@ for precinct in precincts16:
 			
 			rXY = -1
 			minD = 100000
-			for i in range(-5,6):
+			for i in range(-2,3):
 				if roundedX+i<0 or roundedX+i>100:
 					continue
-				for ii in range(-5,6):
+				for ii in range(-2,3):
 					if roundedY+i<0 or roundedY+ii>100:
 						continue
 					try:
