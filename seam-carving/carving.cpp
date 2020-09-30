@@ -7220,6 +7220,8 @@ void initialRun(){
 	a11 = std::chrono::high_resolution_clock::now();
 	vertThreads = 5;
 	horzThreads = 5;
+	set_maxX(m.width);
+	set_maxY(m.height);
 	for (i=0;i<5;i++){
 		for(i=0;i<m.width;i++){
 			for(ii=0;ii<m.height;ii++){
@@ -7245,8 +7247,7 @@ void initialRun(){
 	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(m.width);
 	console_log(m.height);
-	set_maxX(m.width);
-	set_maxY(m.height);
+	
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
 			Point p = m.pixels[i][ii];
