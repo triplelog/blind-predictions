@@ -22,9 +22,9 @@ function displayNow() {
 	
 	for (var i=0;i<jsPoints.length;i++){
 		var hue = parseInt(jsPoints[i].d)/parseInt(jsPoints[i].val)*240;
-		var lum = 50*parseInt(jsPoints[i].val)/avgP;
-		if (lum>100){lum = 0;}
-		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',50%,'+lum+'%)" stroke="none"></circle>';
+		var lum = 100-25*parseInt(jsPoints[i].val)/avgP;
+		if (lum<50){lum = 50;}
+		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
 	}
 	svg += '</svg>';
 	postMessage(svg);
