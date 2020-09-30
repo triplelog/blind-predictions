@@ -7329,6 +7329,8 @@ void initialRun(){
 	killCarveV = false;
 	killCarveH = false;
 	
+	auto a11 = std::chrono::high_resolution_clock::now();
+	
 	std::map<int,std::map<int,Point>> pixels;
 	for(i=0;i<100;i++){
 		std::map<int,Point> v
@@ -7343,6 +7345,10 @@ void initialRun(){
 	}
 
 	
+	
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationTotal);
 	/*for (i=0;i<np;i++){
 		int x = rand() % 10000;
 		int y = rand() % 10000;
@@ -7357,11 +7363,12 @@ void initialRun(){
 	
 	int np = points.size();
 	
+	a11 = std::chrono::high_resolution_clock::now();
 	
 	for(i=0;i<np;i++){
 		Point p = points[i];
 		pixels[p.x][p.y].val += p.val;
-		pixels[p.x][p.y].county += p.county;
+		pixels[p.x][p.y].county = p.county;
 	}
 	
 	Map m;
@@ -7369,7 +7376,7 @@ void initialRun(){
 	m.width = 100;
 	m.height = 100;
 	
-	auto a11 = std::chrono::high_resolution_clock::now();
+	
 	
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
