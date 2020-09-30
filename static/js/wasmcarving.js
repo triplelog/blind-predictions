@@ -39,14 +39,14 @@ function displayNow() {
 		var lum = 50;
 		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
 			hue = 240;
-			lum = 100-20*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgP;
+			lum = 100-25*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgP;
 		}
 		else {
-			lum = 100-20*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgP;
+			lum = 100-25*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgP;
 		}
 
 
-		if (lum<30){exCount++; lum = 30;}
+		if (lum<25){exCount++; lum = 25;}
 		
 		//hue = 240*parseInt(jsPoints[i].ox)/100;
 		//lum = 100*parseInt(jsPoints[i].oy)/100;
