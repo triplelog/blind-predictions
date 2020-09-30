@@ -5420,7 +5420,7 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].d=d - d/2;
 				m.pixels[removeSeam[ii]-1][ii].d= d/2;
 				int xx; int yy;
-				if (v <= 0){
+				if (2 == 2 || v <= 0){
 					xx = m.pixels[removeSeam[ii]][ii].x;
 					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
