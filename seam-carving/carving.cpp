@@ -7334,7 +7334,7 @@ void initialRun(){
 	
 	std::map<int,std::map<int,Point>> pixels;
 	for(i=0;i<100;i++){
-		std::map<int,Point> v
+		std::map<int,Point> v;
 		pixels[i] = v;
 		for(ii=0;ii<100;ii++){
 			Point p;
@@ -7379,8 +7379,8 @@ void initialRun(){
 	
 	
 	
-	auto a22 = std::chrono::high_resolution_clock::now();
-	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	a22 = std::chrono::high_resolution_clock::now();
+	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
 	
 	a11 = std::chrono::high_resolution_clock::now();
