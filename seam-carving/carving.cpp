@@ -5080,7 +5080,9 @@ Map verticalSeam(Map m, int n, int l){
 					m.pixels[i][ii]=m.pixels[i+1][ii];
 				}
 			}
+			
 			m.width--;
+			console_log(sum(m));
 		}
 	}
 
@@ -5090,8 +5092,8 @@ Map verticalSeam(Map m, int n, int l){
 
 int sum(Map m){
 	int i; int ii; int sum = 0;
-	for (i=0;i<100;i++){
-		for (ii=0;ii<100;ii++){
+	for (i=0;i<m.width;i++){
+		for (ii=0;ii<m.height;ii++){
 			sum += m.pixels[i][ii].val;
 		}
 	}
