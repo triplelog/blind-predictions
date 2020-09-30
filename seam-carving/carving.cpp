@@ -5088,7 +5088,15 @@ Map verticalSeam(Map m, int n, int l){
 	return m;
 }
 
-
+int sum(Map m){
+	int i; int ii; int sum = 0;
+	for (i=0;i<100;i++){
+		for (ii=0;ii<100;ii++){
+			sum += m.pixels[i][ii].val;
+		}
+	}
+	return sum;
+}
 void initialRun(){
 	seed = 7;
 	srand(seed);
@@ -5256,7 +5264,7 @@ void initialRun(){
 	
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (iii=0;iii<50;iii++){
+	for (iii=0;iii<1;iii++){
 		vertThreads = 1 + (rand() % 20);
 		horzThreads = 1 + (rand() % 20);
 		if (iii%5 == 0){
@@ -5269,10 +5277,15 @@ void initialRun(){
 			}
 			display_points();
 		}
+		console_log(sum(m));
 		m = verticalSeam(m,vertThreads,1);
+		console_log(sum(m));
 		m = horizontalSeam(m,horzThreads,1);
+		console_log(sum(m));
 		m = verticalStitch(m,vertThreads,1);
+		console_log(sum(m));
 		m = horizontalStitch(m,horzThreads,1);
+		console_log(sum(m));
 
 	}
 	
