@@ -30,7 +30,7 @@ print(len(shape16))
 
 precincts = {}
 
-bounds = {'left':10000,'right':-10000,'bottom':10000,'top':-10000}
+bounds = {'left':1000000000,'right':-1000000000,'bottom':1000000000,'top':-1000000000}
 for i in range(0,len(shape)):
 
 	if shape[i]['geometry']['type'] == "Polygon":
@@ -57,7 +57,7 @@ for i in range(0,len(shape)):
 	if cent.y > bounds['top']:
 		bounds['top'] = cent.y
 print(bounds)
-bounds16 = {'left':10000,'right':-10000,'bottom':10000,'top':-10000}
+bounds16 = {'left':1000000000,'right':-1000000000,'bottom':1000000000,'top':-1000000000}
 for i in range(0,len(shape16)):
 
 	if shape16[i]['geometry']['type'] == "Polygon":
