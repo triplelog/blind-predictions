@@ -39,10 +39,10 @@ function displayNow() {
 		var lum = 50;
 		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
 			hue = 240;
-			lum = 100-20*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgD;
+			lum = 100-20*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgP;
 		}
 		else {
-			lum = 100-20*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgD;
+			lum = 100-20*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgP;
 		}
 
 
