@@ -101,7 +101,7 @@ for pixel in pixelMap.keys():
 	pixels+=1
 	file1.writelines(['if (1==1){ Point p;\n'])
 	#line = str(precincts[precinct]['name'])+","+str(precincts[precinct]['x'])+","+str(precincts[precinct]['y'])+","+str(precincts[precinct]['d'])+","+str(precincts[precinct]['r'])+","+str(precincts[precinct]['county'])+"\n"
-	line = "p.x = "+str(pixelMap[pixel]['x'])+"; p.y = "+str(pixelMap[pixel]['y'])+"; p.county = "+str(pixelMap[pixel]['county'])+"; p.val = "+str(pixelMap[pixel]['d']+pixelMap[pixel]['r'])+";\n"
+	line = "p.x = "+str(pixelMap[pixel]['x'])+"; p.y = "+str(pixelMap[pixel]['y'])+"; p.county = "+str(pixelMap[pixel]['county'])+"; p.val = "+str(pixelMap[pixel]['d']+pixelMap[pixel]['r'])+"; p.d = "+str(pixelMap[pixel]['d'])+"; p.r = "+str(pixelMap[pixel]['r'])+";\n"
 	
 	file1.writelines([line])
 	file1.writelines(['points[i]=p;i++;}\n'])
