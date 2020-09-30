@@ -32,27 +32,28 @@ function displayNow() {
 		
 	}
 	var avgP = sumP/jsPoints.length;
-	console.log(minP,maxP, avgP, maxD);
 	
+	var exCount = 0;
 	for (var i=0;i<jsPoints.length;i++){
 		var hue = 0;
 		var lum = 50;
 		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
 			hue = 240;
-			lum = 100-75*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/maxD;
+			lum = 100-20*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgD;
 		}
 		else {
-			lum = 100-75*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/maxD;
+			lum = 100-20*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgD;
 		}
 
 
-		if (lum<25){lum = 25;}
+		if (lum<30){exCount++; lum = 30;}
 		
 		//hue = 240*parseInt(jsPoints[i].ox)/100;
 		//lum = 100*parseInt(jsPoints[i].oy)/100;
 		var block = parseInt(Math.round(jsPoints[i].ox/10)*10+Math.round(jsPoints[i].oy/10));
 		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="hsl('+hue+',80%,'+lum+'%)" class="county-'+block+'"></rect>';
 	}
+	console.log(minP,maxP, avgP, maxD,exCount, jsPoints.length);
 	svg += '</svg>';
 	postMessage(svg);
 	pointsOut = [];
