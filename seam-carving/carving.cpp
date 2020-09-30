@@ -5255,8 +5255,7 @@ Map horizontalSeam(Map m, int n, int l){
 		for(i=0;i<w;i++){
 			if (removeSeam[i]+1 < m.height && removeSeam[i] > 0){
 				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]-1].val+m.pixels[i][removeSeam[i]+1].val;
-				m.pixels[i][removeSeam[i]].val=v - v/2;
-				m.pixels[i][removeSeam[i]-1].val= v/2;
+				
 				int r = m.pixels[i][removeSeam[i]].r+m.pixels[i][removeSeam[i]-1].r+m.pixels[i][removeSeam[i]+1].r;
 				m.pixels[i][removeSeam[i]].r=r - r/2;
 				m.pixels[i][removeSeam[i]-1].r= r/2;
@@ -5280,7 +5279,8 @@ Map horizontalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy /= v;
 				}
-				
+				m.pixels[i][removeSeam[i]].val=v - v/2;
+				m.pixels[i][removeSeam[i]-1].val= v/2;
 				m.pixels[i][removeSeam[i]].x=xx;
 				m.pixels[i][removeSeam[i]-1].x= xx;
 				m.pixels[i][removeSeam[i]].y=yy;
@@ -5291,7 +5291,7 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 			else if (removeSeam[i]+1 < m.height){
 				int v = m.pixels[i][removeSeam[i]].val +m.pixels[i][removeSeam[i]+1].val;
-				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
+				
 				m.pixels[i][removeSeam[i]].r +=m.pixels[i][removeSeam[i]+1].r;
 				m.pixels[i][removeSeam[i]].d +=m.pixels[i][removeSeam[i]+1].d;
 				int xx; int yy;
@@ -5309,6 +5309,7 @@ Map horizontalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy /= v;
 				}
+				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
 				m.pixels[i][removeSeam[i]].x=xx;
 				m.pixels[i][removeSeam[i]].y=yy;
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
@@ -5317,7 +5318,7 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 			else {
 				int v = m.pixels[i][removeSeam[i]].val +m.pixels[i][removeSeam[i]-1].val;
-				m.pixels[i][removeSeam[i]-1].val +=m.pixels[i][removeSeam[i]].val;
+				
 				m.pixels[i][removeSeam[i]-1].r +=m.pixels[i][removeSeam[i]].r;
 				m.pixels[i][removeSeam[i]-1].d +=m.pixels[i][removeSeam[i]].d;
 				int xx; int yy;
@@ -5335,6 +5336,7 @@ Map horizontalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy /= v;
 				}
+				m.pixels[i][removeSeam[i]-1].val +=m.pixels[i][removeSeam[i]].val;
 				m.pixels[i][removeSeam[i]-1].x =xx;
 				m.pixels[i][removeSeam[i]-1].y =yy;
 			}
@@ -5448,7 +5450,7 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else if (removeSeam[ii]+1 < m.width){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
-				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
+				
 				m.pixels[removeSeam[ii]][ii].r+=m.pixels[removeSeam[ii]+1][ii].r;
 				m.pixels[removeSeam[ii]][ii].d+=m.pixels[removeSeam[ii]+1][ii].d;
 				
@@ -5467,6 +5469,7 @@ Map verticalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy = yy/v;
 				}
+				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
@@ -5476,7 +5479,7 @@ Map verticalSeam(Map m, int n, int l){
 			}
 			else {
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val;
-				m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
+				
 				m.pixels[removeSeam[ii]-1][ii].r+=m.pixels[removeSeam[ii]][ii].r;
 				m.pixels[removeSeam[ii]-1][ii].d+=m.pixels[removeSeam[ii]][ii].d;
 				
@@ -5495,6 +5498,7 @@ Map verticalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy = yy/v;
 				}
+				m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
 				m.pixels[removeSeam[ii]-1][ii].x=xx;
 				m.pixels[removeSeam[ii]-1][ii].y=yy;
 			}
@@ -5688,7 +5692,7 @@ void initialRun(){
 	
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (iii=0;iii<3;iii++){
+	for (iii=0;iii<5;iii++){
 		vertThreads = 1 + (rand() % (30-iii/4));
 		horzThreads = 1 + (rand() % (30-iii/4));
 		if (iii%1 == 0){
@@ -5704,24 +5708,12 @@ void initialRun(){
 		sum(m);
 		m = verticalSeam(m,vertThreads,1);
 		sum(m);
-		
-		if (iii%1 == 0){
-			for(i=0;i<m.width;i++){
-				for(ii=0;ii<m.height;ii++){
-					Point p = m.pixels[i][ii];
-					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.d)+","+std::to_string(p.r);
-					add_pointOut(pointStr.c_str());
-				}
-			}
-			display_points();
-		}
-		break;
-		//m = horizontalSeam(m,horzThreads,1);
-		//sum(m);
+		m = horizontalSeam(m,horzThreads,1);
+		sum(m);
 		m = verticalStitch(m,vertThreads,1);
 		sum(m);
-		//m = horizontalStitch(m,horzThreads,1);
-		//sum(m);
+		m = horizontalStitch(m,horzThreads,1);
+		sum(m);
 	}
 	
 	
