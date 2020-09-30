@@ -7159,6 +7159,7 @@ void initialRun(){
 	srand(seed);
 	int i;
 	int ii;
+	int iii;
 	std::map<int,Point> points;
 	
 	killCarveV = false;
