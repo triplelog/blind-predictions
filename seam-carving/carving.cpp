@@ -5115,7 +5115,20 @@ Map horizontalSeam(Map m, int n, int l){
 		}
 
 		for(i=0;i<w;i++){
-			if (removeSeam[i]+1 < m.height){
+			if (removeSeam[i]+1 < m.height && removeSeam[i] > 0){
+				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]-1].val+m.pixels[i][removeSeam[i]+1].val;
+				m.pixels[i][removeSeam[i]].val=v - v/2;
+				m.pixels[i][removeSeam[i]-1].val= v/2;
+				int r = m.pixels[i][removeSeam[i]].r+m.pixels[i][removeSeam[i]-1].r+m.pixels[i][removeSeam[i]+1].r;
+				m.pixels[i][removeSeam[i]].r=r - r/2;
+				m.pixels[i][removeSeam[i]-1].r= r/2;
+				int d = m.pixels[i][removeSeam[i]].d+m.pixels[i][removeSeam[i]-1].d+m.pixels[i][removeSeam[i]+1].d;
+				m.pixels[i][removeSeam[i]].d=d - d/2;
+				m.pixels[i][removeSeam[i]-1].d= d/2;
+				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
+					m.pixels[i][ii]=m.pixels[i][ii+1];
+				}
+			else if (removeSeam[i]+1 < m.height){
 				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
 				m.pixels[i][removeSeam[i]].r +=m.pixels[i][removeSeam[i]+1].r;
 				m.pixels[i][removeSeam[i]].d +=m.pixels[i][removeSeam[i]+1].d;
@@ -5198,25 +5211,38 @@ Map verticalSeam(Map m, int n, int l){
 				removeSeam = oldSeams[i];
 			}
 		}
-		if (l >= 0){
-			for(ii=0;ii<h;ii++){
-				if (removeSeam[ii]+1 < m.width){
-					m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
-					m.pixels[removeSeam[ii]][ii].r+=m.pixels[removeSeam[ii]+1][ii].r;
-					m.pixels[removeSeam[ii]][ii].d+=m.pixels[removeSeam[ii]+1][ii].d;
-					for(i=removeSeam[ii]+1;i<m.width-1;i++){
-				
-						m.pixels[i][ii]=m.pixels[i+1][ii];
-					}
-				}
-				else {
-					m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
-					m.pixels[removeSeam[ii]-1][ii].r+=m.pixels[removeSeam[ii]][ii].r;
-					m.pixels[removeSeam[ii]-1][ii].d+=m.pixels[removeSeam[ii]][ii].d;
+		for(ii=0;ii<h;ii++){
+			if (removeSeam[ii]+1 < m.width && removeSeam[ii] > 0){
+				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
+				m.pixels[removeSeam[ii]][ii].val=v - v/2;
+				m.pixels[removeSeam[ii]-1][ii].val= v/2;
+				int r = m.pixels[removeSeam[ii]][ii].r+m.pixels[removeSeam[ii]-1][ii].r+m.pixels[removeSeam[ii]+1][ii].r;
+				m.pixels[removeSeam[ii]][ii].r=r - r/2;
+				m.pixels[removeSeam[ii]-1][ii].r= r/2;
+				int d = m.pixels[removeSeam[ii]][ii].d+m.pixels[removeSeam[ii]-1][ii].d+m.pixels[removeSeam[ii]+1][ii].d;
+				m.pixels[removeSeam[ii]][ii].d=d - d/2;
+				m.pixels[removeSeam[ii]-1][ii].d= d/2;
+				for(i=removeSeam[ii]+1;i<m.width-1;i++){
+			
+					m.pixels[i][ii]=m.pixels[i+1][ii];
 				}
 			}
-			m.width--;
+			else if (removeSeam[ii]+1 < m.width){
+				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
+				m.pixels[removeSeam[ii]][ii].r+=m.pixels[removeSeam[ii]+1][ii].r;
+				m.pixels[removeSeam[ii]][ii].d+=m.pixels[removeSeam[ii]+1][ii].d;
+				for(i=removeSeam[ii]+1;i<m.width-1;i++){
+			
+					m.pixels[i][ii]=m.pixels[i+1][ii];
+				}
+			}
+			else {
+				m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
+				m.pixels[removeSeam[ii]-1][ii].r+=m.pixels[removeSeam[ii]][ii].r;
+				m.pixels[removeSeam[ii]-1][ii].d+=m.pixels[removeSeam[ii]][ii].d;
+			}
 		}
+		m.width--;
 	}
 
 	
