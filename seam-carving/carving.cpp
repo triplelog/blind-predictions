@@ -4838,19 +4838,18 @@ Map horizontalStitch(Map m, int n, int l){
 			}
 		}
 
-		if (l >= 0){
-			for(i=0;i<w;i++){
-				
-				for(ii=m.height;ii>removeSeam[i];ii--){
-					m.pixels[i][ii]=m.pixels[i][ii-1];
-				}
-				m.pixels[i][removeSeam[i]].county =m.pixels[i][removeSeam[i]+1].county;
-				m.pixels[i][removeSeam[i]].val =m.pixels[i][removeSeam[i]+1].val;
-				m.pixels[i][removeSeam[i]].val /= 2;
-				m.pixels[i][removeSeam[i]+1].val /= 2;
+		for(i=0;i<w;i++){
+			
+			for(ii=m.height;ii>removeSeam[i];ii--){
+				m.pixels[i][ii]=m.pixels[i][ii-1];
 			}
-			m.height++;
+			m.pixels[i][removeSeam[i]].county =m.pixels[i][removeSeam[i]+1].county;
+			m.pixels[i][removeSeam[i]].val =m.pixels[i][removeSeam[i]+1].val;
+			m.pixels[i][removeSeam[i]].val /= 2;
+			m.pixels[i][removeSeam[i]+1].val /= 2;
 		}
+		m.height++;
+		
 	}
 	
 	
@@ -5258,11 +5257,12 @@ void initialRun(){
 	console_log(durationTotal);
 	
 	a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 10;
-	horzThreads = 10;
+	
 	set_maxX(m.width);
 	set_maxY(m.height);
 	for (iii=0;iii<50;iii++){
+		vertThreads = 1 + (rand() % 20);
+		horzThreads = 1 + (rand() % 20);
 		if (iii%5 == 0){
 			for(i=0;i<m.width;i++){
 				for(ii=0;ii<m.height;ii++){
