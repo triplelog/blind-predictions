@@ -10,7 +10,7 @@ function displayNow() {
 	for (var i=0;i<jsPoints.length;i++){
 		if (parseInt(jsPoints[i].val)>maxP){
 			maxP = parseInt(jsPoints[i].val);
-			console.log(maxP,jsPoints[i].x,jsPoints[i].y);
+			//console.log(maxP,jsPoints[i].x,jsPoints[i].y);
 		}
 		if (parseInt(jsPoints[i].val)<minP){
 			minP = parseInt(jsPoints[i].val);
