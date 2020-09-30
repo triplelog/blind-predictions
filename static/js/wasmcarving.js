@@ -46,10 +46,11 @@ function displayNow() {
 		}
 		if (lum < 60){
 			console.log(jsPoints[i]);
+			svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
 		}
 
 		if (lum<50){lum = 50;}
-		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
+		//svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
 	}
 	svg += '</svg>';
 	postMessage(svg);
