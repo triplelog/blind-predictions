@@ -7171,15 +7171,19 @@ void initialRun(){
 	auto a11 = std::chrono::high_resolution_clock::now();
 	
 	std::map<int,std::map<int,Point>> pixels;
+	std::map<int,std::map<int,int>> pixelMap;
 	for(i=0;i<100;i++){
 		std::map<int,Point> v;
 		pixels[i] = v;
+		std::map<int,int> vv;
+		pixelMap[i]=vv;
 		for(ii=0;ii<100;ii++){
 			Point p;
 			p.x = i;
 			p.y = ii;
 			p.val = 0;
 			pixels[i][ii] = p;
+			pixelMap[i][ii] = -1;
 		}
 	}
 
@@ -7200,13 +7204,42 @@ void initialRun(){
 	int np = 2247;
 	for(i=0;i<np;i++){
 		points[i].npix = 0;
+		pixelMap[points[i].x][points[i].y]=i;
 	}
 	
 	for(i=0;i<100;i++){
 		console_log(i);
 		for(ii=0;ii<100;ii++){
+			if (pixelMap[i][ii]>=0){
+				points[pixelMap[i][ii]].npix++;
+				continue;
+			}
+			int minX = i-4;
+			int maxX = i+4;
+			int minY = ii-4;
+			int maxY = ii+4;
+			if (minX < 0){minX = 0;}
+			if (minY < 0){minY = 0;}
+			if (maxX > 100){maxX = 100;}
+			if (maxY > 100){maxY = 100;}
+			int iiii;
 			int minP = 1000000000;
 			int d;
+			for (iii=minX;iii<maxX+1;iii++){
+				for (iiii=minY;iiii<maxY+1;iiii++){
+					if (pixelMap[iii][iiii]>=0){
+						d = (iii-i)*(iii-i)+(iiii-ii)*(iiii-ii);
+						if (d < minP){
+							minP = d;
+							minI = pixelMap[iii][iiii];
+						}
+					}
+				}
+			}
+			if (minP < 1000000000){
+				points[minI].npix++;
+				continue;
+			}
 			int minI = 0;
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
