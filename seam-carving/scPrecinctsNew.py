@@ -71,7 +71,7 @@ for i in range(0,len(shape)):
 		print(shape[i]['geometry']['type'])
 	cent = poly.centroid
 	
-	precincts[shape[i]['id']]={'x':(cent.x-bounds['left'])/(bounds['right']-bounds['left']),'y':(cent.y-bounds['bottom'])/(bounds['top']-bounds['bottom']),'name':shape[i]['properties']['NAME'],'d':shape[i]['properties']['G18GOVDSMI'],'r':shape[i]['properties']['G18GOVRMCM'],'county':shape[i]['properties']['COUNTYFP']}
+	precincts[shape[i]['id']]={'x':(cent.x-bounds['left'])/(bounds['right']-bounds['left']),'y':(bounds['top']-cent.y)/(bounds['top']-bounds['bottom']),'name':shape[i]['properties']['NAME'],'d':shape[i]['properties']['G18GOVDSMI'],'r':shape[i]['properties']['G18GOVRMCM'],'county':shape[i]['properties']['COUNTYFP']}
 
 
 
