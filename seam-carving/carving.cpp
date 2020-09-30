@@ -4857,16 +4857,23 @@ Map horizontalStitch(Map m, int n, int l){
 				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]-1].val+m.pixels[i][removeSeam[i]+1].val;
 				int r = m.pixels[i][removeSeam[i]].r+m.pixels[i][removeSeam[i]-1].r+m.pixels[i][removeSeam[i]+1].r;
 				int d = m.pixels[i][removeSeam[i]].d+m.pixels[i][removeSeam[i]-1].d+m.pixels[i][removeSeam[i]+1].d;
-				int xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
-				xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
-				xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
-				yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
-				yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
+				else {
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
+					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
+					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[i][removeSeam[i]-1].val = v/4;
 				m.pixels[i][removeSeam[i]].val = v - v/4 - v/4 - v/4;
 				m.pixels[i][removeSeam[i]+1].val = v/4;
@@ -4900,14 +4907,22 @@ Map horizontalStitch(Map m, int n, int l){
 				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]+1].val;
 				int r = m.pixels[i][removeSeam[i]].r+m.pixels[i][removeSeam[i]+1].r;
 				int d = m.pixels[i][removeSeam[i]].d+m.pixels[i][removeSeam[i]+1].d;
-				int xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
-				xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
-				yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
+				else {
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
+					yy += v/2;
+					yy /= v;
+				}
+				
 				m.pixels[i][removeSeam[i]].val = v - v/3 - v/3;
 				m.pixels[i][removeSeam[i]+1].val = v/3;
 				m.pixels[i][removeSeam[i]+2].val = v/3;
@@ -4936,8 +4951,15 @@ Map horizontalStitch(Map m, int n, int l){
 				int v = m.pixels[i][removeSeam[i]].val;
 				int r = m.pixels[i][removeSeam[i]].r;
 				int d = m.pixels[i][removeSeam[i]].d;
-				int xx = m.pixels[i][removeSeam[i]].x;
-				int yy = m.pixels[i][removeSeam[i]].y;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
+				else {
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
 				m.pixels[i][removeSeam[i]].val = v/2;
 				m.pixels[i][removeSeam[i]+1].val = v - v/2;
 				
@@ -5034,16 +5056,23 @@ Map verticalStitch(Map m, int n, int l){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				int r = m.pixels[removeSeam[ii]][ii].r+m.pixels[removeSeam[ii]-1][ii].r+m.pixels[removeSeam[ii]+1][ii].r;
 				int d = m.pixels[removeSeam[ii]][ii].d+m.pixels[removeSeam[ii]-1][ii].d+m.pixels[removeSeam[ii]+1][ii].d;
-				int xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
-				xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
-				xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
-				yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
-				yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
+				else{
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[removeSeam[ii]-1][ii].val=v/4;
 				m.pixels[removeSeam[ii]][ii].val=v - v/4 - v/4 - v/4;
 				m.pixels[removeSeam[ii]+1][ii].val=v/4;
@@ -5078,14 +5107,21 @@ Map verticalStitch(Map m, int n, int l){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				int r = m.pixels[removeSeam[ii]][ii].r+m.pixels[removeSeam[ii]+1][ii].r;
 				int d = m.pixels[removeSeam[ii]][ii].d+m.pixels[removeSeam[ii]+1][ii].d;
-				int xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
-				xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
-				yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
+				else{
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[removeSeam[ii]][ii].val=v - v/3 - v/3;
 				m.pixels[removeSeam[ii]+1][ii].val=v/3;
 				m.pixels[removeSeam[ii]+2][ii].val= v/3;
@@ -5115,8 +5151,15 @@ Map verticalStitch(Map m, int n, int l){
 				int v = m.pixels[removeSeam[ii]][ii].val;
 				int r = m.pixels[removeSeam[ii]][ii].r;
 				int d = m.pixels[removeSeam[ii]][ii].d;
-				int xx = m.pixels[removeSeam[ii]][ii].x;
-				int yy = m.pixels[removeSeam[ii]][ii].y;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
+				else{
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
 				m.pixels[removeSeam[ii]][ii].val=v/2;
 				m.pixels[removeSeam[ii]+1][ii].val= v - v/2;
 				
@@ -5214,16 +5257,24 @@ Map horizontalSeam(Map m, int n, int l){
 				int d = m.pixels[i][removeSeam[i]].d+m.pixels[i][removeSeam[i]-1].d+m.pixels[i][removeSeam[i]+1].d;
 				m.pixels[i][removeSeam[i]].d=d - d/2;
 				m.pixels[i][removeSeam[i]-1].d= d/2;
-				int xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
-				xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
-				xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
-				yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
-				yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
+				else{
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
+					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
+					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
+					yy += v/2;
+					yy /= v;
+				}
+				
 				m.pixels[i][removeSeam[i]].x=xx;
 				m.pixels[i][removeSeam[i]-1].x= xx;
 				m.pixels[i][removeSeam[i]].y=yy;
@@ -5237,15 +5288,21 @@ Map horizontalSeam(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
 				m.pixels[i][removeSeam[i]].r +=m.pixels[i][removeSeam[i]+1].r;
 				m.pixels[i][removeSeam[i]].d +=m.pixels[i][removeSeam[i]+1].d;
-				
-				int xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
-				xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
-				yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
+				else {
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[i][removeSeam[i]].x=xx;
 				m.pixels[i][removeSeam[i]].y=yy;
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
@@ -5257,15 +5314,21 @@ Map horizontalSeam(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]-1].val +=m.pixels[i][removeSeam[i]].val;
 				m.pixels[i][removeSeam[i]-1].r +=m.pixels[i][removeSeam[i]].r;
 				m.pixels[i][removeSeam[i]-1].d +=m.pixels[i][removeSeam[i]].d;
-				
-				int xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
-				xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
-				yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
+				}
+				else {
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[i][removeSeam[i]-1].x =xx;
 				m.pixels[i][removeSeam[i]-1].y =yy;
 			}
@@ -5350,16 +5413,23 @@ Map verticalSeam(Map m, int n, int l){
 				int d = m.pixels[removeSeam[ii]][ii].d+m.pixels[removeSeam[ii]-1][ii].d+m.pixels[removeSeam[ii]+1][ii].d;
 				m.pixels[removeSeam[ii]][ii].d=d - d/2;
 				m.pixels[removeSeam[ii]-1][ii].d= d/2;
-				int xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
-				xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
-				xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
-				yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
-				yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
+				else{
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]-1][ii].x= xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
@@ -5375,14 +5445,21 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].r+=m.pixels[removeSeam[ii]+1][ii].r;
 				m.pixels[removeSeam[ii]][ii].d+=m.pixels[removeSeam[ii]+1][ii].d;
 				
-				int xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
-				xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
-				yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
+				else{
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
@@ -5396,14 +5473,21 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]-1][ii].r+=m.pixels[removeSeam[ii]][ii].r;
 				m.pixels[removeSeam[ii]-1][ii].d+=m.pixels[removeSeam[ii]][ii].d;
 				
-				int xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
-				xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
-				xx += v/2;
-				xx /= v;
-				int yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
-				yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
-				yy += v/2;
-				yy /= v;
+				int xx; int yy;
+				if (v <= 0){
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
+				}
+				else{
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
+					xx += v/2;
+					xx /= v;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
+					yy += v/2;
+					yy /= v;
+				}
 				m.pixels[removeSeam[ii]-1][ii].x=xx;
 				m.pixels[removeSeam[ii]-1][ii].y=yy;
 			}
