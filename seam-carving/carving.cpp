@@ -7219,19 +7219,21 @@ void initialRun(){
 	console_log(durationTotal);
 	
 	a11 = std::chrono::high_resolution_clock::now();
-	vertThreads = 5;
-	horzThreads = 5;
+	vertThreads = 10;
+	horzThreads = 10;
 	set_maxX(m.width);
 	set_maxY(m.height);
 	for (iii=0;iii<50;iii++){
-		for(i=0;i<m.width;i++){
-			for(ii=0;ii<m.height;ii++){
-				Point p = m.pixels[i][ii];
-				std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county);
-				add_pointOut(pointStr.c_str());
+		if (iii%5 == 0){
+			for(i=0;i<m.width;i++){
+				for(ii=0;ii<m.height;ii++){
+					Point p = m.pixels[i][ii];
+					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county);
+					add_pointOut(pointStr.c_str());
+				}
 			}
+			display_points();
 		}
-		display_points();
 		m = verticalSeam(m,vertThreads,1);
 		m = horizontalSeam(m,horzThreads,1);
 		m = verticalStitch(m,vertThreads,1);

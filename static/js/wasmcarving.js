@@ -8,16 +8,16 @@ function displayNow() {
 	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 '+(parseInt(maxX)+2)+' '+(parseInt(maxY)+2)+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	var maxP = 0; var minP = 1000000000;
 	for (var i=0;i<jsPoints.length;i++){
-		if (parseInt(jsPoints[i].val)>maxP){
-			maxP = parseInt(jsPoints[i].val);
+		if (parseInt(jsPoints[i].county)>maxP){
+			maxP = parseInt(jsPoints[i].county);
 		}
-		if (parseInt(jsPoints[i].val)<minP){
-			minP = parseInt(jsPoints[i].val);
+		if (parseInt(jsPoints[i].county)<minP){
+			minP = parseInt(jsPoints[i].county);
 		}
 	}
 	console.log(minP,maxP);
 	for (var i=0;i<jsPoints.length;i++){
-		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="rgb('+(parseInt(jsPoints[i].val)*250/maxP)+',0,'+(250-parseInt(jsPoints[i].val)*250/maxP)+')" stroke="none"></circle>';
+		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="rgb('+(parseInt(jsPoints[i].county)*250/maxP)+',0,'+(250-parseInt(jsPoints[i].county)*250/maxP)+')" stroke="none"></circle>';
 	}
 	svg += '</svg>';
 	postMessage(svg);
