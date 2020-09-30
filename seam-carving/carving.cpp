@@ -4857,6 +4857,7 @@ Map horizontalStitch(Map m, int n, int l){
 				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]-1].val+m.pixels[i][removeSeam[i]+1].val;
 				int r = m.pixels[i][removeSeam[i]].r+m.pixels[i][removeSeam[i]-1].r+m.pixels[i][removeSeam[i]+1].r;
 				int d = m.pixels[i][removeSeam[i]].d+m.pixels[i][removeSeam[i]-1].d+m.pixels[i][removeSeam[i]+1].d;
+				int xx = m.pixels[i][removeSeam[i]]['x']+m.pixels[i][removeSeam[i]-1].d+m.pixels[i][removeSeam[i]+1].d;
 				m.pixels[i][removeSeam[i]-1].val = v/4;
 				m.pixels[i][removeSeam[i]].val = v - v/4 - v/4 - v/4;
 				m.pixels[i][removeSeam[i]+1].val = v/4;
@@ -5358,6 +5359,8 @@ void initialRun(){
 				pixels[i][ii].val += points[pixelMap[i][ii]].val*100/points[pixelMap[i][ii]].npix;
 				pixels[i][ii].d += points[pixelMap[i][ii]].d*100/points[pixelMap[i][ii]].npix;
 				pixels[i][ii].r += points[pixelMap[i][ii]].r*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].x = points[pixelMap[i][ii]].x;
+				pixels[i][ii].y = points[pixelMap[i][ii]].y;
 				pixels[i][ii].county = points[pixelMap[i][ii]].county;
 				continue;
 			}
@@ -5388,6 +5391,8 @@ void initialRun(){
 				pixels[i][ii].val += points[minI].val*100/points[minI].npix;
 				pixels[i][ii].d += points[minI].d*100/points[minI].npix;
 				pixels[i][ii].r += points[minI].r*100/points[minI].npix;
+				pixels[i][ii].x = points[minI].x;
+				pixels[i][ii].y = points[minI].y;
 				pixels[i][ii].county = points[minI].county;
 				continue;
 			}
@@ -5402,6 +5407,8 @@ void initialRun(){
 			pixels[i][ii].val += points[minI].val*100/points[minI].npix;
 			pixels[i][ii].d += points[minI].d*100/points[minI].npix;
 			pixels[i][ii].r += points[minI].r*100/points[minI].npix;
+			pixels[i][ii].x = points[minI].x;
+			pixels[i][ii].y = points[minI].y;
 			pixels[i][ii].county = points[minI].county;
 		}
 	}
