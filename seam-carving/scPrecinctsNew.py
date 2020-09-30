@@ -86,6 +86,6 @@ for precinct in precincts:
 	line = "p.x = "+str(round(precincts[precinct]['x']*100))+"; p.y = "+str(round(precincts[precinct]['y']*100))+"; p.county = "+str(int(precincts[precinct]['county']))+"; p.val = "+str(int(precincts[precinct]['d'])+int(precincts[precinct]['r']))+";\n"
 	
 	file1.writelines([line])
-	file1.writelines(['points[i]=p;xCount[p.x]++;yCount[p.y]++;i++;}\n'])
+	file1.writelines(['points[i]=p;i++;}\n'])
 file1.writelines(['return points;}\n'])
 file1.close()
