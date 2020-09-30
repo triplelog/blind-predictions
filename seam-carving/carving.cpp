@@ -4778,11 +4778,17 @@ struct Map {
 
 int sum(Map m){
 	int i; int ii; int sum = 0;
+	int sumX = 0;
+	int sumY = 0;
 	for (i=0;i<m.width;i++){
 		for (ii=0;ii<m.height;ii++){
 			sum += m.pixels[i][ii].val;
+			sumX += m.pixels[i][ii].x;
+			sumY += m.pixels[i][ii].y;
 		}
 	}
+	console_log(sumX);
+	console_log(sumY);
 	return sum;
 }
 
@@ -5681,7 +5687,7 @@ void initialRun(){
 	
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (iii=0;iii<101;iii++){
+	for (iii=0;iii<3;iii++){
 		vertThreads = 1 + (rand() % (30-iii/4));
 		horzThreads = 1 + (rand() % (30-iii/4));
 		if (iii%5 == 0){
@@ -5694,10 +5700,15 @@ void initialRun(){
 			}
 			display_points();
 		}
+		sum(m);
 		m = verticalSeam(m,vertThreads,1);
+		sum(m);
 		m = horizontalSeam(m,horzThreads,1);
+		sum(m);
 		m = verticalStitch(m,vertThreads,1);
+		sum(m);
 		m = horizontalStitch(m,horzThreads,1);
+		sum(m);
 	}
 	
 	
