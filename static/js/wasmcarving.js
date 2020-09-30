@@ -44,6 +44,9 @@ function displayNow() {
 		else {
 			lum = 100-50*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/maxD;
 		}
+		if (lum < 60){
+			console.log(jsPoints[i]);
+		}
 
 		if (lum<50){lum = 50;}
 		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
