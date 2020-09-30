@@ -79,13 +79,32 @@ for i in range(0,len(shape)):
 file1 = open('scpre.txt', 'w')
 file1.writelines(['std::map<int,Point> scPoints(){\n'])
 file1.writelines(['std::map<int,Point> points; int i=0;\n'])
-for precinct in precincts:
 
+pixelMap = {}
+for precinct in precincts:
+	roundedX = round(precincts[precinct]['x']*100)
+	roundedY = round(precincts[precinct]['y']*100)
+	try:
+		pixelMap[roundedX*100+roundedY]['d']+=int(precincts[precinct]['d'])
+		pixelMap[roundedX*100+roundedY]['r']+=int(precincts[precinct]['r'])
+	except:
+		pixelMap[roundedX*100+roundedY]={}
+		pixelMap[roundedX*100+roundedY]['d']=int(precincts[precinct]['d'])
+		pixelMap[roundedX*100+roundedY]['r']=int(precincts[precinct]['r'])
+		pixelMap[roundedX*100+roundedY]['x']=round(precincts[precinct]['x']*100)
+		pixelMap[roundedX*100+roundedY]['y']=round(precincts[precinct]['y']*100)
+		pixelMap[roundedX*100+roundedY]['county']=int(precincts[precinct]['county'])
+			
+	
+pixels = 0
+for pixel in pixelMap.keys():
+	pixels+=1
 	file1.writelines(['if (1==1){ Point p;\n'])
 	#line = str(precincts[precinct]['name'])+","+str(precincts[precinct]['x'])+","+str(precincts[precinct]['y'])+","+str(precincts[precinct]['d'])+","+str(precincts[precinct]['r'])+","+str(precincts[precinct]['county'])+"\n"
-	line = "p.x = "+str(round(precincts[precinct]['x']*100))+"; p.y = "+str(round(precincts[precinct]['y']*100))+"; p.county = "+str(int(precincts[precinct]['county']))+"; p.val = "+str(int(precincts[precinct]['d'])+int(precincts[precinct]['r']))+";\n"
+	line = "p.x = "+str(pixelMap[pixel]['x'])+"; p.y = "+str(pixelMap[pixel]['y'])+"; p.county = "+str(pixelMap[pixel]['county'])+"; p.val = "+str(pixelMap[pixel]['d']+pixelMap[pixel]['r'])+";\n"
 	
 	file1.writelines([line])
 	file1.writelines(['points[i]=p;i++;}\n'])
+print(pixels)
 file1.writelines(['return points;}\n'])
 file1.close()
