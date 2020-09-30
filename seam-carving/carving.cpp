@@ -4845,7 +4845,7 @@ Map horizontalStitch(Map m, int n, int l){
 				removeSeam = oldSeams[ii];
 			}
 		}
-
+		console_log(maxSeam);
 		for(i=0;i<w;i++){
 			
 			for(ii=m.height;ii>removeSeam[i]+1;ii--){
@@ -5291,7 +5291,6 @@ void initialRun(){
 		m = horizontalSeam(m,horzThreads,1);
 		m = verticalStitch(m,vertThreads,1);
 		m = horizontalStitch(m,horzThreads,1);
-		console_log(sum(m));
 
 	}
 	
