@@ -7225,6 +7225,7 @@ void initialRun(){
 			int iiii;
 			int minP = 1000000000;
 			int d;
+			int minI = 0;
 			for (iii=minX;iii<maxX+1;iii++){
 				for (iiii=minY;iiii<maxY+1;iiii++){
 					if (pixelMap[iii][iiii]>=0){
@@ -7240,7 +7241,7 @@ void initialRun(){
 				points[minI].npix++;
 				continue;
 			}
-			int minI = 0;
+			
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
