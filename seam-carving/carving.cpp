@@ -128,13 +128,13 @@ if (1==1){ Point p;
 p.x = 34; p.y = 60; p.county = 3; p.val = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 32; p.y = 52; p.county = 3; p.val = 735;
+p.x = 32; p.y = 52; p.county = 3; p.val = 1944;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 52; p.county = 3; p.val = 511;
+p.x = 33; p.y = 52; p.county = 3; p.val = 1994;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 53; p.county = 3; p.val = 592;
+p.x = 34; p.y = 53; p.county = 3; p.val = 1114;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 33; p.y = 51; p.county = 3; p.val = 680;
@@ -143,34 +143,25 @@ if (1==1){ Point p;
 p.x = 33; p.y = 48; p.county = 3; p.val = 702;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 32; p.y = 52; p.county = 3; p.val = 509;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 35; p.y = 50; p.county = 3; p.val = 990;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 41; p.y = 49; p.county = 3; p.val = 1052;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 52; p.county = 3; p.val = 639;
+p.x = 33; p.y = 54; p.county = 3; p.val = 2172;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 54; p.county = 3; p.val = 997;
+p.x = 33; p.y = 53; p.county = 3; p.val = 2397;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 52; p.county = 3; p.val = 298;
+p.x = 34; p.y = 54; p.county = 3; p.val = 1853;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 53; p.county = 3; p.val = 728;
+p.x = 30; p.y = 55; p.county = 3; p.val = 870;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 54; p.county = 3; p.val = 949;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 55; p.county = 3; p.val = 395;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 34; p.y = 57; p.county = 3; p.val = 853;
+p.x = 34; p.y = 57; p.county = 3; p.val = 1763;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 37; p.y = 47; p.county = 3; p.val = 516;
@@ -179,7 +170,7 @@ if (1==1){ Point p;
 p.x = 29; p.y = 56; p.county = 3; p.val = 830;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 55; p.county = 3; p.val = 575;
+p.x = 29; p.y = 55; p.county = 3; p.val = 888;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 31; p.y = 60; p.county = 3; p.val = 878;
@@ -188,28 +179,10 @@ if (1==1){ Point p;
 p.x = 36; p.y = 51; p.county = 3; p.val = 402;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 57; p.county = 3; p.val = 910;
+p.x = 28; p.y = 54; p.county = 3; p.val = 3640;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 54; p.county = 3; p.val = 758;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 55; p.county = 3; p.val = 313;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 54; p.county = 3; p.val = 488;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 34; p.y = 54; p.county = 3; p.val = 904;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 31; p.y = 54; p.county = 3; p.val = 547;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 31; p.y = 54; p.county = 3; p.val = 586;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 55; p.county = 3; p.val = 475;
+p.x = 31; p.y = 54; p.county = 3; p.val = 1133;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 36; p.y = 44; p.county = 3; p.val = 634;
@@ -224,22 +197,13 @@ if (1==1){ Point p;
 p.x = 39; p.y = 52; p.county = 3; p.val = 389;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 55; p.county = 3; p.val = 755;
+p.x = 28; p.y = 55; p.county = 3; p.val = 1496;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 53; p.county = 3; p.val = 978;
+p.x = 28; p.y = 53; p.county = 3; p.val = 2890;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 41; p.y = 53; p.county = 3; p.val = 400;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 54; p.county = 3; p.val = 716;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 55; p.county = 3; p.val = 741;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 32; p.y = 52; p.county = 3; p.val = 700;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 31; p.y = 50; p.county = 3; p.val = 875;
@@ -248,7 +212,7 @@ if (1==1){ Point p;
 p.x = 34; p.y = 47; p.county = 3; p.val = 760;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 32; p.y = 53; p.county = 3; p.val = 890;
+p.x = 32; p.y = 53; p.county = 3; p.val = 1511;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 38; p.y = 56; p.county = 3; p.val = 433;
@@ -260,12 +224,6 @@ if (1==1){ Point p;
 p.x = 29; p.y = 52; p.county = 3; p.val = 965;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 52; p.county = 3; p.val = 546;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 33; p.y = 53; p.county = 3; p.val = 645;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 31; p.y = 57; p.county = 3; p.val = 609;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -275,31 +233,25 @@ if (1==1){ Point p;
 p.x = 30; p.y = 53; p.county = 3; p.val = 1213;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 53; p.county = 3; p.val = 688;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 35; p.y = 53; p.county = 3; p.val = 673;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 34; p.y = 52; p.county = 3; p.val = 583;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 52; p.county = 3; p.val = 827;
+p.x = 28; p.y = 52; p.county = 3; p.val = 1674;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 31; p.y = 55; p.county = 3; p.val = 951;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 32; p.y = 54; p.county = 3; p.val = 765;
+p.x = 32; p.y = 54; p.county = 3; p.val = 1688;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 32; p.y = 58; p.county = 3; p.val = 946;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 53; p.county = 3; p.val = 619;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 53; p.county = 3; p.val = 538;
+p.x = 29; p.y = 53; p.county = 3; p.val = 1557;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 34; p.y = 56; p.county = 3; p.val = 902;
@@ -311,31 +263,13 @@ if (1==1){ Point p;
 p.x = 27; p.y = 54; p.county = 3; p.val = 805;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 53; p.county = 3; p.val = 1293;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 33; p.y = 55; p.county = 3; p.val = 1128;
+p.x = 33; p.y = 55; p.county = 3; p.val = 3090;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 30; p.y = 54; p.county = 3; p.val = 1006;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 53; p.county = 3; p.val = 522;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 52; p.county = 3; p.val = 847;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 32; p.y = 54; p.county = 3; p.val = 923;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 35; p.y = 55; p.county = 3; p.val = 500;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 33; p.y = 54; p.county = 3; p.val = 467;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 54; p.county = 3; p.val = 506;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 30; p.y = 58; p.county = 3; p.val = 516;
@@ -344,40 +278,10 @@ if (1==1){ Point p;
 p.x = 37; p.y = 56; p.county = 3; p.val = 490;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 53; p.county = 3; p.val = 336;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 53; p.county = 3; p.val = 674;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 53; p.county = 3; p.val = 345;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 54; p.county = 3; p.val = 708;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 54; p.county = 3; p.val = 582;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 54; p.county = 3; p.val = 666;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 33; p.y = 55; p.county = 3; p.val = 757;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 54; p.county = 3; p.val = 590;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 32; p.y = 53; p.county = 3; p.val = 621;
+p.x = 29; p.y = 54; p.county = 3; p.val = 1374;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 34; p.y = 55; p.county = 3; p.val = 935;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 33; p.y = 54; p.county = 3; p.val = 708;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 33; p.y = 55; p.county = 3; p.val = 1205;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 42; p.y = 70; p.county = 5; p.val = 492;
@@ -404,7 +308,7 @@ if (1==1){ Point p;
 p.x = 43; p.y = 68; p.county = 5; p.val = 123;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 21; p.county = 7; p.val = 266;
+p.x = 13; p.y = 21; p.county = 7; p.val = 2754;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 18; p.y = 24; p.county = 7; p.val = 234;
@@ -440,7 +344,7 @@ if (1==1){ Point p;
 p.x = 15; p.y = 23; p.county = 7; p.val = 906;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 17; p.county = 7; p.val = 327;
+p.x = 17; p.y = 17; p.county = 7; p.val = 1205;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 10; p.y = 18; p.county = 7; p.val = 1565;
@@ -449,10 +353,10 @@ if (1==1){ Point p;
 p.x = 17; p.y = 16; p.county = 7; p.val = 443;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 23; p.county = 7; p.val = 340;
+p.x = 14; p.y = 23; p.county = 7; p.val = 1256;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 20; p.county = 7; p.val = 352;
+p.x = 15; p.y = 20; p.county = 7; p.val = 1638;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 11; p.y = 20; p.county = 7; p.val = 759;
@@ -464,7 +368,7 @@ if (1==1){ Point p;
 p.x = 11; p.y = 28; p.county = 7; p.val = 320;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 19; p.county = 7; p.val = 892;
+p.x = 14; p.y = 19; p.county = 7; p.val = 1908;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 15; p.y = 21; p.county = 7; p.val = 608;
@@ -485,22 +389,16 @@ if (1==1){ Point p;
 p.x = 17; p.y = 19; p.county = 7; p.val = 666;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 12; p.y = 20; p.county = 7; p.val = 1422;
+p.x = 12; p.y = 20; p.county = 7; p.val = 2313;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 13; p.y = 25; p.county = 7; p.val = 627;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 23; p.county = 7; p.val = 916;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 19; p.y = 23; p.county = 7; p.val = 276;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 19; p.y = 24; p.county = 7; p.val = 769;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 12; p.y = 20; p.county = 7; p.val = 891;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 14; p.y = 26; p.county = 7; p.val = 609;
@@ -512,16 +410,10 @@ if (1==1){ Point p;
 p.x = 12; p.y = 24; p.county = 7; p.val = 502;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 23; p.county = 7; p.val = 180;
+p.x = 13; p.y = 23; p.county = 7; p.val = 644;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 11; p.y = 21; p.county = 7; p.val = 1290;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 15; p.y = 20; p.county = 7; p.val = 1286;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 19; p.county = 7; p.val = 1016;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 14; p.y = 17; p.county = 7; p.val = 1146;
@@ -554,9 +446,6 @@ if (1==1){ Point p;
 p.x = 13; p.y = 19; p.county = 7; p.val = 870;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 17; p.county = 7; p.val = 878;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 10; p.y = 25; p.county = 7; p.val = 196;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -572,55 +461,22 @@ if (1==1){ Point p;
 p.x = 16; p.y = 26; p.county = 7; p.val = 445;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 20; p.county = 7; p.val = 645;
+p.x = 13; p.y = 20; p.county = 7; p.val = 1733;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 21; p.county = 7; p.val = 775;
+p.x = 14; p.y = 21; p.county = 7; p.val = 2645;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 21; p.county = 7; p.val = 698;
+p.x = 14; p.y = 22; p.county = 7; p.val = 1787;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 21; p.county = 7; p.val = 1146;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 22; p.county = 7; p.val = 293;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 22; p.county = 7; p.val = 983;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 22; p.county = 7; p.val = 266;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 22; p.county = 7; p.val = 245;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 22; p.county = 7; p.val = 262;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 22; p.county = 7; p.val = 465;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 21; p.county = 7; p.val = 871;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 21; p.county = 7; p.val = 144;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 23; p.county = 7; p.val = 464;
+p.x = 13; p.y = 22; p.county = 7; p.val = 727;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 12; p.y = 22; p.county = 7; p.val = 1088;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 12; p.y = 21; p.county = 7; p.val = 1345;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 20; p.county = 7; p.val = 1088;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 21; p.county = 7; p.val = 477;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 16; p.y = 14; p.county = 7; p.val = 1313;
@@ -630,9 +486,6 @@ p.x = 17; p.y = 21; p.county = 7; p.val = 904;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 17; p.y = 12; p.county = 7; p.val = 1659;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 21; p.county = 7; p.val = 1022;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 14; p.y = 20; p.county = 7; p.val = 969;
@@ -731,13 +584,7 @@ if (1==1){ Point p;
 p.x = 36; p.y = 63; p.county = 11; p.val = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 89; p.county = 13; p.val = 431;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 89; p.county = 13; p.val = 605;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 89; p.county = 13; p.val = 725;
+p.x = 55; p.y = 89; p.county = 13; p.val = 1761;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 53; p.y = 90; p.county = 13; p.val = 937;
@@ -752,19 +599,16 @@ if (1==1){ Point p;
 p.x = 54; p.y = 90; p.county = 13; p.val = 1076;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 88; p.county = 13; p.val = 184;
+p.x = 55; p.y = 88; p.county = 13; p.val = 773;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 91; p.county = 13; p.val = 652;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 91; p.county = 13; p.val = 571;
+p.x = 55; p.y = 91; p.county = 13; p.val = 1223;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 89; p.county = 13; p.val = 610;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 90; p.county = 13; p.val = 716;
+p.x = 55; p.y = 90; p.county = 13; p.val = 1914;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 91; p.county = 13; p.val = 862;
@@ -773,31 +617,19 @@ if (1==1){ Point p;
 p.x = 52; p.y = 92; p.county = 13; p.val = 1071;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 90; p.county = 13; p.val = 625;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 50; p.y = 92; p.county = 13; p.val = 805;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 89; p.county = 13; p.val = 849;
+p.x = 56; p.y = 89; p.county = 13; p.val = 1558;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 91; p.county = 13; p.val = 963;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 88; p.county = 13; p.val = 1005;
+p.x = 56; p.y = 88; p.county = 13; p.val = 1586;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 87; p.county = 13; p.val = 834;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 56; p.y = 89; p.county = 13; p.val = 709;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 88; p.county = 13; p.val = 589;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 90; p.county = 13; p.val = 573;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 85; p.county = 13; p.val = 618;
@@ -842,22 +674,16 @@ if (1==1){ Point p;
 p.x = 58; p.y = 88; p.county = 13; p.val = 577;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 88; p.county = 13; p.val = 581;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 51; p.y = 100; p.county = 13; p.val = 298;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 96; p.county = 13; p.val = 644;
+p.x = 54; p.y = 96; p.county = 13; p.val = 2064;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 98; p.county = 13; p.val = 553;
+p.x = 54; p.y = 98; p.county = 13; p.val = 1451;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 96; p.county = 13; p.val = 686;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 96; p.county = 13; p.val = 663;
+p.x = 55; p.y = 96; p.county = 13; p.val = 1259;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 97; p.county = 13; p.val = 1018;
@@ -866,52 +692,31 @@ if (1==1){ Point p;
 p.x = 53; p.y = 96; p.county = 13; p.val = 701;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 98; p.county = 13; p.val = 789;
+p.x = 55; p.y = 98; p.county = 13; p.val = 1570;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 97; p.county = 13; p.val = 835;
+p.x = 54; p.y = 97; p.county = 13; p.val = 2048;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 55; p.y = 94; p.county = 13; p.val = 753;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 97; p.county = 13; p.val = 1213;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 54; p.y = 95; p.county = 13; p.val = 872;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 55; p.y = 96; p.county = 13; p.val = 596;
+p.x = 54; p.y = 95; p.county = 13; p.val = 1515;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 94; p.county = 13; p.val = 583;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 98; p.county = 13; p.val = 781;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 54; p.y = 95; p.county = 13; p.val = 643;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 55; p.y = 95; p.county = 13; p.val = 652;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 96; p.county = 13; p.val = 734;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 53; p.y = 98; p.county = 13; p.val = 1096;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 54; p.y = 98; p.county = 13; p.val = 898;
+p.x = 53; p.y = 98; p.county = 13; p.val = 1864;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 53; p.y = 97; p.county = 13; p.val = 1155;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 98; p.county = 13; p.val = 768;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 53; p.y = 99; p.county = 13; p.val = 486;
+p.x = 53; p.y = 99; p.county = 13; p.val = 1462;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 99; p.county = 13; p.val = 746;
@@ -920,40 +725,28 @@ if (1==1){ Point p;
 p.x = 53; p.y = 100; p.county = 13; p.val = 572;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 99; p.county = 13; p.val = 355;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 53; p.y = 99; p.county = 13; p.val = 621;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 52; p.y = 94; p.county = 13; p.val = 1353;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 52; p.y = 96; p.county = 13; p.val = 556;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 95; p.county = 13; p.val = 569;
+p.x = 51; p.y = 95; p.county = 13; p.val = 2713;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 95; p.county = 13; p.val = 1165;
+p.x = 50; p.y = 95; p.county = 13; p.val = 1910;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 94; p.county = 13; p.val = 645;
+p.x = 51; p.y = 94; p.county = 13; p.val = 1864;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 94; p.county = 13; p.val = 901;
+p.x = 49; p.y = 94; p.county = 13; p.val = 5005;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 94; p.county = 13; p.val = 655;
+p.x = 49; p.y = 95; p.county = 13; p.val = 2344;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 94; p.county = 13; p.val = 871;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 95; p.county = 13; p.val = 825;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 94; p.county = 13; p.val = 714;
+p.x = 50; p.y = 94; p.county = 13; p.val = 1580;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 51; p.y = 96; p.county = 13; p.val = 891;
@@ -968,12 +761,6 @@ if (1==1){ Point p;
 p.x = 53; p.y = 95; p.county = 13; p.val = 1290;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 95; p.county = 13; p.val = 619;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 94; p.county = 13; p.val = 771;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 50; p.y = 97; p.county = 13; p.val = 1565;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -981,30 +768,6 @@ p.x = 53; p.y = 94; p.county = 13; p.val = 532;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 51; p.y = 93; p.county = 13; p.val = 589;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 95; p.county = 13; p.val = 1519;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 95; p.county = 13; p.val = 740;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 94; p.county = 13; p.val = 1219;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 95; p.county = 13; p.val = 785;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 94; p.county = 13; p.val = 1010;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 94; p.county = 13; p.val = 866;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 95; p.county = 13; p.val = 745;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 94; p.county = 13; p.val = 797;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 74; p.y = 60; p.county = 15; p.val = 526;
@@ -1022,7 +785,7 @@ if (1==1){ Point p;
 p.x = 73; p.y = 62; p.county = 15; p.val = 860;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 63; p.county = 15; p.val = 511;
+p.x = 70; p.y = 63; p.county = 15; p.val = 1270;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 69; p.y = 57; p.county = 15; p.val = 660;
@@ -1031,13 +794,10 @@ if (1==1){ Point p;
 p.x = 71; p.y = 57; p.county = 15; p.val = 647;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 70; p.county = 15; p.val = 569;
+p.x = 69; p.y = 70; p.county = 15; p.val = 3401;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 70; p.county = 15; p.val = 1179;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 71; p.county = 15; p.val = 974;
+p.x = 67; p.y = 71; p.county = 15; p.val = 3192;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 73; p.y = 71; p.county = 15; p.val = 626;
@@ -1055,13 +815,13 @@ if (1==1){ Point p;
 p.x = 68; p.y = 68; p.county = 15; p.val = 1165;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 15; p.val = 1250;
+p.x = 69; p.y = 72; p.county = 15; p.val = 5053;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 70; p.county = 15; p.val = 696;
+p.x = 67; p.y = 70; p.county = 15; p.val = 4715;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 69; p.county = 15; p.val = 862;
+p.x = 67; p.y = 69; p.county = 15; p.val = 2486;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 68; p.y = 63; p.county = 15; p.val = 926;
@@ -1085,52 +845,31 @@ if (1==1){ Point p;
 p.x = 67; p.y = 65; p.county = 15; p.val = 633;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 70; p.county = 15; p.val = 808;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 72; p.y = 75; p.county = 15; p.val = 1258;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 71; p.y = 75; p.county = 15; p.val = 947;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 70; p.county = 15; p.val = 947;
+p.x = 68; p.y = 70; p.county = 15; p.val = 3989;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 70; p.county = 15; p.val = 665;
+p.x = 69; p.y = 73; p.county = 15; p.val = 1355;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 70; p.county = 15; p.val = 805;
+p.x = 70; p.y = 74; p.county = 15; p.val = 4005;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 73; p.county = 15; p.val = 690;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 15; p.val = 692;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 15; p.val = 683;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 71; p.county = 15; p.val = 983;
+p.x = 69; p.y = 71; p.county = 15; p.val = 3366;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 75; p.y = 68; p.county = 15; p.val = 691;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 63; p.county = 15; p.val = 759;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 65; p.county = 15; p.val = 652;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 65; p.county = 15; p.val = 974;
+p.x = 69; p.y = 65; p.county = 15; p.val = 1626;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 71; p.y = 69; p.county = 15; p.val = 713;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 69; p.county = 15; p.val = 495;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 68; p.y = 71; p.county = 15; p.val = 1065;
@@ -1145,15 +884,6 @@ if (1==1){ Point p;
 p.x = 68; p.y = 69; p.county = 15; p.val = 639;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 71; p.county = 15; p.val = 812;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 70; p.county = 15; p.val = 872;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 71; p.county = 15; p.val = 1024;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 70; p.y = 71; p.county = 15; p.val = 1259;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -1163,13 +893,13 @@ if (1==1){ Point p;
 p.x = 68; p.y = 67; p.county = 15; p.val = 751;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 76; p.county = 15; p.val = 959;
+p.x = 71; p.y = 76; p.county = 15; p.val = 2214;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 76; p.county = 15; p.val = 1372;
+p.x = 72; p.y = 76; p.county = 15; p.val = 2873;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 74; p.county = 15; p.val = 1108;
+p.x = 73; p.y = 74; p.county = 15; p.val = 2743;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 72; p.y = 73; p.county = 15; p.val = 1058;
@@ -1178,13 +908,10 @@ if (1==1){ Point p;
 p.x = 67; p.y = 67; p.county = 15; p.val = 2675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 70; p.county = 15; p.val = 1005;
+p.x = 69; p.y = 68; p.county = 15; p.val = 2196;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 68; p.county = 15; p.val = 1113;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 73; p.county = 15; p.val = 795;
+p.x = 70; p.y = 73; p.county = 15; p.val = 2749;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 66; p.y = 58; p.county = 15; p.val = 652;
@@ -1193,25 +920,10 @@ if (1==1){ Point p;
 p.x = 70; p.y = 65; p.county = 15; p.val = 506;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 70; p.county = 15; p.val = 622;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 73; p.county = 15; p.val = 1040;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 73; p.county = 15; p.val = 914;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 71; p.y = 72; p.county = 15; p.val = 556;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 66; p.y = 69; p.county = 15; p.val = 817;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 71; p.county = 15; p.val = 547;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 70; p.county = 15; p.val = 650;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 70; p.y = 72; p.county = 15; p.val = 709;
@@ -1220,31 +932,7 @@ if (1==1){ Point p;
 p.x = 70; p.y = 69; p.county = 15; p.val = 1856;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 70; p.county = 15; p.val = 743;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 68; p.county = 15; p.val = 1083;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 70; p.county = 15; p.val = 677;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 15; p.val = 568;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 15; p.val = 713;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 70; p.county = 15; p.val = 845;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 67; p.y = 68; p.county = 15; p.val = 80;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 15; p.val = 737;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 69; p.county = 15; p.val = 1129;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 52; p.y = 47; p.county = 17; p.val = 504;
@@ -1289,85 +977,43 @@ if (1==1){ Point p;
 p.x = 77; p.y = 69; p.county = 19; p.val = 547;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 79; p.county = 19; p.val = 718;
+p.x = 74; p.y = 79; p.county = 19; p.val = 1999;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 72; p.county = 19; p.val = 994;
+p.x = 68; p.y = 72; p.county = 19; p.val = 3162;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 66; p.y = 82; p.county = 19; p.val = 728;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 78; p.county = 19; p.val = 497;
+p.x = 73; p.y = 78; p.county = 19; p.val = 1634;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 76; p.county = 19; p.val = 733;
+p.x = 73; p.y = 76; p.county = 19; p.val = 3542;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 77; p.county = 19; p.val = 926;
+p.x = 74; p.y = 77; p.county = 19; p.val = 1594;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 75; p.y = 77; p.county = 19; p.val = 992;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 77; p.county = 19; p.val = 667;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 77; p.county = 19; p.val = 649;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 76; p.county = 19; p.val = 1139;
+p.x = 73; p.y = 77; p.county = 19; p.val = 4758;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 76; p.y = 77; p.county = 19; p.val = 1094;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 76; p.county = 19; p.val = 1501;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 76; p.county = 19; p.val = 852;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 79; p.county = 19; p.val = 1281;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 72; p.y = 77; p.county = 19; p.val = 926;
+p.x = 72; p.y = 77; p.county = 19; p.val = 5297;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 82; p.y = 68; p.county = 19; p.val = 1072;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 72; p.county = 19; p.val = 1103;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 65; p.y = 82; p.county = 19; p.val = 699;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 19; p.val = 523;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 68; p.y = 84; p.county = 19; p.val = 1224;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 72; p.county = 19; p.val = 1065;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 19; p.val = 739;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 72; p.county = 19; p.val = 523;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 70; p.county = 19; p.val = 1022;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 77; p.county = 19; p.val = 549;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 77; p.county = 19; p.val = 668;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 71; p.county = 19; p.val = 1213;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 63; p.y = 85; p.county = 19; p.val = 985;
@@ -1376,13 +1022,7 @@ if (1==1){ Point p;
 p.x = 66; p.y = 85; p.county = 19; p.val = 1627;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 570;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 733;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 530;
+p.x = 71; p.y = 78; p.county = 19; p.val = 5697;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 71; p.y = 83; p.county = 19; p.val = 754;
@@ -1391,124 +1031,22 @@ if (1==1){ Point p;
 p.x = 72; p.y = 81; p.county = 19; p.val = 923;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 555;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 553;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 551;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 477;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 482;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 76; p.county = 19; p.val = 504;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 664;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 623;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 303;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 78; p.county = 19; p.val = 691;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 672;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 720;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 731;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 878;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 635;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 740;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 77; p.county = 19; p.val = 463;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 76; p.county = 19; p.val = 370;
+p.x = 71; p.y = 77; p.county = 19; p.val = 5874;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 72; p.y = 78; p.county = 19; p.val = 1102;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 78; p.county = 19; p.val = 554;
+p.x = 74; p.y = 76; p.county = 19; p.val = 1487;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 77; p.county = 19; p.val = 642;
+p.x = 73; p.y = 75; p.county = 19; p.val = 2547;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 77; p.county = 19; p.val = 920;
+p.x = 74; p.y = 75; p.county = 19; p.val = 3532;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 77; p.county = 19; p.val = 869;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 78; p.county = 19; p.val = 583;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 77; p.county = 19; p.val = 1045;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 77; p.county = 19; p.val = 759;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 72; p.y = 77; p.county = 19; p.val = 510;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 77; p.county = 19; p.val = 1089;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 72; p.y = 77; p.county = 19; p.val = 1430;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 76; p.county = 19; p.val = 1016;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 76; p.county = 19; p.val = 471;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 76; p.county = 19; p.val = 491;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 76; p.county = 19; p.val = 327;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 75; p.county = 19; p.val = 1765;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 75; p.county = 19; p.val = 782;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 75; p.county = 19; p.val = 196;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 74; p.county = 19; p.val = 2471;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 74; p.county = 19; p.val = 917;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 74; p.county = 19; p.val = 2558;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 75; p.county = 19; p.val = 1044;
+p.x = 74; p.y = 74; p.county = 19; p.val = 5946;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 76; p.y = 75; p.county = 19; p.val = 2010;
@@ -1523,76 +1061,34 @@ if (1==1){ Point p;
 p.x = 70; p.y = 82; p.county = 19; p.val = 534;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 79; p.county = 19; p.val = 893;
+p.x = 72; p.y = 79; p.county = 19; p.val = 1616;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 72; p.y = 80; p.county = 19; p.val = 448;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 80; p.county = 19; p.val = 997;
+p.x = 71; p.y = 80; p.county = 19; p.val = 3563;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 80; p.county = 19; p.val = 1141;
+p.x = 70; p.y = 79; p.county = 19; p.val = 2589;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 79; p.county = 19; p.val = 687;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 79; p.county = 19; p.val = 921;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 79; p.county = 19; p.val = 698;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 79; p.county = 19; p.val = 1017;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 79; p.county = 19; p.val = 1021;
+p.x = 71; p.y = 79; p.county = 19; p.val = 5456;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 67; p.y = 82; p.county = 19; p.val = 1034;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 75; p.county = 19; p.val = 1525;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 75; p.county = 19; p.val = 767;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 74; p.county = 19; p.val = 1635;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 75; p.y = 75; p.county = 19; p.val = 812;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 80; p.county = 19; p.val = 581;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 80; p.county = 19; p.val = 844;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 70; p.y = 80; p.county = 19; p.val = 973;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 966;
+p.x = 70; p.y = 78; p.county = 19; p.val = 5777;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 69; p.y = 80; p.county = 19; p.val = 1948;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 79; p.county = 19; p.val = 965;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 72; p.y = 79; p.county = 19; p.val = 723;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 71; p.y = 79; p.county = 19; p.val = 834;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 79; p.county = 19; p.val = 987;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 79; p.county = 19; p.val = 915;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 67; p.y = 79; p.county = 19; p.val = 754;
@@ -1628,37 +1124,16 @@ if (1==1){ Point p;
 p.x = 65; p.y = 77; p.county = 19; p.val = 1089;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 661;
+p.x = 70; p.y = 77; p.county = 19; p.val = 4720;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 753;
+p.x = 69; p.y = 77; p.county = 19; p.val = 5152;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 636;
+p.x = 69; p.y = 78; p.county = 19; p.val = 1604;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 609;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 525;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 78; p.county = 19; p.val = 620;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 78; p.county = 19; p.val = 984;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 877;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 169;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 483;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 76; p.county = 19; p.val = 540;
+p.x = 69; p.y = 76; p.county = 19; p.val = 2996;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 68; p.y = 78; p.county = 19; p.val = 2121;
@@ -1670,163 +1145,31 @@ if (1==1){ Point p;
 p.x = 68; p.y = 77; p.county = 19; p.val = 1574;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 285;
+p.x = 70; p.y = 76; p.county = 19; p.val = 1452;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 811;
+p.x = 68; p.y = 76; p.county = 19; p.val = 2588;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 744;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 1088;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 826;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 78; p.county = 19; p.val = 387;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 1032;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 664;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 690;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 76; p.county = 19; p.val = 694;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 77; p.county = 19; p.val = 894;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 76; p.county = 19; p.val = 417;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 549;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 542;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 698;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 77; p.county = 19; p.val = 760;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 76; p.county = 19; p.val = 563;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 76; p.county = 19; p.val = 713;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 76; p.county = 19; p.val = 369;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 76; p.county = 19; p.val = 1185;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 76; p.county = 19; p.val = 1034;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 75; p.county = 19; p.val = 966;
+p.x = 68; p.y = 75; p.county = 19; p.val = 1625;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 67; p.y = 76; p.county = 19; p.val = 1660;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 76; p.county = 19; p.val = 381;
+p.x = 70; p.y = 75; p.county = 19; p.val = 3654;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 76; p.county = 19; p.val = 174;
+p.x = 69; p.y = 75; p.county = 19; p.val = 2234;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 76; p.county = 19; p.val = 763;
+p.x = 68; p.y = 74; p.county = 19; p.val = 2352;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 681;
+p.x = 69; p.y = 74; p.county = 19; p.val = 2060;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 76; p.county = 19; p.val = 584;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 469;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 19; p.val = 737;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 19; p.val = 561;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 19; p.val = 543;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 19; p.val = 313;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 406;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 241;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 75; p.county = 19; p.val = 474;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 75; p.county = 19; p.val = 579;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 74; p.county = 19; p.val = 983;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 74; p.county = 19; p.val = 1090;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 74; p.county = 19; p.val = 334;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 74; p.county = 19; p.val = 433;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 73; p.county = 19; p.val = 293;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 73; p.county = 19; p.val = 967;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 572;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 460;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 74; p.county = 19; p.val = 476;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 323;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 70; p.y = 75; p.county = 19; p.val = 502;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 75; p.county = 19; p.val = 753;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 75; p.county = 19; p.val = 659;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 74; p.county = 19; p.val = 203;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 73; p.county = 19; p.val = 372;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 69; p.y = 75; p.county = 19; p.val = 428;
+p.x = 68; p.y = 73; p.county = 19; p.val = 2689;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 5; p.county = 21; p.val = 468;
@@ -1850,10 +1193,10 @@ if (1==1){ Point p;
 p.x = 36; p.y = 4; p.county = 21; p.val = 772;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 3; p.county = 21; p.val = 515;
+p.x = 35; p.y = 3; p.county = 21; p.val = 1614;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 4; p.county = 21; p.val = 603;
+p.x = 34; p.y = 4; p.county = 21; p.val = 1297;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 31; p.y = 2; p.county = 21; p.val = 728;
@@ -1862,13 +1205,7 @@ if (1==1){ Point p;
 p.x = 35; p.y = 4; p.county = 21; p.val = 550;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 3; p.county = 21; p.val = 254;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 3; p.county = 21; p.val = 530;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 34; p.y = 3; p.county = 21; p.val = 674;
+p.x = 34; p.y = 3; p.county = 21; p.val = 1055;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 34; p.y = 1; p.county = 21; p.val = 1160;
@@ -1880,9 +1217,6 @@ if (1==1){ Point p;
 p.x = 37; p.y = 1; p.county = 21; p.val = 623;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 3; p.county = 21; p.val = 315;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 37; p.y = 9; p.county = 21; p.val = 221;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -1892,16 +1226,10 @@ if (1==1){ Point p;
 p.x = 31; p.y = 0; p.county = 21; p.val = 649;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 4; p.county = 21; p.val = 694;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 38; p.y = 3; p.county = 21; p.val = 467;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 1; p.county = 21; p.val = 524;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 34; p.y = 3; p.county = 21; p.val = 381;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 6; p.county = 21; p.val = 527;
@@ -1916,7 +1244,7 @@ if (1==1){ Point p;
 p.x = 33; p.y = 0; p.county = 21; p.val = 561;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 15; p.county = 23; p.val = 457;
+p.x = 43; p.y = 15; p.county = 23; p.val = 889;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 41; p.y = 14; p.county = 23; p.val = 366;
@@ -1962,9 +1290,6 @@ p.x = 50; p.y = 20; p.county = 23; p.val = 521;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 44; p.y = 14; p.county = 23; p.val = 690;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 43; p.y = 15; p.county = 23; p.val = 432;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 16; p.county = 23; p.val = 573;
@@ -2084,10 +1409,7 @@ if (1==1){ Point p;
 p.x = 66; p.y = 48; p.county = 27; p.val = 323;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 49; p.county = 27; p.val = 549;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 49; p.county = 27; p.val = 677;
+p.x = 65; p.y = 49; p.county = 27; p.val = 1226;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 64; p.y = 48; p.county = 27; p.val = 701;
@@ -2198,7 +1520,7 @@ if (1==1){ Point p;
 p.x = 55; p.y = 75; p.county = 29; p.val = 542;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 73; p.county = 29; p.val = 468;
+p.x = 56; p.y = 73; p.county = 29; p.val = 1231;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 75; p.county = 29; p.val = 574;
@@ -2214,9 +1536,6 @@ p.x = 55; p.y = 71; p.county = 29; p.val = 202;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 63; p.y = 88; p.county = 29; p.val = 794;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 56; p.y = 73; p.county = 29; p.val = 763;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 57; p.y = 74; p.county = 29; p.val = 467;
@@ -2237,16 +1556,13 @@ if (1==1){ Point p;
 p.x = 67; p.y = 28; p.county = 31; p.val = 416;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 28; p.county = 31; p.val = 187;
+p.x = 72; p.y = 28; p.county = 31; p.val = 927;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 72; p.y = 29; p.county = 31; p.val = 649;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 29; p.county = 31; p.val = 608;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 29; p.county = 31; p.val = 735;
+p.x = 73; p.y = 29; p.county = 31; p.val = 1343;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 72; p.y = 25; p.county = 31; p.val = 832;
@@ -2255,7 +1571,7 @@ if (1==1){ Point p;
 p.x = 69; p.y = 27; p.county = 31; p.val = 417;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 26; p.county = 31; p.val = 1262;
+p.x = 68; p.y = 26; p.county = 31; p.val = 2079;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 68; p.y = 27; p.county = 31; p.val = 605;
@@ -2306,16 +1622,10 @@ if (1==1){ Point p;
 p.x = 73; p.y = 27; p.county = 31; p.val = 1272;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 28; p.county = 31; p.val = 740;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 69; p.y = 25; p.county = 31; p.val = 925;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 67; p.y = 26; p.county = 31; p.val = 1159;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 26; p.county = 31; p.val = 817;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 84; p.y = 24; p.county = 33; p.val = 987;
@@ -2402,25 +1712,25 @@ if (1==1){ Point p;
 p.x = 60; p.y = 67; p.county = 35; p.val = 576;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 70; p.county = 35; p.val = 778;
+p.x = 65; p.y = 70; p.county = 35; p.val = 3971;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 71; p.county = 35; p.val = 746;
+p.x = 65; p.y = 71; p.county = 35; p.val = 2904;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 65; p.y = 72; p.county = 35; p.val = 1027;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 562;
+p.x = 66; p.y = 72; p.county = 35; p.val = 3866;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 70; p.county = 35; p.val = 614;
+p.x = 66; p.y = 70; p.county = 35; p.val = 3010;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 58; p.y = 64; p.county = 35; p.val = 407;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 341;
+p.x = 66; p.y = 71; p.county = 35; p.val = 5960;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 62; p.y = 68; p.county = 35; p.val = 429;
@@ -2429,13 +1739,7 @@ if (1==1){ Point p;
 p.x = 62; p.y = 72; p.county = 35; p.val = 518;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 70; p.county = 35; p.val = 703;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 807;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 73; p.county = 35; p.val = 1048;
+p.x = 67; p.y = 73; p.county = 35; p.val = 4689;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 63; p.y = 70; p.county = 35; p.val = 597;
@@ -2447,178 +1751,34 @@ if (1==1){ Point p;
 p.x = 65; p.y = 74; p.county = 35; p.val = 214;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 70; p.county = 35; p.val = 558;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 491;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 72; p.county = 35; p.val = 544;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 73; p.county = 35; p.val = 658;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 544;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 264;
+p.x = 67; p.y = 72; p.county = 35; p.val = 4770;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 64; p.y = 73; p.county = 35; p.val = 880;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 305;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 71; p.county = 35; p.val = 377;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 65; p.y = 73; p.county = 35; p.val = 736;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 615;
+p.x = 64; p.y = 71; p.county = 35; p.val = 1333;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 71; p.county = 35; p.val = 774;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 72; p.county = 35; p.val = 1380;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 64; p.y = 70; p.county = 35; p.val = 571;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 811;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 728;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 71; p.county = 35; p.val = 446;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 377;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 422;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 70; p.county = 35; p.val = 905;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 622;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 74; p.county = 35; p.val = 594;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 74; p.county = 35; p.val = 775;
+p.x = 64; p.y = 70; p.county = 35; p.val = 931;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 57; p.y = 63; p.county = 35; p.val = 265;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 70; p.county = 35; p.val = 260;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 370;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 73; p.county = 35; p.val = 1228;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 543;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 74; p.county = 35; p.val = 1344;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 73; p.county = 35; p.val = 599;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 72; p.county = 35; p.val = 357;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 583;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 70; p.county = 35; p.val = 1058;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 70; p.county = 35; p.val = 763;
+p.x = 67; p.y = 74; p.county = 35; p.val = 2440;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 64; p.y = 69; p.county = 35; p.val = 1190;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 71; p.county = 35; p.val = 1005;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 74; p.county = 35; p.val = 1096;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 73; p.county = 35; p.val = 708;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 69; p.county = 35; p.val = 998;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 72; p.county = 35; p.val = 882;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 204;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 483;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 70; p.county = 35; p.val = 669;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 69; p.county = 35; p.val = 645;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 71; p.county = 35; p.val = 601;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 73; p.county = 35; p.val = 970;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 71; p.county = 35; p.val = 397;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 66; p.y = 70; p.county = 35; p.val = 673;
+p.x = 65; p.y = 69; p.county = 35; p.val = 1643;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 63; p.y = 68; p.county = 35; p.val = 380;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 72; p.county = 35; p.val = 729;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 71; p.county = 35; p.val = 417;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 72; p.county = 35; p.val = 560;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 65; p.y = 71; p.county = 35; p.val = 317;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 73; p.county = 35; p.val = 735;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 64; p.y = 70; p.county = 35; p.val = 360;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 64; p.y = 71; p.county = 35; p.val = 559;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 67; p.y = 72; p.county = 35; p.val = 675;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 68; p.y = 73; p.county = 35; p.val = 465;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 29; p.y = 44; p.county = 37; p.val = 520;
@@ -2744,13 +1904,10 @@ if (1==1){ Point p;
 p.x = 76; p.y = 36; p.county = 41; p.val = 623;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 32; p.county = 41; p.val = 330;
+p.x = 75; p.y = 32; p.county = 41; p.val = 2127;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 32; p.county = 41; p.val = 1083;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 75; p.y = 33; p.county = 41; p.val = 1417;
+p.x = 75; p.y = 33; p.county = 41; p.val = 2582;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 76; p.y = 39; p.county = 41; p.val = 453;
@@ -2759,13 +1916,10 @@ if (1==1){ Point p;
 p.x = 75; p.y = 38; p.county = 41; p.val = 436;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 33; p.county = 41; p.val = 1037;
+p.x = 73; p.y = 33; p.county = 41; p.val = 2148;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 32; p.county = 41; p.val = 1036;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 73; p.y = 33; p.county = 41; p.val = 1111;
+p.x = 74; p.y = 32; p.county = 41; p.val = 2425;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 72; p.y = 33; p.county = 41; p.val = 1414;
@@ -2783,40 +1937,16 @@ if (1==1){ Point p;
 p.x = 73; p.y = 36; p.county = 41; p.val = 914;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 31; p.county = 41; p.val = 623;
+p.x = 75; p.y = 31; p.county = 41; p.val = 2271;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 76; p.y = 32; p.county = 41; p.val = 926;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 32; p.county = 41; p.val = 519;
+p.x = 74; p.y = 31; p.county = 41; p.val = 1487;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 32; p.county = 41; p.val = 195;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 31; p.county = 41; p.val = 614;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 75; p.y = 31; p.county = 41; p.val = 289;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 32; p.county = 41; p.val = 472;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 32; p.county = 41; p.val = 440;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 32; p.county = 41; p.val = 477;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 75; p.y = 31; p.county = 41; p.val = 738;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 33; p.county = 41; p.val = 1167;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 74; p.y = 33; p.county = 41; p.val = 1012;
+p.x = 74; p.y = 33; p.county = 41; p.val = 2179;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 77; p.y = 39; p.county = 41; p.val = 301;
@@ -2828,10 +1958,7 @@ if (1==1){ Point p;
 p.x = 79; p.y = 41; p.county = 41; p.val = 409;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 76; p.y = 43; p.county = 41; p.val = 692;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 76; p.y = 43; p.county = 41; p.val = 615;
+p.x = 76; p.y = 43; p.county = 41; p.val = 1307;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 78; p.y = 43; p.county = 41; p.val = 181;
@@ -2885,9 +2012,6 @@ if (1==1){ Point p;
 p.x = 75; p.y = 41; p.county = 41; p.val = 475;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 33; p.county = 41; p.val = 1165;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 75; p.y = 34; p.county = 41; p.val = 945;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -2903,19 +2027,10 @@ if (1==1){ Point p;
 p.x = 73; p.y = 31; p.county = 41; p.val = 1461;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 31; p.county = 41; p.val = 873;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 72; p.y = 34; p.county = 41; p.val = 620;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 31; p.county = 41; p.val = 621;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 79; p.y = 56; p.county = 43; p.val = 875;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 79; p.y = 56; p.county = 43; p.val = 522;
+p.x = 79; p.y = 56; p.county = 43; p.val = 1397;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 81; p.y = 57; p.county = 43; p.val = 491;
@@ -2930,13 +2045,10 @@ if (1==1){ Point p;
 p.x = 84; p.y = 52; p.county = 43; p.val = 526;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 85; p.y = 59; p.county = 43; p.val = 473;
+p.x = 85; p.y = 59; p.county = 43; p.val = 986;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 85; p.y = 58; p.county = 43; p.val = 513;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 85; p.y = 58; p.county = 43; p.val = 279;
+p.x = 85; p.y = 58; p.county = 43; p.val = 1410;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 89; p.y = 55; p.county = 43; p.val = 1793;
@@ -2960,19 +2072,13 @@ if (1==1){ Point p;
 p.x = 86; p.y = 49; p.county = 43; p.val = 350;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 90; p.y = 52; p.county = 43; p.val = 2039;
+p.x = 90; p.y = 52; p.county = 43; p.val = 3991;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 90; p.y = 53; p.county = 43; p.val = 1288;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 85; p.y = 59; p.county = 43; p.val = 513;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 85; p.y = 60; p.county = 43; p.val = 865;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 85; p.y = 58; p.county = 43; p.val = 618;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 87; p.y = 52; p.county = 43; p.val = 305;
@@ -3014,91 +2120,52 @@ if (1==1){ Point p;
 p.x = 89; p.y = 57; p.county = 43; p.val = 487;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 10; p.county = 45; p.val = 1058;
+p.x = 19; p.y = 10; p.county = 45; p.val = 5815;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 9; p.county = 45; p.val = 1480;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 10; p.county = 45; p.val = 1240;
+p.x = 19; p.y = 9; p.county = 45; p.val = 4051;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 18; p.y = 13; p.county = 45; p.val = 730;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 12; p.county = 45; p.val = 1060;
+p.x = 20; p.y = 12; p.county = 45; p.val = 3116;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 10; p.county = 45; p.val = 1034;
+p.x = 21; p.y = 10; p.county = 45; p.val = 5011;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 18; p.y = 15; p.county = 45; p.val = 1282;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 10; p.county = 45; p.val = 1465;
+p.x = 18; p.y = 10; p.county = 45; p.val = 3288;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 10; p.county = 45; p.val = 215;
+p.x = 18; p.y = 11; p.county = 45; p.val = 2943;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 10; p.county = 45; p.val = 921;
+p.x = 19; p.y = 11; p.county = 45; p.val = 5924;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 11; p.county = 45; p.val = 1239;
+p.x = 18; p.y = 9; p.county = 45; p.val = 4756;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 11; p.county = 45; p.val = 1325;
+p.x = 20; p.y = 11; p.county = 45; p.val = 3261;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 9; p.county = 45; p.val = 1097;
+p.x = 19; p.y = 12; p.county = 45; p.val = 3142;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 11; p.county = 45; p.val = 724;
+p.x = 20; p.y = 13; p.county = 45; p.val = 2508;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 11; p.county = 45; p.val = 1426;
+p.x = 22; p.y = 13; p.county = 45; p.val = 5119;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 11; p.county = 45; p.val = 1835;
+p.x = 21; p.y = 9; p.county = 45; p.val = 5286;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 11; p.county = 45; p.val = 1073;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 10; p.county = 45; p.val = 434;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 11; p.county = 45; p.val = 1018;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 10; p.county = 45; p.val = 886;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 11; p.county = 45; p.val = 968;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 12; p.county = 45; p.val = 1077;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 12; p.county = 45; p.val = 792;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 13; p.county = 45; p.val = 1209;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 11; p.county = 45; p.val = 816;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 13; p.county = 45; p.val = 1667;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 12; p.county = 45; p.val = 1244;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 9; p.county = 45; p.val = 1219;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 10; p.county = 45; p.val = 832;
+p.x = 20; p.y = 10; p.county = 45; p.val = 3205;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 19; p.y = 7; p.county = 45; p.val = 821;
@@ -3107,85 +2174,34 @@ if (1==1){ Point p;
 p.x = 20; p.y = 7; p.county = 45; p.val = 1477;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 11; p.county = 45; p.val = 1132;
+p.x = 21; p.y = 11; p.county = 45; p.val = 2790;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 9; p.county = 45; p.val = 1223;
+p.x = 20; p.y = 9; p.county = 45; p.val = 6589;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 10; p.county = 45; p.val = 670;
+p.x = 18; p.y = 12; p.county = 45; p.val = 1747;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 12; p.county = 45; p.val = 636;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 10; p.county = 45; p.val = 1464;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 10; p.county = 45; p.val = 496;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 11; p.county = 45; p.val = 1656;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 12; p.county = 45; p.val = 812;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 12; p.county = 45; p.val = 443;
+p.x = 22; p.y = 11; p.county = 45; p.val = 4521;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 19; p.y = 14; p.county = 45; p.val = 509;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 13; p.county = 45; p.val = 1299;
+p.x = 19; p.y = 8; p.county = 45; p.val = 2272;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 11; p.county = 45; p.val = 1815;
+p.x = 20; p.y = 8; p.county = 45; p.val = 3128;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 11; p.county = 45; p.val = 820;
+p.x = 21; p.y = 13; p.county = 45; p.val = 2689;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 9; p.county = 45; p.val = 947;
+p.x = 21; p.y = 12; p.county = 45; p.val = 5754;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 8; p.county = 45; p.val = 1396;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 8; p.county = 45; p.val = 1232;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 12; p.county = 45; p.val = 830;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 9; p.county = 45; p.val = 646;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 13; p.county = 45; p.val = 1645;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 10; p.county = 45; p.val = 1324;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 12; p.county = 45; p.val = 1432;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 9; p.county = 45; p.val = 937;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 12; p.county = 45; p.val = 1980;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 8; p.county = 45; p.val = 692;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 8; p.county = 45; p.val = 1204;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 9; p.county = 45; p.val = 1714;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 9; p.county = 45; p.val = 1267;
+p.x = 22; p.y = 9; p.county = 45; p.val = 4562;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 17; p.y = 7; p.county = 45; p.val = 1212;
@@ -3194,31 +2210,19 @@ if (1==1){ Point p;
 p.x = 23; p.y = 11; p.county = 45; p.val = 1690;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 11; p.county = 45; p.val = 618;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 7; p.county = 45; p.val = 975;
+p.x = 21; p.y = 7; p.county = 45; p.val = 3177;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 15; p.y = 2; p.county = 45; p.val = 1027;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 7; p.county = 45; p.val = 1312;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 10; p.county = 45; p.val = 1189;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 10; p.county = 45; p.val = 703;
+p.x = 22; p.y = 10; p.county = 45; p.val = 2240;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 20; p.y = 20; p.county = 45; p.val = 1168;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 21; p.y = 18; p.county = 45; p.val = 1080;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 9; p.county = 45; p.val = 1581;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 23; p.y = 15; p.county = 45; p.val = 1842;
@@ -3230,40 +2234,22 @@ if (1==1){ Point p;
 p.x = 18; p.y = 8; p.county = 45; p.val = 1635;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 9; p.county = 45; p.val = 1108;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 22; p.y = 1; p.county = 45; p.val = 1219;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 20; p.y = 5; p.county = 45; p.val = 1247;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 8; p.county = 45; p.val = 1016;
+p.x = 22; p.y = 8; p.county = 45; p.val = 2542;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 18; p.y = 3; p.county = 45; p.val = 1058;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 12; p.county = 45; p.val = 1275;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 8; p.county = 45; p.val = 876;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 12; p.county = 45; p.val = 1067;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 10; p.county = 45; p.val = 813;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 15; p.county = 45; p.val = 2057;
+p.x = 21; p.y = 15; p.county = 45; p.val = 3983;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 22; p.y = 17; p.county = 45; p.val = 632;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 9; p.county = 45; p.val = 1432;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 22; p.y = 16; p.county = 45; p.val = 1615;
@@ -3272,43 +2258,22 @@ if (1==1){ Point p;
 p.x = 20; p.y = 16; p.county = 45; p.val = 1073;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 12; p.county = 45; p.val = 1579;
+p.x = 22; p.y = 12; p.county = 45; p.val = 4964;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 10; p.county = 45; p.val = 1278;
+p.x = 19; p.y = 13; p.county = 45; p.val = 1410;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 11; p.county = 45; p.val = 1040;
+p.x = 22; p.y = 14; p.county = 45; p.val = 2542;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 13; p.county = 45; p.val = 692;
+p.x = 21; p.y = 14; p.county = 45; p.val = 1873;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 9; p.county = 45; p.val = 1463;
+p.x = 22; p.y = 15; p.county = 45; p.val = 2576;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 9; p.county = 45; p.val = 1334;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 14; p.county = 45; p.val = 1336;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 14; p.county = 45; p.val = 904;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 15; p.county = 45; p.val = 1123;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 12; p.county = 45; p.val = 1111;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 8; p.county = 45; p.val = 1118;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 8; p.county = 45; p.val = 1526;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 9; p.county = 45; p.val = 1466;
+p.x = 21; p.y = 8; p.county = 45; p.val = 2201;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 17; p.y = 8; p.county = 45; p.val = 1147;
@@ -3320,22 +2285,10 @@ if (1==1){ Point p;
 p.x = 20; p.y = 1; p.county = 45; p.val = 1494;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 11; p.county = 45; p.val = 1050;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 12; p.county = 45; p.val = 1056;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 10; p.county = 45; p.val = 1537;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 17; p.y = 9; p.county = 45; p.val = 841;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 20; p.y = 6; p.county = 45; p.val = 1904;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 14; p.county = 45; p.val = 1206;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 22; p.y = 4; p.county = 45; p.val = 1407;
@@ -3344,88 +2297,28 @@ if (1==1){ Point p;
 p.x = 23; p.y = 14; p.county = 45; p.val = 1499;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 15; p.county = 45; p.val = 958;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 16; p.y = 4; p.county = 45; p.val = 1449;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 8; p.county = 45; p.val = 1083;
+p.x = 22; p.y = 7; p.county = 45; p.val = 3763;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 15; p.county = 45; p.val = 1453;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 10; p.county = 45; p.val = 1095;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 9; p.county = 45; p.val = 1440;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 7; p.county = 45; p.val = 981;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 6; p.county = 45; p.val = 1370;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 9; p.county = 45; p.val = 1091;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 11; p.county = 45; p.val = 884;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 20; p.y = 9; p.county = 45; p.val = 951;
+p.x = 18; p.y = 6; p.county = 45; p.val = 2217;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 17; p.y = 10; p.county = 45; p.val = 829;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 10; p.county = 45; p.val = 905;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 19; p.y = 15; p.county = 45; p.val = 1279;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 19; p.y = 13; p.county = 45; p.val = 718;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 18; p.y = 16; p.county = 45; p.val = 725;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 13; p.county = 45; p.val = 1060;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 22; p.y = 6; p.county = 45; p.val = 1453;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 7; p.county = 45; p.val = 1097;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 7; p.county = 45; p.val = 1003;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 9; p.county = 45; p.val = 1569;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 13; p.county = 45; p.val = 950;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 13; p.county = 45; p.val = 1044;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 13; p.county = 45; p.val = 1442;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 12; p.county = 45; p.val = 853;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 12; p.county = 45; p.val = 1383;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 7; p.county = 45; p.val = 890;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 15; p.county = 45; p.val = 968;
+p.x = 23; p.y = 12; p.county = 45; p.val = 2691;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 20; p.y = 15; p.county = 45; p.val = 1905;
@@ -3437,22 +2330,7 @@ if (1==1){ Point p;
 p.x = 20; p.y = 14; p.county = 45; p.val = 1426;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 9; p.county = 45; p.val = 1279;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 12; p.county = 45; p.val = 1308;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 21; p.y = 14; p.county = 45; p.val = 969;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 18; p.y = 7; p.county = 45; p.val = 1440;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 18; p.y = 6; p.county = 45; p.val = 847;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 7; p.county = 45; p.val = 682;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 21; p.y = 16; p.county = 45; p.val = 1280;
@@ -3461,58 +2339,40 @@ if (1==1){ Point p;
 p.x = 19; p.y = 18; p.county = 45; p.val = 1085;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 12; p.county = 45; p.val = 1476;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 23; p.y = 13; p.county = 45; p.val = 2672;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 32; p.county = 47; p.val = 297;
+p.x = 24; p.y = 32; p.county = 47; p.val = 1597;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 32; p.county = 47; p.val = 426;
+p.x = 24; p.y = 31; p.county = 47; p.val = 2564;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 31; p.county = 47; p.val = 619;
+p.x = 24; p.y = 33; p.county = 47; p.val = 742;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 33; p.county = 47; p.val = 358;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 25; p.y = 32; p.county = 47; p.val = 482;
+p.x = 25; p.y = 32; p.county = 47; p.val = 961;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 21; p.y = 27; p.county = 47; p.val = 186;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 31; p.county = 47; p.val = 585;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 24; p.y = 32; p.county = 47; p.val = 230;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 22; p.y = 35; p.county = 47; p.val = 592;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 32; p.county = 47; p.val = 434;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 32; p.county = 47; p.val = 331;
+p.x = 23; p.y = 32; p.county = 47; p.val = 1223;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 22; p.y = 32; p.county = 47; p.val = 443;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 31; p.county = 47; p.val = 392;
+p.x = 23; p.y = 31; p.county = 47; p.val = 1524;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 25; p.y = 29; p.county = 47; p.val = 707;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 24; p.y = 34; p.county = 47; p.val = 663;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 31; p.county = 47; p.val = 517;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 27; p.y = 32; p.county = 47; p.val = 483;
@@ -3530,7 +2390,7 @@ if (1==1){ Point p;
 p.x = 26; p.y = 35; p.county = 47; p.val = 351;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 26; p.county = 47; p.val = 300;
+p.x = 22; p.y = 26; p.county = 47; p.val = 740;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 22; p.y = 27; p.county = 47; p.val = 117;
@@ -3548,67 +2408,31 @@ if (1==1){ Point p;
 p.x = 23; p.y = 29; p.county = 47; p.val = 538;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 25; p.y = 31; p.county = 47; p.val = 330;
+p.x = 25; p.y = 31; p.county = 47; p.val = 917;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 30; p.county = 47; p.val = 499;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 25; p.y = 32; p.county = 47; p.val = 479;
+p.x = 23; p.y = 30; p.county = 47; p.val = 1082;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 24; p.y = 30; p.county = 47; p.val = 617;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 25; p.y = 31; p.county = 47; p.val = 587;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 32; p.county = 47; p.val = 426;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 26; p.y = 30; p.county = 47; p.val = 598;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 24; p.y = 31; p.county = 47; p.val = 416;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 28; p.y = 31; p.county = 47; p.val = 751;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 31; p.county = 47; p.val = 490;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 32; p.county = 47; p.val = 466;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 23; p.y = 30; p.county = 47; p.val = 583;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 22; p.y = 26; p.county = 47; p.val = 440;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 25; p.y = 33; p.county = 47; p.val = 412;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 31; p.county = 47; p.val = 615;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 24; p.y = 32; p.county = 47; p.val = 210;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 22; p.y = 31; p.county = 47; p.val = 843;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 24; p.y = 33; p.county = 47; p.val = 384;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 28; p.y = 33; p.county = 47; p.val = 485;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 26; p.y = 31; p.county = 47; p.val = 446;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 24; p.y = 31; p.county = 47; p.val = 454;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 23; p.y = 33; p.county = 47; p.val = 749;
@@ -3677,7 +2501,7 @@ if (1==1){ Point p;
 p.x = 92; p.y = 38; p.county = 51; p.val = 350;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 97; p.y = 45; p.county = 51; p.val = 67;
+p.x = 97; p.y = 45; p.county = 51; p.val = 1416;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 87; p.y = 45; p.county = 51; p.val = 789;
@@ -3698,10 +2522,10 @@ if (1==1){ Point p;
 p.x = 90; p.y = 42; p.county = 51; p.val = 737;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 89; p.y = 44; p.county = 51; p.val = 1481;
+p.x = 89; p.y = 44; p.county = 51; p.val = 2080;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 93; p.y = 49; p.county = 51; p.val = 898;
+p.x = 93; p.y = 49; p.county = 51; p.val = 3220;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 91; p.y = 41; p.county = 51; p.val = 809;
@@ -3746,16 +2570,13 @@ if (1==1){ Point p;
 p.x = 100; p.y = 42; p.county = 51; p.val = 898;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 99; p.y = 42; p.county = 51; p.val = 1521;
+p.x = 99; p.y = 42; p.county = 51; p.val = 2786;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 90; p.y = 51; p.county = 51; p.val = 1320;
+p.x = 90; p.y = 51; p.county = 51; p.val = 5160;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 90; p.y = 51; p.county = 51; p.val = 1949;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 93; p.y = 46; p.county = 51; p.val = 1341;
+p.x = 93; p.y = 46; p.county = 51; p.val = 2481;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 93; p.y = 45; p.county = 51; p.val = 983;
@@ -3767,13 +2588,10 @@ if (1==1){ Point p;
 p.x = 100; p.y = 43; p.county = 51; p.val = 1247;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 98; p.y = 45; p.county = 51; p.val = 860;
+p.x = 98; p.y = 45; p.county = 51; p.val = 2047;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 99; p.y = 42; p.county = 51; p.val = 1265;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 45; p.county = 51; p.val = 646;
+p.x = 91; p.y = 45; p.county = 51; p.val = 1354;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 92; p.y = 43; p.county = 51; p.val = 724;
@@ -3782,25 +2600,22 @@ if (1==1){ Point p;
 p.x = 88; p.y = 48; p.county = 51; p.val = 199;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 94; p.y = 48; p.county = 51; p.val = 430;
+p.x = 94; p.y = 48; p.county = 51; p.val = 1038;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 93; p.y = 48; p.county = 51; p.val = 492;
+p.x = 93; p.y = 48; p.county = 51; p.val = 1110;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 92; p.y = 50; p.county = 51; p.val = 1348;
+p.x = 92; p.y = 50; p.county = 51; p.val = 2691;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 95; p.y = 43; p.county = 51; p.val = 720;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 95; p.y = 46; p.county = 51; p.val = 1794;
+p.x = 95; p.y = 46; p.county = 51; p.val = 2271;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 96; p.y = 46; p.county = 51; p.val = 1143;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 97; p.y = 45; p.county = 51; p.val = 618;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 94; p.y = 36; p.county = 51; p.val = 1296;
@@ -3833,49 +2648,31 @@ if (1==1){ Point p;
 p.x = 92; p.y = 47; p.county = 51; p.val = 1637;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 94; p.y = 46; p.county = 51; p.val = 1350;
+p.x = 94; p.y = 46; p.county = 51; p.val = 2576;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 90; p.y = 49; p.county = 51; p.val = 1829;
+p.x = 90; p.y = 49; p.county = 51; p.val = 3021;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 93; p.y = 49; p.county = 51; p.val = 2322;
+p.x = 91; p.y = 52; p.county = 51; p.val = 2506;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 91; p.y = 52; p.county = 51; p.val = 1093;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 52; p.county = 51; p.val = 775;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 52; p.county = 51; p.val = 638;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 51; p.county = 51; p.val = 968;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 51; p.county = 51; p.val = 1110;
+p.x = 91; p.y = 51; p.county = 51; p.val = 2078;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 90; p.y = 46; p.county = 51; p.val = 309;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 91; p.y = 49; p.county = 51; p.val = 873;
+p.x = 91; p.y = 49; p.county = 51; p.val = 1710;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 92; p.y = 37; p.county = 51; p.val = 394;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 90; p.y = 49; p.county = 51; p.val = 1192;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 45; p.county = 51; p.val = 708;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 95; p.y = 48; p.county = 51; p.val = 870;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 94; p.y = 47; p.county = 51; p.val = 1011;
+p.x = 94; p.y = 47; p.county = 51; p.val = 1928;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 98; p.y = 42; p.county = 51; p.val = 924;
@@ -3884,13 +2681,7 @@ if (1==1){ Point p;
 p.x = 98; p.y = 43; p.county = 51; p.val = 1420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 90; p.y = 43; p.county = 51; p.val = 778;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 90; p.y = 43; p.county = 51; p.val = 636;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 98; p.y = 45; p.county = 51; p.val = 1187;
+p.x = 90; p.y = 43; p.county = 51; p.val = 1414;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 98; p.y = 44; p.county = 51; p.val = 1843;
@@ -3899,13 +2690,7 @@ if (1==1){ Point p;
 p.x = 95; p.y = 47; p.county = 51; p.val = 886;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 94; p.y = 47; p.county = 51; p.val = 917;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 95; p.y = 46; p.county = 51; p.val = 477;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 46; p.county = 51; p.val = 1806;
+p.x = 91; p.y = 46; p.county = 51; p.val = 2977;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 88; p.y = 47; p.county = 51; p.val = 251;
@@ -3923,16 +2708,10 @@ if (1==1){ Point p;
 p.x = 89; p.y = 43; p.county = 51; p.val = 578;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 89; p.y = 44; p.county = 51; p.val = 599;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 94; p.y = 41; p.county = 51; p.val = 497;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 90; p.y = 45; p.county = 51; p.val = 426;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 46; p.county = 51; p.val = 1171;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 92; p.y = 44; p.county = 51; p.val = 1149;
@@ -3941,22 +2720,16 @@ if (1==1){ Point p;
 p.x = 94; p.y = 49; p.county = 51; p.val = 668;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 93; p.y = 48; p.county = 51; p.val = 618;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 93; p.y = 41; p.county = 51; p.val = 699;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 92; p.y = 48; p.county = 51; p.val = 1349;
+p.x = 92; p.y = 48; p.county = 51; p.val = 3147;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 90; p.y = 30; p.county = 51; p.val = 201;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 91; p.y = 50; p.county = 51; p.val = 1257;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 92; p.y = 50; p.county = 51; p.val = 1343;
+p.x = 91; p.y = 50; p.county = 51; p.val = 4085;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 96; p.y = 38; p.county = 51; p.val = 536;
@@ -3986,40 +2759,13 @@ if (1==1){ Point p;
 p.x = 91; p.y = 44; p.county = 51; p.val = 1396;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 97; p.y = 45; p.county = 51; p.val = 731;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 90; p.y = 51; p.county = 51; p.val = 1891;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 99; p.y = 41; p.county = 51; p.val = 695;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 93; p.y = 46; p.county = 51; p.val = 1140;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 97; p.y = 42; p.county = 51; p.val = 1043;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 94; p.y = 46; p.county = 51; p.val = 1226;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 92; p.y = 49; p.county = 51; p.val = 603;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 49; p.county = 51; p.val = 837;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 90; p.y = 52; p.county = 51; p.val = 1952;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 50; p.county = 51; p.val = 1009;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 94; p.y = 48; p.county = 51; p.val = 608;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 91; p.y = 50; p.county = 51; p.val = 1819;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 89; p.y = 50; p.county = 51; p.val = 948;
@@ -4028,19 +2774,13 @@ if (1==1){ Point p;
 p.x = 90; p.y = 48; p.county = 51; p.val = 718;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 92; p.y = 48; p.county = 51; p.val = 1798;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 91; p.y = 48; p.county = 51; p.val = 1634;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 96; p.y = 44; p.county = 51; p.val = 1482;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 92; p.y = 51; p.county = 51; p.val = 1234;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 92; p.y = 51; p.county = 51; p.val = 646;
+p.x = 92; p.y = 51; p.county = 51; p.val = 1880;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 50; p.y = 84; p.county = 53; p.val = 281;
@@ -4103,10 +2843,7 @@ if (1==1){ Point p;
 p.x = 57; p.y = 31; p.county = 55; p.val = 799;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 30; p.county = 55; p.val = 176;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 57; p.y = 30; p.county = 55; p.val = 736;
+p.x = 57; p.y = 30; p.county = 55; p.val = 1424;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 29; p.county = 55; p.val = 492;
@@ -4118,22 +2855,13 @@ if (1==1){ Point p;
 p.x = 58; p.y = 32; p.county = 55; p.val = 802;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 30; p.county = 55; p.val = 262;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 53; p.y = 32; p.county = 55; p.val = 1000;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 53; p.y = 32; p.county = 55; p.val = 1029;
+p.x = 53; p.y = 32; p.county = 55; p.val = 2029;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 52; p.y = 32; p.county = 55; p.val = 750;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 57; p.y = 29; p.county = 55; p.val = 334;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 57; p.y = 30; p.county = 55; p.val = 250;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 55; p.y = 34; p.county = 55; p.val = 961;
@@ -4193,7 +2921,7 @@ if (1==1){ Point p;
 p.x = 56; p.y = 15; p.county = 57; p.val = 482;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 8; p.county = 57; p.val = 1594;
+p.x = 52; p.y = 8; p.county = 57; p.val = 3694;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 55; p.y = 14; p.county = 57; p.val = 471;
@@ -4217,7 +2945,7 @@ if (1==1){ Point p;
 p.x = 57; p.y = 21; p.county = 57; p.val = 835;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 14; p.county = 57; p.val = 402;
+p.x = 53; p.y = 14; p.county = 57; p.val = 1099;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 16; p.county = 57; p.val = 1101;
@@ -4229,7 +2957,7 @@ if (1==1){ Point p;
 p.x = 52; p.y = 15; p.county = 57; p.val = 724;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 15; p.county = 57; p.val = 719;
+p.x = 53; p.y = 15; p.county = 57; p.val = 1377;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 56; p.y = 14; p.county = 57; p.val = 980;
@@ -4268,10 +2996,7 @@ if (1==1){ Point p;
 p.x = 52; p.y = 11; p.county = 57; p.val = 555;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 6; p.county = 57; p.val = 1491;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 53; p.y = 15; p.county = 57; p.val = 658;
+p.x = 51; p.y = 6; p.county = 57; p.val = 3111;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 53; p.y = 7; p.county = 57; p.val = 1100;
@@ -4292,28 +3017,10 @@ if (1==1){ Point p;
 p.x = 52; p.y = 7; p.county = 57; p.val = 1378;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 8; p.county = 57; p.val = 2100;
+p.x = 27; p.y = 22; p.county = 59; p.val = 1233;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 14; p.county = 57; p.val = 697;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 22; p.county = 59; p.val = 320;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 22; p.county = 59; p.val = 220;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 22; p.county = 59; p.val = 309;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 22; p.county = 59; p.val = 384;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 26; p.y = 22; p.county = 59; p.val = 749;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 26; p.y = 22; p.county = 59; p.val = 593;
+p.x = 26; p.y = 22; p.county = 59; p.val = 1342;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 28; p.y = 23; p.county = 59; p.val = 518;
@@ -4481,13 +3188,13 @@ if (1==1){ Point p;
 p.x = 38; p.y = 41; p.county = 63; p.val = 1320;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 39; p.county = 63; p.val = 481;
+p.x = 47; p.y = 39; p.county = 63; p.val = 2564;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 38; p.county = 63; p.val = 1341;
+p.x = 43; p.y = 38; p.county = 63; p.val = 4486;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 40; p.county = 63; p.val = 815;
+p.x = 45; p.y = 40; p.county = 63; p.val = 1905;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 40; p.y = 37; p.county = 63; p.val = 1467;
@@ -4505,7 +3212,7 @@ if (1==1){ Point p;
 p.x = 48; p.y = 46; p.county = 63; p.val = 535;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 38; p.county = 63; p.val = 1100;
+p.x = 46; p.y = 38; p.county = 63; p.val = 4588;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 40; p.y = 40; p.county = 63; p.val = 1116;
@@ -4520,9 +3227,6 @@ if (1==1){ Point p;
 p.x = 47; p.y = 44; p.county = 63; p.val = 670;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 39; p.county = 63; p.val = 805;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 40; p.y = 43; p.county = 63; p.val = 976;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -4535,7 +3239,7 @@ if (1==1){ Point p;
 p.x = 45; p.y = 45; p.county = 63; p.val = 843;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 36; p.county = 63; p.val = 890;
+p.x = 45; p.y = 36; p.county = 63; p.val = 5725;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 44; p.y = 41; p.county = 63; p.val = 1038;
@@ -4544,19 +3248,13 @@ if (1==1){ Point p;
 p.x = 43; p.y = 41; p.county = 63; p.val = 1581;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 38; p.county = 63; p.val = 810;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 40; p.county = 63; p.val = 1090;
+p.x = 45; p.y = 38; p.county = 63; p.val = 1604;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 44; p.y = 43; p.county = 63; p.val = 497;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 38; p.county = 63; p.val = 1152;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 40; p.county = 63; p.val = 799;
+p.x = 48; p.y = 40; p.county = 63; p.val = 1601;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 45; p.county = 63; p.val = 652;
@@ -4565,13 +3263,10 @@ if (1==1){ Point p;
 p.x = 41; p.y = 33; p.county = 63; p.val = 1646;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 38; p.county = 63; p.val = 580;
+p.x = 47; p.y = 40; p.county = 63; p.val = 2048;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 40; p.county = 63; p.val = 1345;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 38; p.county = 63; p.val = 1526;
+p.x = 44; p.y = 38; p.county = 63; p.val = 3034;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 39; p.county = 63; p.val = 938;
@@ -4580,58 +3275,31 @@ if (1==1){ Point p;
 p.x = 47; p.y = 42; p.county = 63; p.val = 1459;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 42; p.county = 63; p.val = 907;
+p.x = 46; p.y = 42; p.county = 63; p.val = 1965;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 38; p.county = 63; p.val = 1010;
+p.x = 47; p.y = 38; p.county = 63; p.val = 2834;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 41; p.county = 63; p.val = 774;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 39; p.county = 63; p.val = 436;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 39; p.county = 63; p.val = 842;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 36; p.county = 63; p.val = 1386;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 36; p.county = 63; p.val = 1301;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 40; p.county = 63; p.val = 703;
+p.x = 46; p.y = 41; p.county = 63; p.val = 1402;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 40; p.y = 35; p.county = 63; p.val = 2017;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 40; p.county = 63; p.val = 1227;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 38; p.county = 63; p.val = 794;
+p.x = 44; p.y = 40; p.county = 63; p.val = 2193;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 37; p.county = 63; p.val = 1565;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 38; p.county = 63; p.val = 1427;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 44; p.y = 39; p.county = 63; p.val = 1586;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 43; p.y = 38; p.county = 63; p.val = 1055;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 40; p.county = 63; p.val = 400;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 44; p.county = 63; p.val = 729;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 41; p.county = 63; p.val = 628;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 45; p.y = 43; p.county = 63; p.val = 661;
@@ -4649,76 +3317,37 @@ if (1==1){ Point p;
 p.x = 40; p.y = 34; p.county = 63; p.val = 1024;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 40; p.county = 63; p.val = 966;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 42; p.county = 63; p.val = 1058;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 45; p.y = 41; p.county = 63; p.val = 897;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 42; p.county = 63; p.val = 744;
+p.x = 43; p.y = 42; p.county = 63; p.val = 1714;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 44; p.y = 42; p.county = 63; p.val = 1311;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 38; p.county = 63; p.val = 663;
+p.x = 46; p.y = 39; p.county = 63; p.val = 2244;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 38; p.county = 63; p.val = 1002;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 38; p.county = 63; p.val = 465;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 39; p.county = 63; p.val = 1204;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 37; p.county = 63; p.val = 1003;
+p.x = 46; p.y = 37; p.county = 63; p.val = 3444;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 42; p.y = 44; p.county = 63; p.val = 675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 38; p.county = 63; p.val = 339;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 35; p.county = 63; p.val = 1158;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 36; p.county = 63; p.val = 920;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 37; p.county = 63; p.val = 942;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 37; p.county = 63; p.val = 760;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 39; p.county = 63; p.val = 1040;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 38; p.county = 63; p.val = 754;
+p.x = 44; p.y = 35; p.county = 63; p.val = 4050;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 42; p.y = 39; p.county = 63; p.val = 800;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 36; p.county = 63; p.val = 1170;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 36; p.county = 63; p.val = 1228;
+p.x = 44; p.y = 36; p.county = 63; p.val = 2085;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 36; p.county = 63; p.val = 1443;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 38; p.county = 63; p.val = 1508;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 39; p.county = 63; p.val = 1581;
+p.x = 45; p.y = 39; p.county = 63; p.val = 4101;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 40; p.county = 63; p.val = 1682;
@@ -4727,31 +3356,16 @@ if (1==1){ Point p;
 p.x = 45; p.y = 37; p.county = 63; p.val = 1528;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 36; p.county = 63; p.val = 915;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 42; p.y = 35; p.county = 63; p.val = 1375;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 41; p.y = 35; p.county = 63; p.val = 1777;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 39; p.county = 63; p.val = 979;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 44; p.y = 37; p.county = 63; p.val = 808;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 41; p.y = 38; p.county = 63; p.val = 1644;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 39; p.county = 63; p.val = 1541;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 35; p.county = 63; p.val = 1257;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 43; p.y = 42; p.county = 63; p.val = 970;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 16; p.y = 38; p.county = 65; p.val = 207;
@@ -4883,22 +3497,10 @@ if (1==1){ Point p;
 p.x = 80; p.y = 17; p.county = 69; p.val = 580;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 29; p.county = 71; p.val = 201;
+p.x = 35; p.y = 29; p.county = 71; p.val = 1745;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 29; p.county = 71; p.val = 567;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 36; p.y = 29; p.county = 71; p.val = 398;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 29; p.county = 71; p.val = 264;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 29; p.county = 71; p.val = 263;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 36; p.y = 29; p.county = 71; p.val = 538;
+p.x = 36; p.y = 29; p.county = 71; p.val = 936;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 27; p.county = 71; p.val = 318;
@@ -4911,9 +3513,6 @@ p.x = 30; p.y = 31; p.county = 71; p.val = 397;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 32; p.county = 71; p.val = 521;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 29; p.county = 71; p.val = 450;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 33; p.y = 26; p.county = 71; p.val = 266;
@@ -4949,7 +3548,7 @@ if (1==1){ Point p;
 p.x = 40; p.y = 30; p.county = 71; p.val = 351;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 37; p.y = 31; p.county = 71; p.val = 454;
+p.x = 37; p.y = 31; p.county = 71; p.val = 894;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 33; p.y = 31; p.county = 71; p.val = 415;
@@ -4968,9 +3567,6 @@ p.x = 35; p.y = 22; p.county = 71; p.val = 445;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 24; p.county = 71; p.val = 434;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 37; p.y = 31; p.county = 71; p.val = 440;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 8; p.y = 15; p.county = 73; p.val = 136;
@@ -5036,7 +3632,7 @@ if (1==1){ Point p;
 p.x = 7; p.y = 19; p.county = 73; p.val = 714;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 16; p.county = 73; p.val = 329;
+p.x = 7; p.y = 16; p.county = 73; p.val = 3190;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 5; p.y = 12; p.county = 73; p.val = 1657;
@@ -5054,37 +3650,22 @@ if (1==1){ Point p;
 p.x = 5; p.y = 14; p.county = 73; p.val = 996;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 16; p.county = 73; p.val = 1520;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 7; p.y = 15; p.county = 73; p.val = 997;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 6; p.y = 17; p.county = 73; p.val = 749;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 16; p.county = 73; p.val = 1341;
+p.x = 51; p.y = 55; p.county = 75; p.val = 540;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 55; p.county = 75; p.val = 324;
+p.x = 52; p.y = 55; p.county = 75; p.val = 1277;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 55; p.county = 75; p.val = 216;
+p.x = 52; p.y = 54; p.county = 75; p.val = 1097;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 55; p.county = 75; p.val = 498;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 55; p.county = 75; p.val = 452;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 54; p.county = 75; p.val = 221;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 54; p.county = 75; p.val = 336;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 55; p.county = 75; p.val = 327;
+p.x = 51; p.y = 54; p.county = 75; p.val = 2711;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 53; p.y = 56; p.county = 75; p.val = 677;
@@ -5096,16 +3677,7 @@ if (1==1){ Point p;
 p.x = 50; p.y = 55; p.county = 75; p.val = 410;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 54; p.county = 75; p.val = 839;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 56; p.y = 61; p.county = 75; p.val = 433;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 54; p.county = 75; p.val = 442;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 54; p.county = 75; p.val = 324;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 51; p.y = 56; p.county = 75; p.val = 602;
@@ -5114,16 +3686,7 @@ if (1==1){ Point p;
 p.x = 51; p.y = 53; p.county = 75; p.val = 468;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 54; p.county = 75; p.val = 312;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 54; p.county = 75; p.val = 284;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 54; p.county = 75; p.val = 458;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 53; p.county = 75; p.val = 709;
+p.x = 52; p.y = 53; p.county = 75; p.val = 1407;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 57; p.county = 75; p.val = 348;
@@ -5156,9 +3719,6 @@ if (1==1){ Point p;
 p.x = 62; p.y = 61; p.county = 75; p.val = 895;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 53; p.county = 75; p.val = 698;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 64; p.y = 59; p.county = 75; p.val = 1055;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -5175,9 +3735,6 @@ p.x = 49; p.y = 53; p.county = 75; p.val = 1205;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 53; p.county = 75; p.val = 556;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 54; p.county = 75; p.val = 592;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 47; p.y = 50; p.county = 75; p.val = 750;
@@ -5231,22 +3788,16 @@ if (1==1){ Point p;
 p.x = 9; p.y = 16; p.county = 77; p.val = 376;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 10; p.y = 16; p.county = 77; p.val = 667;
+p.x = 10; p.y = 16; p.county = 77; p.val = 1088;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 10; p.y = 16; p.county = 77; p.val = 421;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 10; p.y = 15; p.county = 77; p.val = 489;
+p.x = 10; p.y = 15; p.county = 77; p.val = 1543;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 11; p.y = 16; p.county = 77; p.val = 1121;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 10; p.y = 15; p.county = 77; p.val = 476;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 11; p.y = 15; p.county = 77; p.val = 336;
+p.x = 11; p.y = 15; p.county = 77; p.val = 844;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 11; p.y = 14; p.county = 77; p.val = 592;
@@ -5259,9 +3810,6 @@ p.x = 11; p.y = 13; p.county = 77; p.val = 648;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 12; p.y = 10; p.county = 77; p.val = 541;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 10; p.y = 15; p.county = 77; p.val = 578;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 9; p.y = 12; p.county = 77; p.val = 827;
@@ -5291,7 +3839,7 @@ if (1==1){ Point p;
 p.x = 13; p.y = 7; p.county = 77; p.val = 874;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 12; p.y = 8; p.county = 77; p.val = 687;
+p.x = 12; p.y = 8; p.county = 77; p.val = 1336;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 13; p.y = 10; p.county = 77; p.val = 686;
@@ -5306,67 +3854,40 @@ if (1==1){ Point p;
 p.x = 12; p.y = 13; p.county = 77; p.val = 706;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 12; p.county = 77; p.val = 589;
+p.x = 13; p.y = 12; p.county = 77; p.val = 1126;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 13; p.y = 14; p.county = 77; p.val = 708;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 12; p.county = 77; p.val = 595;
+p.x = 14; p.y = 12; p.county = 77; p.val = 1765;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 11; p.county = 77; p.val = 505;
+p.x = 14; p.y = 11; p.county = 77; p.val = 1894;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 12; p.county = 77; p.val = 915;
+p.x = 15; p.y = 12; p.county = 77; p.val = 3528;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 10; p.county = 77; p.val = 560;
+p.x = 16; p.y = 10; p.county = 77; p.val = 1316;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 10; p.county = 77; p.val = 693;
+p.x = 14; p.y = 10; p.county = 77; p.val = 1340;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 11; p.county = 77; p.val = 724;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 16; p.y = 10; p.county = 77; p.val = 756;
+p.x = 16; p.y = 11; p.county = 77; p.val = 1331;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 13; p.y = 11; p.county = 77; p.val = 639;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 12; p.county = 77; p.val = 738;
+p.x = 16; p.y = 12; p.county = 77; p.val = 1202;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 12; p.county = 77; p.val = 838;
+p.x = 15; p.y = 11; p.county = 77; p.val = 1193;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 12; p.county = 77; p.val = 413;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 11; p.county = 77; p.val = 430;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 11; p.county = 77; p.val = 567;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 12; p.county = 77; p.val = 757;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 15; p.y = 11; p.county = 77; p.val = 582;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 15; p.y = 11; p.county = 77; p.val = 611;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 16; p.y = 11; p.county = 77; p.val = 607;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 15; p.y = 10; p.county = 77; p.val = 645;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 14; p.y = 10; p.county = 77; p.val = 647;
+p.x = 15; p.y = 10; p.county = 77; p.val = 1141;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 15; p.y = 8; p.county = 77; p.val = 568;
@@ -5378,211 +3899,88 @@ if (1==1){ Point p;
 p.x = 15; p.y = 6; p.county = 77; p.val = 627;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 15; p.county = 77; p.val = 508;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 12; p.y = 8; p.county = 77; p.val = 649;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 13; p.y = 12; p.county = 77; p.val = 537;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 14; p.y = 13; p.county = 77; p.val = 517;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 11; p.county = 77; p.val = 392;
+p.x = 48; p.y = 38; p.county = 79; p.val = 5874;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 12; p.county = 77; p.val = 827;
+p.x = 47; p.y = 37; p.county = 79; p.val = 4920;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 12; p.county = 77; p.val = 364;
+p.x = 48; p.y = 37; p.county = 79; p.val = 5544;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 12; p.county = 77; p.val = 576;
+p.x = 49; p.y = 37; p.county = 79; p.val = 5993;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 10; p.county = 77; p.val = 496;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 15; p.y = 12; p.county = 77; p.val = 472;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 626;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 319;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 898;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 755;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 819;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 789;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 35; p.county = 79; p.val = 584;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 900;
+p.x = 45; p.y = 35; p.county = 79; p.val = 3777;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 52; p.y = 37; p.county = 79; p.val = 716;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 36; p.county = 79; p.val = 1249;
+p.x = 50; p.y = 36; p.county = 79; p.val = 2505;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 482;
+p.x = 44; p.y = 34; p.county = 79; p.val = 1822;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 328;
+p.x = 44; p.y = 33; p.county = 79; p.val = 1827;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 906;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 490;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 302;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 34; p.county = 79; p.val = 858;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 430;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 491;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 33; p.county = 79; p.val = 1097;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 981;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 43; p.y = 34; p.county = 79; p.val = 867;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 33; p.county = 79; p.val = 730;
+p.x = 43; p.y = 34; p.county = 79; p.val = 3068;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 48; p.y = 39; p.county = 79; p.val = 726;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 39; p.county = 79; p.val = 1373;
+p.x = 49; p.y = 39; p.county = 79; p.val = 5630;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 49; p.y = 40; p.county = 79; p.val = 1077;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 937;
+p.x = 49; p.y = 38; p.county = 79; p.val = 6081;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 620;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 38; p.county = 79; p.val = 1122;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 38; p.county = 79; p.val = 686;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 40; p.county = 79; p.val = 802;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 38; p.county = 79; p.val = 963;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 36; p.county = 79; p.val = 714;
+p.x = 48; p.y = 36; p.county = 79; p.val = 2191;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 50; p.y = 42; p.county = 79; p.val = 750;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 38; p.county = 79; p.val = 1140;
+p.x = 50; p.y = 39; p.county = 79; p.val = 4710;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 39; p.county = 79; p.val = 943;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 617;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 565;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 35; p.county = 79; p.val = 1338;
+p.x = 50; p.y = 35; p.county = 79; p.val = 5274;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 35; p.county = 79; p.val = 734;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 1004;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 810;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 293;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 39; p.county = 79; p.val = 1020;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 38; p.county = 79; p.val = 665;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 36; p.county = 79; p.val = 650;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 36; p.county = 79; p.val = 390;
+p.x = 46; p.y = 36; p.county = 79; p.val = 1738;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 52; p.y = 41; p.county = 79; p.val = 850;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 38; p.county = 79; p.val = 1151;
+p.x = 50; p.y = 37; p.county = 79; p.val = 1982;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 38; p.county = 79; p.val = 482;
+p.x = 51; p.y = 39; p.county = 79; p.val = 3377;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 37; p.county = 79; p.val = 948;
+p.x = 45; p.y = 34; p.county = 79; p.val = 4131;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 39; p.county = 79; p.val = 1050;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 425;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 34; p.county = 79; p.val = 865;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 697;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 43; p.y = 34; p.county = 79; p.val = 1078;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 33; p.county = 79; p.val = 1293;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 34; p.county = 79; p.val = 964;
+p.x = 52; p.y = 33; p.county = 79; p.val = 3068;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 44; p.county = 79; p.val = 844;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 36; p.county = 79; p.val = 1520;
+p.x = 47; p.y = 36; p.county = 79; p.val = 2095;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 48; p.y = 31; p.county = 79; p.val = 1168;
@@ -5594,7 +3992,7 @@ if (1==1){ Point p;
 p.x = 46; p.y = 33; p.county = 79; p.val = 1004;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 31; p.county = 79; p.val = 1451;
+p.x = 50; p.y = 31; p.county = 79; p.val = 1915;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 48; p.y = 32; p.county = 79; p.val = 1494;
@@ -5603,46 +4001,19 @@ if (1==1){ Point p;
 p.x = 48; p.y = 34; p.county = 79; p.val = 1504;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 34; p.county = 79; p.val = 684;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 52; p.y = 33; p.county = 79; p.val = 1775;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 55; p.y = 44; p.county = 79; p.val = 747;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 34; p.county = 79; p.val = 796;
+p.x = 51; p.y = 34; p.county = 79; p.val = 3770;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 33; p.county = 79; p.val = 1278;
+p.x = 51; p.y = 33; p.county = 79; p.val = 6637;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 796;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 35; p.county = 79; p.val = 884;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 36; p.county = 79; p.val = 575;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 39; p.county = 79; p.val = 888;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 36; p.county = 79; p.val = 994;
+p.x = 49; p.y = 36; p.county = 79; p.val = 2624;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 33; p.county = 79; p.val = 1527;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 37; p.county = 79; p.val = 767;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 36; p.county = 79; p.val = 973;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 36; p.county = 79; p.val = 453;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 55; p.y = 38; p.county = 79; p.val = 499;
@@ -5654,34 +4025,10 @@ if (1==1){ Point p;
 p.x = 45; p.y = 33; p.county = 79; p.val = 475;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 38; p.county = 79; p.val = 1040;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 35; p.county = 79; p.val = 844;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 35; p.county = 79; p.val = 791;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 37; p.county = 79; p.val = 1034;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 39; p.county = 79; p.val = 1080;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 35; p.county = 79; p.val = 1122;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 35; p.county = 79; p.val = 1082;
+p.x = 49; p.y = 35; p.county = 79; p.val = 1765;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 51; p.y = 40; p.county = 79; p.val = 284;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 35; p.county = 79; p.val = 683;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 1054;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 51; p.y = 31; p.county = 79; p.val = 1125;
@@ -5696,55 +4043,19 @@ if (1==1){ Point p;
 p.x = 48; p.y = 35; p.county = 79; p.val = 1101;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 33; p.county = 79; p.val = 1025;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 39; p.county = 79; p.val = 1042;
+p.x = 50; p.y = 33; p.county = 79; p.val = 6452;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 50; p.y = 40; p.county = 79; p.val = 682;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 35; p.county = 79; p.val = 1435;
+p.x = 51; p.y = 35; p.county = 79; p.val = 4279;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 53; p.y = 40; p.county = 79; p.val = 466;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 34; p.county = 79; p.val = 1604;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 34; p.county = 79; p.val = 1172;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 619;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 35; p.county = 79; p.val = 387;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 33; p.county = 79; p.val = 1340;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 33; p.county = 79; p.val = 1354;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 33; p.county = 79; p.val = 1106;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 39; p.county = 79; p.val = 980;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 36; p.county = 79; p.val = 879;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 39; p.county = 79; p.val = 566;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 39; p.county = 79; p.val = 792;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 35; p.county = 79; p.val = 1287;
+p.x = 50; p.y = 34; p.county = 79; p.val = 2869;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 54; p.y = 35; p.county = 79; p.val = 1338;
@@ -5753,106 +4064,16 @@ if (1==1){ Point p;
 p.x = 52; p.y = 34; p.county = 79; p.val = 988;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 33; p.county = 79; p.val = 1480;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 33; p.county = 79; p.val = 1307;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 33; p.county = 79; p.val = 1592;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 36; p.county = 79; p.val = 374;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 539;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 34; p.county = 79; p.val = 772;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 34; p.county = 79; p.val = 944;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 35; p.county = 79; p.val = 1684;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 31; p.county = 79; p.val = 464;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 632;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 33; p.county = 79; p.val = 1709;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 37; p.county = 79; p.val = 1010;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 38; p.county = 79; p.val = 538;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 39; p.county = 79; p.val = 711;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 42; p.y = 32; p.county = 79; p.val = 1399;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 35; p.county = 79; p.val = 1559;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 35; p.county = 79; p.val = 1493;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 42; p.y = 34; p.county = 79; p.val = 1271;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 34; p.county = 79; p.val = 1123;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 36; p.county = 79; p.val = 657;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 39; p.county = 79; p.val = 725;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 34; p.county = 79; p.val = 1697;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 36; p.county = 79; p.val = 469;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 55; p.y = 41; p.county = 79; p.val = 614;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 79; p.val = 744;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 37; p.county = 79; p.val = 739;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 35; p.county = 79; p.val = 1557;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 36; p.county = 79; p.val = 1256;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 39; p.county = 79; p.val = 1578;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 50; p.y = 38; p.county = 79; p.val = 832;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 39; p.county = 79; p.val = 969;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 33; p.county = 79; p.val = 898;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 45; p.y = 34; p.county = 79; p.val = 866;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 51; p.y = 34; p.county = 79; p.val = 1370;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 31; p.y = 35; p.county = 81; p.val = 283;
@@ -5912,10 +4133,10 @@ if (1==1){ Point p;
 p.x = 26; p.y = 13; p.county = 83; p.val = 503;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 7; p.county = 83; p.val = 397;
+p.x = 27; p.y = 7; p.county = 83; p.val = 1639;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 7; p.county = 83; p.val = 1745;
+p.x = 23; p.y = 7; p.county = 83; p.val = 2360;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 29; p.y = 10; p.county = 83; p.val = 1626;
@@ -5948,16 +4169,16 @@ if (1==1){ Point p;
 p.x = 23; p.y = 10; p.county = 83; p.val = 1160;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 30; p.y = 8; p.county = 83; p.val = 1142;
+p.x = 30; p.y = 8; p.county = 83; p.val = 1748;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 29; p.y = 9; p.county = 83; p.val = 1123;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 4; p.county = 83; p.val = 1741;
+p.x = 28; p.y = 4; p.county = 83; p.val = 2458;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 3; p.county = 83; p.val = 2135;
+p.x = 27; p.y = 3; p.county = 83; p.val = 3245;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 30; p.y = 4; p.county = 83; p.val = 744;
@@ -5972,9 +4193,6 @@ if (1==1){ Point p;
 p.x = 24; p.y = 10; p.county = 83; p.val = 970;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 7; p.county = 83; p.val = 615;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 25; p.y = 3; p.county = 83; p.val = 927;
 points[i]=p;i++;}
 if (1==1){ Point p;
@@ -5987,10 +4205,10 @@ if (1==1){ Point p;
 p.x = 23; p.y = 3; p.county = 83; p.val = 637;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 5; p.county = 83; p.val = 1103;
+p.x = 27; p.y = 5; p.county = 83; p.val = 2905;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 30; p.y = 6; p.county = 83; p.val = 579;
+p.x = 30; p.y = 6; p.county = 83; p.val = 2176;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 30; p.y = 5; p.county = 83; p.val = 530;
@@ -6008,16 +4226,13 @@ if (1==1){ Point p;
 p.x = 26; p.y = 1; p.county = 83; p.val = 1694;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 6; p.county = 83; p.val = 517;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 7; p.county = 83; p.val = 1242;
+p.x = 29; p.y = 6; p.county = 83; p.val = 1099;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 29; p.y = 17; p.county = 83; p.val = 654;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 6; p.county = 83; p.val = 503;
+p.x = 28; p.y = 6; p.county = 83; p.val = 1106;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 23; p.y = 4; p.county = 83; p.val = 1626;
@@ -6032,19 +4247,13 @@ if (1==1){ Point p;
 p.x = 24; p.y = 11; p.county = 83; p.val = 1815;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 7; p.county = 83; p.val = 1090;
+p.x = 29; p.y = 7; p.county = 83; p.val = 3377;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 8; p.county = 83; p.val = 931;
+p.x = 28; p.y = 8; p.county = 83; p.val = 2043;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 7; p.county = 83; p.val = 294;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 7; p.county = 83; p.val = 456;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 7; p.county = 83; p.val = 392;
+p.x = 28; p.y = 7; p.county = 83; p.val = 2204;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 25; p.y = 8; p.county = 83; p.val = 457;
@@ -6059,19 +4268,10 @@ if (1==1){ Point p;
 p.x = 25; p.y = 7; p.county = 83; p.val = 1253;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 30; p.y = 8; p.county = 83; p.val = 606;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 29; p.y = 5; p.county = 83; p.val = 766;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 8; p.county = 83; p.val = 361;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 31; p.y = 9; p.county = 83; p.val = 468;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 3; p.county = 83; p.val = 1110;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 26; p.y = 5; p.county = 83; p.val = 1282;
@@ -6083,7 +4283,7 @@ if (1==1){ Point p;
 p.x = 32; p.y = 6; p.county = 83; p.val = 615;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 8; p.county = 83; p.val = 1002;
+p.x = 24; p.y = 8; p.county = 83; p.val = 1773;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 25; p.y = 4; p.county = 83; p.val = 1047;
@@ -6092,10 +4292,7 @@ if (1==1){ Point p;
 p.x = 26; p.y = 11; p.county = 83; p.val = 1556;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 9; p.county = 83; p.val = 1071;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 5; p.county = 83; p.val = 1802;
+p.x = 27; p.y = 9; p.county = 83; p.val = 2138;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 27; p.y = 4; p.county = 83; p.val = 593;
@@ -6104,10 +4301,7 @@ if (1==1){ Point p;
 p.x = 28; p.y = 3; p.county = 83; p.val = 738;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 4; p.county = 83; p.val = 717;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 7; p.county = 83; p.val = 835;
+p.x = 30; p.y = 7; p.county = 83; p.val = 2877;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 32; p.y = 9; p.county = 83; p.val = 1132;
@@ -6116,16 +4310,10 @@ if (1==1){ Point p;
 p.x = 30; p.y = 1; p.county = 83; p.val = 1326;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 8; p.county = 83; p.val = 751;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 9; p.county = 83; p.val = 556;
+p.x = 28; p.y = 9; p.county = 83; p.val = 2705;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 27; p.y = 15; p.county = 83; p.val = 1123;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 24; p.y = 8; p.county = 83; p.val = 771;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 25; p.y = 9; p.county = 83; p.val = 1469;
@@ -6137,67 +4325,16 @@ if (1==1){ Point p;
 p.x = 23; p.y = 6; p.county = 83; p.val = 930;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 9; p.county = 83; p.val = 1067;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 27; p.y = 6; p.county = 83; p.val = 449;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 8; p.county = 83; p.val = 1143;
+p.x = 27; p.y = 8; p.county = 83; p.val = 3122;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 9; p.county = 83; p.val = 1345;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 9; p.county = 83; p.val = 804;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 7; p.county = 83; p.val = 719;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 7; p.county = 83; p.val = 650;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 8; p.county = 83; p.val = 914;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 8; p.county = 83; p.val = 579;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 7; p.county = 83; p.val = 477;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 7; p.county = 83; p.val = 866;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 7; p.county = 83; p.val = 1323;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 8; p.county = 83; p.val = 858;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 27; p.y = 8; p.county = 83; p.val = 1065;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 6; p.county = 83; p.val = 603;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 6; p.county = 83; p.val = 892;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 7; p.county = 83; p.val = 774;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 30; p.y = 6; p.county = 83; p.val = 705;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 29; p.y = 6; p.county = 83; p.val = 582;
+p.x = 29; p.y = 8; p.county = 83; p.val = 1437;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 28; p.y = 5; p.county = 83; p.val = 809;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 28; p.y = 7; p.county = 83; p.val = 582;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 25; p.y = 10; p.county = 83; p.val = 1627;
@@ -6212,16 +4349,13 @@ if (1==1){ Point p;
 p.x = 59; p.y = 37; p.county = 85; p.val = 489;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 39; p.county = 85; p.val = 653;
+p.x = 59; p.y = 39; p.county = 85; p.val = 1153;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 38; p.county = 85; p.val = 776;
+p.x = 60; p.y = 38; p.county = 85; p.val = 1325;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 67; p.y = 41; p.county = 85; p.val = 268;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 59; p.y = 39; p.county = 85; p.val = 500;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 70; p.y = 39; p.county = 85; p.val = 703;
@@ -6236,7 +4370,7 @@ if (1==1){ Point p;
 p.x = 58; p.y = 41; p.county = 85; p.val = 786;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 40; p.county = 85; p.val = 316;
+p.x = 60; p.y = 40; p.county = 85; p.val = 1135;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 59; p.y = 43; p.county = 85; p.val = 769;
@@ -6257,13 +4391,7 @@ if (1==1){ Point p;
 p.x = 61; p.y = 44; p.county = 85; p.val = 691;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 40; p.county = 85; p.val = 819;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 61; p.y = 42; p.county = 85; p.val = 719;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 60; p.y = 38; p.county = 85; p.val = 549;
+p.x = 61; p.y = 42; p.county = 85; p.val = 1728;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 61; p.y = 39; p.county = 85; p.val = 1031;
@@ -6275,7 +4403,7 @@ if (1==1){ Point p;
 p.x = 63; p.y = 38; p.county = 85; p.val = 710;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 41; p.county = 85; p.val = 800;
+p.x = 61; p.y = 41; p.county = 85; p.val = 2078;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 64; p.y = 42; p.county = 85; p.val = 584;
@@ -6284,7 +4412,7 @@ if (1==1){ Point p;
 p.x = 65; p.y = 40; p.county = 85; p.val = 360;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 320;
+p.x = 62; p.y = 41; p.county = 85; p.val = 2941;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 63; p.y = 39; p.county = 85; p.val = 438;
@@ -6293,88 +4421,28 @@ if (1==1){ Point p;
 p.x = 64; p.y = 40; p.county = 85; p.val = 465;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 482;
+p.x = 62; p.y = 40; p.county = 85; p.val = 3727;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 85; p.val = 568;
+p.x = 62; p.y = 42; p.county = 85; p.val = 1314;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 85; p.val = 955;
+p.x = 63; p.y = 40; p.county = 85; p.val = 1005;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 85; p.val = 592;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 85; p.val = 519;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 85; p.val = 624;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 42; p.county = 85; p.val = 486;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 85; p.val = 469;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 63; p.y = 40; p.county = 85; p.val = 625;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 416;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 548;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 63; p.y = 40; p.county = 85; p.val = 380;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 63; p.y = 41; p.county = 85; p.val = 569;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 216;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 63; p.y = 41; p.county = 85; p.val = 271;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 258;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 63; p.y = 41; p.county = 85; p.val = 276;
+p.x = 63; p.y = 41; p.county = 85; p.val = 1116;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 63; p.y = 42; p.county = 85; p.val = 459;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 349;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 42; p.county = 85; p.val = 828;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 85; p.val = 352;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 61; p.y = 40; p.county = 85; p.val = 1011;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 61; p.y = 41; p.county = 85; p.val = 780;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 61; p.y = 42; p.county = 85; p.val = 1009;
+p.x = 61; p.y = 40; p.county = 85; p.val = 1590;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 60; p.y = 39; p.county = 85; p.val = 59;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 62; p.y = 39; p.county = 85; p.val = 754;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 61; p.y = 40; p.county = 85; p.val = 579;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 61; p.y = 41; p.county = 85; p.val = 498;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 37; p.y = 14; p.county = 87; p.val = 393;
@@ -6401,7 +4469,7 @@ if (1==1){ Point p;
 p.x = 38; p.y = 13; p.county = 87; p.val = 314;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 36; p.y = 14; p.county = 87; p.val = 526;
+p.x = 36; p.y = 14; p.county = 87; p.val = 848;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 36; p.y = 15; p.county = 87; p.val = 152;
@@ -6410,16 +4478,10 @@ if (1==1){ Point p;
 p.x = 32; p.y = 14; p.county = 87; p.val = 420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 36; p.y = 14; p.county = 87; p.val = 322;
+p.x = 35; p.y = 14; p.county = 87; p.val = 927;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 14; p.county = 87; p.val = 540;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 15; p.county = 87; p.val = 496;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 15; p.county = 87; p.val = 277;
+p.x = 35; p.y = 15; p.county = 87; p.val = 892;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 38; p.y = 20; p.county = 87; p.val = 287;
@@ -6435,12 +4497,6 @@ p.x = 34; p.y = 15; p.county = 87; p.val = 147;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 35; p.y = 17; p.county = 87; p.val = 679;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 14; p.county = 87; p.val = 387;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 35; p.y = 15; p.county = 87; p.val = 119;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 32; p.y = 13; p.county = 87; p.val = 215;
@@ -6533,16 +4589,16 @@ if (1==1){ Point p;
 p.x = 42; p.y = 2; p.county = 91; p.val = 1092;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 1; p.county = 91; p.val = 853;
+p.x = 47; p.y = 1; p.county = 91; p.val = 1967;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 2; p.county = 91; p.val = 1310;
+p.x = 47; p.y = 2; p.county = 91; p.val = 1983;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 40; p.y = 4; p.county = 91; p.val = 359;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 4; p.county = 91; p.val = 1366;
+p.x = 48; p.y = 4; p.county = 91; p.val = 4244;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 2; p.county = 91; p.val = 1620;
@@ -6552,9 +4608,6 @@ p.x = 44; p.y = 1; p.county = 91; p.val = 762;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 40; p.y = 10; p.county = 91; p.val = 259;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 4; p.county = 91; p.val = 1149;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 39; p.y = 7; p.county = 91; p.val = 586;
@@ -6578,16 +4631,13 @@ if (1==1){ Point p;
 p.x = 43; p.y = 4; p.county = 91; p.val = 837;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 9; p.county = 91; p.val = 565;
+p.x = 49; p.y = 9; p.county = 91; p.val = 1112;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 48; p.y = 10; p.county = 91; p.val = 1596;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 6; p.county = 91; p.val = 1153;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 6; p.county = 91; p.val = 901;
+p.x = 47; p.y = 6; p.county = 91; p.val = 2054;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 41; p.y = 7; p.county = 91; p.val = 742;
@@ -6602,25 +4652,19 @@ if (1==1){ Point p;
 p.x = 44; p.y = 6; p.county = 91; p.val = 1201;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 6; p.county = 91; p.val = 973;
+p.x = 48; p.y = 6; p.county = 91; p.val = 4525;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 6; p.county = 91; p.val = 1542;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 3; p.county = 91; p.val = 836;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 44; p.y = 3; p.county = 91; p.val = 649;
+p.x = 44; p.y = 3; p.county = 91; p.val = 1485;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 42; p.y = 5; p.county = 91; p.val = 895;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 7; p.county = 91; p.val = 825;
+p.x = 47; p.y = 7; p.county = 91; p.val = 5266;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 7; p.county = 91; p.val = 763;
+p.x = 48; p.y = 7; p.county = 91; p.val = 4200;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 50; p.y = 6; p.county = 91; p.val = 1613;
@@ -6629,67 +4673,40 @@ if (1==1){ Point p;
 p.x = 49; p.y = 6; p.county = 91; p.val = 1073;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 8; p.county = 91; p.val = 653;
+p.x = 48; p.y = 8; p.county = 91; p.val = 4424;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 6; p.county = 91; p.val = 1015;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 9; p.county = 91; p.val = 561;
+p.x = 48; p.y = 9; p.county = 91; p.val = 1894;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 47; p.y = 3; p.county = 91; p.val = 1251;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 5; p.county = 91; p.val = 945;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 8; p.county = 91; p.val = 606;
+p.x = 48; p.y = 5; p.county = 91; p.val = 2538;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 9; p.county = 91; p.val = 1422;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 8; p.county = 91; p.val = 790;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 47; p.y = 8; p.county = 91; p.val = 1126;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 7; p.county = 91; p.val = 1061;
+p.x = 50; p.y = 5; p.county = 91; p.val = 3004;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 8; p.county = 91; p.val = 871;
+p.x = 50; p.y = 9; p.county = 91; p.val = 1535;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 8; p.county = 91; p.val = 688;
+p.x = 50; p.y = 4; p.county = 91; p.val = 3619;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 7; p.county = 91; p.val = 1243;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 7; p.county = 91; p.val = 1395;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 9; p.county = 91; p.val = 1333;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 5; p.county = 91; p.val = 934;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 9; p.county = 91; p.val = 820;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 4; p.county = 91; p.val = 1409;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 3; p.county = 91; p.val = 1091;
+p.x = 49; p.y = 3; p.county = 91; p.val = 2554;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 5; p.county = 91; p.val = 1591;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 7; p.county = 91; p.val = 509;
+p.x = 49; p.y = 7; p.county = 91; p.val = 1761;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 45; p.y = 4; p.county = 91; p.val = 1201;
@@ -6698,70 +4715,25 @@ if (1==1){ Point p;
 p.x = 50; p.y = 7; p.county = 91; p.val = 2162;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 6; p.county = 91; p.val = 1620;
+p.x = 49; p.y = 4; p.county = 91; p.val = 3863;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 5; p.county = 91; p.val = 803;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 4; p.county = 91; p.val = 1265;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 5; p.county = 91; p.val = 786;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 6; p.county = 91; p.val = 995;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 3; p.county = 91; p.val = 1463;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 5; p.county = 91; p.val = 807;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 6; p.county = 91; p.val = 471;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 7; p.county = 91; p.val = 941;
+p.x = 46; p.y = 6; p.county = 91; p.val = 1143;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 7; p.county = 91; p.val = 999;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 4; p.county = 91; p.val = 721;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 8; p.county = 91; p.val = 816;
-points[i]=p;i++;}
-if (1==1){ Point p;
 p.x = 51; p.y = 9; p.county = 91; p.val = 524;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 8; p.county = 91; p.val = 396;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 7; p.county = 91; p.val = 1044;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 8; p.county = 91; p.val = 604;
+p.x = 50; p.y = 8; p.county = 91; p.val = 1000;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 46; p.y = 1; p.county = 91; p.val = 659;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 4; p.county = 91; p.val = 1489;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 9; p.county = 91; p.val = 547;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 9; p.county = 91; p.val = 715;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 8; p.county = 91; p.val = 677;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 2; p.county = 91; p.val = 673;
+p.x = 49; p.y = 8; p.county = 91; p.val = 1490;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 43; p.y = 2; p.county = 91; p.val = 756;
@@ -6776,51 +4748,16 @@ if (1==1){ Point p;
 p.x = 47; p.y = 4; p.county = 91; p.val = 1201;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 5; p.county = 91; p.val = 1133;
+p.x = 49; p.y = 5; p.county = 91; p.val = 1901;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 7; p.county = 91; p.val = 1252;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 4; p.county = 91; p.val = 1729;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 7; p.county = 91; p.val = 1574;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 8; p.county = 91; p.val = 813;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 48; p.y = 7; p.county = 91; p.val = 620;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 46; p.y = 6; p.county = 91; p.val = 672;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 3; p.county = 91; p.val = 1454;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 3; p.county = 91; p.val = 758;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 4; p.county = 91; p.val = 1575;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 50; p.y = 5; p.county = 91; p.val = 1267;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 4; p.county = 91; p.val = 1023;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 47; p.y = 1; p.county = 91; p.val = 1114;
-points[i]=p;i++;}
-if (1==1){ Point p;
-p.x = 49; p.y = 5; p.county = 91; p.val = 768;
+p.x = 50; p.y = 3; p.county = 91; p.val = 2212;
 points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 50; p.y = 13; p.county = 23; p.val = 601;
 points[i]=p;i++;}
 return points;}
+
 
 
 
@@ -7201,7 +5138,7 @@ void initialRun(){
 		yCount[y]++;
 	}*/
 	points = scPoints();
-	int np = 2247;
+	int np = 1559;
 	for(i=0;i<np;i++){
 		points[i].npix = 0;
 		pixelMap[points[i].x][points[i].y]=i;
