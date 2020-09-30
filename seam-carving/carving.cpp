@@ -5411,8 +5411,7 @@ Map verticalSeam(Map m, int n, int l){
 		for(ii=0;ii<h;ii++){
 			if (removeSeam[ii]+1 < m.width && removeSeam[ii] > 0){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
-				m.pixels[removeSeam[ii]][ii].val=v - v/2;
-				m.pixels[removeSeam[ii]-1][ii].val= v/2;
+				
 				int r = m.pixels[removeSeam[ii]][ii].r+m.pixels[removeSeam[ii]-1][ii].r+m.pixels[removeSeam[ii]+1][ii].r;
 				m.pixels[removeSeam[ii]][ii].r=r - r/2;
 				m.pixels[removeSeam[ii]-1][ii].r= r/2;
@@ -5420,7 +5419,7 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].d=d - d/2;
 				m.pixels[removeSeam[ii]-1][ii].d= d/2;
 				int xx; int yy;
-				if (2 == 2 || v <= 0){
+				if (v <= 0){
 					xx = m.pixels[removeSeam[ii]][ii].x;
 					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
@@ -5436,6 +5435,8 @@ Map verticalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy = yy/v;
 				}
+				m.pixels[removeSeam[ii]][ii].val=v - v/2;
+				m.pixels[removeSeam[ii]-1][ii].val= v/2;
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]-1][ii].x= xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
