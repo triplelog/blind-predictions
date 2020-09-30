@@ -19,8 +19,11 @@ function displayNow() {
 	}
 	var avgP = sumP/jsPoints.length;
 	console.log(minP,maxP, avgP);
+	var hue = parseInt(jsPoints[i].d)/parseInt(jsPoints[i].val)*240;
+	var lum = 50*parseInt(jsPoints[i].val)/avgP;
+	if (lum>100){lum = 0;}
 	for (var i=0;i<jsPoints.length;i++){
-		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="rgb('+(parseInt(jsPoints[i].r)*250/avgP)+',0,'+(parseInt(jsPoints[i].d)*250/avgP)+')" stroke="none"></circle>';
+		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',50%,'+lum+'%)" stroke="none"></circle>';
 	}
 	svg += '</svg>';
 	postMessage(svg);
