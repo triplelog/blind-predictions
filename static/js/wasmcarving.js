@@ -17,7 +17,9 @@ function displayNow() {
 	}
 	console.log(sums);
 	for (var i=0;i<jsPoints.length;i++){
-		var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
+		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
+		var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
+		
 		if (parseInt(jsPoints[i].val)>maxP){
 			maxP = parseInt(jsPoints[i].val);
 			//console.log(maxP,jsPoints[i].x,jsPoints[i].y);
@@ -44,7 +46,8 @@ function displayNow() {
 	
 	var exCount = 0;
 	for (var i=0;i<jsPoints.length;i++){
-		var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
+		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
+		var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
 		
 		var hue = 0;
 		var lum = 50;
