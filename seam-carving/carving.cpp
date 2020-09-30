@@ -44,7 +44,7 @@ EM_JS(void, add_point, (const char* x), {
 EM_JS(void, add_pointOut, (const char* x), {
 	var pointSplit = UTF8ToString(x).split(",");
 	if (parseInt(pointSplit[2])>0){
-		pointsOut.push({"x":pointSplit[3],"y":pointSplit[4],"ox":pointSplit[0],"oy":pointSplit[1],"county":pointSplit[5]});	
+		pointsOut.push({"x":pointSplit[3],"y":pointSplit[4],"ox":pointSplit[0],"oy":pointSplit[1],"county":pointSplit[5],"val":pointSplit[2]});	
 	}
 	
 });
