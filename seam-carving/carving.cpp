@@ -44,7 +44,7 @@ EM_JS(void, add_point, (const char* x), {
 EM_JS(void, add_pointOut, (const char* x), {
 	var pointSplit = UTF8ToString(x).split(",");
 	if (parseInt(pointSplit[2])>0){
-		pointsOut.push({"x":pointSplit[3],"y":pointSplit[4],"ox":pointSplit[0],"oy":pointSplit[1],"county":pointSplit[5],"val":pointSplit[2],"d":pointSplit[6],"r":pointSplit[7]});	
+		pointsOut.push({"x":pointSplit[3],"y":pointSplit[4],"ox":pointSplit[0],"oy":pointSplit[1],"county":pointSplit[5],"val":pointSplit[2],"d":pointSplit[6],"r":pointSplit[7],"d16":pointSplit[8],"r16":pointSplit[9]});	
 	}
 	
 });
@@ -5791,7 +5791,7 @@ void initialRun(){
 			for(i=0;i<m.width;i++){
 				for(ii=0;ii<m.height;ii++){
 					Point p = m.pixels[i][ii];
-					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.d16)+","+std::to_string(p.r16);
+					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.d)+","+std::to_string(p.r)+","+std::to_string(p.d16)+","+std::to_string(p.r16);
 					add_pointOut(pointStr.c_str());
 				}
 			}
@@ -5812,7 +5812,7 @@ void initialRun(){
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
 			Point p = m.pixels[i][ii];
-			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.d16)+","+std::to_string(p.r16);
+			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.d)+","+std::to_string(p.r)+","+std::to_string(p.d16)+","+std::to_string(p.r16);
 			add_pointOut(pointStr.c_str());
 		}
 	}
