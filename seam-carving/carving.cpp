@@ -5128,6 +5128,7 @@ Map horizontalSeam(Map m, int n, int l){
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
 					m.pixels[i][ii]=m.pixels[i][ii+1];
 				}
+			}
 			else if (removeSeam[i]+1 < m.height){
 				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
 				m.pixels[i][removeSeam[i]].r +=m.pixels[i][removeSeam[i]+1].r;
