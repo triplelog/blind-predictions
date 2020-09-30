@@ -5690,7 +5690,7 @@ void initialRun(){
 	for (iii=0;iii<3;iii++){
 		vertThreads = 1 + (rand() % (30-iii/4));
 		horzThreads = 1 + (rand() % (30-iii/4));
-		if (iii%5 == 0){
+		if (iii%1 == 0){
 			for(i=0;i<m.width;i++){
 				for(ii=0;ii<m.height;ii++){
 					Point p = m.pixels[i][ii];
@@ -5703,20 +5703,19 @@ void initialRun(){
 		sum(m);
 		m = verticalSeam(m,vertThreads,1);
 		sum(m);
-		m = horizontalSeam(m,horzThreads,1);
-		sum(m);
+		//m = horizontalSeam(m,horzThreads,1);
+		//sum(m);
 		m = verticalStitch(m,vertThreads,1);
 		sum(m);
-		m = horizontalStitch(m,horzThreads,1);
-		sum(m);
+		//m = horizontalStitch(m,horzThreads,1);
+		//sum(m);
 	}
 	
 	
 	
 	a22 = std::chrono::high_resolution_clock::now();
 	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(m.width);
-	console_log(m.height);
+
 	
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
@@ -5727,7 +5726,7 @@ void initialRun(){
 	}
 	
 	console_log(durationTotal);
-	display_points();
+	//display_points();
 }
 
 int main() {
