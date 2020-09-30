@@ -7221,7 +7221,13 @@ void initialRun(){
 	vertThreads = 5;
 	horzThreads = 5;
 	for (i=0;i<5;i++){
-
+		for(i=0;i<m.width;i++){
+			for(ii=0;ii<m.height;ii++){
+				Point p = m.pixels[i][ii];
+				std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county);
+				add_pointOut(pointStr.c_str());
+			}
+		}
 		m = verticalSeam(m,vertThreads,1);
 		m = horizontalSeam(m,horzThreads,1);
 		console_log(m.width);
