@@ -47,6 +47,9 @@ function displayNow() {
 
 
 		if (lum<25){lum = 25;}
+		
+		hue = 240*parseInt(jsPoints[i].ox)/100;
+		lum = 100*parseInt(jsPoints[i].oy)/100;
 		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none" class="county-'+jsPoints[i].county+'"></rect>';
 	}
 	svg += '</svg>';
