@@ -50,8 +50,8 @@ function displayNow() {
 		
 		//hue = 240*parseInt(jsPoints[i].ox)/100;
 		//lum = 100*parseInt(jsPoints[i].oy)/100;
-		var block = parseInt(round(jsPoints[i].ox/10)*10+round(jsPoints[i].oy/10));
-		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="hsl('+hue+',80%,'+lum+'%)" class="county-'+jsPoints[i].block+'"></rect>';
+		var block = parseInt(Math.round(jsPoints[i].ox/10)*10+Math.round(jsPoints[i].oy/10));
+		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="hsl('+hue+',80%,'+lum+'%)" class="county-'+block+'"></rect>';
 	}
 	svg += '</svg>';
 	postMessage(svg);
