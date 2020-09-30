@@ -7208,7 +7208,6 @@ void initialRun(){
 	}
 	
 	for(i=0;i<100;i++){
-		console_log(i);
 		for(ii=0;ii<100;ii++){
 			if (pixelMap[i][ii]>=0){
 				points[pixelMap[i][ii]].npix++;
@@ -7257,15 +7256,58 @@ void initialRun(){
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
 	
+	for(i=0;i<100;i++){
+		for(ii=0;ii<100;ii++){
+			if (pixelMap[i][ii]>=0){
+				pixels[i][ii].val += points[pixelMap[i][ii]].val*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].county = points[pixelMap[i][ii]].county;
+				continue;
+			}
+			int minX = i-4;
+			int maxX = i+4;
+			int minY = ii-4;
+			int maxY = ii+4;
+			if (minX < 0){minX = 0;}
+			if (minY < 0){minY = 0;}
+			if (maxX > 100){maxX = 100;}
+			if (maxY > 100){maxY = 100;}
+			int iiii;
+			int minP = 1000000000;
+			int d;
+			int minI = 0;
+			for (iii=minX;iii<maxX+1;iii++){
+				for (iiii=minY;iiii<maxY+1;iiii++){
+					if (pixelMap[iii][iiii]>=0){
+						d = (iii-i)*(iii-i)+(iiii-ii)*(iiii-ii);
+						if (d < minP){
+							minP = d;
+							minI = pixelMap[iii][iiii];
+						}
+					}
+				}
+			}
+			if (minP < 1000000000){
+				pixels[i][ii].val += points[minI].val*100/points[minI].npix;
+				pixels[i][ii].county = points[minI].county;
+				continue;
+			}
+			
+			for (iii=0;iii<np;iii++){
+				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
+				if (d < minP){
+					minP = d;
+					minI = iii;
+				}
+			}
+			pixels[i][ii].val += points[minI].val*100/points[minI].npix;
+			pixels[i][ii].county = points[minI].county;
+		}
+	}
 	
 	
 	a11 = std::chrono::high_resolution_clock::now();
 	
-	for(i=0;i<np;i++){
-		Point p = points[i];
-		pixels[p.x][p.y].val += p.val;
-		pixels[p.x][p.y].county = p.county;
-	}
+
 	
 	Map m;
 	m.pixels = pixels;
