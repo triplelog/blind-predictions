@@ -47,7 +47,7 @@ function displayNow() {
 
 
 		if (lum<25){lum = 25;}
-		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none" class="county-'+jsPoints[i].county+'"></circle>';
+		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none" class="county-'+jsPoints[i].county+'"></rect>';
 	}
 	svg += '</svg>';
 	postMessage(svg);
