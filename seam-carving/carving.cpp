@@ -7222,7 +7222,7 @@ void initialRun(){
 	horzThreads = 5;
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (i=0;i<5;i++){
+	for (iii=0;iii<5;iii++){
 		for(i=0;i<m.width;i++){
 			for(ii=0;ii<m.height;ii++){
 				Point p = m.pixels[i][ii];
