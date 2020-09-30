@@ -4773,7 +4773,15 @@ struct Map {
 	int height;
 };
 
-
+int sum(Map m){
+	int i; int ii; int sum = 0;
+	for (i=0;i<m.width;i++){
+		for (ii=0;ii<m.height;ii++){
+			sum += m.pixels[i][ii].val;
+		}
+	}
+	return sum;
+}
 
 
 Map horizontalStitch(Map m, int n, int l){
@@ -5090,15 +5098,7 @@ Map verticalSeam(Map m, int n, int l){
 	return m;
 }
 
-int sum(Map m){
-	int i; int ii; int sum = 0;
-	for (i=0;i<m.width;i++){
-		for (ii=0;ii<m.height;ii++){
-			sum += m.pixels[i][ii].val;
-		}
-	}
-	return sum;
-}
+
 void initialRun(){
 	seed = 7;
 	srand(seed);
