@@ -6838,50 +6838,164 @@ struct Map {
 
 
 
-Map splitHorizontal(Map m, int sz){
-	int h = m.height;
-	int ii;
+Map horizontalStitch(Map m, int n, int l){
 	int i;
-	for(ii=h*sz-sz;ii>=0;ii--){
-		if (ii%sz == 0){
-			for (i=0;i<m.width;i++){
-				m.pixels[i][ii]=m.pixels[i][ii/sz];
+	int ii;
+	int iii;
+	int iiii;
+	std::map<int,int> oldMax;
+	std::map<int,int> newMax;
+	std::map<int,std::vector<int> > oldSeams;
+	std::map<int,std::vector<int> > newSeams;
+	for(ii=0;ii<m.height;ii++){
+		oldMax[ii]=m.pixels[0][ii].val;
+		oldSeams[ii]={ii};
+		
+	}
+	int h = m.height;
+	int w = m.width;
+	int modn = h / n;
+	for(i=1;i<w;i++){
+		for(ii=0;ii<h;ii++){
+			int mpv = m.pixels[i][ii].val;
+
+			int top = -1000000000;
+			if (ii%modn>0){top = oldMax[ii-1];}
+			int maxv = top;
+			int newI = ii-1;
+			int mid = oldMax[ii];
+			if (mid > maxv){
+				maxv = mid;
+				newI = ii;
+			}
+			int bottom = -1000000000;
+			if (ii+1<h && (ii+1)%modn>0){bottom = oldMax[ii+1];}
+			if (bottom > maxv){
+				maxv = bottom;
+				newI = ii+1;
+			}
+			
+			
+			
+			newMax[ii] = maxv+mpv;
+
+			
+			newSeams[ii] = oldSeams[newI];
+			newSeams[ii].push_back(ii);
+		}
+		oldSeams = newSeams;
+		oldMax = newMax;
+	}
+	for (iii=n-1;iii>=0;iii--){
+		int maxSeam = -1000000000;
+		std::vector<int> removeSeam;
+		int maxY = (iii+1)*modn;
+		if (maxY > h){
+			maxY = h;
+		}
+		for (ii=iii*modn;ii<maxY;ii++){
+			if (oldMax[ii]>maxSeam){
+				maxSeam = oldMax[ii];
+				removeSeam = oldSeams[ii];
 			}
 		}
-		else {
-			for (i=0;i<m.width;i++){
-				Point p;
-				p.x = i;
-				p.y = ii;
-				p.val = 1;
-				m.pixels[i][ii]=p;
+
+		if (l >= 0){
+			for(i=0;i<w;i++){
+				
+				for(ii=m.height;ii>removeSeam[i];ii--){
+					m.pixels[i][ii]=m.pixels[i][ii-1];
+				}
+				m.pixels[i][removeSeam[i]].val =m.pixels[i][removeSeam[i]+1].val;
+				m.pixels[i][removeSeam[i]].val /= 2;
+				m.pixels[i][removeSeam[i]+1].val /= 2;
 			}
+			m.height++;
 		}
 	}
-	m.height = m.height*sz-sz+1;
+	
+	
 	return m;
 }
-Map splitVertical(Map m, int sz){
-	int w = m.width;
-	int ii;
+
+Map verticalStitch(Map m, int n, int l){
 	int i;
-	for(i=w*sz-sz;i>=0;i--){
-		if (i%sz == 0){
-			for (ii=0;ii<m.height;ii++){
-				m.pixels[i][ii]=m.pixels[i/sz][ii];
+	int ii;
+	int iii;
+	int iiii;
+	std::map<int,int> oldMax;
+	std::map<int,int> newMax;
+	std::map<int,std::vector<int> > oldSeams;
+	std::map<int,std::vector<int> > newSeams;
+	for(i=0;i<m.width;i++){
+		oldMax[i]=m.pixels[i][0].val;
+		oldSeams[i]={i};
+		
+	}
+	int h = m.height;
+	int w = m.width;
+	int modn = w / n;
+	for(ii=1;ii<h;ii++){
+		for(i=0;i<w;i++){
+			int mpv = m.pixels[i][ii].val;
+
+			int left = -1000000000;
+			if (i%modn>0){left = oldMax[i-1];}
+			int maxv = left;
+			int newI = i-1;
+			int mid = oldMax[i];
+			if (mid > maxv){
+				maxv = mid;
+				newI = i;
+			}
+			int right = -1000000000;
+			if (i+1<w && (i+1) % modn>0){right = oldMax[i+1];}
+			if (right> maxv){
+				maxv = right;
+				newI = i+1;
+			}
+			
+			
+			newMax[i] = maxv+mpv;
+
+			newSeams[i] = oldSeams[newI];
+			newSeams[i].push_back(i);
+
+		}
+		oldSeams = newSeams;
+		oldMax = newMax;
+	}
+	//std::vector<int> removeSeams;
+	for (iii=n-1;iii>=0;iii--){
+		int maxSeam = -1000000000;
+
+		std::vector<int> removeSeam;
+		int maxX = (iii+1)*modn;
+		if (maxX > w){
+			maxX = w;
+		}
+		for (i=iii*modn;i<maxX;i++){
+			if (oldMax[i]>maxSeam){
+				maxSeam = oldMax[i];
+				removeSeam = oldSeams[i];
 			}
 		}
-		else {
-			for (ii=0;ii<m.height;ii++){
-				Point p;
-				p.x = i;
-				p.y = ii;
-				p.val = 1;
-				m.pixels[i][ii]=p;
+		if (l >= 0){
+			for(ii=0;ii<h;ii++){
+				
+				for(i=m.width;i>removeSeam[ii];i--){
+				
+					m.pixels[i][ii]=m.pixels[i-1][ii];
+				}
+				m.pixels[removeSeam[ii]][ii].val=m.pixels[removeSeam[ii]+1][ii].val;
+				m.pixels[removeSeam[ii]][ii].val/=2;
+				m.pixels[removeSeam[ii]+1][ii].val/=2;
 			}
+			m.width++;
 		}
 	}
-	m.width = m.width*sz-sz+1;
+
+	
 	return m;
 }
 Map horizontalSeam(Map m, int n, int l){
@@ -6896,25 +7010,6 @@ Map horizontalSeam(Map m, int n, int l){
 	for(ii=0;ii<m.height;ii++){
 		oldMax[ii]=m.pixels[0][ii].val;
 		oldSeams[ii]={ii};
-		if (l==0){
-			if (m.pixels[0][ii].val >= 0){
-				oldMax[ii]=m.height;
-			}
-			else {
-				oldMax[ii]=-1000000;
-			}
-			
-		}
-		else if (l < 0){
-			if (m.pixels[0][ii].val >= 0){
-				oldMax[ii]=m.height;
-			}
-			else {
-				oldMax[ii]=-1000000;
-				oldSeams[ii][0]=m.height;
-			}
-			
-		}
 		
 	}
 	int h = m.height;
@@ -6923,180 +7018,56 @@ Map horizontalSeam(Map m, int n, int l){
 	for(i=1;i<w;i++){
 		for(ii=0;ii<h;ii++){
 			int mpv = m.pixels[i][ii].val;
-			if (l >= 0 && mpv<0){
-				newMax[ii] = mpv;
-				newSeams[ii] = oldSeams[ii];
-				newSeams[ii].push_back(ii);
-				continue;
-			}
-			int top = -10000000;
+
+			int top = 1000000000;
 			if (ii%modn>0){top = oldMax[ii-1];}
 			int maxv = top;
 			int newI = ii-1;
 			int mid = oldMax[ii];
-			if (mid > maxv){
+			if (mid < maxv){
 				maxv = mid;
 				newI = ii;
 			}
-			int bottom = -10000000;
+			int bottom = 1000000000;
 			if (ii+1<h && (ii+1)%modn>0){bottom = oldMax[ii+1];}
-			if (bottom > maxv){
+			if (bottom < maxv){
 				maxv = bottom;
 				newI = ii+1;
 			}
 			
-			/*if (l == 2){
-				top = -10000000;
-				if (ii%modn>1){top = oldMax[ii-2];}
-				if (top > maxv){
-					maxv = top;
-					newI = ii-2;
-				}
-				bottom = -10000000;
-				if (ii+2<h && (ii+2) % modn>0){bottom = oldMax[ii+2];}
-				if (bottom > maxv){
-					maxv = bottom;
-					newI = ii+2;
-				}
-			}*/
-			bool skip = false;
-			if (l == 0){
-				
-				if (maxv >= 0){
-					if (newI == ii){
-						mpv = h-1;//zig zag is good
-					}
-					else {
-						mpv = h;
-					}
-				}
-				else {
-					for (iiii=2;iiii<h;iiii++){
-						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
-							maxv = oldMax[ii-iiii];
-							mpv = h-iiii;
-							newI = ii-iiii;
-							break;
-						}
-						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
-							maxv = oldMax[ii+iiii];
-							mpv = h-iiii;
-							newI = ii+iiii;
-							break;
-						}
-					}
-				}
-			}
-			else if (l < 0){
-				if (maxv >= 0){
-					if (newI == ii){
-						mpv = h-1;//zig zag is good
-					}
-					else {
-						mpv = h;
-					}
-				}
-				else {
-					for (iiii=2;iiii<h;iiii++){
-						if (ii%modn>=iiii && oldMax[ii-iiii] >= 0){
-							maxv = oldMax[ii-iiii];
-							mpv = h-iiii;
-							newI = ii-iiii;
-							break;
-						}
-						if (ii+iiii<h && (ii+iiii) % modn>0 && oldMax[ii+iiii] >= 0){
-							maxv = oldMax[ii+iiii];
-							mpv = h-iiii;
-							newI = ii+iiii;
-							break;
-						}
-					}
-				}
-				
-				if (maxv >= 0){
-				
-				}
-				else {
-					mpv = -1000000;
-					maxv = oldMax[ii];
-					newI = ii;
-					skip = true;
-				}
-			}
 			
 			
 			newMax[ii] = maxv+mpv;
 
 			
 			newSeams[ii] = oldSeams[newI];
-			if (skip){
-				//newSeams[ii][newSeams[ii].size()-1]=h;
-				newSeams[ii].push_back(h);
-			}
-			else {
-				newSeams[ii].push_back(ii);
-			}
+			newSeams[ii].push_back(ii);
 		}
 		oldSeams = newSeams;
 		oldMax = newMax;
 	}
 	for (iii=n-1;iii>=0;iii--){
-		int maxSeam = 0;
-		if (l<0){
-			maxSeam =1000000*l;
-		}
+		int minSeam = 1000000000;
 		std::vector<int> removeSeam;
 		int maxY = (iii+1)*modn;
 		if (maxY > h){
 			maxY = h;
 		}
 		for (ii=iii*modn;ii<maxY;ii++){
-			if (oldMax[ii]>maxSeam){
-				maxSeam = oldMax[ii];
+			if (oldMax[ii]<minSeam){
+				minSeam = oldMax[ii];
 				removeSeam = oldSeams[ii];
 			}
 		}
 
 		if (l >= 0){
-			if (maxSeam <=0 && n == 1){
-				killCarveH = true;
-				return m;
-			}
-			else if (maxSeam <= 0 && iii< n-1){
-				horzThreads/=2;
-				return horizontalSeam(m,horzThreads,l);
-			}
-			else if (maxSeam > 0){
-				for(i=0;i<w;i++){
-					for(ii=removeSeam[i];ii<m.height-1;ii++){
-						m.pixels[i][ii]=m.pixels[i][ii+1];
-					}
-				}
-				m.height--;
-			}
-		}
-		else {
-			if (maxSeam <=1000000*l){
-				killCarveH = true;
-				return m;
-			}
-			else {
-				for(i=0;i<w;i++){
-					if (removeSeam[i] == m.height || m.pixels[i][removeSeam[i]].val < 0){
-					}
-					else {
-						for(ii=removeSeam[i];ii<m.height-1;ii++){
-							m.pixels[i][ii]=m.pixels[i][ii+1];
-						}
-						Point p;
-						p.x = i;
-						p.y = m.height-1;
-						p.val = 1;
-						m.pixels[i][m.height-1]=p;
-					}
-					
+			for(i=0;i<w;i++){
+				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
+				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
+					m.pixels[i][ii]=m.pixels[i][ii+1];
 				}
 			}
+			m.height--;
 		}
 	}
 	
@@ -7116,24 +7087,6 @@ Map verticalSeam(Map m, int n, int l){
 	for(i=0;i<m.width;i++){
 		oldMax[i]=m.pixels[i][0].val;
 		oldSeams[i]={i};
-		if (l==0){
-			if (m.pixels[i][0].val >= 0){
-				oldMax[i]=m.width;
-			}
-			else {
-				oldMax[i]=-1000000;
-			}
-		}
-		else if (l < 0){
-			if (m.pixels[i][0].val >= 0){
-				oldMax[i]=m.width;
-			}
-			else {
-				oldMax[i]=-1000000;
-				oldSeams[i][0]=m.width;
-			}
-			
-		}
 		
 	}
 	int h = m.height;
@@ -7142,177 +7095,57 @@ Map verticalSeam(Map m, int n, int l){
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int mpv = m.pixels[i][ii].val;
-			if (l >= 0 && mpv<0){
-				newMax[i] = mpv;
-				newSeams[i] = oldSeams[i];
-				newSeams[i].push_back(i);
-				continue;
-			}
-			int left = -10000000;
+
+			int left = 1000000000;
 			if (i%modn>0){left = oldMax[i-1];}
 			int maxv = left;
 			int newI = i-1;
 			int mid = oldMax[i];
-			if (mid > maxv){
+			if (mid < maxv){
 				maxv = mid;
 				newI = i;
 			}
-			int right = -10000000;
+			int right = 1000000000;
 			if (i+1<w && (i+1) % modn>0){right = oldMax[i+1];}
-			if (right > maxv){
+			if (right< maxv){
 				maxv = right;
 				newI = i+1;
 			}
 			
-			/*if (l == 2){
-				left = -10000000;
-				if (i%modn>1){left = oldMax[i-2];}
-				if (left > maxv){
-					maxv = left;
-					newI = i-2;
-				}
-				right = -10000000;
-				if (i+2<w && (i+2) % modn>0){right = oldMax[i+2];}
-				if (right > maxv){
-					maxv = right;
-					newI = i+2;
-				}
-			}*/
-			bool skip = false;
-			if (l == 0){
-				if (maxv >= 0){
-					if (newI == i){
-						mpv = w-1;//zig zag is good
-					}
-					else {
-						mpv = w;
-					}
-				}
-				else {
-					for (iiii=2;iiii<w;iiii++){
-						if (i%modn>=iiii && oldMax[i-iiii] >= 0){
-							maxv = oldMax[i-iiii];
-							mpv = w-iiii;
-							newI = i-iiii;
-							break;
-						}
-						if (i+iiii<w && (i+iiii) % modn>0 && oldMax[i+iiii] >= 0){
-							maxv = oldMax[i+iiii];
-							mpv = w-iiii;
-							newI = i+iiii;
-							break;
-						}
-					}
-				}
-			}
-			else if (l < 0){
-				if (maxv >= 0){
-					if (newI == i){
-						maxv = w-1;//zig zag is good
-					}
-					else {
-						maxv = w;
-					}
-				}
-				else {
-					for (iiii=2;iiii<w;iiii++){
-						if (i%modn>=iiii && oldMax[i-iiii] >= 0){
-							maxv = w-iiii;
-							newI = i-iiii;
-							break;
-						}
-						if (i+iiii<w && (i+iiii) % modn>0 && oldMax[i+iiii] >= 0){
-							maxv = w-iiii;
-							newI = i+iiii;
-							break;
-						}
-					}
-				}
-				
-				if (maxv >= 0){
-				
-				}
-				else {
-					maxv = -1000000;
-					newI = i;
-					skip = true;
-				}
-			}
 			
 			newMax[i] = maxv+mpv;
 
 			newSeams[i] = oldSeams[newI];
-			if (skip){
-				newSeams[i].push_back(w);
-			}
-			else {
-				newSeams[i].push_back(i);
-			}
+			newSeams[i].push_back(i);
+
 		}
 		oldSeams = newSeams;
 		oldMax = newMax;
 	}
 	//std::vector<int> removeSeams;
 	for (iii=n-1;iii>=0;iii--){
-		int maxSeam = 0;
-		if (l<0){
-			maxSeam =1000000*l;
-		}
+		int minSeam = 1000000000;
+
 		std::vector<int> removeSeam;
 		int maxX = (iii+1)*modn;
 		if (maxX > w){
 			maxX = w;
 		}
 		for (i=iii*modn;i<maxX;i++){
-			if (oldMax[i]>maxSeam){
-				maxSeam = oldMax[i];
+			if (oldMax[i]<minSeam){
+				minSeam = oldMax[i];
 				removeSeam = oldSeams[i];
 			}
 		}
 		if (l >= 0){
-			if (maxSeam <=0 && n == 1){
-				killCarveV = true;
-				return m;
-			}
-			else if (maxSeam <= 0 && iii< n-1){
-				vertThreads/=2;
-				return verticalSeam(m,vertThreads,l);
-			}
-			else if (maxSeam > 0){
-				for(ii=0;ii<h;ii++){
-					for(i=removeSeam[ii];i<m.width-1;i++){
-					
-						m.pixels[i][ii]=m.pixels[i+1][ii];
-					}
-				}
-				m.width--;
-			}
-		}
-		else {
-			if (maxSeam <=1000000*l){
-				killCarveV = true;
-				return m;
-			}
-			else {
-				for(ii=0;ii<h;ii++){
-					if (removeSeam[ii] == m.width || m.pixels[removeSeam[ii]][ii].val < 0){
-						
-					}
-					else {
-						
-						
-						for(i=removeSeam[ii];i<m.width-1;i++){
-							m.pixels[i][ii]=m.pixels[i+1][ii];
-						}
-						Point p;
-						p.x = m.width-1;
-						p.y = ii;
-						p.val = 1;
-						m.pixels[m.width-1][ii]=p;
-					}
-					
+			for(ii=0;ii<h;ii++){
+				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
+				for(i=removeSeam[ii]+1;i<m.width-1;i++){
+				
+					m.pixels[i][ii]=m.pixels[i+1][ii];
 				}
 			}
+			m.width--;
 		}
 	}
 
@@ -7387,24 +7220,18 @@ void initialRun(){
 	a11 = std::chrono::high_resolution_clock::now();
 	vertThreads = 5;
 	horzThreads = 5;
-	/*for (i=0;i<np;i++){
+	for (i=0;i<5;i++){
 
-		
-		if (!killCarveV){
-			m = verticalSeam(m,vertThreads,1);
-		}
-		if (!killCarveH){
-			m = horizontalSeam(m,horzThreads,1);
-		}
-		if (killCarveV && killCarveH){
-			break;
-		}
+		m = verticalSeam(m,vertThreads,1);
+		m = horizontalSeam(m,horzThreads,1);
 		console_log(m.width);
 		console_log(m.height);
-		if (i%3 == 2){
-			m = fillBlanks(m);
-		}
-	}*/
+		m = verticalStitch(m,vertThreads,1);
+		m = horizontalStitch(m,horzThreads,1);
+
+		console_log(m.width);
+		console_log(m.height);
+	}
 	
 	
 	
