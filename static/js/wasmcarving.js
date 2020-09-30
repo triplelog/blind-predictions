@@ -15,14 +15,29 @@ function displayNow() {
 		if (parseInt(jsPoints[i].val)<minP){
 			minP = parseInt(jsPoints[i].val);
 		}
-		sumP += parseInt(jsPoints[i].val);
+		//sumP += parseInt(jsPoints[i].val);
+		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
+			sumP += parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r);
+		}
+		else {
+			sumP += parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d);
+		}
+		
 	}
 	var avgP = sumP/jsPoints.length;
 	console.log(minP,maxP, avgP);
 	
 	for (var i=0;i<jsPoints.length;i++){
-		var hue = parseInt(jsPoints[i].d)/parseInt(jsPoints[i].val)*240;
-		var lum = 100-25*parseInt(jsPoints[i].val)/avgP;
+		var hue = 0;
+		var lum = 50;
+		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
+			hue = 240;
+			lum = 100-25*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgP;
+		}
+		else {
+			lum = 100-25*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgP;
+		}
+
 		if (lum<50){lum = 50;}
 		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
 	}
