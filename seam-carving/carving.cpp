@@ -4844,9 +4844,9 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][ii]=m.pixels[i][ii-1];
 			}
 			m.pixels[i][removeSeam[i]].county =m.pixels[i][removeSeam[i]+1].county;
-			m.pixels[i][removeSeam[i]].val =m.pixels[i][removeSeam[i]+1].val;
-			m.pixels[i][removeSeam[i]].val /= 2;
-			m.pixels[i][removeSeam[i]+1].val /= 2;
+			int v = m.pixels[i][removeSeam[i]+1].val;
+			m.pixels[i][removeSeam[i]].val = v/2;
+			m.pixels[i][removeSeam[i]+1].val = v - v/2;
 		}
 		m.height++;
 		
@@ -4918,20 +4918,18 @@ Map verticalStitch(Map m, int n, int l){
 				removeSeam = oldSeams[i];
 			}
 		}
-		if (l >= 0){
-			for(ii=0;ii<h;ii++){
-				
-				for(i=m.width;i>removeSeam[ii];i--){
-				
-					m.pixels[i][ii]=m.pixels[i-1][ii];
-				}
-				m.pixels[removeSeam[ii]][ii].county=m.pixels[removeSeam[ii]+1][ii].county;
-				m.pixels[removeSeam[ii]][ii].val=m.pixels[removeSeam[ii]+1][ii].val;
-				m.pixels[removeSeam[ii]][ii].val/=2;
-				m.pixels[removeSeam[ii]+1][ii].val/=2;
+		for(ii=0;ii<h;ii++){
+			
+			for(i=m.width;i>removeSeam[ii];i--){
+			
+				m.pixels[i][ii]=m.pixels[i-1][ii];
 			}
-			m.width++;
+			m.pixels[removeSeam[ii]][ii].county=m.pixels[removeSeam[ii]+1][ii].county;
+			int v = m.pixels[removeSeam[ii]+1][ii].val;
+			m.pixels[removeSeam[ii]][ii].val=v/2;
+			m.pixels[removeSeam[ii]+1][ii].val= v - v/2;
 		}
+		m.width++;
 	}
 
 	
@@ -4999,15 +4997,13 @@ Map horizontalSeam(Map m, int n, int l){
 			}
 		}
 
-		if (l >= 0){
-			for(i=0;i<w;i++){
-				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
-				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
-					m.pixels[i][ii]=m.pixels[i][ii+1];
-				}
+		for(i=0;i<w;i++){
+			m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
+			for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
+				m.pixels[i][ii]=m.pixels[i][ii+1];
 			}
-			m.height--;
 		}
+		m.height--;
 	}
 	
 	
