@@ -4848,11 +4848,11 @@ Map horizontalStitch(Map m, int n, int l){
 
 		for(i=0;i<w;i++){
 			
-			for(ii=m.height;ii>removeSeam[i];ii--){
+			for(ii=m.height;ii>removeSeam[i]+1;ii--){
 				m.pixels[i][ii]=m.pixels[i][ii-1];
 			}
-			m.pixels[i][removeSeam[i]].county =m.pixels[i][removeSeam[i]+1].county;
-			int v = m.pixels[i][removeSeam[i]+1].val;
+			m.pixels[i][removeSeam[i]+1].county =m.pixels[i][removeSeam[i]].county;
+			int v = m.pixels[i][removeSeam[i]].val;
 			m.pixels[i][removeSeam[i]].val = v/2;
 			m.pixels[i][removeSeam[i]+1].val = v - v/2;
 		}
@@ -4928,12 +4928,12 @@ Map verticalStitch(Map m, int n, int l){
 		}
 		for(ii=0;ii<h;ii++){
 			
-			for(i=m.width;i>removeSeam[ii];i--){
+			for(i=m.width;i>removeSeam[ii]+1;i--){
 			
 				m.pixels[i][ii]=m.pixels[i-1][ii];
 			}
-			m.pixels[removeSeam[ii]][ii].county=m.pixels[removeSeam[ii]+1][ii].county;
-			int v = m.pixels[removeSeam[ii]+1][ii].val;
+			m.pixels[removeSeam[ii]+1][ii].county=m.pixels[removeSeam[ii]][ii].county;
+			int v = m.pixels[removeSeam[ii]][ii].val;
 			m.pixels[removeSeam[ii]][ii].val=v/2;
 			m.pixels[removeSeam[ii]+1][ii].val= v - v/2;
 		}
@@ -5006,9 +5006,14 @@ Map horizontalSeam(Map m, int n, int l){
 		}
 
 		for(i=0;i<w;i++){
-			m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
-			for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
-				m.pixels[i][ii]=m.pixels[i][ii+1];
+			if (removeSeam[i]+1 < m.height){
+				m.pixels[i][removeSeam[i]].val +=m.pixels[i][removeSeam[i]+1].val;
+				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
+					m.pixels[i][ii]=m.pixels[i][ii+1];
+				}
+			}
+			else {
+				m.pixels[i][removeSeam[i]-1].val +=m.pixels[i][removeSeam[i]].val;
 			}
 		}
 		m.height--;
@@ -5082,15 +5087,18 @@ Map verticalSeam(Map m, int n, int l){
 		}
 		if (l >= 0){
 			for(ii=0;ii<h;ii++){
-				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
-				for(i=removeSeam[ii]+1;i<m.width-1;i++){
+				if (removeSeam[ii]+1 < m.width){
+					m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
+					for(i=removeSeam[ii]+1;i<m.width-1;i++){
 				
-					m.pixels[i][ii]=m.pixels[i+1][ii];
+						m.pixels[i][ii]=m.pixels[i+1][ii];
+					}
+				}
+				else {
+					m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
 				}
 			}
-			
 			m.width--;
-			console_log(sum(m));
 		}
 	}
 
@@ -5266,7 +5274,7 @@ void initialRun(){
 	
 	set_maxX(m.width);
 	set_maxY(m.height);
-	for (iii=0;iii<1;iii++){
+	for (iii=0;iii<5;iii++){
 		vertThreads = 1 + (rand() % 20);
 		horzThreads = 1 + (rand() % 20);
 		if (iii%5 == 0){
