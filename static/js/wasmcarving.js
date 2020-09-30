@@ -7,7 +7,7 @@ function cpp_ready() {
 function displayNow() {
 	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 '+(parseInt(maxX)+2)+' '+(parseInt(maxY)+2)+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (var i=0;i<jsPoints.length;i++){
-		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="rgb('+(parseInt(jsPoints[i].val)*250/100)+',0,'+(250-parseInt(jsPoints[i].val)*250/100)+')" stroke="none"></circle>';
+		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="rgb('+(parseInt(jsPoints[i].val)*250/1000)+',0,'+(250-parseInt(jsPoints[i].val)*250/1000)+')" stroke="none"></circle>';
 	}
 	svg += '</svg>';
 	postMessage(svg);

@@ -7230,6 +7230,7 @@ void initialRun(){
 				add_pointOut(pointStr.c_str());
 			}
 		}
+		display_points();
 		m = verticalSeam(m,vertThreads,1);
 		m = horizontalSeam(m,horzThreads,1);
 		console_log(m.width);
