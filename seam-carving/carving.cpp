@@ -629,7 +629,7 @@ void initialRun(){
 	std::map<int,int> yCount;
 	killCarveV = false;
 	killCarveH = false;
-	int np = 500;
+	int np = 1000;
 	for(i=0;i<10000;i++){
 		xCount[i]=0;
 		yCount[i]=0;
