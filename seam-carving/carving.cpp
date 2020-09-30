@@ -74,6 +74,7 @@ struct Point {
 	int y;
 	int val;
 	int county;
+	int npix;
 };
 
 std::map<int,Point> scPoints(){
@@ -7184,9 +7185,7 @@ void initialRun(){
 
 	
 	
-	auto a22 = std::chrono::high_resolution_clock::now();
-	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(durationTotal);
+	
 	/*for (i=0;i<np;i++){
 		int x = rand() % 10000;
 		int y = rand() % 10000;
@@ -7198,8 +7197,33 @@ void initialRun(){
 		yCount[y]++;
 	}*/
 	points = scPoints();
-	
 	int np = 2247;
+	for(i=0;i<np;i++){
+		points[i].npix = 0;
+	}
+	
+	for(i=0;i<100;i++){
+		console_log(i);
+		for(ii=0;ii<100;ii++){
+			int minP = 1000000000;
+			int d;
+			int minI = 0;
+			for (iii=0;iii<np;iii++){
+				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
+				if (d < minP){
+					minP = d;
+					minI = iii;
+				}
+			}
+			points[minI].npix++;
+		}
+	}
+	
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationTotal);
+	
+	
 	
 	a11 = std::chrono::high_resolution_clock::now();
 	
