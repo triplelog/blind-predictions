@@ -39,14 +39,14 @@ function displayNow() {
 		var lum = 50;
 		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
 			hue = 240;
-			lum = 100-50*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/maxD;
+			lum = 100-75*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/maxD;
 		}
 		else {
-			lum = 100-50*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/maxD;
+			lum = 100-75*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/maxD;
 		}
 
 
-		if (lum<50){lum = 50;}
+		if (lum<25){lum = 25;}
 		svg += '<circle r=".5" cx="'+jsPoints[i].x+'" cy="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="none"></circle>';
 	}
 	svg += '</svg>';
