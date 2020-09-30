@@ -7,6 +7,7 @@ function cpp_ready() {
 function displayNow() {
 	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 '+(parseInt(maxX)+2)+' '+(parseInt(maxY)+2)+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
+	var maxD = 0;
 	for (var i=0;i<jsPoints.length;i++){
 		if (parseInt(jsPoints[i].val)>maxP){
 			maxP = parseInt(jsPoints[i].val);
@@ -18,24 +19,30 @@ function displayNow() {
 		//sumP += parseInt(jsPoints[i].val);
 		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
 			sumP += parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r);
+			if (parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r) > maxD){
+				maxD = parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r);
+			}
 		}
 		else {
 			sumP += parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d);
+			if (parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d) > maxD){
+				maxD = parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d);
+			}
 		}
 		
 	}
 	var avgP = sumP/jsPoints.length;
-	console.log(minP,maxP, avgP);
+	console.log(minP,maxP, avgP, maxD);
 	
 	for (var i=0;i<jsPoints.length;i++){
 		var hue = 0;
 		var lum = 50;
 		if (parseInt(jsPoints[i].d)>parseInt(jsPoints[i].r)){
 			hue = 240;
-			lum = 100-25*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/avgP;
+			lum = 100-50*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r))/maxD;
 		}
 		else {
-			lum = 100-25*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/avgP;
+			lum = 100-50*(parseInt(jsPoints[i].r)-parseInt(jsPoints[i].d))/maxD;
 		}
 
 		if (lum<50){lum = 50;}
