@@ -2108,9 +2108,14 @@ void initialRun(){
 	auto a11 = std::chrono::high_resolution_clock::now();
 	
 	nd = 4;
+	datas[0] = "d";
+	datas[1] = "r";
+	datas[2] = "d16";
+	datas[3] = "r16";
 	
 	std::map<int,std::map<int,Point>> pixels;
 	std::map<int,std::map<int,int>> pixelMap;
+
 	for(i=0;i<100;i++){
 		std::map<int,Point> v;
 		pixels[i] = v;
@@ -2121,20 +2126,16 @@ void initialRun(){
 			p.x = i;
 			p.y = ii;
 			p.val = 0;
-			p.data["r"] = 0;
-			p.data["d"] = 0;
-			p.data["r16"] = 0;
-			p.data["d16"] = 0;
+			for (iii=0;iii>nd;iii++){
+				p.data[datas[iii]] = 0;
+			}
 			pixels[i][ii] = p;
 			pixelMap[i][ii] = -1;
 		}
 	}
 
 	
-	datas[0] = "d";
-	datas[1] = "r";
-	datas[2] = "d16";
-	datas[3] = "r16";
+	
 	
 	
 	/*for (i=0;i<np;i++){
@@ -2203,15 +2204,15 @@ void initialRun(){
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
-	
+	std::string s;
 	for(i=0;i<100;i++){
 		for(ii=0;ii<100;ii++){
 			if (pixelMap[i][ii]>=0){
 				pixels[i][ii].val += points[pixelMap[i][ii]].val*100/points[pixelMap[i][ii]].npix;
-				pixels[i][ii].data["d"] += points[pixelMap[i][ii]].data["d"]*100/points[pixelMap[i][ii]].npix;
-				pixels[i][ii].data["r"] += points[pixelMap[i][ii]].data["r"]*100/points[pixelMap[i][ii]].npix;
-				pixels[i][ii].data["d16"] += points[pixelMap[i][ii]].data["d16"]*100/points[pixelMap[i][ii]].npix;
-				pixels[i][ii].data["r16"] += points[pixelMap[i][ii]].data["r16"]*100/points[pixelMap[i][ii]].npix;
+				for (iii=0;iii<nd;iii++){
+					s = datas[iii];
+					pixels[i][ii].data[s] += points[pixelMap[i][ii]].data[s]*100/points[pixelMap[i][ii]].npix;
+				}
 				pixels[i][ii].x = points[pixelMap[i][ii]].x;
 				pixels[i][ii].y = points[pixelMap[i][ii]].y;
 				pixels[i][ii].county = points[pixelMap[i][ii]].county;
@@ -2242,10 +2243,10 @@ void initialRun(){
 			}
 			if (minP < 1000000000){
 				pixels[i][ii].val += points[minI].val*100/points[minI].npix;
-				pixels[i][ii].data["d"] += points[minI].data["d"]*100/points[minI].npix;
-				pixels[i][ii].data["r"] += points[minI].data["r"]*100/points[minI].npix;
-				pixels[i][ii].data["d16"] += points[minI].data["d16"]*100/points[minI].npix;
-				pixels[i][ii].data["r16"] += points[minI].data["r16"]*100/points[minI].npix;
+				for (iii=0;iii<nd;iii++){
+					s = datas[iii];
+					pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
+				}
 				pixels[i][ii].x = points[minI].x;
 				pixels[i][ii].y = points[minI].y;
 				pixels[i][ii].county = points[minI].county;
@@ -2260,10 +2261,10 @@ void initialRun(){
 				}
 			}
 			pixels[i][ii].val += points[minI].val*100/points[minI].npix;
-			pixels[i][ii].data["d"] += points[minI].data["d"]*100/points[minI].npix;
-			pixels[i][ii].data["r"] += points[minI].data["r"]*100/points[minI].npix;
-			pixels[i][ii].data["d16"] += points[minI].data["d16"]*100/points[minI].npix;
-			pixels[i][ii].data["r16"] += points[minI].data["r16"]*100/points[minI].npix;
+			for (iii=0;iii<nd;iii++){
+				s = datas[iii];
+				pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
+			}
 			pixels[i][ii].x = points[minI].x;
 			pixels[i][ii].y = points[minI].y;
 			pixels[i][ii].county = points[minI].county;
