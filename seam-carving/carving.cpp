@@ -64,6 +64,7 @@ bool killCarveH;
 int vertThreads;
 int horzThreads;
 int np;
+int nd;
 std::string datas[4];
 
 extern "C" {
@@ -1586,6 +1587,8 @@ Map verticalStitch(Map m, int n, int l){
 	int h = m.height;
 	int w = m.width;
 	int modn = w / n;
+	std::string s;
+	int r;
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int mpv = m.pixels[i][ii].val;
@@ -1665,9 +1668,9 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]+1][ii].val=v/4;
 				m.pixels[removeSeam[ii]+2][ii].val= v/4;
 				
-				for (ii=0;ii<4;ii++){
-					std::string s = datas[ii];
-					int r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]-1][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
+				for (i=0;i<nd;i++){
+					s = datas[i];
+					r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]-1][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
 					m.pixels[removeSeam[ii]-1][ii].data[s]=r/4;
 					m.pixels[removeSeam[ii]][ii].data[s]=r - r/4 - r/4 - r/4;
 					m.pixels[removeSeam[ii]+1][ii].data[s]=r/4;
@@ -1713,9 +1716,9 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]+1][ii].val=v/3;
 				m.pixels[removeSeam[ii]+2][ii].val= v/3;
 				
-				for (ii=0;ii<4;ii++){
-					std::string s = datas[ii];
-					int r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
+				for (i=0;i<nd;i++){
+					s = datas[i];
+					r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
 					m.pixels[removeSeam[ii]][ii].data[s]=r - r/3 - r/3;
 					m.pixels[removeSeam[ii]+1][ii].data[s]=r/3;
 					m.pixels[removeSeam[ii]+2][ii].data[s]= r/3;
@@ -1750,9 +1753,9 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].val=v/2;
 				m.pixels[removeSeam[ii]+1][ii].val= v - v/2;
 				
-				for (ii=0;ii<4;ii++){
-					std::string s = datas[ii];
-					int r = m.pixels[removeSeam[ii]][ii].data[s];
+				for (i=0;i<nd;i++){
+					s = datas[i];
+					r = m.pixels[removeSeam[ii]][ii].data[s];
 					m.pixels[removeSeam[ii]][ii].data[s]=r/2;
 					m.pixels[removeSeam[ii]+1][ii].data[s]= r - r/2;
 				}
@@ -1953,6 +1956,8 @@ Map verticalSeam(Map m, int n, int l){
 	int h = m.height;
 	int w = m.width;
 	int modn = w / n;
+	std::string s;
+	int r;
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int mpv = m.pixels[i][ii].val;
@@ -2002,9 +2007,9 @@ Map verticalSeam(Map m, int n, int l){
 			if (removeSeam[ii]+1 < m.width && removeSeam[ii] > 0){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				
-				for (ii=0;ii<4;ii++){
-					std::string s = datas[ii];
-					int r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]-1][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
+				for (i=0;i<nd;i++){
+					s = datas[i];
+					r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]-1][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
 					m.pixels[removeSeam[ii]][ii].data[s]=r - r/2;
 					m.pixels[removeSeam[ii]-1][ii].data[s]= r/2;
 				}
@@ -2039,8 +2044,8 @@ Map verticalSeam(Map m, int n, int l){
 			else if (removeSeam[ii]+1 < m.width){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				
-				for (ii=0;ii<4;ii++){
-					std::string s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					m.pixels[removeSeam[ii]][ii].data[s]+=m.pixels[removeSeam[ii]+1][ii].data[s];
 				}
 				
@@ -2070,8 +2075,8 @@ Map verticalSeam(Map m, int n, int l){
 			else {
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val;
 				
-				for (ii=0;ii<4;ii++){
-					std::string s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					m.pixels[removeSeam[ii]-1][ii].data[s]+=m.pixels[removeSeam[ii]][ii].data[s];
 				}
 				
@@ -2115,6 +2120,8 @@ void initialRun(){
 	killCarveH = false;
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
+	
+	nd = 4;
 	
 	std::map<int,std::map<int,Point>> pixels;
 	std::map<int,std::map<int,int>> pixelMap;
