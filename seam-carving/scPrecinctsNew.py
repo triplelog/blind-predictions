@@ -19,16 +19,31 @@ def readcsv(filen):
                 for row in spamreader:
                         allgamesa.append(row)
         return allgamesa
-        
-        
-        
+		
+def readblockgroup(filen,state):
+		allgamesa  ={}
+		with open(filen, 'r', encoding='mac_roman') as csvfile:
+			spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+			for row in spamreader:
+				if row[2][7:9] == state:
+					try:
+						allgamesa[row[2][7:]][row[1]]=row[6]
+					except:
+						allgamesa[row[2][7:]]={}
+						allgamesa[row[2][7:]][row[1]]=row[6]
+		return allgamesa	   
+		
         
 shape = fiona.open("sc_2018/sc_2018.shp")
 print(len(shape))
 
 
 counties = [19,13,15,29,35]
-extradatas = {"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'}}
+#extradatas = {"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'}}
+
+extradatas = {"demographics/tl_2019_45_bg/tl_2019_45_bg.shp":{"black":'Black or African American Alone',"white":'White Alone'}}
+
+bgdata = readblockgroup("demographics/CVAP_2013-2017_ACS_csv_files/BlockGr.csv","45")
 
 
 
@@ -130,7 +145,8 @@ def addExtra(extrafile):
 			#print(coords)
 			print(shape16[i]['geometry']['type'])
 		cent = poly.centroid
-		if int(shape16[i]['properties']['COUNTY']) not in counties:
+
+		if int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
 		if cent.x < bounds16['left']:
 			bounds16['left'] = cent.x
@@ -161,12 +177,14 @@ def addExtra(extrafile):
 			#print(coords)
 			print(shape16[i]['geometry']['type'])
 		cent = poly.centroid
-	
-		if int(shape16[i]['properties']['COUNTY']) not in counties:
+		
+		if int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
 		precincts16[shape16[i]['id']]={'x':(cent.x-bounds16['left'])/(bounds16['right']-bounds16['left']),'y':(bounds16['top']-cent.y)/(bounds16['top']-bounds16['bottom'])}
 		for ii in extradatas[extrafile].keys():
-			precincts16[shape16[i]['id']][ii]=shape16[i]['properties'][extradatas[extrafile][ii]]
+			#precincts16[shape16[i]['id']][ii]=shape16[i]['properties'][extradatas[extrafile][ii]]
+			precincts16[shape16[i]['id']][ii]=bgdata[shape16[i]['properties']['GEOID']][extradatas[extrafile][ii]]
+			
 
 		
 	missingP = 0
