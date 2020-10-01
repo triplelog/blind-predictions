@@ -1433,53 +1433,56 @@ Map horizontalStitch(Map m, int n, int l){
 				for(ii=m.height;ii>removeSeam[i]+2;ii--){
 					m.pixels[i][ii]=m.pixels[i][ii-1];
 				}
-				m.pixels[i][removeSeam[i]+1].county =m.pixels[i][removeSeam[i]].county;
-				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]-1].val+m.pixels[i][removeSeam[i]+1].val;
+				Point pn1 = m.pixels[i][removeSeam[i]-1];
+				Point p0 = m.pixels[i][removeSeam[i]];
+				Point p1 = m.pixels[i][removeSeam[i]+1];
+				Point p2 = m.pixels[i][removeSeam[i]+2];
+				p1.county =p0.county;
+				int v = p0.val+pn1.val+p1.val;
 				
 				int xx; int yy;
 				if (v <= 0){
-					xx = m.pixels[i][removeSeam[i]].x;
-					yy = m.pixels[i][removeSeam[i]].y;
+					xx = p0.x;
+					yy = p0.y;
 				}
 				else {
-					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
-					xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
-					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
+					xx = p0.val*p0.x;
+					xx += pn1.val*pn1.x;
+					xx += p1.val*p1.x;
 					xx += v/2;
 					xx = xx/v;
-					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
-					yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
-					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
+					yy = p0.val*p0.y;
+					yy += pn1.val*pn1.y;
+					yy += p1.val*p1.y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				m.pixels[i][removeSeam[i]-1].val = v/4;
-				m.pixels[i][removeSeam[i]].val = v - v/4 - v/4 - v/4;
-				m.pixels[i][removeSeam[i]+1].val = v/4;
-				m.pixels[i][removeSeam[i]+2].val = v/4;
-				std::vector<std::string> datas;
-				datas.resize(4);
+				pn1.val = v/4;
+				p0.val = v - v/4 - v/4 - v/4;
+				p1.val = v/4;
+				p2.val = v/4;
+				std::string datas[4];
 				datas[0] = "d";
 				datas[1] = "r";
 				datas[2] = "d16";
 				datas[3] = "r16";
 				for (ii=0;ii<4;ii++){
 					std::string s = datas[ii];
-					int r = m.pixels[i][removeSeam[i]].data[s]+m.pixels[i][removeSeam[i]-1].data[s]+m.pixels[i][removeSeam[i]+1].data[s];
-					m.pixels[i][removeSeam[i]-1].data[s] = r/4;
-					m.pixels[i][removeSeam[i]].data[s] = r - r/4 - r/4 - r/4;
-					m.pixels[i][removeSeam[i]+1].data[s] = r/4;
-					m.pixels[i][removeSeam[i]+2].data[s] = r/4;
+					int r = p0.data[s]+pn1.data[s]+p1.data[s];
+					pn1.data[s] = r/4;
+					p0.data[s] = r - r/4 - r/4 - r/4;
+					p1.data[s] = r/4;
+					p2.data[s] = r/4;
 				}
-				m.pixels[i][removeSeam[i]-1].x = xx;
-				m.pixels[i][removeSeam[i]].x = xx;
-				m.pixels[i][removeSeam[i]+1].x = xx;
-				m.pixels[i][removeSeam[i]+2].x = xx;
+				pn1.x = xx;
+				p0.x = xx;
+				p1.x = xx;
+				p2.x = xx;
 				
-				m.pixels[i][removeSeam[i]-1].y = yy;
-				m.pixels[i][removeSeam[i]].y = yy;
-				m.pixels[i][removeSeam[i]+1].y = yy;
-				m.pixels[i][removeSeam[i]+2].y = yy;
+				pn1.y = yy;
+				p0.y = yy;
+				p1.y = yy;
+				p2.y = yy;
 			}
 			else if (removeSeam[i]+1<m.height){
 				for(ii=m.height;ii>removeSeam[i]+2;ii--){
