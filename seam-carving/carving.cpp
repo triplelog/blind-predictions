@@ -1670,8 +1670,8 @@ Map verticalStitch(Map m, int n, int l){
 				p1.val=v/4;
 				p2.val= v/4;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					r = p0.data[s]+pn1.data[s]+p1.data[s];
 					pn1.data[s]=r/4;
 					p0.data[s]=r - r/4 - r/4 - r/4;
@@ -1718,8 +1718,8 @@ Map verticalStitch(Map m, int n, int l){
 				p1.val=v/3;
 				p2.val= v/3;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					r = p0.data[s]+p1.data[s];
 					p0.data[s]=r - r/3 - r/3;
 					p1.data[s]=r/3;
@@ -1755,8 +1755,8 @@ Map verticalStitch(Map m, int n, int l){
 				p0.val=v/2;
 				p1.val= v - v/2;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					r = p0.data[s];
 					p0.data[s]=r/2;
 					p1.data[s]= r - r/2;
@@ -2021,8 +2021,8 @@ Map verticalSeam(Map m, int n, int l){
 				Point p1 = m.pixels[removeSeam[ii]+1][ii];
 				int v = p0.val+pn1.val+p1.val;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					r = p0.data[s]+pn1.data[s]+p1.data[s];
 					p0.data[s]=r - r/2;
 					pn1.data[s]= r/2;
@@ -2060,8 +2060,8 @@ Map verticalSeam(Map m, int n, int l){
 				Point p1 = m.pixels[removeSeam[ii]+1][ii];
 				int v = p0.val+p1.val;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					p0.data[s]+=p1.data[s];
 				}
 				
@@ -2093,8 +2093,8 @@ Map verticalSeam(Map m, int n, int l){
 				Point p0 = m.pixels[removeSeam[ii]][ii];
 				int v = p0.val+pn1.val;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
+				for (i=0;i<nd;i++){
+					s = datas[i];
 					pn1.data[s]+=p0.data[s];
 				}
 				
