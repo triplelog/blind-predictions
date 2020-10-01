@@ -223,5 +223,5 @@ for pixel in pixelMap.keys():
 	file1.writelines([line])
 	file1.writelines(['points[i]=p;i++;}\n'])
 print(pixels)
-file1.writelines(['return points;}\n'])
+file1.writelines(['np = '+str(pixels)+';\nreturn points;}\n'])
 file1.close()

@@ -4,7 +4,7 @@ function cpp_ready() {
 	
 }
 
-function displayNow() {
+function displayNow(dAdv=1) {
 	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 '+(parseInt(maxX)+2)+' '+(parseInt(maxY)+2)+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
@@ -19,7 +19,7 @@ function displayNow() {
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
-		var yeardiff = parseInt(jsPoints[i].d16)*54.9/40.7 - (parseInt(jsPoints[i].r16));
+		var yeardiff = parseInt(jsPoints[i].d16)*dAdv - (parseInt(jsPoints[i].r16));
 		
 		if (parseInt(jsPoints[i].val)>maxP){
 			maxP = parseInt(jsPoints[i].val);
@@ -49,7 +49,7 @@ function displayNow() {
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
-		var yeardiff = parseInt(jsPoints[i].d16)*54.9/40.7 - (parseInt(jsPoints[i].r16));
+		var yeardiff = parseInt(jsPoints[i].d16)*dAdv - (parseInt(jsPoints[i].r16));
 		
 		var hue = 0;
 		var lum = 50;
@@ -73,7 +73,6 @@ function displayNow() {
 	svg += '</svg>';
 	postMessage(svg);
 	pointsOut = [];
-	jsPoints = [];
 }
 
 var pointsOut = [];
@@ -89,17 +88,8 @@ importScripts('wasmcarve.js');
 onmessage = function(e) {
 	var message = e.data;
 	var result = [];
-	if (message[0] == "predict"){
-		if (message[1]){
-			predictjs(message[1]);
-		}
-		else {
-			predictjs(100);
-		}
-		
-	}
-	else if (message[0] == "update"){
-		updatejs(message[1],message[2],message[3]);
+	if (message[0] == "update"){
+		displayNow(message[1]);
 	}
 }
 

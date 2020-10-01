@@ -41,7 +41,7 @@
 
 			
 			</div>
-			
+			<button onclick="updateNow()">Update</button>
 		</div>
 
       </div>
@@ -80,10 +80,10 @@ myWorker.onmessage = function(e) {
 		document.getElementById('mapHolder').innerHTML = e.data;
 	}
 }
-function predictNow(){
+function updateNow(){
 
-	myWorker.postMessage(["predict",100]);
-	myWorker.postMessage(["predict",1000]);
+	
+	myWorker.postMessage(['update',54.9/40.7]);
 }
 </script>
 

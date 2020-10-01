@@ -2211,6 +2211,7 @@ void initialRun(){
 		xCount[x]++;
 		yCount[y]++;
 	}*/
+	np =0;
 	points = scPoints();
 	int np = 415;
 	for(i=0;i<np;i++){
