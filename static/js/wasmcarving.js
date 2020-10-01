@@ -108,7 +108,7 @@ function displayNow(dAdv=1,bAdv=1) {
 		var id = 'cell-'+jsPoints[i].x+'-'+jsPoints[i].y;
 		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';
 		
-		if (jsPoints[i].ox == 50 && jsPoints[i].oy == 50){
+		if (jsPoints[i].ox == "50" && jsPoints[i].oy == "50"){
 			svgCities['city-0'].x = jsPoints[i].x;
 			svgCities['city-0'].y = jsPoints[i].y;
 		}
