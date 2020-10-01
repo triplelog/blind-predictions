@@ -6059,12 +6059,16 @@ void initialRun(){
 	killCarveH = false;
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationTotal);
+	a11 = std::chrono::high_resolution_clock::now();
 	
 	np =0;//will get set to right value in scPoints()
 	points = scPoints();
 	
-	auto a22 = std::chrono::high_resolution_clock::now();
-	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	a22 = std::chrono::high_resolution_clock::now();
+	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
 	a11 = std::chrono::high_resolution_clock::now();
 	
