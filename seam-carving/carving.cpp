@@ -6063,6 +6063,11 @@ void initialRun(){
 	np =0;//will get set to right value in scPoints()
 	points = scPoints();
 	
+	auto a22 = std::chrono::high_resolution_clock::now();
+	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	console_log(durationTotal);
+	a11 = std::chrono::high_resolution_clock::now();
+	
 	nd = 0;
 	datas.resize(0);
 	//for (std::map<std::string,int>::iterator iter = points[0].data.begin(); iter != points[0].data.end(); ++iter){
@@ -6090,7 +6095,7 @@ void initialRun(){
 			p.x = i;
 			p.y = ii;
 			p.val = 0;
-			for (iii=0;iii>nd;iii++){
+			for (iii=0;iii<nd;iii++){
 				p.data[datas[iii]] = 0;
 			}
 			pixels[i][ii] = p;
@@ -6119,8 +6124,8 @@ void initialRun(){
 		pixelMap[points[i].x][points[i].y]=i;
 	}
 	
-	auto a22 = std::chrono::high_resolution_clock::now();
-	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
+	a22 = std::chrono::high_resolution_clock::now();
+	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
 	a11 = std::chrono::high_resolution_clock::now();
 	
