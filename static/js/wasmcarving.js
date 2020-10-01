@@ -34,8 +34,8 @@ function displayNow(dAdv=1,bAdv=1) {
 		var whitev = v*whitepct;
 		var blackv = v*(1-whitepct);
 		var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv);
-		var d = whitev*.5*bd+blackv*bd*bAdv;
-		var r = whitev*(1-.5*bd)+blackv*(1-bd*bAdv);
+		var d = whitev*.5*bd*bAdv+blackv*bd*bAdv;
+		var r = whitev*(1-.5*bd*bAdv)+blackv*(1-bd*bAdv);
 		
 
 		var yeardiff = d - r;
