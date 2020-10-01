@@ -7,7 +7,7 @@ function cpp_ready() {
 function displayNow(dAdv=1,bAdv=1) {
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
-	var sums = [0,0,0,0,0,0];
+	var sums = [0,0,0,0,0,0,0,0,0,0];
 	var svgPoints = {};
 	for (var i=0;i<jsPoints.length;i++){
 		sums[0]+=parseInt(jsPoints[i].d);
@@ -16,12 +16,7 @@ function displayNow(dAdv=1,bAdv=1) {
 		sums[3]+=parseInt(jsPoints[i].r16);
 		sums[4]+=parseInt(jsPoints[i].white);
 		sums[5]+=parseInt(jsPoints[i].black);
-	}
-	var wmax = 0;
-	var wmin = 100;
-	for (var i=0;i<jsPoints.length;i++){
-		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
-		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
+		
 		var whitepct;
 		if (parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black) > 0){
 			whitepct = parseFloat(jsPoints[i].white)/(parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black));
@@ -34,18 +29,35 @@ function displayNow(dAdv=1,bAdv=1) {
 		
 		var whitev = v*whitepct;
 		var blackv = v*(1-whitepct);
-		var yeardiff = 0;
 		if (whitev+blackv > 0){
 			var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv);
-			var d = whitev*.5*bd+blackv*bd*bAdv;
-			var r = whitev*(1-.5*bd)+blackv*(1-bd*bAdv);
-		
-			yeardiff = d - r;
+			var bdems = blackv*bd*bAdv;
+			var breps = blackv*(1-bd*bAdv);
+			sums[6]+=bdems-blackv*bd;//black dem diff
+			sums[7]+=breps-blackv*(1-bd);//black rep diff
+			sums[8]+=whitev*.5*bd;//white dem total
+			sums[9]+=whitev*(1-.5*bd);//white rep total
+			jsPoints[i].yeard = [whitev*.5*bd,bdems];
+			jsPoints[i].yearr = [whitev*(1-.5*bd),breps];
+		}
+		else {
+			jsPoints[i].yeard = [0,0];
+			jsPoints[i].yearr = [0,0];
 		}
 		
 		
 		
-		jsPoints[i].yeardiff = yeardiff;
+	}
+	var whitedemMul = (sums[8]-sums[6])/sums[8];
+	var whiterepMul = (sums[9]-sums[7])/sums[9];
+	for (var i=0;i<jsPoints.length;i++){
+		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
+		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
+		
+		jsPoints[i].yeardiff = (jsPoints[i].yeard[0]*whitedemMul+jsPoints[i].yeard[1])-(jsPoints[i].yearr[0]*whiterepMul+jsPoints[i].yearr[1]);
+		
+		
+		
 		if (parseInt(jsPoints[i].val)>maxP){
 			maxP = parseInt(jsPoints[i].val);
 			//console.log(maxP,jsPoints[i].x,jsPoints[i].y);
