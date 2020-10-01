@@ -28,6 +28,8 @@ shape16 = fiona.open("sc_2016/sc_2016.shp")
 print(len(shape))
 print(len(shape16))
 
+counties = [19,13,15,29,35]
+
 precincts = {}
 
 bounds = {'left':1000000000,'right':-1000000000,'bottom':1000000000,'top':-1000000000}
@@ -48,6 +50,8 @@ for i in range(0,len(shape)):
 		#print(coords)
 		print(shape[i]['geometry']['type'])
 	cent = poly.centroid
+	if int(shape[i]['properties']['COUNTYFP']) not in counties:
+		continue
 	if cent.x < bounds['left']:
 		bounds['left'] = cent.x
 	if cent.x > bounds['right']:
@@ -75,6 +79,8 @@ for i in range(0,len(shape16)):
 		#print(coords)
 		print(shape16[i]['geometry']['type'])
 	cent = poly.centroid
+	if int(shape16[i]['properties']['COUNTY']) not in counties:
+		continue
 	if cent.x < bounds16['left']:
 		bounds16['left'] = cent.x
 	if cent.x > bounds16['right']:
@@ -84,6 +90,8 @@ for i in range(0,len(shape16)):
 	if cent.y > bounds16['top']:
 		bounds16['top'] = cent.y
 print(bounds16)
+
+
 for i in range(0,len(shape)):
 
 	if shape[i]['geometry']['type'] == "Polygon":
@@ -101,8 +109,11 @@ for i in range(0,len(shape)):
 		#print(coords)
 		print(shape[i]['geometry']['type'])
 	cent = poly.centroid
-	
+	if int(shape[i]['properties']['COUNTYFP']) not in counties:
+		continue
 	precincts[shape[i]['id']]={'x':(cent.x-bounds['left'])/(bounds['right']-bounds['left']),'y':(bounds['top']-cent.y)/(bounds['top']-bounds['bottom']),'name':shape[i]['properties']['NAME'],'d':shape[i]['properties']['G18GOVDSMI'],'r':shape[i]['properties']['G18GOVRMCM'],'county':shape[i]['properties']['COUNTYFP']}
+
+
 
 
 precincts16 = {}
@@ -125,7 +136,8 @@ for i in range(0,len(shape16)):
 		print(shape16[i]['geometry']['type'])
 	cent = poly.centroid
 	
-	
+	if int(shape16[i]['properties']['COUNTY']) not in counties:
+		continue
 	precincts16[shape16[i]['id']]={'x':(cent.x-bounds16['left'])/(bounds16['right']-bounds16['left']),'y':(bounds16['top']-cent.y)/(bounds16['top']-bounds16['bottom']),'name':shape16[i]['properties']['PNAME'],'d16':shape16[i]['properties']['G16PREDCLI'],'r16':shape16[i]['properties']['G16PRERTRU'],'county':shape16[i]['properties']['COUNTY']}
 
 
