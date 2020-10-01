@@ -31,12 +31,12 @@ function displayNow(dAdv=1,bAdv=1) {
 		var blackv = v*(1-whitepct);
 		if (whitev+blackv > 0){
 			var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv);
-			var bdems = blackv*bd*bAdv;
-			var breps = blackv*(1-bd*bAdv);
-			sums[6]+=bdems-blackv*bd;//black dem diff
-			sums[7]+=breps-blackv*(1-bd);//black rep diff
-			sums[8]+=whitev*.5*bd;//white dem total
-			sums[9]+=whitev*(1-.5*bd);//white rep total
+			var bdems = blackv*bd*dAdv*bAdv;
+			var breps = blackv*(1-bd*dAdv*bAdv);
+			sums[6]+=bdems-blackv*bd*dAdv;//black dem diff
+			sums[7]+=breps-blackv*(1-bd*dAdv);//black rep diff
+			sums[8]+=whitev*.5*bd*dAdv;//white dem total
+			sums[9]+=whitev*(1-.5*bd*dAdv);//white rep total
 			jsPoints[i].yeard = [whitev*.5*bd,bdems];
 			jsPoints[i].yearr = [whitev*(1-.5*bd),breps];
 		}
