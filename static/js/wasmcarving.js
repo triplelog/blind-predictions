@@ -106,8 +106,9 @@ function displayNow(dAdv=1,bAdv=1) {
 		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';
 	}
 	//console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
-
-	postMessage(svgPoints);
+	
+	var svgCities = {'city-0':'Columbia'};
+	postMessage({'points':svgPoints,'cities':svgCities});
 	pointsOut = [];
 }
 

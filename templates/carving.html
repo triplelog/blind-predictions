@@ -78,7 +78,7 @@ myWorker.onmessage = function(e) {
 		setTimeout(predictNow,50);
 	}
 	else {
-		updateSVG(e.data);
+		updateSVG(e.data.points,e.data.cities);
 	}
 }
 function updateNow(){
@@ -101,7 +101,7 @@ function createSVG() {
 
 		}
 	}
-	svg += '<circle id="city-0" r="2" x="50" y="50" fill="black" stroke="white"></circle>';
+	svg += '<circle id="city-0" r="1" cx="50" cy="50" fill="black" stroke="white"></circle>';
 
 	svg += '</svg>';
 	document.getElementById('mapHolder').innerHTML = svg;
@@ -112,11 +112,14 @@ function createSVG() {
 		}
 	}
 }
-function updateSVG(svgPoints) {
+function updateSVG(svgPoints,svgCities) {
 
 
 	for (var id in svgPoints){
 		svgElements[id].style.fill = svgPoints[id];
+	}
+	for (var id in svgCities){
+		svgElements[id].setAttribute("cx") = "60";
 	}
 	
 	
