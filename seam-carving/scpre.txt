@@ -1,1342 +1,1342 @@
 std::map<int,Point> scPoints(){
 std::map<int,Point> points; int i=0;
 if (1==1){ Point p;
-p.x = 19; p.y = 74; p.county = 13; p.val = 431; p.data["d"] = 311; p.data["r"] = 120; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 19; p.y = 74; p.county = 13; p.val = 431; p.data["d"] = 311; p.data["r"] = 120; p.data["d16"] = 350; p.data["r16"] = 169; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 74; p.county = 13; p.val = 605; p.data["d"] = 315; p.data["r"] = 290; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 20; p.y = 74; p.county = 13; p.val = 605; p.data["d"] = 315; p.data["r"] = 290; p.data["d16"] = 307; p.data["r16"] = 294; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 75; p.county = 13; p.val = 725; p.data["d"] = 328; p.data["r"] = 397; p.data["black"] = 990; p.data["white"] = 2680;
+p.x = 19; p.y = 75; p.county = 13; p.val = 725; p.data["d"] = 328; p.data["r"] = 397; p.data["d16"] = 287; p.data["r16"] = 418; p.data["black"] = 990; p.data["white"] = 2680;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 77; p.county = 13; p.val = 937; p.data["d"] = 418; p.data["r"] = 519; p.data["black"] = 820; p.data["white"] = 1715;
+p.x = 14; p.y = 77; p.county = 13; p.val = 937; p.data["d"] = 418; p.data["r"] = 519; p.data["d16"] = 376; p.data["r16"] = 598; p.data["black"] = 820; p.data["white"] = 1715;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 75; p.county = 13; p.val = 832; p.data["d"] = 499; p.data["r"] = 333; p.data["black"] = 145; p.data["white"] = 595;
+p.x = 13; p.y = 75; p.county = 13; p.val = 832; p.data["d"] = 499; p.data["r"] = 333; p.data["d16"] = 481; p.data["r16"] = 353; p.data["black"] = 145; p.data["white"] = 595;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 82; p.county = 13; p.val = 717; p.data["d"] = 314; p.data["r"] = 403; p.data["black"] = 485; p.data["white"] = 3240;
+p.x = 18; p.y = 82; p.county = 13; p.val = 717; p.data["d"] = 314; p.data["r"] = 403; p.data["d16"] = 313; p.data["r16"] = 560; p.data["black"] = 485; p.data["white"] = 3240;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 77; p.county = 13; p.val = 1076; p.data["d"] = 382; p.data["r"] = 694; p.data["black"] = 1940; p.data["white"] = 1425;
+p.x = 17; p.y = 77; p.county = 13; p.val = 1076; p.data["d"] = 382; p.data["r"] = 694; p.data["d16"] = 380; p.data["r16"] = 743; p.data["black"] = 1940; p.data["white"] = 1425;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 72; p.county = 13; p.val = 184; p.data["d"] = 96; p.data["r"] = 88; p.data["black"] = 80; p.data["white"] = 370;
+p.x = 17; p.y = 72; p.county = 13; p.val = 184; p.data["d"] = 96; p.data["r"] = 88; p.data["d16"] = 191; p.data["r16"] = 113; p.data["black"] = 80; p.data["white"] = 370;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 79; p.county = 13; p.val = 652; p.data["d"] = 342; p.data["r"] = 310; p.data["black"] = 1340; p.data["white"] = 2790;
+p.x = 19; p.y = 79; p.county = 13; p.val = 652; p.data["d"] = 342; p.data["r"] = 310; p.data["d16"] = 325; p.data["r16"] = 366; p.data["black"] = 1340; p.data["white"] = 2790;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 78; p.county = 13; p.val = 1196; p.data["d"] = 604; p.data["r"] = 592; p.data["black"] = 440; p.data["white"] = 2290;
+p.x = 18; p.y = 78; p.county = 13; p.val = 1196; p.data["d"] = 604; p.data["r"] = 592; p.data["d16"] = 670; p.data["r16"] = 742; p.data["black"] = 440; p.data["white"] = 2290;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 74; p.county = 13; p.val = 610; p.data["d"] = 495; p.data["r"] = 115; p.data["black"] = 130; p.data["white"] = 555;
+p.x = 15; p.y = 74; p.county = 13; p.val = 610; p.data["d"] = 495; p.data["r"] = 115; p.data["d16"] = 512; p.data["r16"] = 129; p.data["black"] = 130; p.data["white"] = 555;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 77; p.county = 13; p.val = 716; p.data["d"] = 276; p.data["r"] = 440; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 18; p.y = 77; p.county = 13; p.val = 716; p.data["d"] = 276; p.data["r"] = 440; p.data["d16"] = 254; p.data["r16"] = 510; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 78; p.county = 13; p.val = 862; p.data["d"] = 428; p.data["r"] = 434; p.data["black"] = 2005; p.data["white"] = 3430;
+p.x = 16; p.y = 78; p.county = 13; p.val = 862; p.data["d"] = 428; p.data["r"] = 434; p.data["d16"] = 449; p.data["r16"] = 566; p.data["black"] = 2005; p.data["white"] = 3430;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 81; p.county = 13; p.val = 1071; p.data["d"] = 381; p.data["r"] = 690; p.data["black"] = 75; p.data["white"] = 2270;
+p.x = 11; p.y = 81; p.county = 13; p.val = 1071; p.data["d"] = 381; p.data["r"] = 690; p.data["d16"] = 397; p.data["r16"] = 721; p.data["black"] = 75; p.data["white"] = 2270;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 4; p.y = 83; p.county = 13; p.val = 805; p.data["d"] = 252; p.data["r"] = 553; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 4; p.y = 83; p.county = 13; p.val = 805; p.data["d"] = 252; p.data["r"] = 553; p.data["d16"] = 331; p.data["r16"] = 633; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 74; p.county = 13; p.val = 849; p.data["d"] = 380; p.data["r"] = 469; p.data["black"] = 305; p.data["white"] = 1200;
+p.x = 23; p.y = 74; p.county = 13; p.val = 849; p.data["d"] = 380; p.data["r"] = 469; p.data["d16"] = 356; p.data["r16"] = 548; p.data["black"] = 305; p.data["white"] = 1200;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 78; p.county = 13; p.val = 963; p.data["d"] = 425; p.data["r"] = 538; p.data["black"] = 510; p.data["white"] = 1045;
+p.x = 21; p.y = 78; p.county = 13; p.val = 963; p.data["d"] = 425; p.data["r"] = 538; p.data["d16"] = 431; p.data["r16"] = 538; p.data["black"] = 510; p.data["white"] = 1045;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 73; p.county = 13; p.val = 1005; p.data["d"] = 351; p.data["r"] = 654; p.data["black"] = 75; p.data["white"] = 2075;
+p.x = 22; p.y = 73; p.county = 13; p.val = 1005; p.data["d"] = 351; p.data["r"] = 654; p.data["d16"] = 293; p.data["r16"] = 773; p.data["black"] = 75; p.data["white"] = 2075;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 71; p.county = 13; p.val = 834; p.data["d"] = 332; p.data["r"] = 502; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 23; p.y = 71; p.county = 13; p.val = 834; p.data["d"] = 332; p.data["r"] = 502; p.data["d16"] = 272; p.data["r16"] = 506; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 75; p.county = 13; p.val = 709; p.data["d"] = 225; p.data["r"] = 484; p.data["black"] = 390; p.data["white"] = 1935;
+p.x = 21; p.y = 75; p.county = 13; p.val = 709; p.data["d"] = 225; p.data["r"] = 484; p.data["d16"] = 223; p.data["r16"] = 485; p.data["black"] = 390; p.data["white"] = 1935;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 72; p.county = 13; p.val = 589; p.data["d"] = 225; p.data["r"] = 364; p.data["black"] = 210; p.data["white"] = 1550;
+p.x = 20; p.y = 72; p.county = 13; p.val = 589; p.data["d"] = 225; p.data["r"] = 364; p.data["d16"] = 195; p.data["r16"] = 386; p.data["black"] = 210; p.data["white"] = 1550;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 77; p.county = 13; p.val = 573; p.data["d"] = 218; p.data["r"] = 355; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 19; p.y = 77; p.county = 13; p.val = 573; p.data["d"] = 218; p.data["r"] = 355; p.data["d16"] = 247; p.data["r16"] = 408; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 66; p.county = 13; p.val = 618; p.data["d"] = 410; p.data["r"] = 208; p.data["black"] = 665; p.data["white"] = 315;
+p.x = 22; p.y = 66; p.county = 13; p.val = 618; p.data["d"] = 410; p.data["r"] = 208; p.data["d16"] = 495; p.data["r16"] = 236; p.data["black"] = 665; p.data["white"] = 315;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 72; p.county = 13; p.val = 512; p.data["d"] = 276; p.data["r"] = 236; p.data["black"] = 640; p.data["white"] = 530;
+p.x = 14; p.y = 72; p.county = 13; p.val = 512; p.data["d"] = 276; p.data["r"] = 236; p.data["d16"] = 312; p.data["r16"] = 354; p.data["black"] = 640; p.data["white"] = 530;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 68; p.county = 13; p.val = 528; p.data["d"] = 404; p.data["r"] = 124; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 16; p.y = 68; p.county = 13; p.val = 528; p.data["d"] = 404; p.data["r"] = 124; p.data["d16"] = 431; p.data["r16"] = 159; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 70; p.county = 13; p.val = 733; p.data["d"] = 447; p.data["r"] = 286; p.data["black"] = 1950; p.data["white"] = 1020;
+p.x = 15; p.y = 70; p.county = 13; p.val = 733; p.data["d"] = 447; p.data["r"] = 286; p.data["d16"] = 524; p.data["r16"] = 373; p.data["black"] = 1950; p.data["white"] = 1020;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 64; p.county = 13; p.val = 656; p.data["d"] = 356; p.data["r"] = 300; p.data["black"] = 570; p.data["white"] = 610;
+p.x = 11; p.y = 64; p.county = 13; p.val = 656; p.data["d"] = 356; p.data["r"] = 300; p.data["d16"] = 443; p.data["r16"] = 304; p.data["black"] = 570; p.data["white"] = 610;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 59; p.county = 13; p.val = 409; p.data["d"] = 358; p.data["r"] = 51; p.data["black"] = 930; p.data["white"] = 95;
+p.x = 15; p.y = 59; p.county = 13; p.val = 409; p.data["d"] = 358; p.data["r"] = 51; p.data["d16"] = 484; p.data["r16"] = 53; p.data["black"] = 930; p.data["white"] = 95;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 12; p.y = 73; p.county = 13; p.val = 258; p.data["d"] = 147; p.data["r"] = 111; p.data["black"] = 115; p.data["white"] = 790;
+p.x = 12; p.y = 73; p.county = 13; p.val = 258; p.data["d"] = 147; p.data["r"] = 111; p.data["d16"] = 151; p.data["r16"] = 211; p.data["black"] = 115; p.data["white"] = 790;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 25; p.y = 79; p.county = 13; p.val = 754; p.data["d"] = 624; p.data["r"] = 130; p.data["black"] = 1415; p.data["white"] = 200;
+p.x = 25; p.y = 79; p.county = 13; p.val = 754; p.data["d"] = 624; p.data["r"] = 130; p.data["d16"] = 620; p.data["r16"] = 135; p.data["black"] = 1415; p.data["white"] = 200;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 85; p.county = 13; p.val = 835; p.data["d"] = 670; p.data["r"] = 165; p.data["black"] = 450; p.data["white"] = 550;
+p.x = 24; p.y = 85; p.county = 13; p.val = 835; p.data["d"] = 670; p.data["r"] = 165; p.data["d16"] = 686; p.data["r16"] = 183; p.data["black"] = 450; p.data["white"] = 550;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 26; p.y = 75; p.county = 13; p.val = 1151; p.data["d"] = 472; p.data["r"] = 679; p.data["black"] = 635; p.data["white"] = 1495;
+p.x = 26; p.y = 75; p.county = 13; p.val = 1151; p.data["d"] = 472; p.data["r"] = 679; p.data["d16"] = 385; p.data["r16"] = 658; p.data["black"] = 635; p.data["white"] = 1495;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 75; p.county = 13; p.val = 844; p.data["d"] = 526; p.data["r"] = 318; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 29; p.y = 75; p.county = 13; p.val = 844; p.data["d"] = 526; p.data["r"] = 318; p.data["d16"] = 519; p.data["r16"] = 309; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 32; p.y = 77; p.county = 13; p.val = 811; p.data["d"] = 646; p.data["r"] = 165; p.data["black"] = 370; p.data["white"] = 285;
+p.x = 32; p.y = 77; p.county = 13; p.val = 811; p.data["d"] = 646; p.data["r"] = 165; p.data["d16"] = 663; p.data["r16"] = 197; p.data["black"] = 370; p.data["white"] = 285;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 84; p.county = 13; p.val = 736; p.data["d"] = 275; p.data["r"] = 461; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 33; p.y = 84; p.county = 13; p.val = 736; p.data["d"] = 275; p.data["r"] = 461; p.data["d16"] = 275; p.data["r16"] = 541; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 72; p.county = 13; p.val = 577; p.data["d"] = 212; p.data["r"] = 365; p.data["black"] = 150; p.data["white"] = 140;
+p.x = 29; p.y = 72; p.county = 13; p.val = 577; p.data["d"] = 212; p.data["r"] = 365; p.data["d16"] = 231; p.data["r16"] = 397; p.data["black"] = 150; p.data["white"] = 140;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 73; p.county = 13; p.val = 581; p.data["d"] = 239; p.data["r"] = 342; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 21; p.y = 73; p.county = 13; p.val = 581; p.data["d"] = 239; p.data["r"] = 342; p.data["d16"] = 195; p.data["r16"] = 396; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 99; p.county = 13; p.val = 298; p.data["d"] = 110; p.data["r"] = 188; p.data["black"] = 0; p.data["white"] = 375;
+p.x = 7; p.y = 99; p.county = 13; p.val = 298; p.data["d"] = 110; p.data["r"] = 188; p.data["d16"] = 115; p.data["r16"] = 185; p.data["black"] = 0; p.data["white"] = 375;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 91; p.county = 13; p.val = 644; p.data["d"] = 265; p.data["r"] = 379; p.data["black"] = 95; p.data["white"] = 2985;
+p.x = 17; p.y = 91; p.county = 13; p.val = 644; p.data["d"] = 265; p.data["r"] = 379; p.data["d16"] = 273; p.data["r16"] = 461; p.data["black"] = 95; p.data["white"] = 2985;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 96; p.county = 13; p.val = 553; p.data["d"] = 258; p.data["r"] = 295; p.data["black"] = 0; p.data["white"] = 2320;
+p.x = 15; p.y = 96; p.county = 13; p.val = 553; p.data["d"] = 258; p.data["r"] = 295; p.data["d16"] = 257; p.data["r16"] = 348; p.data["black"] = 0; p.data["white"] = 2320;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 91; p.county = 13; p.val = 686; p.data["d"] = 377; p.data["r"] = 309; p.data["black"] = 150; p.data["white"] = 2910;
+p.x = 16; p.y = 91; p.county = 13; p.val = 686; p.data["d"] = 377; p.data["r"] = 309; p.data["d16"] = 423; p.data["r16"] = 417; p.data["black"] = 150; p.data["white"] = 2910;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 90; p.county = 13; p.val = 663; p.data["d"] = 438; p.data["r"] = 225; p.data["black"] = 305; p.data["white"] = 1140;
+p.x = 19; p.y = 90; p.county = 13; p.val = 663; p.data["d"] = 438; p.data["r"] = 225; p.data["d16"] = 568; p.data["r16"] = 273; p.data["black"] = 305; p.data["white"] = 1140;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 92; p.county = 13; p.val = 1018; p.data["d"] = 408; p.data["r"] = 610; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 22; p.y = 92; p.county = 13; p.val = 1018; p.data["d"] = 408; p.data["r"] = 610; p.data["d16"] = 377; p.data["r16"] = 646; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 91; p.county = 13; p.val = 701; p.data["d"] = 372; p.data["r"] = 329; p.data["black"] = 260; p.data["white"] = 800;
+p.x = 14; p.y = 91; p.county = 13; p.val = 701; p.data["d"] = 372; p.data["r"] = 329; p.data["d16"] = 414; p.data["r16"] = 350; p.data["black"] = 260; p.data["white"] = 800;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 95; p.county = 13; p.val = 789; p.data["d"] = 315; p.data["r"] = 474; p.data["black"] = 60; p.data["white"] = 910;
+p.x = 20; p.y = 95; p.county = 13; p.val = 789; p.data["d"] = 315; p.data["r"] = 474; p.data["d16"] = 318; p.data["r16"] = 513; p.data["black"] = 60; p.data["white"] = 910;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 93; p.county = 13; p.val = 2048; p.data["d"] = 885; p.data["r"] = 1163; p.data["black"] = 520; p.data["white"] = 2835;
+p.x = 16; p.y = 93; p.county = 13; p.val = 2048; p.data["d"] = 885; p.data["r"] = 1163; p.data["d16"] = 871; p.data["r16"] = 1355; p.data["black"] = 520; p.data["white"] = 2835;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 87; p.county = 13; p.val = 753; p.data["d"] = 311; p.data["r"] = 442; p.data["black"] = 55; p.data["white"] = 2185;
+p.x = 18; p.y = 87; p.county = 13; p.val = 753; p.data["d"] = 311; p.data["r"] = 442; p.data["d16"] = 351; p.data["r16"] = 509; p.data["black"] = 55; p.data["white"] = 2185;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 89; p.county = 13; p.val = 872; p.data["d"] = 361; p.data["r"] = 511; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 16; p.y = 89; p.county = 13; p.val = 872; p.data["d"] = 361; p.data["r"] = 511; p.data["d16"] = 353; p.data["r16"] = 566; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 90; p.county = 13; p.val = 596; p.data["d"] = 211; p.data["r"] = 385; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 18; p.y = 90; p.county = 13; p.val = 596; p.data["d"] = 211; p.data["r"] = 385; p.data["d16"] = 228; p.data["r16"] = 436; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 87; p.county = 13; p.val = 583; p.data["d"] = 245; p.data["r"] = 338; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 17; p.y = 87; p.county = 13; p.val = 583; p.data["d"] = 245; p.data["r"] = 338; p.data["d16"] = 194; p.data["r16"] = 358; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 18; p.y = 96; p.county = 13; p.val = 781; p.data["d"] = 309; p.data["r"] = 472; p.data["black"] = 155; p.data["white"] = 1515;
+p.x = 18; p.y = 96; p.county = 13; p.val = 781; p.data["d"] = 309; p.data["r"] = 472; p.data["d16"] = 344; p.data["r16"] = 548; p.data["black"] = 155; p.data["white"] = 1515;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 89; p.county = 13; p.val = 1295; p.data["d"] = 557; p.data["r"] = 738; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 17; p.y = 89; p.county = 13; p.val = 1295; p.data["d"] = 557; p.data["r"] = 738; p.data["d16"] = 631; p.data["r16"] = 918; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 90; p.county = 13; p.val = 734; p.data["d"] = 295; p.data["r"] = 439; p.data["black"] = 10; p.data["white"] = 1730;
+p.x = 16; p.y = 90; p.county = 13; p.val = 734; p.data["d"] = 295; p.data["r"] = 439; p.data["d16"] = 347; p.data["r16"] = 518; p.data["black"] = 10; p.data["white"] = 1730;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 95; p.county = 13; p.val = 1096; p.data["d"] = 543; p.data["r"] = 553; p.data["black"] = 105; p.data["white"] = 845;
+p.x = 13; p.y = 95; p.county = 13; p.val = 1096; p.data["d"] = 543; p.data["r"] = 553; p.data["d16"] = 467; p.data["r16"] = 631; p.data["black"] = 105; p.data["white"] = 845;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 15; p.y = 95; p.county = 13; p.val = 898; p.data["d"] = 239; p.data["r"] = 659; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 15; p.y = 95; p.county = 13; p.val = 898; p.data["d"] = 239; p.data["r"] = 659; p.data["d16"] = 217; p.data["r16"] = 713; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 14; p.y = 93; p.county = 13; p.val = 1155; p.data["d"] = 580; p.data["r"] = 575; p.data["black"] = 0; p.data["white"] = 640;
+p.x = 14; p.y = 93; p.county = 13; p.val = 1155; p.data["d"] = 580; p.data["r"] = 575; p.data["d16"] = 602; p.data["r16"] = 618; p.data["black"] = 0; p.data["white"] = 640;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 96; p.county = 13; p.val = 768; p.data["d"] = 361; p.data["r"] = 407; p.data["black"] = 10; p.data["white"] = 2285;
+p.x = 13; p.y = 96; p.county = 13; p.val = 768; p.data["d"] = 361; p.data["r"] = 407; p.data["d16"] = 330; p.data["r16"] = 468; p.data["black"] = 10; p.data["white"] = 2285;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 97; p.county = 13; p.val = 486; p.data["d"] = 208; p.data["r"] = 278; p.data["black"] = 89; p.data["white"] = 2715;
+p.x = 13; p.y = 97; p.county = 13; p.val = 486; p.data["d"] = 208; p.data["r"] = 278; p.data["d16"] = 253; p.data["r16"] = 320; p.data["black"] = 89; p.data["white"] = 2715;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 99; p.county = 13; p.val = 746; p.data["d"] = 363; p.data["r"] = 383; p.data["black"] = 0; p.data["white"] = 150;
+p.x = 16; p.y = 99; p.county = 13; p.val = 746; p.data["d"] = 363; p.data["r"] = 383; p.data["d16"] = 347; p.data["r16"] = 462; p.data["black"] = 0; p.data["white"] = 150;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 12; p.y = 100; p.county = 13; p.val = 572; p.data["d"] = 221; p.data["r"] = 351; p.data["black"] = 10; p.data["white"] = 2130;
+p.x = 12; p.y = 100; p.county = 13; p.val = 572; p.data["d"] = 221; p.data["r"] = 351; p.data["d16"] = 267; p.data["r16"] = 453; p.data["black"] = 10; p.data["white"] = 2130;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 98; p.county = 13; p.val = 355; p.data["d"] = 174; p.data["r"] = 181; p.data["black"] = 0; p.data["white"] = 190;
+p.x = 11; p.y = 98; p.county = 13; p.val = 355; p.data["d"] = 174; p.data["r"] = 181; p.data["d16"] = 185; p.data["r16"] = 270; p.data["black"] = 0; p.data["white"] = 190;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 97; p.county = 13; p.val = 621; p.data["d"] = 234; p.data["r"] = 387; p.data["black"] = 0; p.data["white"] = 320;
+p.x = 11; p.y = 97; p.county = 13; p.val = 621; p.data["d"] = 234; p.data["r"] = 387; p.data["d16"] = 249; p.data["r16"] = 440; p.data["black"] = 0; p.data["white"] = 320;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 8; p.y = 86; p.county = 13; p.val = 1353; p.data["d"] = 418; p.data["r"] = 935; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 8; p.y = 86; p.county = 13; p.val = 1353; p.data["d"] = 418; p.data["r"] = 935; p.data["d16"] = 446; p.data["r16"] = 993; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 9; p.y = 90; p.county = 13; p.val = 556; p.data["d"] = 219; p.data["r"] = 337; p.data["black"] = 325; p.data["white"] = 1885;
+p.x = 9; p.y = 90; p.county = 13; p.val = 556; p.data["d"] = 219; p.data["r"] = 337; p.data["d16"] = 238; p.data["r16"] = 420; p.data["black"] = 325; p.data["white"] = 1885;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 87; p.county = 13; p.val = 569; p.data["d"] = 286; p.data["r"] = 283; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 7; p.y = 87; p.county = 13; p.val = 569; p.data["d"] = 286; p.data["r"] = 283; p.data["d16"] = 290; p.data["r16"] = 348; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 3; p.y = 89; p.county = 13; p.val = 1165; p.data["d"] = 516; p.data["r"] = 649; p.data["black"] = 245; p.data["white"] = 2545;
+p.x = 3; p.y = 89; p.county = 13; p.val = 1165; p.data["d"] = 516; p.data["r"] = 649; p.data["d16"] = 480; p.data["r16"] = 634; p.data["black"] = 245; p.data["white"] = 2545;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 5; p.y = 87; p.county = 13; p.val = 645; p.data["d"] = 281; p.data["r"] = 364; p.data["black"] = 95; p.data["white"] = 1140;
+p.x = 5; p.y = 87; p.county = 13; p.val = 645; p.data["d"] = 281; p.data["r"] = 364; p.data["d16"] = 267; p.data["r16"] = 380; p.data["black"] = 95; p.data["white"] = 1140;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 0; p.y = 86; p.county = 13; p.val = 901; p.data["d"] = 311; p.data["r"] = 590; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 0; p.y = 86; p.county = 13; p.val = 901; p.data["d"] = 311; p.data["r"] = 590; p.data["d16"] = 299; p.data["r16"] = 589; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 1; p.y = 86; p.county = 13; p.val = 655; p.data["d"] = 262; p.data["r"] = 393; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 1; p.y = 86; p.county = 13; p.val = 655; p.data["d"] = 262; p.data["r"] = 393; p.data["d16"] = 238; p.data["r16"] = 356; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 0; p.y = 87; p.county = 13; p.val = 1881; p.data["d"] = 700; p.data["r"] = 1181; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 0; p.y = 87; p.county = 13; p.val = 1881; p.data["d"] = 700; p.data["r"] = 1181; p.data["d16"] = 653; p.data["r16"] = 1048; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 1; p.y = 87; p.county = 13; p.val = 825; p.data["d"] = 325; p.data["r"] = 500; p.data["black"] = 175; p.data["white"] = 7350;
+p.x = 1; p.y = 87; p.county = 13; p.val = 825; p.data["d"] = 325; p.data["r"] = 500; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 175; p.data["white"] = 7350;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 2; p.y = 86; p.county = 13; p.val = 714; p.data["d"] = 288; p.data["r"] = 426; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 2; p.y = 86; p.county = 13; p.val = 714; p.data["d"] = 288; p.data["r"] = 426; p.data["d16"] = 240; p.data["r16"] = 420; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 90; p.county = 13; p.val = 891; p.data["d"] = 483; p.data["r"] = 408; p.data["black"] = 590; p.data["white"] = 2935;
+p.x = 7; p.y = 90; p.county = 13; p.val = 891; p.data["d"] = 483; p.data["r"] = 408; p.data["d16"] = 475; p.data["r16"] = 473; p.data["black"] = 590; p.data["white"] = 2935;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 10; p.y = 93; p.county = 13; p.val = 798; p.data["d"] = 292; p.data["r"] = 506; p.data["black"] = 145; p.data["white"] = 1545;
+p.x = 10; p.y = 93; p.county = 13; p.val = 798; p.data["d"] = 292; p.data["r"] = 506; p.data["d16"] = 330; p.data["r16"] = 629; p.data["black"] = 145; p.data["white"] = 1545;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 8; p.y = 89; p.county = 13; p.val = 725; p.data["d"] = 387; p.data["r"] = 338; p.data["black"] = 30; p.data["white"] = 2395;
+p.x = 8; p.y = 89; p.county = 13; p.val = 725; p.data["d"] = 387; p.data["r"] = 338; p.data["d16"] = 434; p.data["r16"] = 418; p.data["black"] = 30; p.data["white"] = 2395;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 89; p.county = 13; p.val = 1290; p.data["d"] = 496; p.data["r"] = 794; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 11; p.y = 89; p.county = 13; p.val = 1290; p.data["d"] = 496; p.data["r"] = 794; p.data["d16"] = 527; p.data["r16"] = 775; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 5; p.y = 89; p.county = 13; p.val = 619; p.data["d"] = 346; p.data["r"] = 273; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 5; p.y = 89; p.county = 13; p.val = 619; p.data["d"] = 346; p.data["r"] = 273; p.data["d16"] = 322; p.data["r16"] = 390; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 2; p.y = 87; p.county = 13; p.val = 771; p.data["d"] = 312; p.data["r"] = 459; p.data["black"] = 140; p.data["white"] = 4310;
+p.x = 2; p.y = 87; p.county = 13; p.val = 771; p.data["d"] = 312; p.data["r"] = 459; p.data["d16"] = 515; p.data["r16"] = 970; p.data["black"] = 140; p.data["white"] = 4310;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 4; p.y = 93; p.county = 13; p.val = 1565; p.data["d"] = 644; p.data["r"] = 921; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 4; p.y = 93; p.county = 13; p.val = 1565; p.data["d"] = 644; p.data["r"] = 921; p.data["d16"] = 509; p.data["r16"] = 1007; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 87; p.county = 13; p.val = 532; p.data["d"] = 149; p.data["r"] = 383; p.data["black"] = 60; p.data["white"] = 1955;
+p.x = 13; p.y = 87; p.county = 13; p.val = 532; p.data["d"] = 149; p.data["r"] = 383; p.data["d16"] = 157; p.data["r16"] = 389; p.data["black"] = 60; p.data["white"] = 1955;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 6; p.y = 84; p.county = 13; p.val = 589; p.data["d"] = 164; p.data["r"] = 425; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 6; p.y = 84; p.county = 13; p.val = 589; p.data["d"] = 164; p.data["r"] = 425; p.data["d16"] = 156; p.data["r16"] = 386; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 1; p.y = 89; p.county = 13; p.val = 1519; p.data["d"] = 623; p.data["r"] = 896; p.data["black"] = 0; p.data["white"] = 545;
+p.x = 1; p.y = 89; p.county = 13; p.val = 1519; p.data["d"] = 623; p.data["r"] = 896; p.data["d16"] = 519; p.data["r16"] = 1021; p.data["black"] = 0; p.data["white"] = 545;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 89; p.county = 13; p.val = 740; p.data["d"] = 473; p.data["r"] = 267; p.data["black"] = 140; p.data["white"] = 1690;
+p.x = 7; p.y = 89; p.county = 13; p.val = 740; p.data["d"] = 473; p.data["r"] = 267; p.data["d16"] = 473; p.data["r16"] = 334; p.data["black"] = 140; p.data["white"] = 1690;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 86; p.county = 13; p.val = 1219; p.data["d"] = 418; p.data["r"] = 801; p.data["black"] = 0; p.data["white"] = 1820;
+p.x = 7; p.y = 86; p.county = 13; p.val = 1219; p.data["d"] = 418; p.data["r"] = 801; p.data["d16"] = 389; p.data["r16"] = 921; p.data["black"] = 0; p.data["white"] = 1820;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 6; p.y = 88; p.county = 13; p.val = 785; p.data["d"] = 335; p.data["r"] = 450; p.data["black"] = 75; p.data["white"] = 1295;
+p.x = 6; p.y = 88; p.county = 13; p.val = 785; p.data["d"] = 335; p.data["r"] = 450; p.data["d16"] = 286; p.data["r16"] = 574; p.data["black"] = 75; p.data["white"] = 1295;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 4; p.y = 87; p.county = 13; p.val = 866; p.data["d"] = 346; p.data["r"] = 520; p.data["black"] = 130; p.data["white"] = 605;
+p.x = 4; p.y = 87; p.county = 13; p.val = 866; p.data["d"] = 346; p.data["r"] = 520; p.data["d16"] = 244; p.data["r16"] = 506; p.data["black"] = 130; p.data["white"] = 605;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 4; p.y = 89; p.county = 13; p.val = 745; p.data["d"] = 254; p.data["r"] = 491; p.data["black"] = 225; p.data["white"] = 2435;
+p.x = 4; p.y = 89; p.county = 13; p.val = 745; p.data["d"] = 254; p.data["r"] = 491; p.data["d16"] = 275; p.data["r16"] = 570; p.data["black"] = 225; p.data["white"] = 2435;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 1; p.y = 85; p.county = 13; p.val = 797; p.data["d"] = 344; p.data["r"] = 453; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 1; p.y = 85; p.county = 13; p.val = 797; p.data["d"] = 344; p.data["r"] = 453; p.data["d16"] = 341; p.data["r16"] = 530; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 7; p.county = 15; p.val = 526; p.data["d"] = 341; p.data["r"] = 185; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 74; p.y = 7; p.county = 15; p.val = 526; p.data["d"] = 341; p.data["r"] = 185; p.data["d16"] = 448; p.data["r16"] = 246; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 77; p.y = 18; p.county = 15; p.val = 139; p.data["d"] = 12; p.data["r"] = 127; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 77; p.y = 18; p.county = 15; p.val = 139; p.data["d"] = 12; p.data["r"] = 127; p.data["d16"] = 17; p.data["r16"] = 164; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 9; p.county = 15; p.val = 612; p.data["d"] = 259; p.data["r"] = 353; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 67; p.y = 9; p.county = 15; p.val = 612; p.data["d"] = 259; p.data["r"] = 353; p.data["d16"] = 295; p.data["r16"] = 472; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 9; p.county = 15; p.val = 850; p.data["d"] = 199; p.data["r"] = 651; p.data["black"] = 825; p.data["white"] = 785;
+p.x = 63; p.y = 9; p.county = 15; p.val = 850; p.data["d"] = 199; p.data["r"] = 651; p.data["d16"] = 215; p.data["r16"] = 819; p.data["black"] = 825; p.data["white"] = 785;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 13; p.county = 15; p.val = 860; p.data["d"] = 125; p.data["r"] = 735; p.data["black"] = 290; p.data["white"] = 1095;
+p.x = 71; p.y = 13; p.county = 15; p.val = 860; p.data["d"] = 125; p.data["r"] = 735; p.data["d16"] = 114; p.data["r16"] = 1102; p.data["black"] = 290; p.data["white"] = 1095;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 14; p.county = 15; p.val = 511; p.data["d"] = 201; p.data["r"] = 310; p.data["black"] = 55; p.data["white"] = 2140;
+p.x = 64; p.y = 14; p.county = 15; p.val = 511; p.data["d"] = 201; p.data["r"] = 310; p.data["d16"] = 210; p.data["r16"] = 389; p.data["black"] = 55; p.data["white"] = 2140;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 2; p.county = 15; p.val = 660; p.data["d"] = 532; p.data["r"] = 128; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 62; p.y = 2; p.county = 15; p.val = 660; p.data["d"] = 532; p.data["r"] = 128; p.data["d16"] = 616; p.data["r16"] = 121; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 0; p.county = 15; p.val = 647; p.data["d"] = 551; p.data["r"] = 96; p.data["black"] = 905; p.data["white"] = 0;
+p.x = 67; p.y = 0; p.county = 15; p.val = 647; p.data["d"] = 551; p.data["r"] = 96; p.data["d16"] = 736; p.data["r16"] = 129; p.data["black"] = 905; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 32; p.county = 15; p.val = 569; p.data["d"] = 331; p.data["r"] = 238; p.data["black"] = 575; p.data["white"] = 845;
+p.x = 61; p.y = 32; p.county = 15; p.val = 569; p.data["d"] = 331; p.data["r"] = 238; p.data["d16"] = 414; p.data["r16"] = 375; p.data["black"] = 575; p.data["white"] = 845;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 31; p.county = 15; p.val = 1179; p.data["d"] = 552; p.data["r"] = 627; p.data["black"] = 385; p.data["white"] = 1030;
+p.x = 60; p.y = 31; p.county = 15; p.val = 1179; p.data["d"] = 552; p.data["r"] = 627; p.data["d16"] = 625; p.data["r16"] = 830; p.data["black"] = 385; p.data["white"] = 1030;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 32; p.county = 15; p.val = 974; p.data["d"] = 457; p.data["r"] = 517; p.data["black"] = 1505; p.data["white"] = 3550;
+p.x = 56; p.y = 32; p.county = 15; p.val = 974; p.data["d"] = 457; p.data["r"] = 517; p.data["d16"] = 450; p.data["r16"] = 663; p.data["black"] = 1505; p.data["white"] = 3550;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 33; p.county = 15; p.val = 626; p.data["d"] = 506; p.data["r"] = 120; p.data["black"] = 1675; p.data["white"] = 1085;
+p.x = 72; p.y = 33; p.county = 15; p.val = 626; p.data["d"] = 506; p.data["r"] = 120; p.data["d16"] = 580; p.data["r16"] = 116; p.data["black"] = 1675; p.data["white"] = 1085;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 1; p.county = 15; p.val = 357; p.data["d"] = 283; p.data["r"] = 74; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 56; p.y = 1; p.county = 15; p.val = 357; p.data["d"] = 283; p.data["r"] = 74; p.data["d16"] = 355; p.data["r16"] = 125; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 18; p.county = 15; p.val = 832; p.data["d"] = 267; p.data["r"] = 565; p.data["black"] = 930; p.data["white"] = 1095;
+p.x = 64; p.y = 18; p.county = 15; p.val = 832; p.data["d"] = 267; p.data["r"] = 565; p.data["d16"] = 293; p.data["r16"] = 921; p.data["black"] = 930; p.data["white"] = 1095;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 4; p.county = 15; p.val = 662; p.data["d"] = 369; p.data["r"] = 293; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 69; p.y = 4; p.county = 15; p.val = 662; p.data["d"] = 369; p.data["r"] = 293; p.data["d16"] = 429; p.data["r16"] = 410; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 27; p.county = 15; p.val = 1165; p.data["d"] = 229; p.data["r"] = 936; p.data["black"] = 55; p.data["white"] = 1095;
+p.x = 58; p.y = 27; p.county = 15; p.val = 1165; p.data["d"] = 229; p.data["r"] = 936; p.data["d16"] = 218; p.data["r16"] = 1330; p.data["black"] = 55; p.data["white"] = 1095;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 36; p.county = 15; p.val = 1989; p.data["d"] = 924; p.data["r"] = 1065; p.data["black"] = 180; p.data["white"] = 485;
+p.x = 60; p.y = 36; p.county = 15; p.val = 1989; p.data["d"] = 924; p.data["r"] = 1065; p.data["d16"] = 946; p.data["r16"] = 1584; p.data["black"] = 180; p.data["white"] = 485;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 30; p.county = 15; p.val = 696; p.data["d"] = 321; p.data["r"] = 375; p.data["black"] = 330; p.data["white"] = 1550;
+p.x = 54; p.y = 30; p.county = 15; p.val = 696; p.data["d"] = 321; p.data["r"] = 375; p.data["d16"] = 356; p.data["r16"] = 582; p.data["black"] = 330; p.data["white"] = 1550;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 28; p.county = 15; p.val = 862; p.data["d"] = 390; p.data["r"] = 472; p.data["black"] = 15; p.data["white"] = 1505;
+p.x = 55; p.y = 28; p.county = 15; p.val = 862; p.data["d"] = 390; p.data["r"] = 472; p.data["d16"] = 276; p.data["r16"] = 438; p.data["black"] = 15; p.data["white"] = 1505;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 15; p.county = 15; p.val = 926; p.data["d"] = 237; p.data["r"] = 689; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 57; p.y = 15; p.county = 15; p.val = 926; p.data["d"] = 237; p.data["r"] = 689; p.data["d16"] = 199; p.data["r16"] = 894; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 22; p.county = 15; p.val = 622; p.data["d"] = 245; p.data["r"] = 377; p.data["black"] = 505; p.data["white"] = 1335;
+p.x = 69; p.y = 22; p.county = 15; p.val = 622; p.data["d"] = 245; p.data["r"] = 377; p.data["d16"] = 262; p.data["r16"] = 470; p.data["black"] = 505; p.data["white"] = 1335;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 83; p.y = 12; p.county = 15; p.val = 306; p.data["d"] = 187; p.data["r"] = 119; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 83; p.y = 12; p.county = 15; p.val = 306; p.data["d"] = 187; p.data["r"] = 119; p.data["d16"] = 247; p.data["r16"] = 156; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 10; p.county = 15; p.val = 565; p.data["d"] = 279; p.data["r"] = 286; p.data["black"] = 825; p.data["white"] = 935;
+p.x = 51; p.y = 10; p.county = 15; p.val = 565; p.data["d"] = 279; p.data["r"] = 286; p.data["d16"] = 286; p.data["r16"] = 360; p.data["black"] = 825; p.data["white"] = 935;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 17; p.county = 15; p.val = 753; p.data["d"] = 461; p.data["r"] = 292; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 45; p.y = 17; p.county = 15; p.val = 753; p.data["d"] = 461; p.data["r"] = 292; p.data["d16"] = 499; p.data["r16"] = 426; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 21; p.county = 15; p.val = 390; p.data["d"] = 59; p.data["r"] = 331; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 49; p.y = 21; p.county = 15; p.val = 390; p.data["d"] = 59; p.data["r"] = 331; p.data["d16"] = 92; p.data["r16"] = 440; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 20; p.county = 15; p.val = 633; p.data["d"] = 319; p.data["r"] = 314; p.data["black"] = 595; p.data["white"] = 1135;
+p.x = 54; p.y = 20; p.county = 15; p.val = 633; p.data["d"] = 319; p.data["r"] = 314; p.data["d16"] = 255; p.data["r16"] = 210; p.data["black"] = 595; p.data["white"] = 1135;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 31; p.county = 15; p.val = 808; p.data["d"] = 260; p.data["r"] = 548; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 59; p.y = 31; p.county = 15; p.val = 808; p.data["d"] = 260; p.data["r"] = 548; p.data["d16"] = 258; p.data["r16"] = 699; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 42; p.county = 15; p.val = 1258; p.data["d"] = 439; p.data["r"] = 819; p.data["black"] = 0; p.data["white"] = 795;
+p.x = 69; p.y = 42; p.county = 15; p.val = 1258; p.data["d"] = 439; p.data["r"] = 819; p.data["d16"] = 304; p.data["r16"] = 699; p.data["black"] = 0; p.data["white"] = 795;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 42; p.county = 15; p.val = 947; p.data["d"] = 471; p.data["r"] = 476; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 66; p.y = 42; p.county = 15; p.val = 947; p.data["d"] = 471; p.data["r"] = 476; p.data["d16"] = 459; p.data["r16"] = 558; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 30; p.county = 15; p.val = 1752; p.data["d"] = 842; p.data["r"] = 910; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 58; p.y = 30; p.county = 15; p.val = 1752; p.data["d"] = 842; p.data["r"] = 910; p.data["d16"] = 881; p.data["r16"] = 1367; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 30; p.county = 15; p.val = 1160; p.data["d"] = 538; p.data["r"] = 622; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 55; p.y = 30; p.county = 15; p.val = 1160; p.data["d"] = 538; p.data["r"] = 622; p.data["d16"] = 528; p.data["r16"] = 926; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 38; p.county = 15; p.val = 690; p.data["d"] = 303; p.data["r"] = 387; p.data["black"] = 695; p.data["white"] = 3120;
+p.x = 61; p.y = 38; p.county = 15; p.val = 690; p.data["d"] = 303; p.data["r"] = 387; p.data["d16"] = 672; p.data["r16"] = 557; p.data["black"] = 695; p.data["white"] = 3120;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 40; p.county = 15; p.val = 692; p.data["d"] = 369; p.data["r"] = 323; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 63; p.y = 40; p.county = 15; p.val = 692; p.data["d"] = 369; p.data["r"] = 323; p.data["d16"] = 1090; p.data["r16"] = 605; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 39; p.county = 15; p.val = 683; p.data["d"] = 224; p.data["r"] = 459; p.data["black"] = 500; p.data["white"] = 3265;
+p.x = 62; p.y = 39; p.county = 15; p.val = 683; p.data["d"] = 224; p.data["r"] = 459; p.data["d16"] = 240; p.data["r16"] = 541; p.data["black"] = 500; p.data["white"] = 3265;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 32; p.county = 15; p.val = 1828; p.data["d"] = 736; p.data["r"] = 1092; p.data["black"] = 575; p.data["white"] = 2990;
+p.x = 59; p.y = 32; p.county = 15; p.val = 1828; p.data["d"] = 736; p.data["r"] = 1092; p.data["d16"] = 724; p.data["r16"] = 1382; p.data["black"] = 575; p.data["white"] = 2990;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 78; p.y = 26; p.county = 15; p.val = 691; p.data["d"] = 456; p.data["r"] = 235; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 78; p.y = 26; p.county = 15; p.val = 691; p.data["d"] = 456; p.data["r"] = 235; p.data["d16"] = 526; p.data["r16"] = 271; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 16; p.county = 15; p.val = 759; p.data["d"] = 310; p.data["r"] = 449; p.data["black"] = 70; p.data["white"] = 1575;
+p.x = 62; p.y = 16; p.county = 15; p.val = 759; p.data["d"] = 310; p.data["r"] = 449; p.data["d16"] = 363; p.data["r16"] = 557; p.data["black"] = 70; p.data["white"] = 1575;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 19; p.county = 15; p.val = 652; p.data["d"] = 335; p.data["r"] = 317; p.data["black"] = 710; p.data["white"] = 1150;
+p.x = 60; p.y = 19; p.county = 15; p.val = 652; p.data["d"] = 335; p.data["r"] = 317; p.data["d16"] = 994; p.data["r16"] = 1039; p.data["black"] = 710; p.data["white"] = 1150;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 19; p.county = 15; p.val = 974; p.data["d"] = 604; p.data["r"] = 370; p.data["black"] = 160; p.data["white"] = 880;
+p.x = 62; p.y = 19; p.county = 15; p.val = 974; p.data["d"] = 604; p.data["r"] = 370; p.data["d16"] = 171; p.data["r16"] = 274; p.data["black"] = 160; p.data["white"] = 880;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 28; p.county = 15; p.val = 713; p.data["d"] = 147; p.data["r"] = 566; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 65; p.y = 28; p.county = 15; p.val = 713; p.data["d"] = 147; p.data["r"] = 566; p.data["d16"] = 560; p.data["r16"] = 1283; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 32; p.county = 15; p.val = 1065; p.data["d"] = 343; p.data["r"] = 722; p.data["black"] = 1060; p.data["white"] = 4460;
+p.x = 58; p.y = 32; p.county = 15; p.val = 1065; p.data["d"] = 343; p.data["r"] = 722; p.data["d16"] = 300; p.data["r16"] = 807; p.data["black"] = 1060; p.data["white"] = 4460;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 25; p.county = 15; p.val = 1193; p.data["d"] = 484; p.data["r"] = 709; p.data["black"] = 600; p.data["white"] = 915;
+p.x = 51; p.y = 25; p.county = 15; p.val = 1193; p.data["d"] = 484; p.data["r"] = 709; p.data["d16"] = 522; p.data["r16"] = 993; p.data["black"] = 600; p.data["white"] = 915;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 89; p.y = 18; p.county = 15; p.val = 247; p.data["d"] = 113; p.data["r"] = 134; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 89; p.y = 18; p.county = 15; p.val = 247; p.data["d"] = 113; p.data["r"] = 134; p.data["d16"] = 130; p.data["r16"] = 157; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 30; p.county = 15; p.val = 1261; p.data["d"] = 677; p.data["r"] = 584; p.data["black"] = 375; p.data["white"] = 750;
+p.x = 57; p.y = 30; p.county = 15; p.val = 1261; p.data["d"] = 677; p.data["r"] = 584; p.data["d16"] = 774; p.data["r16"] = 823; p.data["black"] = 375; p.data["white"] = 750;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 33; p.county = 15; p.val = 812; p.data["d"] = 287; p.data["r"] = 525; p.data["black"] = 1015; p.data["white"] = 2250;
+p.x = 60; p.y = 33; p.county = 15; p.val = 812; p.data["d"] = 287; p.data["r"] = 525; p.data["d16"] = 274; p.data["r16"] = 674; p.data["black"] = 1015; p.data["white"] = 2250;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 32; p.county = 15; p.val = 872; p.data["d"] = 375; p.data["r"] = 497; p.data["black"] = 695; p.data["white"] = 2790;
+p.x = 57; p.y = 32; p.county = 15; p.val = 872; p.data["d"] = 375; p.data["r"] = 497; p.data["d16"] = 398; p.data["r16"] = 612; p.data["black"] = 695; p.data["white"] = 2790;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 33; p.county = 15; p.val = 1024; p.data["d"] = 629; p.data["r"] = 395; p.data["black"] = 1750; p.data["white"] = 3045;
+p.x = 61; p.y = 33; p.county = 15; p.val = 1024; p.data["d"] = 629; p.data["r"] = 395; p.data["d16"] = 655; p.data["r16"] = 523; p.data["black"] = 1750; p.data["white"] = 3045;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 32; p.county = 15; p.val = 1259; p.data["d"] = 734; p.data["r"] = 525; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 64; p.y = 32; p.county = 15; p.val = 1259; p.data["d"] = 734; p.data["r"] = 525; p.data["d16"] = 703; p.data["r16"] = 708; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 22; p.county = 15; p.val = 1234; p.data["d"] = 676; p.data["r"] = 558; p.data["black"] = 2350; p.data["white"] = 3500;
+p.x = 61; p.y = 22; p.county = 15; p.val = 1234; p.data["d"] = 676; p.data["r"] = 558; p.data["d16"] = 586; p.data["r16"] = 764; p.data["black"] = 2350; p.data["white"] = 3500;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 24; p.county = 15; p.val = 751; p.data["d"] = 312; p.data["r"] = 439; p.data["black"] = 205; p.data["white"] = 360;
+p.x = 59; p.y = 24; p.county = 15; p.val = 751; p.data["d"] = 312; p.data["r"] = 439; p.data["d16"] = 207; p.data["r16"] = 631; p.data["black"] = 205; p.data["white"] = 360;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 45; p.county = 15; p.val = 959; p.data["d"] = 470; p.data["r"] = 489; p.data["black"] = 100; p.data["white"] = 4355;
+p.x = 68; p.y = 45; p.county = 15; p.val = 959; p.data["d"] = 470; p.data["r"] = 489; p.data["d16"] = 1218; p.data["r16"] = 633; p.data["black"] = 100; p.data["white"] = 4355;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 44; p.county = 15; p.val = 1372; p.data["d"] = 609; p.data["r"] = 763; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 69; p.y = 44; p.county = 15; p.val = 1372; p.data["d"] = 609; p.data["r"] = 763; p.data["d16"] = 575; p.data["r16"] = 865; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 40; p.county = 15; p.val = 1108; p.data["d"] = 430; p.data["r"] = 678; p.data["black"] = 35; p.data["white"] = 1480;
+p.x = 72; p.y = 40; p.county = 15; p.val = 1108; p.data["d"] = 430; p.data["r"] = 678; p.data["d16"] = 434; p.data["r16"] = 1011; p.data["black"] = 35; p.data["white"] = 1480;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 39; p.county = 15; p.val = 1058; p.data["d"] = 532; p.data["r"] = 526; p.data["black"] = 670; p.data["white"] = 890;
+p.x = 68; p.y = 39; p.county = 15; p.val = 1058; p.data["d"] = 532; p.data["r"] = 526; p.data["d16"] = 483; p.data["r16"] = 560; p.data["black"] = 670; p.data["white"] = 890;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 24; p.county = 15; p.val = 2675; p.data["d"] = 1157; p.data["r"] = 1518; p.data["black"] = 570; p.data["white"] = 3025;
+p.x = 55; p.y = 24; p.county = 15; p.val = 2675; p.data["d"] = 1157; p.data["r"] = 1518; p.data["d16"] = 801; p.data["r16"] = 1557; p.data["black"] = 570; p.data["white"] = 3025;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 31; p.county = 15; p.val = 1005; p.data["d"] = 564; p.data["r"] = 441; p.data["black"] = 335; p.data["white"] = 1715;
+p.x = 56; p.y = 31; p.county = 15; p.val = 1005; p.data["d"] = 564; p.data["r"] = 441; p.data["d16"] = 481; p.data["r16"] = 541; p.data["black"] = 335; p.data["white"] = 1715;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 25; p.county = 15; p.val = 1113; p.data["d"] = 517; p.data["r"] = 596; p.data["black"] = 250; p.data["white"] = 1235;
+p.x = 60; p.y = 25; p.county = 15; p.val = 1113; p.data["d"] = 517; p.data["r"] = 596; p.data["d16"] = 446; p.data["r16"] = 719; p.data["black"] = 250; p.data["white"] = 1235;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 39; p.county = 15; p.val = 795; p.data["d"] = 211; p.data["r"] = 584; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 64; p.y = 39; p.county = 15; p.val = 795; p.data["d"] = 211; p.data["r"] = 584; p.data["d16"] = 194; p.data["r16"] = 651; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 4; p.county = 15; p.val = 652; p.data["d"] = 525; p.data["r"] = 127; p.data["black"] = 450; p.data["white"] = 285;
+p.x = 52; p.y = 4; p.county = 15; p.val = 652; p.data["d"] = 525; p.data["r"] = 127; p.data["d16"] = 685; p.data["r16"] = 157; p.data["black"] = 450; p.data["white"] = 285;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 20; p.county = 15; p.val = 506; p.data["d"] = 221; p.data["r"] = 285; p.data["black"] = 595; p.data["white"] = 1195;
+p.x = 63; p.y = 20; p.county = 15; p.val = 506; p.data["d"] = 221; p.data["r"] = 285; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 595; p.data["white"] = 1195;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 37; p.county = 15; p.val = 1954; p.data["d"] = 820; p.data["r"] = 1134; p.data["black"] = 1420; p.data["white"] = 1925;
+p.x = 62; p.y = 37; p.county = 15; p.val = 1954; p.data["d"] = 820; p.data["r"] = 1134; p.data["d16"] = 1004; p.data["r16"] = 1540; p.data["black"] = 1420; p.data["white"] = 1925;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 36; p.county = 15; p.val = 556; p.data["d"] = 274; p.data["r"] = 282; p.data["black"] = 310; p.data["white"] = 2560;
+p.x = 65; p.y = 36; p.county = 15; p.val = 556; p.data["d"] = 274; p.data["r"] = 282; p.data["d16"] = 243; p.data["r16"] = 309; p.data["black"] = 310; p.data["white"] = 2560;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 29; p.county = 15; p.val = 817; p.data["d"] = 440; p.data["r"] = 377; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 52; p.y = 29; p.county = 15; p.val = 817; p.data["d"] = 440; p.data["r"] = 377; p.data["d16"] = 421; p.data["r16"] = 521; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 34; p.county = 15; p.val = 547; p.data["d"] = 285; p.data["r"] = 262; p.data["black"] = 170; p.data["white"] = 675;
+p.x = 61; p.y = 34; p.county = 15; p.val = 547; p.data["d"] = 285; p.data["r"] = 262; p.data["d16"] = 303; p.data["r16"] = 335; p.data["black"] = 170; p.data["white"] = 675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 31; p.county = 15; p.val = 650; p.data["d"] = 281; p.data["r"] = 369; p.data["black"] = 845; p.data["white"] = 3665;
+p.x = 55; p.y = 31; p.county = 15; p.val = 650; p.data["d"] = 281; p.data["r"] = 369; p.data["d16"] = 297; p.data["r16"] = 512; p.data["black"] = 845; p.data["white"] = 3665;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 35; p.county = 15; p.val = 709; p.data["d"] = 509; p.data["r"] = 200; p.data["black"] = 1130; p.data["white"] = 1850;
+p.x = 62; p.y = 35; p.county = 15; p.val = 709; p.data["d"] = 509; p.data["r"] = 200; p.data["d16"] = 704; p.data["r16"] = 336; p.data["black"] = 1130; p.data["white"] = 1850;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 30; p.county = 15; p.val = 1856; p.data["d"] = 1115; p.data["r"] = 741; p.data["black"] = 500; p.data["white"] = 1975;
+p.x = 63; p.y = 30; p.county = 15; p.val = 1856; p.data["d"] = 1115; p.data["r"] = 741; p.data["d16"] = 1040; p.data["r16"] = 973; p.data["black"] = 500; p.data["white"] = 1975;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 31; p.county = 15; p.val = 743; p.data["d"] = 280; p.data["r"] = 463; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 58; p.y = 31; p.county = 15; p.val = 743; p.data["d"] = 280; p.data["r"] = 463; p.data["d16"] = 279; p.data["r16"] = 625; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 27; p.county = 15; p.val = 1083; p.data["d"] = 590; p.data["r"] = 493; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 61; p.y = 27; p.county = 15; p.val = 1083; p.data["d"] = 590; p.data["r"] = 493; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 31; p.county = 15; p.val = 677; p.data["d"] = 309; p.data["r"] = 368; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 54; p.y = 31; p.county = 15; p.val = 677; p.data["d"] = 309; p.data["r"] = 368; p.data["d16"] = 361; p.data["r16"] = 443; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 35; p.county = 15; p.val = 1305; p.data["d"] = 613; p.data["r"] = 692; p.data["black"] = 810; p.data["white"] = 2085;
+p.x = 61; p.y = 35; p.county = 15; p.val = 1305; p.data["d"] = 613; p.data["r"] = 692; p.data["d16"] = 498; p.data["r16"] = 664; p.data["black"] = 810; p.data["white"] = 2085;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 34; p.county = 15; p.val = 713; p.data["d"] = 388; p.data["r"] = 325; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 62; p.y = 34; p.county = 15; p.val = 713; p.data["d"] = 388; p.data["r"] = 325; p.data["d16"] = 417; p.data["r16"] = 497; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 26; p.county = 15; p.val = 80; p.data["d"] = 28; p.data["r"] = 52; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 54; p.y = 26; p.county = 15; p.val = 80; p.data["d"] = 28; p.data["r"] = 52; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 28; p.county = 15; p.val = 1129; p.data["d"] = 481; p.data["r"] = 648; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 53; p.y = 28; p.county = 15; p.val = 1129; p.data["d"] = 481; p.data["r"] = 648; p.data["d16"] = 412; p.data["r16"] = 685; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 89; p.y = 37; p.county = 19; p.val = 811; p.data["d"] = 447; p.data["r"] = 364; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 89; p.y = 37; p.county = 19; p.val = 811; p.data["d"] = 447; p.data["r"] = 364; p.data["d16"] = 496; p.data["r16"] = 404; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 85; p.y = 29; p.county = 19; p.val = 547; p.data["d"] = 291; p.data["r"] = 256; p.data["black"] = 580; p.data["white"] = 630;
+p.x = 85; p.y = 29; p.county = 19; p.val = 547; p.data["d"] = 291; p.data["r"] = 256; p.data["d16"] = 350; p.data["r16"] = 280; p.data["black"] = 580; p.data["white"] = 630;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 76; p.y = 51; p.county = 19; p.val = 718; p.data["d"] = 284; p.data["r"] = 434; p.data["black"] = 0; p.data["white"] = 1645;
+p.x = 76; p.y = 51; p.county = 19; p.val = 718; p.data["d"] = 284; p.data["r"] = 434; p.data["d16"] = 290; p.data["r16"] = 500; p.data["black"] = 0; p.data["white"] = 1645;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 36; p.county = 19; p.val = 994; p.data["d"] = 728; p.data["r"] = 266; p.data["black"] = 175; p.data["white"] = 345;
+p.x = 58; p.y = 36; p.county = 19; p.val = 994; p.data["d"] = 728; p.data["r"] = 266; p.data["d16"] = 1574; p.data["r16"] = 1236; p.data["black"] = 175; p.data["white"] = 345;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 59; p.county = 19; p.val = 728; p.data["d"] = 485; p.data["r"] = 243; p.data["black"] = 775; p.data["white"] = 370;
+p.x = 52; p.y = 59; p.county = 19; p.val = 728; p.data["d"] = 485; p.data["r"] = 243; p.data["d16"] = 531; p.data["r16"] = 265; p.data["black"] = 775; p.data["white"] = 370;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 48; p.county = 19; p.val = 2096; p.data["d"] = 1024; p.data["r"] = 1072; p.data["black"] = 430; p.data["white"] = 4565;
+p.x = 71; p.y = 48; p.county = 19; p.val = 2096; p.data["d"] = 1024; p.data["r"] = 1072; p.data["d16"] = 244; p.data["r16"] = 316; p.data["black"] = 430; p.data["white"] = 4565;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 46; p.county = 19; p.val = 733; p.data["d"] = 380; p.data["r"] = 353; p.data["black"] = 0; p.data["white"] = 1950;
+p.x = 73; p.y = 46; p.county = 19; p.val = 733; p.data["d"] = 380; p.data["r"] = 353; p.data["d16"] = 457; p.data["r16"] = 483; p.data["black"] = 0; p.data["white"] = 1950;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 76; p.y = 46; p.county = 19; p.val = 926; p.data["d"] = 438; p.data["r"] = 488; p.data["black"] = 825; p.data["white"] = 3905;
+p.x = 76; p.y = 46; p.county = 19; p.val = 926; p.data["d"] = 438; p.data["r"] = 488; p.data["d16"] = 344; p.data["r16"] = 371; p.data["black"] = 825; p.data["white"] = 3905;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 77; p.y = 48; p.county = 19; p.val = 992; p.data["d"] = 414; p.data["r"] = 578; p.data["black"] = 220; p.data["white"] = 1060;
+p.x = 77; p.y = 48; p.county = 19; p.val = 992; p.data["d"] = 414; p.data["r"] = 578; p.data["d16"] = 367; p.data["r16"] = 695; p.data["black"] = 220; p.data["white"] = 1060;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 48; p.county = 19; p.val = 667; p.data["d"] = 350; p.data["r"] = 317; p.data["black"] = 60; p.data["white"] = 1235;
+p.x = 72; p.y = 48; p.county = 19; p.val = 667; p.data["d"] = 350; p.data["r"] = 317; p.data["d16"] = 574; p.data["r16"] = 714; p.data["black"] = 60; p.data["white"] = 1235;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 46; p.county = 19; p.val = 1501; p.data["d"] = 695; p.data["r"] = 806; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 72; p.y = 46; p.county = 19; p.val = 1501; p.data["d"] = 695; p.data["r"] = 806; p.data["d16"] = 315; p.data["r16"] = 401; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 45; p.county = 19; p.val = 1630; p.data["d"] = 811; p.data["r"] = 819; p.data["black"] = 610; p.data["white"] = 1585;
+p.x = 73; p.y = 45; p.county = 19; p.val = 1630; p.data["d"] = 811; p.data["r"] = 819; p.data["d16"] = 513; p.data["r16"] = 597; p.data["black"] = 610; p.data["white"] = 1585;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 80; p.y = 48; p.county = 19; p.val = 1094; p.data["d"] = 390; p.data["r"] = 704; p.data["black"] = 0; p.data["white"] = 1255;
+p.x = 80; p.y = 48; p.county = 19; p.val = 1094; p.data["d"] = 390; p.data["r"] = 704; p.data["d16"] = 334; p.data["r16"] = 668; p.data["black"] = 0; p.data["white"] = 1255;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 45; p.county = 19; p.val = 1501; p.data["d"] = 667; p.data["r"] = 834; p.data["black"] = 245; p.data["white"] = 2940;
+p.x = 70; p.y = 45; p.county = 19; p.val = 1501; p.data["d"] = 667; p.data["r"] = 834; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 245; p.data["white"] = 2940;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 52; p.county = 19; p.val = 1281; p.data["d"] = 680; p.data["r"] = 601; p.data["black"] = 4; p.data["white"] = 855;
+p.x = 74; p.y = 52; p.county = 19; p.val = 1281; p.data["d"] = 680; p.data["r"] = 601; p.data["d16"] = 641; p.data["r16"] = 641; p.data["black"] = 4; p.data["white"] = 855;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 47; p.county = 19; p.val = 1795; p.data["d"] = 836; p.data["r"] = 959; p.data["black"] = 40; p.data["white"] = 1100;
+p.x = 70; p.y = 47; p.county = 19; p.val = 1795; p.data["d"] = 836; p.data["r"] = 959; p.data["d16"] = 460; p.data["r16"] = 531; p.data["black"] = 40; p.data["white"] = 1100;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 100; p.y = 27; p.county = 19; p.val = 1072; p.data["d"] = 756; p.data["r"] = 316; p.data["black"] = 705; p.data["white"] = 550;
+p.x = 100; p.y = 27; p.county = 19; p.val = 1072; p.data["d"] = 756; p.data["r"] = 316; p.data["d16"] = 847; p.data["r16"] = 357; p.data["black"] = 705; p.data["white"] = 550;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 35; p.county = 19; p.val = 1626; p.data["d"] = 1024; p.data["r"] = 602; p.data["black"] = 925; p.data["white"] = 3705;
+p.x = 59; p.y = 35; p.county = 19; p.val = 1626; p.data["d"] = 1024; p.data["r"] = 602; p.data["d16"] = 470; p.data["r16"] = 263; p.data["black"] = 925; p.data["white"] = 3705;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 58; p.county = 19; p.val = 699; p.data["d"] = 411; p.data["r"] = 288; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 50; p.y = 58; p.county = 19; p.val = 699; p.data["d"] = 411; p.data["r"] = 288; p.data["d16"] = 415; p.data["r16"] = 371; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 64; p.county = 19; p.val = 1224; p.data["d"] = 436; p.data["r"] = 788; p.data["black"] = 4; p.data["white"] = 970;
+p.x = 59; p.y = 64; p.county = 19; p.val = 1224; p.data["d"] = 436; p.data["r"] = 788; p.data["d16"] = 429; p.data["r16"] = 822; p.data["black"] = 4; p.data["white"] = 970;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 34; p.county = 19; p.val = 1065; p.data["d"] = 657; p.data["r"] = 408; p.data["black"] = 305; p.data["white"] = 2265;
+p.x = 57; p.y = 34; p.county = 19; p.val = 1065; p.data["d"] = 657; p.data["r"] = 408; p.data["d16"] = 722; p.data["r16"] = 687; p.data["black"] = 305; p.data["white"] = 2265;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 36; p.county = 19; p.val = 523; p.data["d"] = 284; p.data["r"] = 239; p.data["black"] = 1580; p.data["white"] = 2110;
+p.x = 59; p.y = 36; p.county = 19; p.val = 523; p.data["d"] = 284; p.data["r"] = 239; p.data["d16"] = 302; p.data["r16"] = 348; p.data["black"] = 1580; p.data["white"] = 2110;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 32; p.county = 19; p.val = 1022; p.data["d"] = 608; p.data["r"] = 414; p.data["black"] = 465; p.data["white"] = 2365;
+p.x = 53; p.y = 32; p.county = 19; p.val = 1022; p.data["d"] = 608; p.data["r"] = 414; p.data["d16"] = 591; p.data["r16"] = 512; p.data["black"] = 465; p.data["white"] = 2365;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 48; p.county = 19; p.val = 549; p.data["d"] = 228; p.data["r"] = 321; p.data["black"] = 150; p.data["white"] = 1590;
+p.x = 73; p.y = 48; p.county = 19; p.val = 549; p.data["d"] = 228; p.data["r"] = 321; p.data["d16"] = 218; p.data["r16"] = 399; p.data["black"] = 150; p.data["white"] = 1590;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 48; p.county = 19; p.val = 668; p.data["d"] = 312; p.data["r"] = 356; p.data["black"] = 465; p.data["white"] = 5395;
+p.x = 74; p.y = 48; p.county = 19; p.val = 668; p.data["d"] = 312; p.data["r"] = 356; p.data["d16"] = 331; p.data["r16"] = 439; p.data["black"] = 465; p.data["white"] = 5395;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 33; p.county = 19; p.val = 2218; p.data["d"] = 1230; p.data["r"] = 988; p.data["black"] = 1005; p.data["white"] = 1745;
+p.x = 54; p.y = 33; p.county = 19; p.val = 2218; p.data["d"] = 1230; p.data["r"] = 988; p.data["d16"] = 1401; p.data["r16"] = 1390; p.data["black"] = 1005; p.data["white"] = 1745;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 65; p.county = 19; p.val = 985; p.data["d"] = 523; p.data["r"] = 462; p.data["black"] = 680; p.data["white"] = 650;
+p.x = 43; p.y = 65; p.county = 19; p.val = 985; p.data["d"] = 523; p.data["r"] = 462; p.data["d16"] = 550; p.data["r16"] = 569; p.data["black"] = 680; p.data["white"] = 650;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 66; p.county = 19; p.val = 1627; p.data["d"] = 693; p.data["r"] = 934; p.data["black"] = 4; p.data["white"] = 1655;
+p.x = 52; p.y = 66; p.county = 19; p.val = 1627; p.data["d"] = 693; p.data["r"] = 934; p.data["d16"] = 713; p.data["r16"] = 986; p.data["black"] = 4; p.data["white"] = 1655;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 49; p.county = 19; p.val = 1967; p.data["d"] = 1060; p.data["r"] = 907; p.data["black"] = 1185; p.data["white"] = 560;
+p.x = 67; p.y = 49; p.county = 19; p.val = 1967; p.data["d"] = 1060; p.data["r"] = 907; p.data["d16"] = 1536; p.data["r16"] = 1173; p.data["black"] = 1185; p.data["white"] = 560;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 49; p.county = 19; p.val = 1772; p.data["d"] = 1162; p.data["r"] = 610; p.data["black"] = 3230; p.data["white"] = 5785;
+p.x = 66; p.y = 49; p.county = 19; p.val = 1772; p.data["d"] = 1162; p.data["r"] = 610; p.data["d16"] = 953; p.data["r16"] = 486; p.data["black"] = 3230; p.data["white"] = 5785;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 61; p.county = 19; p.val = 754; p.data["d"] = 422; p.data["r"] = 332; p.data["black"] = 0; p.data["white"] = 890;
+p.x = 66; p.y = 61; p.county = 19; p.val = 754; p.data["d"] = 422; p.data["r"] = 332; p.data["d16"] = 363; p.data["r16"] = 410; p.data["black"] = 0; p.data["white"] = 890;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 56; p.county = 19; p.val = 923; p.data["d"] = 471; p.data["r"] = 452; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 71; p.y = 56; p.county = 19; p.val = 923; p.data["d"] = 471; p.data["r"] = 452; p.data["d16"] = 460; p.data["r16"] = 517; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 50; p.county = 19; p.val = 555; p.data["d"] = 214; p.data["r"] = 341; p.data["black"] = 525; p.data["white"] = 3580;
+p.x = 67; p.y = 50; p.county = 19; p.val = 555; p.data["d"] = 214; p.data["r"] = 341; p.data["d16"] = 229; p.data["r16"] = 398; p.data["black"] = 525; p.data["white"] = 3580;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 48; p.county = 19; p.val = 1653; p.data["d"] = 1305; p.data["r"] = 348; p.data["black"] = 390; p.data["white"] = 0;
+p.x = 67; p.y = 48; p.county = 19; p.val = 1653; p.data["d"] = 1305; p.data["r"] = 348; p.data["d16"] = 1950; p.data["r16"] = 526; p.data["black"] = 390; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 48; p.county = 19; p.val = 2177; p.data["d"] = 1892; p.data["r"] = 285; p.data["black"] = 895; p.data["white"] = 595;
+p.x = 66; p.y = 48; p.county = 19; p.val = 2177; p.data["d"] = 1892; p.data["r"] = 285; p.data["d16"] = 1859; p.data["r16"] = 310; p.data["black"] = 895; p.data["white"] = 595;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 46; p.county = 19; p.val = 504; p.data["d"] = 471; p.data["r"] = 33; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 66; p.y = 46; p.county = 19; p.val = 504; p.data["d"] = 471; p.data["r"] = 33; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 48; p.county = 19; p.val = 1366; p.data["d"] = 1126; p.data["r"] = 240; p.data["black"] = 500; p.data["white"] = 900;
+p.x = 65; p.y = 48; p.county = 19; p.val = 1366; p.data["d"] = 1126; p.data["r"] = 240; p.data["d16"] = 693; p.data["r16"] = 167; p.data["black"] = 500; p.data["white"] = 900;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 47; p.county = 19; p.val = 878; p.data["d"] = 715; p.data["r"] = 163; p.data["black"] = 450; p.data["white"] = 220;
+p.x = 65; p.y = 47; p.county = 19; p.val = 878; p.data["d"] = 715; p.data["r"] = 163; p.data["d16"] = 696; p.data["r16"] = 223; p.data["black"] = 450; p.data["white"] = 220;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 47; p.county = 19; p.val = 1203; p.data["d"] = 1103; p.data["r"] = 100; p.data["black"] = 595; p.data["white"] = 0;
+p.x = 66; p.y = 47; p.county = 19; p.val = 1203; p.data["d"] = 1103; p.data["r"] = 100; p.data["d16"] = 1946; p.data["r16"] = 244; p.data["black"] = 595; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 45; p.county = 19; p.val = 751; p.data["d"] = 691; p.data["r"] = 60; p.data["black"] = 910; p.data["white"] = 185;
+p.x = 65; p.y = 45; p.county = 19; p.val = 751; p.data["d"] = 691; p.data["r"] = 60; p.data["d16"] = 942; p.data["r16"] = 71; p.data["black"] = 910; p.data["white"] = 185;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 70; p.y = 50; p.county = 19; p.val = 1102; p.data["d"] = 525; p.data["r"] = 577; p.data["black"] = 475; p.data["white"] = 3900;
+p.x = 70; p.y = 50; p.county = 19; p.val = 1102; p.data["d"] = 525; p.data["r"] = 577; p.data["d16"] = 501; p.data["r16"] = 546; p.data["black"] = 475; p.data["white"] = 3900;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 48; p.county = 19; p.val = 642; p.data["d"] = 319; p.data["r"] = 323; p.data["black"] = 380; p.data["white"] = 4005;
+p.x = 69; p.y = 48; p.county = 19; p.val = 642; p.data["d"] = 319; p.data["r"] = 323; p.data["d16"] = 250; p.data["r16"] = 297; p.data["black"] = 380; p.data["white"] = 4005;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 47; p.county = 19; p.val = 920; p.data["d"] = 516; p.data["r"] = 404; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 69; p.y = 47; p.county = 19; p.val = 920; p.data["d"] = 516; p.data["r"] = 404; p.data["d16"] = 441; p.data["r16"] = 475; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 49; p.county = 19; p.val = 583; p.data["d"] = 266; p.data["r"] = 317; p.data["black"] = 60; p.data["white"] = 3120;
+p.x = 72; p.y = 49; p.county = 19; p.val = 583; p.data["d"] = 266; p.data["r"] = 317; p.data["d16"] = 228; p.data["r16"] = 418; p.data["black"] = 60; p.data["white"] = 3120;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 47; p.county = 19; p.val = 759; p.data["d"] = 386; p.data["r"] = 373; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 71; p.y = 47; p.county = 19; p.val = 759; p.data["d"] = 386; p.data["r"] = 373; p.data["d16"] = 1240; p.data["r16"] = 1705; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 46; p.county = 19; p.val = 510; p.data["d"] = 186; p.data["r"] = 324; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 69; p.y = 46; p.county = 19; p.val = 510; p.data["d"] = 186; p.data["r"] = 324; p.data["d16"] = 166; p.data["r16"] = 286; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 47; p.county = 19; p.val = 1089; p.data["d"] = 591; p.data["r"] = 498; p.data["black"] = 430; p.data["white"] = 4600;
+p.x = 72; p.y = 47; p.county = 19; p.val = 1089; p.data["d"] = 591; p.data["r"] = 498; p.data["d16"] = 534; p.data["r16"] = 710; p.data["black"] = 430; p.data["white"] = 4600;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 46; p.county = 19; p.val = 1430; p.data["d"] = 677; p.data["r"] = 753; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 71; p.y = 46; p.county = 19; p.val = 1430; p.data["d"] = 677; p.data["r"] = 753; p.data["d16"] = 664; p.data["r16"] = 750; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 45; p.county = 19; p.val = 1016; p.data["d"] = 573; p.data["r"] = 443; p.data["black"] = 0; p.data["white"] = 1305;
+p.x = 75; p.y = 45; p.county = 19; p.val = 1016; p.data["d"] = 573; p.data["r"] = 443; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 1305;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 44; p.county = 19; p.val = 471; p.data["d"] = 223; p.data["r"] = 248; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 74; p.y = 44; p.county = 19; p.val = 471; p.data["d"] = 223; p.data["r"] = 248; p.data["d16"] = 772; p.data["r16"] = 764; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 44; p.county = 19; p.val = 327; p.data["d"] = 320; p.data["r"] = 7; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 72; p.y = 44; p.county = 19; p.val = 327; p.data["d"] = 320; p.data["r"] = 7; p.data["d16"] = 773; p.data["r16"] = 884; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 43; p.county = 19; p.val = 1765; p.data["d"] = 721; p.data["r"] = 1044; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 71; p.y = 43; p.county = 19; p.val = 1765; p.data["d"] = 721; p.data["r"] = 1044; p.data["d16"] = 1177; p.data["r16"] = 2019; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 72; p.y = 43; p.county = 19; p.val = 782; p.data["d"] = 343; p.data["r"] = 439; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 72; p.y = 43; p.county = 19; p.val = 782; p.data["d"] = 343; p.data["r"] = 439; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 43; p.county = 19; p.val = 196; p.data["d"] = 67; p.data["r"] = 129; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 74; p.y = 43; p.county = 19; p.val = 196; p.data["d"] = 67; p.data["r"] = 129; p.data["d16"] = 76; p.data["r16"] = 124; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 39; p.county = 19; p.val = 2471; p.data["d"] = 833; p.data["r"] = 1638; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 75; p.y = 39; p.county = 19; p.val = 2471; p.data["d"] = 833; p.data["r"] = 1638; p.data["d16"] = 716; p.data["r16"] = 1643; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 41; p.county = 19; p.val = 917; p.data["d"] = 379; p.data["r"] = 538; p.data["black"] = 200; p.data["white"] = 6075;
+p.x = 75; p.y = 41; p.county = 19; p.val = 917; p.data["d"] = 379; p.data["r"] = 538; p.data["d16"] = 328; p.data["r16"] = 560; p.data["black"] = 200; p.data["white"] = 6075;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 76; p.y = 41; p.county = 19; p.val = 2558; p.data["d"] = 1038; p.data["r"] = 1520; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 76; p.y = 41; p.county = 19; p.val = 2558; p.data["d"] = 1038; p.data["r"] = 1520; p.data["d16"] = 930; p.data["r16"] = 1720; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 76; p.y = 43; p.county = 19; p.val = 1044; p.data["d"] = 503; p.data["r"] = 541; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 76; p.y = 43; p.county = 19; p.val = 1044; p.data["d"] = 503; p.data["r"] = 541; p.data["d16"] = 487; p.data["r16"] = 627; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 82; p.y = 43; p.county = 19; p.val = 2010; p.data["d"] = 1020; p.data["r"] = 990; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 82; p.y = 43; p.county = 19; p.val = 2010; p.data["d"] = 1020; p.data["r"] = 990; p.data["d16"] = 1077; p.data["r16"] = 1071; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 78; p.y = 40; p.county = 19; p.val = 1755; p.data["d"] = 666; p.data["r"] = 1089; p.data["black"] = 110; p.data["white"] = 435;
+p.x = 78; p.y = 40; p.county = 19; p.val = 1755; p.data["d"] = 666; p.data["r"] = 1089; p.data["d16"] = 509; p.data["r16"] = 1026; p.data["black"] = 110; p.data["white"] = 435;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 55; p.county = 19; p.val = 1156; p.data["d"] = 732; p.data["r"] = 424; p.data["black"] = 1060; p.data["white"] = 5080;
+p.x = 66; p.y = 55; p.county = 19; p.val = 1156; p.data["d"] = 732; p.data["r"] = 424; p.data["d16"] = 722; p.data["r16"] = 594; p.data["black"] = 1060; p.data["white"] = 5080;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 57; p.county = 19; p.val = 534; p.data["d"] = 453; p.data["r"] = 81; p.data["black"] = 1320; p.data["white"] = 3320;
+p.x = 64; p.y = 57; p.county = 19; p.val = 534; p.data["d"] = 453; p.data["r"] = 81; p.data["d16"] = 400; p.data["r16"] = 79; p.data["black"] = 1320; p.data["white"] = 3320;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 69; p.y = 52; p.county = 19; p.val = 893; p.data["d"] = 412; p.data["r"] = 481; p.data["black"] = 10; p.data["white"] = 670;
+p.x = 69; p.y = 52; p.county = 19; p.val = 893; p.data["d"] = 412; p.data["r"] = 481; p.data["d16"] = 367; p.data["r16"] = 483; p.data["black"] = 10; p.data["white"] = 670;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 53; p.county = 19; p.val = 448; p.data["d"] = 172; p.data["r"] = 276; p.data["black"] = 74; p.data["white"] = 2330;
+p.x = 68; p.y = 53; p.county = 19; p.val = 448; p.data["d"] = 172; p.data["r"] = 276; p.data["d16"] = 159; p.data["r16"] = 305; p.data["black"] = 74; p.data["white"] = 2330;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 53; p.county = 19; p.val = 997; p.data["d"] = 573; p.data["r"] = 424; p.data["black"] = 0; p.data["white"] = 1620;
+p.x = 67; p.y = 53; p.county = 19; p.val = 997; p.data["d"] = 573; p.data["r"] = 424; p.data["d16"] = 542; p.data["r16"] = 484; p.data["black"] = 0; p.data["white"] = 1620;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 54; p.county = 19; p.val = 1141; p.data["d"] = 631; p.data["r"] = 510; p.data["black"] = 755; p.data["white"] = 3500;
+p.x = 66; p.y = 54; p.county = 19; p.val = 1141; p.data["d"] = 631; p.data["r"] = 510; p.data["d16"] = 600; p.data["r16"] = 582; p.data["black"] = 755; p.data["white"] = 3500;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 53; p.county = 19; p.val = 687; p.data["d"] = 455; p.data["r"] = 232; p.data["black"] = 155; p.data["white"] = 1180;
+p.x = 63; p.y = 53; p.county = 19; p.val = 687; p.data["d"] = 455; p.data["r"] = 232; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 155; p.data["white"] = 1180;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 53; p.county = 19; p.val = 921; p.data["d"] = 502; p.data["r"] = 419; p.data["black"] = 110; p.data["white"] = 725;
+p.x = 66; p.y = 53; p.county = 19; p.val = 921; p.data["d"] = 502; p.data["r"] = 419; p.data["d16"] = 496; p.data["r16"] = 498; p.data["black"] = 110; p.data["white"] = 725;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 52; p.county = 19; p.val = 698; p.data["d"] = 316; p.data["r"] = 382; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 66; p.y = 52; p.county = 19; p.val = 698; p.data["d"] = 316; p.data["r"] = 382; p.data["d16"] = 299; p.data["r16"] = 419; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 52; p.county = 19; p.val = 1017; p.data["d"] = 598; p.data["r"] = 419; p.data["black"] = 360; p.data["white"] = 1330;
+p.x = 65; p.y = 52; p.county = 19; p.val = 1017; p.data["d"] = 598; p.data["r"] = 419; p.data["d16"] = 563; p.data["r16"] = 585; p.data["black"] = 360; p.data["white"] = 1330;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 51; p.county = 19; p.val = 1021; p.data["d"] = 591; p.data["r"] = 430; p.data["black"] = 20; p.data["white"] = 3015;
+p.x = 65; p.y = 51; p.county = 19; p.val = 1021; p.data["d"] = 591; p.data["r"] = 430; p.data["d16"] = 617; p.data["r16"] = 475; p.data["black"] = 20; p.data["white"] = 3015;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 59; p.county = 19; p.val = 1034; p.data["d"] = 538; p.data["r"] = 496; p.data["black"] = 255; p.data["white"] = 780;
+p.x = 56; p.y = 59; p.county = 19; p.val = 1034; p.data["d"] = 538; p.data["r"] = 496; p.data["d16"] = 599; p.data["r16"] = 555; p.data["black"] = 255; p.data["white"] = 780;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 75; p.y = 43; p.county = 19; p.val = 1525; p.data["d"] = 644; p.data["r"] = 881; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 75; p.y = 43; p.county = 19; p.val = 1525; p.data["d"] = 644; p.data["r"] = 881; p.data["d16"] = 612; p.data["r16"] = 1015; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 42; p.county = 19; p.val = 767; p.data["d"] = 341; p.data["r"] = 426; p.data["black"] = 395; p.data["white"] = 3020;
+p.x = 74; p.y = 42; p.county = 19; p.val = 767; p.data["d"] = 341; p.data["r"] = 426; p.data["d16"] = 637; p.data["r16"] = 959; p.data["black"] = 395; p.data["white"] = 3020;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 73; p.y = 40; p.county = 19; p.val = 1635; p.data["d"] = 588; p.data["r"] = 1047; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 73; p.y = 40; p.county = 19; p.val = 1635; p.data["d"] = 588; p.data["r"] = 1047; p.data["d16"] = 534; p.data["r16"] = 1060; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 78; p.y = 42; p.county = 19; p.val = 812; p.data["d"] = 315; p.data["r"] = 497; p.data["black"] = 80; p.data["white"] = 5305;
+p.x = 78; p.y = 42; p.county = 19; p.val = 812; p.data["d"] = 315; p.data["r"] = 497; p.data["d16"] = 273; p.data["r16"] = 647; p.data["black"] = 80; p.data["white"] = 5305;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 54; p.county = 19; p.val = 581; p.data["d"] = 513; p.data["r"] = 68; p.data["black"] = 625; p.data["white"] = 3675;
+p.x = 65; p.y = 54; p.county = 19; p.val = 581; p.data["d"] = 513; p.data["r"] = 68; p.data["d16"] = 476; p.data["r16"] = 74; p.data["black"] = 625; p.data["white"] = 3675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 53; p.county = 19; p.val = 844; p.data["d"] = 513; p.data["r"] = 331; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 65; p.y = 53; p.county = 19; p.val = 844; p.data["d"] = 513; p.data["r"] = 331; p.data["d16"] = 521; p.data["r16"] = 512; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 53; p.county = 19; p.val = 973; p.data["d"] = 640; p.data["r"] = 333; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 64; p.y = 53; p.county = 19; p.val = 973; p.data["d"] = 640; p.data["r"] = 333; p.data["d16"] = 660; p.data["r16"] = 574; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 50; p.county = 19; p.val = 966; p.data["d"] = 619; p.data["r"] = 347; p.data["black"] = 875; p.data["white"] = 4455;
+p.x = 63; p.y = 50; p.county = 19; p.val = 966; p.data["d"] = 619; p.data["r"] = 347; p.data["d16"] = 550; p.data["r16"] = 419; p.data["black"] = 875; p.data["white"] = 4455;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 53; p.county = 19; p.val = 1948; p.data["d"] = 1037; p.data["r"] = 911; p.data["black"] = 1730; p.data["white"] = 5130;
+p.x = 60; p.y = 53; p.county = 19; p.val = 1948; p.data["d"] = 1037; p.data["r"] = 911; p.data["d16"] = 734; p.data["r16"] = 1040; p.data["black"] = 1730; p.data["white"] = 5130;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 52; p.county = 19; p.val = 965; p.data["d"] = 537; p.data["r"] = 428; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 67; p.y = 52; p.county = 19; p.val = 965; p.data["d"] = 537; p.data["r"] = 428; p.data["d16"] = 496; p.data["r16"] = 622; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 51; p.county = 19; p.val = 723; p.data["d"] = 334; p.data["r"] = 389; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 68; p.y = 51; p.county = 19; p.val = 723; p.data["d"] = 334; p.data["r"] = 389; p.data["d16"] = 327; p.data["r16"] = 458; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 51; p.county = 19; p.val = 834; p.data["d"] = 418; p.data["r"] = 416; p.data["black"] = 410; p.data["white"] = 3015;
+p.x = 67; p.y = 51; p.county = 19; p.val = 834; p.data["d"] = 418; p.data["r"] = 416; p.data["d16"] = 429; p.data["r16"] = 463; p.data["black"] = 410; p.data["white"] = 3015;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 51; p.county = 19; p.val = 987; p.data["d"] = 620; p.data["r"] = 367; p.data["black"] = 0; p.data["white"] = 1040;
+p.x = 64; p.y = 51; p.county = 19; p.val = 987; p.data["d"] = 620; p.data["r"] = 367; p.data["d16"] = 554; p.data["r16"] = 466; p.data["black"] = 0; p.data["white"] = 1040;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 52; p.county = 19; p.val = 915; p.data["d"] = 602; p.data["r"] = 313; p.data["black"] = 485; p.data["white"] = 3320;
+p.x = 63; p.y = 52; p.county = 19; p.val = 915; p.data["d"] = 602; p.data["r"] = 313; p.data["d16"] = 1005; p.data["r16"] = 737; p.data["black"] = 485; p.data["white"] = 3320;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 52; p.county = 19; p.val = 754; p.data["d"] = 334; p.data["r"] = 420; p.data["black"] = 580; p.data["white"] = 3675;
+p.x = 54; p.y = 52; p.county = 19; p.val = 754; p.data["d"] = 334; p.data["r"] = 420; p.data["d16"] = 360; p.data["r16"] = 685; p.data["black"] = 580; p.data["white"] = 3675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 51; p.county = 19; p.val = 811; p.data["d"] = 520; p.data["r"] = 291; p.data["black"] = 110; p.data["white"] = 1240;
+p.x = 57; p.y = 51; p.county = 19; p.val = 811; p.data["d"] = 520; p.data["r"] = 291; p.data["d16"] = 588; p.data["r16"] = 385; p.data["black"] = 110; p.data["white"] = 1240;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 51; p.county = 19; p.val = 1941; p.data["d"] = 1052; p.data["r"] = 889; p.data["black"] = 170; p.data["white"] = 1050;
+p.x = 60; p.y = 51; p.county = 19; p.val = 1941; p.data["d"] = 1052; p.data["r"] = 889; p.data["d16"] = 1096; p.data["r16"] = 1307; p.data["black"] = 170; p.data["white"] = 1050;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 57; p.county = 19; p.val = 626; p.data["d"] = 394; p.data["r"] = 232; p.data["black"] = 590; p.data["white"] = 1070;
+p.x = 60; p.y = 57; p.county = 19; p.val = 626; p.data["d"] = 394; p.data["r"] = 232; p.data["d16"] = 389; p.data["r16"] = 311; p.data["black"] = 590; p.data["white"] = 1070;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 39; p.y = 56; p.county = 19; p.val = 602; p.data["d"] = 460; p.data["r"] = 142; p.data["black"] = 1690; p.data["white"] = 410;
+p.x = 39; p.y = 56; p.county = 19; p.val = 602; p.data["d"] = 460; p.data["r"] = 142; p.data["d16"] = 585; p.data["r16"] = 178; p.data["black"] = 1690; p.data["white"] = 410;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 40; p.y = 48; p.county = 19; p.val = 498; p.data["d"] = 309; p.data["r"] = 189; p.data["black"] = 130; p.data["white"] = 535;
+p.x = 40; p.y = 48; p.county = 19; p.val = 498; p.data["d"] = 309; p.data["r"] = 189; p.data["d16"] = 397; p.data["r16"] = 243; p.data["black"] = 130; p.data["white"] = 535;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 53; p.county = 19; p.val = 782; p.data["d"] = 481; p.data["r"] = 301; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 43; p.y = 53; p.county = 19; p.val = 782; p.data["d"] = 481; p.data["r"] = 301; p.data["d16"] = 577; p.data["r16"] = 356; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 55; p.county = 19; p.val = 1177; p.data["d"] = 390; p.data["r"] = 787; p.data["black"] = 1105; p.data["white"] = 895;
+p.x = 48; p.y = 55; p.county = 19; p.val = 1177; p.data["d"] = 390; p.data["r"] = 787; p.data["d16"] = 429; p.data["r16"] = 921; p.data["black"] = 1105; p.data["white"] = 895;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 52; p.county = 19; p.val = 944; p.data["d"] = 725; p.data["r"] = 219; p.data["black"] = 230; p.data["white"] = 305;
+p.x = 48; p.y = 52; p.county = 19; p.val = 944; p.data["d"] = 725; p.data["r"] = 219; p.data["d16"] = 834; p.data["r16"] = 260; p.data["black"] = 230; p.data["white"] = 305;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 50; p.county = 19; p.val = 569; p.data["d"] = 282; p.data["r"] = 287; p.data["black"] = 675; p.data["white"] = 690;
+p.x = 48; p.y = 50; p.county = 19; p.val = 569; p.data["d"] = 282; p.data["r"] = 287; p.data["d16"] = 342; p.data["r16"] = 337; p.data["black"] = 675; p.data["white"] = 690;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 47; p.county = 19; p.val = 1089; p.data["d"] = 442; p.data["r"] = 647; p.data["black"] = 370; p.data["white"] = 1325;
+p.x = 50; p.y = 47; p.county = 19; p.val = 1089; p.data["d"] = 442; p.data["r"] = 647; p.data["d16"] = 402; p.data["r16"] = 698; p.data["black"] = 370; p.data["white"] = 1325;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 49; p.county = 19; p.val = 661; p.data["d"] = 479; p.data["r"] = 182; p.data["black"] = 1330; p.data["white"] = 1910;
+p.x = 63; p.y = 49; p.county = 19; p.val = 661; p.data["d"] = 479; p.data["r"] = 182; p.data["d16"] = 324; p.data["r16"] = 560; p.data["black"] = 1330; p.data["white"] = 1910;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 49; p.county = 19; p.val = 753; p.data["d"] = 454; p.data["r"] = 299; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 64; p.y = 49; p.county = 19; p.val = 753; p.data["d"] = 454; p.data["r"] = 299; p.data["d16"] = 443; p.data["r16"] = 339; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 48; p.county = 19; p.val = 1023; p.data["d"] = 920; p.data["r"] = 103; p.data["black"] = 765; p.data["white"] = 2835;
+p.x = 62; p.y = 48; p.county = 19; p.val = 1023; p.data["d"] = 920; p.data["r"] = 103; p.data["d16"] = 1756; p.data["r16"] = 419; p.data["black"] = 765; p.data["white"] = 2835;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 47; p.county = 19; p.val = 1273; p.data["d"] = 706; p.data["r"] = 567; p.data["black"] = 25; p.data["white"] = 470;
+p.x = 63; p.y = 47; p.county = 19; p.val = 1273; p.data["d"] = 706; p.data["r"] = 567; p.data["d16"] = 1130; p.data["r16"] = 1072; p.data["black"] = 25; p.data["white"] = 470;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 48; p.county = 19; p.val = 1402; p.data["d"] = 1120; p.data["r"] = 282; p.data["black"] = 105; p.data["white"] = 615;
+p.x = 61; p.y = 48; p.county = 19; p.val = 1402; p.data["d"] = 1120; p.data["r"] = 282; p.data["d16"] = 483; p.data["r16"] = 128; p.data["black"] = 105; p.data["white"] = 615;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 49; p.county = 19; p.val = 620; p.data["d"] = 329; p.data["r"] = 291; p.data["black"] = 1205; p.data["white"] = 815;
+p.x = 61; p.y = 49; p.county = 19; p.val = 620; p.data["d"] = 329; p.data["r"] = 291; p.data["d16"] = 255; p.data["r16"] = 384; p.data["black"] = 1205; p.data["white"] = 815;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 49; p.county = 19; p.val = 984; p.data["d"] = 447; p.data["r"] = 537; p.data["black"] = 950; p.data["white"] = 3130;
+p.x = 60; p.y = 49; p.county = 19; p.val = 984; p.data["d"] = 447; p.data["r"] = 537; p.data["d16"] = 438; p.data["r16"] = 602; p.data["black"] = 950; p.data["white"] = 3130;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 47; p.county = 19; p.val = 169; p.data["d"] = 146; p.data["r"] = 23; p.data["black"] = 840; p.data["white"] = 780;
+p.x = 61; p.y = 47; p.county = 19; p.val = 169; p.data["d"] = 146; p.data["r"] = 23; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 840; p.data["white"] = 780;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 46; p.county = 19; p.val = 483; p.data["d"] = 277; p.data["r"] = 206; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 62; p.y = 46; p.county = 19; p.val = 483; p.data["d"] = 277; p.data["r"] = 206; p.data["d16"] = 1118; p.data["r16"] = 739; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 45; p.county = 19; p.val = 540; p.data["d"] = 282; p.data["r"] = 258; p.data["black"] = 1975; p.data["white"] = 1760;
+p.x = 60; p.y = 45; p.county = 19; p.val = 540; p.data["d"] = 282; p.data["r"] = 258; p.data["d16"] = 936; p.data["r16"] = 937; p.data["black"] = 1975; p.data["white"] = 1760;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 48; p.county = 19; p.val = 2121; p.data["d"] = 1232; p.data["r"] = 889; p.data["black"] = 1340; p.data["white"] = 3305;
+p.x = 58; p.y = 48; p.county = 19; p.val = 2121; p.data["d"] = 1232; p.data["r"] = 889; p.data["d16"] = 1125; p.data["r16"] = 1024; p.data["black"] = 1340; p.data["white"] = 3305;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 47; p.county = 19; p.val = 1089; p.data["d"] = 634; p.data["r"] = 455; p.data["black"] = 545; p.data["white"] = 4060;
+p.x = 55; p.y = 47; p.county = 19; p.val = 1089; p.data["d"] = 634; p.data["r"] = 455; p.data["d16"] = 699; p.data["r16"] = 724; p.data["black"] = 545; p.data["white"] = 4060;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 47; p.county = 19; p.val = 1574; p.data["d"] = 880; p.data["r"] = 694; p.data["black"] = 380; p.data["white"] = 2990;
+p.x = 59; p.y = 47; p.county = 19; p.val = 1574; p.data["d"] = 880; p.data["r"] = 694; p.data["d16"] = 878; p.data["r16"] = 951; p.data["black"] = 380; p.data["white"] = 2990;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 48; p.county = 19; p.val = 285; p.data["d"] = 193; p.data["r"] = 92; p.data["black"] = 50; p.data["white"] = 990;
+p.x = 64; p.y = 48; p.county = 19; p.val = 285; p.data["d"] = 193; p.data["r"] = 92; p.data["d16"] = 749; p.data["r16"] = 367; p.data["black"] = 50; p.data["white"] = 990;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 65; p.y = 49; p.county = 19; p.val = 811; p.data["d"] = 438; p.data["r"] = 373; p.data["black"] = 1280; p.data["white"] = 3575;
+p.x = 65; p.y = 49; p.county = 19; p.val = 811; p.data["d"] = 438; p.data["r"] = 373; p.data["d16"] = 417; p.data["r16"] = 477; p.data["black"] = 1280; p.data["white"] = 3575;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 48; p.county = 19; p.val = 744; p.data["d"] = 598; p.data["r"] = 146; p.data["black"] = 55; p.data["white"] = 635;
+p.x = 63; p.y = 48; p.county = 19; p.val = 744; p.data["d"] = 598; p.data["r"] = 146; p.data["d16"] = 710; p.data["r16"] = 141; p.data["black"] = 55; p.data["white"] = 635;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 49; p.county = 19; p.val = 1914; p.data["d"] = 912; p.data["r"] = 1002; p.data["black"] = 2050; p.data["white"] = 2250;
+p.x = 62; p.y = 49; p.county = 19; p.val = 1914; p.data["d"] = 912; p.data["r"] = 1002; p.data["d16"] = 484; p.data["r16"] = 603; p.data["black"] = 2050; p.data["white"] = 2250;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 46; p.county = 19; p.val = 1581; p.data["d"] = 1024; p.data["r"] = 557; p.data["black"] = 2585; p.data["white"] = 1255;
+p.x = 61; p.y = 46; p.county = 19; p.val = 1581; p.data["d"] = 1024; p.data["r"] = 557; p.data["d16"] = 452; p.data["r16"] = 203; p.data["black"] = 2585; p.data["white"] = 1255;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 46; p.county = 19; p.val = 690; p.data["d"] = 345; p.data["r"] = 345; p.data["black"] = 2285; p.data["white"] = 315;
+p.x = 64; p.y = 46; p.county = 19; p.val = 690; p.data["d"] = 345; p.data["r"] = 345; p.data["d16"] = 295; p.data["r16"] = 339; p.data["black"] = 2285; p.data["white"] = 315;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 46; p.county = 19; p.val = 694; p.data["d"] = 357; p.data["r"] = 337; p.data["black"] = 2510; p.data["white"] = 245;
+p.x = 63; p.y = 46; p.county = 19; p.val = 694; p.data["d"] = 357; p.data["r"] = 337; p.data["d16"] = 356; p.data["r16"] = 353; p.data["black"] = 2510; p.data["white"] = 245;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 47; p.county = 19; p.val = 894; p.data["d"] = 499; p.data["r"] = 395; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 62; p.y = 47; p.county = 19; p.val = 894; p.data["d"] = 499; p.data["r"] = 395; p.data["d16"] = 148; p.data["r16"] = 19; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 46; p.county = 19; p.val = 1177; p.data["d"] = 744; p.data["r"] = 433; p.data["black"] = 315; p.data["white"] = 1745;
+p.x = 60; p.y = 46; p.county = 19; p.val = 1177; p.data["d"] = 744; p.data["r"] = 433; p.data["d16"] = 510; p.data["r16"] = 446; p.data["black"] = 315; p.data["white"] = 1745;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 47; p.county = 19; p.val = 542; p.data["d"] = 411; p.data["r"] = 131; p.data["black"] = 420; p.data["white"] = 910;
+p.x = 60; p.y = 47; p.county = 19; p.val = 542; p.data["d"] = 411; p.data["r"] = 131; p.data["d16"] = 411; p.data["r16"] = 235; p.data["black"] = 420; p.data["white"] = 910;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 48; p.county = 19; p.val = 698; p.data["d"] = 393; p.data["r"] = 305; p.data["black"] = 545; p.data["white"] = 2625;
+p.x = 59; p.y = 48; p.county = 19; p.val = 698; p.data["d"] = 393; p.data["r"] = 305; p.data["d16"] = 411; p.data["r16"] = 328; p.data["black"] = 545; p.data["white"] = 2625;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 46; p.county = 19; p.val = 563; p.data["d"] = 280; p.data["r"] = 283; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 59; p.y = 46; p.county = 19; p.val = 563; p.data["d"] = 280; p.data["r"] = 283; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 45; p.county = 19; p.val = 713; p.data["d"] = 338; p.data["r"] = 375; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 59; p.y = 45; p.county = 19; p.val = 713; p.data["d"] = 338; p.data["r"] = 375; p.data["d16"] = 293; p.data["r16"] = 490; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 46; p.county = 19; p.val = 369; p.data["d"] = 146; p.data["r"] = 223; p.data["black"] = 230; p.data["white"] = 1925;
+p.x = 58; p.y = 46; p.county = 19; p.val = 369; p.data["d"] = 146; p.data["r"] = 223; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 230; p.data["white"] = 1925;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 44; p.county = 19; p.val = 1185; p.data["d"] = 509; p.data["r"] = 676; p.data["black"] = 905; p.data["white"] = 805;
+p.x = 59; p.y = 44; p.county = 19; p.val = 1185; p.data["d"] = 509; p.data["r"] = 676; p.data["d16"] = 463; p.data["r16"] = 781; p.data["black"] = 905; p.data["white"] = 805;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 44; p.county = 19; p.val = 1034; p.data["d"] = 443; p.data["r"] = 591; p.data["black"] = 350; p.data["white"] = 2695;
+p.x = 58; p.y = 44; p.county = 19; p.val = 1034; p.data["d"] = 443; p.data["r"] = 591; p.data["d16"] = 570; p.data["r16"] = 940; p.data["black"] = 350; p.data["white"] = 2695;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 42; p.county = 19; p.val = 966; p.data["d"] = 436; p.data["r"] = 530; p.data["black"] = 1785; p.data["white"] = 2875;
+p.x = 57; p.y = 42; p.county = 19; p.val = 966; p.data["d"] = 436; p.data["r"] = 530; p.data["d16"] = 423; p.data["r16"] = 726; p.data["black"] = 1785; p.data["white"] = 2875;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 44; p.county = 19; p.val = 1660; p.data["d"] = 880; p.data["r"] = 780; p.data["black"] = 195; p.data["white"] = 980;
+p.x = 55; p.y = 44; p.county = 19; p.val = 1660; p.data["d"] = 880; p.data["r"] = 780; p.data["d16"] = 907; p.data["r16"] = 1201; p.data["black"] = 195; p.data["white"] = 980;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 44; p.county = 19; p.val = 174; p.data["d"] = 161; p.data["r"] = 13; p.data["black"] = 1295; p.data["white"] = 585;
+p.x = 62; p.y = 44; p.county = 19; p.val = 174; p.data["d"] = 161; p.data["r"] = 13; p.data["d16"] = 225; p.data["r16"] = 12; p.data["black"] = 1295; p.data["white"] = 585;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 44; p.county = 19; p.val = 763; p.data["d"] = 323; p.data["r"] = 440; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 61; p.y = 44; p.county = 19; p.val = 763; p.data["d"] = 323; p.data["r"] = 440; p.data["d16"] = 330; p.data["r16"] = 489; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 43; p.county = 19; p.val = 1087; p.data["d"] = 950; p.data["r"] = 137; p.data["black"] = 1295; p.data["white"] = 1165;
+p.x = 63; p.y = 43; p.county = 19; p.val = 1087; p.data["d"] = 950; p.data["r"] = 137; p.data["d16"] = 960; p.data["r16"] = 57; p.data["black"] = 1295; p.data["white"] = 1165;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 44; p.county = 19; p.val = 584; p.data["d"] = 560; p.data["r"] = 24; p.data["black"] = 2335; p.data["white"] = 365;
+p.x = 64; p.y = 44; p.county = 19; p.val = 584; p.data["d"] = 560; p.data["r"] = 24; p.data["d16"] = 780; p.data["r16"] = 31; p.data["black"] = 2335; p.data["white"] = 365;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 43; p.county = 19; p.val = 971; p.data["d"] = 859; p.data["r"] = 112; p.data["black"] = 420; p.data["white"] = 800;
+p.x = 64; p.y = 43; p.county = 19; p.val = 971; p.data["d"] = 859; p.data["r"] = 112; p.data["d16"] = 783; p.data["r16"] = 63; p.data["black"] = 420; p.data["white"] = 800;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 40; p.county = 19; p.val = 737; p.data["d"] = 535; p.data["r"] = 202; p.data["black"] = 285; p.data["white"] = 965;
+p.x = 64; p.y = 40; p.county = 19; p.val = 737; p.data["d"] = 535; p.data["r"] = 202; p.data["d16"] = 583; p.data["r16"] = 330; p.data["black"] = 285; p.data["white"] = 965;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 40; p.county = 19; p.val = 561; p.data["d"] = 460; p.data["r"] = 101; p.data["black"] = 155; p.data["white"] = 1355;
+p.x = 62; p.y = 40; p.county = 19; p.val = 561; p.data["d"] = 460; p.data["r"] = 101; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 155; p.data["white"] = 1355;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 41; p.county = 19; p.val = 1019; p.data["d"] = 638; p.data["r"] = 381; p.data["black"] = 165; p.data["white"] = 1365;
+p.x = 63; p.y = 41; p.county = 19; p.val = 1019; p.data["d"] = 638; p.data["r"] = 381; p.data["d16"] = 1154; p.data["r16"] = 620; p.data["black"] = 165; p.data["white"] = 1365;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 41; p.county = 19; p.val = 313; p.data["d"] = 270; p.data["r"] = 43; p.data["black"] = 345; p.data["white"] = 1930;
+p.x = 62; p.y = 41; p.county = 19; p.val = 313; p.data["d"] = 270; p.data["r"] = 43; p.data["d16"] = 383; p.data["r16"] = 49; p.data["black"] = 345; p.data["white"] = 1930;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 42; p.county = 19; p.val = 241; p.data["d"] = 214; p.data["r"] = 27; p.data["black"] = 845; p.data["white"] = 335;
+p.x = 62; p.y = 42; p.county = 19; p.val = 241; p.data["d"] = 214; p.data["r"] = 27; p.data["d16"] = 386; p.data["r16"] = 37; p.data["black"] = 845; p.data["white"] = 335;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 43; p.county = 19; p.val = 474; p.data["d"] = 404; p.data["r"] = 70; p.data["black"] = 850; p.data["white"] = 125;
+p.x = 61; p.y = 43; p.county = 19; p.val = 474; p.data["d"] = 404; p.data["r"] = 70; p.data["d16"] = 499; p.data["r16"] = 99; p.data["black"] = 850; p.data["white"] = 125;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 43; p.county = 19; p.val = 579; p.data["d"] = 412; p.data["r"] = 167; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 59; p.y = 43; p.county = 19; p.val = 579; p.data["d"] = 412; p.data["r"] = 167; p.data["d16"] = 742; p.data["r16"] = 419; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 41; p.county = 19; p.val = 983; p.data["d"] = 644; p.data["r"] = 339; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 57; p.y = 41; p.county = 19; p.val = 983; p.data["d"] = 644; p.data["r"] = 339; p.data["d16"] = 652; p.data["r16"] = 438; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 40; p.county = 19; p.val = 1090; p.data["d"] = 868; p.data["r"] = 222; p.data["black"] = 2010; p.data["white"] = 1330;
+p.x = 59; p.y = 40; p.county = 19; p.val = 1090; p.data["d"] = 868; p.data["r"] = 222; p.data["d16"] = 977; p.data["r16"] = 356; p.data["black"] = 2010; p.data["white"] = 1330;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 41; p.county = 19; p.val = 334; p.data["d"] = 285; p.data["r"] = 49; p.data["black"] = 690; p.data["white"] = 345;
+p.x = 61; p.y = 41; p.county = 19; p.val = 334; p.data["d"] = 285; p.data["r"] = 49; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 690; p.data["white"] = 345;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 39; p.county = 19; p.val = 433; p.data["d"] = 340; p.data["r"] = 93; p.data["black"] = 235; p.data["white"] = 420;
+p.x = 61; p.y = 39; p.county = 19; p.val = 433; p.data["d"] = 340; p.data["r"] = 93; p.data["d16"] = 469; p.data["r16"] = 164; p.data["black"] = 235; p.data["white"] = 420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 38; p.county = 19; p.val = 293; p.data["d"] = 261; p.data["r"] = 32; p.data["black"] = 2010; p.data["white"] = 2160;
+p.x = 60; p.y = 38; p.county = 19; p.val = 293; p.data["d"] = 261; p.data["r"] = 32; p.data["d16"] = 342; p.data["r16"] = 172; p.data["black"] = 2010; p.data["white"] = 2160;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 37; p.county = 19; p.val = 967; p.data["d"] = 747; p.data["r"] = 220; p.data["black"] = 275; p.data["white"] = 1080;
+p.x = 57; p.y = 37; p.county = 19; p.val = 967; p.data["d"] = 747; p.data["r"] = 220; p.data["d16"] = 867; p.data["r16"] = 299; p.data["black"] = 275; p.data["white"] = 1080;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 62; p.y = 43; p.county = 19; p.val = 572; p.data["d"] = 518; p.data["r"] = 54; p.data["black"] = 1010; p.data["white"] = 210;
+p.x = 62; p.y = 43; p.county = 19; p.val = 572; p.data["d"] = 518; p.data["r"] = 54; p.data["d16"] = 567; p.data["r16"] = 73; p.data["black"] = 1010; p.data["white"] = 210;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 64; p.y = 42; p.county = 19; p.val = 460; p.data["d"] = 322; p.data["r"] = 138; p.data["black"] = 855; p.data["white"] = 1125;
+p.x = 64; p.y = 42; p.county = 19; p.val = 460; p.data["d"] = 322; p.data["r"] = 138; p.data["d16"] = 903; p.data["r16"] = 308; p.data["black"] = 855; p.data["white"] = 1125;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 63; p.y = 42; p.county = 19; p.val = 323; p.data["d"] = 242; p.data["r"] = 81; p.data["black"] = 250; p.data["white"] = 690;
+p.x = 63; p.y = 42; p.county = 19; p.val = 323; p.data["d"] = 242; p.data["r"] = 81; p.data["d16"] = 750; p.data["r16"] = 227; p.data["black"] = 250; p.data["white"] = 690;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 42; p.county = 19; p.val = 753; p.data["d"] = 594; p.data["r"] = 159; p.data["black"] = 775; p.data["white"] = 805;
+p.x = 60; p.y = 42; p.county = 19; p.val = 753; p.data["d"] = 594; p.data["r"] = 159; p.data["d16"] = 797; p.data["r16"] = 183; p.data["black"] = 775; p.data["white"] = 805;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 42; p.county = 19; p.val = 659; p.data["d"] = 496; p.data["r"] = 163; p.data["black"] = 815; p.data["white"] = 1315;
+p.x = 58; p.y = 42; p.county = 19; p.val = 659; p.data["d"] = 496; p.data["r"] = 163; p.data["d16"] = 634; p.data["r16"] = 220; p.data["black"] = 815; p.data["white"] = 1315;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 61; p.y = 40; p.county = 19; p.val = 203; p.data["d"] = 168; p.data["r"] = 35; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 61; p.y = 40; p.county = 19; p.val = 203; p.data["d"] = 168; p.data["r"] = 35; p.data["d16"] = 279; p.data["r16"] = 45; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 38; p.county = 19; p.val = 372; p.data["d"] = 267; p.data["r"] = 105; p.data["black"] = 905; p.data["white"] = 1630;
+p.x = 59; p.y = 38; p.county = 19; p.val = 372; p.data["d"] = 267; p.data["r"] = 105; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 905; p.data["white"] = 1630;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 60; p.y = 44; p.county = 19; p.val = 428; p.data["d"] = 225; p.data["r"] = 203; p.data["black"] = 445; p.data["white"] = 105;
+p.x = 60; p.y = 44; p.county = 19; p.val = 428; p.data["d"] = 225; p.data["r"] = 203; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 445; p.data["white"] = 105;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 9; p.y = 35; p.county = 29; p.val = 231; p.data["d"] = 101; p.data["r"] = 130; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 9; p.y = 35; p.county = 29; p.val = 231; p.data["d"] = 101; p.data["r"] = 130; p.data["d16"] = 85; p.data["r16"] = 146; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 29; p.county = 29; p.val = 302; p.data["d"] = 140; p.data["r"] = 162; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 23; p.y = 29; p.county = 29; p.val = 302; p.data["d"] = 140; p.data["r"] = 162; p.data["d16"] = 165; p.data["r16"] = 210; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 39; p.county = 29; p.val = 794; p.data["d"] = 265; p.data["r"] = 529; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 34; p.y = 39; p.county = 29; p.val = 794; p.data["d"] = 265; p.data["r"] = 529; p.data["d16"] = 289; p.data["r16"] = 677; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 26; p.county = 29; p.val = 189; p.data["d"] = 138; p.data["r"] = 51; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 17; p.y = 26; p.county = 29; p.val = 189; p.data["d"] = 138; p.data["r"] = 51; p.data["d16"] = 184; p.data["r16"] = 89; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 62; p.county = 29; p.val = 533; p.data["d"] = 412; p.data["r"] = 121; p.data["black"] = 430; p.data["white"] = 200;
+p.x = 29; p.y = 62; p.county = 29; p.val = 533; p.data["d"] = 412; p.data["r"] = 121; p.data["d16"] = 519; p.data["r16"] = 162; p.data["black"] = 430; p.data["white"] = 200;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 52; p.county = 29; p.val = 557; p.data["d"] = 373; p.data["r"] = 184; p.data["black"] = 425; p.data["white"] = 520;
+p.x = 16; p.y = 52; p.county = 29; p.val = 557; p.data["d"] = 373; p.data["r"] = 184; p.data["d16"] = 480; p.data["r16"] = 253; p.data["black"] = 425; p.data["white"] = 520;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 32; p.county = 29; p.val = 360; p.data["d"] = 124; p.data["r"] = 236; p.data["black"] = 215; p.data["white"] = 695;
+p.x = 22; p.y = 32; p.county = 29; p.val = 360; p.data["d"] = 124; p.data["r"] = 236; p.data["d16"] = 154; p.data["r16"] = 340; p.data["black"] = 215; p.data["white"] = 695;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 13; p.y = 39; p.county = 29; p.val = 318; p.data["d"] = 98; p.data["r"] = 220; p.data["black"] = 895; p.data["white"] = 1800;
+p.x = 13; p.y = 39; p.county = 29; p.val = 318; p.data["d"] = 98; p.data["r"] = 220; p.data["d16"] = 129; p.data["r16"] = 283; p.data["black"] = 895; p.data["white"] = 1800;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 33; p.y = 50; p.county = 29; p.val = 246; p.data["d"] = 193; p.data["r"] = 53; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 33; p.y = 50; p.county = 29; p.val = 246; p.data["d"] = 193; p.data["r"] = 53; p.data["d16"] = 261; p.data["r16"] = 65; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 1; p.y = 31; p.county = 29; p.val = 197; p.data["d"] = 67; p.data["r"] = 130; p.data["black"] = 240; p.data["white"] = 355;
+p.x = 1; p.y = 31; p.county = 29; p.val = 197; p.data["d"] = 67; p.data["r"] = 130; p.data["d16"] = 97; p.data["r16"] = 293; p.data["black"] = 240; p.data["white"] = 355;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 32; p.county = 29; p.val = 511; p.data["d"] = 134; p.data["r"] = 377; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 34; p.y = 32; p.county = 29; p.val = 511; p.data["d"] = 134; p.data["r"] = 377; p.data["d16"] = 123; p.data["r16"] = 520; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 45; p.county = 29; p.val = 439; p.data["d"] = 264; p.data["r"] = 175; p.data["black"] = 625; p.data["white"] = 570;
+p.x = 27; p.y = 45; p.county = 29; p.val = 439; p.data["d"] = 264; p.data["r"] = 175; p.data["d16"] = 302; p.data["r16"] = 219; p.data["black"] = 625; p.data["white"] = 570;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 25; p.y = 34; p.county = 29; p.val = 620; p.data["d"] = 279; p.data["r"] = 341; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 25; p.y = 34; p.county = 29; p.val = 620; p.data["d"] = 279; p.data["r"] = 341; p.data["d16"] = 300; p.data["r16"] = 406; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 10; p.y = 47; p.county = 29; p.val = 119; p.data["d"] = 57; p.data["r"] = 62; p.data["black"] = 335; p.data["white"] = 485;
+p.x = 10; p.y = 47; p.county = 29; p.val = 119; p.data["d"] = 57; p.data["r"] = 62; p.data["d16"] = 68; p.data["r16"] = 103; p.data["black"] = 335; p.data["white"] = 485;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 44; p.county = 29; p.val = 392; p.data["d"] = 175; p.data["r"] = 217; p.data["black"] = 465; p.data["white"] = 445;
+p.x = 16; p.y = 44; p.county = 29; p.val = 392; p.data["d"] = 175; p.data["r"] = 217; p.data["d16"] = 239; p.data["r16"] = 286; p.data["black"] = 465; p.data["white"] = 445;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 48; p.county = 29; p.val = 288; p.data["d"] = 224; p.data["r"] = 64; p.data["black"] = 530; p.data["white"] = 420;
+p.x = 23; p.y = 48; p.county = 29; p.val = 288; p.data["d"] = 224; p.data["r"] = 64; p.data["d16"] = 367; p.data["r16"] = 144; p.data["black"] = 530; p.data["white"] = 420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 38; p.county = 29; p.val = 506; p.data["d"] = 208; p.data["r"] = 298; p.data["black"] = 395; p.data["white"] = 1420;
+p.x = 29; p.y = 38; p.county = 29; p.val = 506; p.data["d"] = 208; p.data["r"] = 298; p.data["d16"] = 230; p.data["r16"] = 407; p.data["black"] = 395; p.data["white"] = 1420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 4; p.y = 39; p.county = 29; p.val = 264; p.data["d"] = 95; p.data["r"] = 169; p.data["black"] = 195; p.data["white"] = 505;
+p.x = 4; p.y = 39; p.county = 29; p.val = 264; p.data["d"] = 95; p.data["r"] = 169; p.data["d16"] = 184; p.data["r16"] = 293; p.data["black"] = 195; p.data["white"] = 505;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 12; p.y = 32; p.county = 29; p.val = 191; p.data["d"] = 91; p.data["r"] = 100; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 12; p.y = 32; p.county = 29; p.val = 191; p.data["d"] = 91; p.data["r"] = 100; p.data["d16"] = 96; p.data["r16"] = 109; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 31; p.county = 29; p.val = 284; p.data["d"] = 71; p.data["r"] = 213; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 29; p.y = 31; p.county = 29; p.val = 284; p.data["d"] = 71; p.data["r"] = 213; p.data["d16"] = 93; p.data["r16"] = 305; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 24; p.county = 29; p.val = 602; p.data["d"] = 418; p.data["r"] = 184; p.data["black"] = 580; p.data["white"] = 210;
+p.x = 11; p.y = 24; p.county = 29; p.val = 602; p.data["d"] = 418; p.data["r"] = 184; p.data["d16"] = 485; p.data["r16"] = 278; p.data["black"] = 580; p.data["white"] = 210;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 35; p.county = 29; p.val = 388; p.data["d"] = 98; p.data["r"] = 290; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 16; p.y = 35; p.county = 29; p.val = 388; p.data["d"] = 98; p.data["r"] = 290; p.data["d16"] = 120; p.data["r16"] = 404; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 10; p.y = 41; p.county = 29; p.val = 261; p.data["d"] = 82; p.data["r"] = 179; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 10; p.y = 41; p.county = 29; p.val = 261; p.data["d"] = 82; p.data["r"] = 179; p.data["d16"] = 121; p.data["r16"] = 314; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 20; p.y = 43; p.county = 29; p.val = 542; p.data["d"] = 280; p.data["r"] = 262; p.data["black"] = 820; p.data["white"] = 820;
+p.x = 20; p.y = 43; p.county = 29; p.val = 542; p.data["d"] = 280; p.data["r"] = 262; p.data["d16"] = 302; p.data["r16"] = 311; p.data["black"] = 820; p.data["white"] = 820;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 38; p.county = 29; p.val = 468; p.data["d"] = 319; p.data["r"] = 149; p.data["black"] = 515; p.data["white"] = 1485;
+p.x = 23; p.y = 38; p.county = 29; p.val = 468; p.data["d"] = 319; p.data["r"] = 149; p.data["d16"] = 400; p.data["r16"] = 203; p.data["black"] = 515; p.data["white"] = 1485;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 22; p.y = 42; p.county = 29; p.val = 574; p.data["d"] = 486; p.data["r"] = 88; p.data["black"] = 1390; p.data["white"] = 545;
+p.x = 22; p.y = 42; p.county = 29; p.val = 574; p.data["d"] = 486; p.data["r"] = 88; p.data["d16"] = 672; p.data["r16"] = 104; p.data["black"] = 1390; p.data["white"] = 545;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 39; p.county = 29; p.val = 614; p.data["d"] = 276; p.data["r"] = 338; p.data["black"] = 575; p.data["white"] = 2290;
+p.x = 19; p.y = 39; p.county = 29; p.val = 614; p.data["d"] = 276; p.data["r"] = 338; p.data["d16"] = 274; p.data["r16"] = 432; p.data["black"] = 575; p.data["white"] = 2290;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 9; p.y = 29; p.county = 29; p.val = 196; p.data["d"] = 91; p.data["r"] = 105; p.data["black"] = 150; p.data["white"] = 260;
+p.x = 9; p.y = 29; p.county = 29; p.val = 196; p.data["d"] = 91; p.data["r"] = 105; p.data["d16"] = 118; p.data["r16"] = 121; p.data["black"] = 150; p.data["white"] = 260;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 34; p.county = 29; p.val = 202; p.data["d"] = 35; p.data["r"] = 167; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 19; p.y = 34; p.county = 29; p.val = 202; p.data["d"] = 35; p.data["r"] = 167; p.data["d16"] = 42; p.data["r16"] = 235; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 43; p.y = 72; p.county = 29; p.val = 794; p.data["d"] = 203; p.data["r"] = 591; p.data["black"] = 4; p.data["white"] = 685;
+p.x = 43; p.y = 72; p.county = 29; p.val = 794; p.data["d"] = 203; p.data["r"] = 591; p.data["d16"] = 219; p.data["r16"] = 635; p.data["black"] = 4; p.data["white"] = 685;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 21; p.y = 37; p.county = 29; p.val = 763; p.data["d"] = 255; p.data["r"] = 508; p.data["black"] = 40; p.data["white"] = 775;
+p.x = 21; p.y = 37; p.county = 29; p.val = 763; p.data["d"] = 255; p.data["r"] = 508; p.data["d16"] = 201; p.data["r16"] = 462; p.data["black"] = 40; p.data["white"] = 775;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 24; p.y = 40; p.county = 29; p.val = 467; p.data["d"] = 269; p.data["r"] = 198; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 24; p.y = 40; p.county = 29; p.val = 467; p.data["d"] = 269; p.data["r"] = 198; p.data["d16"] = 308; p.data["r16"] = 282; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 30; p.y = 13; p.county = 35; p.val = 698; p.data["d"] = 358; p.data["r"] = 340; p.data["black"] = 245; p.data["white"] = 215;
+p.x = 30; p.y = 13; p.county = 35; p.val = 698; p.data["d"] = 358; p.data["r"] = 340; p.data["d16"] = 443; p.data["r16"] = 510; p.data["black"] = 245; p.data["white"] = 215;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 26; p.y = 18; p.county = 35; p.val = 363; p.data["d"] = 158; p.data["r"] = 205; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 26; p.y = 18; p.county = 35; p.val = 363; p.data["d"] = 158; p.data["r"] = 205; p.data["d16"] = 189; p.data["r16"] = 268; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 22; p.county = 35; p.val = 530; p.data["d"] = 265; p.data["r"] = 265; p.data["black"] = 615; p.data["white"] = 315;
+p.x = 28; p.y = 22; p.county = 35; p.val = 530; p.data["d"] = 265; p.data["r"] = 265; p.data["d16"] = 299; p.data["r16"] = 363; p.data["black"] = 615; p.data["white"] = 315;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 25; p.y = 25; p.county = 35; p.val = 460; p.data["d"] = 231; p.data["r"] = 229; p.data["black"] = 245; p.data["white"] = 555;
+p.x = 25; p.y = 25; p.county = 35; p.val = 460; p.data["d"] = 231; p.data["r"] = 229; p.data["d16"] = 273; p.data["r16"] = 323; p.data["black"] = 245; p.data["white"] = 555;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 19; p.y = 19; p.county = 35; p.val = 545; p.data["d"] = 284; p.data["r"] = 261; p.data["black"] = 520; p.data["white"] = 605;
+p.x = 19; p.y = 19; p.county = 35; p.val = 545; p.data["d"] = 284; p.data["r"] = 261; p.data["d16"] = 354; p.data["r16"] = 360; p.data["black"] = 520; p.data["white"] = 605;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 19; p.county = 35; p.val = 343; p.data["d"] = 128; p.data["r"] = 215; p.data["black"] = 475; p.data["white"] = 455;
+p.x = 34; p.y = 19; p.county = 35; p.val = 343; p.data["d"] = 128; p.data["r"] = 215; p.data["d16"] = 209; p.data["r16"] = 299; p.data["black"] = 475; p.data["white"] = 455;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 39; p.y = 17; p.county = 35; p.val = 597; p.data["d"] = 260; p.data["r"] = 337; p.data["black"] = 295; p.data["white"] = 705;
+p.x = 39; p.y = 17; p.county = 35; p.val = 597; p.data["d"] = 260; p.data["r"] = 337; p.data["d16"] = 336; p.data["r16"] = 426; p.data["black"] = 295; p.data["white"] = 705;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 24; p.county = 35; p.val = 576; p.data["d"] = 230; p.data["r"] = 346; p.data["black"] = 525; p.data["white"] = 765;
+p.x = 35; p.y = 24; p.county = 35; p.val = 576; p.data["d"] = 230; p.data["r"] = 346; p.data["d16"] = 293; p.data["r16"] = 450; p.data["black"] = 525; p.data["white"] = 765;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 30; p.county = 35; p.val = 778; p.data["d"] = 221; p.data["r"] = 557; p.data["black"] = 695; p.data["white"] = 3915;
+p.x = 48; p.y = 30; p.county = 35; p.val = 778; p.data["d"] = 221; p.data["r"] = 557; p.data["d16"] = 175; p.data["r16"] = 577; p.data["black"] = 695; p.data["white"] = 3915;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 34; p.county = 35; p.val = 1347; p.data["d"] = 430; p.data["r"] = 917; p.data["black"] = 540; p.data["white"] = 3930;
+p.x = 50; p.y = 34; p.county = 35; p.val = 1347; p.data["d"] = 430; p.data["r"] = 917; p.data["d16"] = 461; p.data["r16"] = 1062; p.data["black"] = 540; p.data["white"] = 3930;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 36; p.county = 35; p.val = 1027; p.data["d"] = 427; p.data["r"] = 600; p.data["black"] = 465; p.data["white"] = 1450;
+p.x = 48; p.y = 36; p.county = 35; p.val = 1027; p.data["d"] = 427; p.data["r"] = 600; p.data["d16"] = 396; p.data["r16"] = 726; p.data["black"] = 465; p.data["white"] = 1450;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 36; p.county = 35; p.val = 562; p.data["d"] = 148; p.data["r"] = 414; p.data["black"] = 810; p.data["white"] = 5055;
+p.x = 51; p.y = 36; p.county = 35; p.val = 562; p.data["d"] = 148; p.data["r"] = 414; p.data["d16"] = 120; p.data["r16"] = 495; p.data["black"] = 810; p.data["white"] = 5055;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 32; p.county = 35; p.val = 1681; p.data["d"] = 616; p.data["r"] = 1065; p.data["black"] = 1355; p.data["white"] = 1065;
+p.x = 51; p.y = 32; p.county = 35; p.val = 1681; p.data["d"] = 616; p.data["r"] = 1065; p.data["d16"] = 482; p.data["r16"] = 1154; p.data["black"] = 1355; p.data["white"] = 1065;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 28; p.y = 17; p.county = 35; p.val = 407; p.data["d"] = 222; p.data["r"] = 185; p.data["black"] = 755; p.data["white"] = 665;
+p.x = 28; p.y = 17; p.county = 35; p.val = 407; p.data["d"] = 222; p.data["r"] = 185; p.data["d16"] = 297; p.data["r16"] = 265; p.data["black"] = 755; p.data["white"] = 665;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 34; p.county = 35; p.val = 711; p.data["d"] = 268; p.data["r"] = 443; p.data["black"] = 85; p.data["white"] = 1420;
+p.x = 51; p.y = 34; p.county = 35; p.val = 711; p.data["d"] = 268; p.data["r"] = 443; p.data["d16"] = 205; p.data["r16"] = 654; p.data["black"] = 85; p.data["white"] = 1420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 40; p.y = 25; p.county = 35; p.val = 429; p.data["d"] = 206; p.data["r"] = 223; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 40; p.y = 25; p.county = 35; p.val = 429; p.data["d"] = 206; p.data["r"] = 223; p.data["d16"] = 271; p.data["r16"] = 303; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 40; p.y = 34; p.county = 35; p.val = 518; p.data["d"] = 167; p.data["r"] = 351; p.data["black"] = 750; p.data["white"] = 1085;
+p.x = 40; p.y = 34; p.county = 35; p.val = 518; p.data["d"] = 167; p.data["r"] = 351; p.data["d16"] = 227; p.data["r16"] = 415; p.data["black"] = 750; p.data["white"] = 1085;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 32; p.county = 35; p.val = 703; p.data["d"] = 263; p.data["r"] = 440; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 50; p.y = 32; p.county = 35; p.val = 703; p.data["d"] = 263; p.data["r"] = 440; p.data["d16"] = 274; p.data["r16"] = 532; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 38; p.county = 35; p.val = 1048; p.data["d"] = 593; p.data["r"] = 455; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 55; p.y = 38; p.county = 35; p.val = 1048; p.data["d"] = 593; p.data["r"] = 455; p.data["d16"] = 629; p.data["r16"] = 640; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 42; p.y = 31; p.county = 35; p.val = 597; p.data["d"] = 253; p.data["r"] = 344; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 42; p.y = 31; p.county = 35; p.val = 597; p.data["d"] = 253; p.data["r"] = 344; p.data["d16"] = 248; p.data["r16"] = 387; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 42; p.y = 40; p.county = 35; p.val = 470; p.data["d"] = 353; p.data["r"] = 117; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 42; p.y = 40; p.county = 35; p.val = 470; p.data["d"] = 353; p.data["r"] = 117; p.data["d16"] = 379; p.data["r16"] = 85; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 41; p.county = 35; p.val = 214; p.data["d"] = 59; p.data["r"] = 155; p.data["black"] = 545; p.data["white"] = 3085;
+p.x = 50; p.y = 41; p.county = 35; p.val = 214; p.data["d"] = 59; p.data["r"] = 155; p.data["d16"] = 69; p.data["r16"] = 189; p.data["black"] = 545; p.data["white"] = 3085;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 31; p.county = 35; p.val = 558; p.data["d"] = 219; p.data["r"] = 339; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 50; p.y = 31; p.county = 35; p.val = 558; p.data["d"] = 219; p.data["r"] = 339; p.data["d16"] = 204; p.data["r16"] = 351; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 35; p.county = 35; p.val = 848; p.data["d"] = 416; p.data["r"] = 432; p.data["black"] = 0; p.data["white"] = 660;
+p.x = 51; p.y = 35; p.county = 35; p.val = 848; p.data["d"] = 416; p.data["r"] = 432; p.data["d16"] = 277; p.data["r16"] = 314; p.data["black"] = 0; p.data["white"] = 660;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 35; p.county = 35; p.val = 1426; p.data["d"] = 761; p.data["r"] = 665; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 53; p.y = 35; p.county = 35; p.val = 1426; p.data["d"] = 761; p.data["r"] = 665; p.data["d16"] = 757; p.data["r16"] = 905; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 39; p.county = 35; p.val = 658; p.data["d"] = 511; p.data["r"] = 147; p.data["black"] = 2290; p.data["white"] = 1675;
+p.x = 57; p.y = 39; p.county = 35; p.val = 658; p.data["d"] = 511; p.data["r"] = 147; p.data["d16"] = 636; p.data["r16"] = 219; p.data["black"] = 2290; p.data["white"] = 1675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 35; p.county = 35; p.val = 1159; p.data["d"] = 600; p.data["r"] = 559; p.data["black"] = 515; p.data["white"] = 1245;
+p.x = 52; p.y = 35; p.county = 35; p.val = 1159; p.data["d"] = 600; p.data["r"] = 559; p.data["d16"] = 813; p.data["r16"] = 1143; p.data["black"] = 515; p.data["white"] = 1245;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 36; p.county = 35; p.val = 264; p.data["d"] = 79; p.data["r"] = 185; p.data["black"] = 870; p.data["white"] = 5700;
+p.x = 52; p.y = 36; p.county = 35; p.val = 264; p.data["d"] = 79; p.data["r"] = 185; p.data["d16"] = 99; p.data["r16"] = 216; p.data["black"] = 870; p.data["white"] = 5700;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 38; p.county = 35; p.val = 880; p.data["d"] = 296; p.data["r"] = 584; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 46; p.y = 38; p.county = 35; p.val = 880; p.data["d"] = 296; p.data["r"] = 584; p.data["d16"] = 273; p.data["r16"] = 706; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 36; p.county = 35; p.val = 305; p.data["d"] = 109; p.data["r"] = 196; p.data["black"] = 755; p.data["white"] = 1875;
+p.x = 53; p.y = 36; p.county = 35; p.val = 305; p.data["d"] = 109; p.data["r"] = 196; p.data["d16"] = 103; p.data["r16"] = 257; p.data["black"] = 755; p.data["white"] = 1875;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 32; p.county = 35; p.val = 1046; p.data["d"] = 439; p.data["r"] = 607; p.data["black"] = 465; p.data["white"] = 1670;
+p.x = 49; p.y = 32; p.county = 35; p.val = 1046; p.data["d"] = 439; p.data["r"] = 607; p.data["d16"] = 481; p.data["r16"] = 878; p.data["black"] = 465; p.data["white"] = 1670;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 37; p.county = 35; p.val = 736; p.data["d"] = 229; p.data["r"] = 507; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 47; p.y = 37; p.county = 35; p.val = 736; p.data["d"] = 229; p.data["r"] = 507; p.data["d16"] = 200; p.data["r16"] = 554; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 34; p.county = 35; p.val = 774; p.data["d"] = 251; p.data["r"] = 523; p.data["black"] = 370; p.data["white"] = 2570;
+p.x = 46; p.y = 34; p.county = 35; p.val = 774; p.data["d"] = 251; p.data["r"] = 523; p.data["d16"] = 252; p.data["r16"] = 586; p.data["black"] = 370; p.data["white"] = 2570;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 36; p.county = 35; p.val = 1380; p.data["d"] = 744; p.data["r"] = 636; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 54; p.y = 36; p.county = 35; p.val = 1380; p.data["d"] = 744; p.data["r"] = 636; p.data["d16"] = 671; p.data["r16"] = 759; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 32; p.county = 35; p.val = 571; p.data["d"] = 221; p.data["r"] = 350; p.data["black"] = 495; p.data["white"] = 3275;
+p.x = 45; p.y = 32; p.county = 35; p.val = 571; p.data["d"] = 221; p.data["r"] = 350; p.data["d16"] = 242; p.data["r16"] = 515; p.data["black"] = 495; p.data["white"] = 3275;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 33; p.county = 35; p.val = 811; p.data["d"] = 294; p.data["r"] = 517; p.data["black"] = 250; p.data["white"] = 965;
+p.x = 50; p.y = 33; p.county = 35; p.val = 811; p.data["d"] = 294; p.data["r"] = 517; p.data["d16"] = 264; p.data["r16"] = 594; p.data["black"] = 250; p.data["white"] = 965;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 50; p.y = 36; p.county = 35; p.val = 728; p.data["d"] = 233; p.data["r"] = 495; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 50; p.y = 36; p.county = 35; p.val = 728; p.data["d"] = 233; p.data["r"] = 495; p.data["d16"] = 197; p.data["r16"] = 585; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 34; p.county = 35; p.val = 446; p.data["d"] = 195; p.data["r"] = 251; p.data["black"] = 1110; p.data["white"] = 2150;
+p.x = 49; p.y = 34; p.county = 35; p.val = 446; p.data["d"] = 195; p.data["r"] = 251; p.data["d16"] = 271; p.data["r16"] = 352; p.data["black"] = 1110; p.data["white"] = 2150;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 34; p.county = 35; p.val = 377; p.data["d"] = 178; p.data["r"] = 199; p.data["black"] = 975; p.data["white"] = 1840;
+p.x = 53; p.y = 34; p.county = 35; p.val = 377; p.data["d"] = 178; p.data["r"] = 199; p.data["d16"] = 180; p.data["r16"] = 241; p.data["black"] = 975; p.data["white"] = 1840;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 34; p.county = 35; p.val = 1005; p.data["d"] = 423; p.data["r"] = 582; p.data["black"] = 420; p.data["white"] = 1140;
+p.x = 52; p.y = 34; p.county = 35; p.val = 1005; p.data["d"] = 423; p.data["r"] = 582; p.data["d16"] = 423; p.data["r16"] = 801; p.data["black"] = 420; p.data["white"] = 1140;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 31; p.county = 35; p.val = 905; p.data["d"] = 490; p.data["r"] = 415; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 52; p.y = 31; p.county = 35; p.val = 905; p.data["d"] = 490; p.data["r"] = 415; p.data["d16"] = 534; p.data["r16"] = 525; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 33; p.county = 35; p.val = 622; p.data["d"] = 196; p.data["r"] = 426; p.data["black"] = 85; p.data["white"] = 610;
+p.x = 51; p.y = 33; p.county = 35; p.val = 622; p.data["d"] = 196; p.data["r"] = 426; p.data["d16"] = 191; p.data["r16"] = 472; p.data["black"] = 85; p.data["white"] = 610;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 40; p.county = 35; p.val = 1369; p.data["d"] = 745; p.data["r"] = 624; p.data["black"] = 925; p.data["white"] = 1510;
+p.x = 56; p.y = 40; p.county = 35; p.val = 1369; p.data["d"] = 745; p.data["r"] = 624; p.data["d16"] = 785; p.data["r16"] = 882; p.data["black"] = 925; p.data["white"] = 1510;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 23; p.y = 15; p.county = 35; p.val = 265; p.data["d"] = 178; p.data["r"] = 87; p.data["black"] = 520; p.data["white"] = 145;
+p.x = 23; p.y = 15; p.county = 35; p.val = 265; p.data["d"] = 178; p.data["r"] = 87; p.data["d16"] = 237; p.data["r16"] = 122; p.data["black"] = 520; p.data["white"] = 145;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 37; p.county = 35; p.val = 1228; p.data["d"] = 620; p.data["r"] = 608; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 55; p.y = 37; p.county = 35; p.val = 1228; p.data["d"] = 620; p.data["r"] = 608; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 52; p.y = 33; p.county = 35; p.val = 1026; p.data["d"] = 460; p.data["r"] = 566; p.data["black"] = 415; p.data["white"] = 1565;
+p.x = 52; p.y = 33; p.county = 35; p.val = 1026; p.data["d"] = 460; p.data["r"] = 566; p.data["d16"] = 462; p.data["r16"] = 776; p.data["black"] = 415; p.data["white"] = 1565;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 40; p.county = 35; p.val = 1344; p.data["d"] = 667; p.data["r"] = 677; p.data["black"] = 575; p.data["white"] = 1535;
+p.x = 55; p.y = 40; p.county = 35; p.val = 1344; p.data["d"] = 667; p.data["r"] = 677; p.data["d16"] = 676; p.data["r16"] = 803; p.data["black"] = 575; p.data["white"] = 1535;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 37; p.county = 35; p.val = 599; p.data["d"] = 322; p.data["r"] = 277; p.data["black"] = 715; p.data["white"] = 730;
+p.x = 56; p.y = 37; p.county = 35; p.val = 599; p.data["d"] = 322; p.data["r"] = 277; p.data["d16"] = 807; p.data["r16"] = 989; p.data["black"] = 715; p.data["white"] = 730;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 31; p.county = 35; p.val = 1058; p.data["d"] = 429; p.data["r"] = 629; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 49; p.y = 31; p.county = 35; p.val = 1058; p.data["d"] = 429; p.data["r"] = 629; p.data["d16"] = 391; p.data["r16"] = 670; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 32; p.county = 35; p.val = 763; p.data["d"] = 280; p.data["r"] = 483; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 48; p.y = 32; p.county = 35; p.val = 763; p.data["d"] = 280; p.data["r"] = 483; p.data["d16"] = 255; p.data["r16"] = 554; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 29; p.county = 35; p.val = 1190; p.data["d"] = 531; p.data["r"] = 659; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 45; p.y = 29; p.county = 35; p.val = 1190; p.data["d"] = 531; p.data["r"] = 659; p.data["d16"] = 518; p.data["r16"] = 890; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 39; p.county = 35; p.val = 1096; p.data["d"] = 527; p.data["r"] = 569; p.data["black"] = 1960; p.data["white"] = 5145;
+p.x = 54; p.y = 39; p.county = 35; p.val = 1096; p.data["d"] = 527; p.data["r"] = 569; p.data["d16"] = 463; p.data["r16"] = 674; p.data["black"] = 1960; p.data["white"] = 5145;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 56; p.y = 38; p.county = 35; p.val = 708; p.data["d"] = 476; p.data["r"] = 232; p.data["black"] = 530; p.data["white"] = 995;
+p.x = 56; p.y = 38; p.county = 35; p.val = 708; p.data["d"] = 476; p.data["r"] = 232; p.data["d16"] = 625; p.data["r16"] = 265; p.data["black"] = 530; p.data["white"] = 995;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 29; p.county = 35; p.val = 998; p.data["d"] = 414; p.data["r"] = 584; p.data["black"] = 610; p.data["white"] = 745;
+p.x = 47; p.y = 29; p.county = 35; p.val = 998; p.data["d"] = 414; p.data["r"] = 584; p.data["d16"] = 341; p.data["r16"] = 794; p.data["black"] = 610; p.data["white"] = 745;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 28; p.county = 35; p.val = 645; p.data["d"] = 309; p.data["r"] = 336; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 49; p.y = 28; p.county = 35; p.val = 645; p.data["d"] = 309; p.data["r"] = 336; p.data["d16"] = 285; p.data["r16"] = 538; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 47; p.y = 33; p.county = 35; p.val = 601; p.data["d"] = 269; p.data["r"] = 332; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 47; p.y = 33; p.county = 35; p.val = 601; p.data["d"] = 269; p.data["r"] = 332; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 38; p.county = 35; p.val = 970; p.data["d"] = 453; p.data["r"] = 517; p.data["black"] = 335; p.data["white"] = 1880;
+p.x = 53; p.y = 38; p.county = 35; p.val = 970; p.data["d"] = 453; p.data["r"] = 517; p.data["d16"] = 447; p.data["r16"] = 639; p.data["black"] = 335; p.data["white"] = 1880;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 51; p.y = 30; p.county = 35; p.val = 673; p.data["d"] = 493; p.data["r"] = 180; p.data["black"] = 615; p.data["white"] = 2005;
+p.x = 51; p.y = 30; p.county = 35; p.val = 673; p.data["d"] = 493; p.data["r"] = 180; p.data["d16"] = 514; p.data["r16"] = 171; p.data["black"] = 615; p.data["white"] = 2005;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 26; p.county = 35; p.val = 380; p.data["d"] = 206; p.data["r"] = 174; p.data["black"] = 1035; p.data["white"] = 760;
+p.x = 44; p.y = 26; p.county = 35; p.val = 380; p.data["d"] = 206; p.data["r"] = 174; p.data["d16"] = 256; p.data["r16"] = 217; p.data["black"] = 1035; p.data["white"] = 760;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 35; p.county = 35; p.val = 1289; p.data["d"] = 743; p.data["r"] = 546; p.data["black"] = 260; p.data["white"] = 1285;
+p.x = 54; p.y = 35; p.county = 35; p.val = 1289; p.data["d"] = 743; p.data["r"] = 546; p.data["d16"] = 752; p.data["r16"] = 773; p.data["black"] = 260; p.data["white"] = 1285;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 33; p.county = 35; p.val = 417; p.data["d"] = 190; p.data["r"] = 227; p.data["black"] = 385; p.data["white"] = 2665;
+p.x = 48; p.y = 33; p.county = 35; p.val = 417; p.data["d"] = 190; p.data["r"] = 227; p.data["d16"] = 589; p.data["r16"] = 793; p.data["black"] = 385; p.data["white"] = 2665;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 34; p.county = 35; p.val = 317; p.data["d"] = 133; p.data["r"] = 184; p.data["black"] = 410; p.data["white"] = 950;
+p.x = 48; p.y = 34; p.county = 35; p.val = 317; p.data["d"] = 133; p.data["r"] = 184; p.data["d16"] = 118; p.data["r16"] = 243; p.data["black"] = 410; p.data["white"] = 950;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 54; p.y = 37; p.county = 35; p.val = 735; p.data["d"] = 314; p.data["r"] = 421; p.data["black"] = 1835; p.data["white"] = 3755;
+p.x = 54; p.y = 37; p.county = 35; p.val = 735; p.data["d"] = 314; p.data["r"] = 421; p.data["d16"] = 347; p.data["r16"] = 554; p.data["black"] = 1835; p.data["white"] = 3755;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 30; p.county = 35; p.val = 360; p.data["d"] = 129; p.data["r"] = 231; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 46; p.y = 30; p.county = 35; p.val = 360; p.data["d"] = 129; p.data["r"] = 231; p.data["d16"] = 121; p.data["r16"] = 351; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 46; p.y = 32; p.county = 35; p.val = 559; p.data["d"] = 269; p.data["r"] = 290; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 46; p.y = 32; p.county = 35; p.val = 559; p.data["d"] = 269; p.data["r"] = 290; p.data["d16"] = 262; p.data["r16"] = 459; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 53; p.y = 37; p.county = 35; p.val = 675; p.data["d"] = 354; p.data["r"] = 321; p.data["black"] = 10; p.data["white"] = 425;
+p.x = 53; p.y = 37; p.county = 35; p.val = 675; p.data["d"] = 354; p.data["r"] = 321; p.data["d16"] = 350; p.data["r16"] = 470; p.data["black"] = 10; p.data["white"] = 425;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 57; p.y = 38; p.county = 35; p.val = 465; p.data["d"] = 313; p.data["r"] = 152; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 57; p.y = 38; p.county = 35; p.val = 465; p.data["d"] = 313; p.data["r"] = 152; p.data["d16"] = 321; p.data["r16"] = 178; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 48; p.y = 17; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 385; p.data["white"] = 775;
+p.x = 48; p.y = 17; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 385; p.data["white"] = 775;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 45; p.y = 22; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 815; p.data["white"] = 940;
+p.x = 45; p.y = 22; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 815; p.data["white"] = 940;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 66; p.y = 4; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 555; p.data["white"] = 430;
+p.x = 66; p.y = 4; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 555; p.data["white"] = 430;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 79; p.y = 45; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 475; p.data["white"] = 130;
+p.x = 79; p.y = 45; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 475; p.data["white"] = 130;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 85; p.y = 39; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 355; p.data["white"] = 405;
+p.x = 85; p.y = 39; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 355; p.data["white"] = 405;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 7; p.y = 95; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 0; p.data["white"] = 275;
+p.x = 7; p.y = 95; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 275;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 1; p.y = 93; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 60; p.data["white"] = 1425;
+p.x = 1; p.y = 93; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 60; p.data["white"] = 1425;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 41; p.y = 28; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 710; p.data["white"] = 390;
+p.x = 41; p.y = 28; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 710; p.data["white"] = 390;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 25; p.y = 21; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 420; p.data["white"] = 505;
+p.x = 25; p.y = 21; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 420; p.data["white"] = 505;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 32; p.y = 16; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 475; p.data["white"] = 590;
+p.x = 32; p.y = 16; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 475; p.data["white"] = 590;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 44; p.y = 43; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 335; p.data["white"] = 325;
+p.x = 44; p.y = 43; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 335; p.data["white"] = 325;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 11; p.y = 84; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 0; p.data["white"] = 285;
+p.x = 11; p.y = 84; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 285;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 29; p.y = 84; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 0; p.data["white"] = 1000;
+p.x = 29; p.y = 84; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 1000;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 55; p.y = 64; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 15; p.data["white"] = 425;
+p.x = 55; p.y = 64; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 15; p.data["white"] = 425;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 96; p.y = 24; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 800; p.data["white"] = 160;
+p.x = 96; p.y = 24; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 800; p.data["white"] = 160;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 49; p.y = 61; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 685; p.data["white"] = 640;
+p.x = 49; p.y = 61; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 685; p.data["white"] = 640;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 42; p.y = 58; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 340; p.data["white"] = 765;
+p.x = 42; p.y = 58; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 340; p.data["white"] = 765;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 30; p.y = 80; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 2015; p.data["white"] = 420;
+p.x = 30; p.y = 80; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 2015; p.data["white"] = 420;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 74; p.y = 15; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 0; p.data["white"] = 970;
+p.x = 74; p.y = 15; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 970;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 68; p.y = 58; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 0; p.data["white"] = 820;
+p.x = 68; p.y = 58; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 820;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 67; p.y = 15; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 195; p.data["white"] = 675;
+p.x = 67; p.y = 15; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 195; p.data["white"] = 675;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 71; p.y = 7; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 860; p.data["white"] = 875;
+p.x = 71; p.y = 7; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 860; p.data["white"] = 875;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 59; p.y = 6; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 895; p.data["white"] = 520;
+p.x = 59; p.y = 6; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 895; p.data["white"] = 520;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 27; p.y = 90; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 0; p.data["white"] = 0;
+p.x = 27; p.y = 90; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 0; p.data["white"] = 0;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 59; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 275; p.data["white"] = 165;
+p.x = 34; p.y = 59; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 275; p.data["white"] = 165;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 35; p.y = 35; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 730; p.data["white"] = 1170;
+p.x = 35; p.y = 35; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 730; p.data["white"] = 1170;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 34; p.y = 43; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 335; p.data["white"] = 525;
+p.x = 34; p.y = 43; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 335; p.data["white"] = 525;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 17; p.y = 55; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 360; p.data["white"] = 150;
+p.x = 17; p.y = 55; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 360; p.data["white"] = 150;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 16; p.y = 31; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 185; p.data["white"] = 470;
+p.x = 16; p.y = 31; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 185; p.data["white"] = 470;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 84; p.y = 20; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 700; p.data["white"] = 680;
+p.x = 84; p.y = 20; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 700; p.data["white"] = 680;
 points[i]=p;i++;}
 if (1==1){ Point p;
-p.x = 58; p.y = 0; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["black"] = 290; p.data["white"] = 95;
+p.x = 58; p.y = 0; p.county = 0; p.val = 0; p.data["d"] = 0; p.data["r"] = 0; p.data["d16"] = 0; p.data["r16"] = 0; p.data["black"] = 290; p.data["white"] = 95;
 points[i]=p;i++;}
 np = 446;
 return points;}

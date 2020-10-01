@@ -41,7 +41,7 @@ print(len(shape))
 counties = [19,13,15,29,35]
 #extradatas = {"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'}}
 
-extradatas = {"demographics/tl_2019_45_bg/tl_2019_45_bg.shp":{"black":'Black or African American Alone',"white":'White Alone'}}
+extradatas = {"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'},"demographics/tl_2019_45_bg/tl_2019_45_bg.shp":{"black":'Black or African American Alone',"white":'White Alone'}}
 
 bgdata = readblockgroup("demographics/CVAP_2013-2017_ACS_csv_files/BlockGr.csv","45")
 
@@ -123,7 +123,7 @@ for precinct in precincts:
 
 
 
-def addExtra(extrafile):
+def addExtra(extrafile,idx):
 	shape16 = fiona.open(extrafile)
 	print(len(shape16))
 	precincts16 = {}
@@ -146,7 +146,9 @@ def addExtra(extrafile):
 			print(shape16[i]['geometry']['type'])
 		cent = poly.centroid
 
-		if int(shape16[i]['properties']['COUNTYFP']) not in counties:
+		if idx == 0 and int(shape16[i]['properties']['COUNTY']) not in counties:
+			continue
+		if idx == 1 and int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
 		if cent.x < bounds16['left']:
 			bounds16['left'] = cent.x
@@ -178,12 +180,16 @@ def addExtra(extrafile):
 			print(shape16[i]['geometry']['type'])
 		cent = poly.centroid
 		
-		if int(shape16[i]['properties']['COUNTYFP']) not in counties:
+		if idx == 0 and int(shape16[i]['properties']['COUNTY']) not in counties:
+			continue
+		if idx == 1 and int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
 		precincts16[shape16[i]['id']]={'x':(cent.x-bounds16['left'])/(bounds16['right']-bounds16['left']),'y':(bounds16['top']-cent.y)/(bounds16['top']-bounds16['bottom'])}
 		for ii in extradatas[extrafile].keys():
-			#precincts16[shape16[i]['id']][ii]=shape16[i]['properties'][extradatas[extrafile][ii]]
-			precincts16[shape16[i]['id']][ii]=bgdata[shape16[i]['properties']['GEOID']][extradatas[extrafile][ii]]
+			if idx == 0:
+				precincts16[shape16[i]['id']][ii]=shape16[i]['properties'][extradatas[extrafile][ii]]
+			elif idx == 1:
+				precincts16[shape16[i]['id']][ii]=bgdata[shape16[i]['properties']['GEOID']][extradatas[extrafile][ii]]
 			
 
 		
@@ -224,6 +230,9 @@ def addExtra(extrafile):
 					pixelMap[rXY]['r']=0
 					pixelMap[rXY]['x']=round(precincts16[precinct]['x']*100)
 					pixelMap[rXY]['y']=round(precincts16[precinct]['y']*100)
+					for i in extradatas.keys():
+						for ii in extradatas[i].keys():
+							pixelMap[rXY][ii]=0
 					pixelMap[rXY]['county']=0
 			
 				try:
@@ -235,8 +244,10 @@ def addExtra(extrafile):
 					
 	print(missingP)
 
+ii = 0
 for i in extradatas.keys():
-	addExtra(i)
+	addExtra(i,ii)
+	ii+=1
 
 
 
