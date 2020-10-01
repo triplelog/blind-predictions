@@ -76,6 +76,7 @@ struct Point {
 	int val;
 	int county;
 	int npix;
+	int data[4];
 	int d;
 	int r;
 	int d16;
