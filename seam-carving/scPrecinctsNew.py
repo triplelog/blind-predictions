@@ -37,10 +37,10 @@ def readblockgroup(filen,state):
 
 
 
-#counties = [19,13,15,29,35]
-counties = []
-for i in range(0,100):
-	counties.append(i)
+counties = [19,13,15,29,35]
+#counties = []
+#for i in range(0,100):
+#	counties.append(i)
 maindatas = {"val":'Total',"black":'Black or African American Alone',"white":'White Alone'}
 
 extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'}}
@@ -268,8 +268,8 @@ for i in extradatas.keys():
 
 
 file1 = open('scpre.txt', 'w')
-file1.writelines(['std::map<int,Point> scPoints(){\n'])
-file1.writelines(['std::map<int,Point> points; int i=0;\n'])
+file1.writelines(['void scPoints(){\n'])
+file1.writelines(['points.clear(); int i=0;\n'])
 pixels = 0
 for pixel in pixelMap.keys():
 	pixels+=1
@@ -288,5 +288,5 @@ for pixel in pixelMap.keys():
 	file1.writelines([line])
 	file1.writelines(['points[i]=p;i++;}\n'])
 print(pixels)
-file1.writelines(['np = '+str(pixels)+';\nreturn points;}\n'])
+file1.writelines(['np = '+str(pixels)+';\n}\n'])
 file1.close()
