@@ -65,7 +65,7 @@ int vertThreads;
 int horzThreads;
 int np;
 int nd;
-std::string datas[4];
+std::vector<std::string> datas;
 
 extern "C" {
 
@@ -2109,11 +2109,15 @@ void initialRun(){
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
 	
-	nd = 4;
-	datas[0] = "d";
-	datas[1] = "r";
-	datas[2] = "d16";
-	datas[3] = "r16";
+	np =0;//will get set to right value in scPoints()
+	points = scPoints();
+	
+	nd = 0;
+	datas.resize(0);
+	for (std::map<std::string,int>::iterator iter = points[0].data.begin(); iter != points[0].data.end(); ++iter){
+		datas.push_back(iter->first);
+		nd++;
+	}
 	
 	std::map<int,std::map<int,Point>> pixels;
 	std::map<int,std::map<int,int>> pixelMap;
@@ -2150,8 +2154,7 @@ void initialRun(){
 		xCount[x]++;
 		yCount[y]++;
 	}*/
-	np =0;//will get set to right value in scPoints()
-	points = scPoints();
+	
 	
 	for(i=0;i<np;i++){
 		points[i].npix = 0;
