@@ -65,7 +65,7 @@ function displayNow(dAdv=1) {
 		if (lum<25){exCount++; lum = 25;}
 		
 		var id = 'cell-'+jsPoints[i].x+'-'+jsPoints[i].y;
-		svgPoints[id]='"hsl('+hue+',80%,'+lum+'%)"';
+		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';
 	}
 	//console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
 
