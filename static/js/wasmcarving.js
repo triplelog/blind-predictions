@@ -21,8 +21,14 @@ function displayNow(dAdv=1) {
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
-
-		var whitepct = parseFloat(jsPoints[i].white)/(parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black));
+		var whitepct;
+		if (parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black) > 0){
+			whitepct = parseFloat(jsPoints[i].white)/(parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black));
+		}
+		else {
+			whitepct = sums[5]/(sums[4]+sums[5]);
+		}
+		 
 		if (i == 5000){
 			console.log(whitepct);
 		}
