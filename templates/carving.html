@@ -110,6 +110,8 @@ function updateSVG(svgPoints) {
 	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 101 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 
 	for (var id in svgPoints){
+		var i = id.split("-")[1];
+		var ii = id.split("-")[2];
 		svg += '<rect id="'+id+'" width="1" height="1" x="'+i+'" y="'+ii+'" style="fill: '+svgPoints[id]+'; stroke: '+svgPoints[id]+';"></rect>';
 
 	}
