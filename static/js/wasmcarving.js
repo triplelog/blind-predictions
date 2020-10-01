@@ -7,20 +7,25 @@ function cpp_ready() {
 function displayNow(dAdv=1) {
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
-	var sums = [0,0,0,0];
+	var sums = [0,0,0,0,0,0];
 	var svgPoints = {};
 	for (var i=0;i<jsPoints.length;i++){
 		sums[0]+=parseInt(jsPoints[i].d);
 		sums[1]+=parseInt(jsPoints[i].r);
 		sums[2]+=parseInt(jsPoints[i].d16);
 		sums[3]+=parseInt(jsPoints[i].r16);
+		sums[4]+=parseInt(jsPoints[i].white);
+		sums[5]+=parseInt(jsPoints[i].black);
 	}
-
+	console.log(sums);
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
 
-		var whitepct = parseFloat(jsPoints[i].white)/(parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black))
+		var whitepct = parseFloat(jsPoints[i].white)/(parseInt(jsPoints[i].white)+parseInt(jsPoints[i].black));
+		if (i == 5000){
+			console.log(whitepct);
+		}
 		var whitediff = parseInt(jsPoints[i].d16)*whitepct*dAdv - (parseInt(jsPoints[i].r16))*whitepct;
 		var blackdiff = parseInt(jsPoints[i].d16)*(1-whitepct) - (parseInt(jsPoints[i].r16))*(1-whitepct);
 		var yeardiff = whitediff+blackdiff;
