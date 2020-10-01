@@ -77,7 +77,7 @@ myWorker.onmessage = function(e) {
 		setTimeout(predictNow,50);
 	}
 	else {
-		document.getElementById('mapHolder').innerHTML = e.data;
+		updateSVG(e.data);
 	}
 }
 function updateNow(){
@@ -86,6 +86,27 @@ function updateNow(){
 	myWorker.postMessage(['update',vv]);
 }
 document.getElementById('dSlider').addEventListener('input',updateNow);
+function createSVG() {
+	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 '+(parseInt(maxX)+2)+' '+(parseInt(maxY)+2)+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
+
+
+	for (var i=0;i<100;i++){
+		for (var i=0;i<100;i++){
+			svg += '<rect id="cell-'+i+'-'+ii+'" width="1" height="1" x="'+i+'" y="'+ii+'" fill="hsl(120,80%,100%)" stroke="hsl(120,80%,100%)"></rect>';
+		}
+	}
+	svg += '</svg>';
+	document.getElementById('mapHolder').innerHTML = svg;
+}
+function updateSVG(svgPoints) {
+	console.log(svgPoints);
+
+	for (var id in svgPoints){
+		var el = document.getElementById(id);
+		el.fill = svgPoints[id];
+		el.stroke = svgPoints[id];
+	}
+}
 </script>
 
 

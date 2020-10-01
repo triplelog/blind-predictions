@@ -5,10 +5,10 @@ function cpp_ready() {
 }
 
 function displayNow(dAdv=1) {
-	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 '+(parseInt(maxX)+2)+' '+(parseInt(maxY)+2)+'" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
 	var sums = [0,0,0,0];
+	var svgPoints = {};
 	for (var i=0;i<jsPoints.length;i++){
 		sums[0]+=parseInt(jsPoints[i].d);
 		sums[1]+=parseInt(jsPoints[i].r);
@@ -64,14 +64,12 @@ function displayNow(dAdv=1) {
 
 		if (lum<25){exCount++; lum = 25;}
 		
-		//hue = 240*parseInt(jsPoints[i].ox)/100;
-		//lum = 100*parseInt(jsPoints[i].oy)/100;
-		var block = parseInt(Math.round(jsPoints[i].ox/10)*10+Math.round(jsPoints[i].oy/10));
-		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="hsl('+hue+',80%,'+lum+'%)" class="county-'+block+'"></rect>';
+		var id = 'cell-'+jsPoints[i].x+'-'+jsPoints[i].y;
+		svgPoints[id]='"hsl('+hue+',80%,'+lum+'%)"';
 	}
-	console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
-	svg += '</svg>';
-	postMessage(svg);
+	//console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
+
+	postMessage(svgPoints);
 	pointsOut = [];
 }
 
