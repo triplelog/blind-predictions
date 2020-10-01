@@ -82,7 +82,7 @@ myWorker.onmessage = function(e) {
 }
 function updateNow(){
 	var v = document.getElementById('dSlider').value;
-	var vv = Math.pow(2.71,v);
+	var vv = Math.pow(2.71,v/100);
 	myWorker.postMessage(['update',vv]);
 }
 document.getElementById('dSlider').addEventListener('input',updateNow);
