@@ -1532,7 +1532,7 @@ Map horizontalStitch(Map m, int n, int l){
 					m.pixels[i][ii]=m.pixels[i][ii-1];
 				}
 				Point p0 = m.pixels[i][removeSeam[i]];
-				Point p1 = p1;
+				Point p1 = m.pixels[i][removeSeam[i]+1];
 				p1.county =p0.county;
 				int v = p0.val;
 				int xx; int yy;
