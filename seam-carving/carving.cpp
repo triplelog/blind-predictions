@@ -64,7 +64,6 @@ bool killCarveH;
 int vertThreads;
 int horzThreads;
 int np;
-int nd;
 std::string datas[4];
 
 extern "C" {
@@ -1386,8 +1385,6 @@ Map horizontalStitch(Map m, int n, int l){
 	int h = m.height;
 	int w = m.width;
 	int modn = h / n;
-	std::string s;
-	int r;
 	for(i=1;i<w;i++){
 		for(ii=0;ii<h;ii++){
 			int mpv = m.pixels[i][ii].val;
@@ -1466,9 +1463,9 @@ Map horizontalStitch(Map m, int n, int l){
 				p1.val = v/4;
 				p2.val = v/4;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
-					r = p0.data[s]+pn1.data[s]+p1.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = p0.data[s]+pn1.data[s]+p1.data[s];
 					pn1.data[s] = r/4;
 					p0.data[s] = r - r/4 - r/4 - r/4;
 					p1.data[s] = r/4;
@@ -1513,9 +1510,9 @@ Map horizontalStitch(Map m, int n, int l){
 				p1.val = v/3;
 				p2.val = v/3;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
-					r = p0.data[s]+p1.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = p0.data[s]+p1.data[s];
 					p0.data[s] = r - r/3 - r/3;
 					p1.data[s] = r/3;
 					p2.data[s] = r/3;
@@ -1534,7 +1531,7 @@ Map horizontalStitch(Map m, int n, int l){
 					m.pixels[i][ii]=m.pixels[i][ii-1];
 				}
 				Point p0 = m.pixels[i][removeSeam[i]];
-				Point p1 = m.pixels[i][removeSeam[i]+1];
+				Point p1 = p1;
 				p1.county =p0.county;
 				int v = p0.val;
 				int xx; int yy;
@@ -1549,9 +1546,9 @@ Map horizontalStitch(Map m, int n, int l){
 				p0.val = v/2;
 				p1.val = v - v/2;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
-					r = p0.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = p0.data[s];
 					p0.data[s] = r/2;
 					p1.data[s] = r - r/2;
 				}
@@ -1589,8 +1586,6 @@ Map verticalStitch(Map m, int n, int l){
 	int h = m.height;
 	int w = m.width;
 	int modn = w / n;
-	std::string s;
-	int r;
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int mpv = m.pixels[i][ii].val;
@@ -1646,48 +1641,48 @@ Map verticalStitch(Map m, int n, int l){
 				Point p0 = m.pixels[removeSeam[ii]][ii];
 				Point p1 = m.pixels[removeSeam[ii]+1][ii];
 				Point p2 = m.pixels[removeSeam[ii]+2][ii];
-				p1.county=p0.county;
-				int v = p0.val+pn1.val+p1.val;
+				m.pixels[removeSeam[ii]+1][ii].county=m.pixels[removeSeam[ii]][ii].county;
+				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
 				else{
-					xx = p0.val*p0.x;
-					xx += pn1.val*pn1.x;
-					xx += p1.val*p1.x;
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += pn1.val*pn1.y;
-					yy += p1.val*p1.y;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				pn1.val=v/4;
-				p0.val=v - v/4 - v/4 - v/4;
-				p1.val=v/4;
-				p2.val= v/4;
+				m.pixels[removeSeam[ii]-1][ii].val=v/4;
+				m.pixels[removeSeam[ii]][ii].val=v - v/4 - v/4 - v/4;
+				m.pixels[removeSeam[ii]+1][ii].val=v/4;
+				m.pixels[removeSeam[ii]+2][ii].val= v/4;
 				
-				for (i=0;i<nd;i++){
-					s = datas[i];
-					r = p0.data[s]+pn1.data[s]+p1.data[s];
-					pn1.data[s]=r/4;
-					p0.data[s]=r - r/4 - r/4 - r/4;
-					p1.data[s]=r/4;
-					p2.data[s]= r/4;
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]-1][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
+					m.pixels[removeSeam[ii]-1][ii].data[s]=r/4;
+					m.pixels[removeSeam[ii]][ii].data[s]=r - r/4 - r/4 - r/4;
+					m.pixels[removeSeam[ii]+1][ii].data[s]=r/4;
+					m.pixels[removeSeam[ii]+2][ii].data[s]= r/4;
 				}
 				
-				pn1.x=xx;
-				p0.x=xx;
-				p1.x=xx;
-				p2.x= xx;
+				m.pixels[removeSeam[ii]-1][ii].x=xx;
+				m.pixels[removeSeam[ii]][ii].x=xx;
+				m.pixels[removeSeam[ii]+1][ii].x=xx;
+				m.pixels[removeSeam[ii]+2][ii].x= xx;
 				
-				pn1.y=yy;
-				p0.y=yy;
-				p1.y=yy;
-				p2.y= yy;
+				m.pixels[removeSeam[ii]-1][ii].y=yy;
+				m.pixels[removeSeam[ii]][ii].y=yy;
+				m.pixels[removeSeam[ii]+1][ii].y=yy;
+				m.pixels[removeSeam[ii]+2][ii].y= yy;
 			}
 			else if (removeSeam[ii]+1<m.width){
 				for(i=m.width;i>removeSeam[ii]+2;i--){
@@ -1697,42 +1692,42 @@ Map verticalStitch(Map m, int n, int l){
 				Point p0 = m.pixels[removeSeam[ii]][ii];
 				Point p1 = m.pixels[removeSeam[ii]+1][ii];
 				Point p2 = m.pixels[removeSeam[ii]+2][ii];
-				p1.county=p0.county;
-				int v = p0.val+p1.val;
+				m.pixels[removeSeam[ii]+1][ii].county=m.pixels[removeSeam[ii]][ii].county;
+				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
 				else{
-					xx = p0.val*p0.x;
-					xx += p1.val*p1.x;
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += p1.val*p1.y;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				p0.val=v - v/3 - v/3;
-				p1.val=v/3;
-				p2.val= v/3;
+				m.pixels[removeSeam[ii]][ii].val=v - v/3 - v/3;
+				m.pixels[removeSeam[ii]+1][ii].val=v/3;
+				m.pixels[removeSeam[ii]+2][ii].val= v/3;
 				
-				for (i=0;i<nd;i++){
-					s = datas[i];
-					r = p0.data[s]+p1.data[s];
-					p0.data[s]=r - r/3 - r/3;
-					p1.data[s]=r/3;
-					p2.data[s]= r/3;
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
+					m.pixels[removeSeam[ii]][ii].data[s]=r - r/3 - r/3;
+					m.pixels[removeSeam[ii]+1][ii].data[s]=r/3;
+					m.pixels[removeSeam[ii]+2][ii].data[s]= r/3;
 				}
 				
-				p0.x=xx;
-				p1.x=xx;
-				p2.x= xx;
+				m.pixels[removeSeam[ii]][ii].x=xx;
+				m.pixels[removeSeam[ii]+1][ii].x=xx;
+				m.pixels[removeSeam[ii]+2][ii].x= xx;
 				
-				p0.y=yy;
-				p1.y=yy;
-				p2.y= yy;
+				m.pixels[removeSeam[ii]][ii].y=yy;
+				m.pixels[removeSeam[ii]+1][ii].y=yy;
+				m.pixels[removeSeam[ii]+2][ii].y= yy;
 			}
 			else {
 				for(i=m.width;i>removeSeam[ii]+1;i--){
@@ -1741,33 +1736,33 @@ Map verticalStitch(Map m, int n, int l){
 				}
 				Point p0 = m.pixels[removeSeam[ii]][ii];
 				Point p1 = m.pixels[removeSeam[ii]+1][ii];
-				p1.county=p0.county;
-				int v = p0.val;
+				m.pixels[removeSeam[ii]+1][ii].county=m.pixels[removeSeam[ii]][ii].county;
+				int v = m.pixels[removeSeam[ii]][ii].val;
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
 				else{
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
-				p0.val=v/2;
-				p1.val= v - v/2;
+				m.pixels[removeSeam[ii]][ii].val=v/2;
+				m.pixels[removeSeam[ii]+1][ii].val= v - v/2;
 				
-				for (i=0;i<nd;i++){
-					s = datas[i];
-					r = p0.data[s];
-					p0.data[s]=r/2;
-					p1.data[s]= r - r/2;
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = m.pixels[removeSeam[ii]][ii].data[s];
+					m.pixels[removeSeam[ii]][ii].data[s]=r/2;
+					m.pixels[removeSeam[ii]+1][ii].data[s]= r - r/2;
 				}
 				
 				
-				p0.x=xx;
-				p1.x= xx;
+				m.pixels[removeSeam[ii]][ii].x=xx;
+				m.pixels[removeSeam[ii]+1][ii].x= xx;
 				
-				p0.y=yy;
-				p1.y= yy;
+				m.pixels[removeSeam[ii]][ii].y=yy;
+				m.pixels[removeSeam[ii]+1][ii].y= yy;
 			}
 			
 		}
@@ -1795,8 +1790,6 @@ Map horizontalSeam(Map m, int n, int l){
 	int h = m.height;
 	int w = m.width;
 	int modn = h / n;
-	std::string s;
-	int r;
 	for(i=1;i<w;i++){
 		for(ii=0;ii<h;ii++){
 			int mpv = m.pixels[i][ii].val;
@@ -1844,103 +1837,96 @@ Map horizontalSeam(Map m, int n, int l){
 
 		for(i=0;i<w;i++){
 			if (removeSeam[i]+1 < m.height && removeSeam[i] > 0){
-				Point pn1 = m.pixels[i][removeSeam[i]-1];
-				Point p0 = m.pixels[i][removeSeam[i]];
-				Point p1 = m.pixels[i][removeSeam[i]+1];
-				int v = p0.val+pn1.val+p1.val;
+				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]-1].val+m.pixels[i][removeSeam[i]+1].val;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
-					r = p0.data[s]+pn1.data[s]+p1.data[s];
-					p0.data[s]=r - r/2;
-					pn1.data[s]= r/2;
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = m.pixels[i][removeSeam[i]].data[s]+m.pixels[i][removeSeam[i]-1].data[s]+m.pixels[i][removeSeam[i]+1].data[s];
+					m.pixels[i][removeSeam[i]].data[s]=r - r/2;
+					m.pixels[i][removeSeam[i]-1].data[s]= r/2;
 				}
 				
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
 				}
 				else{
-					xx = p0.val*p0.x;
-					xx += pn1.val*pn1.x;
-					xx += p1.val*p1.x;
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
+					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += pn1.val*pn1.y;
-					yy += p1.val*p1.y;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
+					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				p0.val=v - v/2;
-				pn1.val= v/2;
-				p0.x=xx;
-				pn1.x= xx;
-				p0.y=yy;
-				pn1.y= yy;
+				m.pixels[i][removeSeam[i]].val=v - v/2;
+				m.pixels[i][removeSeam[i]-1].val= v/2;
+				m.pixels[i][removeSeam[i]].x=xx;
+				m.pixels[i][removeSeam[i]-1].x= xx;
+				m.pixels[i][removeSeam[i]].y=yy;
+				m.pixels[i][removeSeam[i]-1].y= yy;
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
 					m.pixels[i][ii]=m.pixels[i][ii+1];
 				}
 			}
 			else if (removeSeam[i]+1 < m.height){
-				Point p0 = m.pixels[i][removeSeam[i]];
-				Point p1 = m.pixels[i][removeSeam[i]+1];
-				int v = p0.val +p1.val;
+				int v = m.pixels[i][removeSeam[i]].val +m.pixels[i][removeSeam[i]+1].val;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
-					p0.data[s] +=p1.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					m.pixels[i][removeSeam[i]].data[s] +=m.pixels[i][removeSeam[i]+1].data[s];
 				}
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
 				}
 				else {
-					xx = p0.val*p0.x;
-					xx += p1.val*p1.x;
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += p1.val*p1.y;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]+1].val*m.pixels[i][removeSeam[i]+1].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				p0.val = v;
-				p0.x=xx;
-				p0.y=yy;
+				m.pixels[i][removeSeam[i]].val = v;
+				m.pixels[i][removeSeam[i]].x=xx;
+				m.pixels[i][removeSeam[i]].y=yy;
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
 					m.pixels[i][ii]=m.pixels[i][ii+1];
 				}
 			}
 			else {
-				Point pn1 = m.pixels[i][removeSeam[i]-1];
-				Point p0 = m.pixels[i][removeSeam[i]];
-				int v = p0.val +pn1.val;
+				int v = m.pixels[i][removeSeam[i]].val +m.pixels[i][removeSeam[i]-1].val;
 				
-				for (ii=0;ii<nd;ii++){
-					s = datas[ii];
-					pn1.data[s] +=p0.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					m.pixels[i][removeSeam[i]-1].data[s] +=m.pixels[i][removeSeam[i]].data[s];
 				}
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[i][removeSeam[i]].x;
+					yy = m.pixels[i][removeSeam[i]].y;
 				}
 				else {
-					xx = p0.val*p0.x;
-					xx += pn1.val*pn1.x;
+					xx = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].x;
+					xx += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += pn1.val*pn1.y;
+					yy = m.pixels[i][removeSeam[i]].val*m.pixels[i][removeSeam[i]].y;
+					yy += m.pixels[i][removeSeam[i]-1].val*m.pixels[i][removeSeam[i]-1].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				pn1.val = v;
-				pn1.x =xx;
-				pn1.y =yy;
+				m.pixels[i][removeSeam[i]-1].val = v;
+				m.pixels[i][removeSeam[i]-1].x =xx;
+				m.pixels[i][removeSeam[i]-1].y =yy;
 			}
 		}
 		m.height--;
@@ -1967,8 +1953,6 @@ Map verticalSeam(Map m, int n, int l){
 	int h = m.height;
 	int w = m.width;
 	int modn = w / n;
-	std::string s;
-	int r;
 	for(ii=1;ii<h;ii++){
 		for(i=0;i<w;i++){
 			int mpv = m.pixels[i][ii].val;
@@ -2016,106 +2000,99 @@ Map verticalSeam(Map m, int n, int l){
 		}
 		for(ii=0;ii<h;ii++){
 			if (removeSeam[ii]+1 < m.width && removeSeam[ii] > 0){
-				Point pn1 = m.pixels[removeSeam[ii]-1][ii];
-				Point p0 = m.pixels[removeSeam[ii]][ii];
-				Point p1 = m.pixels[removeSeam[ii]+1][ii];
-				int v = p0.val+pn1.val+p1.val;
+				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				
-				for (i=0;i<nd;i++){
-					s = datas[i];
-					r = p0.data[s]+pn1.data[s]+p1.data[s];
-					p0.data[s]=r - r/2;
-					pn1.data[s]= r/2;
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					int r = m.pixels[removeSeam[ii]][ii].data[s]+m.pixels[removeSeam[ii]-1][ii].data[s]+m.pixels[removeSeam[ii]+1][ii].data[s];
+					m.pixels[removeSeam[ii]][ii].data[s]=r - r/2;
+					m.pixels[removeSeam[ii]-1][ii].data[s]= r/2;
 				}
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
 				else{
-					xx = p0.val*p0.x;
-					xx += pn1.val*pn1.x;
-					xx += p1.val*p1.x;
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += pn1.val*pn1.y;
-					yy += p1.val*p1.y;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				p0.val=v - v/2;
-				pn1.val= v/2;
-				p0.x=xx;
-				pn1.x= xx;
-				p0.y=yy;
-				pn1.y= yy;
+				m.pixels[removeSeam[ii]][ii].val=v - v/2;
+				m.pixels[removeSeam[ii]-1][ii].val= v/2;
+				m.pixels[removeSeam[ii]][ii].x=xx;
+				m.pixels[removeSeam[ii]-1][ii].x= xx;
+				m.pixels[removeSeam[ii]][ii].y=yy;
+				m.pixels[removeSeam[ii]-1][ii].y= yy;
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
 			
 					m.pixels[i][ii]=m.pixels[i+1][ii];
 				}
 			}
 			else if (removeSeam[ii]+1 < m.width){
-				Point p0 = m.pixels[removeSeam[ii]][ii];
-				Point p1 = m.pixels[removeSeam[ii]+1][ii];
-				int v = p0.val+p1.val;
+				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				
-				for (i=0;i<nd;i++){
-					s = datas[i];
-					p0.data[s]+=p1.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					m.pixels[removeSeam[ii]][ii].data[s]+=m.pixels[removeSeam[ii]+1][ii].data[s];
 				}
 				
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
 				else{
-					xx = p0.val*p0.x;
-					xx += p1.val*p1.x;
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += p1.val*p1.y;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]+1][ii].val*m.pixels[removeSeam[ii]+1][ii].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				p0.val+=p1.val;
-				p0.x=xx;
-				p0.y=yy;
+				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
+				m.pixels[removeSeam[ii]][ii].x=xx;
+				m.pixels[removeSeam[ii]][ii].y=yy;
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
 			
 					m.pixels[i][ii]=m.pixels[i+1][ii];
 				}
 			}
 			else {
-				Point pn1 = m.pixels[removeSeam[ii]-1][ii];
-				Point p0 = m.pixels[removeSeam[ii]][ii];
-				int v = p0.val+pn1.val;
+				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val;
 				
-				for (i=0;i<nd;i++){
-					s = datas[i];
-					pn1.data[s]+=p0.data[s];
+				for (ii=0;ii<4;ii++){
+					std::string s = datas[ii];
+					m.pixels[removeSeam[ii]-1][ii].data[s]+=m.pixels[removeSeam[ii]][ii].data[s];
 				}
 				
 				int xx; int yy;
 				if (v <= 0){
-					xx = p0.x;
-					yy = p0.y;
+					xx = m.pixels[removeSeam[ii]][ii].x;
+					yy = m.pixels[removeSeam[ii]][ii].y;
 				}
 				else{
-					xx = p0.val*p0.x;
-					xx += pn1.val*pn1.x;
+					xx = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].x;
+					xx += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].x;
 					xx += v/2;
 					xx = xx/v;
-					yy = p0.val*p0.y;
-					yy += pn1.val*pn1.y;
+					yy = m.pixels[removeSeam[ii]][ii].val*m.pixels[removeSeam[ii]][ii].y;
+					yy += m.pixels[removeSeam[ii]-1][ii].val*m.pixels[removeSeam[ii]-1][ii].y;
 					yy += v/2;
 					yy = yy/v;
 				}
-				pn1.val+=p0.val;
-				pn1.x=xx;
-				pn1.y=yy;
+				m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
+				m.pixels[removeSeam[ii]-1][ii].x=xx;
+				m.pixels[removeSeam[ii]-1][ii].y=yy;
 			}
 		}
 		m.width--;
@@ -2139,11 +2116,6 @@ void initialRun(){
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
 	
-	datas[0] = "d";
-	datas[1] = "r";
-	datas[2] = "d16";
-	datas[3] = "r16";
-	nd = 4;
 	std::map<int,std::map<int,Point>> pixels;
 	std::map<int,std::map<int,int>> pixelMap;
 	for(i=0;i<100;i++){
@@ -2156,18 +2128,20 @@ void initialRun(){
 			p.x = i;
 			p.y = ii;
 			p.val = 0;
-			std::string s;
-			for (iii=0;iii<nd;iii++){
-				s = datas[iii];
-				p.data[s]=0;
-			}
+			p.data["r"] = 0;
+			p.data["d"] = 0;
+			p.data["r16"] = 0;
+			p.data["d16"] = 0;
 			pixels[i][ii] = p;
 			pixelMap[i][ii] = -1;
 		}
 	}
 
 	
-	
+	datas[0] = "d";
+	datas[1] = "r";
+	datas[2] = "d16";
+	datas[3] = "r16";
 	
 	
 	/*for (i=0;i<np;i++){
@@ -2241,11 +2215,10 @@ void initialRun(){
 		for(ii=0;ii<100;ii++){
 			if (pixelMap[i][ii]>=0){
 				pixels[i][ii].val += points[pixelMap[i][ii]].val*100/points[pixelMap[i][ii]].npix;
-				std::string s;
-				for (iii=0;iii<nd;iii++){
-					s = datas[iii];
-					pixels[i][ii].data[s] += points[pixelMap[i][ii]].data[s]*100/points[pixelMap[i][ii]].npix;
-				}
+				pixels[i][ii].data["d"] += points[pixelMap[i][ii]].data["d"]*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].data["r"] += points[pixelMap[i][ii]].data["r"]*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].data["d16"] += points[pixelMap[i][ii]].data["d16"]*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].data["r16"] += points[pixelMap[i][ii]].data["r16"]*100/points[pixelMap[i][ii]].npix;
 				pixels[i][ii].x = points[pixelMap[i][ii]].x;
 				pixels[i][ii].y = points[pixelMap[i][ii]].y;
 				pixels[i][ii].county = points[pixelMap[i][ii]].county;
@@ -2276,11 +2249,10 @@ void initialRun(){
 			}
 			if (minP < 1000000000){
 				pixels[i][ii].val += points[minI].val*100/points[minI].npix;
-				std::string s;
-				for (iii=0;iii<nd;iii++){
-					s = datas[iii];
-					pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
-				}
+				pixels[i][ii].data["d"] += points[minI].data["d"]*100/points[minI].npix;
+				pixels[i][ii].data["r"] += points[minI].data["r"]*100/points[minI].npix;
+				pixels[i][ii].data["d16"] += points[minI].data["d16"]*100/points[minI].npix;
+				pixels[i][ii].data["r16"] += points[minI].data["r16"]*100/points[minI].npix;
 				pixels[i][ii].x = points[minI].x;
 				pixels[i][ii].y = points[minI].y;
 				pixels[i][ii].county = points[minI].county;
@@ -2295,11 +2267,10 @@ void initialRun(){
 				}
 			}
 			pixels[i][ii].val += points[minI].val*100/points[minI].npix;
-			std::string s;
-			for (iii=0;iii<nd;iii++){
-				s = datas[iii];
-				pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
-			}
+			pixels[i][ii].data["d"] += points[minI].data["d"]*100/points[minI].npix;
+			pixels[i][ii].data["r"] += points[minI].data["r"]*100/points[minI].npix;
+			pixels[i][ii].data["d16"] += points[minI].data["d16"]*100/points[minI].npix;
+			pixels[i][ii].data["r16"] += points[minI].data["r16"]*100/points[minI].npix;
 			pixels[i][ii].x = points[minI].x;
 			pixels[i][ii].y = points[minI].y;
 			pixels[i][ii].county = points[minI].county;
