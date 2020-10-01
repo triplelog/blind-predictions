@@ -85,7 +85,7 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 	
 	var exCount = 0;
 	
-	var svgCities = {'city-0':{'name':"Columbia",'ox':50,'oy':50,'x':50,'y':50,'d':20000}};
+	var svgCities = {'city-0':{'name':"Columbia",'ox':50,'oy':40,'x':50,'y':40,'d':20000}};
 	svgCities['city-1']={'name':"Charleston",'ox':80,'oy':80,'x':80,'y':80,'d':20000};
 	svgCities['city-2']={'name':"Greenville",'ox':20,'oy':20,'x':20,'y':20,'d':20000};
 	
