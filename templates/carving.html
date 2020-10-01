@@ -106,8 +106,8 @@ function updateSVG(svgPoints) {
 		var el = document.getElementById(id);
 		console.log(el);
 		console.log(svgPoints[id]);
-		el.fill = svgPoints[id];
-		el.stroke = svgPoints[id];
+		el.style.fill = svgPoints[id];
+		el.style.stroke = svgPoints[id];
 	}
 }
 createSVG();
