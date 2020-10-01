@@ -1457,7 +1457,7 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].val = v - v/4 - v/4 - v/4;
 				m.pixels[i][removeSeam[i]+1].val = v/4;
 				m.pixels[i][removeSeam[i]+2].val = v/4;
-				/*std::vector<std::string> datas;
+				std::vector<std::string> datas;
 				datas.resize(4);
 				datas[0] = "d";
 				datas[1] = "r";
@@ -1470,7 +1470,7 @@ Map horizontalStitch(Map m, int n, int l){
 					m.pixels[i][removeSeam[i]].data[s] = r - r/4 - r/4 - r/4;
 					m.pixels[i][removeSeam[i]+1].data[s] = r/4;
 					m.pixels[i][removeSeam[i]+2].data[s] = r/4;
-				}*/
+				}
 				m.pixels[i][removeSeam[i]-1].x = xx;
 				m.pixels[i][removeSeam[i]].x = xx;
 				m.pixels[i][removeSeam[i]+1].x = xx;
@@ -1489,8 +1489,8 @@ Map horizontalStitch(Map m, int n, int l){
 				int v = m.pixels[i][removeSeam[i]].val+m.pixels[i][removeSeam[i]+1].val;
 				int r = m.pixels[i][removeSeam[i]].data["r"]+m.pixels[i][removeSeam[i]+1].data["r"];
 				int d = m.pixels[i][removeSeam[i]].data["d"]+m.pixels[i][removeSeam[i]+1].data["d"];
-				int r16 = m.pixels[i][removeSeam[i]].data["d"]ata["r16"]+m.pixels[i][removeSeam[i]+1].data["d"]ata["r16"];
-				int d16 = m.pixels[i][removeSeam[i]].data["d"]ata["d16"]+m.pixels[i][removeSeam[i]+1].data["d"]ata["d16"];
+				int r16 = m.pixels[i][removeSeam[i]].data["r16"]+m.pixels[i][removeSeam[i]+1].data["r16"];
+				int d16 = m.pixels[i][removeSeam[i]].data["d16"]+m.pixels[i][removeSeam[i]+1].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[i][removeSeam[i]].x;
@@ -1519,13 +1519,13 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]+1].data["d"] = d/3;
 				m.pixels[i][removeSeam[i]+2].data["d"] = d/3;
 				
-				m.pixels[i][removeSeam[i]].data["d"]ata["r16"] = r16 - r16/3 - r16/3;
-				m.pixels[i][removeSeam[i]+1].data["d"]ata["r16"] = r16/3;
-				m.pixels[i][removeSeam[i]+2].data["d"]ata["r16"] = r16/3;
+				m.pixels[i][removeSeam[i]].data["r16"] = r16 - r16/3 - r16/3;
+				m.pixels[i][removeSeam[i]+1].data["r16"] = r16/3;
+				m.pixels[i][removeSeam[i]+2].data["r16"] = r16/3;
 				
-				m.pixels[i][removeSeam[i]].data["d"]ata["d16"] = d16 - d16/3 - d16/3;
-				m.pixels[i][removeSeam[i]+1].data["d"]ata["d16"] = d16/3;
-				m.pixels[i][removeSeam[i]+2].data["d"]ata["d16"] = d16/3;
+				m.pixels[i][removeSeam[i]].data["d16"] = d16 - d16/3 - d16/3;
+				m.pixels[i][removeSeam[i]+1].data["d16"] = d16/3;
+				m.pixels[i][removeSeam[i]+2].data["d16"] = d16/3;
 				
 				m.pixels[i][removeSeam[i]].x = xx;
 				m.pixels[i][removeSeam[i]+1].x = xx;
@@ -1543,8 +1543,8 @@ Map horizontalStitch(Map m, int n, int l){
 				int v = m.pixels[i][removeSeam[i]].val;
 				int r = m.pixels[i][removeSeam[i]].data["r"];
 				int d = m.pixels[i][removeSeam[i]].data["d"];
-				int r16 = m.pixels[i][removeSeam[i]].data["d"]ata["r16"];
-				int d16 = m.pixels[i][removeSeam[i]].data["d"]ata["d16"];
+				int r16 = m.pixels[i][removeSeam[i]].data["r16"];
+				int d16 = m.pixels[i][removeSeam[i]].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[i][removeSeam[i]].x;
@@ -1563,11 +1563,11 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].data["d"] = d/2;
 				m.pixels[i][removeSeam[i]+1].data["d"] = d - d/2;
 				
-				m.pixels[i][removeSeam[i]].data["d"]ata["r16"] = r16/2;
-				m.pixels[i][removeSeam[i]+1].data["d"]ata["r16"] = r16 - r16/2;
+				m.pixels[i][removeSeam[i]].data["r16"] = r16/2;
+				m.pixels[i][removeSeam[i]+1].data["r16"] = r16 - r16/2;
 				
-				m.pixels[i][removeSeam[i]].data["d"]ata["d16"] = d16/2;
-				m.pixels[i][removeSeam[i]+1].data["d"]ata["d16"] = d16 - d16/2;
+				m.pixels[i][removeSeam[i]].data["d16"] = d16/2;
+				m.pixels[i][removeSeam[i]+1].data["d16"] = d16 - d16/2;
 				
 				m.pixels[i][removeSeam[i]].x = xx;
 				m.pixels[i][removeSeam[i]+1].x = xx;
@@ -1656,8 +1656,8 @@ Map verticalStitch(Map m, int n, int l){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]-1][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				int r = m.pixels[removeSeam[ii]][ii].data["r"]+m.pixels[removeSeam[ii]-1][ii].data["r"]+m.pixels[removeSeam[ii]+1][ii].data["r"];
 				int d = m.pixels[removeSeam[ii]][ii].data["d"]+m.pixels[removeSeam[ii]-1][ii].data["d"]+m.pixels[removeSeam[ii]+1][ii].data["d"];
-				int r16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]+m.pixels[removeSeam[ii]-1][ii].data["d"]ata["r16"]+m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"];
-				int d16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]+m.pixels[removeSeam[ii]-1][ii].data["d"]ata["d16"]+m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"];
+				int r16 = m.pixels[removeSeam[ii]][ii].data["r16"]+m.pixels[removeSeam[ii]-1][ii].data["r16"]+m.pixels[removeSeam[ii]+1][ii].data["r16"];
+				int d16 = m.pixels[removeSeam[ii]][ii].data["d16"]+m.pixels[removeSeam[ii]-1][ii].data["d16"]+m.pixels[removeSeam[ii]+1][ii].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[removeSeam[ii]][ii].x;
@@ -1690,15 +1690,15 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]+1][ii].data["d"]=d/4;
 				m.pixels[removeSeam[ii]+2][ii].data["d"]= d/4;
 				
-				m.pixels[removeSeam[ii]-1][ii].data["d"]ata["r16"]=r16/4;
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]=r16 - r16/4 - r16/4 - r16/4;
-				m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"]=r16/4;
-				m.pixels[removeSeam[ii]+2][ii].data["d"]ata["r16"]= r16/4;
+				m.pixels[removeSeam[ii]-1][ii].data["r16"]=r16/4;
+				m.pixels[removeSeam[ii]][ii].data["r16"]=r16 - r16/4 - r16/4 - r16/4;
+				m.pixels[removeSeam[ii]+1][ii].data["r16"]=r16/4;
+				m.pixels[removeSeam[ii]+2][ii].data["r16"]= r16/4;
 				
-				m.pixels[removeSeam[ii]-1][ii].data["d"]ata["d16"]=d16/4;
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]=d16 - d16/4 - d16/4 - d16/4;
-				m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"]=d16/4;
-				m.pixels[removeSeam[ii]+2][ii].data["d"]ata["d16"]= d16/4;
+				m.pixels[removeSeam[ii]-1][ii].data["d16"]=d16/4;
+				m.pixels[removeSeam[ii]][ii].data["d16"]=d16 - d16/4 - d16/4 - d16/4;
+				m.pixels[removeSeam[ii]+1][ii].data["d16"]=d16/4;
+				m.pixels[removeSeam[ii]+2][ii].data["d16"]= d16/4;
 				
 				m.pixels[removeSeam[ii]-1][ii].x=xx;
 				m.pixels[removeSeam[ii]][ii].x=xx;
@@ -1719,8 +1719,8 @@ Map verticalStitch(Map m, int n, int l){
 				int v = m.pixels[removeSeam[ii]][ii].val+m.pixels[removeSeam[ii]+1][ii].val;
 				int r = m.pixels[removeSeam[ii]][ii].data["r"]+m.pixels[removeSeam[ii]+1][ii].data["r"];
 				int d = m.pixels[removeSeam[ii]][ii].data["d"]+m.pixels[removeSeam[ii]+1][ii].data["d"];
-				int r16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]+m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"];
-				int d16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]+m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"];
+				int r16 = m.pixels[removeSeam[ii]][ii].data["r16"]+m.pixels[removeSeam[ii]+1][ii].data["r16"];
+				int d16 = m.pixels[removeSeam[ii]][ii].data["d16"]+m.pixels[removeSeam[ii]+1][ii].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[removeSeam[ii]][ii].x;
@@ -1748,13 +1748,13 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]+1][ii].data["d"]=d/3;
 				m.pixels[removeSeam[ii]+2][ii].data["d"]= d/3;
 				
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]=r16 - r16/3 - r16/3;
-				m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"]=r16/3;
-				m.pixels[removeSeam[ii]+2][ii].data["d"]ata["r16"]= r16/3;
+				m.pixels[removeSeam[ii]][ii].data["r16"]=r16 - r16/3 - r16/3;
+				m.pixels[removeSeam[ii]+1][ii].data["r16"]=r16/3;
+				m.pixels[removeSeam[ii]+2][ii].data["r16"]= r16/3;
 				
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]=d16 - d16/3 - d16/3;
-				m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"]=d16/3;
-				m.pixels[removeSeam[ii]+2][ii].data["d"]ata["d16"]= d16/3;
+				m.pixels[removeSeam[ii]][ii].data["d16"]=d16 - d16/3 - d16/3;
+				m.pixels[removeSeam[ii]+1][ii].data["d16"]=d16/3;
+				m.pixels[removeSeam[ii]+2][ii].data["d16"]= d16/3;
 				
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]+1][ii].x=xx;
@@ -1773,8 +1773,8 @@ Map verticalStitch(Map m, int n, int l){
 				int v = m.pixels[removeSeam[ii]][ii].val;
 				int r = m.pixels[removeSeam[ii]][ii].data["r"];
 				int d = m.pixels[removeSeam[ii]][ii].data["d"];
-				int r16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"];
-				int d16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"];
+				int r16 = m.pixels[removeSeam[ii]][ii].data["r16"];
+				int d16 = m.pixels[removeSeam[ii]][ii].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[removeSeam[ii]][ii].x;
@@ -1793,11 +1793,11 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].data["d"]=d/2;
 				m.pixels[removeSeam[ii]+1][ii].data["d"]= d - d/2;
 				
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]=r16/2;
-				m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"]= r16 - r16/2;
+				m.pixels[removeSeam[ii]][ii].data["r16"]=r16/2;
+				m.pixels[removeSeam[ii]+1][ii].data["r16"]= r16 - r16/2;
 				
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]=d16/2;
-				m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"]= d16 - d16/2;
+				m.pixels[removeSeam[ii]][ii].data["d16"]=d16/2;
+				m.pixels[removeSeam[ii]+1][ii].data["d16"]= d16 - d16/2;
 				
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]+1][ii].x= xx;
@@ -1886,12 +1886,12 @@ Map horizontalSeam(Map m, int n, int l){
 				int d = m.pixels[i][removeSeam[i]].data["d"]+m.pixels[i][removeSeam[i]-1].data["d"]+m.pixels[i][removeSeam[i]+1].data["d"];
 				m.pixels[i][removeSeam[i]].data["d"]=d - d/2;
 				m.pixels[i][removeSeam[i]-1].data["d"]= d/2;
-				int r16 = m.pixels[i][removeSeam[i]].data["d"]ata["r16"]+m.pixels[i][removeSeam[i]-1].data["d"]ata["r16"]+m.pixels[i][removeSeam[i]+1].data["d"]ata["r16"];
-				m.pixels[i][removeSeam[i]].data["d"]ata["r16"]=r16 - r16/2;
-				m.pixels[i][removeSeam[i]-1].data["d"]ata["r16"]= r16/2;
-				int d16 = m.pixels[i][removeSeam[i]].data["d"]ata["d16"]+m.pixels[i][removeSeam[i]-1].data["d"]ata["d16"]+m.pixels[i][removeSeam[i]+1].data["d"]ata["d16"];
-				m.pixels[i][removeSeam[i]].data["d"]ata["d16"]=d16 - d16/2;
-				m.pixels[i][removeSeam[i]-1].data["d"]ata["d16"]= d16/2;
+				int r16 = m.pixels[i][removeSeam[i]].data["r16"]+m.pixels[i][removeSeam[i]-1].data["r16"]+m.pixels[i][removeSeam[i]+1].data["r16"];
+				m.pixels[i][removeSeam[i]].data["r16"]=r16 - r16/2;
+				m.pixels[i][removeSeam[i]-1].data["r16"]= r16/2;
+				int d16 = m.pixels[i][removeSeam[i]].data["d16"]+m.pixels[i][removeSeam[i]-1].data["d16"]+m.pixels[i][removeSeam[i]+1].data["d16"];
+				m.pixels[i][removeSeam[i]].data["d16"]=d16 - d16/2;
+				m.pixels[i][removeSeam[i]-1].data["d16"]= d16/2;
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[i][removeSeam[i]].x;
@@ -1924,8 +1924,8 @@ Map horizontalSeam(Map m, int n, int l){
 				
 				m.pixels[i][removeSeam[i]].data["r"] +=m.pixels[i][removeSeam[i]+1].data["r"];
 				m.pixels[i][removeSeam[i]].data["d"] +=m.pixels[i][removeSeam[i]+1].data["d"];
-				m.pixels[i][removeSeam[i]].data["d"]ata["r16"] +=m.pixels[i][removeSeam[i]+1].data["d"]ata["r16"];
-				m.pixels[i][removeSeam[i]].data["d"]ata["d16"] +=m.pixels[i][removeSeam[i]+1].data["d"]ata["d16"];
+				m.pixels[i][removeSeam[i]].data["r16"] +=m.pixels[i][removeSeam[i]+1].data["r16"];
+				m.pixels[i][removeSeam[i]].data["d16"] +=m.pixels[i][removeSeam[i]+1].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[i][removeSeam[i]].x;
@@ -1953,8 +1953,8 @@ Map horizontalSeam(Map m, int n, int l){
 				
 				m.pixels[i][removeSeam[i]-1].data["r"] +=m.pixels[i][removeSeam[i]].data["r"];
 				m.pixels[i][removeSeam[i]-1].data["d"] +=m.pixels[i][removeSeam[i]].data["d"];
-				m.pixels[i][removeSeam[i]-1].data["d"]ata["r16"] +=m.pixels[i][removeSeam[i]].data["d"]ata["r16"];
-				m.pixels[i][removeSeam[i]-1].data["d"]ata["d16"] +=m.pixels[i][removeSeam[i]].data["d"]ata["d16"];
+				m.pixels[i][removeSeam[i]-1].data["r16"] +=m.pixels[i][removeSeam[i]].data["r16"];
+				m.pixels[i][removeSeam[i]-1].data["d16"] +=m.pixels[i][removeSeam[i]].data["d16"];
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[i][removeSeam[i]].x;
@@ -2054,12 +2054,12 @@ Map verticalSeam(Map m, int n, int l){
 				int d = m.pixels[removeSeam[ii]][ii].data["d"]+m.pixels[removeSeam[ii]-1][ii].data["d"]+m.pixels[removeSeam[ii]+1][ii].data["d"];
 				m.pixels[removeSeam[ii]][ii].data["d"]=d - d/2;
 				m.pixels[removeSeam[ii]-1][ii].data["d"]= d/2;
-				int r16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]+m.pixels[removeSeam[ii]-1][ii].data["d"]ata["r16"]+m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"];
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]=r16 - r16/2;
-				m.pixels[removeSeam[ii]-1][ii].data["d"]ata["r16"]= r16/2;
-				int d16 = m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]+m.pixels[removeSeam[ii]-1][ii].data["d"]ata["d16"]+m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"];
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]=d16 - d16/2;
-				m.pixels[removeSeam[ii]-1][ii].data["d"]ata["d16"]= d16/2;
+				int r16 = m.pixels[removeSeam[ii]][ii].data["r16"]+m.pixels[removeSeam[ii]-1][ii].data["r16"]+m.pixels[removeSeam[ii]+1][ii].data["r16"];
+				m.pixels[removeSeam[ii]][ii].data["r16"]=r16 - r16/2;
+				m.pixels[removeSeam[ii]-1][ii].data["r16"]= r16/2;
+				int d16 = m.pixels[removeSeam[ii]][ii].data["d16"]+m.pixels[removeSeam[ii]-1][ii].data["d16"]+m.pixels[removeSeam[ii]+1][ii].data["d16"];
+				m.pixels[removeSeam[ii]][ii].data["d16"]=d16 - d16/2;
+				m.pixels[removeSeam[ii]-1][ii].data["d16"]= d16/2;
 				int xx; int yy;
 				if (v <= 0){
 					xx = m.pixels[removeSeam[ii]][ii].x;
@@ -2093,8 +2093,8 @@ Map verticalSeam(Map m, int n, int l){
 				
 				m.pixels[removeSeam[ii]][ii].data["r"]+=m.pixels[removeSeam[ii]+1][ii].data["r"];
 				m.pixels[removeSeam[ii]][ii].data["d"]+=m.pixels[removeSeam[ii]+1][ii].data["d"];
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"]+=m.pixels[removeSeam[ii]+1][ii].data["d"]ata["r16"];
-				m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"]+=m.pixels[removeSeam[ii]+1][ii].data["d"]ata["d16"];
+				m.pixels[removeSeam[ii]][ii].data["r16"]+=m.pixels[removeSeam[ii]+1][ii].data["r16"];
+				m.pixels[removeSeam[ii]][ii].data["d16"]+=m.pixels[removeSeam[ii]+1][ii].data["d16"];
 				
 				int xx; int yy;
 				if (v <= 0){
@@ -2124,8 +2124,8 @@ Map verticalSeam(Map m, int n, int l){
 				
 				m.pixels[removeSeam[ii]-1][ii].data["r"]+=m.pixels[removeSeam[ii]][ii].data["r"];
 				m.pixels[removeSeam[ii]-1][ii].data["d"]+=m.pixels[removeSeam[ii]][ii].data["d"];
-				m.pixels[removeSeam[ii]-1][ii].data["d"]ata["r16"]+=m.pixels[removeSeam[ii]][ii].data["d"]ata["r16"];
-				m.pixels[removeSeam[ii]-1][ii].data["d"]ata["d16"]+=m.pixels[removeSeam[ii]][ii].data["d"]ata["d16"];
+				m.pixels[removeSeam[ii]-1][ii].data["r16"]+=m.pixels[removeSeam[ii]][ii].data["r16"];
+				m.pixels[removeSeam[ii]-1][ii].data["d16"]+=m.pixels[removeSeam[ii]][ii].data["d16"];
 				
 				int xx; int yy;
 				if (v <= 0){
@@ -2182,8 +2182,8 @@ void initialRun(){
 			p.val = 0;
 			p.data["r"] = 0;
 			p.data["d"] = 0;
-			p.data["d"]ata["r16"] = 0;
-			p.data["d"]ata["d16"] = 0;
+			p.data["r16"] = 0;
+			p.data["d16"] = 0;
 			pixels[i][ii] = p;
 			pixelMap[i][ii] = -1;
 		}
@@ -2265,8 +2265,8 @@ void initialRun(){
 				pixels[i][ii].val += points[pixelMap[i][ii]].val*100/points[pixelMap[i][ii]].npix;
 				pixels[i][ii].data["d"] += points[pixelMap[i][ii]].data["d"]*100/points[pixelMap[i][ii]].npix;
 				pixels[i][ii].data["r"] += points[pixelMap[i][ii]].data["r"]*100/points[pixelMap[i][ii]].npix;
-				pixels[i][ii].data["d"]ata["d16"] += points[pixelMap[i][ii]].data["d"]ata["d16"]*100/points[pixelMap[i][ii]].npix;
-				pixels[i][ii].data["d"]ata["r16"] += points[pixelMap[i][ii]].data["d"]ata["r16"]*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].data["d16"] += points[pixelMap[i][ii]].data["d16"]*100/points[pixelMap[i][ii]].npix;
+				pixels[i][ii].data["r16"] += points[pixelMap[i][ii]].data["r16"]*100/points[pixelMap[i][ii]].npix;
 				pixels[i][ii].x = points[pixelMap[i][ii]].x;
 				pixels[i][ii].y = points[pixelMap[i][ii]].y;
 				pixels[i][ii].county = points[pixelMap[i][ii]].county;
@@ -2299,8 +2299,8 @@ void initialRun(){
 				pixels[i][ii].val += points[minI].val*100/points[minI].npix;
 				pixels[i][ii].data["d"] += points[minI].data["d"]*100/points[minI].npix;
 				pixels[i][ii].data["r"] += points[minI].data["r"]*100/points[minI].npix;
-				pixels[i][ii].data["d"]ata["d16"] += points[minI].data["d"]ata["d16"]*100/points[minI].npix;
-				pixels[i][ii].data["d"]ata["r16"] += points[minI].data["d"]ata["r16"]*100/points[minI].npix;
+				pixels[i][ii].data["d16"] += points[minI].data["d16"]*100/points[minI].npix;
+				pixels[i][ii].data["r16"] += points[minI].data["r16"]*100/points[minI].npix;
 				pixels[i][ii].x = points[minI].x;
 				pixels[i][ii].y = points[minI].y;
 				pixels[i][ii].county = points[minI].county;
@@ -2317,8 +2317,8 @@ void initialRun(){
 			pixels[i][ii].val += points[minI].val*100/points[minI].npix;
 			pixels[i][ii].data["d"] += points[minI].data["d"]*100/points[minI].npix;
 			pixels[i][ii].data["r"] += points[minI].data["r"]*100/points[minI].npix;
-			pixels[i][ii].data["d"]ata["d16"] += points[minI].data["d"]ata["d16"]*100/points[minI].npix;
-			pixels[i][ii].data["d"]ata["r16"] += points[minI].data["d"]ata["r16"]*100/points[minI].npix;
+			pixels[i][ii].data["d16"] += points[minI].data["d16"]*100/points[minI].npix;
+			pixels[i][ii].data["r16"] += points[minI].data["r16"]*100/points[minI].npix;
 			pixels[i][ii].x = points[minI].x;
 			pixels[i][ii].y = points[minI].y;
 			pixels[i][ii].county = points[minI].county;
@@ -2352,7 +2352,7 @@ void initialRun(){
 			for(i=0;i<m.width;i++){
 				for(ii=0;ii<m.height;ii++){
 					Point p = m.pixels[i][ii];
-					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.data["d"])+","+std::to_string(p.data["r"])+","+std::to_string(p.data["d"]ata["d16"])+","+std::to_string(p.data["d"]ata["r16"]);
+					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.data["d"])+","+std::to_string(p.data["r"])+","+std::to_string(p.data["d16"])+","+std::to_string(p.data["r16"]);
 					add_pointOut(pointStr.c_str());
 				}
 			}
@@ -2373,7 +2373,7 @@ void initialRun(){
 	for(i=0;i<m.width;i++){
 		for(ii=0;ii<m.height;ii++){
 			Point p = m.pixels[i][ii];
-			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.data["d"])+","+std::to_string(p.data["r"])+","+std::to_string(p.data["d"]ata["d16"])+","+std::to_string(p.data["d"]ata["r16"]);
+			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county)+","+std::to_string(p.data["d"])+","+std::to_string(p.data["r"])+","+std::to_string(p.data["d16"])+","+std::to_string(p.data["r16"]);
 			add_pointOut(pointStr.c_str());
 		}
 	}
