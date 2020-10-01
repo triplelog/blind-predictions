@@ -29,12 +29,16 @@ function displayNow(dAdv=1,bAdv=1) {
 		else {
 			whitepct = sums[5]/(sums[4]+sums[5]);
 		}
-		 
-		if (whitepct > wmax){wmax = whitepct;}
-		if (whitepct < wmin){wmin = whitepct;}
-		var whitediff = parseInt(jsPoints[i].d16)*whitepct*dAdv - (parseInt(jsPoints[i].r16))*whitepct;
-		var blackdiff = parseInt(jsPoints[i].d16)*(1-whitepct)*bAdv - (parseInt(jsPoints[i].r16))*(1-whitepct);
-		var yeardiff = whitediff+blackdiff;
+		
+		var v = parseInt(jsPoints[i].d16)+parseInt(jsPoints[i].r16);
+		var whitev = v*whitepct;
+		var blackv = v*(1-whitepct);
+		var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv)*bAdv;
+		var d = whitev*.5*bd+blackv*bd;
+		var r = whitev*(1-.5*bd)+blackv*(1-bd);
+		
+
+		var yeardiff = d - r;
 		
 		
 		jsPoints[i].yeardiff = yeardiff;
