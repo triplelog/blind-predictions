@@ -99,10 +99,13 @@ function createSVG() {
 	document.getElementById('mapHolder').innerHTML = svg;
 }
 function updateSVG(svgPoints) {
-	console.log(svgPoints);
+
 
 	for (var id in svgPoints){
+		console.log(id);
 		var el = document.getElementById(id);
+		console.log(el);
+		console.log(svgPoints[id]);
 		el.fill = svgPoints[id];
 		el.stroke = svgPoints[id];
 	}
