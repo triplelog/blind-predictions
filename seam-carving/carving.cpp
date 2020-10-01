@@ -2416,7 +2416,7 @@ void initialRun(){
 					std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county);
 					for (iiii=0;iiii<nd;iiii++){
 						s = datas[iiii];
-						std::string pointStr += ","+std::to_string(p.data[s]);
+						pointStr += ","+std::to_string(p.data[s]);
 					}
 					add_pointOut(pointStr.c_str());
 				}
@@ -2441,7 +2441,7 @@ void initialRun(){
 			std::string pointStr = std::to_string(p.x)+","+std::to_string(p.y)+","+std::to_string(p.val)+","+std::to_string(i)+","+std::to_string(ii)+","+std::to_string(p.county);
 			for (iiii=0;iiii<nd;iiii++){
 				s = datas[iiii];
-				std::string pointStr += ","+std::to_string(p.data[s]);
+				pointStr += ","+std::to_string(p.data[s]);
 			}
 			add_pointOut(pointStr.c_str());
 		}
