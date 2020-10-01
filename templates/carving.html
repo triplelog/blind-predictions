@@ -101,14 +101,21 @@ function createSVG() {
 function updateSVG(svgPoints) {
 
 
-	for (var id in svgPoints){
-		console.log(id);
+	/*for (var id in svgPoints){
 		var el = document.getElementById(id);
-		console.log(el);
-		console.log(svgPoints[id]);
 		el.style.fill = svgPoints[id];
 		el.style.stroke = svgPoints[id];
+	}*/
+	
+	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 101 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
+
+	for (var id in svgPoints){
+		svg += '<rect id="'+id+'" width="1" height="1" x="'+i+'" y="'+ii+'" style="fill: '+svgPoints[id]+'; stroke: '+svgPoints[id]+';"></rect>';
+
 	}
+
+	svg += '</svg>';
+	document.getElementById('mapHolder').innerHTML = svg;
 }
 createSVG();
 </script>
