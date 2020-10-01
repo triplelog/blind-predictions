@@ -119,7 +119,7 @@ function updateSVG(svgPoints,svgCities) {
 		svgElements[id].style.fill = svgPoints[id];
 	}
 	for (var id in svgCities){
-		svgElements[id].setAttribute("cx","60");
+		document.getElementById(id).setAttribute("cx","60");
 	}
 	
 	
