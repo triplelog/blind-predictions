@@ -112,6 +112,12 @@ function displayNow(dAdv=1,bAdv=1) {
 			svgCities['city-0'].x = jsPoints[i].x;
 			svgCities['city-0'].y = jsPoints[i].y;
 		}
+		else if (parseInt(jsPoints[i].ox) < 55 && parseInt(jsPoints[i].ox) > 45){
+			if (parseInt(jsPoints[i].oy) < 55 && parseInt(jsPoints[i].oy) > 45){
+				console.log(jsPoints[i].ox);
+				console.log(jsPoints[i].oy);
+			}
+		}
 	}
 	//console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
 	
