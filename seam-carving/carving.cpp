@@ -1346,6 +1346,7 @@ return points;}
 
 
 
+
 struct Map {
 	std::map<int,std::map<int,Point> > pixels;
 	int width;
