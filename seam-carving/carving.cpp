@@ -64,6 +64,7 @@ bool killCarveH;
 int vertThreads;
 int horzThreads;
 int np;
+int nd;
 std::string datas[4];
 
 extern "C" {
@@ -2142,7 +2143,7 @@ void initialRun(){
 	datas[1] = "r";
 	datas[2] = "d16";
 	datas[3] = "r16";
-	int nd = 4;
+	nd = 4;
 	std::map<int,std::map<int,Point>> pixels;
 	std::map<int,std::map<int,int>> pixelMap;
 	for(i=0;i<100;i++){
