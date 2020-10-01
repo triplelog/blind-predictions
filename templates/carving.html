@@ -85,10 +85,11 @@ function updateNow(){
 	var v = document.getElementById('dSlider').value;
 	var vv = Math.pow(2.71,v/100);
 	var vb = document.getElementById('bSlider').value;
-	var vvb = Math.pow(2.71,v/100);
+	var vvb = Math.pow(2.71,vb/100);
 	myWorker.postMessage(['update',vv,vvb]);
 }
 document.getElementById('dSlider').addEventListener('input',updateNow);
+document.getElementById('bSlider').addEventListener('input',updateNow);
 var svgElements = {};
 function createSVG() {
 	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 101 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
