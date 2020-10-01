@@ -4,7 +4,7 @@ function cpp_ready() {
 	
 }
 
-function displayNow(dAdv=1,bAdv=1) {
+function displayNow(dAdv=1,bAdv=1,loc=true) {
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
 	var sums = [0,0,0,0,0,0,0,0,0,0];
@@ -85,7 +85,7 @@ function displayNow(dAdv=1,bAdv=1) {
 	
 	var exCount = 0;
 	
-	var svgCities = {'city-0':{'name':"Columbia",'x':10,'y':10}};
+	var svgCities = {'city-0':{'name':"Columbia",'x':10,'y':10,'d':10000}};
 	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
@@ -108,21 +108,32 @@ function displayNow(dAdv=1,bAdv=1) {
 		var id = 'cell-'+jsPoints[i].x+'-'+jsPoints[i].y;
 		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';
 		
-		if (jsPoints[i].ox == "50" && jsPoints[i].oy == "50"){
-			svgCities['city-0'].x = jsPoints[i].x;
-			svgCities['city-0'].y = jsPoints[i].y;
-		}
-		else if (parseInt(jsPoints[i].ox) < 55 && parseInt(jsPoints[i].ox) > 45){
-			if (parseInt(jsPoints[i].oy) < 55 && parseInt(jsPoints[i].oy) > 45){
-				console.log(jsPoints[i].ox);
-				console.log(jsPoints[i].oy);
+		if (loc){
+			var ox = parseInt(jsPoints[i].ox);
+			var oy = parseInt(jsPoints[i].oy);
+			var d = svgCities['city-0'].d;
+			if (ox < 50 + 10 && ox > 50 - 10){
+				d = (ox-50)*(ox-50)+(oy-50)*(oy-50);
+			}
+			else if (oy < 50 + 10 && oy > 50 - 10){
+				d = (ox-50)*(ox-50)+(oy-50)*(oy-50);
+			}
+			
+			if (d< svgCities['city-0'].d){
+				svgCities['city-0'].d = d;
+				svgCities['city-0'].x = jsPoints[i].x;
+				svgCities['city-0'].y = jsPoints[i].y;
 			}
 		}
 	}
 	//console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
 	
-	
-	postMessage({'points':svgPoints,'cities':svgCities});
+	if (loc){
+		postMessage({'points':svgPoints,'cities':svgCities});
+	}
+	else {
+		postMessage({'points':svgPoints,'cities':{}});
+	}
 	pointsOut = [];
 }
 
@@ -140,7 +151,7 @@ onmessage = function(e) {
 	var message = e.data;
 	var result = [];
 	if (message[0] == "update"){
-		displayNow(message[1],message[2]);
+		displayNow(message[1],message[2],false);
 	}
 }
 
