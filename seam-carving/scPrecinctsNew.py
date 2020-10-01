@@ -180,7 +180,7 @@ def addExtra(extrafile,idx):
 
 
 	for i in range(0,len(shape16)):
-		if i%3 > 0:
+		if i%3 > 3:
 			continue
 		if shape16[i]['geometry']['type'] == "Polygon":
 			coords = shape16[i]['geometry']['coordinates'][0]
