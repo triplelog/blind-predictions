@@ -84,6 +84,9 @@ function displayNow(dAdv=1,bAdv=1) {
 	var avgP = sumP/jsPoints.length;
 	
 	var exCount = 0;
+	
+	var svgCities = {'city-0':{'name':"Columbia",'x':10,'y':10}};
+	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
@@ -104,10 +107,15 @@ function displayNow(dAdv=1,bAdv=1) {
 		
 		var id = 'cell-'+jsPoints[i].x+'-'+jsPoints[i].y;
 		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';
+		
+		if (jsPoints[i].ox == 50 && jsPoints[i].oy == 50){
+			svgCities['city-0'].x = jsPoints[i].x;
+			svgCities['city-0'].y = jsPoints[i].y;
+		}
 	}
 	//console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
 	
-	var svgCities = {'city-0':'Columbia'};
+	
 	postMessage({'points':svgPoints,'cities':svgCities});
 	pointsOut = [];
 }
