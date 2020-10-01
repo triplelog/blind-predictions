@@ -63,6 +63,7 @@ bool killCarveV;
 bool killCarveH;
 int vertThreads;
 int horzThreads;
+int np;
 
 extern "C" {
 
@@ -1328,7 +1329,9 @@ points[i]=p;i++;}
 if (1==1){ Point p;
 p.x = 57; p.y = 38; p.county = 35; p.val = 465; p.d = 313; p.r = 152; p.d16 = 321; p.r16 = 178;
 points[i]=p;i++;}
+np = 415;
 return points;}
+
 
 
 
@@ -2211,9 +2214,9 @@ void initialRun(){
 		xCount[x]++;
 		yCount[y]++;
 	}*/
-	np =0;
+	np =0;//will get set to right value in scPoints()
 	points = scPoints();
-	int np = 415;
+	
 	for(i=0;i<np;i++){
 		points[i].npix = 0;
 		pixelMap[points[i].x][points[i].y]=i;
