@@ -93,7 +93,7 @@ function createSVG() {
 
 	for (var i=0;i<100;i++){
 		for (var ii=0;ii<100;ii++){
-			svg += '<rect id="cell-'+i+'-'+ii+'" width="1" height="1" x="'+i+'" y="'+ii+'" style="fill: hsl(120,80%,100%); stroke: hsl(120,80%,100%);"></rect>';
+			svg += '<rect id="cell-'+i+'-'+ii+'" width="1" height="1" x="'+i+'" y="'+ii+'" fill="hsl(120,80%,100%)" stroke-width="0"></rect>';
 
 		}
 	}
@@ -110,9 +110,7 @@ function updateSVG(svgPoints) {
 
 
 	for (var id in svgPoints){
-		var el = svgElements[id];
-		el.style.fill = svgPoints[id];
-		el.style.stroke = svgPoints[id];
+		svgElements[id].fill = svgPoints[id];
 	}
 	
 	/*var svg = '<svg style="width: 60vw;" viewBox="-1 -1 101 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
