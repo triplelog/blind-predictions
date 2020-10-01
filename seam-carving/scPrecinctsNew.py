@@ -37,7 +37,10 @@ def readblockgroup(filen,state):
 
 
 
-counties = [19,13,15,29,35]
+#counties = [19,13,15,29,35]
+counties = []
+for i in range(0,100):
+	counties.append(i)
 maindatas = {"val":'Total',"black":'Black or African American Alone',"white":'White Alone'}
 
 extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'}}
