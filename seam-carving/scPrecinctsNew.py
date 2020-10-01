@@ -38,9 +38,9 @@ def readblockgroup(filen,state):
 
 
 counties = [19,13,15,29,35]
-#counties = []
-#for i in range(0,100):
-#	counties.append(i)
+counties = []
+for i in range(0,100):
+	counties.append(i)
 maindatas = {"val":'Total',"black":'Black or African American Alone',"white":'White Alone'}
 
 extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'}}
@@ -268,11 +268,11 @@ for i in extradatas.keys():
 
 
 file1 = open('scpre.txt', 'w')
-file1.writelines(['void scPoints(){\n'])
-file1.writelines(['points.clear(); int i=0;\n'])
+file1.writelines(['void scPoints0(){\n'])
+file1.writelines(['points.clear();\n'])
 pixels = 0
 for pixel in pixelMap.keys():
-	pixels+=1
+	
 	file1.writelines(['if (1==1){ Point p;\n'])
 	#line = str(precincts[precinct]['name'])+","+str(precincts[precinct]['x'])+","+str(precincts[precinct]['y'])+","+str(precincts[precinct]['d'])+","+str(precincts[precinct]['r'])+","+str(precincts[precinct]['county'])+"\n"
 	line = "p.x = "+str(pixelMap[pixel]['x'])+"; p.y = "+str(pixelMap[pixel]['y'])+"; p.county = "+str(pixelMap[pixel]['county'])+"; p.val = "+str(pixelMap[pixel]['val'])
@@ -286,7 +286,12 @@ for pixel in pixelMap.keys():
 	line +=";\n"
 	
 	file1.writelines([line])
-	file1.writelines(['points[i]=p;i++;}\n'])
+	file1.writelines(['points['+str(pixels)+']=p;}\n'])
+	pixels+=1
+	if pixels == 1000:
+		file1.writelines(['\n}\n'])
+		file1.writelines(['void scPoints1(){\n'])
+		file1.writelines(['\n'])
 print(pixels)
 file1.writelines(['np = '+str(pixels)+';\n}\n'])
 file1.close()
