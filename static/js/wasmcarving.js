@@ -85,7 +85,9 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 	
 	var exCount = 0;
 	
-	var svgCities = {'city-0':{'name':"Columbia",'x':10,'y':10,'d':10000}};
+	var svgCities = {'city-0':{'name':"Columbia",'ox':50,'oy':50,'x':50,'y':50,'d':20000}};
+	svgCities['city-1']={'name':"Charleston",'ox':80,'oy':80,'x':80,'y':80,'d':20000};
+	svgCities['city-2']={'name':"Greenville",'ox':20,'oy':20,'x':20,'y':20,'d':20000};
 	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
@@ -109,20 +111,22 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';
 		
 		if (loc){
-			var ox = parseInt(jsPoints[i].ox);
-			var oy = parseInt(jsPoints[i].oy);
-			var d = svgCities['city-0'].d;
-			if (ox < 50 + 10 && ox > 50 - 10){
-				d = (ox-50)*(ox-50)+(oy-50)*(oy-50);
-			}
-			else if (oy < 50 + 10 && oy > 50 - 10){
-				d = (ox-50)*(ox-50)+(oy-50)*(oy-50);
-			}
+			for (city in svgCities){
+				var ox = parseInt(jsPoints[i].ox);
+				var oy = parseInt(jsPoints[i].oy);
+				var d = svgCities[city].d;
+				if (ox < svgCities[city].ox + 10 && ox > svgCities[city].ox - 10){
+					d = (ox-svgCities[city].ox)*(ox-svgCities[city].ox)+(oy-svgCities[city].oy)*(oy-svgCities[city].oy);
+				}
+				else if (oy < svgCities[city].oy + 10 && oy > svgCities[city].oy - 10){
+					d = (ox-svgCities[city].ox)*(ox-svgCities[city].ox)+(oy-svgCities[city].oy)*(oy-svgCities[city].oy);
+				}
 			
-			if (d< svgCities['city-0'].d){
-				svgCities['city-0'].d = d;
-				svgCities['city-0'].x = jsPoints[i].x;
-				svgCities['city-0'].y = jsPoints[i].y;
+				if (d< svgCities[city].d){
+					svgCities[city].d = d;
+					svgCities[city].x = jsPoints[i].x;
+					svgCities[city].y = jsPoints[i].y;
+				}
 			}
 		}
 	}
