@@ -101,6 +101,8 @@ function createSVG() {
 
 		}
 	}
+	svg += '<circle id="city-0" r="2" x="50" y="50" fill="black" stroke="white"></circle>';
+
 	svg += '</svg>';
 	document.getElementById('mapHolder').innerHTML = svg;
 	for (var i=0;i<100;i++){
@@ -116,6 +118,7 @@ function updateSVG(svgPoints) {
 	for (var id in svgPoints){
 		svgElements[id].style.fill = svgPoints[id];
 	}
+	
 	
 	/*var svg = '<svg style="width: 60vw;" viewBox="-1 -1 101 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 

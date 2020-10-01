@@ -6070,18 +6070,11 @@ void initialRun(){
 	auto a11 = std::chrono::high_resolution_clock::now();
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(durationTotal);
+
 	a11 = std::chrono::high_resolution_clock::now();
 	
 	np =0;//will get set to right value in scPoints()
 	scPoints0();
-	
-	a22 = std::chrono::high_resolution_clock::now();
-	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(durationTotal);
-	a11 = std::chrono::high_resolution_clock::now();
-	
-	
 	scPoints1();
 	
 	a22 = std::chrono::high_resolution_clock::now();
@@ -6146,10 +6139,7 @@ void initialRun(){
 		pixelMap[points[i].x][points[i].y]=i;
 	}
 	
-	a22 = std::chrono::high_resolution_clock::now();
-	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(durationTotal);
-	a11 = std::chrono::high_resolution_clock::now();
+
 	
 	for(i=0;i<100;i++){
 		for(ii=0;ii<100;ii++){
@@ -6184,7 +6174,7 @@ void initialRun(){
 				points[minI].npix++;
 				continue;
 			}
-			/*
+			
 			minX = i-6;
 			maxX = i+6;
 			minY = ii-6;
@@ -6210,7 +6200,7 @@ void initialRun(){
 				points[minI].npix++;
 				continue;
 			}
-			
+			/*
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
@@ -6222,10 +6212,7 @@ void initialRun(){
 		}
 	}
 	
-	a22 = std::chrono::high_resolution_clock::now();
-	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
-	console_log(durationTotal);
-	a11 = std::chrono::high_resolution_clock::now();
+
 	std::string s;
 	for(i=0;i<100;i++){
 		for(ii=0;ii<100;ii++){
@@ -6274,7 +6261,7 @@ void initialRun(){
 				pixels[i][ii].county = points[minI].county;
 				continue;
 			}
-			/*
+			
 			minX = i-6;
 			maxX = i+6;
 			minY = ii-6;
@@ -6307,7 +6294,7 @@ void initialRun(){
 				pixels[i][ii].county = points[minI].county;
 				continue;
 			}
-			
+			/*
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
