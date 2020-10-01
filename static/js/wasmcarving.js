@@ -4,7 +4,7 @@ function cpp_ready() {
 	
 }
 
-function displayNow(dAdv=1) {
+function displayNow(dAdv=1,bAdv=1) {
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
 	var sums = [0,0,0,0,0,0];
@@ -17,7 +17,6 @@ function displayNow(dAdv=1) {
 		sums[4]+=parseInt(jsPoints[i].white);
 		sums[5]+=parseInt(jsPoints[i].black);
 	}
-	console.log(sums);
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
@@ -29,11 +28,9 @@ function displayNow(dAdv=1) {
 			whitepct = sums[5]/(sums[4]+sums[5]);
 		}
 		 
-		if (i == 5000){
-			console.log(whitepct);
-		}
+		
 		var whitediff = parseInt(jsPoints[i].d16)*whitepct*dAdv - (parseInt(jsPoints[i].r16))*whitepct;
-		var blackdiff = parseInt(jsPoints[i].d16)*(1-whitepct) - (parseInt(jsPoints[i].r16))*(1-whitepct);
+		var blackdiff = parseInt(jsPoints[i].d16)*(1-whitepct)*bAdv - (parseInt(jsPoints[i].r16))*(1-whitepct);
 		var yeardiff = whitediff+blackdiff;
 		
 		
@@ -104,7 +101,7 @@ onmessage = function(e) {
 	var message = e.data;
 	var result = [];
 	if (message[0] == "update"){
-		displayNow(message[1]);
+		displayNow(message[1],message[2]);
 	}
 }
 

@@ -42,6 +42,7 @@
 			
 			</div>
 			<input id="dSlider" type="range" min="-69" max="69" value="0" step="3"></input>
+			<input id="bSlider" type="range" min="-69" max="69" value="0" step="3"></input>
 		</div>
 
       </div>
@@ -83,7 +84,9 @@ myWorker.onmessage = function(e) {
 function updateNow(){
 	var v = document.getElementById('dSlider').value;
 	var vv = Math.pow(2.71,v/100);
-	myWorker.postMessage(['update',vv]);
+	var vb = document.getElementById('bSlider').value;
+	var vvb = Math.pow(2.71,v/100);
+	myWorker.postMessage(['update',vv,vvb]);
 }
 document.getElementById('dSlider').addEventListener('input',updateNow);
 var svgElements = {};
