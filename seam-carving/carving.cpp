@@ -88,8 +88,11 @@ struct Point {
 	std::map<std::string,int> data;
 };
 
-std::map<int,Point> scPoints(){
-std::map<int,Point> points; int i=0;
+std::map<int,Point> points;
+
+
+void scPoints(){
+points.clear(); int i=0;
 if (1==1){ Point p;
 p.x = 70; p.y = 77; p.county = 0; p.val = 6610; p.data["black"] = 810; p.data["white"] = 5620; p.data["r"] = 3012; p.data["d"] = 1708; p.data["d16"] = 2480; p.data["r16"] = 1266;
 points[i]=p;i++;}
@@ -5275,7 +5278,7 @@ if (1==1){ Point p;
 p.x = 68; p.y = 55; p.county = 0; p.val = 430; p.data["black"] = 290; p.data["white"] = 95; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
 points[i]=p;i++;}
 np = 1728;
-return points;}
+}
 
 
 
@@ -6053,7 +6056,7 @@ void initialRun(){
 	int ii;
 	int iii;
 	int iiii;
-	std::map<int,Point> points;
+
 	
 	killCarveV = false;
 	killCarveH = false;
@@ -6065,7 +6068,7 @@ void initialRun(){
 	a11 = std::chrono::high_resolution_clock::now();
 	
 	np =0;//will get set to right value in scPoints()
-	points = scPoints();
+	scPoints();
 	
 	a22 = std::chrono::high_resolution_clock::now();
 	durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
