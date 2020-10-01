@@ -31,14 +31,18 @@ function displayNow(dAdv=1,bAdv=1) {
 		}
 		
 		var v = parseInt(jsPoints[i].d16)+parseInt(jsPoints[i].r16);
+		
 		var whitev = v*whitepct;
 		var blackv = v*(1-whitepct);
-		var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv);
-		var d = whitev*.5*bd*bAdv+blackv*bd*bAdv;
-		var r = whitev*(1-.5*bd*bAdv)+blackv*(1-bd*bAdv);
+		var yeardiff = 0;
+		if (whitev+blackv > 0){
+			var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv);
+			var d = whitev*.5*bd+blackv*bd*bAdv;
+			var r = whitev*(1-.5*bd)+blackv*(1-bd*bAdv);
 		
-
-		var yeardiff = d - r;
+			yeardiff = d - r;
+		}
+		
 		
 		
 		jsPoints[i].yeardiff = yeardiff;
