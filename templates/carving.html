@@ -41,7 +41,7 @@
 
 			
 			</div>
-			<button onclick="updateNow()">Update</button>
+			<input id="dSlider" type="range" min="-69" max="69" value="0" step="1"></input>
 		</div>
 
       </div>
@@ -81,10 +81,11 @@ myWorker.onmessage = function(e) {
 	}
 }
 function updateNow(){
-
-	
-	myWorker.postMessage(['update',54.9/40.7]);
+	var v = document.getElementById('dSlider').value;
+	var vv = Math.pow(2.71,v);
+	myWorker.postMessage(['update',vv]);
 }
+document.getElementById('dSlider').addEventListener('input',updateNow);
 </script>
 
 

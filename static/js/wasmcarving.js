@@ -15,7 +15,7 @@ function displayNow(dAdv=1) {
 		sums[2]+=parseInt(jsPoints[i].d16);
 		sums[3]+=parseInt(jsPoints[i].r16);
 	}
-	console.log(sums);
+
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
@@ -69,7 +69,7 @@ function displayNow(dAdv=1) {
 		var block = parseInt(Math.round(jsPoints[i].ox/10)*10+Math.round(jsPoints[i].oy/10));
 		svg += '<rect width="1" height="1" x="'+jsPoints[i].x+'" y="'+jsPoints[i].y+'" fill="hsl('+hue+',80%,'+lum+'%)" stroke="hsl('+hue+',80%,'+lum+'%)" class="county-'+block+'"></rect>';
 	}
-	console.log(minP,maxP, avgP, maxD,exCount, jsPoints.length);
+	console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
 	svg += '</svg>';
 	postMessage(svg);
 	pointsOut = [];
