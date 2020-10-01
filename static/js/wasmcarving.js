@@ -33,9 +33,9 @@ function displayNow(dAdv=1,bAdv=1) {
 		var v = parseInt(jsPoints[i].d16)+parseInt(jsPoints[i].r16);
 		var whitev = v*whitepct;
 		var blackv = v*(1-whitepct);
-		var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv)*bAdv;
-		var d = whitev*.5*bd+blackv*bd;
-		var r = whitev*(1-.5*bd)+blackv*(1-bd);
+		var bd = parseInt(jsPoints[i].d16)/(.5*whitev+blackv);
+		var d = whitev*.5*bd+blackv*bd*bAdv;
+		var r = whitev*(1-.5*bd)+blackv*(1-bd*bAdv);
 		
 
 		var yeardiff = d - r;
@@ -64,7 +64,7 @@ function displayNow(dAdv=1,bAdv=1) {
 		}
 		
 	}
-	console.log(wmax, wmin);
+	
 	var avgP = sumP/jsPoints.length;
 	
 	var exCount = 0;
