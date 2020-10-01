@@ -6125,10 +6125,10 @@ void initialRun(){
 				points[pixelMap[i][ii]].npix++;
 				continue;
 			}
-			int minX = i-4;
-			int maxX = i+4;
-			int minY = ii-4;
-			int maxY = ii+4;
+			int minX = i-3;
+			int maxX = i+3;
+			int minY = ii-3;
+			int maxY = ii+3;
 			if (minX < 0){minX = 0;}
 			if (minY < 0){minY = 0;}
 			if (maxX > 100){maxX = 100;}
@@ -6153,6 +6153,32 @@ void initialRun(){
 				continue;
 			}
 			
+			minX = i-6;
+			maxX = i+6;
+			minY = ii-6;
+			maxY = ii+6;
+			if (minX < 0){minX = 0;}
+			if (minY < 0){minY = 0;}
+			if (maxX > 100){maxX = 100;}
+			if (maxY > 100){maxY = 100;}
+			minP = 1000000000;
+			minI = 0;
+			for (iii=minX;iii<maxX+1;iii++){
+				for (iiii=minY;iiii<maxY+1;iiii++){
+					if (pixelMap[iii][iiii]>=0){
+						d = (iii-i)*(iii-i)+(iiii-ii)*(iiii-ii);
+						if (d < minP){
+							minP = d;
+							minI = pixelMap[iii][iiii];
+						}
+					}
+				}
+			}
+			if (minP < 1000000000){
+				points[minI].npix++;
+				continue;
+			}
+			/*
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
@@ -6160,13 +6186,14 @@ void initialRun(){
 					minI = iii;
 				}
 			}
-			points[minI].npix++;
+			points[minI].npix++;*/
 		}
 	}
 	
 	auto a22 = std::chrono::high_resolution_clock::now();
 	int durationTotal = duration_cast<std::chrono::milliseconds>(a22-a11).count();
 	console_log(durationTotal);
+	a11 = std::chrono::high_resolution_clock::now();
 	std::string s;
 	for(i=0;i<100;i++){
 		for(ii=0;ii<100;ii++){
@@ -6181,10 +6208,10 @@ void initialRun(){
 				pixels[i][ii].county = points[pixelMap[i][ii]].county;
 				continue;
 			}
-			int minX = i-4;
-			int maxX = i+4;
-			int minY = ii-4;
-			int maxY = ii+4;
+			int minX = i-3;
+			int maxX = i+3;
+			int minY = ii-3;
+			int maxY = ii+3;
 			if (minX < 0){minX = 0;}
 			if (minY < 0){minY = 0;}
 			if (maxX > 100){maxX = 100;}
@@ -6216,6 +6243,39 @@ void initialRun(){
 				continue;
 			}
 			
+			minX = i-6;
+			maxX = i+6;
+			minY = ii-6;
+			maxY = ii+6;
+			if (minX < 0){minX = 0;}
+			if (minY < 0){minY = 0;}
+			if (maxX > 100){maxX = 100;}
+			if (maxY > 100){maxY = 100;}
+			minP = 1000000000;
+			minI = 0;
+			for (iii=minX;iii<maxX+1;iii++){
+				for (iiii=minY;iiii<maxY+1;iiii++){
+					if (pixelMap[iii][iiii]>=0){
+						d = (iii-i)*(iii-i)+(iiii-ii)*(iiii-ii);
+						if (d < minP){
+							minP = d;
+							minI = pixelMap[iii][iiii];
+						}
+					}
+				}
+			}
+			if (minP < 1000000000){
+				pixels[i][ii].val += points[minI].val*100/points[minI].npix;
+				for (iii=0;iii<nd;iii++){
+					s = datas[iii];
+					pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
+				}
+				pixels[i][ii].x = points[minI].x;
+				pixels[i][ii].y = points[minI].y;
+				pixels[i][ii].county = points[minI].county;
+				continue;
+			}
+			/*
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
@@ -6230,12 +6290,12 @@ void initialRun(){
 			}
 			pixels[i][ii].x = points[minI].x;
 			pixels[i][ii].y = points[minI].y;
-			pixels[i][ii].county = points[minI].county;
+			pixels[i][ii].county = points[minI].county;*/
 		}
 	}
 	
 	
-	a11 = std::chrono::high_resolution_clock::now();
+	
 	
 
 	
