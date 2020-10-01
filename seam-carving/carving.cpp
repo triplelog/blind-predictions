@@ -1457,7 +1457,8 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].val = v - v/4 - v/4 - v/4;
 				m.pixels[i][removeSeam[i]+1].val = v/4;
 				m.pixels[i][removeSeam[i]+2].val = v/4;
-				std::string datas[4];
+				std::vector<std::string> datas;
+				datas.resize(4);
 				datas[0] = "d";
 				datas[1] = "r";
 				datas[2] = "d16";
