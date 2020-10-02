@@ -87,7 +87,7 @@ myWorker.onmessage = function(e) {
 		setTimeout(predictNow,50);
 	}
 	else {
-		updateSVG(e.data.points,e.data.cities);
+		updateSVG(e.data.points,e.data.cities,e.data.jsPoints);
 
 	}
 }
@@ -155,9 +155,9 @@ function createSVG() {
 		}
 	}
 }
-function updateSVG(svgPoints,svgCities) {
+function updateSVG(svgPoints,svgCities,jsPoints) {
 
-	document.getElementById("jsPoints").textContent = JSON.stringify(svgPoints);
+	document.getElementById("jsPoints").textContent = jsPoints;
 	for (var id in svgPoints){
 		svgElements[id].style.fill = svgPoints[id];
 	}

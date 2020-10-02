@@ -225,10 +225,10 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 	console.log(dAdv,minP,maxP, avgP, maxD,exCount, jsPoints.length);
 	
 	if (loc){
-		postMessage({'points':svgPoints,'cities':svgCities});
+		postMessage({'points':svgPoints,'cities':svgCities,'jsPoints':JSON.stringify(jsPoints)});
 	}
 	else {
-		postMessage({'points':svgPoints,'cities':{}});
+		postMessage({'points':svgPoints,'cities':{},'jsPoints':''});
 	}
 	pointsOut = [];
 }
