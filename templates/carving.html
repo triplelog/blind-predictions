@@ -154,14 +154,23 @@ function updateSVG(svgPoints,svgCities) {
 	}
 	for (var id in svgCities){
 		var path = svgCities[id].path;
-		var pathD = 'M'+path[0][0]+","+path[0][1];
-		for (var ii=1;ii<path.length;ii++){
-			pathD += ' L'+path[ii][0]+","+path[ii][1];
+		if (path && path.length > 0){
+			var pathD = 'M'+path[0][0]+","+path[0][1];
+			for (var ii=1;ii<path.length;ii++){
+				pathD += ' L'+path[ii][0]+","+path[ii][1];
+			}
+			var el = document.getElementById(id);
+			el.setAttribute("d",pathD);
+			var el = document.getElementById(id+"-bg");
+			el.setAttribute("d",pathD);
 		}
-		var el = document.getElementById(id);
-		el.setAttribute("d",pathD);
-		var el = document.getElementById(id+"-bg");
-		el.setAttribute("d",pathD);
+		else {
+			var pathD = "";
+			var el = document.getElementById(id);
+			el.setAttribute("d",pathD);
+			var el = document.getElementById(id+"-bg");
+			el.setAttribute("d",pathD);
+		}
 	}
 	
 	
