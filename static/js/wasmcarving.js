@@ -54,7 +54,10 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
 		
-		var yeardiff = (jsPoints[i].yeard[0]*whitedemMul+jsPoints[i].yeard[1])-(jsPoints[i].yearr[0]*whiterepMul+jsPoints[i].yearr[1]);
+		//var yeardiff = (jsPoints[i].yeard[0]*whitedemMul+jsPoints[i].yeard[1])-(jsPoints[i].yearr[0]*whiterepMul+jsPoints[i].yearr[1]);
+		
+		
+		var yeardiff = parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16);
 		
 		jsPoints[i].yeardiff = yeardiff;
 		
