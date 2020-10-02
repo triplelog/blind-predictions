@@ -130,7 +130,9 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 				svgCities[city].path = [];
 				var opath = svgCities[city].opath
 				for (var ii=0;ii<opath.length;ii++){
-					svgCities[city].path.push(originalMap[opath[ii][0]*1000+opath[ii][1]]);
+					if (originalMap[opath[ii][0]*1000+opath[ii][1]]){
+						svgCities[city].path.push(originalMap[opath[ii][0]*1000+opath[ii][1]]);
+					}
 				}
 				
 			}
