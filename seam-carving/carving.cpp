@@ -87,7 +87,8 @@ struct Point {
 	int npix;
 	std::map<std::string,int> data;
 	void computeVal() {
-		val = (data["d16"]-data["r16"])*(data["d16"]-data["r16"]);
+		val = data["d16"]*11/8-data["r16"];
+		if (val < 0){ val *= -1;}
 	}
 };
 
