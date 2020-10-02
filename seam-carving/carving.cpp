@@ -87,7 +87,7 @@ struct Point {
 	int npix;
 	std::map<std::string,int> data;
 	void computeVal() {
-		val = data["d16"]-data["r16"];
+		val = (data["d16"]-data["r16"])*(data["d16"]-data["r16"]);
 	}
 };
 
@@ -5445,6 +5445,11 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].y = yy;
 				m.pixels[i][removeSeam[i]+1].y = yy;
 				m.pixels[i][removeSeam[i]+2].y = yy;
+				
+				if (computeVal){m.pixels[i][removeSeam[i]].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]-1].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]+1].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]+2].computeVal();}
 			}
 			else if (removeSeam[i]+1<m.height){
 				for(ii=m.height;ii>removeSeam[i]+2;ii--){
@@ -5487,6 +5492,10 @@ Map horizontalStitch(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].y = yy;
 				m.pixels[i][removeSeam[i]+1].y = yy;
 				m.pixels[i][removeSeam[i]+2].y = yy;
+				
+				if (computeVal){m.pixels[i][removeSeam[i]].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]+1].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]+2].computeVal();}
 			}
 			else {
 				for(ii=m.height;ii>removeSeam[i]+1;ii--){
@@ -5519,6 +5528,9 @@ Map horizontalStitch(Map m, int n, int l){
 				
 				m.pixels[i][removeSeam[i]].y = yy;
 				m.pixels[i][removeSeam[i]+1].y = yy;
+				
+				if (computeVal){m.pixels[i][removeSeam[i]].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]+1].computeVal();}
 			}
 		}
 		m.height++;
@@ -5641,6 +5653,11 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].y=yy;
 				m.pixels[removeSeam[ii]+1][ii].y=yy;
 				m.pixels[removeSeam[ii]+2][ii].y= yy;
+				
+				if (computeVal){m.pixels[removeSeam[ii]][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]-1][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]+1][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]+2][ii].computeVal();}
 			}
 			else if (removeSeam[ii]+1<m.width){
 				for(i=m.width;i>removeSeam[ii]+2;i--){
@@ -5683,6 +5700,10 @@ Map verticalStitch(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].y=yy;
 				m.pixels[removeSeam[ii]+1][ii].y=yy;
 				m.pixels[removeSeam[ii]+2][ii].y= yy;
+				
+				if (computeVal){m.pixels[removeSeam[ii]][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]+1][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]+2][ii].computeVal();}
 			}
 			else {
 				for(i=m.width;i>removeSeam[ii]+1;i--){
@@ -5716,6 +5737,9 @@ Map verticalStitch(Map m, int n, int l){
 				
 				m.pixels[removeSeam[ii]][ii].y=yy;
 				m.pixels[removeSeam[ii]+1][ii].y= yy;
+				
+				if (computeVal){m.pixels[removeSeam[ii]][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]+1][ii].computeVal();}
 			}
 			
 		}
@@ -5824,6 +5848,10 @@ Map horizontalSeam(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]-1].x= xx;
 				m.pixels[i][removeSeam[i]].y=yy;
 				m.pixels[i][removeSeam[i]-1].y= yy;
+				
+				if (computeVal){m.pixels[i][removeSeam[i]].computeVal();}
+				if (computeVal){m.pixels[i][removeSeam[i]-1].computeVal();}
+				
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
 					m.pixels[i][ii]=m.pixels[i][ii+1];
 				}
@@ -5853,6 +5881,8 @@ Map horizontalSeam(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]].val = v;
 				m.pixels[i][removeSeam[i]].x=xx;
 				m.pixels[i][removeSeam[i]].y=yy;
+				
+				if (computeVal){m.pixels[i][removeSeam[i]].computeVal();}
 				for(ii=removeSeam[i]+1;ii<m.height-1;ii++){
 					m.pixels[i][ii]=m.pixels[i][ii+1];
 				}
@@ -5882,6 +5912,8 @@ Map horizontalSeam(Map m, int n, int l){
 				m.pixels[i][removeSeam[i]-1].val = v;
 				m.pixels[i][removeSeam[i]-1].x =xx;
 				m.pixels[i][removeSeam[i]-1].y =yy;
+				
+				if (computeVal){m.pixels[i][removeSeam[i]-1].computeVal();}
 			}
 		}
 		m.height--;
@@ -5988,6 +6020,9 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]-1][ii].x= xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
 				m.pixels[removeSeam[ii]-1][ii].y= yy;
+				
+				if (computeVal){m.pixels[removeSeam[ii]][ii].computeVal();}
+				if (computeVal){m.pixels[removeSeam[ii]-1][ii].computeVal();}
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
 			
 					m.pixels[i][ii]=m.pixels[i+1][ii];
@@ -6019,6 +6054,7 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
+				if (computeVal){m.pixels[removeSeam[ii]][ii].computeVal();}
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
 			
 					m.pixels[i][ii]=m.pixels[i+1][ii];
@@ -6048,6 +6084,7 @@ Map verticalSeam(Map m, int n, int l){
 					yy = yy/v;
 				}
 				m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
+				if (computeVal){m.pixels[removeSeam[ii]-1][ii].computeVal();}
 				m.pixels[removeSeam[ii]-1][ii].x=xx;
 				m.pixels[removeSeam[ii]-1][ii].y=yy;
 			}
@@ -6071,6 +6108,8 @@ void initialRun(){
 	
 	killCarveV = false;
 	killCarveH = false;
+	
+	computeVal = true;
 	
 	auto a11 = std::chrono::high_resolution_clock::now();
 	auto a22 = std::chrono::high_resolution_clock::now();
