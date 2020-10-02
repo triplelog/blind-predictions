@@ -51,6 +51,7 @@
 			</div>
 			<input id="dSlider" type="range" min="-69" max="69" value="0" step="3"></input>
 			<input id="bSlider" type="range" min="-100" max="100" value="0" step="3"></input>
+			<div id="jsPoints"></div>
 		</div>
 
       </div>
@@ -156,7 +157,7 @@ function createSVG() {
 }
 function updateSVG(svgPoints,svgCities) {
 
-
+	document.getElementById("jsPoints").textContent = JSON.stringify(svgPoints);
 	for (var id in svgPoints){
 		svgElements[id].style.fill = svgPoints[id];
 	}
