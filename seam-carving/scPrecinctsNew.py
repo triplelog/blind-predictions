@@ -47,7 +47,7 @@ extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016
 
 bgdata = readblockgroup("demographics/CVAP_2013-2017_ACS_csv_files/BlockGr.csv","45")
 
-npixels = 200
+npixels = 199
 
 
 pixelMap = {}
@@ -209,6 +209,14 @@ def addExtra(extrafile,idx):
 			for ii in range(0,len(coords)):
 				x = round(npixels*(coords[ii][0]-bounds16['left'])/(bounds16['right']-bounds16['left']))
 				y = round(npixels*(bounds16['top']-coords[ii][1])/(bounds16['top']-bounds16['bottom']))
+				if x < 0:
+					x = 0
+				if x > npixels:
+					x = npixels
+				if y < 0:
+					y = 0;
+				if y > npixels:
+					y = npixels
 				if x != lastX or y != lastY:
 					path.append([x,y])
 					lastX = x
@@ -229,6 +237,8 @@ def addExtra(extrafile,idx):
 				pathJ += j
 
 			#print(soto)
+		if idx == 2:
+			continue
 		if idx == 0 and int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
 		if idx == 1 and int(shape16[i]['properties']['COUNTY']) not in counties:
