@@ -57,7 +57,7 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		//var yeardiff = (jsPoints[i].yeard[0]*whitedemMul+jsPoints[i].yeard[1])-(jsPoints[i].yearr[0]*whiterepMul+jsPoints[i].yearr[1]);
 		
 		
-		var yeardiff = parseInt(jsPoints[i].d16)*9/8-parseInt(jsPoints[i].r16);
+		var yeardiff = parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16);
 		
 		jsPoints[i].yeardiff = yeardiff;
 		
@@ -88,9 +88,9 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 	
 	var exCount = 0;
 	
-	var svgCities = {'city-0':{'name':"Columbia",'ox':50,'oy':40,'x':50,'y':40,'d':20000}};
-	svgCities['city-1']={'name':"Charleston",'ox':80,'oy':80,'x':80,'y':80,'d':20000};
-	svgCities['city-2']={'name':"Greenville",'ox':20,'oy':20,'x':20,'y':20,'d':20000};
+	var svgCities = {'city-0':{'name':"Columbia",'ox':100,'oy':80,'x':100,'y':80,'d':20000}};
+	svgCities['city-1']={'name':"Charleston",'ox':160,'oy':150,'x':160,'y':150,'d':20000};
+	svgCities['city-2']={'name':"Greenville",'ox':40,'oy':36,'x':40,'y':36,'d':20000};
 	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));

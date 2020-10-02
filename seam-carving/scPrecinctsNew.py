@@ -202,7 +202,7 @@ def addExtra(extrafile,idx):
 		if idx == 1 and int(shape16[i]['properties']['COUNTY']) not in counties:
 			continue
 		precincts16[shape16[i]['id']]={'x':(cent.x-bounds16['left'])/(bounds16['right']-bounds16['left']),'y':(bounds16['top']-cent.y)/(bounds16['top']-bounds16['bottom'])}
-		if i%3 > 0 and idx == 1:
+		if i%3 > 3 and idx == 1:
 			precincts16[shape16[i]['id']]['county']=1
 		else:
 			precincts16[shape16[i]['id']]['county']=0

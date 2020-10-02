@@ -93,11 +93,11 @@ document.getElementById('dSlider').addEventListener('input',updateNow);
 document.getElementById('bSlider').addEventListener('input',updateNow);
 var svgElements = {};
 function createSVG() {
-	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 101 101" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
+	var svg = '<svg style="width: 60vw;" viewBox="-1 -1 201 201" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 
 
-	for (var i=0;i<100;i++){
-		for (var ii=0;ii<100;ii++){
+	for (var i=0;i<200;i++){
+		for (var ii=0;ii<200;ii++){
 			svg += '<rect id="cell-'+i+'-'+ii+'" width="1.1" height="1.1" x="'+i+'" y="'+ii+'" style="fill: hsl(120,80%,100%);" stroke-width="0"></rect>';
 
 		}
@@ -108,8 +108,8 @@ function createSVG() {
 
 	svg += '</svg>';
 	document.getElementById('mapHolder').innerHTML = svg;
-	for (var i=0;i<100;i++){
-		for (var ii=0;ii<100;ii++){
+	for (var i=0;i<200;i++){
+		for (var ii=0;ii<200;ii++){
 			var el = document.getElementById('cell-'+i+'-'+ii);
 			svgElements['cell-'+i+'-'+ii]=el;
 		}
