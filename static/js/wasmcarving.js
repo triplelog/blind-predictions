@@ -86,7 +86,13 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		}
 		
 		if (loc){
-			originalMap[parseInt(jsPoints[i].ox)*1000+parseInt(jsPoints[i].oy)]=[parseInt(jsPoints[i].x),parseInt(jsPoints[i].y)]
+			var ox = parseInt(jsPoints[i].ox);
+			var oy = parseInt(jsPoints[i].oy);
+			if (ox < 0){ox = 0;}
+			if (ox > 200){ox = 200;}
+			if (oy < 0){oy = 0;}
+			if (oy > 200){oy = 200;}
+			originalMap[ox*1000+oy]=[parseInt(jsPoints[i].x),parseInt(jsPoints[i].y)]
 		}
 		
 	}
@@ -147,10 +153,16 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		if (loc){
 			for (city in svgCities){
 				svgCities[city].path = [];
-				var opath = svgCities[city].opath
+				var opath = svgCities[city].opath;
 				for (var ii=0;ii<opath.length;ii++){
-					if (originalMap[opath[ii][0]*1000+opath[ii][1]]){
-						svgCities[city].path.push(originalMap[opath[ii][0]*1000+opath[ii][1]]);
+					var ox = opath[ii][0];
+					var oy = opath[ii][1];
+					if (ox < 0){ox = 0;}
+					if (ox > 200){ox = 200;}
+					if (oy < 0){oy = 0;}
+					if (oy > 200){oy = 200;}
+					if (originalMap[ox*1000+oy]){
+						svgCities[city].path.push(originalMap[ox*1000+oy]);
 					}
 				}
 				
