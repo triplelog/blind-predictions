@@ -211,7 +211,7 @@ def addExtra(extrafile,idx):
 					path.append([x,y])
 					lastX = x
 					lastY = y
-			if shape16[i]['properties']['NAME'] == "Columbia":
+			if shape16[i]['properties']['NAME'] == "Greenville":
 				print(path)
 		if idx == 0 and int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
