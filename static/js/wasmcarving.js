@@ -107,8 +107,13 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 			lum = 100-25*(-1*yeardiff)/avgP;
 		}
 
-
+		
 		if (lum<25){exCount++; lum = 25;}
+		
+		if (jsPoints[i].county > 0){
+			hue = 120;
+			
+		}
 		
 		var id = 'cell-'+jsPoints[i].x+'-'+jsPoints[i].y;
 		svgPoints[id]='hsl('+hue+',80%,'+lum+'%)';

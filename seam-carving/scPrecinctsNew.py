@@ -180,8 +180,7 @@ def addExtra(extrafile,idx):
 
 
 	for i in range(0,len(shape16)):
-		if i%3 > 3:
-			continue
+		
 		if shape16[i]['geometry']['type'] == "Polygon":
 			coords = shape16[i]['geometry']['coordinates'][0]
 		else:
@@ -203,6 +202,10 @@ def addExtra(extrafile,idx):
 		if idx == 1 and int(shape16[i]['properties']['COUNTY']) not in counties:
 			continue
 		precincts16[shape16[i]['id']]={'x':(cent.x-bounds16['left'])/(bounds16['right']-bounds16['left']),'y':(bounds16['top']-cent.y)/(bounds16['top']-bounds16['bottom'])}
+		if i%3 > 0 and idx == 1:
+			precincts16[shape16[i]['id']]['county']=1
+		else:
+			precincts16[shape16[i]['id']]['county']=0
 		for ii in extradatas[extrafile].keys():
 			precincts16[shape16[i]['id']][ii]=shape16[i]['properties'][extradatas[extrafile][ii]]
 			
@@ -216,10 +219,14 @@ def addExtra(extrafile,idx):
 		try:
 			for i in extradatas[extrafile].keys():
 				pixelMap[roundedX*1000+roundedY][i]+=int(precincts16[precinct][i])
+			if pixelMap[roundedX*1000+roundedY]['county']<precincts16[precinct]['county']:
+				pixelMap[roundedX*1000+roundedY]['county']=precincts16[precinct]['county']
 		except:
 			try:
 				for i in extradatas[extrafile].keys():
 					pixelMap[roundedX*1000+roundedY][i]=int(precincts16[precinct][i])
+				if pixelMap[roundedX*1000+roundedY]['county']<precincts16[precinct]['county']:
+					pixelMap[roundedX*1000+roundedY]['county']=precincts16[precinct]['county']
 			except:
 			
 				rXY = -1
@@ -250,14 +257,18 @@ def addExtra(extrafile,idx):
 					for i in extradatas.keys():
 						for ii in extradatas[i].keys():
 							pixelMap[rXY][ii]=0
-					pixelMap[rXY]['county']=0
+					pixelMap[rXY]['county']=precincts16[precinct]['county']
 			
 				try:
 					for i in extradatas[extrafile].keys():
 						pixelMap[rXY][i]+=int(precincts16[precinct][i])
+					if pixelMap[rXY]['county']<precincts16[precinct]['county']:
+						pixelMap[rXY]['county']=precincts16[precinct]['county']
 				except:
 					for i in extradatas[extrafile].keys():
 						pixelMap[rXY][i]=int(precincts16[precinct][i])
+					if pixelMap[rXY]['county']<precincts16[precinct]['county']:
+						pixelMap[rXY]['county']=precincts16[precinct]['county']
 					
 	print(missingP)
 
