@@ -47,7 +47,7 @@ extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016
 
 bgdata = readblockgroup("demographics/CVAP_2013-2017_ACS_csv_files/BlockGr.csv","45")
 
-
+npixels = 200
 
 
 pixelMap = {}
@@ -120,8 +120,8 @@ def addMain(extrafile):
 	missingP = 0
 	for precinct in precincts16:
 
-		roundedX = round(precincts16[precinct]['x']*100)
-		roundedY = round(precincts16[precinct]['y']*100)
+		roundedX = round(precincts16[precinct]['x']*npixels)
+		roundedY = round(precincts16[precinct]['y']*npixels)
 		try:
 			for ii in maindatas.keys():
 				pixelMap[roundedX*1000+roundedY][ii]+=int(precincts16[precinct][ii])
@@ -129,8 +129,8 @@ def addMain(extrafile):
 			pixelMap[roundedX*1000+roundedY]={}
 			for ii in maindatas.keys():
 				pixelMap[roundedX*1000+roundedY][ii]=int(precincts16[precinct][ii])
-			pixelMap[roundedX*1000+roundedY]['x']=round(precincts16[precinct]['x']*100)
-			pixelMap[roundedX*1000+roundedY]['y']=round(precincts16[precinct]['y']*100)
+			pixelMap[roundedX*1000+roundedY]['x']=round(precincts16[precinct]['x']*npixels)
+			pixelMap[roundedX*1000+roundedY]['y']=round(precincts16[precinct]['y']*npixels)
 			pixelMap[roundedX*1000+roundedY]['county']=0
 			for i in extradatas.keys():
 				for ii in extradatas[i].keys():
@@ -214,8 +214,8 @@ def addExtra(extrafile,idx):
 	missingP = 0
 	for precinct in precincts16:
 
-		roundedX = round(precincts16[precinct]['x']*100)
-		roundedY = round(precincts16[precinct]['y']*100)
+		roundedX = round(precincts16[precinct]['x']*npixels)
+		roundedY = round(precincts16[precinct]['y']*npixels)
 		try:
 			for i in extradatas[extrafile].keys():
 				pixelMap[roundedX*1000+roundedY][i]+=int(precincts16[precinct][i])
@@ -232,10 +232,10 @@ def addExtra(extrafile,idx):
 				rXY = -1
 				minD = 100000
 				for i in range(-2,3):
-					if roundedX+i<0 or roundedX+i>100:
+					if roundedX+i<0 or roundedX+i>npixels:
 						continue
 					for ii in range(-2,3):
-						if roundedY+i<0 or roundedY+ii>100:
+						if roundedY+i<0 or roundedY+ii>npixels:
 							continue
 						try:
 							p = pixelMap[(roundedX+i)*1000+roundedY+ii]
@@ -250,8 +250,8 @@ def addExtra(extrafile,idx):
 					pixelMap[rXY]={}
 					pixelMap[rXY]['d']=0
 					pixelMap[rXY]['r']=0
-					pixelMap[rXY]['x']=round(precincts16[precinct]['x']*100)
-					pixelMap[rXY]['y']=round(precincts16[precinct]['y']*100)
+					pixelMap[rXY]['x']=round(precincts16[precinct]['x']*npixels)
+					pixelMap[rXY]['y']=round(precincts16[precinct]['y']*npixels)
 					for ii in maindatas.keys():
 						pixelMap[rXY][ii]=0
 					for i in extradatas.keys():
@@ -303,6 +303,10 @@ for pixel in pixelMap.keys():
 	if pixels == 1000:
 		file1.writelines(['\n}\n'])
 		file1.writelines(['void scPoints1(){\n'])
+		file1.writelines(['\n'])
+	if pixels == 2000:
+		file1.writelines(['\n}\n'])
+		file1.writelines(['void scPoints2(){\n'])
 		file1.writelines(['\n'])
 print(pixels)
 file1.writelines(['np = '+str(pixels)+';\n}\n'])
