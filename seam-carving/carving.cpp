@@ -87,7 +87,7 @@ struct Point {
 	int npix;
 	std::map<std::string,int> data;
 	void computeVal() {
-		val = data["d16"]*11/8-data["r16"];
+		val = data["d16"]-data["r16"];
 		if (val < 0){ val *= -1;}
 	}
 };
@@ -6055,6 +6055,7 @@ Map verticalSeam(Map m, int n, int l){
 				m.pixels[removeSeam[ii]][ii].val+=m.pixels[removeSeam[ii]+1][ii].val;
 				m.pixels[removeSeam[ii]][ii].x=xx;
 				m.pixels[removeSeam[ii]][ii].y=yy;
+				
 				if (computeVal){m.pixels[removeSeam[ii]][ii].computeVal();}
 				for(i=removeSeam[ii]+1;i<m.width-1;i++){
 			
@@ -6084,6 +6085,7 @@ Map verticalSeam(Map m, int n, int l){
 					yy += v/2;
 					yy = yy/v;
 				}
+				
 				m.pixels[removeSeam[ii]-1][ii].val+=m.pixels[removeSeam[ii]][ii].val;
 				if (computeVal){m.pixels[removeSeam[ii]-1][ii].computeVal();}
 				m.pixels[removeSeam[ii]-1][ii].x=xx;
