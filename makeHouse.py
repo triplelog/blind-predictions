@@ -38,7 +38,7 @@ allHouse = readcsv("data/1976-2016-house.csv")
 house2018 = readcsv("data/2018-house.csv")[1:]
 allPres = readcsv("data/2008-2016-house-pres.csv")[1:]
 predPres = readcsv("data/economist2020.csv")[1:]
-
+predHouse = readcsv("data/house_polls.csv")[1:]
 
 districts = {}
 
@@ -108,6 +108,75 @@ for cd in house2018:
 	house18ELO = (house18-50)*20
 	districts[cdID]['house18']= house18ELO
 
+currentPoll = {'raceID':''}
+
+polls2020 = {}
+for i in range(0,len(predHouse)):
+	poll = predHouse[i]
+	qid = poll[0]
+	cdID = poll[3]+"-"+poll[17]
+	endDate = poll[20]
+	if poll[21] != "11/3/20":
+		continue
+	partisan = poll[24]
+	if partisan != "":
+		continue
+	raceID = poll[32]
+	candParty =poll[36]
+	if candParty != "DEM" and candParty != "REP":
+		continue
+	candPct = poll[37]
+	skipPoll = False
+	if currentPoll['raceID'] == '':
+		currentPoll['raceID']=raceID
+		currentPoll['cdID']=cdID
+		currentPoll[candParty]=candPct
+		for ii in range(i+1,i+20):
+			if ii >= len(predHouse):
+				break
+			npoll = predHouse[ii]
+			nqid = npoll[0]
+			
+			if nqid != qid:
+				print(nqid)
+				print(qid)
+				break
+			print(currentPoll)
+			ncandParty = npoll[36]
+			if ncandParty != "DEM" and ncandParty != "REP":
+				continue
+			
+			try:
+				old = currentPoll[ncandParty]
+				currentPoll = {'raceID':''}
+				skipPoll = True
+				break
+			except:
+				currentPoll[ncandParty]=npoll[37]
+		i = ii-1
+		if not skipPoll:
+			try:
+				dem = float(currentPoll['DEM'])
+				rep = float(currentPoll['REP'])
+				try:
+					polls2020[cdID]['DEM']+=dem
+					polls2020[cdID]['REP']+=rep
+					polls2020[cdID]['n']+=1
+				except:
+					polls2020[cdID]={}
+					polls2020[cdID]['DEM']=dem
+					polls2020[cdID]['REP']=rep
+					polls2020[cdID]['n']=1
+			except:
+				pass
+			currentPoll = {'raceID':''}
+
+					
+			
+print(polls2020)
+	
+	
+	
 expDemSeats = 0
 actDemSeats = 0
 presExpDemSeats = 0
