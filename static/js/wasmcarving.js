@@ -97,6 +97,19 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		
 	}
 	
+	for (var i=0;i<200;i++){
+		for (var ii=0;ii<200;ii++){
+			if (originalMap[i*1000+ii]){continue;}
+			for (var iii=-2;iii<3;iii++){
+				for (var iiii=-2;iiii<3;iiii++){
+					if (originalMap[(i+iii)*1000+ii+iiii]){
+						originalMap[i*1000+ii] = originalMap[(i+iii)*1000+ii+iiii];
+						break;
+					}
+				}
+			}
+		}
+	}
 	var avgP = sumP/jsPoints.length;
 	
 	var exCount = 0;
