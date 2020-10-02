@@ -73,7 +73,7 @@ int horzThreads;
 int np;
 int nd;
 std::vector<std::string> datas;
-
+bool computeVal;
 extern "C" {
 
 
@@ -86,6 +86,9 @@ struct Point {
 	int county;
 	int npix;
 	std::map<std::string,int> data;
+	void computeVal() {
+		val = data["d16"]-data["r16"];
+	}
 };
 
 std::map<int,Point> points;
@@ -6224,6 +6227,7 @@ void initialRun(){
 					s = datas[iii];
 					pixels[i][ii].data[s] += points[pixelMap[i][ii]].data[s]*100/points[pixelMap[i][ii]].npix;
 				}
+				if (computeVal){pixels[i][ii].computeVal();}
 				pixels[i][ii].x = points[pixelMap[i][ii]].x;
 				pixels[i][ii].y = points[pixelMap[i][ii]].y;
 				pixels[i][ii].county = points[pixelMap[i][ii]].county;
@@ -6258,6 +6262,7 @@ void initialRun(){
 					s = datas[iii];
 					pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
 				}
+				if (computeVal){pixels[i][ii].computeVal();}
 				pixels[i][ii].x = points[minI].x;
 				pixels[i][ii].y = points[minI].y;
 				pixels[i][ii].county = points[minI].county;
@@ -6291,6 +6296,7 @@ void initialRun(){
 					s = datas[iii];
 					pixels[i][ii].data[s] += points[minI].data[s]*100/points[minI].npix;
 				}
+				if (computeVal){pixels[i][ii].computeVal();}
 				pixels[i][ii].x = points[minI].x;
 				pixels[i][ii].y = points[minI].y;
 				pixels[i][ii].county = points[minI].county;
