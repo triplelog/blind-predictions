@@ -43,7 +43,7 @@ for i in range(0,100):
 	counties.append(i)
 maindatas = {"val":'Total',"black":'Black or African American Alone',"white":'White Alone'}
 
-extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'},"tl_2019_45_place/tl_2019_45_place.shp":{}}
+extradatas = {"sc_2018/sc_2018.shp":{"r":'G18GOVDSMI',"d":'G18GOVRMCM'},"sc_2016/sc_2016.shp":{"d16":'G16PREDCLI',"r16":'G16PRERTRU'},"tl_2018_us_cbsa/tl_2018_us_cbsa.shp":{}}
 
 bgdata = readblockgroup("demographics/CVAP_2013-2017_ACS_csv_files/BlockGr.csv","45")
 
@@ -182,7 +182,8 @@ def addExtra(extrafile,idx):
 	print(bounds16)
 
 
-
+	cityID = 0
+	pathJ = ""
 	for i in range(0,len(shape16)):
 		
 		if shape16[i]['geometry']['type'] == "Polygon":
@@ -200,6 +201,7 @@ def addExtra(extrafile,idx):
 			#print(coords)
 			print(shape16[i]['geometry']['type'])
 		cent = poly.centroid
+		
 		if idx == 2:
 			path = []
 			lastX = -1
@@ -211,8 +213,22 @@ def addExtra(extrafile,idx):
 					path.append([x,y])
 					lastX = x
 					lastY = y
-			if shape16[i]['properties']['NAME'] == "Greenville":
-				print(path)
+			#if shape16[i]['properties']['NAME'] == "Greenville":
+			#	print(path)
+			name = shape16[i]['properties']['NAME']
+			index = name.find(",")
+			state = ""
+			state2 = ""
+			if index > 0:
+				state = name[index+2:index+4]
+				if len(name)>index+6:
+					state2 = name[index+5:index+7]
+			if state == "SC" or state2 == "SC":
+				j = 'svgCities["city-'+str(cityID)+'"]={"name":"'+shape16[i]['properties']['NAME']+'", "opath":'+str(path)+',"path":[]};\n'
+				cityID+=1
+				pathJ += j
+
+			#print(soto)
 		if idx == 0 and int(shape16[i]['properties']['COUNTYFP']) not in counties:
 			continue
 		if idx == 1 and int(shape16[i]['properties']['COUNTY']) not in counties:
@@ -225,7 +241,7 @@ def addExtra(extrafile,idx):
 		for ii in extradatas[extrafile].keys():
 			precincts16[shape16[i]['id']][ii]=shape16[i]['properties'][extradatas[extrafile][ii]]
 			
-
+	print(pathJ)
 		
 	missingP = 0
 	for precinct in precincts16:
