@@ -167,6 +167,7 @@ function updateSVG(svgPoints,svgCities) {
 			for (var ii=1;ii<path.length;ii++){
 				pathD += ' L'+path[ii][0]+","+path[ii][1];
 			}
+			pathD += " Z";
 			var el = document.getElementById(id);
 			el.setAttribute("d",pathD);
 			var el = document.getElementById(id+"-bg");

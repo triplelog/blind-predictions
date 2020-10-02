@@ -3,7 +3,7 @@ function cpp_ready() {
 	postMessage("ready");
 	
 }
-
+var originalMap = {};
 function displayNow(dAdv=1,bAdv=1,loc=true) {
 	var maxP = 0; var minP = 1000000000; var sumP = 0;
 	var maxD = 0;
@@ -51,7 +51,7 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 	var whitedemMul = (sums[8]-sums[6])/sums[8];
 	var whiterepMul = (sums[9]-sums[7])/sums[9];
 	
-	var originalMap = {};
+	if (loc){originalMap = {};}
 	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
@@ -97,14 +97,16 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		
 	}
 	
-	for (var i=0;i<200;i++){
-		for (var ii=0;ii<200;ii++){
-			if (originalMap[i*1000+ii]){continue;}
-			for (var iii=-2;iii<3;iii++){
-				for (var iiii=-2;iiii<3;iiii++){
-					if (originalMap[(i+iii)*1000+ii+iiii]){
-						originalMap[i*1000+ii] = originalMap[(i+iii)*1000+ii+iiii];
-						break;
+	if (loc){
+		for (var i=0;i<=200;i++){
+			for (var ii=0;ii<=200;ii++){
+				if (originalMap[i*1000+ii]){continue;}
+				for (var iii=-2;iii<3;iii++){
+					for (var iiii=-2;iiii<3;iiii++){
+						if (originalMap[(i+iii)*1000+ii+iiii]){
+							originalMap[i*1000+ii] = originalMap[(i+iii)*1000+ii+iiii];
+							break;
+						}
 					}
 				}
 			}
@@ -167,6 +169,13 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 			for (city in svgCities){
 				svgCities[city].path = [];
 				var opath = svgCities[city].opath;
+				if (!opath || opath.length < 2){
+					continue;
+				}
+				var oldx = -1;
+				var oldy = -1;
+				var oldox = -1;
+				var oldoy = -1;
 				for (var ii=0;ii<opath.length;ii++){
 					var ox = opath[ii][0];
 					var oy = opath[ii][1];
@@ -175,7 +184,27 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 					if (oy < 0){oy = 0;}
 					if (oy > 200){oy = 200;}
 					if (originalMap[ox*1000+oy]){
-						svgCities[city].path.push(originalMap[ox*1000+oy]);
+						var nx = originalMap[ox*1000+oy][0];
+						var ny = originalMap[ox*1000+oy][1];
+						var newd = (nx-oldx)*(nx-oldx)+(ny-oldy)*(ny-oldy);
+						if (oldx < 0){
+							svgCities[city].path.push([nx,ny]);
+						}
+						else if (newd < 10){
+							svgCities[city].path.push([nx,ny]);
+						}
+						else {
+							var oldd = (ox-oldox)*(ox-oldox)+(oy-oldoy)*(oy-oldoy);
+							if (newd < 10 + oldd*10){
+								svgCities[city].path.push([nx,ny]);
+							}
+						}
+						
+						
+						oldx = nx;
+						oldy = ny;
+						oldox = ox;
+						oldoy = oy;
 					}
 				}
 				
