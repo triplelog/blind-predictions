@@ -7655,5 +7655,35 @@ points[2547]=p;}
 if (1==1){ Point p;
 p.x = 3; p.y = 29; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 27; p.data["r16"] = 270;
 points[2548]=p;}
-np = 2549;
+if (1==1){ Point p;
+p.x = 87; p.y = 160; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2549]=p;}
+if (1==1){ Point p;
+p.x = 85; p.y = 56; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2550]=p;}
+if (1==1){ Point p;
+p.x = 137; p.y = 72; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2551]=p;}
+if (1==1){ Point p;
+p.x = 162; p.y = 134; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2552]=p;}
+if (1==1){ Point p;
+p.x = 153; p.y = 121; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2553]=p;}
+if (1==1){ Point p;
+p.x = 155; p.y = 140; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2554]=p;}
+if (1==1){ Point p;
+p.x = 88; p.y = 133; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2555]=p;}
+if (1==1){ Point p;
+p.x = 80; p.y = 9; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2556]=p;}
+if (1==1){ Point p;
+p.x = 61; p.y = 35; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2557]=p;}
+if (1==1){ Point p;
+p.x = 119; p.y = 154; p.county = 0; p.val = 0; p.data["black"] = 0; p.data["white"] = 0; p.data["r"] = 0; p.data["d"] = 0; p.data["d16"] = 0; p.data["r16"] = 0;
+points[2558]=p;}
+np = 2559;
 }

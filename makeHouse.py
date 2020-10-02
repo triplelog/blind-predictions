@@ -114,8 +114,28 @@ polls2020 = {}
 for i in range(0,len(predHouse)):
 	poll = predHouse[i]
 	qid = poll[0]
-	cdID = poll[3]+"-"+poll[17]
+	stateName = poll[3]
+	stateAbbrev = "?"
+	for state in stateData.keys():
+		if stateData[state]['name']==stateName:
+			stateAbbrev = stateData[state]['abbrev'].lower()
+
+	cdID = stateAbbrev+"-"+poll[17]
+	try:
+		d = districts[cdID]
+	except:
+		if poll[17] == "1":
+			cdID = stateAbbrev+"-0"
+			try:
+				d = districts[cdID]
+			except:
+				if stateAbbrev != "?":
+					print(cdID)
+				continue
+		
 	endDate = poll[20]
+	if endDate[len(endDate)-2:] != "20":
+		continue
 	if poll[21] != "11/3/20":
 		continue
 	partisan = poll[24]
@@ -138,10 +158,7 @@ for i in range(0,len(predHouse)):
 			nqid = npoll[0]
 			
 			if nqid != qid:
-				print(nqid)
-				print(qid)
 				break
-			print(currentPoll)
 			ncandParty = npoll[36]
 			if ncandParty != "DEM" and ncandParty != "REP":
 				continue
@@ -171,9 +188,38 @@ for i in range(0,len(predHouse)):
 				pass
 			currentPoll = {'raceID':''}
 
-					
-			
-print(polls2020)
+sumD = 0		
+sumN = 0
+
+expDemPolls20 = 0
+for poll2020 in polls2020:
+	cdID = poll2020
+	d20 = polls2020[poll2020]['DEM']/(polls2020[poll2020]['DEM']+polls2020[poll2020]['REP'])
+	demelo = (d20-.5)*2000
+	demProb = 1.0/(1.0+math.pow(10.0,(-1*demelo)/150))
+	expDemPolls20 += demProb
+
+adjD = 0
+expDemPres16 = 0
+print(expDemPolls20)
+for i in range(0,10000):	
+	if expDemPres16 < expDemPolls20-.5:
+		adjD += 1
+	elif expDemPres16 > expDemPolls20 + .5:
+		adjD -= 1
+	else:
+		break
+	expDemPres16 = 0
+	for poll2020 in polls2020:
+		cdID = poll2020
+		d16 = districts[cdID]['pres16']/100
+		demelo = (d16-.5)*2000+adjD
+		demProb = 1.0/(1.0+math.pow(10.0,(-1*demelo)/150))
+		expDemPres16 += demProb
+	print(adjD)
+	print(expDemPres16)
+
+
 	
 	
 	

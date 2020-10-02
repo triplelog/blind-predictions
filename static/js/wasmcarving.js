@@ -50,6 +50,9 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 	}
 	var whitedemMul = (sums[8]-sums[6])/sums[8];
 	var whiterepMul = (sums[9]-sums[7])/sums[9];
+	
+	var originalMap = {};
+	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
 		//var yeardiff = (sums[2])/(sums[0])*(parseInt(jsPoints[i].d)) - (parseInt(jsPoints[i].d16));
@@ -82,15 +85,19 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 			}
 		}
 		
+		if (loc){
+			originalMap[parseInt(jsPoints[i].ox)*1000+parseInt(jsPoints[i].oy)]=[parseInt(jsPoints[i].x),parseInt(jsPoints[i].y)]
+		}
+		
 	}
 	
 	var avgP = sumP/jsPoints.length;
 	
 	var exCount = 0;
 	
-	var svgCities = {'city-0':{'name':"Columbia",'ox':100,'oy':80,'x':100,'y':80,'d':20000}};
-	svgCities['city-1']={'name':"Charleston",'ox':160,'oy':150,'x':160,'y':150,'d':20000};
-	svgCities['city-2']={'name':"Greenville",'ox':40,'oy':36,'x':40,'y':36,'d':20000};
+	var svgCities = {'city-0':{'name':"Columbia", 'opath':[[90, 70], [90, 69], [90, 70], [90, 69], [90, 70], [90, 69], [90, 70], [90, 69], [91, 69], [91, 70], [90, 70], [91, 70], [90, 70], [91, 70], [90, 70], [91, 70], [91, 69], [92, 69], [92, 68], [91, 68], [91, 69], [91, 68], [91, 67], [91, 68], [92, 68], [91, 68], [91, 69], [91, 68], [92, 68], [92, 69], [93, 69], [93, 70], [93, 71], [94, 71], [94, 72], [94, 73], [94, 74], [95, 74], [94, 74], [95, 74], [95, 73], [95, 72], [95, 73], [95, 72], [96, 72], [96, 73], [96, 72], [95, 72], [95, 71], [95, 72], [96, 72], [96, 71], [95, 71], [96, 71], [95, 71], [96, 71], [95, 71], [96, 71], [96, 72], [97, 72], [96, 72], [97, 72], [97, 71], [98, 71], [98, 70], [97, 71], [97, 70], [98, 70], [97, 70], [98, 70], [98, 69], [98, 70], [98, 69], [98, 70], [99, 70], [98, 70], [98, 71], [98, 72], [97, 72], [98, 72], [97, 72], [98, 72], [97, 72], [98, 72], [97, 72], [97, 73], [98, 73], [97, 73], [98, 73], [98, 74], [97, 74], [97, 75], [98, 75], [99, 75], [99, 74], [99, 75], [99, 74], [100, 74], [99, 74], [100, 74], [100, 73], [100, 72], [101, 72], [101, 71], [102, 71], [102, 70], [102, 71], [102, 70], [103, 70], [102, 70], [103, 70], [103, 69], [103, 70], [103, 69], [103, 70], [103, 69], [103, 70], [104, 70], [103, 70], [103, 69], [104, 69], [104, 70], [104, 69], [105, 69], [104, 69], [104, 68], [104, 67], [104, 68], [104, 67], [105, 67], [106, 67], [106, 68], [105, 68], [106, 68], [105, 68], [105, 69], [105, 68], [105, 69], [106, 69], [107, 69], [107, 70], [108, 70], [108, 71], [109, 71], [109, 72], [110, 72], [110, 73], [110, 74], [110, 75], [109, 75], [108, 75], [107, 75], [106, 75], [106, 76], [105, 76], [104, 76], [103, 76], [102, 76], [102, 77], [103, 77], [102, 77], [102, 76], [102, 77], [101, 77], [102, 77], [101, 77], [101, 78], [100, 78], [101, 78], [100, 78], [100, 77], [100, 78], [100, 77], [100, 78], [100, 79], [100, 78], [100, 79], [101, 79], [100, 79], [99, 79], [98, 79], [99, 79], [99, 80], [98, 80], [98, 79], [98, 80], [98, 79], [97, 79], [98, 79], [98, 78], [98, 79], [98, 78], [98, 77], [98, 78], [98, 77], [98, 78], [97, 78], [97, 77], [96, 77], [97, 77], [97, 78], [96, 78], [97, 78], [96, 78], [96, 79], [96, 78], [96, 77], [95, 77], [95, 76], [95, 75], [94, 75], [93, 75], [93, 74], [92, 74], [93, 74], [92, 74], [93, 74], [93, 73], [93, 74], [93, 73], [93, 74], [94, 74], [93, 74], [94, 74], [94, 75], [94, 74], [94, 73], [94, 72], [93, 72], [92, 72], [93, 72], [92, 72], [93, 72], [92, 72], [93, 72], [93, 71], [92, 71], [92, 72], [92, 71], [91, 71], [92, 71], [91, 71], [91, 70], [91, 71], [90, 71], [90, 72], [90, 71], [90, 70], [90, 71], [90, 70]],'path':[]}};
+	
+	
 	
 	for (var i=0;i<jsPoints.length;i++){
 		//var yeardiff = (sums[2]+sums[3])/(sums[0]+sums[1])*(parseInt(jsPoints[i].d)-parseInt(jsPoints[i].r)) - (parseInt(jsPoints[i].d16)-parseInt(jsPoints[i].r16));
@@ -120,21 +127,12 @@ function displayNow(dAdv=1,bAdv=1,loc=true) {
 		
 		if (loc){
 			for (city in svgCities){
-				var ox = parseInt(jsPoints[i].ox);
-				var oy = parseInt(jsPoints[i].oy);
-				var d = svgCities[city].d;
-				if (ox < svgCities[city].ox + 10 && ox > svgCities[city].ox - 10){
-					d = (ox-svgCities[city].ox)*(ox-svgCities[city].ox)+(oy-svgCities[city].oy)*(oy-svgCities[city].oy);
+				svgCities[city].path = [];
+				var opath = svgCities[city].opath
+				for (var ii=0;ii<opath.length;ii++){
+					svgCities[city].path.push(originalMap[opath[ii][0]*1000+opath[ii][1]]);
 				}
-				else if (oy < svgCities[city].oy + 10 && oy > svgCities[city].oy - 10){
-					d = (ox-svgCities[city].ox)*(ox-svgCities[city].ox)+(oy-svgCities[city].oy)*(oy-svgCities[city].oy);
-				}
-			
-				if (d< svgCities[city].d){
-					svgCities[city].d = d;
-					svgCities[city].x = jsPoints[i].x;
-					svgCities[city].y = jsPoints[i].y;
-				}
+				
 			}
 		}
 	}
