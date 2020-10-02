@@ -8787,7 +8787,8 @@ void initialRun(){
 				points[minI].npix++;
 				continue;
 			}
-			/*
+			minP = 1000000000;
+			minI = 0;
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
@@ -8795,7 +8796,7 @@ void initialRun(){
 					minI = iii;
 				}
 			}
-			points[minI].npix++;*/
+			points[minI].npix++;
 		}
 	}
 	
@@ -8890,7 +8891,9 @@ void initialRun(){
 				}
 				continue;
 			}
-			/*
+			
+			minP = 1000000000;
+			minI = 0;
 			for (iii=0;iii<np;iii++){
 				d = (points[iii].x-i)*(points[iii].x-i)+(points[iii].y-ii)*(points[iii].y-ii);
 				if (d < minP){
@@ -8905,7 +8908,9 @@ void initialRun(){
 			}
 			pixels[i][ii].x = points[minI].x;
 			pixels[i][ii].y = points[minI].y;
-			pixels[i][ii].county = points[minI].county;*/
+			if (pixels[i][ii].county < points[minI].county){
+				pixels[i][ii].county = points[minI].county;
+			}
 		}
 	}
 	
