@@ -216,9 +216,10 @@ for i in range(0,10000):
 		demelo = (d16-.5)*2000+adjD
 		demProb = 1.0/(1.0+math.pow(10.0,(-1*demelo)/150))
 		expDemPres16 += demProb
-	print(adjD)
-	print(expDemPres16)
-
+	
+print(adjD)
+print(expDemPres16)
+houseData['HH20']=houseData['P16']+adjD/10
 
 	
 	
@@ -505,13 +506,13 @@ for cd in allPres:
 		cdID = stateAbbrev+'-'+str(int(cd[1][3:]))
 	state = houseData["states"][stateAbbrev.upper()]
 	district = state["districts"][cdID]
-	natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2
+	natadv = ((houseData["HP20"]+houseData["HH20"])/2+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2
 	stadv = natadv + (state["LP20"]+state["L16"])/2
 	disadv = stadv + (district["HL18"]+district["HL16"]+2*district["L16"])/4
 	#print(cdID,disadv)
 	
 	preselo = disadv*10
-	expDemSeats += 1.0/(1.0+math.pow(10.0,-1*preselo/75))
+	expDemSeats += 1.0/(1.0+math.pow(10.0,-1*preselo/150))
 	
 line += '{% endblock %}'
 file1.writelines([line])
