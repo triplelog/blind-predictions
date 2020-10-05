@@ -175,7 +175,7 @@ void makePrediction(int year, int n) {
 			double rr = r;
 			rr /= 1024;
 			//convert rr to vote percentage
-			#int eloR = predictionToElo(rr,ii);
+			//int eloR = predictionToElo(rr,ii);
 			
 			int rPres = rand() % 1024;
 			double rrPres = rPres;
