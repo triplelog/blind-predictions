@@ -217,10 +217,10 @@ void makePrediction(int year, int n) {
 			}
 			
 			if (eloState < 0){
-				eloState = -1*round(pow(-1*eloState,.75-ii/102));
+				eloState = -1*round(pow(-1*eloState,.7-ii/102));
 			}
 			else {
-				eloState = round(pow(eloState,.75-ii/102));
+				eloState = round(pow(eloState,.7-ii/102));
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
@@ -371,7 +371,7 @@ void initialRun(){
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlationsInt[i][ii] = round(pow(correlations[i][ii],3)*100);
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],2)*100);
 		}
 	}
 	states = createStates();
