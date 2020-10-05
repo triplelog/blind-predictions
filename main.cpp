@@ -15,8 +15,8 @@
 #include "data.cpp"
 
 
-
-#include <sol/sol.hpp>
+#include "lua-5.4.0/src/lua.hpp"
+#include "sol/sol.hpp"
 
 #include <emscripten/emscripten.h>
 
