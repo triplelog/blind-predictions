@@ -233,7 +233,7 @@ void makePrediction(int year, int n) {
 				}
 				int c = correlationsInt[thisstate][iii];
 				if (eloState <= -10 || eloState >= 10 || c >= 10 ){
-					elonew[iii]+=eloState*c/200;
+					elonew[iii]+=eloState*c/300;
 				}
 				iii++;
 			}
