@@ -15,8 +15,11 @@
 #include "data.cpp"
 
 
-#include "lua-5.4.0/src/lua.hpp"
-
+extern "C" {
+#include "lua.h"
+#include "lauxlib.h"
+#include "lualib.h"
+}
 #include <emscripten/emscripten.h>
 
 EM_JS(void, console_log, (int x), {
