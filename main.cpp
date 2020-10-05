@@ -175,16 +175,16 @@ void makePrediction(int year, int n) {
 			double rr = r;
 			rr /= 1024;
 			//convert rr to vote percentage
-			//int eloR = predictionToElo(rr,ii);
+			int eloState = predictionToElo(rr,ii);
 			
 			int rPres = rand() % 1024;
 			double rrPres = rPres;
 			rrPres /= 1024;
 			//convert rr to vote percentage
-			int eloR = predictionToElo(rr,ii)+predictionToElo(rrPres,26);
+			int eloPres = eloState+predictionToElo(rrPres,26);
 			
 			
-			if (elonew[thisstate]+eloR > 0){ // Biden wins
+			if (elonew[thisstate]+eloPres > 0){ // Biden wins
 				
 				bidenEV += evs[thisstate];
 				dHEV += evs[thisstate]-2;
@@ -195,30 +195,30 @@ void makePrediction(int year, int n) {
 				
 			}
 			if (thisstate == 21){//Maine
-				if (elonew[thisstate]+eloR > -100){ //Biden wins 1st
+				if (elonew[thisstate]+eloPres > -100){ //Biden wins 1st
 					bidenEV++; dHEV++; dVEPEV+=10;
 				}
-				if (elonew[thisstate]+eloR > 100){ //Biden wins 2nd
+				if (elonew[thisstate]+eloPres > 100){ //Biden wins 2nd
 					bidenEV++; dHEV++; dVEPEV+=10;
 				}
 			}
 			if (thisstate == 29){//Nebraska
-				if (elonew[thisstate]+eloR > -60){ //Biden wins 1st
+				if (elonew[thisstate]+eloPres > -60){ //Biden wins 1st
 					bidenEV++; dHEV++; dVEPEV+=9;
 				}
-				if (elonew[thisstate]+eloR > -200){ //Biden wins 2nd
+				if (elonew[thisstate]+eloPres > -200){ //Biden wins 2nd
 					bidenEV++; dHEV++; dVEPEV+=9;
 				}
-				if (elonew[thisstate]+eloR > 300){ //Biden wins 3rd
+				if (elonew[thisstate]+eloPres > 300){ //Biden wins 3rd
 					bidenEV++; dHEV++; dVEPEV+=9;
 				}
 			}
 			
-			if (eloR < 0){
-				eloR = -1*round(pow(-1*eloR,.75-ii/102));
+			if (eloState < 0){
+				eloState = -1*round(pow(-1*eloState,.75-ii/102));
 			}
 			else {
-				eloR = round(pow(eloR,.75-ii/102));
+				eloState = round(pow(eloState,.75-ii/102));
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
@@ -230,8 +230,8 @@ void makePrediction(int year, int n) {
 					iii++; continue;
 				}
 				int c = correlationsInt[thisstate][iii];
-				if (eloR <= -10 || eloR >= 10 || c >= 10 ){
-					elonew[iii]+=eloR*c/100;
+				if (eloState <= -10 || eloState >= 10 || c >= 10 ){
+					elonew[iii]+=eloState*c/100;
 				}
 				iii++;
 			}
