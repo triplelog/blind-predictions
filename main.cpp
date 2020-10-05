@@ -80,7 +80,7 @@ long long durationRand;
 int seed;
 
 int predictionToElo(double prediction, int counter){
-	double e = log(1/prediction-1)*-1*(75-counter)/log(10.0);
+	double e = log(1/prediction-1)*-1*(51-counter)/log(10.0);
 	return round(e);
 	
 }
@@ -171,11 +171,17 @@ void makePrediction(int year, int n) {
 			}
 			
 			
-			int r = rand() % 1000;
+			int r = rand() % 1024;
 			double rr = r;
-			rr /= 1000;
+			rr /= 1024;
 			//convert rr to vote percentage
-			int eloR = predictionToElo(rr,ii);
+			#int eloR = predictionToElo(rr,ii);
+			
+			int rPres = rand() % 1024;
+			double rrPres = rPres;
+			rrPres /= 1024;
+			//convert rr to vote percentage
+			int eloR = predictionToElo(rr,ii)+predictionToElo(rrPres,26);
 			
 			
 			if (elonew[thisstate]+eloR > 0){ // Biden wins
