@@ -233,7 +233,7 @@ void makePrediction(int year, int n) {
 				}
 				int c = correlationsInt[thisstate][iii];
 				if (eloState <= -10 || eloState >= 10 || c >= 10 ){
-					elonew[iii]+=eloState*c/30;
+					elonew[iii]+=eloState*c/25;
 				}
 				iii++;
 			}
@@ -371,7 +371,7 @@ void initialRun(){
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlationsInt[i][ii] = round(pow(correlations[i][ii],5)*100);
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],2)*100);
 		}
 	}
 	states = createStates();
