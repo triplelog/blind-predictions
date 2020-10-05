@@ -387,7 +387,7 @@ void initialRun(){
 }
 
 int main() {
-	lua_State *L = luaL_newstate();
+	lua_State *L;
 	initialRun();
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
