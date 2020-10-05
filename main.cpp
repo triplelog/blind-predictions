@@ -16,7 +16,7 @@
 
 
 
-#include "sol.hpp"
+#include "sol/sol.hpp"
 
 #include <emscripten/emscripten.h>
 
