@@ -8,10 +8,8 @@
 #include <map>
 #include <numeric>
 #include <chrono>
-#include <array>
 #include <vector>
 #include <unistd.h>
-#include <thread>
 #include <future>
 
 #include "data.cpp"
@@ -363,7 +361,7 @@ void initialRun(){
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlationsInt[i][ii] = round(pow(correlations[i][ii],5)*220);
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],2)*100);
 		}
 	}
 	states = createStates();
