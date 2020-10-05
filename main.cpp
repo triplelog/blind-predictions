@@ -209,10 +209,10 @@ void makePrediction(int year, int n) {
 			}
 			
 			if (eloR < 0){
-				eloR = -1*round(pow(-1*eloR,1-ii/51));
+				eloR = -1*round(pow(-1*eloR,.75-ii/102));
 			}
 			else {
-				eloR = round(pow(eloR,1-ii/51));
+				eloR = round(pow(eloR,.75-ii/102));
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
