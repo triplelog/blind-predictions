@@ -233,13 +233,14 @@ void makePrediction(int year, int n) {
 				}
 				int c = correlationsInt[thisstate][iii];
 				if (eloState <= -10 || eloState >= 10 || c >= 10 ){
-					elonew[iii]+=eloState*c/100;
+					elonew[iii]+=eloState*c/70;
 				}
 				iii++;
 			}
 			auto a2 = std::chrono::high_resolution_clock::now();
 			durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 		}
+
 		if (bidenEV >= 270){
 			dWins[0]++;
 		}
@@ -353,8 +354,9 @@ void makePrediction(int year, int n) {
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
-			console_log(i);
-			console_log(evData[i]);
+			
+			//console_log(i);
+			//console_log(evData[i]);
 		}
 	}
 }
