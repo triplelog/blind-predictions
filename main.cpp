@@ -14,6 +14,7 @@
 
 #include "data.cpp"
 
+#include "LuaJIT-2.0.5/src/lua.hpp"
 #include <emscripten/emscripten.h>
 
 EM_JS(void, console_log, (int x), {
