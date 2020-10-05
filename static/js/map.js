@@ -455,7 +455,7 @@ function predictNow(){
 	for (var i=0;i<51;i++){
 
 		var state = stateMap[electoralData[i].abbrev];
-		var year = "2016";
+		var year = "2020";
 		var rpred = electoralData[i].rpred*demoMult;
 		var elo = (rpred-.5)*2000;
 		var dprob = 1.0/(1+Math.pow(10.0,elo/75));
