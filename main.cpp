@@ -2,20 +2,14 @@
 #include <stdlib.h>
 #include <algorithm>
 #include <math.h>
-#include <limits.h>
-#include <time.h>
 #include <string.h> 
 #include <ctype.h>
 #include <cmath>
-#include <variant>
 #include <map>
 #include <numeric>
 #include <chrono>
-#include <thread>
-#include <array>
 #include <vector>
 #include <unistd.h>
-#include <thread>
 #include <future>
 
 #include "data.cpp"
