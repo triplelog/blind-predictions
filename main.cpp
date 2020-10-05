@@ -217,10 +217,10 @@ void makePrediction(int year, int n) {
 			}
 			
 			if (eloState < 0){
-				eloState = -1*round(pow(-1*eloState,.66-ii/151));
+				eloState = -1*round(pow(-1*eloState,.75-ii/102));
 			}
 			else {
-				eloState = round(pow(eloState,.66-ii/151));
+				eloState = round(pow(eloState,.75-ii/102));
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
