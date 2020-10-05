@@ -8,8 +8,10 @@
 #include <map>
 #include <numeric>
 #include <chrono>
+#include <array>
 #include <vector>
 #include <unistd.h>
+#include <thread>
 #include <future>
 
 #include "data.cpp"
