@@ -15,8 +15,6 @@
 #include "data.cpp"
 
 
-#include "lua-5.4.0/src/lua.hpp"
-#include "sol.hpp"
 
 #include <emscripten/emscripten.h>
 
@@ -355,8 +353,8 @@ void makePrediction(int year, int n) {
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
 			//std::cout << i << ", " << evData[i] << "\n";
-			//console_log(i);
-			//console_log(evData[i]);
+			console_log(i);
+			console_log(evData[i]);
 		}
 	}
 }
@@ -390,7 +388,7 @@ void initialRun(){
 }
 
 int main() {
-	sol::state lua;
+
 	initialRun();
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
