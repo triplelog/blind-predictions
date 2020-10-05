@@ -2314,16 +2314,16 @@ namespace sol {
 // beginning of sol/compatibility/lua_version.hpp
 
 #if SOL_IS_ON(SOL_USE_CXX_LUA_I_)
-	#include <lua-5.4.0/src/lua.h>
-	#include <lua-5.4.0/src/lualib.h>
-	#include <lua-5.4.0/src/lauxlib.h>
+	#include "lua-5.4.0/src/lua.h"
+	#include "lua-5.4.0/src/lualib.h"
+	#include "lua-5.4.0/src/lauxlib.h"
 #elif SOL_IS_ON(SOL_USE_LUA_HPP_I_)
-	#include <lua-5.4.0/src/lua.hpp>
+	#include "lua-5.4.0/src/lua.hpp"
 #else
 	extern "C" {
-		#include <lua-5.4.0/src/lua.h>
-		#include <lua-5.4.0/src/lauxlib.h>
-		#include <lua-5.4.0/src/lualib.h>
+		#include "lua-5.4.0/src/lua.h"
+		#include "lua-5.4.0/src/lauxlib.h"
+		#include "lua-5.4.0/src/lualib.h"
 	}
 #endif // C++ Mangling for Lua vs. Not
 
