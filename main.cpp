@@ -183,7 +183,7 @@ void makePrediction(int year, int n) {
 			double rrPres = rPres;
 			rrPres /= 1024;
 			//convert rr to vote percentage
-			int eloPres = eloState+predictionToElo(rrPres,41);
+			int eloPres = eloState+predictionToElo(rrPres,51);
 			
 			
 			if (elonew[thisstate]+eloPres > 0){ // Biden wins
@@ -217,10 +217,10 @@ void makePrediction(int year, int n) {
 			}
 			
 			if (eloState < 0){
-				eloState = -1*round(pow(-1*eloState,.75-ii/102));
+				eloState = -1*round(pow(-1*eloState,1-ii/51));
 			}
 			else {
-				eloState = round(pow(eloState,.75-ii/102));
+				eloState = round(pow(eloState,1-ii/51));
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
