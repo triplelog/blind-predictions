@@ -15,7 +15,9 @@
 #include "data.cpp"
 
 extern "C" {
-#include "LuaJIT-2.0.5/src/lua.hpp"
+# include "lua.h"
+# include "lauxlib.h"
+# include "lualib.h"
 }
 #include <emscripten/emscripten.h>
 
@@ -389,7 +391,7 @@ void initialRun(){
 }
 
 int main() {
-	lua_State *L = luaL_newstate();
+	lua_State *L;
 	initialRun();
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
