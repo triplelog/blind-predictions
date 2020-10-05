@@ -15,11 +15,9 @@
 #include "data.cpp"
 
 
-extern "C" {
-#include "lua-5.4.0/src/lua.h"
-#include "lua-5.4.0/src/lauxlib.h"
-#include "lua-5.4.0/src/lualib.h"
-}
+
+#include "sol.hpp"
+
 #include <emscripten/emscripten.h>
 
 EM_JS(void, console_log, (int x), {
@@ -392,7 +390,7 @@ void initialRun(){
 }
 
 int main() {
-	lua_State *L = lua_open();
+	sol::state lua;
 	initialRun();
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
