@@ -15,6 +15,7 @@ function updateWins(wins){
 }
 function predictjs(n){
 	predictcpp(2016,n);
+	predictcpp(2020,n);
 }
 function updatejs(state,prob,year){
 	updatecpp(state,prob,year);
