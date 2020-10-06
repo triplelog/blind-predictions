@@ -99,7 +99,7 @@ for line in lines:
 file1.writelines(end)
 
 
-initial = ['std::vector<double> createResults20(){\nstd::vector<double> predictions;\n']
+initial = ['std::vector<double> addResults20(){\nstd::vector<double> predictions;\n']
 end = ['return predictions;\n}\n']
 file2 = open('results20.csv', 'r') 
 lines = file2.readlines() 
