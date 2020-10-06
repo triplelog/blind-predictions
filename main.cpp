@@ -186,7 +186,7 @@ void makePrediction(int year, int n) {
 				double maxP = predictionFromElo(maxElo);
 				rr = minP + rr*(maxP-minP);
 				//convert rr to vote percentage
-				int eloState = predictionToElo(rr,ii);
+				int eloState = predictionToElo(rr,51-unknownStates);
 				
 				int eloPres = eloState;
 				if (elonew[thisstate]+eloPres > 0){ // Biden wins
@@ -262,7 +262,7 @@ void makePrediction(int year, int n) {
 			double rr = r;
 			rr /= 1024;
 			//convert rr to vote percentage
-			int eloState = predictionToElo(rr,ii);
+			int eloState = predictionToElo(rr,ii+unknownStates);
 			
 			int rPres = rand() % 1024;
 			double rrPres = rPres;
