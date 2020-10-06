@@ -190,10 +190,9 @@ void makePrediction(int year, int n) {
 				double minP = predictionFromElo(minElo);
 				double maxP = predictionFromElo(maxElo);
 				rr = minP + rr*(maxP-minP);
-				console_log(round(rr*100));
 				//convert rr to vote percentage
 				int eloState = predictionToElo(rr,51-unknownStates);
-				
+				console_log(elonew[thisstate]+eloPres);
 				int eloPres = eloState;
 				if (elonew[thisstate]+eloPres > 0){ // Biden wins
 				
