@@ -182,12 +182,12 @@ div.container .titleRight i {
 	display: none;
 }
 #electoralMap {
-	background-color: rgba(0,0,0,.125);
+	background-color: rgba(0,0,0,0);
 	width: calc( var(--block-width) * (var(--top-width) - 7));
-	left: calc( 0px + var(--block-width) * 1);
+	left: calc( 50% - var(--block-width) * (var(--top-width) - 7) / 2);
 	height: calc( var(--block-width) * (var(--side-height) - 7));
 	position: absolute;
-	top: calc( 0px + var(--block-width) * 1);
+	top: calc( 0px + var(--block-width) * 0);
 }
 @media screen and (max-width: 959px) {
 	.logoDiv img {
@@ -198,7 +198,7 @@ div.container .titleRight i {
 	.title {
 		font-size: 1.6rem;
 	}
-	:root {--block-width: .18vw;}
+	:root {--block-width: .2vw;}
 }
 @media screen and (max-width: 719px) {
 
