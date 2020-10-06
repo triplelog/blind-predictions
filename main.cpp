@@ -88,6 +88,8 @@ int correlationDivisor;
 int correlationPower;
 
 int predictionToElo(double prediction, int counter){
+	if (prediction <= .0001){prediction = .0001;}
+	if (prediction >= .9999){prediction = .9999;}
 	double e = log(1/prediction-1)*-1*(randomness+1-counter)/log(10.0);
 	return round(e);
 	
