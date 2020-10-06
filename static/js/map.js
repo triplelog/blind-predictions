@@ -443,7 +443,16 @@ myWorker.onmessage = function(e) {
 	else if (e.data['type'] == "states"){
 		for (var i=0;i<51;i++){
 			console.log(stateList[i],e.data['val'][i]);
+			var myState = stateList[i];
+			for (var ii=0; ii<electoralData.length; ii++) {
+				if (electoralData[ii]['abbrev'] == myState) {
+					electoralData[ii].rpred = .5 + e.data['val'][i]/-2000;
+					break;
+				}
+			}
 		}
+		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
+		orderStates();
 	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
