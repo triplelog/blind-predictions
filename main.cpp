@@ -237,7 +237,7 @@ void makePrediction(int year, int n) {
 			
 				auto a1 = std::chrono::high_resolution_clock::now();
 				iii = 0;
-				for (std::map<int,bool>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
+				for (std::map<int,int>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
   
 					//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
 					if (it->second>0){
@@ -319,7 +319,7 @@ void makePrediction(int year, int n) {
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
 			iii = 0;
-			for (std::map<int,bool>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
+			for (std::map<int,int>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
   
 				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
 				if (it->second != 0){
