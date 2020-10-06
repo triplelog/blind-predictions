@@ -48,8 +48,10 @@ EM_JS(void, send_results, (const char* x), {
 	wins["RV"]=xStr[7];
 	wins["TV"]=xStr[8];
 	wins["ME"]=xStr[9];
-	wins["MS"]=xStr[10];
-	var hist = xStr[11].split("|");
+	wins["MHE"]=xStr[10];
+	wins["MVE"]=xStr[11];
+	wins["MS"]=xStr[12];
+	var hist = xStr[13].split("|");
 	var minH = 51;
 	var maxH = 0;
 	for (var i=0;i<hist.length;i++){
@@ -134,6 +136,8 @@ void makePrediction(int year, int n) {
 	int rWins[4] = {0,0,0,0};
 	int ties[4] = {0,0,0,0};
 	std::map<int,int> evData;
+	std::map<int,int> hevData;
+	std::map<int,int> vevData;
 	std::map<int,int> senateData;
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
@@ -278,6 +282,18 @@ void makePrediction(int year, int n) {
 		else {
 			evData[bidenEV]++;
 		}
+		if (hevData.find(dHEV) == hevData.end()){
+			hevData[dHEV] = 1;
+		}
+		else {
+			hevData[dHEV]++;
+		}
+		if (vevData.find(dVEPEV) == vevData.end()){
+			vevData[dVEPEV] = 1;
+		}
+		else {
+			vevData[dVEPEV]++;
+		}
 		if (senateData.find(dSen) == senateData.end()){
 			senateData[dSen] = 1;
 		}
@@ -310,6 +326,33 @@ void makePrediction(int year, int n) {
 				}
 			}
 			resultStr += std::to_string(medEV)+",";
+			
+			int medHEV = 0;
+			count = 0;
+			for (ii=0;ii<436;ii++){
+				if (hevData.find(ii) != hevData.end()){
+					count+= hevData[ii];
+				}
+				if (count >= i/2){
+					medHEV = ii;
+					break;
+				}
+			}
+			resultStr += std::to_string((medHEV*538+218)/436)+",";
+			
+			int medVEV = 0;
+			count = 0;
+			for (ii=0;ii<4363;ii++){
+				if (vevData.find(ii) != vevData.end()){
+					count+= vevData[ii];
+				}
+				if (count >= i/2){
+					medVEV = ii;
+					break;
+				}
+			}
+			resultStr += std::to_string((medVEV*538+2181)/4363)+",";
+			
 			medEV = 0;
 			count = 0;
 			for (ii=0;ii<51;ii++){

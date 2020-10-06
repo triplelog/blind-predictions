@@ -15,6 +15,12 @@ slider.oninput = function() {
 	document.getElementById('dwinp').style.textDecoration = "line-through";
     document.getElementById('rwinp').style.textDecoration = "line-through";
     document.getElementById('medEV').style.textDecoration = "line-through";
+    document.getElementById('dwinph').style.textDecoration = "line-through";
+    document.getElementById('rwinph').style.textDecoration = "line-through";
+    document.getElementById('medHEV').style.textDecoration = "line-through";
+    document.getElementById('dwinpv').style.textDecoration = "line-through";
+    document.getElementById('rwinpv').style.textDecoration = "line-through";
+    document.getElementById('medVEV').style.textDecoration = "line-through";
 	if (this.value<=1000){
 	  demoMult = this.value/1000.0;
 	}
@@ -404,6 +410,12 @@ function statemousedown(evt) {
   	document.getElementById('dwinp').style.textDecoration = "line-through";
     document.getElementById('rwinp').style.textDecoration = "line-through";
     document.getElementById('medEV').style.textDecoration = "line-through";
+    document.getElementById('dwinph').style.textDecoration = "line-through";
+    document.getElementById('rwinph').style.textDecoration = "line-through";
+    document.getElementById('medHEV').style.textDecoration = "line-through";
+    document.getElementById('dwinpv').style.textDecoration = "line-through";
+    document.getElementById('rwinpv').style.textDecoration = "line-through";
+    document.getElementById('medVEV').style.textDecoration = "line-through";
 }
 
 function statemousemove(evt) {
@@ -439,14 +451,30 @@ myWorker.onmessage = function(e) {
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
 		var tw = parseInt(e.data.T);
+		var dhw = parseInt(e.data.DH);
+		var rhw = parseInt(e.data.RH);
+		var thw = parseInt(e.data.TH);
+		var dvw = parseInt(e.data.DV);
+		var rvw = parseInt(e.data.RV);
+		var tvw = parseInt(e.data.TV);
 		var medEV = parseInt(e.data.ME);
+		var medHEV = parseInt(e.data.MHE);
+		var medVEV = parseInt(e.data.MVE);
 		if (dw+rw+tw < 1000){
 			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
 			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
+			document.getElementById('dwinph').textContent = Math.round(100*dhw/(dhw+rhw+thw))+"%";
+			document.getElementById('rwinph').textContent = Math.round(100*rhw/(dhw+rhw+thw))+"%";
+			document.getElementById('dwinpv').textContent = Math.round(100*dvw/(dvw+rvw+tvw))+"%";
+			document.getElementById('rwinpv').textContent = Math.round(100*rvw/(dvw+rvw+tvw))+"%";
 		}
 		else {
 			document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
 			document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
+			document.getElementById('dwinph').textContent = Math.round(1000*dhw/(dhw+rhw+thw))/10+"%";
+			document.getElementById('rwinph').textContent = Math.round(1000*rhw/(dhw+rhw+thw))/10+"%";
+			document.getElementById('dwinpv').textContent = Math.round(1000*dvw/(dvw+rvw+tvw))/10+"%";
+			document.getElementById('rwinpv').textContent = Math.round(1000*rvw/(dvw+rvw+tvw))/10+"%";
 		}
 		if (medEV >= 270){
 			document.getElementById('medEV').textContent = "D "+medEV;
@@ -457,11 +485,35 @@ myWorker.onmessage = function(e) {
 		else {
 			document.getElementById('medEV').textContent = "R "+(538-medEV);
 		}
+		if (medHEV >= 270){
+			document.getElementById('medHEV').textContent = "D "+medHEV;
+		}
+		else if (medHEV == 269){
+			document.getElementById('medHEV').textContent = "Tie";
+		}
+		else {
+			document.getElementById('medHEV').textContent = "R "+(538-medHEV);
+		}
+		if (medVEV >= 270){
+			document.getElementById('medVEV').textContent = "D "+medVEV;
+		}
+		else if (medVEV == 269){
+			document.getElementById('medVEV').textContent = "Tie";
+		}
+		else {
+			document.getElementById('medVEV').textContent = "R "+(538-medVEV);
+		}
 		
 		
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
   		document.getElementById('medEV').style.textDecoration = "none";
+  		document.getElementById('dwinph').style.textDecoration = "none";
+  		document.getElementById('rwinph').style.textDecoration = "none";
+  		document.getElementById('medHEV').style.textDecoration = "none";
+  		document.getElementById('dwinpv').style.textDecoration = "none";
+  		document.getElementById('rwinpv').style.textDecoration = "none";
+  		document.getElementById('medVEV').style.textDecoration = "none";
 	}
 }
 function predictNow(){
