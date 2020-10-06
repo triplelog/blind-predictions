@@ -442,7 +442,8 @@ void makePrediction(int year, int n) {
 			
 			std::string statesOut = "";
 			for (ii=0;ii<51;ii++){
-				int x = stateData[ii]*100/i;
+				double sdi = stateData[ii];
+				int x = predictionToElo(sdi/i,0);
 				statesOut += std::to_string(x)+",";
 			}
 			send_map(statesOut.c_str());
