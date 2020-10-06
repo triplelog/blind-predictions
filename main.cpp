@@ -183,6 +183,9 @@ void makePrediction(int year, int n) {
 				
 				int minElo = results[ii*2];
 				int maxElo = results[ii*2+1];
+				console_log(minElo);
+				console_log(maxElo);
+				console_log(ii);
 				int r = rand() % 1024;
 				double rr = r;
 				rr /= 1024;
