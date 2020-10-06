@@ -458,14 +458,17 @@ myWorker.onmessage = function(e) {
 			if (Math.round(100*dw/(dw+rw+tw))>50){
 				document.getElementById('winp').textContent = "D "+Math.round(100*dw/(dw+rw+tw))+"%";
 				document.getElementById('winp').style.background = "blue";
+				document.getElementById('winp').style.color = "white";
 			}
 			else if (Math.round(100*rw/(dw+rw+tw))>50){
 				document.getElementById('winp').textContent = "R "+Math.round(100*rw/(dw+rw+tw))+"%";
 				document.getElementById('winp').style.background = "red";
+				document.getElementById('winp').style.color = "white";
 			}
 			else {
 				document.getElementById('winp').textContent = "50%";
 				document.getElementById('winp').style.background = "white";
+				document.getElementById('winp').style.color = "black";
 			}
 			if (Math.round(100*dhw/(dhw+rhw+thw))>50){
 				document.getElementById('winph').textContent = "D "+Math.round(100*dhw/(dhw+rhw+thw))+"%";
@@ -517,12 +520,18 @@ myWorker.onmessage = function(e) {
 		}
 		if (medEV >= 270){
 			document.getElementById('medEV').textContent = "D "+medEV;
+			document.getElementById('medEV').style.background = "blue";
+			document.getElementById('medEV').style.color = "white";
 		}
 		else if (medEV == 269){
 			document.getElementById('medEV').textContent = "Tie";
+			document.getElementById('medEV').style.background = "white";
+			document.getElementById('medEV').style.color = "black";
 		}
 		else {
 			document.getElementById('medEV').textContent = "R "+(538-medEV);
+			document.getElementById('medEV').style.background = "red";
+			document.getElementById('medEV').style.color = "white";
 		}
 		if (medHEV >= 270){
 			document.getElementById('medHEV').textContent = "D "+medHEV;
