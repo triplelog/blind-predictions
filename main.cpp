@@ -83,6 +83,7 @@ long long durationRand;
 int seed;
 int randomness;
 int correlationDivisor;
+int correlationPower;
 
 int predictionToElo(double prediction, int counter){
 	double e = log(1/prediction-1)*-1*(randomness+1-counter)/log(10.0);
@@ -375,7 +376,7 @@ void initialRun(){
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlationsInt[i][ii] = round(pow(correlations[i][ii],3)*100);
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],correlationPower)*100);
 			csum += correlationsInt[i][ii];
 		}
 	}
@@ -404,6 +405,7 @@ void initialRun(){
 
 int main() {
 	correlationDivisor = 333;
+	correlationPower = 2;
 	randomness = 75;
 	initialRun();
 
