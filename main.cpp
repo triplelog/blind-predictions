@@ -26,14 +26,13 @@ EM_JS(void, string_log, (const char* x), {
 });
 EM_JS(void, send_map, (const char* x), {
 	var statesOut = [];
-	var statesStr = UTF8ToString(x);
+	var statesStr = UTF8ToString(x).split(",");
 	var jsStr = "";
 	for (var i=0;i<51;i++){
 		statesOut.push(statesStr[i]);
-		jsStr += statesStr[i]+"\n";
 		
 	}
-  	//console.log(jsStr);
+  	console.log(statesOut);
 });
 EM_JS(void, send_results, (const char* x), {
 	var xStr = UTF8ToString(x).split(",");
@@ -440,6 +439,13 @@ void makePrediction(int year, int n) {
 			}
 			resultStr += "0";
 			send_results(resultStr.c_str());
+			
+			std::string statesOut = "";
+			for (ii=0;ii<51;ii++){
+				int x = stateData[ii]*100/i;
+				statesOut += std::to_string(x)+",";
+			}
+			send_map(statesOut.c_str());
 		}
 		
 	}
