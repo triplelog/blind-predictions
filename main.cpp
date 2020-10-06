@@ -172,17 +172,22 @@ void makePrediction(int year, int n) {
 		int dHEV = 0;
 		int dVEPEV = 0;
 		int dSen = 0;
-		std::map<int,bool> doneYet;
+		std::map<int,int> doneYet;
 		int unknownStates = 51;
 		for (ii=0;ii<51;ii++){
-			doneYet[ii]=false;
-			if (results[ii*2]>=-1000 || results[ii*2+1]<=1000){
-				int thisstate = ii;
-				doneYet[thisstate]=true;
+			doneYet[ii]=0;
+		}
+		for (ii=0;ii<51;ii++){
+			int thisstate = rand() % 51;
+			while (doneYet[thisstate]>0){
+				thisstate = rand() % 51;
+			}
+			if (results[thisstate*2]>=-1000 || results[thisstate*2+1]<=1000){
+				doneYet[thisstate]=1;
 				unknownStates--;
 				
-				int minElo = results[ii*2] - elonew[thisstate];
-				int maxElo = results[ii*2+1] - elonew[thisstate];
+				int minElo = results[thisstate*2] - elonew[thisstate];
+				int maxElo = results[thisstate*2+1] - elonew[thisstate];
 				
 				int r = rand() % 1024;
 				double rr = r;
@@ -235,7 +240,7 @@ void makePrediction(int year, int n) {
 				for (std::map<int,bool>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
   
 					//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
-					if (it->second){
+					if (it->second>0){
 						iii++; continue;
 					}
 					int c = correlationsInt[thisstate][iii];
@@ -251,12 +256,12 @@ void makePrediction(int year, int n) {
 		for (ii=0;ii<unknownStates;ii++){
 			//auto a1 = std::chrono::high_resolution_clock::now();
 			int thisstate = rand() % 51;
-			while (doneYet[thisstate]){
+			while (doneYet[thisstate]!= 0){
 				thisstate = rand() % 51;
 			}
 			//auto a2 = std::chrono::high_resolution_clock::now();
 			//durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
-			doneYet[thisstate]=true;
+			doneYet[thisstate]=-1;
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
 			}
@@ -317,7 +322,7 @@ void makePrediction(int year, int n) {
 			for (std::map<int,bool>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
   
 				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
-				if (it->second){
+				if (it->second != 0){
 					iii++; continue;
 				}
 				int c = correlationsInt[thisstate][iii];
@@ -467,34 +472,12 @@ void makePrediction(int year, int n) {
 		}
 		
 	}
-	//console_log(dWins[0]);
-	
-	for (i=0;i<51;i++){
-		if (stateData[i] > n/10 && stateData[i] < n*9/10){
-			//string_log(states[i].c_str());
-			//console_log(stateData[i]);
-			//console_log(statePairsMI[i]);
-			//console_log(stateData[i]*stateData[22]/1000);
-			double nullprob = stateData[22];
-			nullprob /= n;
-			int diff = statePairsMI[i] - stateData[i]*stateData[22]/n;
-			double stdev = stateData[i]*nullprob*(1-nullprob);
-			double z = diff/stdev;
-			int diffmax = stateData[i] - stateData[i]*stateData[22]/n;
-			double zmax = diffmax/stdev;
-			//console_log(round(z*1000/zmax));
-			//console_log(round(correlationsInt[22][i]));
-		}
-		
-	}
+
+	/*
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
-			//std::cout << i << ", " << evData[i] << "\n";
-			
-			//console_log(i);
-			//console_log(evData[i]);
 		}
-	}
+	}*/
 }
 
 }
