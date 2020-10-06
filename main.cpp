@@ -14,6 +14,7 @@
 
 #include "data.cpp"
 
+#include "chaiscript/chaiscript.hpp"
 
 
 #include <emscripten/emscripten.h>
@@ -78,6 +79,7 @@ std::vector<int> evs;
 std::vector<int> vepevs;
 std::vector<double> predictions16;
 std::vector<double> predictions20;
+std::vector<double> predictions20Sen;
 long long durationRand;
 int seed;
 
@@ -385,6 +387,7 @@ void initialRun(){
 	durationRand = 0;
 	predictions16 = createPredictions16();
 	predictions20 = createPredictions20();
+	//predictions20Sen = createPredictions20Sen();
 	
 
 }

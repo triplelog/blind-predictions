@@ -66,10 +66,10 @@ for line in lines:
 		continue
 	lineSplit = line.strip().split(",")
 	pred = float(lineSplit[4])
-	if pred > .999:
-		pred = .999
-	elif pred < .001:
-		pred = .001
+	if pred > .9999:
+		pred = .9999
+	elif pred < .0001:
+		pred = .0001
 	#print(lineSplit[3],pred)
 	line2 = 'predictions.push_back('+str(pred)+');\n'
 	file1.writelines([line2])
@@ -89,15 +89,37 @@ for line in lines:
 		continue
 	lineSplit = line.strip().split(",")
 	pred = float(lineSplit[7])
-	if pred > .999:
-		pred = .999
-	elif pred < .001:
-		pred = .001
+	if pred > .9999:
+		pred = .9999
+	elif pred < .0001:
+		pred = .0001
 	#print(lineSplit[3],pred)
 	line2 = 'predictions.push_back('+str(pred)+');\n'
 	file1.writelines([line2])
 file1.writelines(end)
 
+
+initial = ['std::vector<double> createPredictions20Sen(){\nstd::vector<double> predictions;\n']
+end = ['return predictions;\n}\n']
+file2 = open('predictionsSen.csv', 'r') 
+lines = file2.readlines() 
+
+file1.writelines(initial) 
+i = 0
+for line in lines:
+	i+=1
+	if i==1:
+		continue
+	lineSplit = line.strip().split(",")
+	pred = float(lineSplit[7])
+	if pred > .9999:
+		pred = .9999
+	elif pred < .0001:
+		pred = .0001
+	#print(lineSplit[3],pred)
+	line2 = 'predictions.push_back('+str(pred)+');\n'
+	file1.writelines([line2])
+file1.writelines(end)
 
 
 initial = ['std::vector<int> createEV(){\nstd::vector<int> evs;\n']
