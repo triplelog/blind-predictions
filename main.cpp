@@ -181,17 +181,16 @@ void makePrediction(int year, int n) {
 				doneYet[thisstate]=true;
 				unknownStates--;
 				
-				int minElo = results[ii*2];
-				int maxElo = results[ii*2+1];
-				console_log(minElo);
-				console_log(maxElo);
-				console_log(ii);
+				int minElo = results[ii*2] - elonew[thisstate];
+				int maxElo = results[ii*2+1] - elonew[thisstate];
+				
 				int r = rand() % 1024;
 				double rr = r;
 				rr /= 1024;
 				double minP = predictionFromElo(minElo);
 				double maxP = predictionFromElo(maxElo);
 				rr = minP + rr*(maxP-minP);
+				console_log(round(rr*100));
 				//convert rr to vote percentage
 				int eloState = predictionToElo(rr,51-unknownStates);
 				
