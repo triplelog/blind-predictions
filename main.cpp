@@ -375,8 +375,14 @@ void initialRun(){
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
-			correlationsInt[i][ii] = round(pow(correlations[i][ii],2)*100);
+			correlationsInt[i][ii] = round(pow(correlations[i][ii],3)*100);
 			csum += round(pow(correlations[i][ii],2)*100);
+		}
+	}
+	for (i=0;i<51;i++){
+		for (ii=0;ii<51;ii++){
+			correlationsInt[i][ii] *= 75000;
+			correlationsInt[i][ii] /= csum;
 		}
 	}
 	console_log(csum);
