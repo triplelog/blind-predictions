@@ -394,7 +394,7 @@ void initialRun(){
 }
 
 int main() {
-	correlationDivisor = 400;
+	correlationDivisor = 333;
 	randomness = 75;
 	initialRun();
 
