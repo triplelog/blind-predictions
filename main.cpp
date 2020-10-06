@@ -96,7 +96,7 @@ int predictionToElo(double prediction, int counter){
 }
 double predictionFromElo(int elo, int counter){
 	double e = 0-elo;
-	return 1.0/(1+pow(10.0,e/(randomness+1-counter));
+	return 1.0/(1+pow(10.0,e/(randomness+1-counter)));
 	
 }
 
