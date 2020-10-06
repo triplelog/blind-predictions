@@ -369,14 +369,17 @@ void makePrediction(int year, int n) {
 void initialRun(){
 	correlations = createCorrelations();
 	int i; int ii;
+	long long csum = 0;
 	for (i=0;i<51;i++){
 		std::vector<int> v;
 		v.resize(51);
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
 			correlationsInt[i][ii] = round(pow(correlations[i][ii],2)*100);
+			csum += round(pow(correlations[i][ii],2)*100);
 		}
 	}
+	console_log(csum);
 	states = createStates();
 	evs = createEV();
 	vepevs = createVEPEV();
