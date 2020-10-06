@@ -376,7 +376,7 @@ void initialRun(){
 		correlationsInt[i] = v;
 		for (ii=0;ii<51;ii++){
 			correlationsInt[i][ii] = round(pow(correlations[i][ii],1)*100);
-			csum += round(pow(correlations[i][ii],2)*100);
+			csum += correlationsInt[i][ii];
 		}
 	}
 	for (i=0;i<51;i++){
