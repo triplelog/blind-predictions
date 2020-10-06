@@ -121,12 +121,16 @@ void makePrediction(int year, int n) {
 	if (year == 2016){
 		for (i = 0;i<51;i++){
 			predictions.push_back(predictions16[i]);
+		}
+		for (i = 0;i<102;i++){
 			results.push_back(results20[i]);
 		}
 	}
 	else if (year == 2020){
 		for (i = 0;i<51;i++){
 			predictions.push_back(predictions20[i]);
+		}
+		for (i = 0;i<102;i++){
 			results.push_back(results20[i]);
 		}
 	}
@@ -220,10 +224,10 @@ void makePrediction(int year, int n) {
 				}
 			
 				if (eloState < 0){
-					eloState = -1*round(pow(-1*eloState,1-ii/51));
+					eloState = -1*round(pow(-1*eloState,1-(51-unknownStates)/51));
 				}
 				else {
-					eloState = round(pow(eloState,1-ii/51));
+					eloState = round(pow(eloState,1-(51-unknownStates)/51));
 				}
 			
 				auto a1 = std::chrono::high_resolution_clock::now();
