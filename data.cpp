@@ -375,7 +375,7 @@ std::vector<double> addResults20(){
 std::vector<double> predictions;
 predictions.push_back(-1001);
 predictions.push_back(1001);
-predictions.push_back(-1001);
+predictions.push_back(-101);
 predictions.push_back(1001);
 predictions.push_back(-1001);
 predictions.push_back(1001);
