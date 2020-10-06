@@ -179,9 +179,10 @@ void makePrediction(int year, int n) {
 		}
 		for (ii=0;ii<51;ii++){
 			int thisstate = rand() % 51;
-			while (doneYet[thisstate]>0){
+			while (doneYet[thisstate]!=0){
 				thisstate = rand() % 51;
 			}
+			doneYet[thisstate]=-1;
 			if (results[thisstate*2]>=-1000 || results[thisstate*2+1]<=1000){
 				doneYet[thisstate]=1;
 				unknownStates--;
@@ -256,12 +257,12 @@ void makePrediction(int year, int n) {
 		for (ii=0;ii<unknownStates;ii++){
 			//auto a1 = std::chrono::high_resolution_clock::now();
 			int thisstate = rand() % 51;
-			while (doneYet[thisstate]!= 0){
+			while (doneYet[thisstate]> 0){
 				thisstate = rand() % 51;
 			}
 			//auto a2 = std::chrono::high_resolution_clock::now();
 			//durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
-			doneYet[thisstate]=-1;
+			doneYet[thisstate]=1;
 			if (elonew[thisstate]>stateMax[thisstate]){
 				stateMax[thisstate]=elonew[thisstate];
 			}
@@ -322,7 +323,7 @@ void makePrediction(int year, int n) {
 			for (std::map<int,int>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
   
 				//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
-				if (it->second != 0){
+				if (it->second > 0){
 					iii++; continue;
 				}
 				int c = correlationsInt[thisstate][iii];
