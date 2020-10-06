@@ -267,7 +267,7 @@ void makePrediction(int year, int n) {
 			double rr = r;
 			rr /= 1024;
 			//convert rr to vote percentage
-			int eloState = predictionToElo(rr,ii+unknownStates);
+			int eloState = predictionToElo(rr,ii+51-unknownStates);
 			
 			int rPres = rand() % 1024;
 			double rrPres = rPres;
@@ -307,10 +307,10 @@ void makePrediction(int year, int n) {
 			}
 			
 			if (eloState < 0){
-				eloState = -1*round(pow(-1*eloState,1-ii/51));
+				eloState = -1*round(pow(-1*eloState,1-(ii+51-unknownStates)/51));
 			}
 			else {
-				eloState = round(pow(eloState,1-ii/51));
+				eloState = round(pow(eloState,1-(ii+51-unknownStates)/51));
 			}
 			
 			auto a1 = std::chrono::high_resolution_clock::now();
