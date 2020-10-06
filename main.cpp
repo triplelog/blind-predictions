@@ -502,7 +502,7 @@ void initialRun(){
 			correlationsInt[i][ii] /= csum;
 		}
 	}
-	console_log(csum);
+
 	states = createStates();
 	evs = createEV();
 	vepevs = createVEPEV();
