@@ -111,10 +111,12 @@ for line in lines:
 	if i==1:
 		continue
 	lineSplit = line.strip().split(",")
-	pred = int(lineSplit[1])
+	predMin = int(lineSplit[1])
+	predMax = int(lineSplit[2])
 
 	#print(lineSplit[3],pred)
-	line2 = 'predictions.push_back('+str(pred)+');\n'
+	line2 = 'predictions.push_back('+str(predMin)+');\n'
+	line2 += 'predictions.push_back('+str(predMax)+');\n'
 	file1.writelines([line2])
 file1.writelines(end)
 
