@@ -80,6 +80,7 @@ std::vector<int> evs;
 std::vector<int> vepevs;
 std::vector<double> predictions16;
 std::vector<double> predictions20;
+std::vector<double> results20;
 std::vector<double> predictions20Sen;
 long long durationRand;
 int seed;
@@ -114,15 +115,18 @@ void updateProbability(int state, double p, int year) {
 
 void makePrediction(int year, int n) {
 	std::vector<double> predictions;
+	std::vector<double> results;
 	int i; int ii; int iii;
 	if (year == 2016){
 		for (i = 0;i<51;i++){
 			predictions.push_back(predictions16[i]);
+			results.push_back(results20[i]);
 		}
 	}
 	else if (year == 2020){
 		for (i = 0;i<51;i++){
 			predictions.push_back(predictions20[i]);
+			results.push_back(results20[i]);
 		}
 	}
 	srand(seed);
@@ -166,6 +170,65 @@ void makePrediction(int year, int n) {
 		std::map<int,bool> doneYet;
 		for (ii=0;ii<51;ii++){
 			doneYet[ii]=false;
+			if (results[ii]>=-1000){
+				int thisstate = ii;
+				doneYet[thisstate]=true;
+				int eloState = results[thisstate] - elonew[thisstate];
+				int eloPres = eloState;
+				if (elonew[thisstate]+eloPres > 0){ // Biden wins
+				
+					bidenEV += evs[thisstate];
+					dHEV += evs[thisstate]-2;
+					dVEPEV += vepevs[thisstate];
+					stateData[thisstate]++;
+					dSen++;
+				
+				
+				}
+				if (thisstate == 21){//Maine
+					if (elonew[thisstate]+eloPres > -100){ //Biden wins 1st
+						bidenEV++; dHEV++; dVEPEV+=10;
+					}
+					if (elonew[thisstate]+eloPres > 100){ //Biden wins 2nd
+						bidenEV++; dHEV++; dVEPEV+=10;
+					}
+				}
+				if (thisstate == 29){//Nebraska
+					if (elonew[thisstate]+eloPres > -60){ //Biden wins 1st
+						bidenEV++; dHEV++; dVEPEV+=9;
+					}
+					if (elonew[thisstate]+eloPres > -200){ //Biden wins 2nd
+						bidenEV++; dHEV++; dVEPEV+=9;
+					}
+					if (elonew[thisstate]+eloPres > 300){ //Biden wins 3rd
+						bidenEV++; dHEV++; dVEPEV+=9;
+					}
+				}
+			
+				if (eloState < 0){
+					eloState = -1*round(pow(-1*eloState,1-ii/51));
+				}
+				else {
+					eloState = round(pow(eloState,1-ii/51));
+				}
+			
+				auto a1 = std::chrono::high_resolution_clock::now();
+				iii = 0;
+				for (std::map<int,bool>::iterator it = doneYet.begin() ; it != doneYet.end(); ++it){
+  
+					//int elodiff = eloR*correlationsInt[thisstate][iii]/1000;
+					if (it->second){
+						iii++; continue;
+					}
+					int c = correlationsInt[thisstate][iii];
+					if (eloState <= -10 || eloState >= 10 || c >= 10 ){
+						elonew[iii]+=eloState*c/correlationDivisor;
+					}
+					iii++;
+				}
+				auto a2 = std::chrono::high_resolution_clock::now();
+				durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
+			}
 		}
 		for (ii=0;ii<51;ii++){
 			//auto a1 = std::chrono::high_resolution_clock::now();
@@ -441,6 +504,7 @@ void initialRun(){
 	durationRand = 0;
 	predictions16 = createPredictions16();
 	predictions20 = createPredictions20();
+	results20 = addResults20();
 	//predictions20Sen = createPredictions20Sen();
 	
 

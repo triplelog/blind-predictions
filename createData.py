@@ -99,9 +99,9 @@ for line in lines:
 file1.writelines(end)
 
 
-initial = ['std::vector<double> createPredictions20Sen(){\nstd::vector<double> predictions;\n']
+initial = ['std::vector<double> createResults20(){\nstd::vector<double> predictions;\n']
 end = ['return predictions;\n}\n']
-file2 = open('predictionsSen.csv', 'r') 
+file2 = open('results20.csv', 'r') 
 lines = file2.readlines() 
 
 file1.writelines(initial) 
@@ -111,11 +111,8 @@ for line in lines:
 	if i==1:
 		continue
 	lineSplit = line.strip().split(",")
-	pred = float(lineSplit[7])
-	if pred > .9999:
-		pred = .9999
-	elif pred < .0001:
-		pred = .0001
+	pred = int(lineSplit[1])
+
 	#print(lineSplit[3],pred)
 	line2 = 'predictions.push_back('+str(pred)+');\n'
 	file1.writelines([line2])
