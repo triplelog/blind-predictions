@@ -192,9 +192,32 @@
 				</svg>	
 					
 					<div id="simulations">
-						Dem Win: <span id="dwinp">???%</span><br />
-						Rep Win: <span id="rwinp">???%</span><br />
-						
+						<table>
+						<tr>
+							<td></td>
+							<td>D Win%</td>
+							<td>R Win%</td>
+							<td>Median</td>
+						</tr>
+						<tr>
+							<td>EV</td>
+							<td id="dwinp">???%</td>
+							<td id="rwinp">???%</td>
+							<td id="medEV">???</td>
+						</tr> 
+						<tr>
+							<td>HEV</td>
+							<td>D Win%</td>
+							<td>R Win%</td>
+							<td>Median</td>
+						</tr>
+						<tr>
+							<td>VEEV</td>
+							<td>D Win%</td>
+							<td>R Win%</td>
+							<td>Median</td>
+						</tr>
+						</table>
 						<button onclick="predictNow()">Update</button>
 						<button onclick="toggleSmall()">Small</button>
 					</div>

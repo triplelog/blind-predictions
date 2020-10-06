@@ -14,6 +14,7 @@ var slider = document.getElementById("myRange");
 slider.oninput = function() {
 	document.getElementById('dwinp').style.textDecoration = "line-through";
     document.getElementById('rwinp').style.textDecoration = "line-through";
+    document.getElementById('medEV').style.textDecoration = "line-through";
 	if (this.value<=1000){
 	  demoMult = this.value/1000.0;
 	}
@@ -402,6 +403,7 @@ function statemousedown(evt) {
   	document.addEventListener("mousemove", statemousemove);
   	document.getElementById('dwinp').style.textDecoration = "line-through";
     document.getElementById('rwinp').style.textDecoration = "line-through";
+    document.getElementById('medEV').style.textDecoration = "line-through";
 }
 
 function statemousemove(evt) {
@@ -437,6 +439,7 @@ myWorker.onmessage = function(e) {
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
 		var tw = parseInt(e.data.T);
+		var medEV = parseInt(e.data.ME);
 		if (dw+rw+tw < 1000){
 			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
 			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
@@ -445,9 +448,20 @@ myWorker.onmessage = function(e) {
 			document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
 			document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
 		}
+		if (medEV >= 270){
+			document.getElementById('medEV').textContent = "D "+medEV;
+		}
+		else if (medEV == 269){
+			document.getElementById('medEV').textContent = "Tie";
+		}
+		else {
+			document.getElementById('medEV').textContent = "R "+(538-medEV);
+		}
+		
 		
 		document.getElementById('dwinp').style.textDecoration = "none";
   		document.getElementById('rwinp').style.textDecoration = "none";
+  		document.getElementById('medEV').style.textDecoration = "none";
 	}
 }
 function predictNow(){
