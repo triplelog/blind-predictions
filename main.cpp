@@ -539,7 +539,7 @@ void initialRun(){
 
 int main() {
 	correlationDivisor = 333;
-	correlationPower = 2;
+	correlationPower = 3;
 	randomness = 75;
 	initialRun();
 
