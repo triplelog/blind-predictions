@@ -442,7 +442,6 @@ myWorker.onmessage = function(e) {
 	}
 	else if (e.data['type'] == "states"){
 		for (var i=0;i<51;i++){
-			console.log(stateList[i],e.data['val'][i]);
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
