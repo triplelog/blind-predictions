@@ -168,11 +168,13 @@ void makePrediction(int year, int n) {
 		int dVEPEV = 0;
 		int dSen = 0;
 		std::map<int,bool> doneYet;
+		int unknownStates = 51;
 		for (ii=0;ii<51;ii++){
 			doneYet[ii]=false;
 			if (results[ii]>=-1000){
 				int thisstate = ii;
 				doneYet[thisstate]=true;
+				unknownStates--;
 				int eloState = results[thisstate] - elonew[thisstate];
 				int eloPres = eloState;
 				if (elonew[thisstate]+eloPres > 0){ // Biden wins
@@ -230,7 +232,7 @@ void makePrediction(int year, int n) {
 				durationRand += duration_cast<std::chrono::nanoseconds>(a2-a1).count();
 			}
 		}
-		for (ii=0;ii<51;ii++){
+		for (ii=0;ii<unknownStates;ii++){
 			//auto a1 = std::chrono::high_resolution_clock::now();
 			int thisstate = rand() % 51;
 			while (doneYet[thisstate]){
