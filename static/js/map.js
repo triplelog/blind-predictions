@@ -12,14 +12,11 @@ document.addEventListener("mouseup", function(event) {
 
 var slider = document.getElementById("myRange");
 slider.oninput = function() {
-	document.getElementById('dwinp').style.textDecoration = "line-through";
-    document.getElementById('rwinp').style.textDecoration = "line-through";
+	document.getElementById('winp').style.textDecoration = "line-through";
     document.getElementById('medEV').style.textDecoration = "line-through";
-    document.getElementById('dwinph').style.textDecoration = "line-through";
-    document.getElementById('rwinph').style.textDecoration = "line-through";
+    document.getElementById('winph').style.textDecoration = "line-through";
     document.getElementById('medHEV').style.textDecoration = "line-through";
-    document.getElementById('dwinpv').style.textDecoration = "line-through";
-    document.getElementById('rwinpv').style.textDecoration = "line-through";
+    document.getElementById('winpv').style.textDecoration = "line-through";
     document.getElementById('medVEV').style.textDecoration = "line-through";
 	if (this.value<=1000){
 	  demoMult = this.value/1000.0;
@@ -407,14 +404,11 @@ function statemousedown(evt) {
   	startELO = (currentState.rpred-.5)*2000;
   	oldPercent = currentState.rpred;
   	document.addEventListener("mousemove", statemousemove);
-  	document.getElementById('dwinp').style.textDecoration = "line-through";
-    document.getElementById('rwinp').style.textDecoration = "line-through";
+  	document.getElementById('winp').style.textDecoration = "line-through";
     document.getElementById('medEV').style.textDecoration = "line-through";
-    document.getElementById('dwinph').style.textDecoration = "line-through";
-    document.getElementById('rwinph').style.textDecoration = "line-through";
+    document.getElementById('winph').style.textDecoration = "line-through";
     document.getElementById('medHEV').style.textDecoration = "line-through";
-    document.getElementById('dwinpv').style.textDecoration = "line-through";
-    document.getElementById('rwinpv').style.textDecoration = "line-through";
+    document.getElementById('winpv').style.textDecoration = "line-through";
     document.getElementById('medVEV').style.textDecoration = "line-through";
 }
 
@@ -461,20 +455,65 @@ myWorker.onmessage = function(e) {
 		var medHEV = parseInt(e.data.MHE);
 		var medVEV = parseInt(e.data.MVE);
 		if (dw+rw+tw < 1000){
-			document.getElementById('dwinp').textContent = Math.round(100*dw/(dw+rw+tw))+"%";
-			document.getElementById('rwinp').textContent = Math.round(100*rw/(dw+rw+tw))+"%";
-			document.getElementById('dwinph').textContent = Math.round(100*dhw/(dhw+rhw+thw))+"%";
-			document.getElementById('rwinph').textContent = Math.round(100*rhw/(dhw+rhw+thw))+"%";
-			document.getElementById('dwinpv').textContent = Math.round(100*dvw/(dvw+rvw+tvw))+"%";
-			document.getElementById('rwinpv').textContent = Math.round(100*rvw/(dvw+rvw+tvw))+"%";
+			if (Math.round(100*dw/(dw+rw+tw))>50){
+				document.getElementById('winp').textContent = "D "+Math.round(100*dw/(dw+rw+tw))+"%";
+				document.getElementById('winp').style.background = "blue";
+			}
+			else if (Math.round(100*rw/(dw+rw+tw))>50){
+				document.getElementById('winp').textContent = "R "+Math.round(100*rw/(dw+rw+tw))+"%";
+				document.getElementById('winp').style.background = "red";
+			}
+			else {
+				document.getElementById('winp').textContent = "50%";
+				document.getElementById('winp').style.background = "white";
+			}
+			if (Math.round(100*dhw/(dhw+rhw+thw))>50){
+				document.getElementById('winph').textContent = "D "+Math.round(100*dhw/(dhw+rhw+thw))+"%";
+			}
+			else if (Math.round(100*rhw/(dhw+rhw+thw))>50){
+				document.getElementById('winph').textContent = "R "+Math.round(100*rhw/(dhw+rhw+thw))+"%";
+			}
+			else {
+				document.getElementById('winph').textContent = "50%";
+			}
+			if (Math.round(100*dvw/(dvw+rvw+tvw))>50){
+				document.getElementById('winpv').textContent = "D "+Math.round(100*dvw/(dvw+rvw+tvw))+"%";
+			}
+			else if (Math.round(100*rvw/(dvw+rvw+tvw))>50){
+				document.getElementById('winpv').textContent = "R "+Math.round(100*rvw/(dvw+rvw+tvw))+"%";
+			}
+			else {
+				document.getElementById('winpv').textContent = "50%";
+			}
 		}
 		else {
-			document.getElementById('dwinp').textContent = Math.round(1000*dw/(dw+rw+tw))/10+"%";
-			document.getElementById('rwinp').textContent = Math.round(1000*rw/(dw+rw+tw))/10+"%";
-			document.getElementById('dwinph').textContent = Math.round(1000*dhw/(dhw+rhw+thw))/10+"%";
-			document.getElementById('rwinph').textContent = Math.round(1000*rhw/(dhw+rhw+thw))/10+"%";
-			document.getElementById('dwinpv').textContent = Math.round(1000*dvw/(dvw+rvw+tvw))/10+"%";
-			document.getElementById('rwinpv').textContent = Math.round(1000*rvw/(dvw+rvw+tvw))/10+"%";
+			if (Math.round(100*dw/(dw+rw+tw))>50){
+				document.getElementById('winp').textContent = "D "+Math.round(1000*dw/(dw+rw+tw))/10+"%";
+			}
+			else if (Math.round(100*rw/(dw+rw+tw))>50){
+				document.getElementById('winp').textContent = "R "+Math.round(1000*rw/(dw+rw+tw))/10+"%";
+			}
+			else {
+				document.getElementById('winp').textContent = "50%";
+			}
+			if (Math.round(100*dhw/(dhw+rhw+thw))>50){
+				document.getElementById('winph').textContent = "D "+Math.round(1000*dhw/(dhw+rhw+thw))/10+"%";
+			}
+			else if (Math.round(100*rhw/(dhw+rhw+thw))>50){
+				document.getElementById('winph').textContent = "R "+Math.round(1000*rhw/(dhw+rhw+thw))/10+"%";
+			}
+			else {
+				document.getElementById('winph').textContent = "50%";
+			}
+			if (Math.round(100*dvw/(dvw+rvw+tvw))>50){
+				document.getElementById('winpv').textContent = "D "+Math.round(1000*dvw/(dvw+rvw+tvw))/10+"%";
+			}
+			else if (Math.round(100*rvw/(dvw+rvw+tvw))>50){
+				document.getElementById('winpv').textContent = "R "+Math.round(1000*rvw/(dvw+rvw+tvw))/10+"%";
+			}
+			else {
+				document.getElementById('winpv').textContent = "50%";
+			}
 		}
 		if (medEV >= 270){
 			document.getElementById('medEV').textContent = "D "+medEV;
@@ -505,14 +544,11 @@ myWorker.onmessage = function(e) {
 		}
 		
 		
-		document.getElementById('dwinp').style.textDecoration = "none";
-  		document.getElementById('rwinp').style.textDecoration = "none";
+		document.getElementById('winp').style.textDecoration = "none";
   		document.getElementById('medEV').style.textDecoration = "none";
-  		document.getElementById('dwinph').style.textDecoration = "none";
-  		document.getElementById('rwinph').style.textDecoration = "none";
+  		document.getElementById('winph').style.textDecoration = "none";
   		document.getElementById('medHEV').style.textDecoration = "none";
-  		document.getElementById('dwinpv').style.textDecoration = "none";
-  		document.getElementById('rwinpv').style.textDecoration = "none";
+  		document.getElementById('winpv').style.textDecoration = "none";
   		document.getElementById('medVEV').style.textDecoration = "none";
 	}
 }
