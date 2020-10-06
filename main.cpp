@@ -393,8 +393,11 @@ void initialRun(){
 }
 
 int main() {
-
+	chaiscript::ChaiScript chai;
 	initialRun();
+	chai.eval(R"(
+		2+3;
+	)");
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
 	//makePrediction(2016,100);
