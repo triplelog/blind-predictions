@@ -13,6 +13,10 @@ function updateWins(wins){
 	wins['type']="wins";
 	postMessage(wins);
 }
+function updateMap(states){
+	var wins = {'type':"states","val":states}
+	postMessage(wins);
+}
 function predictjs(n){
 	//predictcpp(2016,n);
 	predictcpp(2020,n);

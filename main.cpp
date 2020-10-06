@@ -32,7 +32,7 @@ EM_JS(void, send_map, (const char* x), {
 		statesOut.push(statesStr[i]);
 		
 	}
-  	console.log(statesOut);
+  	updateMap(statesOut);
 });
 EM_JS(void, send_results, (const char* x), {
 	var xStr = UTF8ToString(x).split(",");

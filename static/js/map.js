@@ -440,6 +440,11 @@ myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
 		setTimeout(predictNow,50);
 	}
+	else if (e.data['type'] == "states"){
+		for (var i=0;i<51;i++){
+			console.log(stateList[i],e.data['val'][i]);
+		}
+	}
 	else if (e.data['type'] == "wins"){
 		console.log(e.data);
 		var dw = parseInt(e.data.D);
