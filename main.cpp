@@ -14,7 +14,6 @@
 
 #include "data.cpp"
 
-#include "chaiscript/chaiscript.hpp"
 
 
 #include <emscripten/emscripten.h>
@@ -82,15 +81,17 @@ std::vector<double> predictions20;
 std::vector<double> predictions20Sen;
 long long durationRand;
 int seed;
+int randomness;
+int correlationDivisor;
 
 int predictionToElo(double prediction, int counter){
-	double e = log(1/prediction-1)*-1*(76-counter)/log(10.0);
+	double e = log(1/prediction-1)*-1*(randomness+1-counter)/log(10.0);
 	return round(e);
 	
 }
 double predictionFromElo(int elo){
 	double e = 0-elo;
-	return 1.0/(1+pow(10.0,e/75));
+	return 1.0/(1+pow(10.0,e/randomness));
 	
 }
 
@@ -185,7 +186,7 @@ void makePrediction(int year, int n) {
 			double rrPres = rPres;
 			rrPres /= 1024;
 			//convert rr to vote percentage
-			int eloPres = eloState+predictionToElo(rrPres,51);
+			int eloPres = eloState+0;//predictionToElo(rrPres,51);
 			
 			
 			if (elonew[thisstate]+eloPres > 0){ // Biden wins
@@ -235,7 +236,7 @@ void makePrediction(int year, int n) {
 				}
 				int c = correlationsInt[thisstate][iii];
 				if (eloState <= -10 || eloState >= 10 || c >= 10 ){
-					elonew[iii]+=eloState*c/333;
+					elonew[iii]+=eloState*c/correlationDivisor;
 				}
 				iii++;
 			}
@@ -393,12 +394,10 @@ void initialRun(){
 }
 
 int main() {
-	chaiscript::ChaiScript chai;
+	correlationDivisor = 500;
+	randomness = 75;
 	initialRun();
-	int chaix = chai.eval<int>(R"(
-		2+3;
-	)");
-	console_log(chaix);
+
 	durationRand = 0;
 	auto a11 = std::chrono::high_resolution_clock::now();
 	//makePrediction(2016,100);
