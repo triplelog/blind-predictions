@@ -163,6 +163,7 @@ void makePrediction(int year, int n) {
 	std::map<int,int> evData;
 	std::map<int,int> hevData;
 	std::map<int,int> vevData;
+	std::map<int,int> pevData;
 	std::map<int,int> senateData;
 	std::map<int,int> stateData;
 	std::map<int,int> stateMax;
