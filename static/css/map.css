@@ -449,8 +449,8 @@ input[type=range].slider::-moz-range-thumb {
 	position: absolute;
 	right: calc( var(--block-width) * 2);
 	bottom: calc( var(--block-width) * 2);
-	width: calc( var(--block-width) * 40);
-	height: calc( var(--block-width) * 40);
+	width: calc( var(--block-width) * 38);
+	height: calc( var(--block-width) * 36);
 	border: 1px solid white;
 }
 
