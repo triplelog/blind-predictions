@@ -466,6 +466,7 @@ myWorker.onmessage = function(e) {
 		var medEV = parseInt(e.data.ME);
 		var medHEV = parseInt(e.data.MHE);
 		var medVEV = parseInt(e.data.MVE);
+		console.log(e.data);
 		if (dw+rw+tw < 1000){
 			if (Math.round(100*dw/(dw+rw+tw))>50){
 				document.getElementById('winp').textContent = "D "+Math.round(100*dw/(dw+rw+tw))+"%";

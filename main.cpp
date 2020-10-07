@@ -46,11 +46,15 @@ EM_JS(void, send_results, (const char* x), {
 	wins["DV"]=xStr[6];
 	wins["RV"]=xStr[7];
 	wins["TV"]=xStr[8];
-	wins["ME"]=xStr[9];
-	wins["MHE"]=xStr[10];
-	wins["MVE"]=xStr[11];
-	wins["MS"]=xStr[12];
-	var hist = xStr[13].split("|");
+	wins["DP"]=xStr[9];
+	wins["RP"]=xStr[10];
+	wins["TP"]=xStr[11];
+	wins["ME"]=xStr[12];
+	wins["MHE"]=xStr[13];
+	wins["MVE"]=xStr[14];
+	wins["MPE"]=xStr[15];
+	wins["MS"]=xStr[16];
+	var hist = xStr[17].split("|");
 	var minH = 51;
 	var maxH = 0;
 	for (var i=0;i<hist.length;i++){
@@ -88,8 +92,8 @@ int correlationDivisor;
 double correlationPower;
 
 int predictionToElo(double prediction, int counter){
-	if (prediction <= .0001){prediction = .0001;}
-	if (prediction >= .9999){prediction = .9999;}
+	if (prediction <= .00001){prediction = .00001;}
+	if (prediction >= .99999){prediction = .99999;}
 	double e = log(1/prediction-1)*-1*(randomness+1-counter)/log(10.0);
 	return round(e);
 	
@@ -183,6 +187,7 @@ void makePrediction(int year, int n) {
 		int bidenEV = 0;
 		int dHEV = 0;
 		int dVEPEV = 0;
+		int dPEV = 0;
 		int dSen = 0;
 		std::map<int,int> doneYet;
 		int unknownStates = 51;
@@ -238,6 +243,26 @@ void makePrediction(int year, int n) {
 					}
 					if (elonew[thisstate]+eloPres > 300){ //Biden wins 3rd
 						bidenEV++; dHEV++; dVEPEV+=9;
+					}
+				}
+				
+				int evBreak = round(2000.0/evs[thisstate]);
+				if (evs[thisstate] % 2 == 0){
+					int minEV = -1000 + evBreak/2;
+					for (iii=0;iii<evs[thisstate];iii++){
+						if (elonew[thisstate]+eloPres > minEV){
+							dPEV++;
+						}
+						minEV += evBreak;
+					}
+				}
+				else {
+					int minEV = -1000 + evBreak;
+					for (iii=0;iii<evs[thisstate];iii++){
+						if (elonew[thisstate]+eloPres > minEV){
+							dPEV++;
+						}
+						minEV += evBreak;
 					}
 				}
 			
@@ -323,6 +348,26 @@ void makePrediction(int year, int n) {
 				}
 			}
 			
+			int evBreak = round(2000.0/evs[thisstate]);
+			if (evs[thisstate] % 2 == 0){
+				int minEV = -1000 + evBreak/2;
+				for (iii=0;iii<evs[thisstate];iii++){
+					if (elonew[thisstate]+eloPres > minEV){
+						dPEV++;
+					}
+					minEV += evBreak;
+				}
+			}
+			else {
+				int minEV = -1000 + evBreak;
+				for (iii=0;iii<evs[thisstate];iii++){
+					if (elonew[thisstate]+eloPres > minEV){
+						dPEV++;
+					}
+					minEV += evBreak;
+				}
+			}
+			
 			if (eloState < 0){
 				eloState = -1*round(pow(-1*eloState,1-(ii+51-unknownStates)/51));
 			}
@@ -356,6 +401,15 @@ void makePrediction(int year, int n) {
 		}
 		else {
 			ties[0]++;
+		}
+		if (dPEV >= 270){
+			dWins[3]++;
+		}
+		else if (dPEV <= 268){
+			rWins[3]++;
+		}
+		else {
+			ties[3]++;
 		}
 		if (dHEV >= 219){
 			dWins[1]++;
@@ -393,6 +447,12 @@ void makePrediction(int year, int n) {
 		else {
 			vevData[dVEPEV]++;
 		}
+		if (pevData.find(dPEV) == pevData.end()){
+			pevData[dPEV] = 1;
+		}
+		else {
+			pevData[dPEV]++;
+		}
 		if (senateData.find(dSen) == senateData.end()){
 			senateData[dSen] = 1;
 		}
@@ -413,6 +473,10 @@ void makePrediction(int year, int n) {
 			resultStr += std::to_string(dWins[2])+",";
 			resultStr += std::to_string(rWins[2])+",";
 			resultStr += std::to_string(ties[2])+",";
+			
+			resultStr += std::to_string(dWins[3])+",";
+			resultStr += std::to_string(rWins[3])+",";
+			resultStr += std::to_string(ties[3])+",";
 			int medEV = 0;
 			int count = 0;
 			for (ii=0;ii<539;ii++){
@@ -451,6 +515,19 @@ void makePrediction(int year, int n) {
 				}
 			}
 			resultStr += std::to_string((medVEV*538+2181)/4363)+",";
+			
+			int medPEV = 0;
+			count = 0;
+			for (ii=0;ii<538;ii++){
+				if (pevData.find(ii) != pevData.end()){
+					count+= pevData[ii];
+				}
+				if (count >= i/2){
+					medPEV = ii;
+					break;
+				}
+			}
+			resultStr += std::to_string((medPEV)+",";
 			
 			medEV = 0;
 			count = 0;
