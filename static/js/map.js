@@ -506,6 +506,15 @@ myWorker.onmessage = function(e) {
 			else {
 				document.getElementById('winpv').textContent = "50%";
 			}
+			if (Math.round(100*dpw/(dpw+rpw+tpw))>50){
+				document.getElementById('winpp').textContent = "D "+Math.round(100*dpw/(dpw+rpw+tpw))+"%";
+			}
+			else if (Math.round(100*rpw/(dpw+rpw+tpw))>50){
+				document.getElementById('winpp').textContent = "R "+Math.round(100*rpw/(dpw+rpw+tpw))+"%";
+			}
+			else {
+				document.getElementById('winpp').textContent = "50%";
+			}
 		}
 		else {
 			if (Math.round(100*dw/(dw+rw+tw))>50){
@@ -579,7 +588,7 @@ myWorker.onmessage = function(e) {
 			document.getElementById('medVEV').textContent = "R "+(538-medVEV);
 		}
 		if (medPEV >= 270){
-			document.getElementById('medPEV').textContent = "D "+medVEV;
+			document.getElementById('medPEV').textContent = "D "+medPEV;
 		}
 		else if (medPEV == 269){
 			document.getElementById('medPEV').textContent = "Tie";
