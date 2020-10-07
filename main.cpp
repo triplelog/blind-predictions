@@ -349,7 +349,7 @@ void makePrediction(int year, int n) {
 				}
 			}
 			
-			int evBreak = round(2000.0/evs[thisstate]);
+			int evBreak = round(2000.0/(evs[thisstate]+1));
 			if (evs[thisstate] % 2 == 0){
 				int minEV = -1000 + evBreak/2;
 				for (iii=0;iii<evs[thisstate];iii++){
