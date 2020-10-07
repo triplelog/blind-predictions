@@ -528,7 +528,7 @@ void makePrediction(int year, int n) {
 					break;
 				}
 			}
-			resultStr += std::to_string((medPEV)+",";
+			resultStr += std::to_string(medPEV)+",";
 			
 			medEV = 0;
 			count = 0;
