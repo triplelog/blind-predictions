@@ -18,6 +18,8 @@ slider.oninput = function() {
     document.getElementById('medHEV').style.textDecoration = "line-through";
     document.getElementById('winpv').style.textDecoration = "line-through";
     document.getElementById('medVEV').style.textDecoration = "line-through";
+    document.getElementById('winpp').style.textDecoration = "line-through";
+    document.getElementById('medPEV').style.textDecoration = "line-through";
 	if (this.value<=1000){
 	  demoMult = this.value/1000.0;
 	}
@@ -407,6 +409,8 @@ function statemousedown(evt) {
     document.getElementById('medHEV').style.textDecoration = "line-through";
     document.getElementById('winpv').style.textDecoration = "line-through";
     document.getElementById('medVEV').style.textDecoration = "line-through";
+    document.getElementById('winpp').style.textDecoration = "line-through";
+    document.getElementById('medPEV').style.textDecoration = "line-through";
 }
 
 function statemousemove(evt) {
@@ -460,9 +464,13 @@ myWorker.onmessage = function(e) {
 		var dvw = parseInt(e.data.DV);
 		var rvw = parseInt(e.data.RV);
 		var tvw = parseInt(e.data.TV);
+		var dpw = parseInt(e.data.DP);
+		var rpw = parseInt(e.data.RP);
+		var tpw = parseInt(e.data.TP);
 		var medEV = parseInt(e.data.ME);
 		var medHEV = parseInt(e.data.MHE);
 		var medVEV = parseInt(e.data.MVE);
+		var medPEV = parseInt(e.data.MPE);
 		console.log(e.data);
 		if (dw+rw+tw < 1000){
 			if (Math.round(100*dw/(dw+rw+tw))>50){
@@ -527,6 +535,15 @@ myWorker.onmessage = function(e) {
 			else {
 				document.getElementById('winpv').textContent = "50%";
 			}
+			if (Math.round(100*dpw/(dpw+rpw+tpw))>50){
+				document.getElementById('winpp').textContent = "D "+Math.round(1000*dpw/(dpw+rpw+tpw))/10+"%";
+			}
+			else if (Math.round(100*rpw/(dpw+rpw+tpw))>50){
+				document.getElementById('winpp').textContent = "R "+Math.round(1000*rpw/(dpw+rpw+tpw))/10+"%";
+			}
+			else {
+				document.getElementById('winpp').textContent = "50%";
+			}
 		}
 		if (medEV >= 270){
 			document.getElementById('medEV').textContent = "D "+medEV;
@@ -561,6 +578,15 @@ myWorker.onmessage = function(e) {
 		else {
 			document.getElementById('medVEV').textContent = "R "+(538-medVEV);
 		}
+		if (medPEV >= 270){
+			document.getElementById('medPEV').textContent = "D "+medVEV;
+		}
+		else if (medPEV == 269){
+			document.getElementById('medPEV').textContent = "Tie";
+		}
+		else {
+			document.getElementById('medPEV').textContent = "R "+(538-medPEV);
+		}
 		
 		
 		document.getElementById('winp').style.textDecoration = "none";
@@ -569,6 +595,8 @@ myWorker.onmessage = function(e) {
   		document.getElementById('medHEV').style.textDecoration = "none";
   		document.getElementById('winpv').style.textDecoration = "none";
   		document.getElementById('medVEV').style.textDecoration = "none";
+  		document.getElementById('winpp').style.textDecoration = "none";
+  		document.getElementById('medPEV').style.textDecoration = "none";
 	}
 }
 function predictNow(){
