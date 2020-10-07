@@ -343,10 +343,14 @@ div pre[class*="language-"]{
 {% endblock %}
 {% block content11 %}
 <form action="../map" method="post">
-	<input type="range" min="-100" max="100" val="0"></input>
+	<div>National Advantage: <input type="range" min="-100" max="100" val="0"></input></div>
+	<div>Uncertainty: <input type="range" min="-100" max="100" val="0"></input></div>
+	<div>Correlation Weight: <input type="range" min="-100" max="100" val="0"></input></div>
+	<div>Correlations: <input type="range" min="-100" max="100" val="0"></input></div>
 	<button type="submit">Submit</button>
 </form>
 <a href="">From CSV</a>
+<a href="">API</a>
 {% endblock %}
 
 {% block title13 %}
