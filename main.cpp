@@ -85,7 +85,7 @@ long long durationRand;
 int seed;
 int randomness;
 int correlationDivisor;
-int correlationPower;
+double correlationPower;
 
 int predictionToElo(double prediction, int counter){
 	if (prediction <= .0001){prediction = .0001;}
@@ -105,11 +105,23 @@ double predictionFromElo(int elo, int counter){
 extern "C" {
 
 void updateProbability(int state, double p, int year) {
-	if (year == 2016){
-		predictions16[state] = p;
+	if (state == 51){
+		randomness = round(p);
 	}
-	else if (year == 2020){
-		predictions20[state] = p;
+	else if (state == 52){
+		correlationDivisor = round(p);
+	}
+	else if (state == 53){
+		correlationPower = p;
+	}
+	else {
+		if (year == 2016){
+			predictions16[state] = p;
+		}
+		else if (year == 2020){
+		
+			predictions20[state] = p;
+		}
 	}
 	
 }

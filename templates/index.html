@@ -343,10 +343,10 @@ div pre[class*="language-"]{
 {% endblock %}
 {% block content11 %}
 <form action="../presmap" method="post">
-	<div>National Advantage: <input name="nAdv" type="range" min="-200" max="200" val="0"></input></div>
-	<div>Uncertainty: <input type="range" min="-100" max="100" val="0"></input></div>
-	<div>Correlation Weight: <input type="range" min="-100" max="100" val="0"></input></div>
-	<div>Correlations: <input type="range" min="-100" max="100" val="0"></input></div>
+	<div>National Advantage: <input name="nAdv" type="range" min="-200" max="200" val="0" step="1"></input></div>
+	<div>Uncertainty: <input name="uncertainty" type="range" min="-50" max="50" val="0" step="1"></input></div>
+	<div>Correlation Weight: <input name="correlationDivisor" type="range" min="-300" max="300" val="0"></input></div>
+	<div>Correlations: <input name="correlationPower" type="range" min="-300" max="300" val="0"></input></div>
 	<button type="submit">Submit</button>
 </form>
 <a href="">From CSV</a>
