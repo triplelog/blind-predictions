@@ -259,10 +259,7 @@ function orderStates() {
 			document.getElementById('pres2016R').appendChild(newerspan);
 			//console.log(newerspan);
 		}
-			
-			
-			
-			
+
 
 
 
@@ -445,7 +442,7 @@ myWorker.onmessage = function(e) {
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
-					electoralData[ii].rpred = .5 + e.data['val'][i]/-2000;
+					electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
 					break;
 				}
 			}
