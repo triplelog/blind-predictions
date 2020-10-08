@@ -441,7 +441,7 @@ for (var i=0;i<51;i++){
 }
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
-		setTimeout(predictNow,50);
+		setTimeout(updateNow,50);
 	}
 	else if (e.data['type'] == "states"){
 		for (var i=0;i<51;i++){
@@ -624,6 +624,13 @@ myWorker.onmessage = function(e) {
 	}
 }
 function predictNow(){
+	
+
+	myWorker.postMessage(["update",54,0,Math.floor(Math.random() * 10000)]);
+	//myWorker.postMessage(["predict",1000]);
+	myWorker.postMessage(["predict",1]);
+}
+function updateNow(){
 	
 	for (var i=0;i<51;i++){
 
