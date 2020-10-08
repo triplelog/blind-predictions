@@ -355,6 +355,9 @@ void makePrediction(int year, int n) {
 			
 			if (n == 1){
 				stateData[thisstate] = elonew[thisstate]+eloPres;
+				if (stateData[thisstate] == 0){
+					stateData[thisstate] = -1;
+				}
 			}
 			
 			int evBreak = round(2000.0/(evs[thisstate]+1));

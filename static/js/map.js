@@ -466,20 +466,6 @@ myWorker.onmessage = function(e) {
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
 					electoralData[ii].futpred = e.data['val'][i];
-					var absDiff = electoralData[ii].futpred/10;
-					if (absDiff < 0){
-						absDiff = -1*absDiff;
-					}
-					var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
-					if (delay < 0){
-						delay = 0;
-					}
-					if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
-						electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
-					}
-					else {
-						electoralData[ii].rpred = .5/demoMult;
-					}
 					break;
 				}
 			}
@@ -645,6 +631,8 @@ myWorker.onmessage = function(e) {
 }
 function updateResults() {
 	currentDelay += 1000;
+	var dEV = 0;
+	var rEV = 0;
 	for (var i=0;i<51;i++){
 		var myState = stateList[i];
 		for (var ii=0; ii<electoralData.length; ii++) {
@@ -659,6 +647,12 @@ function updateResults() {
 				}
 				if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 					electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
+					if (electoralData[ii].futpred>0){
+						dEV += electoralData[ii].ev10;
+					}
+					else {
+						rEV += electoralData[ii].ev10;
+					}
 				}
 				else {
 					electoralData[ii].rpred = .5/demoMult;
@@ -667,12 +661,17 @@ function updateResults() {
 			}
 		}
 	}
-	
+	console.log(dEV,r)
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	orderStates();
 	if (currentDelay < 120000){
 		setTimeout(updateResults,1000);
 	}
+	
+	document.getElementById('winp').textContent = dEV;
+	document.getElementById('medEV').textContent = rEV;
+	document.getElementById('winp').style.textDecoration = "none";
+  	document.getElementById('medEV').style.textDecoration = "none";
 }
 
 function predictNow(){
