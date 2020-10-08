@@ -364,7 +364,7 @@ app.post(['/map','/map.html'],
 			electoralData: eData,
 			uncertainty: 75,
 			correlationDivisor: 160,
-			correlationPower: 1.5,
+			correlationPower: 2,
 
 		}));
 		res.end();
