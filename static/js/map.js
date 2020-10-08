@@ -53,6 +53,22 @@ function orderStates() {
 		
 		var presyear = electoralData[i]['rpred']*demoMult;
 		var elo = (presyear-.5)*2000;
+		var fullResults = 1;
+		if (elo <= -2999) {
+			electoralData[i]['rpred'] = .5;
+			fullResults = -1;
+			presyear = electoralData[i]['rpred']*demoMult;
+			elo = (presyear-.5)*2000;
+			dprob = 1.0/(1+Math.pow(10.0,elo/75));
+		}
+		else if (elo <= -1999) {
+			electoralData[i]['rpred'] = .5;
+			fullResults = 0;
+			presyear = electoralData[i]['rpred']*demoMult;
+			elo = (presyear-.5)*2000;
+			dprob = 1.0/(1+Math.pow(10.0,elo/75));
+		}
+		
 		var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 		
 		repVote += parseInt(electoralData[i]['votes16'])*(presyear);
@@ -63,10 +79,8 @@ function orderStates() {
 		newspan.classList.add("stateface");
 		newspan.classList.add("stateface-replace");
 		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
-		if (elo <= -2999) {
-			presyear = .5*demoMult;
-			elo = (presyear-.5)*2000;
-			dprob = 1.0/(1+Math.pow(10.0,elo/75));
+		if (fullResults == -1) {
+			
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
@@ -74,10 +88,7 @@ function orderStates() {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "black";
 			}
 		}
-		else if (elo <= -1999) {
-			presyear = .5*demoMult;
-			elo = (presyear-.5)*2000;
-			dprob = 1.0/(1+Math.pow(10.0,elo/75));
+		else if (fullResults == 0) {
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
