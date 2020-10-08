@@ -439,6 +439,7 @@ stateList.sort();
 for (var i=0;i<51;i++){
 	stateMap[stateList[i]]=i;
 }
+var currentDelay = 0;
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
 		setTimeout(updateNow,50);
@@ -457,29 +458,32 @@ myWorker.onmessage = function(e) {
 		orderStates();
 	}
 	else if (e.data['type'] == "result"){
+		currentDelay = 0;
 		for (var i=0;i<51;i++){
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
-					var absDiff = e.data['val'][i]/10;
+					electoralData[ii].futpred = e.data['val'][i];
+					var absDiff = electoralData[ii].futpred/10;
 					if (absDiff < 0){
 						absDiff = -1*absDiff;
 					}
 					var delay = 5000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
-					if (delay <= 0){
-						electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
+					
+					if (delay <= currentDelay){
+						electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
 					}
 					else {
 						electoralData[ii].rpred = .5/demoMult;
-						var v = e.data['val'][i];
-						setTimeout(function() {console.log(myState,v);},delay);
 					}
 					break;
 				}
 			}
 		}
+		
 		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 		orderStates();
+		setTimeout(updateResults,1000);
 	}
 	else if (e.data['type'] == "wins"){
 		var dw = parseInt(e.data.D);
@@ -635,6 +639,36 @@ myWorker.onmessage = function(e) {
   		document.getElementById('medPEV').style.textDecoration = "none";
 	}
 }
+function updateResults() {
+	currentDelay += 1000;
+	for (var i=0;i<51;i++){
+		var myState = stateList[i];
+		for (var ii=0; ii<electoralData.length; ii++) {
+			if (electoralData[ii]['abbrev'] == myState) {
+				var absDiff = electoralData[ii].futpred/10;
+				if (absDiff < 0){
+					absDiff = -1*absDiff;
+				}
+				var delay = 5000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
+				
+				if (delay <= currentDelay){
+					electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
+				}
+				else {
+					electoralData[ii].rpred = .5/demoMult;
+				}
+				break;
+			}
+		}
+	}
+	
+	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
+	orderStates();
+	if (currentDelay < 100000){
+		setTimeout(updateResults,1000);
+	}
+}
+
 function predictNow(){
 	
 
