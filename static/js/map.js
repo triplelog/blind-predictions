@@ -64,6 +64,9 @@ function orderStates() {
 		newspan.classList.add("stateface-replace");
 		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
 		if (elo <= -2999) {
+			presyear = .5*demoMult;
+			elo = (presyear-.5)*2000;
+			dprob = 1.0/(1+Math.pow(10.0,elo/75));
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
@@ -72,6 +75,9 @@ function orderStates() {
 			}
 		}
 		else if (elo <= -1999) {
+			presyear = .5*demoMult;
+			elo = (presyear-.5)*2000;
+			dprob = 1.0/(1+Math.pow(10.0,elo/75));
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
@@ -467,7 +473,6 @@ myWorker.onmessage = function(e) {
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
-					electoralData[ii].oldpred = electoralData[ii].rpred;
 					electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
 					break;
 				}
@@ -482,6 +487,7 @@ myWorker.onmessage = function(e) {
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
+					electoralData[ii].oldpred = electoralData[ii].rpred;
 					electoralData[ii].futpred = e.data['val'][i];
 					break;
 				}
