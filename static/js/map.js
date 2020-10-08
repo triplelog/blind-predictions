@@ -71,7 +71,12 @@ function orderStates() {
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				//document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.75)";
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,0)";
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(0,0,0,.5)";
+				if (presyear>.5){
+					document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(255,0,0,.25)";
+				}
+				else {
+					document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(0,0,255,.25)";
+				}
 			}
 		}
 		else if (electoralData[i].fullResults == -1) {
@@ -80,7 +85,12 @@ function orderStates() {
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,0)";
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "black";
+				if (presyear>.5){
+					document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(255,0,0,1)";
+				}
+				else {
+					document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(0,0,255,1)";
+				}
 			}
 		}
 		else if (dprob<.5) {
@@ -707,7 +717,7 @@ function updateResults() {
 
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	orderStates();
-	if (currentDelay < 120000){
+	if (currentDelay < 200000){
 		setTimeout(updateResults,1000);
 	}
 	
