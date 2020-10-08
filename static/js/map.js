@@ -649,7 +649,7 @@ function updateNow(){
 	myWorker.postMessage(["update",53,correlationPower,"2020"]);
 	myWorker.postMessage(["update",54,0,Math.floor(Math.random() * 10000)]);
 	//myWorker.postMessage(["predict",1000]);
-	myWorker.postMessage(["predict",1]);
+	myWorker.postMessage(["predict",1000]);
 }
 function toggleSmall() {
 	var els = document.querySelectorAll('.doubleSize');
