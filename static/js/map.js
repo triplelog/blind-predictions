@@ -466,7 +466,7 @@ myWorker.onmessage = function(e) {
 						absDiff = -1*absDiff;
 					}
 					//var delay = 5000*(−0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)−1.61*absDiff+12);
-					var delay = 5000*(−0.0013*Math.pow(absDiff,3));
+					var delay = 5000*(-0.0013*Math.pow(absDiff,3));
 					if (delay <= 0){
 						electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
 					}
