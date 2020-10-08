@@ -390,7 +390,7 @@ function statemousedown(evt) {
 		document.removeEventListener("mousemove", statemousemove);
 		return;
 	}
-  	myState = el.id.substring(4,);
+  	myState = el.id.substring(6,);
 	for (var i=0; i<electoralData.length; ++i) {
 		if (electoralData[i]['abbrev'] == myState) {
 	  		currentState = electoralData[i];
