@@ -673,7 +673,7 @@ function updateResults() {
 						rEV += electoralData[ii].ev10;
 					}
 				}
-				else if (delay <= currentDelay){
+				else if (0 <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 					electoralData[ii].rpred = -.5/demoMult;
 					if (electoralData[ii].oldpred>.5){
 						rproEV += electoralData[ii].ev10;
