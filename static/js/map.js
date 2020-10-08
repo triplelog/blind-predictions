@@ -63,7 +63,23 @@ function orderStates() {
 		newspan.classList.add("stateface");
 		newspan.classList.add("stateface-replace");
 		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
-		if (dprob<.5) {
+		if (elo <= -2999) {
+			newspan.classList.add("rep");
+			
+			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
+			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "black";
+			}
+		}
+		else if (elo <= -1999) {
+			newspan.classList.add("rep");
+			
+			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
+			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.25)";
+			}
+		}
+		else if (dprob<.5) {
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(50+dprob*100)+"%)";
@@ -451,6 +467,7 @@ myWorker.onmessage = function(e) {
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
+					electoralData[ii].oldpred = electoralData[ii].rpred;
 					electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
 					break;
 				}
@@ -633,6 +650,8 @@ function updateResults() {
 	currentDelay += 1000;
 	var dEV = 0;
 	var rEV = 0;
+	var dproEV = 0;
+	var rproEV = 0;
 	for (var i=0;i<51;i++){
 		var myState = stateList[i];
 		for (var ii=0; ii<electoralData.length; ii++) {
@@ -654,8 +673,23 @@ function updateResults() {
 						rEV += electoralData[ii].ev10;
 					}
 				}
+				else if (delay <= currentDelay){
+					electoralData[ii].rpred = -.5/demoMult;
+					if (electoralData[ii].oldpred>.5){
+						rproEV += electoralData[ii].ev10;
+					}
+					else {
+						dproEV += electoralData[ii].ev10;
+					}
+				}
 				else {
-					electoralData[ii].rpred = .5/demoMult;
+					electoralData[ii].rpred = -1/demoMult;
+					if (electoralData[ii].oldpred>.5){
+						rproEV += electoralData[ii].ev10;
+					}
+					else {
+						dproEV += electoralData[ii].ev10;
+					}
 				}
 				break;
 			}
@@ -672,6 +706,10 @@ function updateResults() {
 	document.getElementById('medEV').textContent = rEV;
 	document.getElementById('winp').style.textDecoration = "none";
   	document.getElementById('medEV').style.textDecoration = "none";
+  	document.getElementById('winph').textContent = dproEV;
+	document.getElementById('medHEV').textContent = rproEV;
+	document.getElementById('winph').style.textDecoration = "none";
+  	document.getElementById('medHEV').style.textDecoration = "none";
 }
 
 function predictNow(){
