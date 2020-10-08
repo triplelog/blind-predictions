@@ -661,7 +661,7 @@ function updateResults() {
 			}
 		}
 	}
-	console.log(dEV,r)
+
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	orderStates();
 	if (currentDelay < 120000){
