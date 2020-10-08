@@ -456,6 +456,19 @@ myWorker.onmessage = function(e) {
 		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 		orderStates();
 	}
+	else if (e.data['type'] == "result"){
+		for (var i=0;i<51;i++){
+			var myState = stateList[i];
+			for (var ii=0; ii<electoralData.length; ii++) {
+				if (electoralData[ii]['abbrev'] == myState) {
+					electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
+					break;
+				}
+			}
+		}
+		electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
+		orderStates();
+	}
 	else if (e.data['type'] == "wins"){
 		var dw = parseInt(e.data.D);
 		var rw = parseInt(e.data.R);
@@ -627,6 +640,7 @@ function predictNow(){
 	myWorker.postMessage(["update",51,uncertainty,"2020"]);
 	myWorker.postMessage(["update",52,correlationDivisor,"2020"]);
 	myWorker.postMessage(["update",53,correlationPower,"2020"]);
+	myWorker.postMessage(["update",54,0,Math.floor(Math.random() * 10000)]);
 	//myWorker.postMessage(["predict",1000]);
 	myWorker.postMessage(["predict",1]);
 }

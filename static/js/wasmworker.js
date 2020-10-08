@@ -14,8 +14,8 @@ function updateWins(wins){
 	postMessage(wins);
 }
 function updateMap(states){
-	var wins = {'type':"states","val":states};
-	console.log(wins);
+	//var wins = {'type':"states","val":states};
+	var wins = {'type':"result","val":states};
 	postMessage(wins);
 }
 function predictjs(n){

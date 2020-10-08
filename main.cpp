@@ -118,6 +118,9 @@ void updateProbability(int state, double p, int year) {
 	else if (state == 53){
 		correlationPower = p;
 	}
+	else if (state == 54){
+		seed = year;
+	}
 	else {
 		if (year == 2016){
 			predictions16[state] = p;
