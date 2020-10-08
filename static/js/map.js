@@ -53,22 +53,6 @@ function orderStates() {
 		
 		var presyear = electoralData[i]['rpred']*demoMult;
 		var elo = (presyear-.5)*2000;
-		var fullResults = 1;
-		if (elo <= -2999) {
-			electoralData[i]['rpred'] = .5;
-			fullResults = -1;
-			presyear = electoralData[i]['rpred']*demoMult;
-			elo = (presyear-.5)*2000;
-			dprob = 1.0/(1+Math.pow(10.0,elo/75));
-		}
-		else if (elo <= -1999) {
-			electoralData[i]['rpred'] = .5;
-			fullResults = 0;
-			presyear = electoralData[i]['rpred']*demoMult;
-			elo = (presyear-.5)*2000;
-			dprob = 1.0/(1+Math.pow(10.0,elo/75));
-		}
-		
 		var dprob = 1.0/(1+Math.pow(10.0,elo/75));
 		
 		repVote += parseInt(electoralData[i]['votes16'])*(presyear);
@@ -79,16 +63,18 @@ function orderStates() {
 		newspan.classList.add("stateface");
 		newspan.classList.add("stateface-replace");
 		newspan.classList.add("stateface-"+electoralData[i]['abbrev']);
-		if (fullResults == -1) {
+		if (electoralData[i].fullResults == -1) {
 			
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.75)";
+				//document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.75)";
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,0)";
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(0,0,0,0)";
 			}
 		}
-		else if (fullResults == 0) {
+		else if (electoralData[i].fullResults == -2) {
 			newspan.classList.add("rep");
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
@@ -691,7 +677,8 @@ function updateResults() {
 					}
 				}
 				else if (0 <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
-					electoralData[ii].rpred = -.5/demoMult;
+					electoralData[ii].rpred = .5/demoMult;
+					electoralData[ii].fullResults = -1;
 					if (electoralData[ii].oldpred>.5){
 						rproEV += electoralData[ii].ev10;
 					}
@@ -700,7 +687,8 @@ function updateResults() {
 					}
 				}
 				else {
-					electoralData[ii].rpred = -1/demoMult;
+					electoralData[ii].rpred = .5/demoMult;
+					electoralData[ii].fullResults = -2;
 					if (electoralData[ii].oldpred>.5){
 						rproEV += electoralData[ii].ev10;
 					}
