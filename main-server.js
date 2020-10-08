@@ -363,7 +363,7 @@ app.post(['/map','/map.html'],
 		res.write(nunjucks.render('templates/map.html',{
 			electoralData: eData,
 			uncertainty: 75,
-			correlationDivisor: 333,
+			correlationDivisor: 250,
 			correlationPower: 3,
 
 		}));
