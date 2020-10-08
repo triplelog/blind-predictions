@@ -672,6 +672,7 @@ function updateResults() {
 				}
 				if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 					electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
+					electoralData[ii].fullResults = 0;
 					if (electoralData[ii].futpred>0){
 						dEV += electoralData[ii].ev10;
 					}
