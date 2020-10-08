@@ -98,7 +98,7 @@ function orderStates() {
 			else { document.getElementById('svg-'+electoralData[i]['abbrev']+'3').style.fill = "hsl(240,100%,"+(50+(1-dprobd3)*100)+"%)";}
 		}
 		
-		newspan.id='svg-'+electoralData[i]['abbrev'];
+		newspan.id='state-'+electoralData[i]['abbrev'];
 		newspan.addEventListener("mouseover", function(event) {
 		  // prevent default to allow drop
 		  event.preventDefault();
@@ -118,7 +118,7 @@ function orderStates() {
 		insideSpan.classList.add("stateface-"+electoralData[i]['abbrev']);
 		if (presyear>=.5) {insideSpan.classList.add("rep");}
 		else {insideSpan.classList.add("dem");}
-		insideSpan.id='svg-'+electoralData[i]['abbrev'];
+		insideSpan.id='state-'+electoralData[i]['abbrev'];
 		insideSpan.setAttribute('draggable', true);
 		newspan.appendChild(insideSpan);
 		
@@ -312,11 +312,11 @@ function reorderED(state1,state2) {
 	var pres2 = -1;
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	for (var i=0;i<electoralData.length;i++){
-		if ('svg-'+electoralData[i]['abbrev']==state1){
+		if ('state-'+electoralData[i]['abbrev']==state1){
 			state1idx = i;
 			pres1 = electoralData[i]['rpred'];
 		}
-		if ('svg-'+electoralData[i]['abbrev']==state2){
+		if ('state-'+electoralData[i]['abbrev']==state2){
 			state2idx = i;
 			pres2 = electoralData[i]['rpred'];
 		}
