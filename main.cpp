@@ -564,11 +564,13 @@ void makePrediction(int year, int n) {
 		
 	}
 
-	/*
+	
 	for (i=0;i<539;i++){
 		if (evData.find(i) != evData.end()){
+			console_log(i);
+			console_log(evData[i]);
 		}
-	}*/
+	}
 }
 
 }

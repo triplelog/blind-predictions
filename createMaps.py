@@ -18,7 +18,11 @@ for line in lines:
 for state in districts.keys():
 	if state != 'DC':
 		cdList = districts[state.lower()]
+		for i in range(0,len(cdList)):
+			cdList[i] = int(cdList[i])
 		cdList.sort()
+		for i in range(0,len(cdList)):
+			cdList[i] = str(cdList[i])
 		for i in range(0,len(cdList)):
 			districtList.append(state.lower()+"-"+cdList[i])
 			if state.lower()+"-"+cdList[i] == "hi-1":
@@ -27,12 +31,12 @@ for state in districts.keys():
 				districtList.append(state.lower()+"-"+cdList[i])
 				districtList.append(state.lower()+"-"+cdList[i])
 				districtList.append(state.lower()+"-"+cdList[i])
-				
+			if state.lower()+"-"+cdList[i] == "ma-9":
 				districtList.append(state.lower()+"-"+cdList[i])
 				districtList.append(state.lower()+"-"+cdList[i])
+			if state.lower()+"-"+cdList[i] == "va-2":
 				districtList.append(state.lower()+"-"+cdList[i])
-				districtList.append(state.lower()+"-"+cdList[i])
-print(districtList)
+#print(districtList)
 initial = ['']
 end = ['']
 file1 = open('static/maps/electoralsvg.svg', 'w')
@@ -85,11 +89,12 @@ idx = 0
 for i in range(0,len(lines)):
 	line = lines[i]
 	startState = '<path vector-effect="none" fill-rule="evenodd"'
-	if idx>59:
-		cdID = districtList[idx-60]
-	else:
-		cdID = "state-"+str(idx)
+	
 	if line[:len(startState)] == startState:
+		if idx>59:
+			cdID = districtList[idx-60]
+		else:
+			cdID = "state-"+str(idx)
 		lineEnd = line[len(startState):]
 		line = '<path id="'+cdID+'" vector-effect="none" fill-rule="evenodd"'+lineEnd
 		idx+=1
