@@ -232,4 +232,5 @@
 <text id="svg-ne1" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="1100" y="1100">1</text>
 <text id="svg-ne2" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="1130" y="1100">2</text>
 <text id="svg-ne3" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="1160" y="1100">3</text>
-</g></svg>
+</g>
+</svg>

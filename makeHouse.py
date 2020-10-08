@@ -50,12 +50,16 @@ stateData = {"02": {"abbrev": "AK", "name": "Alaska", "pop": 721523, "reps": 1, 
 
 tots = [0,0,0,0,0]
 
+districtList = {}
 for state in hexMap:
+
 	stateFips = state['state']
 	stateAbbrev = stateData[stateFips]['abbrev'].lower()
+	districtList[stateAbbrev]=[]
 	for cd in state['cds']:
 		districts[stateAbbrev+'-'+str(int(cd['name'][2:]))]={}
 		districts[stateAbbrev+'-'+str(int(cd['name'][2:]))]['hex']=cd['map']
+		districtList[stateAbbrev].append(str(int(cd['name'][2:])))
 	for cd in cdData[stateFips].keys():
 		districts[stateAbbrev+'-'+str(int(cd))]['rural']=sum(cdData[stateFips][cd]['data'][1][1:])
 		districts[stateAbbrev+'-'+str(int(cd))]['rural']+=sum(cdData[stateFips][cd]['data'][2][1:])
@@ -83,7 +87,8 @@ for state in hexMap:
 		tots[0]+=districts[stateAbbrev+'-'+str(int(cd))]['rural']
 		tots[1]+=districts[stateAbbrev+'-'+str(int(cd))]['suburban']
 		tots[2]+=districts[stateAbbrev+'-'+str(int(cd))]['urban']
-		
+#print(districtList)	
+#print(soto)	
 for cd in allPres:
 	stateAbbrev = cd[1][:2].lower()
 	if cd[1][3:]=='AL':
