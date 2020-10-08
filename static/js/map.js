@@ -383,7 +383,6 @@ function statemousedown(evt) {
 	if (!el.id || el.id.substr(0,6) != 'state-'){
 		el = el.parentElement;
 	}
-	console.log(el);
 	if (!el.id || el.id.substr(0,6) != 'state-'){
 		myState = "";
 		currentState = {};
