@@ -468,7 +468,7 @@ myWorker.onmessage = function(e) {
 					if (absDiff < 0){
 						absDiff = -1*absDiff;
 					}
-					var delay = 5000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
+					var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
 					
 					if (delay <= currentDelay){
 						electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
@@ -649,7 +649,7 @@ function updateResults() {
 				if (absDiff < 0){
 					absDiff = -1*absDiff;
 				}
-				var delay = 5000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
+				var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
 				
 				if (delay <= currentDelay){
 					electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
@@ -695,7 +695,7 @@ function updateNow(){
 	myWorker.postMessage(["update",53,correlationPower,"2020"]);
 	myWorker.postMessage(["update",54,0,Math.floor(Math.random() * 10000)]);
 	//myWorker.postMessage(["predict",1000]);
-	myWorker.postMessage(["predict",1000]);
+	//myWorker.postMessage(["predict",1000]);
 }
 function toggleSmall() {
 	var els = document.querySelectorAll('.doubleSize');
