@@ -373,7 +373,11 @@ var oldPercent = 0;
 var currentState = {};
 
 for (var i=0;i<51;i++) {
-	document.getElementById('state-'+electoralData[i]['abbrev']).addEventListener("mousedown", statemousedown);
+	//document.getElementById('state-'+electoralData[i]['abbrev']).addEventListener("mousedown", statemousedown);
+	var paths = document.getElementById('state-'+electoralData[i]['abbrev']).querySelectorAll('path');
+	for (var ii=0;ii<paths.length;ii++){
+		paths[ii].addEventListener("mousedown", statemousedown);
+	}
 }
 
 
@@ -383,6 +387,7 @@ function statemousedown(evt) {
 	if (!el.id || el.id.substr(0,6) != 'state-'){
 		el = el.parentElement;
 	}
+	console.log(el);
 	if (!el.id || el.id.substr(0,6) != 'state-'){
 		myState = "";
 		currentState = {};
