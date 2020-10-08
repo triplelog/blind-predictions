@@ -627,7 +627,8 @@ function predictNow(){
 	myWorker.postMessage(["update",51,uncertainty,"2020"]);
 	myWorker.postMessage(["update",52,correlationDivisor,"2020"]);
 	myWorker.postMessage(["update",53,correlationPower,"2020"]);
-	myWorker.postMessage(["predict",1000]);
+	//myWorker.postMessage(["predict",1000]);
+	myWorker.postMessage(["predict",1]);
 }
 function toggleSmall() {
 	var els = document.querySelectorAll('.doubleSize');

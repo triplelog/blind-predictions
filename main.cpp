@@ -349,6 +349,10 @@ void makePrediction(int year, int n) {
 				}
 			}
 			
+			if (n == 1){
+				stateData[thisstate] = elonew[thisstate]+eloPres;
+			}
+			
 			int evBreak = round(2000.0/(evs[thisstate]+1));
 			if (evs[thisstate] % 2 == 0){
 				int minEV = -1000 + evBreak/2;
@@ -461,7 +465,14 @@ void makePrediction(int year, int n) {
 			senateData[dSen]++;
 		}
 		
-		if (i % 100 == 99){
+		if (n == 1){
+			std::string statesOut = "";
+			for (ii=0;ii<51;ii++){
+				statesOut += std::to_string(stateData[ii])+",";
+			}
+			send_map(statesOut.c_str());
+		}
+		else if (i % 100 == 99){
 			std::string resultStr = "";
 			resultStr += std::to_string(dWins[0])+",";
 			resultStr += std::to_string(rWins[0])+",";
