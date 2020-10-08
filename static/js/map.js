@@ -377,6 +377,7 @@ for (var i=0;i<51;i++) {
 	var paths = document.getElementById('state-'+electoralData[i]['abbrev']).querySelectorAll('path');
 	for (var ii=0;ii<paths.length;ii++){
 		paths[ii].addEventListener("mousedown", statemousedown);
+		console.log(paths[ii]);
 	}
 }
 
