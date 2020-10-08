@@ -34,18 +34,17 @@ for i in range(0,len(lines)):
 		continue
 	startState = '<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="3.07087"'
 	if line[:len(startState)] == startState:
-		if idx == 0:
-			line = '''<text id="svg-me1" class="districtText" font-size="3" stroke="none" x="260.5" y="93">1</text>
-<text id="svg-me2" class="districtText" font-size="3" stroke="none" x="263.5" y="93">2</text>
-<text id="svg-ne1" class="districtText" font-size="3" stroke="none" x="189.5" y="102.5">1</text>
-<text id="svg-ne2" class="districtText" font-size="3" stroke="none" x="192.5" y="102.5">2</text>
-<text id="svg-ne3" class="districtText" font-size="3" stroke="none" x="195.5" y="102.5">3</text>\n'''
-		else:
-			line = ""
+		line = ""
 		line += '<g id="svg-'+states[idx].lower()+'" stroke-opacity="1" stroke-width="3.07087" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,105.651,45.8515)"'
 		line += ' font-family="MS Shell Dlg 2" font-size="34.375" font-weight="400" font-style="normal">\n'
 		skip = 2
 		idx+=1
+	if i+1<len(lines) and lines[i+1][0:6] == '</svg>':
+			line = '''<text id="svg-me1" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="2640" y="130">1</text>
+<text id="svg-me2" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="2680" y="130">2</text>
+<text id="svg-ne1" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="1100" y="1100">1</text>
+<text id="svg-ne2" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="1130" y="1100">2</text>
+<text id="svg-ne3" transform="matrix(1,0,0,1,105.651,45.8515)" class="districtText" font-size="60" stroke="none" x="1160" y="1100">3</text>\n</g>'''
 	file1.writelines([line])
 	
 	
