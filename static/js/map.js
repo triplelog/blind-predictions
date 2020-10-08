@@ -71,7 +71,7 @@ function orderStates() {
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
 				//document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.75)";
 				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,0)";
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(0,0,0,0)";
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.stroke = "rgba(0,0,0,.5)";
 			}
 		}
 		else if (electoralData[i].fullResults == -1) {
