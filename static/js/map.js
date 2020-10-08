@@ -374,7 +374,13 @@ var currentState = {};
 
 for (var i=0;i<51;i++) {
 	document.getElementById('svg-'+electoralData[i]['abbrev']).addEventListener("mousedown", statemousedown);
-
+	var el = document.getElementById('svg-'+electoralData[i]['abbrev']);
+	console.log(el);
+	var paths = document.getElementById('svg-'+electoralData[i]['abbrev']).querySelectorAll('path');
+	for (var ii=0;ii<paths.length;ii++){
+		paths[ii].addEventListener("mousedown", statemousedown);
+		console.log(paths[ii]);
+	}
 }
 
 
