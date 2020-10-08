@@ -461,11 +461,17 @@ myWorker.onmessage = function(e) {
 			var myState = stateList[i];
 			for (var ii=0; ii<electoralData.length; ii++) {
 				if (electoralData[ii]['abbrev'] == myState) {
-					if (e.data['val'][i]> 200 || e.data['val'][i]<-200){
+					var absDiff = e.data['val'][i]/10;
+					if (absDiff < 0){
+						absDiff = -1*absDiff;
+					}
+					var delay = 5000*(−0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)−1.61*absDiff+12);
+					if (delay <= 0){
 						electoralData[ii].rpred = (.5 + e.data['val'][i]/-2000)/demoMult;
 					}
 					else {
 						electoralData[ii].rpred = .5/demoMult;
+						setTimeout(function() {console.log(myState,e.data['val'][i]);},delay);
 					}
 					break;
 				}
