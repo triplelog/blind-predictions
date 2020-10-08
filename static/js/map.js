@@ -380,10 +380,10 @@ for (var i=0;i<51;i++) {
 function statemousedown(evt) {
 	var myState;
 	var el = evt.target;
-	if (!el.id || el.id.substr(0,4) != 'state-'){
+	if (!el.id || el.id.substr(0,6) != 'state-'){
 		el = el.parentElement;
 	}
-	if (!el.id || el.id.substr(0,4) != 'state-'){
+	if (!el.id || el.id.substr(0,6) != 'state-'){
 		myState = "";
 		currentState = {};
 		startCoords = [0,0];
