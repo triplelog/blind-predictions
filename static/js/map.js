@@ -85,7 +85,7 @@ function orderStates() {
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "black";
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.75)";
 			}
 		}
 		else if (fullResults == 0) {
@@ -93,7 +93,7 @@ function orderStates() {
 			
 			newspan.style.background = "hsl(0,100%,"+(100)+"%)";
 			if (document.getElementById('svg-'+electoralData[i]['abbrev'])) {
-				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,.25)";
+				document.getElementById('svg-'+electoralData[i]['abbrev']).style.fill = "rgba(0,0,0,0)";
 			}
 		}
 		else if (dprob<.5) {
