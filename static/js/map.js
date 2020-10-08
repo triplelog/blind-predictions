@@ -440,6 +440,8 @@ for (var i=0;i<51;i++){
 	stateMap[stateList[i]]=i;
 }
 var currentDelay = 0;
+{'AK': 13.0, 'AL': 8.0, 'AR': 8.5, 'AZ': 9.0, 'CA': 11.0, 'CO': 9.0, 'CT': 8.0, 'DC': 8.0, 'DE': 8.0, 'FL': 8.0, 'GA': 7.0, 'HI': 12.0, 'IA': 10.0, 'ID': 11.0, 'IL': 8.0, 'IN': 7.0, 'KS': 9.0, 'KY': 7.0, 'LA': 9.0, 'MA': 8.0, 'MD': 8.0, 'ME': 8.0, 'MI': 9.0, 'MN': 9.0, 'MO': 8.0, 'MS': 8.0, 'MT': 10.0, 'NC': 7.5, 'ND': 11.0, 'NE': 9.0, 'NH': 8.0, 'NJ': 8.0, 'NM': 9.0, 'NV': 10.0, 'NY': 9.0, 'OH': 7.5, 'OK': 8.0, 'OR': 11.0, 'PA': 8.0, 'RI': 8.0, 'SC': 7.0, 'SD': 9.0, 'TN': 8.0, 'TX': 9.0, 'UT': 10.0, 'VA': 7.0, 'VT': 7.0, 'WA': 11.0, 'WI': 9.0, 'WV': 7.5, 'WY': 9.0};
+
 myWorker.onmessage = function(e) {
 	if (e.data == "ready"){
 		setTimeout(updateNow,50);
@@ -470,7 +472,7 @@ myWorker.onmessage = function(e) {
 					}
 					var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
 					
-					if (delay <= currentDelay){
+					if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 						electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
 					}
 					else {
@@ -651,7 +653,7 @@ function updateResults() {
 				}
 				var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
 				
-				if (delay <= currentDelay){
+				if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 					electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
 				}
 				else {
@@ -664,7 +666,7 @@ function updateResults() {
 	
 	electoralData.sort((a, b) => parseFloat(a.rpred) - parseFloat(b.rpred));
 	orderStates();
-	if (currentDelay < 100000){
+	if (currentDelay < 120000){
 		setTimeout(updateResults,1000);
 	}
 }

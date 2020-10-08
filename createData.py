@@ -120,7 +120,7 @@ for line in lines:
 	file1.writelines([line2])
 file1.writelines(end)
 
-
+times = {}
 initial = ['std::vector<int> createEV(){\nstd::vector<int> evs;\n']
 end = ['return evs;\n}\n']
 file2 = open('ev.csv', 'r') 
@@ -137,8 +137,9 @@ for line in lines:
 
 	line2 = 'evs.push_back('+str(ev)+');\n'
 	file1.writelines([line2])
+	times[lineSplit[0]]=float(lineSplit[10])
 file1.writelines(end)
-
+print(times)
 
 initial = ['std::vector<int> createVEPEV(){\nstd::vector<int> vepevs;\n']
 end = ['return vepevs;\n}\n']
