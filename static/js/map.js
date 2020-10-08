@@ -471,7 +471,9 @@ myWorker.onmessage = function(e) {
 						absDiff = -1*absDiff;
 					}
 					var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
-					
+					if (delay < 0){
+						delay = 0;
+					}
 					if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 						electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
 					}
@@ -652,7 +654,9 @@ function updateResults() {
 					absDiff = -1*absDiff;
 				}
 				var delay = 10000*(-0.0013*Math.pow(absDiff,3)+0.077*Math.pow(absDiff,2)-1.61*absDiff+12);
-				
+				if (delay < 0){
+					delay = 0;
+				}
 				if (delay <= currentDelay-(times[myState.toUpperCase()]-7)*10000){
 					electoralData[ii].rpred = (.5 + electoralData[ii].futpred/-2000)/demoMult;
 				}
