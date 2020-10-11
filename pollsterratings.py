@@ -116,7 +116,7 @@ for pollster in pollsters.keys():
 				x.append(pollsters[pollster]['polls'][i][4])
 				if pollsters[pollster]['polls'][i][1] == year-4:
 					x.append(pollsters[pollster]['polls'][i][4])
-			pollsters[pollster][year]={'mean':(10*numpy.mean(xm)+sum(x))/(10+len(x)),'stdev':(10*numpy.mean(xs)+numpy.std(x))/(10+len(x)),'weight':1.0}
+			pollsters[pollster][year]={'mean':(0.0+sum(x))/(10.0+len(x)),'stdev':(60.0+numpy.std(x))/(10.0+len(x)),'weight':1.0}
 			if len(x)>9:
 				pollsters[pollster][year]['weight']=1.0
 			if len(x)>4:
