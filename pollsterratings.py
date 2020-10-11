@@ -98,7 +98,7 @@ for pollster in pollsters.keys():
 			if rep_n>9:
 				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':1.0}
 			if rep_n>4:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x)*2,'weight':.5}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':.5}
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
