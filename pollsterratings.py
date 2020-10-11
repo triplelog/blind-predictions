@@ -44,10 +44,10 @@ def readcsv(filen):
 				continue
 			try:
 				
-				pollsters[pollster]["polls"].append([math.log(dtoe),year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([math.log(dtoe+1),year,state,sample,error,pred])
 			except:
 				pollsters[pollster] = {"polls":[]}
-				pollsters[pollster]["polls"].append([math.log(dtoe),year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([math.log(dtoe+1),year,state,sample,error,pred])
 				
 			try:
 				actuals[state][year]=act1-act2
