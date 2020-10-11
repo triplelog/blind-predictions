@@ -78,6 +78,7 @@ for pollster in pollsters.keys():
 		x = []
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
+		print(polls)
 		for i in range(0,l):
 			#et = 1000*pollsters[pollster]['polls'][i][4]
 			#probB = nd.pdf(et)
@@ -85,4 +86,7 @@ for pollster in pollsters.keys():
 			rep_n += 1
 			x.append(pollsters[pollster]['polls'][i][4])
 		pollsters[pollster]['elo']={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
+
+for year in [2000,2004,2008,2012,2016]:
+	donot = 0
 			
