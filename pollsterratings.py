@@ -105,7 +105,7 @@ for pollster in pollsters.keys():
 				if pollsters[pollster]['polls'][i][1] == year-12:
 					x.append(pollsters[pollster]['polls'][i][4])
 			if rep_n>4:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':math.log(numpy.count(x))}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':math.log(len(x))}
 
 for state in ["US","FL","OH","MI","WI","PA","GA"]:
 	for year in [2004,2008,2012,2016]:
