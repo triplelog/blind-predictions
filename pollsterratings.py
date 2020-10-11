@@ -5,6 +5,7 @@ import csv
 import math
 import json
 pollsters = {}
+actuals = {}
 def readcsv(filen):
 	allgamesa  ={}
 	with open(filen, 'r') as csvfile:
@@ -39,13 +40,19 @@ def readcsv(filen):
 			except:
 				print(row)
 				continue
+			
 			try:
 				
 				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
 			except:
 				pollsters[pollster] = {"polls":[]}
 				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
-			
+				
+			try:
+				actuals[state][year]=act1-act2
+			except:
+				actuals[state]={}
+				actuals[state][year]=act1-act2
 
 
 
@@ -124,6 +131,6 @@ for state in ["US","FL","OH"]:
 						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
 			halfsum += p
 			if halfsum >= probsum/2:
-				print(state,year, diff/10.0)
+				print(state,year, diff/10.0, actuals[state][year])
 				break
 			
