@@ -74,15 +74,15 @@ for pollster in pollsters.keys():
 	else:
 		for i in range(0,l):
 			try:
-				bydtoe[pollsters[pollster]['polls'][i][0]]['sum']+=pollsters[pollster]['polls'][i][4]
+				bydtoe[pollsters[pollster]['polls'][i][0]]['sse']+=pollsters[pollster]['polls'][i][4]*pollsters[pollster]['polls'][i][4]
 			except:
-				bydtoe[pollsters[pollster]['polls'][i][0]]={'sum':0,'n':0}
+				bydtoe[pollsters[pollster]['polls'][i][0]]={'sse':0,'n':0}
 			bydtoe[pollsters[pollster]['polls'][i][0]]['n']+=1
 print(rep_sum_error,rep_n,rep_sum_error/rep_n)
 print(numpy.std(x))
 for i in range(0,30):
 	if i in bydtoe.keys():
-		print(i,bydtoe[i]['n'],bydtoe[i]['sum']/bydtoe[i]['n'])
+		print(i,bydtoe[i]['n'],bydtoe[i]['sse']/bydtoe[i]['n'])
 
 def mySort(e):
   return e[1]*1000-e[0]
