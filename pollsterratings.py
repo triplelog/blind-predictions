@@ -90,39 +90,40 @@ for pollster in pollsters.keys():
 			if rep_n>4:
 				pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
 
-for year in [2004,2008,2012,2016]:
+for state in ["US","FL","OH"]:
+	for year in [2004,2008,2012,2016]:
 
-	probsum = 0
-	for diff in range(-100,101):
-		p = 1
-		for pollster in pollsters.keys():
-			try:
-				pp = pollsters[pollster][year]
-			except:
-				continue
-			l = len(pollsters[pollster]['polls'])
-			for i in range(0,l):
-				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] =="US":
-					adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
-					sigma = pollsters[pollster][year]['stdev']
-					p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
-		probsum += p
-	halfsum = 0
-	for diff in range(-100,101):
-		p = 1
-		for pollster in pollsters.keys():
-			try:
-				pp = pollsters[pollster][year]
-			except:
-				continue
-			l = len(pollsters[pollster]['polls'])
-			for i in range(0,l):
-				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] =="US":
-					adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
-					sigma = pollsters[pollster][year]['stdev']
-					p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
-		halfsum += p
-		if halfsum >= probsum/2:
-			print(year, diff/10.0)
-			break
+		probsum = 0
+		for diff in range(-100,101):
+			p = 1
+			for pollster in pollsters.keys():
+				try:
+					pp = pollsters[pollster][year]
+				except:
+					continue
+				l = len(pollsters[pollster]['polls'])
+				for i in range(0,l):
+					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
+						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						sigma = pollsters[pollster][year]['stdev']
+						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
+			probsum += p
+		halfsum = 0
+		for diff in range(-100,101):
+			p = 1
+			for pollster in pollsters.keys():
+				try:
+					pp = pollsters[pollster][year]
+				except:
+					continue
+				l = len(pollsters[pollster]['polls'])
+				for i in range(0,l):
+					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
+						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						sigma = pollsters[pollster][year]['stdev']
+						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
+			halfsum += p
+			if halfsum >= probsum/2:
+				print(state,year, diff/10.0)
+				break
 			
