@@ -124,7 +124,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 					donot = 0
 					
 					
-		for diff in range(-100,101):
+		for diff in range(-500,501):
 			p = 1
 			for pollster in pollsters.keys():
 				try:
@@ -139,7 +139,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			probsum += p
 		halfsum = 0
-		for diff in range(-100,101):
+		for diff in range(-500,501):
 			p = 1
 			for pollster in pollsters.keys():
 				try:
@@ -161,7 +161,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 				break
 		dprob = 0
 		halfsum = 0
-		for diff in range(-100,0):
+		for diff in range(-500,0):
 			p = 1
 			for pollster in pollsters.keys():
 				try:
