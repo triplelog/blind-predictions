@@ -89,24 +89,24 @@ def mySort(e):
 
 rep_sum_error = 0
 rep_n = 0
-#xm = []
-#xs = []
-#for pollster in pollsters.keys():
-#	l = len(pollsters[pollster]['polls'])
-#	if l >= 25:
-#		
-#		polls = pollsters[pollster]['polls']
-#		polls.sort(key=mySort)
-#		
-#		x = []
-#		for i in range(0,l):
-#			x.append(pollsters[pollster]['polls'][i][4])
-#
-#		xm.append(numpy.mean(x))
-#		xs.append(numpy.std(x))
+xm = []
+xs = []
+for pollster in pollsters.keys():
+	l = len(pollsters[pollster]['polls'])
+	if l >= 20:
+		
+		polls = pollsters[pollster]['polls']
+		polls.sort(key=mySort)
+		
+		x = []
+		for i in range(0,l):
+			x.append(pollsters[pollster]['polls'][i][4])
 
-#print(xm)
-#print(xs)			
+		xm.append(numpy.mean(x))
+		xs.append(numpy.std(x))
+
+print(xm)
+print(xs)			
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
 	if l >= 3:
