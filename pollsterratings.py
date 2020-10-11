@@ -87,18 +87,22 @@ for pollster in pollsters.keys():
 				rep_sum_error += pollsters[pollster]['polls'][i][4]
 				rep_n += 1
 				x.append(pollsters[pollster]['polls'][i][4])
-			pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
+			if rep_n>4:
+				pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
 
 for year in [2004,2008,2012,2016]:
 	for diff in range(-10,11):
 		p = 1
 		for pollster in pollsters.keys():
-			l = len(pollsters[pollster]['polls'])
-			if l >= 5:
-				for i in range(0,l):
-					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] =="US":
-						adjpred = diff/100.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
-						sigma = pollsters[pollster][year]['stdev']
-						p *= 1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
+			try:
+				pp = pollsters[pollster][year]
+			except:
+				continue
+				
+			for i in range(0,l):
+				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] =="US":
+					adjpred = diff-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+					sigma = pollsters[pollster][year]['stdev']
+					p *= 1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
 		print(p)
 			
