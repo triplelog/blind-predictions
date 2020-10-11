@@ -134,7 +134,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 				l = len(pollsters[pollster]['polls'])
 				for i in range(0,l):
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
 						sigma = pollsters[pollster][year]['stdev']
 						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			probsum += p
@@ -149,7 +149,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 				l = len(pollsters[pollster]['polls'])
 				for i in range(0,l):
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
 						sigma = pollsters[pollster][year]['stdev']
 						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			halfsum += p
@@ -171,7 +171,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 				l = len(pollsters[pollster]['polls'])
 				for i in range(0,l):
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
 						sigma = pollsters[pollster][year]['stdev']
 						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			halfsum += p
