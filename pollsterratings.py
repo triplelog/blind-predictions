@@ -109,10 +109,13 @@ for pollster in pollsters.keys():
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
+brier = 0
+bn = 0
 for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','NM','MN']:
 	for year in [2004,2008,2012,2016]:
 
 		probsum = 0
+		
 		for pollster in pollsters.keys():
 			try:
 				pp = pollsters[pollster][year]
@@ -160,4 +163,29 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 					sse += (diff/10.0 - actuals[state][year])**2
 					print(sse)
 				break
+		dprob = 0
+		halfsum = 0
+		for diff in range(-100,0):
+			p = 1
+			for pollster in pollsters.keys():
+				try:
+					pp = pollsters[pollster][year]
+				except:
+					continue
+				l = len(pollsters[pollster]['polls'])
+				for i in range(0,l):
+					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
+						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						sigma = pollsters[pollster][year]['stdev']
+						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+			halfsum += p
+		rprob = halfsum/probsum
+		print(state,year, rprob, actuals[state][year])
+		if year == 2016:
+			if actuals[state][year] < 0:
+				brier += (rprob-1)**2
+			else:
+				brier += (rprob-0)**2
+			bn += 1
+print(sse,brier/bn)
 			
