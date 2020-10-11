@@ -44,10 +44,10 @@ def readcsv(filen):
 				continue
 			try:
 				
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([math.log(dtoe),year,state,sample,error,pred])
 			except:
 				pollsters[pollster] = {"polls":[]}
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([math.log(dtoe),year,state,sample,error,pred])
 				
 			try:
 				actuals[state][year]=act1-act2
@@ -104,8 +104,10 @@ for pollster in pollsters.keys():
 					x.append(pollsters[pollster]['polls'][i][4])
 				if pollsters[pollster]['polls'][i][1] == year-12:
 					x.append(pollsters[pollster]['polls'][i][4])
+			if rep_n>9:
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':1.0}
 			if rep_n>4:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':math.log(len(x))}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':.5}
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
@@ -182,7 +184,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			halfsum += p
 		rprob = halfsum/probsum
-		print(state,year, rprob, actuals[state][year])
+		#print(state,year, rprob, actuals[state][year])
 		if year == 2016:
 			if actuals[state][year] < 0:
 				brier += (rprob-1)**2
