@@ -119,7 +119,8 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 			l = len(pollsters[pollster]['polls'])
 			for i in range(0,l):
 				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-					#print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
+					if state == "CO" and year ==2016:
+						print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
 					donot = 0
 					
 					
@@ -156,7 +157,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 				print(state,year, diff/10.0, actuals[state][year])
 				if year == 2016:
 					sse += (diff/10.0 - actuals[state][year])**2
-					print(sse)
+					#print(sse)
 				break
 		dprob = 0
 		halfsum = 0
