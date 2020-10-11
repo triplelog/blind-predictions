@@ -97,10 +97,22 @@ for pollster in pollsters.keys():
 			if rep_n>4:
 				pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
 
-for state in ["US","FL","OH","MI","WI","PA","GA"]:
-	for year in [2004,2008,2012,2016]:
+for state in ["GA"]:#"US","FL","OH","MI","WI","PA","GA"]:
+	for year in [2016]:#2004,2008,2012,2016]:
 
 		probsum = 0
+		for pollster in pollsters.keys():
+			try:
+				pp = pollsters[pollster][year]
+			except:
+				continue
+			l = len(pollsters[pollster]['polls'])
+			for i in range(0,l):
+				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
+					print(pollsters[pollster]['polls'][i],pollsters[pollster][year])
+					#adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+					
+					
 		for diff in range(-100,101):
 			p = 1
 			for pollster in pollsters.keys():
