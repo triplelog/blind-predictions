@@ -98,7 +98,7 @@ for year in [2004,2008,2012,2016]:
 				pp = pollsters[pollster][year]
 			except:
 				continue
-				
+			l = len(pollsters[pollster]['polls'])
 			for i in range(0,l):
 				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] =="US":
 					adjpred = diff-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
