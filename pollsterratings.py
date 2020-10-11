@@ -34,7 +34,7 @@ def readcsv(filen):
 					days += 31
 				eday = int(edate[3:-5])
 				dtoe = 31+eday-days
-				error = pred1-pred2-(act1-act2) #need to flip this in 2004 for consistent d/r
+				error = (act1-act2)-(pred1-pred2) #need to flip this in 2004 for consistent d/r
 				pred = pred1-pred2
 				
 			except:
