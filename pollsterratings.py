@@ -109,7 +109,7 @@ for pollster in pollsters.keys():
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
-for state in ['FL','NC','NE','NV','NE','OH','AZ','IA','ME','NH','ME','PA','GA','CO','MI','WI','VA','NM','MN']:
+for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','NM','MN']:
 	for year in [2004,2008,2012,2016]:
 
 		probsum = 0
