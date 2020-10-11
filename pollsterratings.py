@@ -82,7 +82,7 @@ print(rep_sum_error,rep_n,rep_sum_error/rep_n)
 print(numpy.std(x))
 for i in range(0,30):
 	if i in bydtoe.keys():
-		print(i,bydtoe[i]['n'],bydtoe[i]['sse']/bydtoe[i]['n'])
+		print(i,", ",bydtoe[i]['sse']/bydtoe[i]['n'])
 
 def mySort(e):
   return e[1]*1000-e[0]
