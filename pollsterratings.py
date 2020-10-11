@@ -83,7 +83,7 @@ for pollster in pollsters.keys():
 		
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
-		for year in [2004,2008,2012,2016]:
+		for year in [2004,2008,2012,2016,2020]:
 			rep_sum_error = 0
 			rep_n = 0
 			x = []
