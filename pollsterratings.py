@@ -84,30 +84,21 @@ for pollster in pollsters.keys():
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
 		for year in [2004,2008,2012,2016,2020]:
-			rep_sum_error = 0
-			rep_n = 0
+		
 			x = []
 			for i in range(0,l):
 				#et = 1000*pollsters[pollster]['polls'][i][4]
 				#probB = nd.pdf(et)
 				if pollsters[pollster]['polls'][i][1]>= year:
 					break
-				rep_sum_error += pollsters[pollster]['polls'][i][4]
-				rep_n += 1
+					
 				x.append(pollsters[pollster]['polls'][i][4])
 				if pollsters[pollster]['polls'][i][1] == year-4:
 					x.append(pollsters[pollster]['polls'][i][4])
-					x.append(pollsters[pollster]['polls'][i][4])
-					x.append(pollsters[pollster]['polls'][i][4])
-				if pollsters[pollster]['polls'][i][1] == year-8:
-					x.append(pollsters[pollster]['polls'][i][4])
-					x.append(pollsters[pollster]['polls'][i][4])
-				if pollsters[pollster]['polls'][i][1] == year-12:
-					x.append(pollsters[pollster]['polls'][i][4])
 			if rep_n>9:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':1.0}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':2*numpy.std(x),'weight':1.0}
 			if rep_n>4:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':.5}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':4*numpy.std(x),'weight':.5}
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
