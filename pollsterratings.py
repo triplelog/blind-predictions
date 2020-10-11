@@ -107,7 +107,9 @@ for pollster in pollsters.keys():
 			if rep_n>4:
 				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':math.log(len(x))}
 
-for state in ["US","FL","OH","MI","WI","PA","GA"]:
+#for state in ["US","FL","OH","MI","WI","PA","GA"]:
+sse = 0
+for state in ['FL','NC','NE','NV','NE','OH','AZ','IA','ME','NH','ME','PA','GA','CO','MI','WI','VA','NM','MN']:
 	for year in [2004,2008,2012,2016]:
 
 		probsum = 0
@@ -154,5 +156,8 @@ for state in ["US","FL","OH","MI","WI","PA","GA"]:
 			halfsum += p
 			if halfsum >= probsum/2:
 				print(state,year, diff/10.0, actuals[state][year])
+				if year == 2016:
+					sse += (diff/10.0 - actuals[state][year])**2
+					print(sse)
 				break
 			
