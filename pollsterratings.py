@@ -95,10 +95,10 @@ for pollster in pollsters.keys():
 				x.append(pollsters[pollster]['polls'][i][4])
 				if pollsters[pollster]['polls'][i][1] == year-4:
 					x.append(pollsters[pollster]['polls'][i][4])
-			if rep_n>9:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':1.0}
-			if rep_n>4:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':.5}
+			if len(x)>9:
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':2*numpy.std(x),'weight':1.0}
+			if len(x)>4:
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':4*numpy.std(x),'weight':.5}
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
