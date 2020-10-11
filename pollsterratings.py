@@ -150,7 +150,7 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 			l = len(pollsters[pollster]['polls'])
 			for i in range(0,l):
 				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-					if state == "CO" and year ==2016:
+					if state == "NC" and year ==2016:
 						print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
 					donot = 0
 					
