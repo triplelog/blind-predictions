@@ -44,10 +44,10 @@ def readcsv(filen):
 				continue
 			try:
 				
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([dtoe**2,year,state,sample,error,pred])
 			except:
 				pollsters[pollster] = {"polls":[]}
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([dtoe**2,year,state,sample,error,pred])
 				
 			try:
 				actuals[state][year]=act1-act2
@@ -95,8 +95,17 @@ for pollster in pollsters.keys():
 				rep_sum_error += pollsters[pollster]['polls'][i][4]
 				rep_n += 1
 				x.append(pollsters[pollster]['polls'][i][4])
+				if pollsters[pollster]['polls'][i][1] == year-4:
+					x.append(pollsters[pollster]['polls'][i][4])
+					x.append(pollsters[pollster]['polls'][i][4])
+					x.append(pollsters[pollster]['polls'][i][4])
+				if pollsters[pollster]['polls'][i][1] == year-8:
+					x.append(pollsters[pollster]['polls'][i][4])
+					x.append(pollsters[pollster]['polls'][i][4])
+				if pollsters[pollster]['polls'][i][1] == year-12:
+					x.append(pollsters[pollster]['polls'][i][4])
 			if rep_n>4:
-				pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x)}
 
 for state in ["US","FL","OH","MI","WI","PA","GA"]:
 	for year in [2004,2008,2012,2016]:
