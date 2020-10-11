@@ -80,9 +80,9 @@ for pollster in pollsters.keys():
 			bydtoe[pollsters[pollster]['polls'][i][0]]['n']+=1
 print(rep_sum_error,rep_n,rep_sum_error/rep_n)
 print(numpy.std(x))
-for i in range(0,30):
-	if i in bydtoe.keys():
-		print(i,", ",bydtoe[i]['sse']/bydtoe[i]['n'])
+#for i in range(0,30):
+#	if i in bydtoe.keys():
+#		print(i,", ",bydtoe[i]['sse']/bydtoe[i]['n'])
 
 def mySort(e):
   return e[1]*1000-e[0]
@@ -122,10 +122,10 @@ for pollster in pollsters.keys():
 				#probB = nd.pdf(et)
 				if pollsters[pollster]['polls'][i][1]>= year:
 					break
-					
-				x.append(pollsters[pollster]['polls'][i][4])
+				denomerror = 1.0 + (1.5-1.0)*pollsters[pollster]['polls'][i][0]/21
+				x.append(pollsters[pollster]['polls'][i][4]/denomerror)
 				if pollsters[pollster]['polls'][i][1] == year-4:
-					x.append(pollsters[pollster]['polls'][i][4])
+					x.append(pollsters[pollster]['polls'][i][4]/denomerror)
 			if len(x)>0:
 				pollsters[pollster][year]={'mean':(0.0+sum(x))/(10.0+len(x)),'stdev':(65.0+len(x)*numpy.std(x))/(10.0+len(x)),'weight':len(x)/10.0}
 			if len(x)>9:
