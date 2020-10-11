@@ -110,8 +110,8 @@ for state in ["US","FL","OH","MI","WI","PA","GA"]:
 			l = len(pollsters[pollster]['polls'])
 			for i in range(0,l):
 				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-					print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
-					#adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+					#print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
+					donot = 0
 					
 					
 		for diff in range(-100,101):
