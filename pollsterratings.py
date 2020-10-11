@@ -43,10 +43,10 @@ def readcsv(filen):
 			
 			try:
 				
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([dtoe**2,year,state,sample,error,pred])
 			except:
 				pollsters[pollster] = {"polls":[]}
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
+				pollsters[pollster]["polls"].append([dtoe**2,year,state,sample,error,pred])
 				
 			try:
 				actuals[state][year]=act1-act2
@@ -97,7 +97,7 @@ for pollster in pollsters.keys():
 			if rep_n>4:
 				pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
 
-for state in ["US","FL","OH"]:
+for state in ["US","FL","OH","MI","WI","PA","GA"]:
 	for year in [2004,2008,2012,2016]:
 
 		probsum = 0
