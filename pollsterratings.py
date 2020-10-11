@@ -80,7 +80,10 @@ for pollster in pollsters.keys():
 			bydtoe[pollsters[pollster]['polls'][i][0]]['n']+=1
 print(rep_sum_error,rep_n,rep_sum_error/rep_n)
 print(numpy.std(x))
-print(bydtoe)
+for i in range(0,30):
+	if i in bydtoe.keys():
+		print(i,bydtoe[i]['n'],bydtoe[i]['sum']/bydtoe[i]['n'])
+
 def mySort(e):
   return e[1]*1000-e[0]
 
