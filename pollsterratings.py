@@ -34,18 +34,17 @@ def readcsv(filen):
 				eday = int(edate[3:-5])
 				dtoe = 31+eday-days
 				error = pred1-pred2-(act1-act2) #need to flip this in 2004 for consistent d/r
-				if year == 2004:
-					error = pred2-pred1-(act2-act1)
+				pred = pred1-pred2
 				
 			except:
 				print(row)
 				continue
 			try:
 				
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error])
+				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
 			except:
 				pollsters[pollster] = {"polls":[]}
-				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error])
+				pollsters[pollster]["polls"].append([dtoe,year,state,sample,error,pred])
 			
 
 
@@ -73,20 +72,33 @@ def mySort(e):
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
 	if l >= 5:
-		rep_sum_error = 0
-		rep_n = 0
-		x = []
+		
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
-		print(polls)
-		for i in range(0,l):
-			#et = 1000*pollsters[pollster]['polls'][i][4]
-			#probB = nd.pdf(et)
-			rep_sum_error += pollsters[pollster]['polls'][i][4]
-			rep_n += 1
-			x.append(pollsters[pollster]['polls'][i][4])
-		pollsters[pollster]['elo']={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
+		for year in [2004,2008,2012,2016]:
+			rep_sum_error = 0
+			rep_n = 0
+			x = []
+			for i in range(0,l):
+				#et = 1000*pollsters[pollster]['polls'][i][4]
+				#probB = nd.pdf(et)
+				if pollsters[pollster]['polls'][i][1]>= year:
+					break
+				rep_sum_error += pollsters[pollster]['polls'][i][4]
+				rep_n += 1
+				x.append(pollsters[pollster]['polls'][i][4])
+			pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
 
-for year in [2000,2004,2008,2012,2016]:
-	donot = 0
+for year in [2004,2008,2012,2016]:
+	for diff in range(-10,11):
+		p = 1
+		for pollster in pollsters.keys():
+			l = len(pollsters[pollster]['polls'])
+			if l >= 5:
+				for i in range(0,l):
+					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] =="US":
+						adjpred = diff/100.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
+						sigma = pollsters[pollster][year]['stdev']
+						p *= 1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
+		print(p)
 			
