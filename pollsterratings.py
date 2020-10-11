@@ -99,7 +99,7 @@ for pollster in pollsters.keys():
 				pollsters[pollster][year]={'mean':rep_sum_error/rep_n,'stdev':numpy.std(x)}
 
 for state in ["US","FL","OH","MI","WI","PA","GA"]:
-	for year in [2016]:#2004,2008,2012,2016]:
+	for year in [2004,2008,2012,2016]:
 
 		probsum = 0
 		for pollster in pollsters.keys():
