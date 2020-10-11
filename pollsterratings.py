@@ -104,5 +104,5 @@ for year in [2004,2008,2012,2016]:
 					adjpred = diff-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
 					sigma = pollsters[pollster][year]['stdev']
 					p *= 1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
-		print(p)
+		print(year, diff, p)
 			
