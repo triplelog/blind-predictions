@@ -62,7 +62,7 @@ readcsv("data/pres-polls.csv")
 rep_sum_error = 0
 rep_n = 0
 x = []
-
+bydtoe = {}
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
 	if l < 5:
@@ -71,9 +71,16 @@ for pollster in pollsters.keys():
 			rep_n += 1
 			x.append(pollsters[pollster]['polls'][i][4])
 			#print(pollsters[pollster]['polls'][i][4])
+	else:
+		for i in range(0,l):
+			try:
+				bydtoe[pollsters[pollster]['polls'][i][0]]['sum']+=pollsters[pollster]['polls'][i][4]
+			except:
+				bydtoe[pollsters[pollster]['polls'][i][0]]={'sum':0,'n':0}
+			bydtoe[pollsters[pollster]['polls'][i][0]]['n']+=1
 print(rep_sum_error,rep_n,rep_sum_error/rep_n)
 print(numpy.std(x))
-
+print(bydtoe)
 def mySort(e):
   return e[1]*1000-e[0]
 
