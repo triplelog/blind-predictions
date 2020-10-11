@@ -83,7 +83,7 @@ xm = []
 xs = []
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
-	if l >= 50:
+	if l >= 25:
 		
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
@@ -95,7 +95,8 @@ for pollster in pollsters.keys():
 		xm.append(numpy.mean(x))
 		xs.append(numpy.std(x))
 
-				
+print(xm)
+print(xs)			
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
 	if l >= 5:
