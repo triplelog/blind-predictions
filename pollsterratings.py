@@ -109,7 +109,7 @@ rep_n = 0
 #print(xs)			
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
-	if l >= 5:
+	if l >= 3:
 		
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
@@ -127,7 +127,7 @@ for pollster in pollsters.keys():
 				if pollsters[pollster]['polls'][i][1] == year-4:
 					x.append(pollsters[pollster]['polls'][i][4]/denomerror)
 			if len(x)>0:
-				pollsters[pollster][year]={'mean':(0.0+sum(x))/(10.0+len(x)),'stdev':(65.0+len(x)*numpy.std(x))/(10.0+len(x)),'weight':len(x)/10.0}
+				pollsters[pollster][year]={'mean':(0.0+sum(x))/(10.0+len(x)),'stdev':(100.0+len(x)*numpy.std(x))/(10.0+len(x)),'weight':len(x)/10.0}
 			if len(x)>9:
 				pollsters[pollster][year]['weight']=1.0
 
