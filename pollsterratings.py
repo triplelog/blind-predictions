@@ -105,7 +105,7 @@ for pollster in pollsters.keys():
 				if pollsters[pollster]['polls'][i][1] == year-12:
 					x.append(pollsters[pollster]['polls'][i][4])
 			if rep_n>4:
-				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x)}
+				pollsters[pollster][year]={'mean':numpy.mean(x),'stdev':numpy.std(x),'weight':math.log(numpy.count(x))}
 
 for state in ["US","FL","OH","MI","WI","PA","GA"]:
 	for year in [2004,2008,2012,2016]:
@@ -135,7 +135,7 @@ for state in ["US","FL","OH","MI","WI","PA","GA"]:
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
 						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
 						sigma = pollsters[pollster][year]['stdev']
-						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
+						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			probsum += p
 		halfsum = 0
 		for diff in range(-100,101):
@@ -150,7 +150,7 @@ for state in ["US","FL","OH","MI","WI","PA","GA"]:
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
 						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]-pollsters[pollster][year]['mean'])
 						sigma = pollsters[pollster][year]['stdev']
-						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),1.0/pollsters[pollster]['polls'][i][0])
+						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
 			halfsum += p
 			if halfsum >= probsum/2:
 				print(state,year, diff/10.0, actuals[state][year])
