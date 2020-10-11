@@ -111,6 +111,8 @@ for pollster in pollsters.keys():
 sse = 0
 brier = 0
 bn = 0
+brieru = 0
+
 for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','NM','MN']:
 	for year in [2004,2008,2012,2016]:
 
@@ -184,8 +186,10 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 		if year == 2016:
 			if actuals[state][year] < 0:
 				brier += (rprob-1)**2
+				
 			else:
 				brier += (rprob-0)**2
+			brieru += .5**2
 			bn += 1
-print(sse,brier/bn)
+print(sse,(brieru/bn-brier/bn)/(brieru/bn))
 			
