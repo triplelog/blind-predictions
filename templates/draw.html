@@ -95,6 +95,7 @@ body {
 <script>
 var currentState = "";
 var cells = {};
+var svgs = {};
 var els = document.querySelectorAll('.gridCell');
 for (var i=0;i<els.length;i++){
 	els[i].addEventListener('click',clickCell);
@@ -107,6 +108,7 @@ for (var i=0;i<50;i++){
 	var el = document.getElementById('state-'+states[i].abbrev);
 	el.addEventListener('click',clickState);
 	cells[states[i].abbrev]=[];
+	svgs[states[i].abbrev]={'path':[],'points':[]};
 }
 
 function clickCell(evt){
@@ -137,6 +139,7 @@ function clickCell(evt){
 		var el = document.getElementById('state-'+mod);
 		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
 		var cl = cells[mod];
+		
 		for (var i=0;i<cl.length;i++){
 			cl[i][2].style.borderLeft = "1px solid red";
 			cl[i][2].style.borderRight = "1px solid red";
@@ -149,18 +152,14 @@ function clickCell(evt){
 				if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
 					cl[i][2].style.borderBottom = "1px solid transparent";
 					cl[ii][2].style.borderTop = "1px solid transparent";
+					svgs[mod].points.push([cl[ii][0],cl[ii][1]]);
+					svgs[mod].points.push([cl[ii][0]+1,cl[ii][1]]);
 				}
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
 					cl[i][2].style.borderRight = "1px solid transparent";
 					cl[ii][2].style.borderLeft = "1px solid transparent";
-				}
-				if (cl[i][0] == cl[ii][0] +1 && cl[i][1] == cl[ii][1]){
-					cl[i][2].style.borderTop = "1px solid transparent";
-					cl[ii][2].style.borderBottom = "1px solid transparent";
-				}
-				if (cl[i][1] == cl[ii][1] +1 && cl[i][0] == cl[ii][0]){
-					cl[i][2].style.borderLeft = "1px solid transparent";
-					cl[ii][2].style.borderRight = "1px solid transparent";
+					svgs[mod].points.push([cl[ii][0],cl[ii][1]]);
+					svgs[mod].points.push([cl[ii][0],cl[ii][1]+1]);
 				}
 			}
 		}
