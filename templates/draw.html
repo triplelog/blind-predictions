@@ -51,7 +51,6 @@ body {
 	flex: 1;
 	text-align: center;
 	line-height: calc(95vh / 20);
-	color: white;
 }
 @media (max-aspect-ratio: 4/3) {
 	.gridHolder {
@@ -111,7 +110,7 @@ for (var i=0;i<50;i++){
 }
 
 function clickCell(evt){
-	evt.target.style.background = "blue";
+
 	var r = evt.target.getAttribute('data-row');
 	var c = evt.target.getAttribute('data-col');
 	var modified = {};
