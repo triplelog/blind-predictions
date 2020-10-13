@@ -48,11 +48,13 @@ function resetDistricts() {
 		repVote += myOb['votes16']*(100.0-(dperc1));
 
 		var dprob = 1.0/(1.0+Math.pow(10.0,-1*myOb[baseData]/eloDenom));
-		if (dprob < .5) {
-			document.getElementById(cdArray[i]).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
-		}
-		else {
-			document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+		if (document.getElementById(cdArray[i])){
+			if (dprob < .5) {
+				document.getElementById(cdArray[i]).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+			}
+			else {
+				document.getElementById(cdArray[i]).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+			}
 		}
 	}
 
