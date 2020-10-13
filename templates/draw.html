@@ -257,7 +257,10 @@ function clickState(evt){
 function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (state in svgs){
-		var allPaths = svgs[state].allPaths;
+		var allPaths = [];
+		for (var i=0;i<svgs[state].allPaths.length;i++){
+			allPaths.push(svgs[state].allPaths[i]);
+		}
 		if (allPaths.length == 0){
 			continue;
 		}
@@ -294,6 +297,14 @@ function displaySVG(){
 		}
 		for (point in svgs[state].points){
 			svg += '<circle r=".05" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
+		}
+		for (cell in cells[state]){
+			var cellPath = 'M '+cells[state][cell][1]+' '+cells[state][cell][0];
+			cellPath += ' '+cells[state][cell][1]+' '+(cells[state][cell][0]+1);
+			cellPath += ' '+(cells[state][cell][1]+1)+' '+(cells[state][cell][0]+1);
+			cellPath += ' '+(cells[state][cell][1]+1)+' '+cells[state][cell][0];
+			cellPath += 'Z'';
+			svg += '<path fill="none" stroke="none" d="'+cellPath+'"/>';
 		}
 		svg += '</g>';
 	}
