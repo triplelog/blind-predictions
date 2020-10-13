@@ -18,7 +18,7 @@ function resetDistricts() {
 	resultsArray = [];
 	expDemSeats = 0;
 	expDem218 = 0;
-	natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HA16"])/2;
+	natadv = (houseData["HP20"]+houseData["PP20"]-houseData["P16"]+houseData["HAdj16"])/2;
 	for (state in houseData.states){
 		var stateData = houseData["states"][state];
 		var stadv = natadv + (stateData["LP20"]+stateData["L16"])/2;
