@@ -120,15 +120,33 @@ function clickCell(evt){
 			}
 		}
 	}
-	for (var mod in modified){
-		var el = document.getElementById('state-'+mod);
-		el.querySelector('.cellsDrawn').textContent = cl.length;
-	}
+	
 	
 	if (currentState != ""){
-		cells[currentState].push([r,c]);
-		var el = document.getElementById('state-'+currentState);
-		el.querySelector('.cellsDrawn').textContent = cells[currentState].length;
+		cells[currentState].push([r,c,evt.target]);
+		modified[currentState]=true;
+	}
+	
+	for (var mod in modified){
+		var el = document.getElementById('state-'+mod);
+		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
+		var cl = cells[mod];
+		for (var i=0;i<cl.length;i++){
+			cl[i][2].style.borderLeft = "1px solid red";
+			cl[i][2].style.borderRight = "1px solid red";
+		}
+		for (var i=0;i<cl.length;i++){
+			for (var ii=i+1;ii<cl.length;ii++){
+				if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
+					cl[i][2].style.borderBottom = "0px solid red";
+					cl[ii][2].style.borderTop = "0px solid red";
+				}
+				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
+					cl[i][2].style.borderRight = "0px solid red";
+					cl[ii][2].style.borderLeft = "0px solid red";
+				}
+			}
+		}
 	}
 }
 function clickState(evt){
