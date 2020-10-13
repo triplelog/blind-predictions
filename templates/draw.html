@@ -105,8 +105,19 @@ for (var i=0;i<50;i++){
 
 function clickCell(evt){
 	evt.target.style.background = "blue";
+	var r = evt.target.getAttribute('data-row');
+	var c = evt.target.getAttribute('data-col');
+	for (var i=0;i<50;i++){
+		var cl = cells[states[i].abbrev];
+		for (var ii=0;ii<cl.length;ii++){
+			if (cl[ii][0] == r && cl[ii][1] == c){
+				cl.splice(ii,1);
+				ii--;
+			}
+		}
+	}
 	if (currentState != ""){
-		cells[currentState].push([evt.target.getAttribute('data-row'),evt.target.getAttribute('data-col')]);
+		cells[currentState].push([r,c]);
 		var el = document.getElementById('state-'+currentState);
 		el.querySelector('.cellsDrawn').textContent = cells[currentState].length;
 	}
