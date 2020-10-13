@@ -58,6 +58,9 @@ body {
 .gridCell {
 	border:1px dotted black;
 	flex: 1;
+	text-align: center;
+	line-height: 100%;
+	color: white;
 }
 </style>
 
@@ -136,7 +139,7 @@ function clickCell(evt){
 			cl[i][2].style.borderRight = "1px solid red";
 			cl[i][2].style.borderTop = "1px solid red";
 			cl[i][2].style.borderBottom = "1px solid red";
-			cl[i][2].textContent = mod;
+			cl[i][2].textContent = mod.toUpperCase();
 		}
 		for (var i=0;i<cl.length;i++){
 			for (var ii=0;ii<cl.length;ii++){
