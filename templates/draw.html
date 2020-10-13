@@ -71,6 +71,7 @@ body {
 <body>
 
 	<div class="menu">
+	<button onclick="displaySVG()">Print</button>
 	{% for i in range(0,50) %}
 		{% set x = states[i].ev10 - 2 %}
 		<div id="state-{{ states[i].abbrev }}">{{ states[i].abbrev }}: <span class="cellsDrawn">0</span><span> of {{ x }}</span></div>
@@ -231,8 +232,6 @@ function clickCell(evt){
 		svgs[mod].path = allPaths[0];
 		var lastPoint = allPaths[0].split("L")[1];
 		allPaths.splice(0,1);
-		console.log(allPaths);
-		console.log(svgs[mod].path);
 		var counter = 0;
 		while (counter < 10000 && allPaths.length > 0){
 			for (var i=0;i<allPaths.length;i++){
@@ -241,7 +240,6 @@ function clickCell(evt){
 					svgs[mod].path += " "+allPaths[i];
 					lastPoint = allPaths[i].split("L")[1];
 					allPaths.splice(i,1);
-					console.log(svgs[mod].path);
 					break;
 				}
 				var firstPoint = allPaths[i].split("L")[1];
@@ -251,7 +249,6 @@ function clickCell(evt){
 					var newPath = "M"+firstPoint+" L"+lastPoint;
 					svgs[mod].path += " " + newPath;
 					allPaths.splice(i,1);
-					console.log(svgs[mod].path);
 					break;
 				}
 			}
@@ -260,6 +257,7 @@ function clickCell(evt){
 		
 		
 	}
+	
 }
 function clickState(evt){
 	var el = evt.target;
@@ -272,6 +270,20 @@ function clickState(evt){
 	}
 	currentState = el.id.substr(6);
 	el.style.background = "gray";
+}
+
+function displaySVG(){
+	var svg = "";
+	for (state in svgs){
+		svg += '<path d="'+svgs[state].path+'"/>';
+	}
+	for (state in svgs){
+		
+		for (point in svgs[state].points){
+			svg += '<circle r=".5" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
+		}
+	}
+	console.log(svg);
 }
 </script>
 
