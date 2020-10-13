@@ -113,8 +113,8 @@ for (var i=0;i<50;i++){
 
 function clickCell(evt){
 
-	var r = evt.target.getAttribute('data-row');
-	var c = evt.target.getAttribute('data-col');
+	var r = parseInt(evt.target.getAttribute('data-row'));
+	var c = parseInt(evt.target.getAttribute('data-col'));
 	var modified = {};
 	for (var i=0;i<50;i++){
 		var cl = cells[states[i].abbrev];
