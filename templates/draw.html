@@ -140,6 +140,7 @@ function clickCell(evt){
 		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
 		var cl = cells[mod];
 		svgs[mod].points = [];
+		var tempPoints = {};
 		for (var i=0;i<cl.length;i++){
 			cl[i][2].style.borderLeft = "1px solid red";
 			cl[i][2].style.borderRight = "1px solid red";
@@ -152,15 +153,24 @@ function clickCell(evt){
 				if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
 					cl[i][2].style.borderBottom = "1px solid transparent";
 					cl[ii][2].style.borderTop = "1px solid transparent";
-					svgs[mod].points.push([cl[ii][0],cl[ii][1]]);
-					svgs[mod].points.push([cl[ii][0]+1,cl[ii][1]]);
+					tempPoints[""+cl[i][0] +"-"+ cl[ii][1]]++;
+					tempPoints[""+cl[i][0] +"-"+ (cl[ii][1]+1)]++;
 				}
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
 					cl[i][2].style.borderRight = "1px solid transparent";
 					cl[ii][2].style.borderLeft = "1px solid transparent";
-					svgs[mod].points.push([cl[ii][0],cl[ii][1]]);
-					svgs[mod].points.push([cl[ii][0],cl[ii][1]+1]);
+					svgs[mod].points.push([cl[ii][0],cl[i][1]]);
+					svgs[mod].points.push([cl[ii][0]+1,cl[i][1]]);
+					tempPoints[""+cl[ii][0] +"-"+ cl[i][1]]++;
+					tempPoints[""+(cl[ii][0]+1) +"-"+ cl[i][1]]++;
 				}
+			}
+		}
+		for (point in tempPoints){
+			if (tempPoints[point]== 4){
+				var row = parseInt(point.split("-")[0]);
+				var col = parseInt(point.split("-")[1]);
+				svgs[mod].points.push([row,col]);
 			}
 		}
 		console.log(svgs[mod].points);
