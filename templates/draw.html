@@ -78,9 +78,9 @@ body {
 	{% endfor %}
 	</div>
 	<div class="gridHolder">
-	{% for ii in range(0,19) %}
+	{% for ii in range(0,18) %}
 		<div class="gridRow">
-		{% for i in range(0,24) %}
+		{% for i in range(0,25) %}
 			<div class="gridCell" draggable="true" data-row="{{ ii }}" data-col="{{ i }}">
 			</div>
 		{% endfor %}
@@ -234,6 +234,7 @@ function clickCell(evt){
 				allPaths.push(path);
 			}
 		}
+		/*
 		svgs[mod].path = allPaths[0];
 		var lastPoint = allPaths[0].split("L")[1];
 		allPaths.splice(0,1);
@@ -258,7 +259,7 @@ function clickCell(evt){
 				}
 			}
 			counter++;
-		}
+		}*/
 		
 		
 	}
