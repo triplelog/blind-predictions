@@ -112,10 +112,10 @@ for (var i=0;i<50;i++){
 	cells[states[i].abbrev]=[];
 	svgs[states[i].abbrev]={'allPaths':[],'points':[],'borders':[]};
 }
-//cells = JSON.parse(localStorage.getItem('savedcells'));
-//svgs = JSON.parse(localStorage.getItem('savedsvgs'));
-//console.log(svgs);
-//console.log(cells);
+cells = JSON.parse(localStorage.getItem('savedcells'));
+svgs = JSON.parse(localStorage.getItem('savedsvgs'));
+console.log(svgs);
+console.log(cells);
 
 function clickCell(evt){
 
