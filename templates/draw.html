@@ -289,7 +289,7 @@ function displaySVG(){
 			}
 			counter++;
 		}
-		svg += '<g id="state-'+state+'">';
+		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
 		svg += '<path fill="none" stroke="black" stroke-width=".05" d="'+path+'"/>';
 		
 		for (border in svgs[state].borders){
