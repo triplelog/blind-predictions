@@ -301,13 +301,13 @@ function displaySVG(){
 		cells[state].sort(function(a,b){return a[0]*10000+a[1] - (b[0]*10000+b[1])});
 		var idx = 1;
 		for (cell in cells[state]){
-			var cellPath = 'M'+cells[state][cell][1]+','+cells[state][cell][0];
-			cellPath += ' L'+cells[state][cell][1]+','+(cells[state][cell][0]+1);
-			cellPath += ' L'+(cells[state][cell][1]+1)+','+(cells[state][cell][0]+1);
-			cellPath += ' L'+(cells[state][cell][1]+1)+','+cells[state][cell][0];
-			cellPath += ' L'+cells[state][cell][1]+','+cells[state][cell][0];
+			var cellPath = 'M'+(cells[state][cell][1]+.1)+','+(cells[state][cell][0]+.1);
+			cellPath += ' L'+(cells[state][cell][1]+.1)+','+(cells[state][cell][0]+.9);
+			cellPath += ' L'+(cells[state][cell][1]+.9)+','+(cells[state][cell][0]+.9);
+			cellPath += ' L'+(cells[state][cell][1]+.9)+','+(cells[state][cell][0]+.1);
+			cellPath += ' L'+(cells[state][cell][1]+.1)+','+(cells[state][cell][0]+.1);
 			if (cells[state].length == 1){idx = 0;}
-			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="transparent" vector-effect="none" fill-rule="evenodd" d="'+cellPath+'"/>';
+			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="transparent" d="'+cellPath+'"/>';
 			idx++;
 		}
 		svg += '</g>';
