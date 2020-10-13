@@ -155,32 +155,32 @@ function clickCell(evt){
 			cl[i][3][1]=false;
 			cl[i][3][2]=false;
 			cl[i][3][3]=false;
-			if (tempPaths["M "+cl[i][1] +" "+ cl[i][0] + " L "+(cl[i][1]+1) +" "+ cl[i][0] ]){
-				tempPaths["M "+cl[i][1] +" "+ cl[i][0] + " L "+(cl[i][1]+1) +" "+ cl[i][0] ]++;
+			if (tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ cl[i][0] ]){
+				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ cl[i][0] ]++;
 			}
 			else {
-				tempPaths["M "+cl[i][1] +" "+ cl[i][0] + " L "+(cl[i][1]+1) +" "+ (cl[i][0]) ]=1;
+				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]) ]=1;
 			}
 			
-			if (tempPaths["M "+cl[i][1] +" "+ cl[i][0] + " L "+(cl[i][1]) +" "+ (cl[i][0]+1) ]){
-				tempPaths["M "+cl[i][1] +" "+ cl[i][0] + " L "+(cl[i][1]) +" "+ (cl[i][0]+1) ]++;
+			if (tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]){
+				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]++;
 			}
 			else {
-				tempPaths["M "+cl[i][1] +" "+ cl[i][0] + " L "+(cl[i][1]) +" "+ (cl[i][0]+1) ]=1;
+				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]=1;
 			}
 			
-			if (tempPaths["M "+(cl[i][1]+1) +" "+ cl[i][0] + " L "+(cl[i][1]+1) +" "+ (cl[i][0]+1) ]){
-				tempPaths["M "+(cl[i][1]+1) +" "+ cl[i][0] + " L "+(cl[i][1]+1) +" "+ (cl[i][0]+1) ]++;
+			if (tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]){
+				tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]++;
 			}
 			else {
-				tempPaths["M "+(cl[i][1]+1) +" "+ cl[i][0] + " L "+(cl[i][1]+1) +" "+ (cl[i][0]+1) ]=1;
+				tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]=1;
 			}
 			
-			if (tempPaths["M "+cl[i][1] +" "+ (cl[i][0]+1) + " L "+(cl[i][1]+1) +" "+ (cl[i][0]+1) ]){
-				tempPaths["M "+cl[i][1] +" "+ (cl[i][0]+1) + " L "+(cl[i][1]+1) +" "+ (cl[i][0]+1) ]++;
+			if (tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]){
+				tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]++;
 			}
 			else {
-				tempPaths["M "+cl[i][1] +" "+ (cl[i][0]+1) + " L "+(cl[i][1]+1) +" "+ (cl[i][0]+1) ]=1;
+				tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]=1;
 			}
 		}
 		for (var i=0;i<cl.length;i++){
@@ -281,8 +281,9 @@ function displaySVG(){
 			for (var i=0;i<allPaths.length;i++){
 				var firstPoint = allPaths[i].split("L")[0];
 				if (firstPoint == "M"+lastPoint+" "){
-					path += " "+allPaths[i];
+					
 					lastPoint = allPaths[i].split("L")[1];
+					path += " L"+lastPoint;
 					allPaths.splice(i,1);
 					break;
 				}
@@ -290,8 +291,8 @@ function displaySVG(){
 				if (firstPoint == lastPoint){
 					lastPoint = allPaths[i].split("L")[0].substr(1);
 					lastPoint = lastPoint.substr(0,lastPoint.length-1);
-					var newPath = "M"+firstPoint+" L"+lastPoint;
-					path += " " + newPath;
+					var newPath = " L"+lastPoint;
+					path += newPath;
 					allPaths.splice(i,1);
 					break;
 				}
@@ -299,7 +300,7 @@ function displaySVG(){
 			counter++;
 		}
 		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
-		svg += '<path fill="black" stroke="white" stroke-width=".125" d="'+path+'"/>';
+		svg += '<path fill="red" stroke="white" stroke-width=".125" d="'+path+'"/>';
 		
 		for (border in svgs[state].borders){
 			//svg += '<circle r=".05" fill="gray" stroke="black" stroke-width="0" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
