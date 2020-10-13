@@ -248,7 +248,7 @@ function clickCell(evt){
 				if (firstPoint == lastPoint){
 					lastPoint = allPaths[i].split("L")[0].substr(1);
 					lastPoint = lastPoint.substr(0,lastPoint.length-1);
-					var newPath = "M "+firstPoint+" L"+lastPoint;
+					var newPath = "M"+firstPoint+" L"+lastPoint;
 					svgs[mod].path += " " + newPath;
 					allPaths.splice(i,1);
 					console.log(svgs[mod].path);
