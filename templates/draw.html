@@ -97,6 +97,8 @@ body {
 var currentState = "";
 var cells = localStorage.getItem('savedcells');
 var svgs = localStorage.getItem('savedsvgs');
+console.log(svgs);
+console.log(cells);
 var els = document.querySelectorAll('.gridCell');
 for (var i=0;i<els.length;i++){
 	els[i].addEventListener('click',clickCell);
