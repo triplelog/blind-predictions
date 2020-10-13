@@ -140,7 +140,7 @@ function clickCell(evt){
 		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
 		var cl = cells[mod];
 		svgs[mod].points = [];
-		svgs[mod].paths = [];
+		svgs[mod].path = "";
 		var tempPoints = {};
 		var tempPaths = {};
 		for (var i=0;i<cl.length;i++){
@@ -228,20 +228,20 @@ function clickCell(evt){
 				allPaths.push(path);
 			}
 		}
-		svgs[mod].paths = [allPaths[0]];
+		svgs[mod].path = allPaths[0];
 		var lastPoint = allPaths[0].split("L")[1];
 		allPaths.splice(0,1);
 		console.log(allPaths);
-		console.log(svgs[mod].paths);
+		console.log(svgs[mod].path);
 		var counter = 0;
 		while (counter < 10000 && allPaths.length > 0){
 			for (var i=0;i<allPaths.length;i++){
 				var firstPoint = allPaths[i].split("L")[0];
 				if (firstPoint == "M"+lastPoint+" "){
-					svgs[mod].paths.push(allPaths[i]);
+					svgs[mod].path += " "+allPaths[i];
 					lastPoint = allPaths[i].split("L")[1];
 					allPaths.splice(i,1);
-					console.log(svgs[mod].paths);
+					console.log(svgs[mod].path);
 					break;
 				}
 				var firstPoint = allPaths[i].split("L")[1];
@@ -249,9 +249,9 @@ function clickCell(evt){
 					lastPoint = allPaths[i].split("L")[0].substr(1);
 					lastPoint = lastPoint.substr(0,lastPoint.length-1);
 					var newPath = "M "+firstPoint+" L"+lastPoint;
-					svgs[mod].paths.push(newPath);
+					svgs[mod].path += " " + newPath;
 					allPaths.splice(i,1);
-					console.log(svgs[mod].paths);
+					console.log(svgs[mod].path);
 					break;
 				}
 			}
