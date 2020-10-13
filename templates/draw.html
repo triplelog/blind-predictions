@@ -264,6 +264,7 @@ function clickState(evt){
 
 function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
+	svg ='';
 	for (state in svgs){
 		var allPaths = [];
 		for (var i=0;i<svgs[state].allPaths.length;i++){
@@ -338,7 +339,7 @@ function displaySVG(){
 		svg += '</g>';
 	}
 
-	svg += "</svg>";
+	//svg += "</svg>";
 	console.log(svg);
 	localStorage.setItem('savedsvgs', svgs);
 	localStorage.setItem('savedcells', cells);
