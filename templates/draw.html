@@ -234,10 +234,9 @@ function clickCell(evt){
 		console.log(allPaths);
 		console.log(svgs[mod].paths);
 		var counter = 0;
-		while (counter < 5 && allPaths.length > 0){
+		while (counter < 10000 && allPaths.length > 0){
 			for (var i=0;i<allPaths.length;i++){
 				var firstPoint = allPaths[i].split("L")[0];
-				console.log(firstPoint);
 				if (firstPoint == "M"+lastPoint+" "){
 					svgs[mod].paths.push(allPaths[i]);
 					lastPoint = allPaths[i].split("L")[1];
