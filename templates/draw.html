@@ -300,7 +300,7 @@ function displaySVG(){
 		}
 		cells[state].sort(function(a,b){return a[0]*10000+a[1] - (b[0]*10000+b[1])});
 		var idx = 1;
-		var margin = .075;
+		var margin = .1;
 		for (cell in cells[state]){
 			var cellPath = 'M'+(cells[state][cell][1]+margin)+','+(cells[state][cell][0]+margin);
 			cellPath += ' L'+(cells[state][cell][1]+margin)+','+(cells[state][cell][0]+1-margin);
