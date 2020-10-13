@@ -26,6 +26,7 @@
 	flex-direction: column;
 	width: 400px;
 	height: 300px;
+	border: 1px solid black;
 }
 .gridRow {
 	flex: 1;
@@ -33,7 +34,7 @@
 	flex-direction: row;
 }
 .gridCell {
-	border:1px solid black;
+	border:1px dotted black;
 	flex: 1;
 }
 </style>
@@ -58,7 +59,17 @@
 
 
 </body>
-
+<script>
+var els = document.querySelectorAll('.gridCell');
+for (var i=0;i<els.length;i++){
+	els[i].addEventListener('click',clickCell);
+}
+	
+	
+function clickCell(evt){
+	evt.target.style.background = "blue";
+}
+</script>
 	</html>
 
 
