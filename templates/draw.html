@@ -153,17 +153,17 @@ function clickCell(evt){
 				if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
 					cl[i][2].style.borderBottom = "1px solid transparent";
 					cl[ii][2].style.borderTop = "1px solid transparent";
-					if (tempPoints[""+cl[i][0] +"-"+ cl[ii][1]]){
-						tempPoints[""+cl[i][0] +"-"+ cl[ii][1]]++;
+					if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
+						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
 					}
 					else {
-						tempPoints[""+cl[i][0] +"-"+ cl[ii][1]]=1;
+						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]=1;
 					}
-					if (tempPoints[""+cl[i][0] +"-"+ (cl[ii][1]+1)]){
-						tempPoints[""+cl[i][0] +"-"+ (cl[ii][1]+1)]++;
+					if (tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]){
+						tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]++;
 					}
 					else {
-						tempPoints[""+cl[i][0] +"-"+ (cl[ii][1]+1)]=1;
+						tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]=1;
 					}
 				}
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
@@ -171,17 +171,17 @@ function clickCell(evt){
 					cl[ii][2].style.borderLeft = "1px solid transparent";
 					svgs[mod].points.push([cl[ii][0],cl[i][1]]);
 					svgs[mod].points.push([cl[ii][0]+1,cl[i][1]]);
-					if (tempPoints[""+cl[ii][0] +"-"+ cl[i][1]]){
-						tempPoints[""+cl[ii][0] +"-"+ cl[i][1]]++;
+					if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
+						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
 					}
 					else {
-						tempPoints[""+cl[ii][0] +"-"+ cl[i][1]]=1;
+						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]=1;
 					}
-					if (tempPoints[""+(cl[ii][0]+1) +"-"+ cl[i][1]]){
-						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[i][1]]++;
+					if (tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]){
+						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]++;
 					}
 					else {
-						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[i][1]]=1;
+						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]=1;
 					}
 				}
 			}
