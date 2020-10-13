@@ -209,11 +209,13 @@ function reorderStates(startI=0,endI=435) {
 			
 			
 			var dprob = 1.0/(1.0+Math.pow(10.0,-1*presyear/eloDenom));
-			if (dprob < .5) {
-				document.getElementById(cdData['abbrev']).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
-			}
-			else {
-				document.getElementById(cdData['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+			if (document.getElementById(cdData['abbrev'])) {
+				if (dprob < .5) {
+					document.getElementById(cdData['abbrev']).style.fill = "hsl(0,100%,"+(50+dprob*100)+"%)";
+				}
+				else {
+					document.getElementById(cdData['abbrev']).style.fill = "hsl(240,100%,"+(50+(1-dprob)*100)+"%)";
+				}
 			}
 			
 			
