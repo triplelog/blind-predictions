@@ -114,8 +114,8 @@ for (var i=0;i<50;i++){
 }
 cells = localStorage.getItem('savedcells');
 svgs = localStorage.getItem('savedsvgs');
-console.log(svgs);
-console.log(cells['ca']);
+console.log(JSON.stringify(svgs));
+console.log(JSON.stringify(cells));
 
 function clickCell(evt){
 
