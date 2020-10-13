@@ -40,16 +40,7 @@ body {
 	border: 1px solid black;
 	margin: auto;
 }
-@media (max-aspect-ratio: 4/3) {
-	.gridHolder {
-		height: calc( 95vw * 19 / 24);
-	}
-}
-@media (min-aspect-ratio: 4/3) {
-	.gridHolder {
-		width: calc( 95vh * 24 / 19);
-	}
-}
+
 .gridRow {
 	flex: 1;
 	display: flex;
@@ -59,8 +50,21 @@ body {
 	border:1px dotted black;
 	flex: 1;
 	text-align: center;
-	line-height: 100%;
+	line-height: calc(95vh / 20);
 	color: white;
+}
+@media (max-aspect-ratio: 4/3) {
+	.gridHolder {
+		height: calc( 95vw * 19 / 24);
+	}
+	.gridCell {
+		line-height: calc(95vw * 19 / 24 / 20);
+	}
+}
+@media (min-aspect-ratio: 4/3) {
+	.gridHolder {
+		width: calc( 95vh * 24 / 19);
+	}
 }
 </style>
 
