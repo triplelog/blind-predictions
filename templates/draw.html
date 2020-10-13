@@ -298,6 +298,7 @@ function displaySVG(){
 		for (point in svgs[state].points){
 			svg += '<circle r=".05" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
 		}
+		cells[state].sort(function(a,b){return a[0]*10000+a[1] - (b[0]*10000+b[1])});
 		for (cell in cells[state]){
 			var cellPath = 'M '+cells[state][cell][1]+' '+cells[state][cell][0];
 			cellPath += ' '+cells[state][cell][1]+' '+(cells[state][cell][0]+1);
