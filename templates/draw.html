@@ -273,7 +273,7 @@ function clickState(evt){
 }
 
 function displaySVG(){
-	var svg = "";
+	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (state in svgs){
 		svg += '<path d="'+svgs[state].path+'"/>';
 	}
@@ -283,6 +283,7 @@ function displaySVG(){
 			svg += '<circle r=".5" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
 		}
 	}
+	svg += "</svg>";
 	console.log(svg);
 }
 </script>
