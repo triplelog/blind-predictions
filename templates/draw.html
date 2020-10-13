@@ -169,8 +169,6 @@ function clickCell(evt){
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
 					cl[i][2].style.borderRight = "1px solid transparent";
 					cl[ii][2].style.borderLeft = "1px solid transparent";
-					svgs[mod].points.push([cl[ii][0],cl[i][1]]);
-					svgs[mod].points.push([cl[ii][0]+1,cl[i][1]]);
 					if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
 						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
 					}
