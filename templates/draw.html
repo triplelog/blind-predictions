@@ -27,6 +27,7 @@
 	width: 90vw;
 	height: 90vh;
 	border: 1px solid black;
+	margin: auto;
 }
 @media (max-aspect-ratio: 4/3) {
 	.gridHolder {
@@ -73,6 +74,8 @@
 var els = document.querySelectorAll('.gridCell');
 for (var i=0;i<els.length;i++){
 	els[i].addEventListener('click',clickCell);
+	els[i].addEventListener('dragstart',clickCell);
+	els[i].addEventListener('dragenter',clickCell);
 }
 	
 	
