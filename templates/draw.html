@@ -112,8 +112,13 @@ for (var i=0;i<50;i++){
 	cells[states[i].abbrev]=[];
 	svgs[states[i].abbrev]={'allPaths':[],'points':[],'borders':[]};
 }
-cells = JSON.parse(localStorage.getItem('savedcells'));
-svgs = JSON.parse(localStorage.getItem('savedsvgs'));
+cells = JSON.parse(localStorage.getItem('savedcells{{ q }}'));
+svgs = JSON.parse(localStorage.getItem('savedsvgs{{ q }}'));
+var districts = true;
+{% if districts %}
+{% else %}
+districts = false;
+{% endif %}
 
 for (var i=0;i<50;i++){
 	if (cells[states[i].abbrev].length>0 || svgs[states[i].abbrev].allPaths.length>0 || svgs[states[i].abbrev].points.length>0 || svgs[states[i].abbrev].borders.length>0){
@@ -354,7 +359,9 @@ function displaySVG(){
 			cellPath += ' L'+xMax+','+yMin;
 			cellPath += ' L'+xMin+','+yMin;
 			if (cells[state].length == 1){idx = 0;}
-			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
+			if (districts){
+				svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
+			}
 			idx++;
 		}
 		svg += '</g>';
@@ -362,8 +369,8 @@ function displaySVG(){
 
 	//svg += "</svg>";
 	console.log(svg);
-	localStorage.setItem('savedsvgs', JSON.stringify(svgs));
-	localStorage.setItem('savedcells', JSON.stringify(cells));
+	localStorage.setItem('savedsvgs{{ q }}', JSON.stringify(svgs));
+	localStorage.setItem('savedcells{{ q }}', JSON.stringify(cells));
 }
 </script>
 
