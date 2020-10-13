@@ -104,7 +104,11 @@ function clickCell(evt){
 	evt.target.style.background = "blue";
 }
 function clickState(evt){
-	evt.target.style.background = "gray";
+	var el = evt.target;
+	while (el.parentElement && (!el.id || el.id.substr(0,6) != "state-") ){
+		el = el.parentElement;
+	}
+	el.style.background = "gray";
 }
 </script>
 	</html>
