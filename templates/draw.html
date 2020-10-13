@@ -139,7 +139,7 @@ function clickCell(evt){
 		var el = document.getElementById('state-'+mod);
 		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
 		var cl = cells[mod];
-		
+		svgs[mod].points = [];
 		for (var i=0;i<cl.length;i++){
 			cl[i][2].style.borderLeft = "1px solid red";
 			cl[i][2].style.borderRight = "1px solid red";
@@ -163,6 +163,7 @@ function clickCell(evt){
 				}
 			}
 		}
+		console.log(svgs[mod].points);
 	}
 }
 function clickState(evt){
