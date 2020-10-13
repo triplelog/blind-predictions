@@ -109,7 +109,7 @@ for (var i=0;i<50;i++){
 	var el = document.getElementById('state-'+states[i].abbrev);
 	el.addEventListener('click',clickState);
 	cells[states[i].abbrev]=[];
-	svgs[states[i].abbrev]={'path':[],'points':[],'borders':[]};
+	svgs[states[i].abbrev]={'allPaths':[],'points':[],'borders':[]};
 }
 
 function clickCell(evt){
@@ -142,7 +142,7 @@ function clickCell(evt){
 		var cl = cells[mod];
 		svgs[mod].points = [];
 		svgs[mod].borders = [];
-		svgs[mod].path = "";
+		svgs[mod].allPaths = [];
 		var tempPoints = {};
 		var tempPaths = {};
 		for (var i=0;i<cl.length;i++){
@@ -234,32 +234,8 @@ function clickCell(evt){
 				allPaths.push(path);
 			}
 		}
-		/*
-		svgs[mod].path = allPaths[0];
-		var lastPoint = allPaths[0].split("L")[1];
-		allPaths.splice(0,1);
-		var counter = 0;
-		while (counter < 10000 && allPaths.length > 0){
-			for (var i=0;i<allPaths.length;i++){
-				var firstPoint = allPaths[i].split("L")[0];
-				if (firstPoint == "M"+lastPoint+" "){
-					svgs[mod].path += " "+allPaths[i];
-					lastPoint = allPaths[i].split("L")[1];
-					allPaths.splice(i,1);
-					break;
-				}
-				var firstPoint = allPaths[i].split("L")[1];
-				if (firstPoint == lastPoint){
-					lastPoint = allPaths[i].split("L")[0].substr(1);
-					lastPoint = lastPoint.substr(0,lastPoint.length-1);
-					var newPath = "M"+firstPoint+" L"+lastPoint;
-					svgs[mod].path += " " + newPath;
-					allPaths.splice(i,1);
-					break;
-				}
-			}
-			counter++;
-		}*/
+		
+		svgs[mod].allPaths = allPaths;
 		
 		
 	}
@@ -281,8 +257,34 @@ function clickState(evt){
 function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (state in svgs){
+		var allPaths = svgs[state].allPaths;
+		var path = allPaths[0];
+		var lastPoint = allPaths[0].split("L")[1];
+		allPaths.splice(0,1);
+		var counter = 0;
+		while (counter < 10000 && allPaths.length > 0){
+			for (var i=0;i<allPaths.length;i++){
+				var firstPoint = allPaths[i].split("L")[0];
+				if (firstPoint == "M"+lastPoint+" "){
+					path += " "+allPaths[i];
+					lastPoint = allPaths[i].split("L")[1];
+					allPaths.splice(i,1);
+					break;
+				}
+				var firstPoint = allPaths[i].split("L")[1];
+				if (firstPoint == lastPoint){
+					lastPoint = allPaths[i].split("L")[0].substr(1);
+					lastPoint = lastPoint.substr(0,lastPoint.length-1);
+					var newPath = "M"+firstPoint+" L"+lastPoint;
+					path += " " + newPath;
+					allPaths.splice(i,1);
+					break;
+				}
+			}
+			counter++;
+		}
 		svg += '<g id="state-'+state+'">';
-		svg += '<path fill="none" stroke="black" stroke-width=".05" d="'+svgs[state].path+'"/>';
+		svg += '<path fill="none" stroke="black" stroke-width=".05" d="'+path+'"/>';
 		
 		for (border in svgs[state].borders){
 			svg += '<circle r=".025" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
