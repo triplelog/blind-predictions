@@ -68,7 +68,6 @@ body {
 	{% for i in range(0,50) %}
 		{% set x = states[i].ev10 - 2 %}
 		<div id="state-{{ states[i].abbrev }}">{{ states[i].abbrev }}: <span class="cellsDrawn">0</span><span> of {{ x }}</span></div>
-		{% endif %}
 	{% endfor %}
 	</div>
 	<div class="gridHolder">
