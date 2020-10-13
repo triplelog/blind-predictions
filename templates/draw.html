@@ -307,7 +307,7 @@ function displaySVG(){
 			cellPath += ' '+(cells[state][cell][1]+1)+' '+cells[state][cell][0];
 			cellPath += 'Z';
 			if (cells[state].length == 1){idx = 0;}
-			svg += '<path onclick="clickdistrict(\''+state+'-'+idx++'\')" id="'+state+'-'+idx+'" fill="none" stroke="none" d="'+cellPath+'"/>';
+			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" fill="none" stroke="none" d="'+cellPath+'"/>';
 			idx++;
 		}
 		svg += '</g>';
