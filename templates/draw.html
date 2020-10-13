@@ -112,10 +112,10 @@ for (var i=0;i<50;i++){
 	cells[states[i].abbrev]=[];
 	svgs[states[i].abbrev]={'allPaths':[],'points':[],'borders':[]};
 }
-cells = localStorage.getItem('savedcells');
-svgs = localStorage.getItem('savedsvgs');
-console.log(JSON.stringify(svgs));
-console.log(JSON.stringify(cells));
+//cells = JSON.parse(localStorage.getItem('savedcells'));
+//svgs = JSON.parse(localStorage.getItem('savedsvgs'));
+//console.log(svgs);
+//console.log(cells);
 
 function clickCell(evt){
 
@@ -347,8 +347,8 @@ function displaySVG(){
 
 	//svg += "</svg>";
 	console.log(svg);
-	localStorage.setItem('savedsvgs', svgs);
-	localStorage.setItem('savedcells', cells);
+	localStorage.setItem('savedsvgs', JSON.stringify(svgs));
+	localStorage.setItem('savedcells', JSON.stringify(cells));
 }
 </script>
 
