@@ -107,15 +107,24 @@ function clickCell(evt){
 	evt.target.style.background = "blue";
 	var r = evt.target.getAttribute('data-row');
 	var c = evt.target.getAttribute('data-col');
+	var modified = {};
 	for (var i=0;i<50;i++){
 		var cl = cells[states[i].abbrev];
+		
 		for (var ii=0;ii<cl.length;ii++){
 			if (cl[ii][0] == r && cl[ii][1] == c){
 				cl.splice(ii,1);
+				modified[states[i].abbrev]=true;
+				
 				ii--;
 			}
 		}
 	}
+	for (var mod in modified){
+		var el = document.getElementById('state-'+mod);
+		el.querySelector('.cellsDrawn').textContent = cl.length;
+	}
+	
 	if (currentState != ""){
 		cells[currentState].push([r,c]);
 		var el = document.getElementById('state-'+currentState);
