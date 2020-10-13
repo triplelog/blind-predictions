@@ -293,19 +293,20 @@ function displaySVG(){
 		svg += '<path fill="white" stroke="black" stroke-width=".2" d="'+path+'"/>';
 		
 		for (border in svgs[state].borders){
-			svg += '<circle r=".05" fill="black" stroke="black" stroke-width="0" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
+			svg += '<circle r=".05" fill="gray" stroke="black" stroke-width="0" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
 		}
 		for (point in svgs[state].points){
-			svg += '<circle r=".1" fill="black" stroke="black" stroke-width="0" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
+			svg += '<circle r=".05" fill="gray" stroke="black" stroke-width="0" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
 		}
 		cells[state].sort(function(a,b){return a[0]*10000+a[1] - (b[0]*10000+b[1])});
 		var idx = 1;
+		var margin = .15;
 		for (cell in cells[state]){
-			var cellPath = 'M'+(cells[state][cell][1]+.05)+','+(cells[state][cell][0]+.05);
-			cellPath += ' L'+(cells[state][cell][1]+.05)+','+(cells[state][cell][0]+.95);
-			cellPath += ' L'+(cells[state][cell][1]+.95)+','+(cells[state][cell][0]+.95);
-			cellPath += ' L'+(cells[state][cell][1]+.95)+','+(cells[state][cell][0]+.05);
-			cellPath += ' L'+(cells[state][cell][1]+.05)+','+(cells[state][cell][0]+.05);
+			var cellPath = 'M'+(cells[state][cell][1]+margin)+','+(cells[state][cell][0]+margin);
+			cellPath += ' L'+(cells[state][cell][1]+margin)+','+(cells[state][cell][0]+1-margin);
+			cellPath += ' L'+(cells[state][cell][1]+1-margin)+','+(cells[state][cell][0]+1-margin);
+			cellPath += ' L'+(cells[state][cell][1]+1-margin)+','+(cells[state][cell][0]+margin);
+			cellPath += ' L'+(cells[state][cell][1]+margin)+','+(cells[state][cell][0]+margin);
 			if (cells[state].length == 1){idx = 0;}
 			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="transparent" d="'+cellPath+'"/>';
 			idx++;
