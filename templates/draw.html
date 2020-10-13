@@ -244,6 +244,16 @@ function clickCell(evt){
 					console.log(svgs[mod].paths);
 					break;
 				}
+				var firstPoint = allPaths[i].split("L")[1];
+				if (firstPoint == lastPoint){
+					lastPoint = allPaths[i].split("L")[0].substr(1);
+					lastPoint = lastPoint.substr(0,lastPoint.length-1);
+					var newPath = "M "+firstPoint+" L"+lastPoint;
+					svgs[mod].paths.push(newPath);
+					allPaths.splice(i,1);
+					console.log(svgs[mod].paths);
+					break;
+				}
 			}
 			counter++;
 		}
