@@ -461,7 +461,7 @@ function dragdistrict(event) {
 for (var i=0;i<435;i++) {
 	var cdData = resultsArray[i];
 	if (document.getElementById(cdData['abbrev'])) {
-			document.getElementById(cdData['abbrev']).addEventListener('mousedown',function(event) {dragdistrict(event);});
+		document.getElementById(cdData['abbrev']).addEventListener('mousedown',function(event) {dragdistrict(event);});
 	}
 	
 }
