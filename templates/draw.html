@@ -63,7 +63,11 @@ body {
 <body>
 
 	<div class="menu">
-		California
+	{% for i in range(0,51) %}
+		{% if states[i].abbrev != "dc" %}
+		<div>{{ states[i].abbrev }}: {{ states[1].ev10 - 2}}</div>
+		{% endif %}
+	{% endfor %}
 	</div>
 	<div class="gridHolder">
 	{% for ii in range(0,19) %}
