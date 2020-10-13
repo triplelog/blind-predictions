@@ -109,7 +109,7 @@ for (var i=0;i<50;i++){
 	var el = document.getElementById('state-'+states[i].abbrev);
 	el.addEventListener('click',clickState);
 	cells[states[i].abbrev]=[];
-	svgs[states[i].abbrev]={'path':[],'points':[]};
+	svgs[states[i].abbrev]={'path':[],'points':[],'borders':[]};
 }
 
 function clickCell(evt){
@@ -141,6 +141,7 @@ function clickCell(evt){
 		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
 		var cl = cells[mod];
 		svgs[mod].points = [];
+		svgs[mod].borders = [];
 		svgs[mod].path = "";
 		var tempPoints = {};
 		var tempPaths = {};
@@ -195,7 +196,9 @@ function clickCell(evt){
 					else {
 						tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]=1;
 					}
-					svgs[mod].points.push([cl[ii][0],cl[ii][1]+0.5]);
+					svgs[mod].borders.push([cl[ii][0],cl[ii][1]+0.25]);
+					svgs[mod].borders.push([cl[ii][0],cl[ii][1]+0.5]);
+					svgs[mod].borders.push([cl[ii][0],cl[ii][1]+0.75]);
 				}
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
 					cl[i][2].style.borderRight = "1px solid transparent";
@@ -212,7 +215,9 @@ function clickCell(evt){
 					else {
 						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]=1;
 					}
-					svgs[mod].points.push([cl[ii][0]+0.5,cl[ii][1]]);
+					svgs[mod].borders.push([cl[ii][0]+0.25,cl[ii][1]]);
+					svgs[mod].borders.push([cl[ii][0]+0.5,cl[ii][1]]);
+					svgs[mod].borders.push([cl[ii][0]+0.75,cl[ii][1]]);
 				}
 			}
 		}
@@ -279,6 +284,9 @@ function displaySVG(){
 	}
 	for (state in svgs){
 		
+		for (border in svgs[state].borders){
+			svg += '<circle r=".025" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
+		}
 		for (point in svgs[state].points){
 			svg += '<circle r=".05" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
 		}
