@@ -65,7 +65,7 @@ body {
 	<div class="menu">
 	{% for i in range(0,51) %}
 		{% if states[i].abbrev != "dc" %}
-		{% set x = states[1].ev10 %}
+		{% set x = states[i].ev10 - 2 %}
 		<div>{{ states[i].abbrev }}: {{ x }}</div>
 		{% endif %}
 	{% endfor %}
