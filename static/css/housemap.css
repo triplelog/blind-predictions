@@ -486,7 +486,7 @@
 
 
 #electoralMap {
-	background-color: rgba(0,0,0,.25);
+	background-color: rgba(0,0,0,1);
 	width: calc( var(--block-width) * (var(--top-width) - 7));
 	left: calc( 20px + var(--block-width) * 5);
 	height: calc( var(--block-width) * (var(--side-height) - 7));
