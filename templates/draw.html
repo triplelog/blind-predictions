@@ -258,6 +258,9 @@ function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (state in svgs){
 		var allPaths = svgs[state].allPaths;
+		if (allPaths.length == 0){
+			continue;
+		}
 		var path = allPaths[0];
 		var lastPoint = allPaths[0].split("L")[1];
 		allPaths.splice(0,1);
