@@ -307,7 +307,7 @@ function displaySVG(){
 			cellPath += ' L'+(cells[state][cell][1]+1)+','+cells[state][cell][0];
 			cellPath += ' L'+cells[state][cell][1]+','+cells[state][cell][0];
 			if (cells[state].length == 1){idx = 0;}
-			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" fill="none" stroke="none" vector-effect="none" fill-rule="evenodd" d="'+cellPath+'"/>';
+			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke="none" vector-effect="none" fill-rule="evenodd" d="'+cellPath+'"/>';
 			idx++;
 		}
 		svg += '</g>';
