@@ -441,7 +441,6 @@ function dragdistrict(event) {
 		if (cdData['abbrev']==districtToDrag) {
 			oldPred = cdData[baseData];
 			currentI = i;
-			console.log(cdData['abbrev']);
 			break;
 		}
 	}
