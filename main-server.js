@@ -373,6 +373,16 @@ app.post(['/map','/map.html'],
 
 
 
+app.get(['/','/draw','/draw.html'],
+	function(req, res){
+		
+
+		res.write(nunjucks.render('templates/draw.html',{
+		
+		}));
+		res.end();
+	}
+);
 
 app.get(['/','/index','/index.html'],
 	function(req, res){

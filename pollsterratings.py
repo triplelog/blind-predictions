@@ -105,18 +105,17 @@ for pollster in pollsters.keys():
 		xm.append(numpy.mean(x))
 		xs.append(numpy.std(x))
 
-print(xm)
-print(xs)			
+print(numpy.mean(xm),numpy.std(xm))
+print(numpy.mean(xs),numpy.std(xs))			
 for pollster in pollsters.keys():
 	l = len(pollsters[pollster]['polls'])
-	if l >= 3:
+	if l >= 5:
 		
 		polls = pollsters[pollster]['polls']
 		polls.sort(key=mySort)
 		for year in [2004,2008,2012,2016,2020]:
 		
 			x = []
-
 			for i in range(0,l):
 				#et = 1000*pollsters[pollster]['polls'][i][4]
 				#probB = nd.pdf(et)
@@ -126,10 +125,51 @@ for pollster in pollsters.keys():
 				x.append(pollsters[pollster]['polls'][i][4]/denomerror)
 				if pollsters[pollster]['polls'][i][1] == year-4:
 					x.append(pollsters[pollster]['polls'][i][4]/denomerror)
+					
 			if len(x)>0:
 				pollsters[pollster][year]={'mean':(0.0+sum(x))/(10.0+len(x)),'stdev':(100.0+len(x)*numpy.std(x))/(10.0+len(x)),'weight':len(x)/10.0}
 			if len(x)>9:
 				pollsters[pollster][year]['weight']=1.0
+			else:
+				continue
+				
+			pairs = {}
+			for ii in range(4,37):
+				sigma = ii*1.0/2
+				pairs[ii]={}
+				for iii in range(-20,21):
+					mu = iii*.5
+					p = 1
+					for i in range(0,l):
+						if pollsters[pollster]['polls'][i][1]>= year:
+							break
+						adjpred = pollsters[pollster]['polls'][i][4] - mu
+						pb = 35/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
+						p *= pb
+					pairs[ii][iii]=p*1.0/2.50663/10.0*math.pow(2.7183,-.5*((sigma-20.0)/10.0)**2.0)*1.0/2.50663/1.0*math.pow(2.7183,-.5*((mu-0)/1.0)**2.0)
+			probsum = 0
+			for iiii in range(-500,501):
+				p = 0
+				for ii in range(4,37):
+					sigma = ii*1.0/2
+					for iii in range(-20,21):
+						mu = iii*.5
+						adjpred = iiii*.1 - mu
+						pp = pairs[ii][iii]*35/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
+						p += pp
+				probsum += p
+			halfsum = 0
+			print(pollster,probsum)
+			pollsters[pollster][year]['preds']={}
+			for iiii in range(-500,501):
+				p = 0
+				for ii in range(4,37):
+					sigma = ii*1.0/2
+					for iii in range(-20,21):
+						mu = iii*.5
+						adjpred = iiii*.1 - mu
+						p += pairs[ii][iii]*35/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0)
+				pollsters[pollster][year]['preds'][iiii]=p/probsum
 
 #for state in ["US","FL","OH","MI","WI","PA","GA"]:
 sse = 0
@@ -150,39 +190,51 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 			l = len(pollsters[pollster]['polls'])
 			for i in range(0,l):
 				if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-					if state == "NC" and year ==2016:
-						print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
+					#if state == "NC" and year ==2016:
+						#print(pollster,pollsters[pollster]['polls'][i],pollsters[pollster][year])
 					donot = 0
 					
 					
-		for diff in range(-500,501):
+		for diff in range(-400,401):
 			p = 1
 			for pollster in pollsters.keys():
 				try:
-					pp = pollsters[pollster][year]
+					pp = pollsters[pollster][year]['preds']
 				except:
 					continue
 				l = len(pollsters[pollster]['polls'])
 				for i in range(0,l):
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
-						sigma = pollsters[pollster][year]['stdev']
-						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+						#adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
+						#sigma = pollsters[pollster][year]['stdev']
+						#p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+						ddiff = round(diff-pollsters[pollster]['polls'][i][5]*10.0)
+						if ddiff < -500:
+							ddiff = -500
+						if ddiff > 500:
+							ddiff = 500
+						p *= math.pow(pollsters[pollster][year]['preds'][ddiff],1.0/pollsters[pollster]['polls'][i][0])
 			probsum += p
 		halfsum = 0
-		for diff in range(-500,501):
+		for diff in range(-400,401):
 			p = 1
 			for pollster in pollsters.keys():
 				try:
-					pp = pollsters[pollster][year]
+					pp = pollsters[pollster][year]['preds']
 				except:
 					continue
 				l = len(pollsters[pollster]['polls'])
 				for i in range(0,l):
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
-						sigma = pollsters[pollster][year]['stdev']
-						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+						#adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
+						#sigma = pollsters[pollster][year]['stdev']
+						#p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+						ddiff = round(diff-pollsters[pollster]['polls'][i][5]*10.0)
+						if ddiff < -500:
+							ddiff = -500
+						if ddiff > 500:
+							ddiff = 500
+						p *= math.pow(pollsters[pollster][year]['preds'][ddiff],1.0/pollsters[pollster]['polls'][i][0])
 			halfsum += p
 			if halfsum >= probsum/2:
 				print(state,year, diff/10.0, actuals[state][year])
@@ -192,19 +244,25 @@ for state in ['FL','NC','NV','OH','AZ','IA','NH','PA','GA','CO','MI','WI','VA','
 				break
 		dprob = 0
 		halfsum = 0
-		for diff in range(-500,0):
+		for diff in range(-400,0):
 			p = 1
 			for pollster in pollsters.keys():
 				try:
-					pp = pollsters[pollster][year]
+					pp = pollsters[pollster][year]['preds']
 				except:
 					continue
 				l = len(pollsters[pollster]['polls'])
 				for i in range(0,l):
 					if pollsters[pollster]['polls'][i][1]== year and pollsters[pollster]['polls'][i][2] == state:
-						adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
-						sigma = pollsters[pollster][year]['stdev']
-						p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+						#adjpred = diff/10.0-(pollsters[pollster]['polls'][i][5]+pollsters[pollster][year]['mean'])
+						#sigma = pollsters[pollster][year]['stdev']
+						#p *= math.pow(1/2.50663/sigma*math.pow(2.7183,-.5*((adjpred)/sigma)**2.0),pollsters[pollster][year]['weight']/pollsters[pollster]['polls'][i][0])
+						ddiff = round(diff-pollsters[pollster]['polls'][i][5]*10.0)
+						if ddiff < -500:
+							ddiff = -500
+						if ddiff > 500:
+							ddiff = 500
+						p *= math.pow(pollsters[pollster][year]['preds'][ddiff],1.0/pollsters[pollster]['polls'][i][0])
 			halfsum += p
 		rprob = halfsum/probsum
 		#print(state,year, rprob, actuals[state][year])
