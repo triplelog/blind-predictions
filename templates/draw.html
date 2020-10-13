@@ -298,7 +298,7 @@ function displaySVG(){
 			counter++;
 		}
 		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
-		svg += '<path fill="white" stroke="black" stroke-width=".15" d="'+path+'"/>';
+		svg += '<path fill="white" stroke="black" stroke-width=".125" d="'+path+'"/>';
 		
 		for (border in svgs[state].borders){
 			//svg += '<circle r=".05" fill="gray" stroke="black" stroke-width="0" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
@@ -308,23 +308,23 @@ function displaySVG(){
 		}
 		cells[state].sort(function(a,b){return a[0]*10000+a[1] - (b[0]*10000+b[1])});
 		var idx = 1;
-		var margin = .2;
+		var margin = .15;
 		for (cell in cells[state]){
 			var xMin = cells[state][cell][1]+margin;
 			var xMax = cells[state][cell][1]+1-margin;
 			var yMin = cells[state][cell][0]+margin;
 			var yMax = cells[state][cell][0]+1-margin;
 			if (cells[state][cell][3][0]){
-				yMin = cells[state][cell][0]+margin/3;
+				yMin = cells[state][cell][0]+margin/2.4;
 			}
 			if (cells[state][cell][3][1]){
-				xMax = cells[state][cell][1]+1-margin/3;
+				xMax = cells[state][cell][1]+1-margin/2.4;
 			}
 			if (cells[state][cell][3][2]){
-				yMax = cells[state][cell][0]+1-margin/3;
+				yMax = cells[state][cell][0]+1-margin/2.4;
 			}
 			if (cells[state][cell][3][3]){
-				xMin = cells[state][cell][1]+margin/3;
+				xMin = cells[state][cell][1]+margin/2.4;
 			}
 			var cellPath = 'M'+xMin+','+yMin;
 			cellPath += ' L'+xMin+','+yMax;
