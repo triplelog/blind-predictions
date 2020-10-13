@@ -195,7 +195,7 @@ function clickCell(evt){
 					else {
 						tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]=1;
 					}
-					svgs[mod].points.push([cl[ii][0]-0.5,cl[ii][1]]);
+					svgs[mod].points.push([cl[ii][0],cl[ii][1]+0.5]);
 				}
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
 					cl[i][2].style.borderRight = "1px solid transparent";
@@ -212,7 +212,7 @@ function clickCell(evt){
 					else {
 						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]=1;
 					}
-					svgs[mod].points.push([cl[ii][0],cl[ii][1]-0.5]);
+					svgs[mod].points.push([cl[ii][0]+0.5,cl[ii][1]]);
 				}
 			}
 		}
@@ -275,12 +275,12 @@ function clickState(evt){
 function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (state in svgs){
-		svg += '<path fill="none" stroke="black" stroke-width=".1" d="'+svgs[state].path+'"/>';
+		svg += '<path fill="none" stroke="black" stroke-width=".05" d="'+svgs[state].path+'"/>';
 	}
 	for (state in svgs){
 		
 		for (point in svgs[state].points){
-			svg += '<circle r=".1" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
+			svg += '<circle r=".05" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
 		}
 	}
 	svg += "</svg>";
