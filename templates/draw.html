@@ -95,10 +95,9 @@ body {
 </body>
 <script>
 var currentState = "";
-var cells = localStorage.getItem('savedcells');
-var svgs = localStorage.getItem('savedsvgs');
-console.log(svgs);
-console.log(cells);
+var cells = {};
+var svgs = {};
+
 var els = document.querySelectorAll('.gridCell');
 for (var i=0;i<els.length;i++){
 	els[i].addEventListener('click',clickCell);
@@ -113,6 +112,10 @@ for (var i=0;i<50;i++){
 	cells[states[i].abbrev]=[];
 	svgs[states[i].abbrev]={'allPaths':[],'points':[],'borders':[]};
 }
+cells = localStorage.getItem('savedcells');
+svgs = localStorage.getItem('savedsvgs');
+console.log(svgs);
+console.log(cells['ca']);
 
 function clickCell(evt){
 
