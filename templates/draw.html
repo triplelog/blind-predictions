@@ -65,10 +65,9 @@ body {
 <body>
 
 	<div class="menu">
-	{% for i in range(0,51) %}
-		{% if states[i].abbrev != "dc" %}
+	{% for i in range(0,50) %}
 		{% set x = states[i].ev10 - 2 %}
-		<div>{{ states[i].abbrev }}: {{ x }}</div>
+		<div id="state-{{ states[i].abbrev }}">{{ states[i].abbrev }}: <span class="cellsDrawn">0</span><span> of {{ x }}</span></div>
 		{% endif %}
 	{% endfor %}
 	</div>
@@ -95,10 +94,18 @@ for (var i=0;i<els.length;i++){
 	els[i].addEventListener('dragstart',clickCell);
 	els[i].addEventListener('dragenter',clickCell);
 }
-	
-	
+
+var states = {{ states | dump | safe}};
+for (var i=0;i<50;i++){
+	var el = document.getElementById('state-'+states[i].abbrev);
+	el.addEventListener('click',clickState);
+}
+
 function clickCell(evt){
 	evt.target.style.background = "blue";
+}
+function clickState(evt){
+	evt.target.style.background = "gray";
 }
 </script>
 	</html>
