@@ -74,7 +74,7 @@ body {
 	{% for ii in range(0,19) %}
 		<div class="gridRow">
 		{% for i in range(0,24) %}
-			<div class="gridCell" draggable="true">
+			<div class="gridCell" draggable="true" data-row="{{ ii }}" data-col="{{ i }}">
 			</div>
 		{% endfor %}
 		</div>
@@ -87,6 +87,8 @@ body {
 
 </body>
 <script>
+var currentState = "";
+var cells = {};
 var els = document.querySelectorAll('.gridCell');
 for (var i=0;i<els.length;i++){
 	els[i].addEventListener('click',clickCell);
@@ -98,20 +100,33 @@ var states = {{ states | dump | safe}};
 for (var i=0;i<50;i++){
 	var el = document.getElementById('state-'+states[i].abbrev);
 	el.addEventListener('click',clickState);
+	cells[states[i].abbrev]=[];
 }
 
 function clickCell(evt){
 	evt.target.style.background = "blue";
+	if (currentState != ""){
+		cells[currentState].push([evt.target.getAttribute('data-row'),evt.target.getAttribute('data-col')]);
+		var el = document.getElementById('state-'+currentState);
+		el.querySelector('.cellsDrawn').textContent = cells[currentState].length;
+	}
 }
 function clickState(evt){
 	var el = evt.target;
 	while (el.parentElement && (!el.id || el.id.substr(0,6) != "state-") ){
 		el = el.parentElement;
 	}
+	for (var i=0;i<50;i++){
+		var e = document.getElementById('state-'+states[i].abbrev);
+		e.style.background = "white";
+	}
+	currentState = el.id.substr(6);
 	el.style.background = "gray";
 }
 </script>
-	</html>
+
+
+</html>
 
 
 
