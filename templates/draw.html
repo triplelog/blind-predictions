@@ -280,9 +280,8 @@ function clickState(evt){
 function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	for (state in svgs){
+		svg += '<g id="state-'+state+'">';
 		svg += '<path fill="none" stroke="black" stroke-width=".05" d="'+svgs[state].path+'"/>';
-	}
-	for (state in svgs){
 		
 		for (border in svgs[state].borders){
 			svg += '<circle r=".025" cx="'+svgs[state].borders[border][1]+'" cy="'+svgs[state].borders[border][0]+'"/>';
@@ -290,6 +289,7 @@ function displaySVG(){
 		for (point in svgs[state].points){
 			svg += '<circle r=".05" cx="'+svgs[state].points[point][1]+'" cy="'+svgs[state].points[point][0]+'"/>';
 		}
+		svg += '</g>';
 	}
 	svg += "</svg>";
 	console.log(svg);
