@@ -114,8 +114,125 @@ for (var i=0;i<50;i++){
 }
 cells = JSON.parse(localStorage.getItem('savedcells'));
 svgs = JSON.parse(localStorage.getItem('savedsvgs'));
-console.log(svgs);
-console.log(cells);
+for (var i=0;i<50;i++){
+	if (cells[states[i].abbrev].length>0 || svgs[states[i].abbrev].allPaths.length>0 || svgs[states[i].abbrev].points.length>0 || svgs[states[i].abbrev].borders.length>0){
+		updatePaths(states[i].abbrev);
+	}
+
+}
+
+function updatePaths(state) {
+	var el = document.getElementById('state-'+state);
+	el.querySelector('.cellsDrawn').textContent = cells[state].length;
+	var cl = cells[state];
+	svgs[state].points = [];
+	svgs[state].borders = [];
+	svgs[state].allPaths = [];
+	var tempPoints = {};
+	var tempPaths = {};
+	for (var i=0;i<cl.length;i++){
+		cl[i][2].style.borderLeft = "1px solid red";
+		cl[i][2].style.borderRight = "1px solid red";
+		cl[i][2].style.borderTop = "1px solid red";
+		cl[i][2].style.borderBottom = "1px solid red";
+		cl[i][2].textContent = state.toUpperCase();
+		cl[i][3][0]=false;
+		cl[i][3][1]=false;
+		cl[i][3][2]=false;
+		cl[i][3][3]=false;
+		if (tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ cl[i][0] ]){
+			tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ cl[i][0] ]++;
+		}
+		else {
+			tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]) ]=1;
+		}
+		
+		if (tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]){
+			tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]++;
+		}
+		else {
+			tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]=1;
+		}
+		
+		if (tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]){
+			tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]++;
+		}
+		else {
+			tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]=1;
+		}
+		
+		if (tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]){
+			tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]++;
+		}
+		else {
+			tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]=1;
+		}
+	}
+	for (var i=0;i<cl.length;i++){
+		for (var ii=0;ii<cl.length;ii++){
+			if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
+				cl[i][2].style.borderBottom = "1px solid transparent";
+				cl[ii][2].style.borderTop = "1px solid transparent";
+				cl[i][3][2]=true;
+				cl[ii][3][0]=true;
+				if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
+					tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
+				}
+				else {
+					tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]=1;
+				}
+				if (tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]){
+					tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]++;
+				}
+				else {
+					tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]=1;
+				}
+				svgs[state].borders.push([cl[ii][0],cl[ii][1]+0.25]);
+				svgs[state].borders.push([cl[ii][0],cl[ii][1]+0.5]);
+				svgs[state].borders.push([cl[ii][0],cl[ii][1]+0.75]);
+			}
+			if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
+				cl[i][2].style.borderRight = "1px solid transparent";
+				cl[ii][2].style.borderLeft = "1px solid transparent";
+				cl[i][3][1]=true;
+				cl[ii][3][3]=true;
+				if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
+					tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
+				}
+				else {
+					tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]=1;
+				}
+				if (tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]){
+					tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]++;
+				}
+				else {
+					tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]=1;
+				}
+				svgs[state].borders.push([cl[ii][0]+0.25,cl[ii][1]]);
+				svgs[state].borders.push([cl[ii][0]+0.5,cl[ii][1]]);
+				svgs[state].borders.push([cl[ii][0]+0.75,cl[ii][1]]);
+			}
+		}
+	}
+	for (point in tempPoints){
+		if (tempPoints[point]== 4){
+			var row = parseInt(point.split("-")[0]);
+			var col = parseInt(point.split("-")[1]);
+			svgs[state].points.push([row,col]);
+		}
+	}
+	var allPaths = [];
+	for (path in tempPaths){
+		if (tempPaths[path]== 1){
+			allPaths.push(path);
+		}
+	}
+	
+	svgs[state].allPaths = allPaths;
+	
+	
+
+}
 
 function clickCell(evt){
 
@@ -142,115 +259,7 @@ function clickCell(evt){
 	}
 	
 	for (var mod in modified){
-		var el = document.getElementById('state-'+mod);
-		el.querySelector('.cellsDrawn').textContent = cells[mod].length;
-		var cl = cells[mod];
-		svgs[mod].points = [];
-		svgs[mod].borders = [];
-		svgs[mod].allPaths = [];
-		var tempPoints = {};
-		var tempPaths = {};
-		for (var i=0;i<cl.length;i++){
-			cl[i][2].style.borderLeft = "1px solid red";
-			cl[i][2].style.borderRight = "1px solid red";
-			cl[i][2].style.borderTop = "1px solid red";
-			cl[i][2].style.borderBottom = "1px solid red";
-			cl[i][2].textContent = mod.toUpperCase();
-			cl[i][3][0]=false;
-			cl[i][3][1]=false;
-			cl[i][3][2]=false;
-			cl[i][3][3]=false;
-			if (tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ cl[i][0] ]){
-				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ cl[i][0] ]++;
-			}
-			else {
-				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]) ]=1;
-			}
-			
-			if (tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]){
-				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]++;
-			}
-			else {
-				tempPaths["M"+cl[i][1] +","+ cl[i][0] + " L"+(cl[i][1]) +","+ (cl[i][0]+1) ]=1;
-			}
-			
-			if (tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]){
-				tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]++;
-			}
-			else {
-				tempPaths["M"+(cl[i][1]+1) +","+ cl[i][0] + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]=1;
-			}
-			
-			if (tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]){
-				tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]++;
-			}
-			else {
-				tempPaths["M"+cl[i][1] +","+ (cl[i][0]+1) + " L"+(cl[i][1]+1) +","+ (cl[i][0]+1) ]=1;
-			}
-		}
-		for (var i=0;i<cl.length;i++){
-			for (var ii=0;ii<cl.length;ii++){
-				if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
-					cl[i][2].style.borderBottom = "1px solid transparent";
-					cl[ii][2].style.borderTop = "1px solid transparent";
-					cl[i][3][2]=true;
-					cl[ii][3][0]=true;
-					if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
-						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
-					}
-					else {
-						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]=1;
-					}
-					if (tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]){
-						tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]++;
-					}
-					else {
-						tempPoints[""+cl[ii][0] +"-"+ (cl[ii][1]+1)]=1;
-					}
-					svgs[mod].borders.push([cl[ii][0],cl[ii][1]+0.25]);
-					svgs[mod].borders.push([cl[ii][0],cl[ii][1]+0.5]);
-					svgs[mod].borders.push([cl[ii][0],cl[ii][1]+0.75]);
-				}
-				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
-					cl[i][2].style.borderRight = "1px solid transparent";
-					cl[ii][2].style.borderLeft = "1px solid transparent";
-					cl[i][3][1]=true;
-					cl[ii][3][3]=true;
-					if (tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]){
-						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]++;
-					}
-					else {
-						tempPoints[""+cl[ii][0] +"-"+ cl[ii][1]]=1;
-					}
-					if (tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]){
-						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]++;
-					}
-					else {
-						tempPoints[""+(cl[ii][0]+1) +"-"+ cl[ii][1]]=1;
-					}
-					svgs[mod].borders.push([cl[ii][0]+0.25,cl[ii][1]]);
-					svgs[mod].borders.push([cl[ii][0]+0.5,cl[ii][1]]);
-					svgs[mod].borders.push([cl[ii][0]+0.75,cl[ii][1]]);
-				}
-			}
-		}
-		for (point in tempPoints){
-			if (tempPoints[point]== 4){
-				var row = parseInt(point.split("-")[0]);
-				var col = parseInt(point.split("-")[1]);
-				svgs[mod].points.push([row,col]);
-			}
-		}
-		var allPaths = [];
-		for (path in tempPaths){
-			if (tempPaths[path]== 1){
-				allPaths.push(path);
-			}
-		}
-		
-		svgs[mod].allPaths = allPaths;
-		
-		
+		updatePaths(mod);
 	}
 	
 }
