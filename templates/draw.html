@@ -332,7 +332,7 @@ function displaySVG(){
 			cellPath += ' L'+xMax+','+yMin;
 			cellPath += ' L'+xMin+','+yMin;
 			if (cells[state].length == 1){idx = 0;}
-			svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
+			//svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
 			idx++;
 		}
 		svg += '</g>';
@@ -340,6 +340,8 @@ function displaySVG(){
 
 	svg += "</svg>";
 	console.log(svg);
+	localStorage.setItem('savedsvgs', svgs);
+	localStorage.setItem('savedcells', cells);
 }
 </script>
 
