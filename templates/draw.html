@@ -222,12 +222,31 @@ function clickCell(evt){
 				svgs[mod].points.push([row,col]);
 			}
 		}
+		var allPaths = [];
 		for (path in tempPaths){
 			if (tempPaths[path]== 1){
-				svgs[mod].paths.push(path);
+				allPaths.push(path);
 			}
 		}
-		console.log(svgs[mod].paths);
+		svgs[mod].paths = [allPaths[0]];
+		var lastPoint = allPaths[0].split("L")[1];
+		allPaths.splice(0,1);
+		while (allPaths.length > 0){
+			var idx = 0;
+			for (path in allPaths){
+				var firstPoint = allPaths[0].split("L")[0].split("M")[1];
+				if (firstPoint == lastPoint){
+					svgs[mod].paths.push(path);
+					lastPoint = path.split("L")[1];
+					allPaths.splice(idx,1);
+					console.log(svgs[mod].paths);
+					break;
+				}
+				idx++;
+			}
+		}
+		
+		
 	}
 }
 function clickState(evt){
