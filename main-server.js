@@ -157,7 +157,7 @@ app.post(['/housemap','/housemap.html'],
 		res.write(nunjucks.render('templates/housedata.html',{
 			//electoralData: eData,
 			districts: false,
-			load: "",
+			load: 1,
 			saveAs: 1,
 
 		}));
