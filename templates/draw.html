@@ -134,16 +134,26 @@ function clickCell(evt){
 		for (var i=0;i<cl.length;i++){
 			cl[i][2].style.borderLeft = "1px solid red";
 			cl[i][2].style.borderRight = "1px solid red";
+			cl[i][2].style.borderTop = "1px solid red";
+			cl[i][2].style.borderBottom = "1px solid red";
 		}
 		for (var i=0;i<cl.length;i++){
 			for (var ii=i+1;ii<cl.length;ii++){
 				if (cl[i][0] == cl[ii][0] -1 && cl[i][1] == cl[ii][1]){
-					cl[i][2].style.borderBottom = "0px solid red";
-					cl[ii][2].style.borderTop = "0px solid red";
+					cl[i][2].style.borderBottom = "1px solid transparent";
+					cl[ii][2].style.borderTop = "1px solid transparent";
 				}
 				if (cl[i][1] == cl[ii][1] -1 && cl[i][0] == cl[ii][0]){
-					cl[i][2].style.borderRight = "0px solid red";
-					cl[ii][2].style.borderLeft = "0px solid red";
+					cl[i][2].style.borderRight = "1px solid transparent";
+					cl[ii][2].style.borderLeft = "1px solid transparent";
+				}
+				if (cl[i][0] == cl[ii][0] +1 && cl[i][1] == cl[ii][1]){
+					cl[i][2].style.borderTop = "1px solid transparent";
+					cl[ii][2].style.borderBottom = "1px solid transparent";
+				}
+				if (cl[i][1] == cl[ii][1] +1 && cl[i][0] == cl[ii][0]){
+					cl[i][2].style.borderLeft = "1px solid transparent";
+					cl[ii][2].style.borderRight = "1px solid transparent";
 				}
 			}
 		}
