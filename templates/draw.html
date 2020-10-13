@@ -114,8 +114,13 @@ for (var i=0;i<50;i++){
 }
 cells = JSON.parse(localStorage.getItem('savedcells'));
 svgs = JSON.parse(localStorage.getItem('savedsvgs'));
+
 for (var i=0;i<50;i++){
 	if (cells[states[i].abbrev].length>0 || svgs[states[i].abbrev].allPaths.length>0 || svgs[states[i].abbrev].points.length>0 || svgs[states[i].abbrev].borders.length>0){
+		
+		for (var ii=0;ii<cells[states[i].abbrev].length;ii++){
+			cells[states[i].abbrev][2]=document.querySelector('div[data-row='+cells[states[i].abbrev][0]+'][data-col='+cells[states[i].abbrev][1]+"]")
+		}
 		updatePaths(states[i].abbrev);
 	}
 
