@@ -85,7 +85,7 @@ function loadAllData() {
 			csvdata['states'][econPred16.data[i][0]]={};
 			//csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4]);
 		}
-		console.log(csvdata['states']);
+		console.log(JSON.stringify(csvdata['states']));
 	})
 	
 }
