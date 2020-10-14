@@ -923,7 +923,7 @@ app.get(['/','/diycsv','/diycsv.html'],
 		
 		
 		res.write(nunjucks.render('templates/diycsv.html',{
-			columns: colArray,
+
 		}));
 		res.end();
 	}
