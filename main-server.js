@@ -390,6 +390,8 @@ app.get(['/','/draw','/draw.html'],
 			saveAs: "ptip",
 			districts: false,
 			val: 'seats',
+			height: 24,
+			width: 32,
 		}));
 		res.end();
 	}

@@ -80,9 +80,9 @@ body {
 
 	</div>
 	<div class="gridHolder">
-	{% for ii in range(0,18) %}
+	{% for ii in range(0,height) %}
 		<div class="gridRow">
-		{% for i in range(0,25) %}
+		{% for i in range(0,width) %}
 			<div class="gridCell" draggable="true" data-row="{{ ii }}" data-col="{{ i }}">
 			</div>
 		{% endfor %}
@@ -133,6 +133,14 @@ if (cells && svgs){
 			updatePaths(states[i].abbrev);
 		}
 
+	}
+}
+else {
+	cells = {};
+	svgs = {};
+	for (var i=0;i<states.length;i++){
+		cells[states[i].abbrev]=[];
+		svgs[states[i].abbrev]={'allPaths':[],'points':[],'borders':[]};
 	}
 }
 
