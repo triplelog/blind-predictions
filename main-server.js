@@ -895,9 +895,21 @@ app.get(['/','/diycsv','/diycsv.html'],
 				}
 			}
 		}
+		var colArray = [{'title':'ID','field':'id'}];
+		for (var col in columns){
+			colArray.push({'title':col,'field':col});
+		}
+		
+		var tableData = [];
+		for (var state in csvdata['states']){
+			var row = csvdata['states'][state];
+			row['id']=state;
+			tableData.push(row);
+		}
+		
 		res.write(nunjucks.render('templates/diycsv.html',{
-			fullcsv: csvdata['states'],
-			columns: columns,
+			tableData: tableData,
+			columns: colArray,
 		}));
 		res.end();
 	}

@@ -29,24 +29,8 @@
 <body>
 
 
-	<div class="gridHolder">
-		<table id="csvTable">
-			<tr>
-				<td>ID</td>
-				{% for column, nothing in columns %}
-				<td>{{ column }}</td>
-				{% endfor %}
-			</tr>
-			{% for state, stateData in fullcsv %}
-			<tr>
-				<td>{{ state }}</td>
-				{% for column, nothing in columns %}
-				<td>{{ stateData[column] }}</td>
-				{% endfor %}
-			</tr>
-			{% endfor %}
-			</div>
-		</table>
+	<div class="gridHolder" id="csvTable">
+
 	</div>
 
   
@@ -56,8 +40,12 @@
 </body>
 <script src="js/tabulator.min.js"></script>
 <script>
+var tableData = {{tableData}};
+
 var table = new Tabulator("#csvTable", {
     height:"100%",
+    data:tableData,
+    columns: {{ columns }},
 });
 </script>
 
