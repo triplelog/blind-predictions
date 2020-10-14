@@ -436,6 +436,94 @@ function loadAllData() {
 		}
 		//console.log(JSON.stringify(csvdata['states']));
 	})
+	fs.readFile("data/1976-2016-president.csv", 'utf8', function(err, fileData) {//From MIT elect lab
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+		candidates = {};
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 10){
+				continue;
+			}
+			var year = parseInt(data.data[i][0]);
+			var party = data.data[i][8].substr(0,8).toLowerCase();
+			if (party == "democrat"){
+				party = "D";
+				if (candidates[data.data[i][7]]){
+					candidates[data.data[i][7]][year]="D";
+				}
+				else {
+					candidates[data.data[i][7]]={};
+					candidates[data.data[i][7]][year]="D";
+				}
+			}
+			if (party == "republic"){
+				party = "R";
+				if (candidates[data.data[i][7]]){
+					candidates[data.data[i][7]][year]="R";
+				}
+				else {
+					candidates[data.data[i][7]]={};
+					candidates[data.data[i][7]][year]="R";
+				}
+			}
+		}
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 10){
+				continue;
+			}
+			var party = data.data[i][8].substr(0,8).toLowerCase();
+			var year = parseInt(data.data[i][0]);
+			if (party == "democrat"){
+				party = "D";
+			}
+			else if (party == "republic"){
+				party = "R";
+			}
+			else if (candidates[data.data[i][7]][year]){
+				party = candidates[data.data[i][7]][year];
+			}
+			else {
+				continue;
+			}
+			
+			csvdata['convert']['states'][data.data[i][3]]=data.data[i][2];//FIPS
+			csvdata['convert']['states']['0'+data.data[i][3]]=data.data[i][2];//FIPS
+			csvdata['convert']['states']['CEN'+data.data[i][4]]=data.data[i][2];//CENSUS
+			csvdata['convert']['states']['IC'+data.data[i][4]]=data.data[i][2];//ICPSR
+			
+			
+			
+			if (party == "D"){
+				if (csvdata['states'][data.data[i][2]]['dvotes'+year]){
+					csvdata['states'][data.data[i][2]]['dvotes'+year]+=parseInt(data.data[i][10]);
+				}
+				else {
+					csvdata['states'][data.data[i][2]]['dvotes'+year]=parseInt(data.data[i][10]);
+				}
+				csvdata['states'][data.data[i][2]]['tvotes'+year]=parseInt(data.data[i][11]);
+			}
+			else if (party == "R"){
+				if (csvdata['states'][data.data[i][2]]['rvotes'+year]){
+					csvdata['states'][data.data[i][2]]['rvotes'+year]+=parseInt(data.data[i][10]);
+				}
+				else {
+					csvdata['states'][data.data[i][2]]['rvotes'+year]=parseInt(data.data[i][10]);
+				}
+				csvdata['states'][data.data[i][2]]['tvotes'+year]=parseInt(data.data[i][11]);
+			}
+			
+			
+			
+			
+		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
 	
 }
 
