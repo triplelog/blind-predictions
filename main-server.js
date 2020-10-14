@@ -55,6 +55,14 @@ wss.on('connection', function connection(ws) {
 		}
 		else if (dm.type == "update"){
 			
+			for (var state in csvdata['states']){
+				for (var col in csvdata['states'][state]){
+					if (!columns[col]){
+						columns[col]=true;
+					}
+				}
+			}
+	
 			var colArray = [{'title':'ID','field':'id'}];
 			for (var col in columns){
 				if (col == 'econPreddelo20'){
@@ -561,13 +569,7 @@ function loadAllData() {
 	})
 	
 	
-	for (var state in csvdata['states']){
-		for (var col in csvdata['states'][state]){
-			if (!columns[col]){
-				columns[col]=true;
-			}
-		}
-	}
+	
 	
 	
 }
