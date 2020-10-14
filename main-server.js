@@ -55,10 +55,10 @@ wss.on('connection', function connection(ws) {
 	var colArray = [{'title':'ID','field':'id'}];
 	for (var col in columns){
 		if (col == 'econPreddelo16'){
-			colArray.push({'title':col,'field':col});
+			colArray.push({'title':col,'field':col,'round':0});
 		}
 		if (col == 'econPreddelo20'){
-			colArray.push({'title':col,'field':col});
+			colArray.push({'title':col,'field':col,'round':0});
 		}
 	}
   	ws.on('message', function incoming(message) {
@@ -96,7 +96,7 @@ wss.on('connection', function connection(ws) {
 						row['id']=state;
 					}
 					else {
-						row[colArray[i].field]=csvdata['states'][state][colArray[i].field];
+						row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field],colArray[i].round);
 					}
 				}
 				tableData.push(row);
