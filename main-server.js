@@ -384,13 +384,14 @@ app.get(['/','/draw','/draw.html'],
 			hData[i].ev10 -= 2;
 		}	
 		for (var i=0;i<tipping.length;i++){
+			tipping[i].name = tipping[i].abbrev;
 			tipping[i].abbrev = tipping[i].abbrev.substr(0,5);
 		}	
 		tipping.sort(function(a,b){return b.seats - a.seats;})
 
 		res.write(nunjucks.render('templates/draw.html',{
 			states: tipping,
-			load: "ptip",
+			load: "ptdip",
 			saveAs: "ptip",
 			districts: false,
 			val: 'seats',
