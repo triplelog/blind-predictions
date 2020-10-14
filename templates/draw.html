@@ -50,15 +50,15 @@ body {
 	border:1px dotted black;
 	flex: 1;
 	text-align: center;
-	line-height: calc(95vh / 20);
-	font-size: .5rem;
+	line-height: calc(95vh / {{ height + 2 }});
+	font-size: .4rem;
 }
 @media (max-aspect-ratio: {{ width }}/{{ height }}) {
 	.gridHolder {
 		height: calc( 95vw * {{ height }} / {{ width }});
 	}
 	.gridCell {
-		line-height: calc(95vw * {{ height }} / {{ width }} / 20);
+		line-height: calc(95vw * {{ height }} / {{ width }} / {{ height + 2}});
 	}
 }
 @media (min-aspect-ratio: {{ width }}/{{ height }}) {
