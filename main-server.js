@@ -155,7 +155,7 @@ function loadAllData() {
 			csvdata['states'][data.data[i][0]]['closing']=parseFloat(data.data[i][10]);
 			//csvdata['states'][data.data[i][0]]['closing']=parseFloat(data.data[i][10]);
 			csvdata['states'][data.data[i][0]]['name']=data.data[i][7];
-			csvdata['convert']['states'][data.data[i][7]]=data.data[i][0];
+			csvdata['convert']['states'][data.data[i][7].toUpperCase()]=data.data[i][0];
 		}
 		csvdata['states']["M0"]['ev10']=2;
 		csvdata['states']["M1"]['ev10']=1;
@@ -181,7 +181,7 @@ function loadAllData() {
 			if (data.data[i].length < 10){
 				continue;
 			}
-			csvdata['states'][data.data[i][0]]['vep']=parseInt(data.data[i][9]);
+			csvdata['states'][data.data[i][0]]['vep']=parseInt(data.data[i][8]);
 		}
 		//console.log(JSON.stringify(csvdata['states']));
 	})
@@ -203,7 +203,7 @@ function loadAllData() {
 			if (data.data[i][3] != modeldate){
 				continue;
 			}
-			var state = csvdata['convert']['states'][data.data[i][7]];
+			var state = csvdata['convert']['states'][data.data[i][7].toUpperCase()];
 			if (state=='ME'){state="M0";}
 			if (state=='NE'){state="N0";}
 			csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
@@ -269,7 +269,7 @@ function loadAllData() {
 			skipEmptyLines: false,
 			quoteChar: '"',
 		});
-		var modeldate = data.data[1][5];
+
 		for (var i=1;i<data.data.length;i++){
 			if (data.data[i].length < 10){
 				continue;
@@ -303,6 +303,62 @@ function loadAllData() {
 				}
 				else {
 					csvdata['states'][state]['538Preddelo'+year]=-1*parseFloat(data.data[i][9])*10
+				}
+			}
+			
+			
+			
+			
+		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
+	fs.readFile("data/us_senate_elections.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 10){
+				continue;
+			}
+			if (data.data[i][6] != data.data[i][5]){
+				continue;
+			}
+			if (data.data[i][7] != "polls-plus" && data.data[i][7] != "classic" && data.data[i][7] != ""){
+				continue;
+			}
+			if (data.data[i][2] == "US"){
+				continue;
+			}
+			var year = parseInt(data.data[i][0])-2000;
+			var state = csvdata['convert']['states'][data.data[i][2]];
+			var str = '538PredSen';
+			if (data.data[i][4] == "TRUE" || data.data[i][4] == "1"){
+				str += 'Spec';
+			}
+			if (data.data[i][8] =="D"){
+				csvdata['states'][state][str+'dwin'+year]=parseFloat(data.data[i][12]);
+				if (data.data[i][10] != ""){
+					if (csvdata['states'][state][str+'delo'+year]){
+						csvdata['states'][state][str+'delo'+year]+=parseFloat(data.data[i][10])*10
+					}
+					else {
+						csvdata['states'][state][str+'delo'+year]=parseFloat(data.data[i][10])*10
+					}
+				}
+			}
+			else if (data.data[i][7] =="R" && data.data[i][10] != ""){
+				
+				if (csvdata['states'][state][str+'delo'+year]){
+					csvdata['states'][state][str+'delo'+year]-=parseFloat(data.data[i][10])*10
+				}
+				else {
+					csvdata['states'][state][str+'delo'+year]=-1*parseFloat(data.data[i][10])*10
 				}
 			}
 			
