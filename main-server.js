@@ -158,7 +158,7 @@ app.post(['/housemap','/housemap.html'],
 			//electoralData: eData,
 			districts: false,
 			load: 1,
-			saveAs: 1,
+			saveAs: "ptip",
 
 		}));
 		res.end();
