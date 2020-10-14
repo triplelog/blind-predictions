@@ -76,10 +76,9 @@ function loadAllData() {
 		skipEmptyLines: false,
 		quoteChar: '"',
 	});
-	console.log(econPred16);
-	for (var i=1;i<econPred16.length;i++){
-		csvdata['states'][econPred16[i][0]]={};
-		csvdata['states'][econPred16[i][0]]['econPreddwin16']=parseFloat(econPred16[i][4]);
+	for (var i=1;i<econPred16.data.length;i++){
+		csvdata['states'][econPred16.data[i][0]]={};
+		csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4]);
 	}
 }
 
