@@ -45,6 +45,22 @@ const wss = new WebSocket.Server({ server });
 wss.on('connection', function connection(ws) {
 	var username = '';
 	var locations = "DC";
+	for (var state in csvdata['states']){
+		for (var col in csvdata['states'][state]){
+			if (!columns[col]){
+				columns[col]=true;
+			}
+		}
+	}
+	var colArray = [{'title':'ID','field':'id'}];
+	for (var col in columns){
+		if (col == 'econPreddelo16'){
+			colArray.push({'title':col,'field':col});
+		}
+		if (col == 'econPreddelo20'){
+			colArray.push({'title':col,'field':col});
+		}
+	}
   	ws.on('message', function incoming(message) {
   		console.log(performance.now());
 		var dm = JSON.parse(message);
@@ -58,29 +74,25 @@ wss.on('connection', function connection(ws) {
 			if (dm.locations){
 				locations = dm.locations;
 			}
+			console.log(locations);
 			
-			for (var state in csvdata['states']){
-				for (var col in csvdata['states'][state]){
-					if (!columns[col]){
-						columns[col]=true;
-					}
-				}
-			}
 	
-			var colArray = [{'title':'ID','field':'id'}];
-			for (var col in columns){
-				if (col == 'econPreddelo20'){
-					colArray.push({'title':col,'field':col});
-				}
-			}
+			
 	
 			var tableData = [];
 			for (var state in csvdata['states']){
 				if (locations == 50 && state == "DC"){
 					continue;
 				}
-				var row = csvdata['states'][state];
-				row['id']=state;
+				var row = {};
+				for (var col in colArray){
+					if (col.field == "id"){
+						row[col.field]=state;
+					}
+					else {
+						row[col.field]=csvdata['states'][state][col.field];
+					}
+				}
 				tableData.push(row);
 			}
 			var jsonmessage = {'tableData':tableData,'columns':colArray};
