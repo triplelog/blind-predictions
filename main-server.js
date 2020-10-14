@@ -383,8 +383,7 @@ app.get(['/','/draw','/draw.html'],
 				
 
 		res.write(nunjucks.render('templates/draw.html',{
-			states: hData,
-			tipping: tipping,
+			states: tipping,
 			load: "",
 			saveAs: "ptip",
 			districts: false,
