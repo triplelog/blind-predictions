@@ -52,17 +52,17 @@ body {
 	text-align: center;
 	line-height: calc(95vh / 20);
 }
-@media (max-aspect-ratio: 4/3) {
+@media (max-aspect-ratio: {{ width }}/{{ height }}) {
 	.gridHolder {
-		height: calc( 95vw * 19 / 24);
+		height: calc( 95vw * {{ height }} / {{ width }});
 	}
 	.gridCell {
-		line-height: calc(95vw * 19 / 24 / 20);
+		line-height: calc(95vw * {{ height }} / {{ width }} / 20);
 	}
 }
-@media (min-aspect-ratio: 4/3) {
+@media (min-aspect-ratio: {{ width }}/{{ height }}) {
 	.gridHolder {
-		width: calc( 95vh * 24 / 19);
+		width: calc( 95vh * {{ width }} / {{ height }});
 	}
 }
 </style>
