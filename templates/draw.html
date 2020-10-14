@@ -303,7 +303,46 @@ function clickState(evt){
 function displaySVG(){
 	var svg = '<svg viewBox="-1 -1 26 21" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">';
 	svg ='';
+	orderedSVGs = [];
 	for (state in svgs){
+		var half = 0;
+		for (var i=0;i<states.length;i++){
+			if (states[i].abbrev == state){
+				if (states[i].half){
+					svgs[state].half = 1;
+					orderedSVGs.push(state);
+				}
+				break;
+			}
+		}
+	}
+	for (state in svgs){
+		var half = 0;
+		for (var i=0;i<states.length;i++){
+			if (states[i].abbrev == state){
+				if (states[i].half){
+				}
+				else {
+					orderedSVGs.push(state);
+				}
+				break;
+			}
+		}
+	}
+
+	for (var si=0;si<orderedSVGs.length;si++){
+		state = orderedSVGs[si];
+		var rwin = -1;
+		var half = svgs[state].half;
+		for (var i=0;i<states.length;i++){
+			if (states[i].abbrev == state){
+				if (states[i].rwin || states[i].rwin == 0){
+					rwin = states[i].rwin;
+					break;
+				}
+			}
+		}
+
 		var allPaths = [];
 		for (var i=0;i<svgs[state].allPaths.length;i++){
 			allPaths.push(svgs[state].allPaths[i]);
@@ -339,19 +378,7 @@ function displaySVG(){
 			counter++;
 		}
 		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
-		var rwin = -1;
-		var half = 0;
-		for (var i=0;i<states.length;i++){
-			if (states[i].abbrev == state){
-				if (states[i].rwin || states[i].rwin == 0){
-					rwin = states[i].rwin;
-					if (states[i].half){
-						half = 1;
-					}
-					break;
-				}
-			}
-		}
+		
 		if (rwin > -1 && rwin < .5){
 			if (half > 0){
 				svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".25" d="'+path+'"/>';
