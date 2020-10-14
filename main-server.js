@@ -70,11 +70,20 @@ csvdata['cds']={}
 csvdata['counties']={}
 csvdata['evd']={}
 
-var predictions16 = Papa.parse("predictions16.csv", {
-	delimiter: delimiter,
-	skipEmptyLines: false,
-	quoteChar: '"',
-});
+function loadAllData() {
+	var econPred16 = Papa.parse("predictions16.csv", {
+		delimiter: ",",
+		skipEmptyLines: false,
+		quoteChar: '"',
+	});
+	for (var i=1;i<econPred16.length;i++){
+		csvdata['states'][econPred16[i][0]]={};
+		csvdata['states'][econPred16[i][0]]['econPreddwin16']=parseFloat(econPred16[i][4]);
+	}
+}
+
+loadAllData();
+console.log(csvdata['states']);
 
 app.get(['/predict','/predict.html'],
 	function(req, res){
