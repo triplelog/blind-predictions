@@ -386,7 +386,7 @@ app.get(['/','/draw','/draw.html'],
 
 		res.write(nunjucks.render('templates/draw.html',{
 			states: tipping,
-			load: "",
+			load: "ptip",
 			saveAs: "ptip",
 			districts: false,
 			val: 'seats',
