@@ -340,20 +340,35 @@ function displaySVG(){
 		}
 		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
 		var rwin = -1;
-		
+		var half = 0;
 		for (var i=0;i<states.length;i++){
 			if (states[i].abbrev == state){
 				if (states[i].rwin || states[i].rwin == 0){
 					rwin = states[i].rwin;
+					if (states[i].half){
+						half = 1;
+					}
 					break;
 				}
 			}
 		}
 		if (rwin > -1 && rwin < .5){
-			svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
+			if (half > 0){
+				svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".25" d="'+path+'"/>';
+			}
+			else {
+				svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
+			}
+			
 		}
 		else if (rwin > -1 && rwin > .5){
-			svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
+			if (half > 0){
+				svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="white" stroke-width=".25" d="'+path+'"/>';
+			}
+			else {
+				svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
+			}
+			
 		}
 		else {
 			svg += '<path fill="black" stroke="white" stroke-width=".125" d="'+path+'"/>';
