@@ -340,6 +340,7 @@ function displaySVG(){
 		}
 		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
 		var rwin = -1;
+		
 		for (var i=0;i<states.length;i++){
 			if (states[i].abbrev == state){
 				if (states[i].rwin){
@@ -394,7 +395,7 @@ function displaySVG(){
 				svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
 			}
 			if (idx < 2){
-				svg += '<text text-anchor="middle" textLength=".9" x="'+(cells[state][cell][1]+.5)+'" y="'+(cells[state][cell][0]+1)+'">'+'</text>';
+				svg += '<text text-anchor="middle" textLength=".9" x="'+(cells[state][cell][1]+.5)+'" y="'+(cells[state][cell][0]+1)+'">'+state+'</text>';
 			}
 			
 			idx++;
