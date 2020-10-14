@@ -72,6 +72,9 @@ wss.on('connection', function connection(ws) {
 	
 			var tableData = [];
 			for (var state in csvdata['states']){
+				if (dm.locations == "50" && state == "DC"){
+					continue;
+				}
 				var row = csvdata['states'][state];
 				row['id']=state;
 				tableData.push(row);
