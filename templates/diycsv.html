@@ -36,11 +36,11 @@
 				<td>{{ column }}</td>
 				{% endfor %}
 			</tr>
-			{% for state in fullcsv %}
+			{% for state, stateData in fullcsv %}
 			<tr>
 				<td>{{ state }}</td>
 				{% for column, nothing in columns %}
-				<td>{{ fullcsv[state][column] }}</td>
+				<td>{{ stateData[column] }}</td>
 				{% endfor %}
 			</tr>
 			{% endfor %}
