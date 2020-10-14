@@ -85,12 +85,12 @@ wss.on('connection', function connection(ws) {
 					continue;
 				}
 				var row = {};
-				for (var col in colArray){
-					if (col.field == "id"){
-						row[col.field]=state;
+				for (var i=0;i<colArray.length;i++){
+					if (colArray[i].field == "id"){
+						row['id']=state;
 					}
 					else {
-						row[col.field]=csvdata['states'][state][col.field];
+						row[colArray[i].field]=csvdata['states'][state][colArray[i].field];
 					}
 				}
 				tableData.push(row);
