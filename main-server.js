@@ -155,6 +155,7 @@ function loadAllData() {
 				continue;
 			}
 			var year = parseInt(data.data[i][0])-2000;
+			console.log(data.data[i][1]);
 			csvdata['states'][data.data[i][1]]['econPreddelo'+year]=(parseFloat(data.data[i][2])-.5)*2000;
 		}
 		//console.log(JSON.stringify(csvdata['states']));
