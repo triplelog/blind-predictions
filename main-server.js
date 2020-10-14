@@ -119,6 +119,7 @@ function loadAllData() {
 		});
 	
 		for (var i=1;i<econPred20.data.length;i++){
+			console.log(econPred20.data[i][3]);
 			csvdata['states'][econPred20.data[i][3]]['econPreddwin20']=parseFloat(econPred20.data[i][7]);
 			csvdata['states'][econPred20.data[i][3]]['econPreddelo20']=(parseFloat(econPred20.data[i][6])-.5)*2000;
 		}
