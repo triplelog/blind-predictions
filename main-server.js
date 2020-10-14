@@ -260,6 +260,51 @@ function loadAllData() {
 		}
 		//console.log(JSON.stringify(csvdata['states']));
 	})
+	fs.readFile("data/senate_state_toplines_2020.csv", 'utf8', function(err, fileData) {
+		if (err){
+			console.log(err);
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+		var modeldate = data.data[1][3];
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 15){
+				continue;
+			}
+			if (data.data[i][3] != modeldate){
+				continue;
+			}
+			var state = csvdata['convert']['states'][data.data[i][2].substr(0,2).toUpperCase()];
+			
+			if (data.data[i][4] != "_classic"){
+				continue;
+			}
+			
+			if (data.data[i][2] == "GA-S3"){
+				if (csvdata['states'][state]['538tippingSen']){
+					csvdata['states'][state]['538tippingSen']+=parseFloat(data.data[i][27]);
+				}
+				else {
+					csvdata['states'][state]['538tippingSen']=parseFloat(data.data[i][27]);
+				}
+			}
+			else {
+				csvdata['states'][state]['538PredSendwin20']=parseFloat(data.data[i][25]);
+				csvdata['states'][state]['538PredSendelo20']=parseFloat(data.data[i][65])*10;
+			}
+			
+			
+			
+			
+			
+			
+		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
 	fs.readFile("data/538pred.csv", 'utf8', function(err, fileData) {
 		if (err){
 			crash;
@@ -352,7 +397,7 @@ function loadAllData() {
 					}
 				}
 			}
-			else if (data.data[i][7] =="R" && data.data[i][10] != ""){
+			else if (data.data[i][8] =="R" && data.data[i][10] != ""){
 				
 				if (csvdata['states'][state][str+'delo'+year]){
 					csvdata['states'][state][str+'delo'+year]-=parseFloat(data.data[i][10])*10
