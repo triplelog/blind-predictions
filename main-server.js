@@ -277,21 +277,23 @@ function loadAllData() {
 			if (data.data[i][5] != data.data[i][4]){
 				continue;
 			}
-			if (data.data[i][6] != "polls-plus"){
+			if (data.data[i][6] != "polls-plus" && data.data[i][6] != ""){
 				continue;
 			}
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
 			if (data.data[i][7] =="D"){
 				csvdata['states'][state]['538Preddwin'+year]=parseFloat(data.data[i][11]);
-				if (csvdata['states'][state]['538Preddelo'+year]){
-					csvdata['states'][state]['538Preddelo'+year]+=parseFloat(data.data[i][9])*10
-				}
-				else {
-					csvdata['states'][state]['538Preddelo'+year]=parseFloat(data.data[i][9])*10
+				if (data.data[i][9] != ""){
+					if (csvdata['states'][state]['538Preddelo'+year]){
+						csvdata['states'][state]['538Preddelo'+year]+=parseFloat(data.data[i][9])*10
+					}
+					else {
+						csvdata['states'][state]['538Preddelo'+year]=parseFloat(data.data[i][9])*10
+					}
 				}
 			}
-			else if (data.data[i][7] =="R"){
+			else if (data.data[i][7] =="R" && data.data[i][9] != ""){
 				
 				if (csvdata['states'][state]['538Preddelo'+year]){
 					csvdata['states'][state]['538Preddelo'+year]-=parseFloat(data.data[i][9])*10
