@@ -186,6 +186,20 @@ function loadAllData() {
 		csvdata['states']["N1"]['ev10']=1;
 		csvdata['states']["N2"]['ev10']=1;
 		csvdata['states']["N3"]['ev10']=1;
+		csvdata['states']["M0"]['name']='Maine';
+		csvdata['states']["M1"]['name']='Maine 1st';
+		csvdata['states']["M2"]['name']='Maine 2nd';
+		csvdata['states']["N0"]['name']='Nebraska';
+		csvdata['states']["N1"]['name']='Nebraska 1st';
+		csvdata['states']["N2"]['name']='Nebraska 2nd';
+		csvdata['states']["N3"]['name']='Nebraska 3rd';
+		csvdata['states']["M0"]['closing']=csvdata['states']['ME']['closing'];
+		csvdata['states']["M1"]['closing']=csvdata['states']['ME']['closing'];
+		csvdata['states']["M2"]['closing']=csvdata['states']['ME']['closing'];
+		csvdata['states']["N0"]['closing']=csvdata['states']['NE']['closing'];
+		csvdata['states']["N1"]['closing']=csvdata['states']['NE']['closing'];
+		csvdata['states']["N2"]['closing']=csvdata['states']['NE']['closing'];
+		csvdata['states']["N3"]['closing']=csvdata['states']['NE']['closing'];
 		
 		//console.log(JSON.stringify(csvdata['states']));
 	})
