@@ -54,7 +54,21 @@ wss.on('connection', function connection(ws) {
 			}
 		}
 		else if (dm.type == "update"){
-			var jsonmessage = {'type':"hi"};
+			
+			var colArray = [{'title':'ID','field':'id'}];
+			for (var col in columns){
+				if (col == 'econPreddelo20'){
+					colArray.push({'title':col,'field':col});
+				}
+			}
+	
+			var tableData = [];
+			for (var state in csvdata['states']){
+				var row = csvdata['states'][state];
+				row['id']=state;
+				tableData.push(row);
+			}
+			var jsonmessage = {'tableData':tableData,'columns':colArray};
 			ws.send(JSON.stringify(jsonmessage));
 		}
 		
@@ -68,6 +82,7 @@ var startTime = performance.now();
 
 //load all data into memory
 var csvdata = {};
+var columns = {};
 csvdata['convert']={};
 csvdata['convert']['states']={"AK":"AK","AL":"AL","AR":"AR","AZ":"AZ","CA":"CA","CO":"CO","CT":"CT","DC":"DC","DE":"DE","FL":"FL","GA":"GA","HI":"HI","IA":"IA","ID":"ID","IL":"IL","IN":"IN","KS":"KS","KY":"KY","LA":"LA","MA":"MA","MD":"MD","ME":"ME","MI":"MI","MN":"MN","MO":"MO","MS":"MS","MT":"MT","NC":"NC","ND":"ND","NE":"NE","NH":"NH","NJ":"NJ","NM":"NM","NV":"NV","NY":"NY","OH":"OH","OK":"OK","OR":"OR","PA":"PA","RI":"RI","SC":"SC","SD":"SD","TN":"TN","TX":"TX","UT":"UT","VA":"VA","VT":"VT","WA":"WA","WI":"WI","WV":"WV","WY":"WY"};
 csvdata['convert']['cds']={"AL-1":"AL-1","AL-2":"AL-2","AL-3":"AL-3","AL-4":"AL-4","AL-5":"AL-5","AL-6":"AL-6","AL-7":"AL-7","AK-1":"AK-1","AZ-1":"AZ-1","AZ-2":"AZ-2","AZ-3":"AZ-3","AZ-4":"AZ-4","AZ-5":"AZ-5","AZ-6":"AZ-6","AZ-7":"AZ-7","AZ-8":"AZ-8","AZ-9":"AZ-9","AR-1":"AR-1","AR-2":"AR-2","AR-3":"AR-3","AR-4":"AR-4","CA-1":"CA-1","CA-2":"CA-2","CA-3":"CA-3","CA-4":"CA-4","CA-5":"CA-5","CA-6":"CA-6","CA-7":"CA-7","CA-8":"CA-8","CA-9":"CA-9","CA-10":"CA-10","CA-11":"CA-11","CA-12":"CA-12","CA-13":"CA-13","CA-14":"CA-14","CA-15":"CA-15","CA-16":"CA-16","CA-17":"CA-17","CA-18":"CA-18","CA-19":"CA-19","CA-20":"CA-20","CA-21":"CA-21","CA-22":"CA-22","CA-23":"CA-23","CA-24":"CA-24","CA-25":"CA-25","CA-26":"CA-26","CA-27":"CA-27","CA-28":"CA-28","CA-29":"CA-29","CA-30":"CA-30","CA-31":"CA-31","CA-32":"CA-32","CA-33":"CA-33","CA-34":"CA-34","CA-35":"CA-35","CA-36":"CA-36","CA-37":"CA-37","CA-38":"CA-38","CA-39":"CA-39","CA-40":"CA-40","CA-41":"CA-41","CA-42":"CA-42","CA-43":"CA-43","CA-44":"CA-44","CA-45":"CA-45","CA-46":"CA-46","CA-47":"CA-47","CA-48":"CA-48","CA-49":"CA-49","CA-50":"CA-50","CA-51":"CA-51","CA-52":"CA-52","CA-53":"CA-53","CO-1":"CO-1","CO-2":"CO-2","CO-3":"CO-3","CO-4":"CO-4","CO-5":"CO-5","CO-6":"CO-6","CO-7":"CO-7","CT-1":"CT-1","CT-2":"CT-2","CT-3":"CT-3","CT-4":"CT-4","CT-5":"CT-5","DE-1":"DE-1","FL-1":"FL-1","FL-2":"FL-2","FL-3":"FL-3","FL-4":"FL-4","FL-5":"FL-5","FL-6":"FL-6","FL-7":"FL-7","FL-8":"FL-8","FL-9":"FL-9","FL-10":"FL-10","FL-11":"FL-11","FL-12":"FL-12","FL-13":"FL-13","FL-14":"FL-14","FL-15":"FL-15","FL-16":"FL-16","FL-17":"FL-17","FL-18":"FL-18","FL-19":"FL-19","FL-20":"FL-20","FL-21":"FL-21","FL-22":"FL-22","FL-23":"FL-23","FL-24":"FL-24","FL-25":"FL-25","FL-26":"FL-26","FL-27":"FL-27","GA-1":"GA-1","GA-2":"GA-2","GA-3":"GA-3","GA-4":"GA-4","GA-5":"GA-5","GA-6":"GA-6","GA-7":"GA-7","GA-8":"GA-8","GA-9":"GA-9","GA-10":"GA-10","GA-11":"GA-11","GA-12":"GA-12","GA-13":"GA-13","GA-14":"GA-14","HI-1":"HI-1","HI-2":"HI-2","ID-1":"ID-1","ID-2":"ID-2","IL-1":"IL-1","IL-2":"IL-2","IL-3":"IL-3","IL-4":"IL-4","IL-5":"IL-5","IL-6":"IL-6","IL-7":"IL-7","IL-8":"IL-8","IL-9":"IL-9","IL-10":"IL-10","IL-11":"IL-11","IL-12":"IL-12","IL-13":"IL-13","IL-14":"IL-14","IL-15":"IL-15","IL-16":"IL-16","IL-17":"IL-17","IL-18":"IL-18","IN-1":"IN-1","IN-2":"IN-2","IN-3":"IN-3","IN-4":"IN-4","IN-5":"IN-5","IN-6":"IN-6","IN-7":"IN-7","IN-8":"IN-8","IN-9":"IN-9","IA-1":"IA-1","IA-2":"IA-2","IA-3":"IA-3","IA-4":"IA-4","KS-1":"KS-1","KS-2":"KS-2","KS-3":"KS-3","KS-4":"KS-4","KY-1":"KY-1","KY-2":"KY-2","KY-3":"KY-3","KY-4":"KY-4","KY-5":"KY-5","KY-6":"KY-6","LA-1":"LA-1","LA-2":"LA-2","LA-3":"LA-3","LA-4":"LA-4","LA-5":"LA-5","LA-6":"LA-6","ME-1":"ME-1","ME-2":"ME-2","MD-1":"MD-1","MD-2":"MD-2","MD-3":"MD-3","MD-4":"MD-4","MD-5":"MD-5","MD-6":"MD-6","MD-7":"MD-7","MD-8":"MD-8","MA-1":"MA-1","MA-2":"MA-2","MA-3":"MA-3","MA-4":"MA-4","MA-5":"MA-5","MA-6":"MA-6","MA-7":"MA-7","MA-8":"MA-8","MA-9":"MA-9","MI-1":"MI-1","MI-2":"MI-2","MI-3":"MI-3","MI-4":"MI-4","MI-5":"MI-5","MI-6":"MI-6","MI-7":"MI-7","MI-8":"MI-8","MI-9":"MI-9","MI-10":"MI-10","MI-11":"MI-11","MI-12":"MI-12","MI-13":"MI-13","MI-14":"MI-14","MN-1":"MN-1","MN-2":"MN-2","MN-3":"MN-3","MN-4":"MN-4","MN-5":"MN-5","MN-6":"MN-6","MN-7":"MN-7","MN-8":"MN-8","MS-1":"MS-1","MS-2":"MS-2","MS-3":"MS-3","MS-4":"MS-4","MO-1":"MO-1","MO-2":"MO-2","MO-3":"MO-3","MO-4":"MO-4","MO-5":"MO-5","MO-6":"MO-6","MO-7":"MO-7","MO-8":"MO-8","MT-1":"MT-1","NE-1":"NE-1","NE-2":"NE-2","NE-3":"NE-3","NV-1":"NV-1","NV-2":"NV-2","NV-3":"NV-3","NV-4":"NV-4","NH-1":"NH-1","NH-2":"NH-2","NJ-1":"NJ-1","NJ-2":"NJ-2","NJ-3":"NJ-3","NJ-4":"NJ-4","NJ-5":"NJ-5","NJ-6":"NJ-6","NJ-7":"NJ-7","NJ-8":"NJ-8","NJ-9":"NJ-9","NJ-10":"NJ-10","NJ-11":"NJ-11","NJ-12":"NJ-12","NM-1":"NM-1","NM-2":"NM-2","NM-3":"NM-3","NY-1":"NY-1","NY-2":"NY-2","NY-3":"NY-3","NY-4":"NY-4","NY-5":"NY-5","NY-6":"NY-6","NY-7":"NY-7","NY-8":"NY-8","NY-9":"NY-9","NY-10":"NY-10","NY-11":"NY-11","NY-12":"NY-12","NY-13":"NY-13","NY-14":"NY-14","NY-15":"NY-15","NY-16":"NY-16","NY-17":"NY-17","NY-18":"NY-18","NY-19":"NY-19","NY-20":"NY-20","NY-21":"NY-21","NY-22":"NY-22","NY-23":"NY-23","NY-24":"NY-24","NY-25":"NY-25","NY-26":"NY-26","NY-27":"NY-27","NC-1":"NC-1","NC-2":"NC-2","NC-3":"NC-3","NC-4":"NC-4","NC-5":"NC-5","NC-6":"NC-6","NC-7":"NC-7","NC-8":"NC-8","NC-9":"NC-9","NC-10":"NC-10","NC-11":"NC-11","NC-12":"NC-12","NC-13":"NC-13","ND-1":"ND-1","OH-1":"OH-1","OH-2":"OH-2","OH-3":"OH-3","OH-4":"OH-4","OH-5":"OH-5","OH-6":"OH-6","OH-7":"OH-7","OH-8":"OH-8","OH-9":"OH-9","OH-10":"OH-10","OH-11":"OH-11","OH-12":"OH-12","OH-13":"OH-13","OH-14":"OH-14","OH-15":"OH-15","OH-16":"OH-16","OK-1":"OK-1","OK-2":"OK-2","OK-3":"OK-3","OK-4":"OK-4","OK-5":"OK-5","OR-1":"OR-1","OR-2":"OR-2","OR-3":"OR-3","OR-4":"OR-4","OR-5":"OR-5","PA-1":"PA-1","PA-2":"PA-2","PA-3":"PA-3","PA-4":"PA-4","PA-5":"PA-5","PA-6":"PA-6","PA-7":"PA-7","PA-8":"PA-8","PA-9":"PA-9","PA-10":"PA-10","PA-11":"PA-11","PA-12":"PA-12","PA-13":"PA-13","PA-14":"PA-14","PA-15":"PA-15","PA-16":"PA-16","PA-17":"PA-17","PA-18":"PA-18","RI-1":"RI-1","RI-2":"RI-2","SC-1":"SC-1","SC-2":"SC-2","SC-3":"SC-3","SC-4":"SC-4","SC-5":"SC-5","SC-6":"SC-6","SC-7":"SC-7","SD-1":"SD-1","TN-1":"TN-1","TN-2":"TN-2","TN-3":"TN-3","TN-4":"TN-4","TN-5":"TN-5","TN-6":"TN-6","TN-7":"TN-7","TN-8":"TN-8","TN-9":"TN-9","TX-1":"TX-1","TX-2":"TX-2","TX-3":"TX-3","TX-4":"TX-4","TX-5":"TX-5","TX-6":"TX-6","TX-7":"TX-7","TX-8":"TX-8","TX-9":"TX-9","TX-10":"TX-10","TX-11":"TX-11","TX-12":"TX-12","TX-13":"TX-13","TX-14":"TX-14","TX-15":"TX-15","TX-16":"TX-16","TX-17":"TX-17","TX-18":"TX-18","TX-19":"TX-19","TX-20":"TX-20","TX-21":"TX-21","TX-22":"TX-22","TX-23":"TX-23","TX-24":"TX-24","TX-25":"TX-25","TX-26":"TX-26","TX-27":"TX-27","TX-28":"TX-28","TX-29":"TX-29","TX-30":"TX-30","TX-31":"TX-31","TX-32":"TX-32","TX-33":"TX-33","TX-34":"TX-34","TX-35":"TX-35","TX-36":"TX-36","UT-1":"UT-1","UT-2":"UT-2","UT-3":"UT-3","UT-4":"UT-4","VT-1":"VT-1","VA-1":"VA-1","VA-2":"VA-2","VA-3":"VA-3","VA-4":"VA-4","VA-5":"VA-5","VA-6":"VA-6","VA-7":"VA-7","VA-8":"VA-8","VA-9":"VA-9","VA-10":"VA-10","VA-11":"VA-11","WA-1":"WA-1","WA-2":"WA-2","WA-3":"WA-3","WA-4":"WA-4","WA-5":"WA-5","WA-6":"WA-6","WA-7":"WA-7","WA-8":"WA-8","WA-9":"WA-9","WA-10":"WA-10","WV-1":"WV-1","WV-2":"WV-2","WV-3":"WV-3","WI-1":"WI-1","WI-2":"WI-2","WI-3":"WI-3","WI-4":"WI-4","WI-5":"WI-5","WI-6":"WI-6","WI-7":"WI-7","WI-8":"WI-8","WY-1":"WY-1","AL-0":"AL-1","AL-AL":"AL-1","AK-0":"AK-1","AK-AL":"AK-1","AZ-0":"AZ-1","AZ-AL":"AZ-1","AR-0":"AR-1","AR-AL":"AR-1","CA-0":"CA-1","CA-AL":"CA-1","CO-0":"CO-1","CO-AL":"CO-1","CT-0":"CT-1","CT-AL":"CT-1","DE-0":"DE-1","DE-AL":"DE-1","FL-0":"FL-1","FL-AL":"FL-1","GA-0":"GA-1","GA-AL":"GA-1","HI-0":"HI-1","HI-AL":"HI-1","ID-0":"ID-1","ID-AL":"ID-1","IL-0":"IL-1","IL-AL":"IL-1","IN-0":"IN-1","IN-AL":"IN-1","IA-0":"IA-1","IA-AL":"IA-1","KS-0":"KS-1","KS-AL":"KS-1","KY-0":"KY-1","KY-AL":"KY-1","LA-0":"LA-1","LA-AL":"LA-1","ME-0":"ME-1","ME-AL":"ME-1","MD-0":"MD-1","MD-AL":"MD-1","MA-0":"MA-1","MA-AL":"MA-1","MI-0":"MI-1","MI-AL":"MI-1","MN-0":"MN-1","MN-AL":"MN-1","MS-0":"MS-1","MS-AL":"MS-1","MO-0":"MO-1","MO-AL":"MO-1","MT-0":"MT-1","MT-AL":"MT-1","NE-0":"NE-1","NE-AL":"NE-1","NV-0":"NV-1","NV-AL":"NV-1","NH-0":"NH-1","NH-AL":"NH-1","NJ-0":"NJ-1","NJ-AL":"NJ-1","NM-0":"NM-1","NM-AL":"NM-1","NY-0":"NY-1","NY-AL":"NY-1","NC-0":"NC-1","NC-AL":"NC-1","ND-0":"ND-1","ND-AL":"ND-1","OH-0":"OH-1","OH-AL":"OH-1","OK-0":"OK-1","OK-AL":"OK-1","OR-0":"OR-1","OR-AL":"OR-1","PA-0":"PA-1","PA-AL":"PA-1","RI-0":"RI-1","RI-AL":"RI-1","SC-0":"SC-1","SC-AL":"SC-1","SD-0":"SD-1","SD-AL":"SD-1","TN-0":"TN-1","TN-AL":"TN-1","TX-0":"TX-1","TX-AL":"TX-1","UT-0":"UT-1","UT-AL":"UT-1","VT-0":"VT-1","VT-AL":"VT-1","VA-0":"VA-1","VA-AL":"VA-1","WA-0":"WA-1","WA-AL":"WA-1","WV-0":"WV-1","WV-AL":"WV-1","WI-0":"WI-1","WI-AL":"WI-1","WY-0":"WY-1","WY-AL":"WY-1"};
@@ -102,6 +117,8 @@ for (var d in districts){
 }
 console.log(JSON.stringify(csvdata['convert']['cds']));
 console.log(JSON.stringify(csvdata['cds']));*/
+
+
 function loadAllData() {
 	fs.readFile("predictions16.csv", 'utf8', function(err, fileData) {
 		if (err){
@@ -543,6 +560,16 @@ function loadAllData() {
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	
+	
+	for (var state in csvdata['states']){
+		for (var col in csvdata['states'][state]){
+			if (!columns[col]){
+				columns[col]=true;
+			}
+		}
+	}
+	
+	
 }
 
 loadAllData();
@@ -891,28 +918,11 @@ app.get(['/','/draw','/draw.html'],
 app.get(['/','/diycsv','/diycsv.html'],
 	function(req, res){
 		
-		var columns = {};
-		for (var state in csvdata['states']){
-			for (var col in csvdata['states'][state]){
-				if (!columns[col]){
-					columns[col]=true;
-				}
-			}
-		}
-		var colArray = [{'title':'ID','field':'id'}];
-		for (var col in columns){
-			colArray.push({'title':col,'field':col});
-		}
 		
-		var tableData = [];
-		for (var state in csvdata['states']){
-			var row = csvdata['states'][state];
-			row['id']=state;
-			tableData.push(row);
-		}
+		
+		
 		
 		res.write(nunjucks.render('templates/diycsv.html',{
-			tableData: tableData,
 			columns: colArray,
 		}));
 		res.end();

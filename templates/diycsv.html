@@ -51,11 +51,11 @@
 </body>
 <script src="js/tabulator.min.js"></script>
 <script>
-var tableData = {{tableData | dump | safe}};
+var tableData = [];
 
 var table = new Tabulator("#csvTable", {
     data:tableData,
-    columns: {{ columns | dump | safe}},
+    columns:[],
 });
 
 
@@ -64,7 +64,12 @@ ws.onopen = function(evt) {
 	
 }
 ws.onmessage = function(evt){
-	console.log(evt.data);
+	var allData = JSON.parse(evt.data);
+	console.log(allData);
+	tableData = allData.tableData;
+	
+	table.setColumns(allData.columns);
+	table.setData();
 }
 
 function updateData() {
