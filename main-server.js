@@ -485,7 +485,7 @@ function loadAllData() {
 			else if (party == "republic"){
 				party = "R";
 			}
-			else if (candidates[data.data[i][7]][year]){
+			else if (candidates[data.data[i][7]] && candidates[data.data[i][7]][year]){
 				party = candidates[data.data[i][7]][year];
 			}
 			else {
