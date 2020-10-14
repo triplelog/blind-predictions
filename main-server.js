@@ -103,6 +103,9 @@ function loadAllData() {
 		});
 	
 		for (var i=1;i<econPred16.data.length;i++){
+			if (econPred16.data[i].length < 5){
+				continue;
+			}
 			csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4]);
 			csvdata['states'][econPred16.data[i][0]]['econPreddelo16']=(parseFloat(econPred16.data[i][1])-.5)*2000;
 		}
@@ -119,7 +122,9 @@ function loadAllData() {
 		});
 	
 		for (var i=1;i<econPred20.data.length;i++){
-			console.log(econPred20.data[i][3]);
+			if (econPred20.data[i].length < 8){
+				continue;
+			}
 			csvdata['states'][econPred20.data[i][3]]['econPreddwin20']=parseFloat(econPred20.data[i][7]);
 			csvdata['states'][econPred20.data[i][3]]['econPreddelo20']=(parseFloat(econPred20.data[i][6])-.5)*2000;
 		}
