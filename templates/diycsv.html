@@ -32,14 +32,14 @@
 		<table>
 			<tr>
 				<td>ID</td>
-				{% for column in columns %}
+				{% for column, nothing in columns %}
 				<td>{{ column }}</td>
 				{% endfor %}
 			</tr>
 			{% for state in fullcsv %}
 			<tr>
 				<td>{{ state }}</td>
-				{% for column in columns %}
+				{% for column, nothing in columns %}
 				<td>{{ fullcsv[state][column] }}</td>
 				{% endfor %}
 			</tr>

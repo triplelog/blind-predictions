@@ -664,8 +664,6 @@ app.get(['/','/diycsv','/diycsv.html'],
 				}
 			}
 		}
-		console.log(columns);
-		console.log(Object.keys(csvdata['states']));
 		res.write(nunjucks.render('templates/diycsv.html',{
 			fullcsv: csvdata['states'],
 			columns: columns,
