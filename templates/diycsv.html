@@ -31,7 +31,15 @@
 </head>
 <body>
 
-
+	<div>
+		Locations:
+		<select id="locations">
+			<option val="dc">States+DC</option>
+			<option val="mene">States+DC/ME/NE</option>
+			<option val="50">50 States</option>
+		</select>
+		<button onclick="updateData()">Submit</button>
+	</div>
 	<div class="gridHolder" id="csvTable">
 
 	</div>
@@ -46,10 +54,24 @@
 var tableData = {{tableData | dump | safe}};
 
 var table = new Tabulator("#csvTable", {
-    height:"100%",
     data:tableData,
     columns: {{ columns | dump | safe}},
 });
+
+
+var ws = new WebSocket('wss://inlinemath.com:8080');
+ws.onopen = function(evt) {
+	
+}
+ws.onmessage = function(evt){
+	console.log(evt.data);
+}
+
+function updateData() {
+	var locations = document.getElementById("locations").value;
+	var jsonmessage = {'type':'update','locations':locations};
+	ws.send(JSON.stringify(jsonmessage));
+}
 </script>
 
 

@@ -53,6 +53,10 @@ wss.on('connection', function connection(ws) {
 				username = tempKeys[dm.message].username;
 			}
 		}
+		else if (dm.type == "update"){
+			var jsonmessage = {'type':"hi"};
+			ws.send(JSON.stringify(jsonmessage));
+		}
 		
 		
 		
