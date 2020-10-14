@@ -203,7 +203,7 @@ function loadAllData() {
 			if (data.data[i][3] != modeldate){
 				continue;
 			}
-			var state = csvdata['states'][data.data[i][7]];
+			var state = csvdata['convert']['states'][data.data[i][7]];
 			if (state=='ME'){state="M0";}
 			if (state=='NE'){state="N0";}
 			csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
@@ -281,7 +281,7 @@ function loadAllData() {
 				continue;
 			}
 			var year = parseInt(data.data[i][0])-2000;
-			var state = csvdata['states'][data.data[i][2]];
+			var state = csvdata['convert']['states'][data.data[i][2]];
 			console.log(state);
 			if (data.data[i][7] =="D"){
 				csvdata['states'][state]['538Preddwin'+year]=parseFloat(data.data[i][11]);
