@@ -338,10 +338,19 @@ function displaySVG(){
 			counter++;
 		}
 		svg += '<g id="state-'+state+'" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel">';
-		if (states[state].rwin && states[state].rwin < .5){
+		var rwin = -1;
+		for (var i=0;i<states.length;i++){
+			if (states[i].abbrev == state){
+				if (states[i].rwin){
+					rwin = states[i].rwin;
+					break;
+				}
+			}
+		}
+		if (rwin > -1 && rwin < .5){
 			svg += '<path fill="blue" stroke="white" stroke-width=".125" d="'+path+'"/>';
 		}
-		else if (states[state].rwin && states[state].rwin > .5){
+		else if (rwin > -1 && rwin > .5){
 			svg += '<path fill="red" stroke="white" stroke-width=".125" d="'+path+'"/>';
 		}
 		else {
