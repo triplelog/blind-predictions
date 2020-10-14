@@ -445,7 +445,7 @@ function loadAllData() {
 			skipEmptyLines: false,
 			quoteChar: '"',
 		});
-		candidates = {};
+		var candidates = {};
 		for (var i=1;i<data.data.length;i++){
 			if (data.data[i].length < 10){
 				continue;
