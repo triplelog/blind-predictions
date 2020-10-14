@@ -71,19 +71,27 @@ csvdata['counties']={}
 csvdata['evd']={}
 
 function loadAllData() {
-	var econPred16 = Papa.parse("predictions16.csv", {
-		delimiter: ",",
-		skipEmptyLines: false,
-		quoteChar: '"',
-	});
-	for (var i=1;i<econPred16.data.length;i++){
-		csvdata['states'][econPred16.data[i][0]]={};
-		csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4]);
-	}
+	fs.readFile("predictions16.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var econPred16 = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+	
+		for (var i=1;i<econPred16.data.length;i++){
+			csvdata['states'][econPred16.data[i][0]]={};
+			csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4]);
+		}
+		console.log(csvdata['states']);
+	})
+	
 }
 
 loadAllData();
-console.log(csvdata['states']);
+
 
 app.get(['/predict','/predict.html'],
 	function(req, res){
