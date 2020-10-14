@@ -395,7 +395,7 @@ function displaySVG(){
 				svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
 			}
 			if (idx < 2){
-				svg += '<text text-anchor="middle" textLength=".9" x="'+(cells[state][cell][1]+.5)+'" y="'+(cells[state][cell][0]+1)+'">'+state+'</text>';
+				svg += '<text font-size="10px" text-anchor="middle" x="'+(cells[state][cell][1]+.5)+'" y="'+(cells[state][cell][0]+1)+'">'+state+'</text>';
 			}
 			
 			idx++;
