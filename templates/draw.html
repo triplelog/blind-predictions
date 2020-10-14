@@ -73,7 +73,7 @@ body {
 	<div class="menu">
 	<button onclick="displaySVG()">Print</button>
 	{% for i in range(0,states.length) %}
-		{% set x = states[i].ev10 - 2 %}
+		{% set x = states[i][val] %}
 		<div id="state-{{ states[i].abbrev }}">{{ states[i].abbrev }}: <span class="cellsDrawn">0</span><span> of {{ x }}</span></div>
 	{% endfor %}
 	
