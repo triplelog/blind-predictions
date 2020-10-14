@@ -306,7 +306,7 @@ function loadAllData() {
 			
 			
 		}
-		console.log(JSON.stringify(csvdata['states']));
+		//console.log(JSON.stringify(csvdata['states']));
 	})
 	
 }
@@ -658,8 +658,8 @@ app.get(['/','/diycsv','/diycsv.html'],
 	function(req, res){
 		
 		var columns = {};
-		for (state in csvdata['states']){
-			for (col in csvdata['states'][state]){
+		for (var state in csvdata['states']){
+			for (var col in csvdata['states'][state]){
 				if (!columns[col]){
 					columns[col]=true;
 				}
