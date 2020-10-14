@@ -187,6 +187,7 @@ function loadAllData() {
 	})
 	fs.readFile("election-forecasts-2020/presidential_state_toplines_2020.csv", 'utf8', function(err, fileData) {
 		if (err){
+			console.log(err);
 			crash;
 		}
 		var data = Papa.parse(fileData, {
