@@ -72,10 +72,12 @@ body {
 
 	<div class="menu">
 	<button onclick="displaySVG()">Print</button>
-	{% for i in range(0,50) %}
+	{% for i in range(0,states.length) %}
 		{% set x = states[i].ev10 - 2 %}
 		<div id="state-{{ states[i].abbrev }}">{{ states[i].abbrev }}: <span class="cellsDrawn">0</span><span> of {{ x }}</span></div>
 	{% endfor %}
+	
+
 	</div>
 	<div class="gridHolder">
 	{% for ii in range(0,18) %}
@@ -106,7 +108,7 @@ for (var i=0;i<els.length;i++){
 }
 
 var states = {{ states | dump | safe}};
-for (var i=0;i<50;i++){
+for (var i=0;i<states.length;i++){
 	var el = document.getElementById('state-'+states[i].abbrev);
 	el.addEventListener('click',clickState);
 	cells[states[i].abbrev]=[];
@@ -120,7 +122,7 @@ var districts = true;
 districts = false;
 {% endif %}
 
-for (var i=0;i<50;i++){
+for (var i=0;i<states.length;i++){
 	if (cells[states[i].abbrev].length>0 || svgs[states[i].abbrev].allPaths.length>0 || svgs[states[i].abbrev].points.length>0 || svgs[states[i].abbrev].borders.length>0){
 		
 		for (var ii=0;ii<cells[states[i].abbrev].length;ii++){
@@ -250,7 +252,7 @@ function clickCell(evt){
 	var r = parseInt(evt.target.getAttribute('data-row'));
 	var c = parseInt(evt.target.getAttribute('data-col'));
 	var modified = {};
-	for (var i=0;i<50;i++){
+	for (var i=0;i<states.length;i++){
 		var cl = cells[states[i].abbrev];
 		
 		for (var ii=0;ii<cl.length;ii++){
@@ -279,7 +281,7 @@ function clickState(evt){
 	while (el.parentElement && (!el.id || el.id.substr(0,6) != "state-") ){
 		el = el.parentElement;
 	}
-	for (var i=0;i<50;i++){
+	for (var i=0;i<states.length;i++){
 		var e = document.getElementById('state-'+states[i].abbrev);
 		e.style.background = "white";
 	}
