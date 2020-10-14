@@ -315,6 +315,7 @@ function displaySVG(){
 		var lastPoint = allPaths[0].split("L")[1];
 		allPaths.splice(0,1);
 		var counter = 0;
+
 		while (counter < 10000 && allPaths.length > 0){
 			for (var i=0;i<allPaths.length;i++){
 				var firstPoint = allPaths[i].split("L")[0];
@@ -392,6 +393,10 @@ function displaySVG(){
 			if (districts){
 				svg += '<path onclick="clickdistrict('+"'"+state+'-'+idx+"'"+')" id="'+state+'-'+idx+'" stroke-width="0" fill="black" d="'+cellPath+'"/>';
 			}
+			if (idx < 2){
+				svg += '<text text-anchor="middle" textLength=".9" x="'+(cells[state][cell][1]+.5)+'" y="'+(cells[state][cell][0]+1)+'">'+'</text>';
+			}
+			
 			idx++;
 		}
 		svg += '</g>';
