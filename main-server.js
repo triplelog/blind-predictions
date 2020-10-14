@@ -81,10 +81,10 @@ wss.on('connection', function connection(ws) {
 	
 			var tableData = [];
 			for (var state in csvdata['states']){
-				if (locations == 50 && state == "DC"){
+				if (locations == 50 && (state == "DC" || state.substr(1) == "0" || state.substr(1) == "1" || state.substr(1) == "2" || state.substr(1) == "3") ){
 					continue;
 				}
-				else if (locations == "DC" && (state.substr(1) == "0" || state.substr(1) == "1" || state.substr(1) == "2") ){
+				else if (locations == "DC" && (state.substr(1) == "0" || state.substr(1) == "1" || state.substr(1) == "2" || state.substr(1) == "3") ){
 					continue;
 				}
 				else if (locations == "MENE" && (state == "ME" || state == "NE") ){
