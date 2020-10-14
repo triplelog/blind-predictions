@@ -567,4 +567,5 @@
 	width: calc( var(--block-width) * 30);
 	height: calc( var(--block-width) * 30);
 	border: 1px solid white;
+	display: none;
 }
