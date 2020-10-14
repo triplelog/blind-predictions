@@ -348,10 +348,10 @@ function displaySVG(){
 			}
 		}
 		if (rwin > -1 && rwin < .5){
-			svg += '<path fill="blue" stroke="white" stroke-width=".125" d="'+path+'"/>';
+			svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
 		}
 		else if (rwin > -1 && rwin > .5){
-			svg += '<path fill="red" stroke="white" stroke-width=".125" d="'+path+'"/>';
+			svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
 		}
 		else {
 			svg += '<path fill="black" stroke="white" stroke-width=".125" d="'+path+'"/>';
