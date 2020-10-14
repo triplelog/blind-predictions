@@ -122,16 +122,18 @@ var districts = true;
 districts = false;
 {% endif %}
 
-for (var i=0;i<states.length;i++){
-	if (cells[states[i].abbrev].length>0 || svgs[states[i].abbrev].allPaths.length>0 || svgs[states[i].abbrev].points.length>0 || svgs[states[i].abbrev].borders.length>0){
+if (cells && svgs){
+	for (var i=0;i<states.length;i++){
+		if (cells[states[i].abbrev].length>0 || svgs[states[i].abbrev].allPaths.length>0 || svgs[states[i].abbrev].points.length>0 || svgs[states[i].abbrev].borders.length>0){
 		
-		for (var ii=0;ii<cells[states[i].abbrev].length;ii++){
-			var sel = '[data-row="'+cells[states[i].abbrev][ii][0]+'"][data-col="'+cells[states[i].abbrev][ii][1]+'"]';
-			cells[states[i].abbrev][ii][2]=document.querySelector(sel);
+			for (var ii=0;ii<cells[states[i].abbrev].length;ii++){
+				var sel = '[data-row="'+cells[states[i].abbrev][ii][0]+'"][data-col="'+cells[states[i].abbrev][ii][1]+'"]';
+				cells[states[i].abbrev][ii][2]=document.querySelector(sel);
+			}
+			updatePaths(states[i].abbrev);
 		}
-		updatePaths(states[i].abbrev);
-	}
 
+	}
 }
 
 function updatePaths(state) {
