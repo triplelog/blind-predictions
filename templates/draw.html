@@ -35,7 +35,7 @@ body {
 	
 	display: flex;
 	flex-direction: column;
-	width: 95vw;
+	width: calc(95vw - 5rem);
 	height: 95vh;
 	border: 1px solid black;
 	margin: auto;
@@ -55,15 +55,16 @@ body {
 }
 @media (max-aspect-ratio: {{ width }}/{{ height }}) {
 	.gridHolder {
-		height: calc( 95vw * {{ height }} / {{ width }});
+		height: calc( (95vw - 5rem) * {{ height }} / {{ width }});
 	}
 	.gridCell {
-		line-height: calc(95vw * {{ height }} / {{ width }} / {{ height + 2}});
+		line-height: calc((95vw - 5rem) * {{ height }} / {{ width }} / {{ height + 2}});
 	}
 }
 @media (min-aspect-ratio: {{ width }}/{{ height }}) {
 	.gridHolder {
 		width: calc( 95vh * {{ width }} / {{ height }});
+		
 	}
 }
 </style>

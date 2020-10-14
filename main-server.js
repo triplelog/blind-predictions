@@ -12,6 +12,7 @@ var qs = require('querystring');
 const { exec } = require('child_process');
 var nunjucks = require('nunjucks');
 var crypto = require("crypto");
+var Papa = require('papaparse');
 
 const options = {
   key: fs.readFileSync('/etc/letsencrypt/live/inlinemath.com/privkey.pem'),
@@ -61,7 +62,19 @@ wss.on('connection', function connection(ws) {
 var startTime = performance.now();
 
 
+//load all data into memory
+var csvdata = {};
+csvdata['convert']={'states':{},'cds':{},'counties':{},'evd':{}}
+csvdata['states']={}
+csvdata['cds']={}
+csvdata['counties']={}
+csvdata['evd']={}
 
+var predictions16 = Papa.parse("predictions16.csv", {
+	delimiter: delimiter,
+	skipEmptyLines: false,
+	quoteChar: '"',
+});
 
 app.get(['/predict','/predict.html'],
 	function(req, res){
