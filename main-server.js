@@ -654,6 +654,25 @@ app.get(['/','/draw','/draw.html'],
 	}
 );
 
+app.get(['/','/diycsv','/diycsv.html'],
+	function(req, res){
+		
+		var columns = {};
+		for (state in csvdata['states']){
+			for (col in csvdata['states'][state]){
+				if (!columns[col]){
+					columns[col]=true;
+				}
+			}
+		}
+		res.write(nunjucks.render('templates/diycsv.html',{
+			fullcsv: csvdata['states'],
+			columns: columns,
+		}));
+		res.end();
+	}
+);
+
 app.get(['/','/index','/index.html'],
 	function(req, res){
 		
