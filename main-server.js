@@ -73,6 +73,13 @@ csvdata['states']={"AK":{},"AL":{},"AR":{},"AZ":{},"CA":{},"CO":{},"CT":{},"DC":
 csvdata['cds']={"AL-1":{"state":"AL"},"AL-2":{"state":"AL"},"AL-3":{"state":"AL"},"AL-4":{"state":"AL"},"AL-5":{"state":"AL"},"AL-6":{"state":"AL"},"AL-7":{"state":"AL"},"AK-1":{"state":"AK"},"AZ-1":{"state":"AZ"},"AZ-2":{"state":"AZ"},"AZ-3":{"state":"AZ"},"AZ-4":{"state":"AZ"},"AZ-5":{"state":"AZ"},"AZ-6":{"state":"AZ"},"AZ-7":{"state":"AZ"},"AZ-8":{"state":"AZ"},"AZ-9":{"state":"AZ"},"AR-1":{"state":"AR"},"AR-2":{"state":"AR"},"AR-3":{"state":"AR"},"AR-4":{"state":"AR"},"CA-1":{"state":"CA"},"CA-2":{"state":"CA"},"CA-3":{"state":"CA"},"CA-4":{"state":"CA"},"CA-5":{"state":"CA"},"CA-6":{"state":"CA"},"CA-7":{"state":"CA"},"CA-8":{"state":"CA"},"CA-9":{"state":"CA"},"CA-10":{"state":"CA"},"CA-11":{"state":"CA"},"CA-12":{"state":"CA"},"CA-13":{"state":"CA"},"CA-14":{"state":"CA"},"CA-15":{"state":"CA"},"CA-16":{"state":"CA"},"CA-17":{"state":"CA"},"CA-18":{"state":"CA"},"CA-19":{"state":"CA"},"CA-20":{"state":"CA"},"CA-21":{"state":"CA"},"CA-22":{"state":"CA"},"CA-23":{"state":"CA"},"CA-24":{"state":"CA"},"CA-25":{"state":"CA"},"CA-26":{"state":"CA"},"CA-27":{"state":"CA"},"CA-28":{"state":"CA"},"CA-29":{"state":"CA"},"CA-30":{"state":"CA"},"CA-31":{"state":"CA"},"CA-32":{"state":"CA"},"CA-33":{"state":"CA"},"CA-34":{"state":"CA"},"CA-35":{"state":"CA"},"CA-36":{"state":"CA"},"CA-37":{"state":"CA"},"CA-38":{"state":"CA"},"CA-39":{"state":"CA"},"CA-40":{"state":"CA"},"CA-41":{"state":"CA"},"CA-42":{"state":"CA"},"CA-43":{"state":"CA"},"CA-44":{"state":"CA"},"CA-45":{"state":"CA"},"CA-46":{"state":"CA"},"CA-47":{"state":"CA"},"CA-48":{"state":"CA"},"CA-49":{"state":"CA"},"CA-50":{"state":"CA"},"CA-51":{"state":"CA"},"CA-52":{"state":"CA"},"CA-53":{"state":"CA"},"CO-1":{"state":"CO"},"CO-2":{"state":"CO"},"CO-3":{"state":"CO"},"CO-4":{"state":"CO"},"CO-5":{"state":"CO"},"CO-6":{"state":"CO"},"CO-7":{"state":"CO"},"CT-1":{"state":"CT"},"CT-2":{"state":"CT"},"CT-3":{"state":"CT"},"CT-4":{"state":"CT"},"CT-5":{"state":"CT"},"DE-1":{"state":"DE"},"FL-1":{"state":"FL"},"FL-2":{"state":"FL"},"FL-3":{"state":"FL"},"FL-4":{"state":"FL"},"FL-5":{"state":"FL"},"FL-6":{"state":"FL"},"FL-7":{"state":"FL"},"FL-8":{"state":"FL"},"FL-9":{"state":"FL"},"FL-10":{"state":"FL"},"FL-11":{"state":"FL"},"FL-12":{"state":"FL"},"FL-13":{"state":"FL"},"FL-14":{"state":"FL"},"FL-15":{"state":"FL"},"FL-16":{"state":"FL"},"FL-17":{"state":"FL"},"FL-18":{"state":"FL"},"FL-19":{"state":"FL"},"FL-20":{"state":"FL"},"FL-21":{"state":"FL"},"FL-22":{"state":"FL"},"FL-23":{"state":"FL"},"FL-24":{"state":"FL"},"FL-25":{"state":"FL"},"FL-26":{"state":"FL"},"FL-27":{"state":"FL"},"GA-1":{"state":"GA"},"GA-2":{"state":"GA"},"GA-3":{"state":"GA"},"GA-4":{"state":"GA"},"GA-5":{"state":"GA"},"GA-6":{"state":"GA"},"GA-7":{"state":"GA"},"GA-8":{"state":"GA"},"GA-9":{"state":"GA"},"GA-10":{"state":"GA"},"GA-11":{"state":"GA"},"GA-12":{"state":"GA"},"GA-13":{"state":"GA"},"GA-14":{"state":"GA"},"HI-1":{"state":"HI"},"HI-2":{"state":"HI"},"ID-1":{"state":"ID"},"ID-2":{"state":"ID"},"IL-1":{"state":"IL"},"IL-2":{"state":"IL"},"IL-3":{"state":"IL"},"IL-4":{"state":"IL"},"IL-5":{"state":"IL"},"IL-6":{"state":"IL"},"IL-7":{"state":"IL"},"IL-8":{"state":"IL"},"IL-9":{"state":"IL"},"IL-10":{"state":"IL"},"IL-11":{"state":"IL"},"IL-12":{"state":"IL"},"IL-13":{"state":"IL"},"IL-14":{"state":"IL"},"IL-15":{"state":"IL"},"IL-16":{"state":"IL"},"IL-17":{"state":"IL"},"IL-18":{"state":"IL"},"IN-1":{"state":"IN"},"IN-2":{"state":"IN"},"IN-3":{"state":"IN"},"IN-4":{"state":"IN"},"IN-5":{"state":"IN"},"IN-6":{"state":"IN"},"IN-7":{"state":"IN"},"IN-8":{"state":"IN"},"IN-9":{"state":"IN"},"IA-1":{"state":"IA"},"IA-2":{"state":"IA"},"IA-3":{"state":"IA"},"IA-4":{"state":"IA"},"KS-1":{"state":"KS"},"KS-2":{"state":"KS"},"KS-3":{"state":"KS"},"KS-4":{"state":"KS"},"KY-1":{"state":"KY"},"KY-2":{"state":"KY"},"KY-3":{"state":"KY"},"KY-4":{"state":"KY"},"KY-5":{"state":"KY"},"KY-6":{"state":"KY"},"LA-1":{"state":"LA"},"LA-2":{"state":"LA"},"LA-3":{"state":"LA"},"LA-4":{"state":"LA"},"LA-5":{"state":"LA"},"LA-6":{"state":"LA"},"ME-1":{"state":"ME"},"ME-2":{"state":"ME"},"MD-1":{"state":"MD"},"MD-2":{"state":"MD"},"MD-3":{"state":"MD"},"MD-4":{"state":"MD"},"MD-5":{"state":"MD"},"MD-6":{"state":"MD"},"MD-7":{"state":"MD"},"MD-8":{"state":"MD"},"MA-1":{"state":"MA"},"MA-2":{"state":"MA"},"MA-3":{"state":"MA"},"MA-4":{"state":"MA"},"MA-5":{"state":"MA"},"MA-6":{"state":"MA"},"MA-7":{"state":"MA"},"MA-8":{"state":"MA"},"MA-9":{"state":"MA"},"MI-1":{"state":"MI"},"MI-2":{"state":"MI"},"MI-3":{"state":"MI"},"MI-4":{"state":"MI"},"MI-5":{"state":"MI"},"MI-6":{"state":"MI"},"MI-7":{"state":"MI"},"MI-8":{"state":"MI"},"MI-9":{"state":"MI"},"MI-10":{"state":"MI"},"MI-11":{"state":"MI"},"MI-12":{"state":"MI"},"MI-13":{"state":"MI"},"MI-14":{"state":"MI"},"MN-1":{"state":"MN"},"MN-2":{"state":"MN"},"MN-3":{"state":"MN"},"MN-4":{"state":"MN"},"MN-5":{"state":"MN"},"MN-6":{"state":"MN"},"MN-7":{"state":"MN"},"MN-8":{"state":"MN"},"MS-1":{"state":"MS"},"MS-2":{"state":"MS"},"MS-3":{"state":"MS"},"MS-4":{"state":"MS"},"MO-1":{"state":"MO"},"MO-2":{"state":"MO"},"MO-3":{"state":"MO"},"MO-4":{"state":"MO"},"MO-5":{"state":"MO"},"MO-6":{"state":"MO"},"MO-7":{"state":"MO"},"MO-8":{"state":"MO"},"MT-1":{"state":"MT"},"NE-1":{"state":"NE"},"NE-2":{"state":"NE"},"NE-3":{"state":"NE"},"NV-1":{"state":"NV"},"NV-2":{"state":"NV"},"NV-3":{"state":"NV"},"NV-4":{"state":"NV"},"NH-1":{"state":"NH"},"NH-2":{"state":"NH"},"NJ-1":{"state":"NJ"},"NJ-2":{"state":"NJ"},"NJ-3":{"state":"NJ"},"NJ-4":{"state":"NJ"},"NJ-5":{"state":"NJ"},"NJ-6":{"state":"NJ"},"NJ-7":{"state":"NJ"},"NJ-8":{"state":"NJ"},"NJ-9":{"state":"NJ"},"NJ-10":{"state":"NJ"},"NJ-11":{"state":"NJ"},"NJ-12":{"state":"NJ"},"NM-1":{"state":"NM"},"NM-2":{"state":"NM"},"NM-3":{"state":"NM"},"NY-1":{"state":"NY"},"NY-2":{"state":"NY"},"NY-3":{"state":"NY"},"NY-4":{"state":"NY"},"NY-5":{"state":"NY"},"NY-6":{"state":"NY"},"NY-7":{"state":"NY"},"NY-8":{"state":"NY"},"NY-9":{"state":"NY"},"NY-10":{"state":"NY"},"NY-11":{"state":"NY"},"NY-12":{"state":"NY"},"NY-13":{"state":"NY"},"NY-14":{"state":"NY"},"NY-15":{"state":"NY"},"NY-16":{"state":"NY"},"NY-17":{"state":"NY"},"NY-18":{"state":"NY"},"NY-19":{"state":"NY"},"NY-20":{"state":"NY"},"NY-21":{"state":"NY"},"NY-22":{"state":"NY"},"NY-23":{"state":"NY"},"NY-24":{"state":"NY"},"NY-25":{"state":"NY"},"NY-26":{"state":"NY"},"NY-27":{"state":"NY"},"NC-1":{"state":"NC"},"NC-2":{"state":"NC"},"NC-3":{"state":"NC"},"NC-4":{"state":"NC"},"NC-5":{"state":"NC"},"NC-6":{"state":"NC"},"NC-7":{"state":"NC"},"NC-8":{"state":"NC"},"NC-9":{"state":"NC"},"NC-10":{"state":"NC"},"NC-11":{"state":"NC"},"NC-12":{"state":"NC"},"NC-13":{"state":"NC"},"ND-1":{"state":"ND"},"OH-1":{"state":"OH"},"OH-2":{"state":"OH"},"OH-3":{"state":"OH"},"OH-4":{"state":"OH"},"OH-5":{"state":"OH"},"OH-6":{"state":"OH"},"OH-7":{"state":"OH"},"OH-8":{"state":"OH"},"OH-9":{"state":"OH"},"OH-10":{"state":"OH"},"OH-11":{"state":"OH"},"OH-12":{"state":"OH"},"OH-13":{"state":"OH"},"OH-14":{"state":"OH"},"OH-15":{"state":"OH"},"OH-16":{"state":"OH"},"OK-1":{"state":"OK"},"OK-2":{"state":"OK"},"OK-3":{"state":"OK"},"OK-4":{"state":"OK"},"OK-5":{"state":"OK"},"OR-1":{"state":"OR"},"OR-2":{"state":"OR"},"OR-3":{"state":"OR"},"OR-4":{"state":"OR"},"OR-5":{"state":"OR"},"PA-1":{"state":"PA"},"PA-2":{"state":"PA"},"PA-3":{"state":"PA"},"PA-4":{"state":"PA"},"PA-5":{"state":"PA"},"PA-6":{"state":"PA"},"PA-7":{"state":"PA"},"PA-8":{"state":"PA"},"PA-9":{"state":"PA"},"PA-10":{"state":"PA"},"PA-11":{"state":"PA"},"PA-12":{"state":"PA"},"PA-13":{"state":"PA"},"PA-14":{"state":"PA"},"PA-15":{"state":"PA"},"PA-16":{"state":"PA"},"PA-17":{"state":"PA"},"PA-18":{"state":"PA"},"RI-1":{"state":"RI"},"RI-2":{"state":"RI"},"SC-1":{"state":"SC"},"SC-2":{"state":"SC"},"SC-3":{"state":"SC"},"SC-4":{"state":"SC"},"SC-5":{"state":"SC"},"SC-6":{"state":"SC"},"SC-7":{"state":"SC"},"SD-1":{"state":"SD"},"TN-1":{"state":"TN"},"TN-2":{"state":"TN"},"TN-3":{"state":"TN"},"TN-4":{"state":"TN"},"TN-5":{"state":"TN"},"TN-6":{"state":"TN"},"TN-7":{"state":"TN"},"TN-8":{"state":"TN"},"TN-9":{"state":"TN"},"TX-1":{"state":"TX"},"TX-2":{"state":"TX"},"TX-3":{"state":"TX"},"TX-4":{"state":"TX"},"TX-5":{"state":"TX"},"TX-6":{"state":"TX"},"TX-7":{"state":"TX"},"TX-8":{"state":"TX"},"TX-9":{"state":"TX"},"TX-10":{"state":"TX"},"TX-11":{"state":"TX"},"TX-12":{"state":"TX"},"TX-13":{"state":"TX"},"TX-14":{"state":"TX"},"TX-15":{"state":"TX"},"TX-16":{"state":"TX"},"TX-17":{"state":"TX"},"TX-18":{"state":"TX"},"TX-19":{"state":"TX"},"TX-20":{"state":"TX"},"TX-21":{"state":"TX"},"TX-22":{"state":"TX"},"TX-23":{"state":"TX"},"TX-24":{"state":"TX"},"TX-25":{"state":"TX"},"TX-26":{"state":"TX"},"TX-27":{"state":"TX"},"TX-28":{"state":"TX"},"TX-29":{"state":"TX"},"TX-30":{"state":"TX"},"TX-31":{"state":"TX"},"TX-32":{"state":"TX"},"TX-33":{"state":"TX"},"TX-34":{"state":"TX"},"TX-35":{"state":"TX"},"TX-36":{"state":"TX"},"UT-1":{"state":"UT"},"UT-2":{"state":"UT"},"UT-3":{"state":"UT"},"UT-4":{"state":"UT"},"VT-1":{"state":"VT"},"VA-1":{"state":"VA"},"VA-2":{"state":"VA"},"VA-3":{"state":"VA"},"VA-4":{"state":"VA"},"VA-5":{"state":"VA"},"VA-6":{"state":"VA"},"VA-7":{"state":"VA"},"VA-8":{"state":"VA"},"VA-9":{"state":"VA"},"VA-10":{"state":"VA"},"VA-11":{"state":"VA"},"WA-1":{"state":"WA"},"WA-2":{"state":"WA"},"WA-3":{"state":"WA"},"WA-4":{"state":"WA"},"WA-5":{"state":"WA"},"WA-6":{"state":"WA"},"WA-7":{"state":"WA"},"WA-8":{"state":"WA"},"WA-9":{"state":"WA"},"WA-10":{"state":"WA"},"WV-1":{"state":"WV"},"WV-2":{"state":"WV"},"WV-3":{"state":"WV"},"WI-1":{"state":"WI"},"WI-2":{"state":"WI"},"WI-3":{"state":"WI"},"WI-4":{"state":"WI"},"WI-5":{"state":"WI"},"WI-6":{"state":"WI"},"WI-7":{"state":"WI"},"WI-8":{"state":"WI"},"WY-1":{"state":"WY"}};
 
 csvdata['counties']={}
+
+csvdata['convert']['states']['ME-1']="M1";
+csvdata['convert']['states']['ME-2']="M2";
+csvdata['convert']['states']['NE-1']="N1";
+csvdata['convert']['states']['NE-2']="N2";
+csvdata['convert']['states']['NE-3']="N3";
+
 /*
 var districts = {'al': ['3', '2', '7', '5', '4', '1', '6'], 'ak': ['0'], 'az': ['6', '2', '9', '4', '1', '7', '5', '8', '3'], 'ar': ['2', '3', '4', '1'], 'ca': ['30', '6', '29', '34', '11', '5', '15', '28', '33', '17', '26', '25', '24', '23', '38', '48', '49', '45', '2', '43', '51', '22', '40', '44', '36', '42', '41', '35', '50', '37', '10', '27', '31', '9', '52', '53', '21', '18', '14', '13', '4', '32', '3', '8', '39', '47', '16', '19', '20', '7', '1', '12', '46'], 'co': ['2', '4', '3', '6', '5', '7', '1'], 'ct': ['1', '5', '3', '2', '4'], 'de': ['0'], 'fl': ['19', '20', '25', '26', '27', '11', '6', '4', '24', '22', '21', '7', '8', '17', '23', '5', '2', '18', '16', '13', '12', '9', '3', '10', '14', '15', '1'], 'ga': ['1', '7', '2', '6', '3', '13', '11', '12', '9', '14', '4', '8', '10', '5'], 'hi': ['1', '2'], 'id': ['1', '2'], 'il': ['2', '12', '15', '17', '13', '11', '4', '18', '1', '3', '7', '9', '6', '8', '5', '10', '14', '16'], 'in': ['4', '5', '2', '7', '1', '9', '3', '6', '8'], 'ia': ['1', '3', '4', '2'], 'ks': ['3', '1', '2', '4'], 'ky': ['6', '2', '3', '5', '1', '4'], 'la': ['5', '1', '6', '2', '3', '4'], 'me': ['2', '1'], 'md': ['4', '5', '1', '3', '7', '8', '6', '2'], 'ma': ['2', '1', '8', '9', '4', '6', '7', '5', '3'], 'mi': ['2', '3', '13', '4', '6', '12', '1', '11', '8', '5', '14', '10', '9', '7'], 'mn': ['2', '7', '1', '8', '3', '5', '6', '4'], 'ms': ['1', '3', '4', '2'], 'mo': ['8', '3', '7', '4', '6', '5', '2', '1'], 'mt': ['0'], 'ne': ['3', '2', '1'], 'nv': ['2', '4', '3', '1'], 'nh': ['1', '2'], 'nj': ['5', '11', '9', '3', '8', '7', '12', '1', '2', '4', '6', '10'], 'nm': ['1', '2', '3'], 'ny': ['22', '5', '6', '14', '12', '8', '7', '24', '23', '26', '20', '19', '17', '3', '11', '4', '9', '10', '27', '15', '13', '25', '21', '16', '2', '18', '1'], 'nc': ['3', '9', '12', '10', '7', '6', '2', '1', '11', '4', '13', '5', '8'], 'nd': ['0'], 'oh': ['4', '1', '16', '2', '12', '3', '15', '5', '6', '7', '13', '11', '14', '9', '8', '10'], 'ok': ['3', '4', '5', '2', '1'], 'or': ['4', '3', '2', '1', '5'], 'pa': ['9', '18', '8', '3', '10', '14', '7', '15', '12', '1', '17', '11', '13', '2', '5', '4', '16', '6'], 'ri': ['1', '2'], 'sc': ['7', '2', '6', '1', '3', '5', '4'], 'sd': ['0'], 'tn': ['8', '9', '6', '3', '7', '1', '2', '4', '5'], 'tx': ['26', '14', '6', '15', '18', '22', '9', '2', '7', '36', '10', '8', '29', '19', '27', '34', '32', '24', '33', '30', '4', '13', '1', '28', '35', '16', '5', '25', '23', '11', '12', '31', '3', '21', '20', '17'], 'ut': ['3', '2', '1', '4'], 'vt': ['0'], 'va': ['1', '2', '6', '4', '3', '11', '10', '5', '9', '8', '7'], 'wa': ['2', '3', '1', '10', '5', '7', '6', '4', '8', '9'], 'wv': ['1', '2', '3'], 'wi': ['8', '6', '5', '7', '1', '2', '3', '4'], 'wy': ['0']}
 
@@ -141,7 +148,7 @@ function loadAllData() {
 		});
 	
 		for (var i=1;i<data.data.length;i++){
-			if (data.data[i].length < 8){
+			if (data.data[i].length < 11){
 				continue;
 			}
 			csvdata['states'][data.data[i][0]]['ev10']=parseInt(data.data[i][8]);
@@ -157,6 +164,147 @@ function loadAllData() {
 		csvdata['states']["N1"]['ev10']=1;
 		csvdata['states']["N2"]['ev10']=1;
 		csvdata['states']["N3"]['ev10']=1;
+		
+		//console.log(JSON.stringify(csvdata['states']));
+	})
+	fs.readFile("2018vep.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+	
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 10){
+				continue;
+			}
+			csvdata['states'][data.data[i][0]]['vep']=parseInt(data.data[i][9]);
+		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
+	fs.readFile("election-forecasts-2020/presidential_state_toplines_2020.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+		var modeldate = data.data[1][3];
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 15){
+				continue;
+			}
+			if (data.data[i][3] != modeldate){
+				continue;
+			}
+			var state = csvdata['states'][data.data[i][7]];
+			if (state=='ME'){state="M0";}
+			if (state=='NE'){state="N0";}
+			csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
+			csvdata['states'][state]['538Preddelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*10;
+			csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+			csvdata['states'][state]['538vpi']=parseFloat(data.data[i][9]);
+			
+			if (state=='M0'){
+				state="ME";
+				csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
+				csvdata['states'][state]['538Preddelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*10;
+				csvdata['states'][state]['538vpi']=parseFloat(data.data[i][9]);
+				if (csvdata['states'][state]['538tipping']){
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+				}
+				else {
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+				}
+				
+			}
+			else if (state=='M1' || state =='M2'){
+				state="ME";
+				if (csvdata['states'][state]['538tipping']){
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+				}
+				else {
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+				}
+			}
+			if (state=='N0'){
+				state="NE";
+				csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
+				csvdata['states'][state]['538Preddelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*10;
+				csvdata['states'][state]['538vpi']=parseFloat(data.data[i][9]);
+				if (csvdata['states'][state]['538tipping']){
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+				}
+				else {
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+				}
+				
+			}
+			else if (state=='N1' || state =='N2' || state =='N3'){
+				state="NE";
+				if (csvdata['states'][state]['538tipping']){
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+				}
+				else {
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+				}
+			}
+			
+			
+		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
+	fs.readFile("data/538pred.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+		var modeldate = data.data[1][5];
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 10){
+				continue;
+			}
+			if (data.data[i][5] != data.data[i][4]){
+				continue;
+			}
+			if (data.data[i][6] != "polls-plus"){
+				continue;
+			}
+			var year = parseInt(data.data[i][0])-2000;
+			var state = csvdata['states'][data.data[i][2]];
+			
+			if (data.data[i][7] =="D"){
+				csvdata['states'][state]['538Preddwin'+year]=parseFloat(data.data[i][11]);
+				if (csvdata['states'][state]['538Preddelo'+year]){
+					csvdata['states'][state]['538Preddelo'+year]+=parseFloat(data.data[i][9])*10
+				}
+				else {
+					csvdata['states'][state]['538Preddelo'+year]=parseFloat(data.data[i][9])*10
+				}
+			}
+			else if (data.data[i][7] =="R"){
+				
+				if (csvdata['states'][state]['538Preddelo'+year]){
+					csvdata['states'][state]['538Preddelo'+year]-=parseFloat(data.data[i][9])*10
+				}
+				else {
+					csvdata['states'][state]['538Preddelo'+year]=-1*parseFloat(data.data[i][9])*10
+				}
+			}
+			
+			
+			
+			
+		}
 		console.log(JSON.stringify(csvdata['states']));
 	})
 	
