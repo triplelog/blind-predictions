@@ -282,7 +282,6 @@ function loadAllData() {
 			}
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
-			console.log(state);
 			if (data.data[i][7] =="D"){
 				csvdata['states'][state]['538Preddwin'+year]=parseFloat(data.data[i][11]);
 				if (csvdata['states'][state]['538Preddelo'+year]){
