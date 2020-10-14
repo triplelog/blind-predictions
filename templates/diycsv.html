@@ -40,12 +40,12 @@
 </body>
 <script src="js/tabulator.min.js"></script>
 <script>
-var tableData = {{tableData}};
+var tableData = {{tableData | dump | safe}};
 
 var table = new Tabulator("#csvTable", {
     height:"100%",
     data:tableData,
-    columns: {{ columns }},
+    columns: {{ columns | dump | safe}},
 });
 </script>
 
