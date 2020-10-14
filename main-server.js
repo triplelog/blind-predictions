@@ -148,14 +148,14 @@ function loadAllData() {
 		});
 	
 		for (var i=1;i<data.data.length;i++){
-			if (econPred20.data[i].length < 8){
+			if (data.data[i].length < 8){
 				continue;
 			}
 			if (data.data[i][4] != "0"){
 				continue;
 			}
 			var year = parseInt(data.data[i][0])-2000;
-			csvdata['states'][econPred20.data[i][3]]['econPreddelo'+year]=(parseFloat(econPred20.data[i][2])-.5)*2000;
+			csvdata['states'][data.data[i][3]]['econPreddelo'+year]=(parseFloat(data.data[i][2])-.5)*2000;
 		}
 		//console.log(JSON.stringify(csvdata['states']));
 	})
