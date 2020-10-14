@@ -34,8 +34,8 @@
 	<div>
 		Locations:
 		<select id="locations">
-			<option value="dc">States+DC</option>
-			<option value="mene">States+DC/ME/NE</option>
+			<option value="DC">States+DC</option>
+			<option value="MENE">States+DC/ME/NE</option>
 			<option value="50">50 States</option>
 		</select>
 		<button onclick="updateData()">Submit</button>
@@ -65,7 +65,6 @@ ws.onopen = function(evt) {
 }
 ws.onmessage = function(evt){
 	var allData = JSON.parse(evt.data);
-	console.log(allData);
 	tableData = allData.tableData;
 	
 	table.setColumns(allData.columns);

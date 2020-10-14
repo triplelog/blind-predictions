@@ -84,6 +84,12 @@ wss.on('connection', function connection(ws) {
 				if (locations == 50 && state == "DC"){
 					continue;
 				}
+				else if (locations == "DC" && (state.substr(1) == "0" || state.substr(1) == "1" || state.substr(1) == "2") ){
+					continue;
+				}
+				else if (locations == "MENE" && (state == "ME" || state == "NE") ){
+					continue;
+				}
 				var row = {};
 				for (var i=0;i<colArray.length;i++){
 					if (colArray[i].field == "id"){
