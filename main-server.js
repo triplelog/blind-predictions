@@ -44,6 +44,7 @@ const WebSocket = require('ws');
 const wss = new WebSocket.Server({ server });
 wss.on('connection', function connection(ws) {
 	var username = '';
+	var locations = "DC";
   	ws.on('message', function incoming(message) {
   		console.log(performance.now());
 		var dm = JSON.parse(message);
@@ -54,6 +55,9 @@ wss.on('connection', function connection(ws) {
 			}
 		}
 		else if (dm.type == "update"){
+			if (dm.locations){
+				locations = dm.locations;
+			}
 			
 			for (var state in csvdata['states']){
 				for (var col in csvdata['states'][state]){
@@ -72,7 +76,7 @@ wss.on('connection', function connection(ws) {
 	
 			var tableData = [];
 			for (var state in csvdata['states']){
-				if (dm.locations == "50" && state == "DC"){
+				if (locations == 50 && state == "DC"){
 					continue;
 				}
 				var row = csvdata['states'][state];
