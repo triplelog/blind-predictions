@@ -128,6 +128,35 @@ function loadAllData() {
 			csvdata['states'][econPred20.data[i][3]]['econPreddwin20']=parseFloat(econPred20.data[i][7]);
 			csvdata['states'][econPred20.data[i][3]]['econPreddelo20']=(parseFloat(econPred20.data[i][6])-.5)*2000;
 		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
+	fs.readFile("ev.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+	
+		for (var i=1;i<data.data.length;i++){
+			if (data.data[i].length < 8){
+				continue;
+			}
+			csvdata['states'][data.data[i][0]]['ev10']=parseInt(data.data[i][8]);
+			csvdata['states'][data.data[i][0]]['closing']=parseFloat(data.data[i][10]);
+			//csvdata['states'][data.data[i][0]]['closing']=parseFloat(data.data[i][10]);
+			csvdata['states'][data.data[i][0]]['name']=data.data[i][7];
+			csvdata['convert']['states'][data.data[i][7]]=data.data[i][0];
+		}
+		csvdata['states']["M0"]['ev10']=2;
+		csvdata['states']["M1"]['ev10']=1;
+		csvdata['states']["M2"]['ev10']=1;
+		csvdata['states']["N0"]['ev10']=2;
+		csvdata['states']["N1"]['ev10']=1;
+		csvdata['states']["N2"]['ev10']=1;
+		csvdata['states']["N3"]['ev10']=1;
 		console.log(JSON.stringify(csvdata['states']));
 	})
 	
