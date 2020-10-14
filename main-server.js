@@ -280,6 +280,9 @@ function loadAllData() {
 			if (data.data[i][6] != "polls-plus" && data.data[i][6] != ""){
 				continue;
 			}
+			if (data.data[i][2] == "US"){
+				continue;
+			}
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
 			if (data.data[i][7] =="D"){
