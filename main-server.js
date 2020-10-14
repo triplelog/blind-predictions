@@ -137,6 +137,28 @@ function loadAllData() {
 		}
 		//console.log(JSON.stringify(csvdata['states']));
 	})
+	fs.readFile("data/state_priors_08_12_16.csv", 'utf8', function(err, fileData) {
+		if (err){
+			crash;
+		}
+		var data = Papa.parse(fileData, {
+			delimiter: ",",
+			skipEmptyLines: false,
+			quoteChar: '"',
+		});
+	
+		for (var i=1;i<data.data.length;i++){
+			if (econPred20.data[i].length < 8){
+				continue;
+			}
+			if (data.data[i][4] != "0"){
+				continue;
+			}
+			var year = parseInt(data.data[i][0])-2000;
+			csvdata['states'][econPred20.data[i][3]]['econPreddelo'+year]=(parseFloat(econPred20.data[i][2])-.5)*2000;
+		}
+		//console.log(JSON.stringify(csvdata['states']));
+	})
 	fs.readFile("ev.csv", 'utf8', function(err, fileData) {
 		if (err){
 			crash;
@@ -295,6 +317,7 @@ function loadAllData() {
 			else {
 				csvdata['states'][state]['538PredSendwin20']=parseFloat(data.data[i][25]);
 				csvdata['states'][state]['538PredSendelo20']=parseFloat(data.data[i][65])*10;
+				csvdata['states'][state]['538tippingSen']=parseFloat(data.data[i][27]);
 			}
 			
 			
