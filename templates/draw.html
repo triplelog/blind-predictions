@@ -382,6 +382,7 @@ function displaySVG(){
 		if (rwin > -1 && rwin < .5){
 			if (half > 0){
 				svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="gray" stroke-width=".4" d="'+path+'"/>';
+				svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".3" d="'+path+'"/>';
 			}
 			else {
 				svg += '<path fill="hsl(240,100%,'+(50+(rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
@@ -391,6 +392,7 @@ function displaySVG(){
 		else if (rwin > -1 && rwin > .5){
 			if (half > 0){
 				svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="gray" stroke-width=".4" d="'+path+'"/>';
+				svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="white" stroke-width=".3" d="'+path+'"/>';
 			}
 			else {
 				svg += '<path fill="hsl(0,100%,'+(50+(1-rwin)*100)+'%)" stroke="white" stroke-width=".125" d="'+path+'"/>';
