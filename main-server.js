@@ -98,7 +98,7 @@ wss.on('connection', function connection(ws) {
 				}
 			}
 			else if (dm.computecolumn){
-				var newColumn = [dm.formula,1,false,dm.name];
+				var newColumn = [dm.computecolumn,1,false,dm.name];
 				newColumn.push(dm.name);
 				myColumns.push(newColumn);
 				colArray = [{'title':'ID','field':'id'}];

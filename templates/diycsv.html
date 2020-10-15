@@ -167,7 +167,7 @@ function addColumn() {
 	ws.send(JSON.stringify(jsonmessage));
 	var el = document.getElementById('columns');
 	var newDiv = document.createElement('div');
-	newDiv.textContent = letters[columns.length-1] + " = "+name+": "+document.getElementById("col1").textContent+" "+document.getElementById("col2").textContent+" "+document.getElementById("col3").textContent;
+	newDiv.textContent = letters[columns.length-1] + " = "+name+": "+document.getElementById("col1").querySelector('option:checked').textContent+" "+document.getElementById("col2").querySelector('option:checked').textContent+" "+document.getElementById("col3").querySelector('option:checked').textContent;
 	el.appendChild(newDiv);
 }
 function computeColumn() {
