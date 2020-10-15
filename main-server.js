@@ -580,6 +580,7 @@ function loadAllData() {
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
 			var str = '538PredSen';
+			var pstr = '538Sen';
 			if (data.data[i][4] == "TRUE" || data.data[i][4] == "1"){
 				str += 'Spec';
 			}
