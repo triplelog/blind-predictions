@@ -83,17 +83,34 @@ var table = new Tabulator("#csvTable", {
 
 var colMap = {{ colMap | dump | safe }};
 document.getElementById('col1').addEventListener('change',updateOptions2);
+document.getElementById('col2').addEventListener('change',updateOptions3);
 
 function updateOptions2(){
 	var col1 = document.getElementById("col1").value;
 	var el = document.getElementById("col2");
 	el.innerHTML = "";
-	console.log(colMap);
-	console.log(col1);
 	for (var i in colMap[col1]){
+		if (i == 'displayName'){
+			continue;
+		}
 		var newEl = document.createElement('option');
 		newEl.value = i;
-		newEl.textContent = colMap[col1][i][2];
+		newEl.textContent = colMap[col1][i].displayName;
+		el.appendChild(newEl);
+	}
+}
+function updateOptions3(){
+	var col1 = document.getElementById("col1").value;
+	var col2 = document.getElementById("col2").value;
+	var el = document.getElementById("col3");
+	el.innerHTML = "";
+	for (var i in colMap[col1][col2]){
+		if (i == 'displayName'){
+			continue;
+		}
+		var newEl = document.createElement('option');
+		newEl.value = i;
+		newEl.textContent = colMap[col1][col2][i][2];
 		el.appendChild(newEl);
 	}
 }
