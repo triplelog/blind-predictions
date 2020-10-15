@@ -1326,5 +1326,59 @@ function postfixify(input_str) {
 	//Convert column names
 	console.log(twoparts[0]);
 	console.log(twoparts[1]);
+	var intArray = twoparts[0].split("_");
+	
+	var solved = solvePostfix(twoparts[1],intArray);
+	console.log(solved);
+}
+
+function solvePostfix(exp, intArray) {
+
+
+  	var currentIndex = 0;
+  	var arrayIndex = 0;
+	var stack = [];
+	for (var i = 0; i<exp.length; i++) {
+		stack.push(0);
+	}
+    for (var i = 0; i<exp.length; i++) { 
+        if (exp[i] == '#') {
+        	stack[currentIndex] = intArray[arrayIndex];
+        	currentIndex++;
+        	arrayIndex++;
+  
+        } else 
+        { 
+            switch (exp[i]) 
+            { 
+	            //case '>': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] > stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break; 
+	            //case '<': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] < stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break;
+	            //case '[': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] <= stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break; 
+	            //case ']': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] >= stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break;  
+	            //case '=': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] == stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break; 
+	            //case '!': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] != stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break; 
+	            case '+': stack[currentIndex - 2] = stack[currentIndex - 2] + stack[currentIndex - 1]; break; 
+	            case '-': stack[currentIndex - 2] = stack[currentIndex - 2] - stack[currentIndex - 1]; break; 
+	            case '*': stack[currentIndex - 2] = stack[currentIndex - 2] * stack[currentIndex - 1]; break; 
+	            case '/': stack[currentIndex - 2] = stack[currentIndex - 2] / stack[currentIndex - 1]; break;
+	            case '=': stack[currentIndex - 2] = stack[currentIndex - 2] == stack[currentIndex - 1]; break;
+	            //case '%': stack[currentIndex - 2] = stack[currentIndex - 2] % stack[currentIndex - 1]; break; 
+
+	            //case '-': if (stack[currentIndex - 2][1] == stack[currentIndex - 1][1]) {stack[currentIndex - 2][0] -= stack[currentIndex - 1][0];} else {retptr = opFrac(stack[currentIndex - 2],stack[currentIndex - 1],1); stack[currentIndex - 2][0] = retptr[0]; stack[currentIndex - 2][1] = retptr[1];}; break; 
+	            //case '*': if (stack[currentIndex - 1][1] == 1) {stack[currentIndex - 2][0] *= stack[currentIndex - 1][0];} else {retptr = opFrac(stack[currentIndex - 2],stack[currentIndex - 1],2); stack[currentIndex - 2][0] = retptr[0]; stack[currentIndex - 2][1] = retptr[1];}; break; 
+	            //case '/': if (stack[currentIndex - 1][1] == 1) {stack[currentIndex - 2][1] *= stack[currentIndex - 1][0];} else {retptr = opFrac(stack[currentIndex - 2],stack[currentIndex - 1],3); stack[currentIndex - 2][0] = retptr[0]; stack[currentIndex - 2][1] = retptr[1];}; break; 
+	            //case '&': stack[currentIndex - 2][2] = (stack[currentIndex - 2][2] + stack[currentIndex - 1][2] > 1) ? 1 : -1; stack[currentIndex - 2][0] = (stack[currentIndex - 2][0] != 1) ? stack[currentIndex - 2][0] : stack[currentIndex - 1][0]; stack[currentIndex - 2][1] = (stack[currentIndex - 2][1] != 1) ? stack[currentIndex - 2][1] : stack[currentIndex - 1][1]; break; 
+	            //case '|': stack[currentIndex - 2][2] = (stack[currentIndex - 2][2] + stack[currentIndex - 1][2] > -1) ? 1 : -1; stack[currentIndex - 2][0] = (stack[currentIndex - 2][0] != 1 && stack[currentIndex - 2][2] == 1) ? stack[currentIndex - 2][0] : stack[currentIndex - 1][0]; stack[currentIndex - 2][1] = (stack[currentIndex - 2][1] != 1 && stack[currentIndex - 2][2] == 1) ? stack[currentIndex - 2][1] : stack[currentIndex - 1][1]; break; 
+	            //multiandcase '&': if (stack[currentIndex - 5] > 0 && stack[currentIndex - 4] > 0 && stack[currentIndex - 3] > 0 && stack[currentIndex - 2] > 0 && stack[currentIndex - 1] > 0) {stack[currentIndex - 5] = 1;} else {stack[currentIndex - 5] = -1;}; currentIndex--; currentIndex--; currentIndex--; currentIndex--; break; 
+            
+            } 
+            currentIndex--;
+        } 
+    } 
+
+
+
+	return stack[0];
 
 }
+
