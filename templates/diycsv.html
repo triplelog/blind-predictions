@@ -88,6 +88,8 @@ function updateOptions2(){
 	var col1 = document.getElementById("col1").value;
 	var el = document.getElementById("col2");
 	el.innerHTML = "";
+	console.log(colMap);
+	console.log(col1);
 	for (var i in colMap[col1]){
 		var newEl = document.createElement('option');
 		newEl.value = i;
