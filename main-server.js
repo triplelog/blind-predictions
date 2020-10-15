@@ -1170,7 +1170,7 @@ app.get(['*'],
 
 
 function makePost(infixexpr) {
-	prec = {}
+	var prec = {}
 	prec["*"] = 4
 	prec["/"] = 4
 	prec["+"] = 3
@@ -1184,12 +1184,12 @@ function makePost(infixexpr) {
 	prec["&"] = 1
 	prec["|"] = 0
 	prec["("] = -1
-	opStack = []
-	postfixList = []
-	intstr = ''
-	expstr = ''
-	tokenList = []
-	temptoken = ''
+	var opStack = [];
+	var postfixList = [];
+	var intstr = '';
+	var expstr = '';
+	var tokenList = [];
+	var temptoken = '';
 	for (var i=0;i<infixexpr.length;i++){
 		var ie = infixexpr[i];
 		if ("-0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ".indexOf(ie) > -1){
@@ -1216,7 +1216,7 @@ function makePost(infixexpr) {
 			opStack.push(token)
 		}
 		else if (token == ')'){
-			topToken = opStack.pop()
+			var topToken = opStack.pop()
 			while (topToken != '('){
 				postfixList.push(topToken)
 				topToken = opStack.pop()
@@ -1246,17 +1246,17 @@ function makePost(infixexpr) {
 		}
 	}
 	intstr = intstr.substring(0,intstr.length-1)
-	return [intstr,expstr]
+	return [intstr,expstr];
 
 }
 
 function replaceDecimals(istr){
-	dindex = istr.indexOf('.');
+	var dindex = istr.indexOf('.');
 	while (dindex >-1){
-		intpart = 0;
-		decpart = 0;
-		denom = 1;
-		strparts = [dindex,dindex+1];
+		var intpart = 0;
+		var decpart = 0;
+		var denom = 1;
+		var strparts = [dindex,dindex+1];
 		for (var i=1;i<dindex+1;i++){
 			if ("0123456789".indexOf(istr[dindex-i]) > -1){
 				intpart += parseInt(istr[dindex-i])*Math.pow(10,i-1);
@@ -1281,7 +1281,7 @@ function replaceDecimals(istr){
 }
 
 function replaceNegatives(istr){
-	dindex = istr.indexOf('-')
+	var dindex = istr.indexOf('-')
 	while (dindex >-1){
 		if (dindex == 0){
 			if ("0123456789".indexOf(istr[1]) == -1) {
