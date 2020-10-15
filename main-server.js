@@ -105,8 +105,7 @@ wss.on('connection', function connection(ws) {
 						row['id']=state;
 					}
 					else {
-						row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field],colArray[i].round);
-						console.log(csvdata['states'][state][colArray[i].field]);
+						row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field]*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);
 					}
 				}
 				tableData.push(row);
