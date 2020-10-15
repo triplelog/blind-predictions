@@ -82,7 +82,12 @@ wss.on('connection', function connection(ws) {
 				for (var i=0;i<myColumns.length;i++){
 					for (var col in columns){
 						if (col == myColumns[i][0]){
-							colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+							if (myColumns[i][1]< 0){
+								colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"string", hozAlign:"left"});
+							}
+							else {
+								colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+							}
 						}
 					}
 				}
