@@ -76,12 +76,13 @@ wss.on('connection', function connection(ws) {
 			}
 			if (dm.addcolumn){
 				var newColumn = colMap[dm.addcolumn[0]][dm.addcolumn[1]][dm.addcolumn[2]];
+				newColumn.push(dm.name);
 				myColumns.push(newColumn);
 				colArray = [{'title':'ID','field':'id'}];
 				for (var i=0;i<myColumns.length;i++){
 					for (var col in columns){
 						if (col == myColumns[i][0]){
-							colArray.push({'title':dm.name,'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+							colArray.push({'title':myColumns[i][2],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
 						}
 					}
 				}
@@ -140,15 +141,23 @@ csvdata['convert']['states']['ME-2']="M2";
 csvdata['convert']['states']['NE-1']="N1";
 csvdata['convert']['states']['NE-2']="N2";
 csvdata['convert']['states']['NE-3']="N3";
-var colMap ={'predictions':{},'results':{},'demographics':{}};
-colMap['predictions']['econPresDwin']={};
-colMap['predictions']['econPresRwin']={};
-colMap['predictions']['econPresDmov']={};
-colMap['predictions']['econPresRmov']={};
-colMap['predictions']['538Pres']={};
-colMap['predictions']['538Sen']={};
-colMap['results']['dPres']={};
-colMap['results']['rPres']={};
+var colMap ={'predictions':{},'results':{},'info':{}};
+colMap['predictions']['displayName']="Predictions";
+colMap['results']['displayName']="Results";
+colMap['info']['displayName']="Info";
+colMap['predictions']['econPresDwin']={'displayName':"Economist Pres D Win%"};
+colMap['predictions']['econPresRwin']={'displayName':"Economist Pres R Win%"};
+colMap['predictions']['econPresDmov']={'displayName':"Economist Pres D MOV"};
+colMap['predictions']['econPresRmov']={'displayName':"Economist Pres R MOV"};
+colMap['predictions']['538PresDwin']={'displayName':"538 Pres D Win%"};
+colMap['predictions']['538PresRwin']={'displayName':"538 Pres R Win%"};
+colMap['predictions']['538PresDmov']={'displayName':"538 Pres D MOV"};
+colMap['predictions']['538PresRmov']={'displayName':"538 Pres R MOV"};
+colMap['predictions']['538Sen']={'displayName':"538 Sen"};
+colMap['results']['dPres']={'displayName':"Pres D MOV"};
+colMap['results']['rPres']={'displayName':"Pres R MOV"};
+colMap['info'][2020]={'displayName':"2020"};
+
 /*
 var districts = {'al': ['3', '2', '7', '5', '4', '1', '6'], 'ak': ['0'], 'az': ['6', '2', '9', '4', '1', '7', '5', '8', '3'], 'ar': ['2', '3', '4', '1'], 'ca': ['30', '6', '29', '34', '11', '5', '15', '28', '33', '17', '26', '25', '24', '23', '38', '48', '49', '45', '2', '43', '51', '22', '40', '44', '36', '42', '41', '35', '50', '37', '10', '27', '31', '9', '52', '53', '21', '18', '14', '13', '4', '32', '3', '8', '39', '47', '16', '19', '20', '7', '1', '12', '46'], 'co': ['2', '4', '3', '6', '5', '7', '1'], 'ct': ['1', '5', '3', '2', '4'], 'de': ['0'], 'fl': ['19', '20', '25', '26', '27', '11', '6', '4', '24', '22', '21', '7', '8', '17', '23', '5', '2', '18', '16', '13', '12', '9', '3', '10', '14', '15', '1'], 'ga': ['1', '7', '2', '6', '3', '13', '11', '12', '9', '14', '4', '8', '10', '5'], 'hi': ['1', '2'], 'id': ['1', '2'], 'il': ['2', '12', '15', '17', '13', '11', '4', '18', '1', '3', '7', '9', '6', '8', '5', '10', '14', '16'], 'in': ['4', '5', '2', '7', '1', '9', '3', '6', '8'], 'ia': ['1', '3', '4', '2'], 'ks': ['3', '1', '2', '4'], 'ky': ['6', '2', '3', '5', '1', '4'], 'la': ['5', '1', '6', '2', '3', '4'], 'me': ['2', '1'], 'md': ['4', '5', '1', '3', '7', '8', '6', '2'], 'ma': ['2', '1', '8', '9', '4', '6', '7', '5', '3'], 'mi': ['2', '3', '13', '4', '6', '12', '1', '11', '8', '5', '14', '10', '9', '7'], 'mn': ['2', '7', '1', '8', '3', '5', '6', '4'], 'ms': ['1', '3', '4', '2'], 'mo': ['8', '3', '7', '4', '6', '5', '2', '1'], 'mt': ['0'], 'ne': ['3', '2', '1'], 'nv': ['2', '4', '3', '1'], 'nh': ['1', '2'], 'nj': ['5', '11', '9', '3', '8', '7', '12', '1', '2', '4', '6', '10'], 'nm': ['1', '2', '3'], 'ny': ['22', '5', '6', '14', '12', '8', '7', '24', '23', '26', '20', '19', '17', '3', '11', '4', '9', '10', '27', '15', '13', '25', '21', '16', '2', '18', '1'], 'nc': ['3', '9', '12', '10', '7', '6', '2', '1', '11', '4', '13', '5', '8'], 'nd': ['0'], 'oh': ['4', '1', '16', '2', '12', '3', '15', '5', '6', '7', '13', '11', '14', '9', '8', '10'], 'ok': ['3', '4', '5', '2', '1'], 'or': ['4', '3', '2', '1', '5'], 'pa': ['9', '18', '8', '3', '10', '14', '7', '15', '12', '1', '17', '11', '13', '2', '5', '4', '16', '6'], 'ri': ['1', '2'], 'sc': ['7', '2', '6', '1', '3', '5', '4'], 'sd': ['0'], 'tn': ['8', '9', '6', '3', '7', '1', '2', '4', '5'], 'tx': ['26', '14', '6', '15', '18', '22', '9', '2', '7', '36', '10', '8', '29', '19', '27', '34', '32', '24', '33', '30', '4', '13', '1', '28', '35', '16', '5', '25', '23', '11', '12', '31', '3', '21', '20', '17'], 'ut': ['3', '2', '1', '4'], 'vt': ['0'], 'va': ['1', '2', '6', '4', '3', '11', '10', '5', '9', '8', '7'], 'wa': ['2', '3', '1', '10', '5', '7', '6', '4', '8', '9'], 'wv': ['1', '2', '3'], 'wi': ['8', '6', '5', '7', '1', '2', '3', '4'], 'wy': ['0']}
 
@@ -191,10 +200,10 @@ function loadAllData() {
 			csvdata['states'][econPred16.data[i][0]]['econPreddmov16']=(parseFloat(econPred16.data[i][1])-.5)*200;
 			csvdata['states'][econPred16.data[i][0]]['econPredrmov16']=(parseFloat(econPred16.data[i][1])-.5)*-200;
 		}
-		colMap['predictions']['econPresDwin'][2016]=['econPreddwin16',1];
-		colMap['predictions']['econPresRwin'][2016]=['econPredrwin16',1];
-		colMap['predictions']['econPresDmov'][2016]=['econPreddmov16',1];
-		colMap['predictions']['econPresRmov'][2016]=['econPredrmov16',1];
+		colMap['predictions']['econPresDwin'][2016]=['econPreddwin16',1,2016];
+		colMap['predictions']['econPresRwin'][2016]=['econPredrwin16',1,2016];
+		colMap['predictions']['econPresDmov'][2016]=['econPreddmov16',1,2016];
+		colMap['predictions']['econPresRmov'][2016]=['econPredrmov16',1,2016];
 		//console.log(JSON.stringify(csvdata['convert']['states']));
 	})
 	fs.readFile("predictions.csv", 'utf8', function(err, fileData) {
@@ -218,10 +227,10 @@ function loadAllData() {
 			csvdata['states'][econPred20.data[i][3]]['econPreddmov20']=(parseFloat(econPred20.data[i][6])-.5)*200;
 			csvdata['states'][econPred20.data[i][3]]['econPredrmov20']=(parseFloat(econPred20.data[i][6])-.5)*-200;
 		}
-		colMap['predictions']['econPresDwin'][2020]=['econPreddwin20',1];
-		colMap['predictions']['econPresRwin'][2020]=['econPredrwin20',1];
-		colMap['predictions']['econPresDmov'][2020]=['econPreddmov20',1];
-		colMap['predictions']['econPresRmov'][2020]=['econPredrmov20',1];
+		colMap['predictions']['econPresDwin'][2020]=['econPreddwin20',1,2020];
+		colMap['predictions']['econPresRwin'][2020]=['econPredrwin20',1,2020];
+		colMap['predictions']['econPresDmov'][2020]=['econPreddmov20',1,2020];
+		colMap['predictions']['econPresRmov'][2020]=['econPredrmov20',1,2020];
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("data/state_priors_08_12_16.csv", 'utf8', function(err, fileData) {
@@ -243,7 +252,13 @@ function loadAllData() {
 			}
 			var year = parseInt(data.data[i][0])-2000;
 			csvdata['states'][data.data[i][1]]['econPreddelo'+year]=(parseFloat(data.data[i][2])-.5)*2000;
+			csvdata['states'][data.data[i][1]]['econPredrelo'+year]=(parseFloat(data.data[i][2])-.5)*-2000;
+			csvdata['states'][data.data[i][1]]['econPreddmov'+year]=(parseFloat(data.data[i][2])-.5)*200;
+			csvdata['states'][data.data[i][1]]['econPredrmov'+year]=(parseFloat(data.data[i][2])-.5)*-200;
+			colMap['predictions']['econPresDmov'][parseInt(data.data[i][0])]=['econPreddmov'+year,1,year];
+			colMap['predictions']['econPresRmov'][parseInt(data.data[i][0])]=['econPredrmov'+year,1,year];
 		}
+		
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("ev.csv", 'utf8', function(err, fileData) {
@@ -287,6 +302,9 @@ function loadAllData() {
 		csvdata['states']["N1"]['closing']=csvdata['states']['NE']['closing'];
 		csvdata['states']["N2"]['closing']=csvdata['states']['NE']['closing'];
 		csvdata['states']["N3"]['closing']=csvdata['states']['NE']['closing'];
+		colMap['info'][2020]['ev']=['ev10',0,"Electoral Votes"];
+		colMap['info'][2020]['closing']=['closing',0,"Closing Time"];
+		colMap['info'][2020]['name']=['name',0,'Name'];
 		
 		//console.log(JSON.stringify(csvdata['states']));
 	})
@@ -983,7 +1001,7 @@ app.get(['/','/diycsv','/diycsv.html'],
 		
 		
 		res.write(nunjucks.render('templates/diycsv.html',{
-
+			colMap:colMap,
 		}));
 		res.end();
 	}

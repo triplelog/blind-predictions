@@ -44,9 +44,9 @@
 			Add column:
 			<input type="text" id="colName"></input>
 			<select id="col1">
-				<option value="results">Results</option>
-				<option value="predictions">Predictions</option>
-				<option value="demographics">Demographics</option>
+				{% for first, val in colMap %}
+				<option value="{{ first }}">{{ val.displayName }}</option>
+				{% endfor %}
 			</select>
 			<select id="col2">
 				<option value="econPresDwin">Economist Pres D win%</option>
