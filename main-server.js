@@ -98,8 +98,8 @@ wss.on('connection', function connection(ws) {
 				}
 			}
 			else if (dm.computecolumn){
-				var newColumn = [postfixify(dm.computecolumn),1,false,dm.name];
-				newColumn.push(dm.name);
+				var postfixed = postfixify(dm.computecolumn);
+				var newColumn = [postfixed,1,false,dm.name];
 				myColumns.push(newColumn);
 				colArray = [{'title':'ID','field':'id'}];
 				for (var i=0;i<myColumns.length;i++){
@@ -159,7 +159,24 @@ wss.on('connection', function connection(ws) {
 				}
 				for (var i=0;i<colArray.length;i++){
 					if (colArray[i].formula){
-						row[colArray[i].field]=valMap[colArray[i].formula];
+						var floatArray = [];
+						var strArray = colArray[i].formula[0];
+						for (var i=0;i<strArray.length;i++){
+							if (strArray[i] == ""){
+								continue;
+							}
+							else if (valMap[strArray[i]] || valMap[strArray[i]] == 0){
+								floatArray.push(valMap[strArray[i]]);
+							}
+							else {
+								floatArray.push(parseFloat(strArray[i]));
+							}
+						}
+	
+	
+						var solved = solvePostfix(colArray[i].formula[1],floatArray);
+						console.log(floatArray,colArray[i].formula);
+						row[colArray[i].field]=solved;
 
 					}
 				}
@@ -1323,13 +1340,10 @@ function postfixify(input_str) {
 	input_str = replaceDecimals(input_str);
 	input_str = replaceNegatives(input_str);
 	var twoparts = makePost(input_str);
-	//Convert column names
+	twoparts[0] = twoparts[0].split("_");
 	console.log(twoparts[0]);
-	console.log(twoparts[1]);
-	var intArray = twoparts[0].split("_");
+	return twoparts;
 	
-	var solved = solvePostfix(twoparts[1],intArray);
-	console.log(solved);
 }
 
 function solvePostfix(exp, intArray) {
