@@ -40,6 +40,8 @@
 			<option value="SEN">Senate</option>
 		</select>
 		<button onclick="updateLocations()">Submit</button>
+		<div id="columns">
+		</div>
 		<div>
 			Add column:
 			<input type="text" id="colName"></input>
@@ -75,7 +77,7 @@
 <script src="js/tabulator.min.js"></script>
 <script>
 var tableData = [];
-
+var columns = [];
 var table = new Tabulator("#csvTable", {
     data:tableData,
     columns:[{'title':'ID','field':'id'}],
@@ -141,6 +143,7 @@ ws.onmessage = function(evt){
 	
 	table.setColumns(allData.columns);
 	table.setData(tableData);
+	columns = allData.columns;
 }
 
 function updateLocations() {
@@ -152,8 +155,13 @@ function addColumn() {
 	var col1 = document.getElementById("col1").value;
 	var col2 = document.getElementById("col2").value;
 	var col3 = document.getElementById("col3").value;
-	var jsonmessage = {'type':'update','addcolumn':[col1,col2,col3],'name':document.getElementById('colName').value};
+	var name = document.getElementById('colName').value;
+	var jsonmessage = {'type':'update','addcolumn':[col1,col2,col3],'name':name};
 	ws.send(JSON.stringify(jsonmessage));
+	var el = document.getElementById('columns');
+	var newDiv = document.createElement('div');
+	newDiv.textContent = columns.length + " = "+name+": "+col1 +" "+col2+" "+col3;
+	el.appendChild(newDiv);
 }
 </script>
 
