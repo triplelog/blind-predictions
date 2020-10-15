@@ -44,6 +44,7 @@
 			Add column:
 			<input type="text" id="colName"></input>
 			<select id="col1">
+				<option value="">Type</option>
 				{% for first, val in colMap %}
 				<option value="{{ first }}">{{ val.displayName }}</option>
 				{% endfor %}
@@ -79,6 +80,22 @@ var table = new Tabulator("#csvTable", {
     data:tableData,
     columns:[{'title':'ID','field':'id'}],
 });
+
+var colMap = {{ colMap | dump | safe }};
+document.getElementById('col1').addEventListener('change',updateOptions2);
+
+function updateOptions2(){
+	var col1 = document.getElementById("col1").value;
+	var el = document.getElementById("col2");
+	el.innerHTML = "";
+	for (var i in colMap[col1]){
+		var newEl = document.createElement('option');
+		newEl.value = i;
+		newEl.textContent = colMap[col1][i][2];
+		el.appendChild(newEl);
+	}
+}
+
 
 
 var ws = new WebSocket('wss://inlinemath.com:8081');
