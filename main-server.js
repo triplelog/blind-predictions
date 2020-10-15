@@ -163,9 +163,16 @@ colMap['predictions']['538PresDwin']={'displayName':"538 Pres D Win%"};
 colMap['predictions']['538PresRwin']={'displayName':"538 Pres R Win%"};
 colMap['predictions']['538PresDmov']={'displayName':"538 Pres D MOV"};
 colMap['predictions']['538PresRmov']={'displayName':"538 Pres R MOV"};
-colMap['predictions']['538Sen']={'displayName':"538 Sen"};
-colMap['results']['dPres']={'displayName':"Pres D MOV"};
-colMap['results']['rPres']={'displayName':"Pres R MOV"};
+colMap['predictions']['538SenDwin']={'displayName':"538 Senate D Win%"};
+colMap['predictions']['538SenRwin']={'displayName':"538 Senate R Win%"};
+colMap['predictions']['538SenDmov']={'displayName':"538 Senate D MOV"};
+colMap['predictions']['538SenRmov']={'displayName':"538 Senate R MOV"};
+colMap['predictions']['538SenTipping']={'displayName':"538 Senate Tipping State"};
+colMap['predictions']['538PresTipping']={'displayName':"538 Pres Tipping State"};
+colMap['results']['dPres']={'displayName':"Pres D Votes"};
+colMap['results']['rPres']={'displayName':"Pres R Votes"};
+colMap['results']['dmovPres']={'displayName':"Pres D MOV"};
+colMap['results']['rmovPres']={'displayName':"Pres R MOV"};
 colMap['info'][2020]={'displayName':"2020"};
 
 /*
@@ -334,6 +341,7 @@ function loadAllData() {
 			}
 			csvdata['states'][data.data[i][0]]['vep']=parseInt(data.data[i][8]);
 		}
+		colMap['info'][2020]['vep']=['vep',0,'Eligible Voter Population'];
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("data/presidential_state_toplines_2020.csv", 'utf8', function(err, fileData) {
@@ -357,58 +365,76 @@ function loadAllData() {
 			var state = csvdata['convert']['states'][data.data[i][7].toUpperCase()];
 			if (state=='ME'){state="M0";}
 			if (state=='NE'){state="N0";}
-			csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
+			csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11])*100;
 			csvdata['states'][state]['538Preddelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*10;
-			csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+			csvdata['states'][state]['538Predrwin20']=100-parseFloat(data.data[i][11])*100;
+			csvdata['states'][state]['538Predrelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*-10;
+			csvdata['states'][state]['538Preddmov20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]));
+			csvdata['states'][state]['538Predrmov20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*-1;
+			
+			csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8])*100;
 			csvdata['states'][state]['538vpi']=parseFloat(data.data[i][9]);
 			
 			if (state=='M0'){
 				state="ME";
-				csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
+				csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11])*100;
 				csvdata['states'][state]['538Preddelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*10;
+				csvdata['states'][state]['538Predrwin20']=100-parseFloat(data.data[i][11])*100;
+				csvdata['states'][state]['538Predrelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*-10;
+				csvdata['states'][state]['538Preddmov20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]));
+				csvdata['states'][state]['538Predrmov20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*-1;
 				csvdata['states'][state]['538vpi']=parseFloat(data.data[i][9]);
 				if (csvdata['states'][state]['538tipping']){
-					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8])*100;
 				}
 				else {
-					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8])*100;
 				}
 				
 			}
 			else if (state=='M1' || state =='M2'){
 				state="ME";
 				if (csvdata['states'][state]['538tipping']){
-					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8])*100;
 				}
 				else {
-					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8])*100;
 				}
 			}
 			if (state=='N0'){
 				state="NE";
-				csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11]);
+				csvdata['states'][state]['538Preddwin20']=parseFloat(data.data[i][11])*100;
 				csvdata['states'][state]['538Preddelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*10;
+				csvdata['states'][state]['538Predrwin20']=100-parseFloat(data.data[i][11])*100;
+				csvdata['states'][state]['538Predrelo20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*-10;
+				csvdata['states'][state]['538Preddmov20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]));
+				csvdata['states'][state]['538Predrmov20']=(parseFloat(data.data[i][14])-parseFloat(data.data[i][13]))*-1;
 				csvdata['states'][state]['538vpi']=parseFloat(data.data[i][9]);
 				if (csvdata['states'][state]['538tipping']){
-					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8])*100;
 				}
 				else {
-					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8])*100;
 				}
 				
 			}
 			else if (state=='N1' || state =='N2' || state =='N3'){
 				state="NE";
 				if (csvdata['states'][state]['538tipping']){
-					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']+=parseFloat(data.data[i][8])*100;
 				}
 				else {
-					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8]);
+					csvdata['states'][state]['538tipping']=parseFloat(data.data[i][8])*100;
 				}
 			}
 			
 			
 		}
+		colMap['predictions']['538PresDwin'][2020]=['538Preddwin20',1,2020];
+		colMap['predictions']['538PresRwin'][2020]=['538Predrwin20',1,2020];
+		colMap['predictions']['538PresDmov'][2020]=['538Preddmov20',1,2020];
+		colMap['predictions']['538PresRmov'][2020]=['538Predrmov20',1,2020];
+		colMap['predictions']['538PresTipping'][2020]=['538tipping',1,2020];
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("data/senate_state_toplines_2020.csv", 'utf8', function(err, fileData) {
@@ -444,17 +470,21 @@ function loadAllData() {
 				}
 			}
 			else {
-				csvdata['states'][state]['538PredSendwin20']=parseFloat(data.data[i][25]);
+				csvdata['states'][state]['538PredSendwin20']=parseFloat(data.data[i][25])*100;
 				csvdata['states'][state]['538PredSendelo20']=parseFloat(data.data[i][65])*10;
+				csvdata['states'][state]['538PredSendmov20']=parseFloat(data.data[i][65]);
+				csvdata['states'][state]['538PredSenrwin20']=100-parseFloat(data.data[i][25])*100;
+				csvdata['states'][state]['538PredSenrelo20']=parseFloat(data.data[i][65])*-10;
+				csvdata['states'][state]['538PredSenrmov20']=parseFloat(data.data[i][65])*-1;
 				csvdata['states'][state]['538tippingSen']=parseFloat(data.data[i][27]);
 			}
-			
-			
-			
-			
-			
-			
+		
 		}
+		colMap['predictions']['538SenDwin'][2020]=['538PredSendwin20',1,2020];
+		colMap['predictions']['538SenRwin'][2020]=['538PredSenrwin20',1,2020];
+		colMap['predictions']['538SenDmov'][2020]=['538PredSendmov20',1,2020];
+		colMap['predictions']['538SenRmov'][2020]=['538PredSenrmov20',1,2020];
+		colMap['predictions']['538SenTipping'][2020]=['538tippingSen',1,2020];
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("data/538pred.csv", 'utf8', function(err, fileData) {
@@ -483,30 +513,45 @@ function loadAllData() {
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
 			if (data.data[i][7] =="D"){
-				csvdata['states'][state]['538Preddwin'+year]=parseFloat(data.data[i][11]);
+				csvdata['states'][state]['538Preddwin'+year]=parseFloat(data.data[i][11])*100;
 				if (data.data[i][9] != ""){
 					if (csvdata['states'][state]['538Preddelo'+year]){
-						csvdata['states'][state]['538Preddelo'+year]+=parseFloat(data.data[i][9])*10
+						csvdata['states'][state]['538Preddelo'+year]+=parseFloat(data.data[i][9])*10;
+						csvdata['states'][state]['538Preddmov'+year]+=parseFloat(data.data[i][9]);
+						csvdata['states'][state]['538Predrelo'+year]+=parseFloat(data.data[i][9])*-10;
+						csvdata['states'][state]['538Predrmov'+year]+=parseFloat(data.data[i][9])*-1;
 					}
 					else {
-						csvdata['states'][state]['538Preddelo'+year]=parseFloat(data.data[i][9])*10
+						csvdata['states'][state]['538Preddelo'+year]=parseFloat(data.data[i][9])*10;
+						csvdata['states'][state]['538Preddmov'+year]=parseFloat(data.data[i][9]);
+						csvdata['states'][state]['538Predrelo'+year]=parseFloat(data.data[i][9])*-10;
+						csvdata['states'][state]['538Predrmov'+year]=parseFloat(data.data[i][9])*-1;
 					}
 				}
 			}
 			else if (data.data[i][7] =="R" && data.data[i][9] != ""){
-				
+				csvdata['states'][state]['538Predrwin'+year]=100-parseFloat(data.data[i][11])*100;
 				if (csvdata['states'][state]['538Preddelo'+year]){
-					csvdata['states'][state]['538Preddelo'+year]-=parseFloat(data.data[i][9])*10
+					csvdata['states'][state]['538Preddelo'+year]-=parseFloat(data.data[i][9])*10;
+					csvdata['states'][state]['538Preddmov'+year]-=parseFloat(data.data[i][9]);
+					csvdata['states'][state]['538Predrelo'+year]-=parseFloat(data.data[i][9])*-10;
+					csvdata['states'][state]['538Predrmov'+year]-=parseFloat(data.data[i][9])*-1;
 				}
 				else {
-					csvdata['states'][state]['538Preddelo'+year]=-1*parseFloat(data.data[i][9])*10
+					csvdata['states'][state]['538Preddelo'+year]=parseFloat(data.data[i][9])*-10;
+					csvdata['states'][state]['538Preddmov'+year]=parseFloat(data.data[i][9])*-1;
+					csvdata['states'][state]['538Predrelo'+year]=parseFloat(data.data[i][9])*10;
+					csvdata['states'][state]['538Predrmov'+year]=parseFloat(data.data[i][9])*1;
 				}
 			}
-			
-			
+			colMap['predictions']['538PresDwin'][parseInt(data.data[i][0])]=['538Preddwin'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions']['538PresRwin'][parseInt(data.data[i][0])]=['538Predrwin'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions']['538PresDmov'][parseInt(data.data[i][0])]=['538Preddmov'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions']['538PresRmov'][parseInt(data.data[i][0])]=['538Predrmov'+year,1,parseInt(data.data[i][0])];
 			
 			
 		}
+		
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("data/us_senate_elections.csv", 'utf8', function(err, fileData) {
@@ -535,31 +580,48 @@ function loadAllData() {
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
 			var str = '538PredSen';
+			var pstr = '538Sen';
 			if (data.data[i][4] == "TRUE" || data.data[i][4] == "1"){
 				str += 'Spec';
+				pstr += 'Spec';
 			}
 			if (data.data[i][8] =="D"){
-				csvdata['states'][state][str+'dwin'+year]=parseFloat(data.data[i][12]);
+				csvdata['states'][state][str+'dwin'+year]=parseFloat(data.data[i][12])*100;
 				if (data.data[i][10] != ""){
 					if (csvdata['states'][state][str+'delo'+year]){
-						csvdata['states'][state][str+'delo'+year]+=parseFloat(data.data[i][10])*10
+						csvdata['states'][state][str+'delo'+year]+=parseFloat(data.data[i][10])*10;
+						csvdata['states'][state][str+'dmov'+year]+=parseFloat(data.data[i][10])*1;
+						csvdata['states'][state][str+'relo'+year]+=parseFloat(data.data[i][10])*-10;
+						csvdata['states'][state][str+'rmov'+year]+=parseFloat(data.data[i][10])*-1;
 					}
 					else {
-						csvdata['states'][state][str+'delo'+year]=parseFloat(data.data[i][10])*10
+						csvdata['states'][state][str+'delo'+year]=parseFloat(data.data[i][10])*10;
+						csvdata['states'][state][str+'dmov'+year]=parseFloat(data.data[i][10])*1;
+						csvdata['states'][state][str+'relo'+year]=parseFloat(data.data[i][10])*-10;
+						csvdata['states'][state][str+'rmov'+year]=parseFloat(data.data[i][10])*-1;
 					}
 				}
 			}
 			else if (data.data[i][8] =="R" && data.data[i][10] != ""){
-				
+				csvdata['states'][state][str+'rwin'+year]=100-parseFloat(data.data[i][12])*100;
 				if (csvdata['states'][state][str+'delo'+year]){
-					csvdata['states'][state][str+'delo'+year]-=parseFloat(data.data[i][10])*10
+					csvdata['states'][state][str+'delo'+year]-=parseFloat(data.data[i][10])*10;
+					csvdata['states'][state][str+'dmov'+year]-=parseFloat(data.data[i][10])*1;
+					csvdata['states'][state][str+'relo'+year]-=parseFloat(data.data[i][10])*-10;
+					csvdata['states'][state][str+'rmov'+year]-=parseFloat(data.data[i][10])*-1;
 				}
 				else {
-					csvdata['states'][state][str+'delo'+year]=-1*parseFloat(data.data[i][10])*10
+					csvdata['states'][state][str+'delo'+year]=parseFloat(data.data[i][10])*-10;
+					csvdata['states'][state][str+'dmov'+year]=parseFloat(data.data[i][10])*-1;
+					csvdata['states'][state][str+'relo'+year]=parseFloat(data.data[i][10])*10;
+					csvdata['states'][state][str+'rmov'+year]=parseFloat(data.data[i][10])*1;
 				}
 			}
 			
-			
+			colMap['predictions'][pstr+'Dwin'][parseInt(data.data[i][0])]=[str+'dwin'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions'][pstr+'Rwin'][parseInt(data.data[i][0])]=[str+'rwin'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions'][pstr+'Dmov'][parseInt(data.data[i][0])]=[str+'dmov'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions'][pstr+'Rmov'][parseInt(data.data[i][0])]=[str+'rmov'+year,1,parseInt(data.data[i][0])];
 			
 			
 		}
@@ -636,6 +698,11 @@ function loadAllData() {
 					csvdata['states'][data.data[i][2]]['dvotes'+year]=parseInt(data.data[i][10]);
 				}
 				csvdata['states'][data.data[i][2]]['tvotes'+year]=parseInt(data.data[i][11]);
+				
+				if (csvdata['states'][data.data[i][2]]['rvotes'+year]){
+					csvdata['states'][data.data[i][2]]['dmov'+year]= 100*(csvdata['states'][data.data[i][2]]['dvotes'+year]/csvdata['states'][data.data[i][2]]['tvotes'+year] - csvdata['states'][data.data[i][2]]['rvotes'+year]/csvdata['states'][data.data[i][2]]['tvotes'+year]);
+					csvdata['states'][data.data[i][2]]['rmov'+year]= -1*csvdata['states'][data.data[i][2]]['dmov'+year];
+				}
 			}
 			else if (party == "R"){
 				if (csvdata['states'][data.data[i][2]]['rvotes'+year]){
@@ -645,8 +712,17 @@ function loadAllData() {
 					csvdata['states'][data.data[i][2]]['rvotes'+year]=parseInt(data.data[i][10]);
 				}
 				csvdata['states'][data.data[i][2]]['tvotes'+year]=parseInt(data.data[i][11]);
+				
+				if (csvdata['states'][data.data[i][2]]['dvotes'+year]){
+					csvdata['states'][data.data[i][2]]['dmov'+year]= 100*(csvdata['states'][data.data[i][2]]['dvotes'+year]/csvdata['states'][data.data[i][2]]['tvotes'+year] - csvdata['states'][data.data[i][2]]['rvotes'+year]/csvdata['states'][data.data[i][2]]['tvotes'+year]);
+					csvdata['states'][data.data[i][2]]['rmov'+year]= -1*csvdata['states'][data.data[i][2]]['dmov'+year];
+				}
 			}
 			
+			colMap['results']['dPres'][parseInt(data.data[i][0])]=['dvotes'+year,0,parseInt(data.data[i][0])];
+			colMap['results']['rPres'][parseInt(data.data[i][0])]=['rvotes'+year,0,parseInt(data.data[i][0])];
+			colMap['results']['dmovPres'][parseInt(data.data[i][0])]=['dmov'+year,1,parseInt(data.data[i][0])];
+			colMap['results']['rmovPres'][parseInt(data.data[i][0])]=['rmov'+year,1,parseInt(data.data[i][0])];
 			
 			
 			
