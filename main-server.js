@@ -211,9 +211,17 @@ function loadAllData() {
 			if (econPred20.data[i].length < 8){
 				continue;
 			}
-			csvdata['states'][econPred20.data[i][3]]['econPreddwin20']=parseFloat(econPred20.data[i][7]);
+			csvdata['states'][econPred20.data[i][3]]['econPreddwin20']=parseFloat(econPred20.data[i][7])*100;
 			csvdata['states'][econPred20.data[i][3]]['econPreddelo20']=(parseFloat(econPred20.data[i][6])-.5)*2000;
+			csvdata['states'][econPred20.data[i][3]]['econPredrwin20']=100-parseFloat(econPred20.data[i][7])*100;
+			csvdata['states'][econPred20.data[i][3]]['econPredrelo20']=(parseFloat(econPred20.data[i][6])-.5)*-2000;
+			csvdata['states'][econPred20.data[i][3]]['econPreddmov20']=(parseFloat(econPred20.data[i][6])-.5)*200;
+			csvdata['states'][econPred20.data[i][3]]['econPredrmov20']=(parseFloat(econPred20.data[i][6])-.5)*-200;
 		}
+		colMap['predictions']['econPresDwin'][2020]=['econPreddwin20',1];
+		colMap['predictions']['econPresRwin'][2020]=['econPredrwin20',1];
+		colMap['predictions']['econPresDmov'][2020]=['econPreddmov20',1];
+		colMap['predictions']['econPresRmov'][2020]=['econPredrmov20',1];
 		//console.log(JSON.stringify(csvdata['states']));
 	})
 	fs.readFile("data/state_priors_08_12_16.csv", 'utf8', function(err, fileData) {
