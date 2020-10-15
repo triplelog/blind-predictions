@@ -80,17 +80,46 @@ wss.on('connection', function connection(ws) {
 				myColumns.push(newColumn);
 				colArray = [{'title':'ID','field':'id'}];
 				for (var i=0;i<myColumns.length;i++){
-					for (var col in columns){
-						if (col == myColumns[i][0]){
-							if (myColumns[i][1]< 0){
-								colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"string", hozAlign:"left"});
-							}
-							else {
-								colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+					if (myColumns[i][2]){
+						for (var col in columns){
+							if (col == myColumns[i][0]){
+								if (myColumns[i][1]< 0){
+									colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"string", hozAlign:"left"});
+								}
+								else {
+									colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+								}
 							}
 						}
 					}
+					else {
+						colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+					}
 				}
+			}
+			else if (dm.computecolumn){
+				var newColumn = [dm.formula,1,false,dm.name];
+				newColumn.push(dm.name);
+				myColumns.push(newColumn);
+				colArray = [{'title':'ID','field':'id'}];
+				for (var i=0;i<myColumns.length;i++){
+					if (myColumns[i][2]){
+						for (var col in columns){
+							if (col == myColumns[i][0]){
+								if (myColumns[i][1]< 0){
+									colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"string", hozAlign:"left"});
+								}
+								else {
+									colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+								}
+							}
+						}
+					}
+					else {
+						colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+					}
+				}
+				
 			}	
 			
 	
@@ -114,9 +143,18 @@ wss.on('connection', function connection(ws) {
 						if (colArray[i].round<0){
 							row[colArray[i].field]=csvdata['states'][state][colArray[i].field];
 						}
+						else if (colArray[i].formula){
+							
+						}
 						else {
 							row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field]*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);
 						}
+					}
+				}
+				for (var i=0;i<colArray.length;i++){
+					if (colArray[i].formula){
+						row[colArray[i].field]=colArray[i].formula;
+
 					}
 				}
 				tableData.push(row);

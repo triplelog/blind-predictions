@@ -63,6 +63,12 @@
 			</select>
 			<button onclick="addColumn()">Submit</button>
 		</div>
+		<div>
+			Compute column:
+			<input type="text" id="computeName"></input>
+			<input type="text" id="computeFormula"></input>
+			<button onclick="computeColumn()">Submit</button>
+		</div>
 		
 	</div>
 	<div class="gridHolder" id="csvTable">
@@ -151,6 +157,7 @@ function updateLocations() {
 	var jsonmessage = {'type':'update','locations':locations};
 	ws.send(JSON.stringify(jsonmessage));
 }
+var letters = ["A","B","C",'D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 function addColumn() {
 	var col1 = document.getElementById("col1").value;
 	var col2 = document.getElementById("col2").value;
@@ -160,7 +167,18 @@ function addColumn() {
 	ws.send(JSON.stringify(jsonmessage));
 	var el = document.getElementById('columns');
 	var newDiv = document.createElement('div');
-	newDiv.textContent = columns.length + " = "+name+": "+col1 +" "+col2+" "+col3;
+	newDiv.textContent = letters[columns.length-1] + " = "+name+": "+document.getElementById("col1").textContent+" "+document.getElementById("col2").textContent+" "+document.getElementById("col3").textContent;
+	el.appendChild(newDiv);
+}
+function computeColumn() {
+	
+	var name = document.getElementById('computeName').value;
+	var formula = document.getElementById('computeFormula').value;
+	var jsonmessage = {'type':'update','computecolumn':formula,'name':name};
+	ws.send(JSON.stringify(jsonmessage));
+	var el = document.getElementById('columns');
+	var newDiv = document.createElement('div');
+	newDiv.textContent = letters[columns.length-1] + " = "+name+": "+formula;
 	el.appendChild(newDiv);
 }
 </script>
