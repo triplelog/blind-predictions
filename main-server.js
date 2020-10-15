@@ -78,8 +78,8 @@ wss.on('connection', function connection(ws) {
 				var newColumn = colMap[dm.addcolumn[0]][dm.addcolumn[1]][dm.addcolumn[2]];
 				myColumns.push(newColumn);
 				colArray = [{'title':'ID','field':'id'}];
-				for (var col in columns){
-					for (var i=0;i<myColumns.length;i++){
+				for (var i=0;i<myColumns.length;i++){
+					for (var col in columns){
 						if (col == myColumns[i][0]){
 							colArray.push({'title':dm.name,'field':col,'round':myColumns[i][1]});
 						}
@@ -105,6 +105,7 @@ wss.on('connection', function connection(ws) {
 						row['id']=state;
 					}
 					else {
+						console.log(colArray[i].round);
 						row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field],colArray[i].round);
 					}
 				}
