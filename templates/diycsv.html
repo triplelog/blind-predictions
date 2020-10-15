@@ -84,6 +84,8 @@ var table = new Tabulator("#csvTable", {
 var colMap = {{ colMap | dump | safe }};
 document.getElementById('col1').addEventListener('change',updateOptions2);
 document.getElementById('col2').addEventListener('change',updateOptions3);
+document.getElementById('col1').addEventListener('input',updateOptions2);
+document.getElementById('col2').addEventListener('input',updateOptions3);
 
 function updateOptions2(){
 	var col1 = document.getElementById("col1").value;

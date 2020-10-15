@@ -255,8 +255,8 @@ function loadAllData() {
 			csvdata['states'][data.data[i][1]]['econPredrelo'+year]=(parseFloat(data.data[i][2])-.5)*-2000;
 			csvdata['states'][data.data[i][1]]['econPreddmov'+year]=(parseFloat(data.data[i][2])-.5)*200;
 			csvdata['states'][data.data[i][1]]['econPredrmov'+year]=(parseFloat(data.data[i][2])-.5)*-200;
-			colMap['predictions']['econPresDmov'][parseInt(data.data[i][0])]=['econPreddmov'+year,1,year];
-			colMap['predictions']['econPresRmov'][parseInt(data.data[i][0])]=['econPredrmov'+year,1,year];
+			colMap['predictions']['econPresDmov'][parseInt(data.data[i][0])]=['econPreddmov'+year,1,parseInt(data.data[i][0])];
+			colMap['predictions']['econPresRmov'][parseInt(data.data[i][0])]=['econPredrmov'+year,1,parseInt(data.data[i][0])];
 		}
 		
 		//console.log(JSON.stringify(csvdata['states']));
