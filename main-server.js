@@ -161,21 +161,21 @@ wss.on('connection', function connection(ws) {
 					if (colArray[i].formula){
 						var floatArray = [];
 						var strArray = colArray[i].formula[0];
-						for (var i=0;i<strArray.length;i++){
-							if (strArray[i] == ""){
+						for (var ii=0;ii<strArray.length;ii++){
+							if (strArray[ii] == ""){
 								continue;
 							}
-							else if (valMap[strArray[i]] || valMap[strArray[i]] == 0){
-								floatArray.push(valMap[strArray[i]]);
+							else if (valMap[strArray[ii]] || valMap[strArray[ii]] == 0){
+								floatArray.push(valMap[strArray[ii]]);
 							}
 							else {
-								floatArray.push(parseFloat(strArray[i]));
+								floatArray.push(parseFloat(strArray[ii]));
 							}
 						}
 	
 	
 						var solved = solvePostfix(colArray[i].formula[1],floatArray);
-						console.log(floatArray,colArray[i].formula);
+						console.log(solved,floatArray,colArray[i].formula);
 						row[colArray[i].field]=solved;
 
 					}
