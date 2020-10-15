@@ -580,10 +580,8 @@ function loadAllData() {
 			var year = parseInt(data.data[i][0])-2000;
 			var state = csvdata['convert']['states'][data.data[i][2]];
 			var str = '538PredSen';
-			var pstr = '538Sen';
 			if (data.data[i][4] == "TRUE" || data.data[i][4] == "1"){
 				str += 'Spec';
-				pstr += 'Spec';
 			}
 			if (data.data[i][8] =="D"){
 				csvdata['states'][state][str+'dwin'+year]=parseFloat(data.data[i][12])*100;
@@ -618,10 +616,18 @@ function loadAllData() {
 				}
 			}
 			
-			colMap['predictions'][pstr+'Dwin'][parseInt(data.data[i][0])]=[str+'dwin'+year,1,parseInt(data.data[i][0])];
-			colMap['predictions'][pstr+'Rwin'][parseInt(data.data[i][0])]=[str+'rwin'+year,1,parseInt(data.data[i][0])];
-			colMap['predictions'][pstr+'Dmov'][parseInt(data.data[i][0])]=[str+'dmov'+year,1,parseInt(data.data[i][0])];
-			colMap['predictions'][pstr+'Rmov'][parseInt(data.data[i][0])]=[str+'rmov'+year,1,parseInt(data.data[i][0])];
+			if (data.data[i][4] == "TRUE" || data.data[i][4] == "1"){
+				colMap['predictions'][pstr+'Dwin'][parseInt(data.data[i][0])+"S"]=[str+'dwin'+year,1,parseInt(data.data[i][0])+"S"];
+				colMap['predictions'][pstr+'Rwin'][parseInt(data.data[i][0])+"S"]=[str+'rwin'+year,1,parseInt(data.data[i][0])+"S"];
+				colMap['predictions'][pstr+'Dmov'][parseInt(data.data[i][0])+"S"]=[str+'dmov'+year,1,parseInt(data.data[i][0])+"S"];
+				colMap['predictions'][pstr+'Rmov'][parseInt(data.data[i][0])+"S"]=[str+'rmov'+year,1,parseInt(data.data[i][0])+"S"];
+			}
+			else {
+				colMap['predictions'][pstr+'Dwin'][parseInt(data.data[i][0])]=[str+'dwin'+year,1,parseInt(data.data[i][0])];
+				colMap['predictions'][pstr+'Rwin'][parseInt(data.data[i][0])]=[str+'rwin'+year,1,parseInt(data.data[i][0])];
+				colMap['predictions'][pstr+'Dmov'][parseInt(data.data[i][0])]=[str+'dmov'+year,1,parseInt(data.data[i][0])];
+				colMap['predictions'][pstr+'Rmov'][parseInt(data.data[i][0])]=[str+'rmov'+year,1,parseInt(data.data[i][0])];
+			}
 			
 			
 		}
