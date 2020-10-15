@@ -1187,6 +1187,7 @@ app.get(['*'],
 
 function makePost(infixexpr) {
 	var prec = {}
+	prec["^"] = 4
 	prec["*"] = 4
 	prec["/"] = 4
 	prec["+"] = 3
@@ -1225,7 +1226,7 @@ function makePost(infixexpr) {
 	
 	for (var i=0;i<tokenList.length;i++){
 		var token = tokenList[i];
-		if ("*/+~><=![]&|()".indexOf(token) == -1){
+		if ("^*/+~><=![]&|()".indexOf(token) == -1){
 			postfixList.push(token)
 		}
 		else if (token == '('){
@@ -1250,7 +1251,7 @@ function makePost(infixexpr) {
 	}
 	for (var i=0;i<postfixList.length;i++){
 		var ci = postfixList[i];
-		if ("*/+~><=![]&|".indexOf(ci) == -1){
+		if ("^*/+~><=![]&|".indexOf(ci) == -1){
 			intstr += ci + '_'
 			expstr += '#'
 		}
@@ -1374,7 +1375,11 @@ function solvePostfix(exp, intArray) {
 	            case '+': stack[currentIndex - 2] = stack[currentIndex - 2] + stack[currentIndex - 1]; break; 
 	            case '-': stack[currentIndex - 2] = stack[currentIndex - 2] - stack[currentIndex - 1]; break; 
 	            case '*': stack[currentIndex - 2] = stack[currentIndex - 2] * stack[currentIndex - 1]; break; 
-	            case '/': stack[currentIndex - 2] = stack[currentIndex - 2] / stack[currentIndex - 1]; break;
+	            case '/': {
+	            			if (stack[currentIndex - 1] == 0) {}
+	            			else {stack[currentIndex - 2] = stack[currentIndex - 2] / stack[currentIndex - 1];}
+	             break;
+	            }
 	            case '=': stack[currentIndex - 2] = stack[currentIndex - 2] == stack[currentIndex - 1]; break;
 	            //case '%': stack[currentIndex - 2] = stack[currentIndex - 2] % stack[currentIndex - 1]; break; 
 
