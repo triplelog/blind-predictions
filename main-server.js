@@ -175,7 +175,6 @@ wss.on('connection', function connection(ws) {
 	
 	
 						var solved = solvePostfix(colArray[i].formula[1],floatArray);
-						console.log(solved,floatArray,colArray[i].formula);
 						row[colArray[i].field]=solved;
 
 					}
@@ -1371,6 +1370,7 @@ function solvePostfix(exp, intArray) {
 	            //case ']': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] >= stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break;  
 	            //case '=': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] == stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break; 
 	            //case '!': stack[currentIndex - 2][2] = (stack[currentIndex - 2][0]*stack[currentIndex - 1][1] != stack[currentIndex - 1][0]*stack[currentIndex - 2][1]) ? 1 : -1; stack[currentIndex - 2][0] = 1; stack[currentIndex - 2][1] = 1; break; 
+	            case '^': stack[currentIndex - 2] = Math.pow(stack[currentIndex - 2],stack[currentIndex - 1]); break; 
 	            case '+': stack[currentIndex - 2] = stack[currentIndex - 2] + stack[currentIndex - 1]; break; 
 	            case '-': stack[currentIndex - 2] = stack[currentIndex - 2] - stack[currentIndex - 1]; break; 
 	            case '*': stack[currentIndex - 2] = stack[currentIndex - 2] * stack[currentIndex - 1]; break; 
