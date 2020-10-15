@@ -106,7 +106,12 @@ wss.on('connection', function connection(ws) {
 						row['id']=state;
 					}
 					else {
-						row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field]*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);
+						if (colArray[i].round<0){
+							row[colArray[i].field]=csvdata['states'][state][colArray[i].field];
+						}
+						else {
+							row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field]*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);
+						}
 					}
 				}
 				tableData.push(row);
@@ -303,8 +308,8 @@ function loadAllData() {
 		csvdata['states']["N2"]['closing']=csvdata['states']['NE']['closing'];
 		csvdata['states']["N3"]['closing']=csvdata['states']['NE']['closing'];
 		colMap['info'][2020]['ev']=['ev10',0,"Electoral Votes"];
-		colMap['info'][2020]['closing']=['closing',0,"Closing Time"];
-		colMap['info'][2020]['name']=['name',0,'Name'];
+		colMap['info'][2020]['closing']=['closing',1,"Closing Time"];
+		colMap['info'][2020]['name']=['name',-1,'Name'];
 		
 		//console.log(JSON.stringify(csvdata['states']));
 	})
