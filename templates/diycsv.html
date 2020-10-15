@@ -42,7 +42,7 @@
 		<button onclick="updateLocations()">Submit</button>
 		<div>
 			Add column:
-			<input type="text" id="name"></input>
+			<input type="text" id="colName"></input>
 			<select id="col1">
 				<option value="results">Results</option>
 				<option value="predictions">Predictions</option>
@@ -101,7 +101,7 @@ function addColumn() {
 	var col1 = document.getElementById("col1").value;
 	var col2 = document.getElementById("col2").value;
 	var col3 = document.getElementById("col3").value;
-	var jsonmessage = {'type':'update','addcolumn':[col1,col2,col3]};
+	var jsonmessage = {'type':'update','addcolumn':[col1,col2,col3],'name':document.getElementById('colName').value};
 	ws.send(JSON.stringify(jsonmessage));
 }
 </script>

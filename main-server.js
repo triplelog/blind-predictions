@@ -80,8 +80,8 @@ wss.on('connection', function connection(ws) {
 				colArray = [{'title':'ID','field':'id'}];
 				for (var col in columns){
 					for (var i=0;i<myColumns.length;i++){
-						if (col == myColumns[i]){
-							colArray.push({'title':col,'field':col,'round':0});
+						if (col == myColumns[i][0]){
+							colArray.push({'title':dm.name,'field':col,'round':myColumns[i][1]});
 						}
 					}
 				}
@@ -184,17 +184,17 @@ function loadAllData() {
 			if (econPred16.data[i].length < 5){
 				continue;
 			}
-			csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4]);
+			csvdata['states'][econPred16.data[i][0]]['econPreddwin16']=parseFloat(econPred16.data[i][4])*100;
 			csvdata['states'][econPred16.data[i][0]]['econPreddelo16']=(parseFloat(econPred16.data[i][1])-.5)*2000;
-			csvdata['states'][econPred16.data[i][0]]['econPredrwin16']=1-parseFloat(econPred16.data[i][4]);
+			csvdata['states'][econPred16.data[i][0]]['econPredrwin16']=100-parseFloat(econPred16.data[i][4])*100;
 			csvdata['states'][econPred16.data[i][0]]['econPredrelo16']=(parseFloat(econPred16.data[i][1])-.5)*-2000;
 			csvdata['states'][econPred16.data[i][0]]['econPreddmov16']=(parseFloat(econPred16.data[i][1])-.5)*200;
 			csvdata['states'][econPred16.data[i][0]]['econPredrmov16']=(parseFloat(econPred16.data[i][1])-.5)*-200;
 		}
-		colMap['predictions']['econPresDwin'][2016]='econPreddwin16';
-		colMap['predictions']['econPresRwin'][2016]='econPredrwin16';
-		colMap['predictions']['econPresDmov'][2016]='econPreddmov16';
-		colMap['predictions']['econPresRmov'][2016]='econPredrmov16';
+		colMap['predictions']['econPresDwin'][2016]=['econPreddwin16',1];
+		colMap['predictions']['econPresRwin'][2016]=['econPredrwin16',1];
+		colMap['predictions']['econPresDmov'][2016]=['econPreddmov16',1];
+		colMap['predictions']['econPresRmov'][2016]=['econPredrmov16',1];
 		//console.log(JSON.stringify(csvdata['convert']['states']));
 	})
 	fs.readFile("predictions.csv", 'utf8', function(err, fileData) {
