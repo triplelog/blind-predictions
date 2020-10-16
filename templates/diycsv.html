@@ -69,6 +69,11 @@
 			<input type="text" id="computeFormula"></input>
 			<button onclick="computeColumn()">Submit</button>
 		</div>
+		<div>
+			<button onclick="saveTable()">Save Table</button>
+			<button onclick="downloadCSV()">Download CSV</button>
+			<button onclick="downloadJSON()">Download JSON</button>
+		</div>
 		
 	</div>
 	<div class="gridHolder" id="csvTable">
@@ -158,7 +163,7 @@ ws.onmessage = function(evt){
 	table.setColumns(allData.columns);
 	table.setData(tableData);
 	columns = allData.columns;
-	table.download("csv","data.csv");
+	
 }
 
 function updateLocations() {
@@ -189,6 +194,16 @@ function computeColumn() {
 	var newDiv = document.createElement('div');
 	newDiv.textContent = letters[columns.length-1] + " ("+name+") "+formula;
 	el.appendChild(newDiv);
+}
+
+function saveTable() {
+
+}
+function downloadCSV() {
+	table.download("csv","data.csv");
+}
+function downloadJSON() {
+	table.download("json","data.json");
 }
 </script>
 
