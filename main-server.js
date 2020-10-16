@@ -135,6 +135,7 @@ wss.on('connection', function connection(ws) {
 			else if (dm.colorcolumn){
 				var colors = {};
 				var csplit = dm.colorcolumn.substr(4,dm.colorcolumn.length-1).split(",");
+				console.log(dm.colorcolumn,csplit);
 				var c = [];
 				for (var i=0;i<csplit.length;i++){
 					c.push(postfixify(csplit[i]));
