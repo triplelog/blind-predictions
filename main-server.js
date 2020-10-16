@@ -1487,6 +1487,10 @@ function solvePostfix(exp, intArray) {
 	             			break;
 	            }
 	            case '=': stack[currentIndex - 2] = stack[currentIndex - 2] == stack[currentIndex - 1]; break;
+	            case '>': stack[currentIndex - 2] = stack[currentIndex - 2] > stack[currentIndex - 1]; break;
+	            case '<': stack[currentIndex - 2] = stack[currentIndex - 2] < stack[currentIndex - 1]; break;
+	            case ']': stack[currentIndex - 2] = stack[currentIndex - 2] >= stack[currentIndex - 1]; break;
+	            case '[': stack[currentIndex - 2] = stack[currentIndex - 2] <= stack[currentIndex - 1]; break;
 	            //case '%': stack[currentIndex - 2] = stack[currentIndex - 2] % stack[currentIndex - 1]; break; 
 
 	            //case '-': if (stack[currentIndex - 2][1] == stack[currentIndex - 1][1]) {stack[currentIndex - 2][0] -= stack[currentIndex - 1][0];} else {retptr = opFrac(stack[currentIndex - 2],stack[currentIndex - 1],1); stack[currentIndex - 2][0] = retptr[0]; stack[currentIndex - 2][1] = retptr[1];}; break; 
