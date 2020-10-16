@@ -134,7 +134,7 @@ wss.on('connection', function connection(ws) {
 			}	
 			else if (dm.colorcolumn){
 				var colors = {};
-				var csplit = dm.colorcolumn.substr(4,dm.colorcolumn.length-1).split(",");
+				var csplit = dm.colorcolumn.substr(4,dm.colorcolumn.length-5).split(",");
 				console.log(dm.colorcolumn,csplit);
 				var c = [];
 				for (var i=0;i<csplit.length;i++){
