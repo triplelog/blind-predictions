@@ -1378,7 +1378,7 @@ function solvePostfix(exp, intArray) {
 	            case '/': {
 	            			if (stack[currentIndex - 1] == 0) {}
 	            			else {stack[currentIndex - 2] = stack[currentIndex - 2] / stack[currentIndex - 1];}
-	             break;
+	             			break;
 	            }
 	            case '=': stack[currentIndex - 2] = stack[currentIndex - 2] == stack[currentIndex - 1]; break;
 	            //case '%': stack[currentIndex - 2] = stack[currentIndex - 2] % stack[currentIndex - 1]; break; 
