@@ -135,7 +135,6 @@ wss.on('connection', function connection(ws) {
 			else if (dm.colorcolumn){
 				var colors = {};
 				var csplit = dm.colorcolumn.substr(4,dm.colorcolumn.length-5).split(",");
-				console.log(dm.colorcolumn,csplit);
 				var c = [];
 				for (var i=0;i<csplit.length;i++){
 					c.push(postfixify(csplit[i]));
@@ -150,7 +149,6 @@ wss.on('connection', function connection(ws) {
 					return;
 				}
 				
-				console.log(dm.colorcolumn,colors);
 				
 				var newColumn = [colors,1,false,dm.name,"color"];
 				myColumns.push(newColumn);
@@ -241,7 +239,6 @@ wss.on('connection', function connection(ws) {
 
 					}
 					else if (colArray[i].color){
-						console.log(colArray[i].color);
 						var floatArray = [];
 						var color = colArray[i].color;
 						var colorStr = "";
@@ -251,7 +248,9 @@ wss.on('connection', function connection(ws) {
 							colorType = c;
 							break;
 						}
+						console.log(color[colorType]);
 						for (var iii=0;iii<color[colorType].length;iii++){
+							console.log(color[colorType][iii]);
 							var strArray = color[colorType][iii][0];
 							for (var ii=0;ii<strArray.length;ii++){
 								if (strArray[ii] == ""){
