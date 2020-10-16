@@ -93,13 +93,19 @@ wss.on('connection', function connection(ws) {
 						}
 					}
 					else {
-						colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+						if (myColumns[i][4] == "formula"){
+							colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+						}
+						else if (myColumns[i][4] == "color"){
+							colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right", formatter:"color" ,'color':myColumns[i][0]});
+						}
+						
 					}
 				}
 			}
 			else if (dm.computecolumn){
 				var postfixed = postfixify(dm.computecolumn);
-				var newColumn = [postfixed,1,false,dm.name];
+				var newColumn = [postfixed,1,false,dm.name,"formula"];
 				myColumns.push(newColumn);
 				colArray = [{'title':'ID','field':'id'}];
 				for (var i=0;i<myColumns.length;i++){
@@ -116,7 +122,58 @@ wss.on('connection', function connection(ws) {
 						}
 					}
 					else {
-						colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+						if (myColumns[i][4] == "formula"){
+							colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+						}
+						else if (myColumns[i][4] == "color"){
+							colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right", formatter:"color" ,'color':myColumns[i][0]});
+						}
+					}
+				}
+				
+			}	
+			else if (dm.colorcolumn){
+				var colors = {};
+				var csplit = dm.colorcolumn.substr(4,dm.colorcolumn.length-1).split(",");
+				var c = [];
+				for (var i=0;i<csplit.length;i++){
+					c.push(postfixify(csplit[i]));
+				}
+				if (dm.colorcolumn.substr(0,3).toUpperCase() == "HSL"){
+					colors['HSL']=c;
+				}
+				else if (dm.colorcolumn.substr(0,3).toUpperCase() == "RGB"){
+					colors['RGB']=c;
+				}
+				else {
+					return;
+				}
+				
+				console.log(dm.colorcolumn,colors);
+				
+				var newColumn = [colors,1,false,dm.name,"color"];
+				myColumns.push(newColumn);
+				colArray = [{'title':'ID','field':'id'}];
+				for (var i=0;i<myColumns.length;i++){
+					if (myColumns[i][2]){
+						for (var col in columns){
+							if (col == myColumns[i][0]){
+								if (myColumns[i][1]< 0){
+									colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"string", hozAlign:"left"});
+								}
+								else {
+									colArray.push({'title':myColumns[i][3],'field':col,'round':myColumns[i][1],sorter:"number", hozAlign:"right"});
+								}
+							}
+						}
+					}
+					else {
+						if (myColumns[i][4] == "formula"){
+							colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right",'formula':myColumns[i][0]});
+						}
+						else if (myColumns[i][4] == "color"){
+							colArray.push({'title':myColumns[i][3],'field':myColumns[i][3],'round':myColumns[i][1],sorter:"number", hozAlign:"right", formatter:"color" ,'color':myColumns[i][0]});
+						}
 					}
 				}
 				
@@ -151,6 +208,9 @@ wss.on('connection', function connection(ws) {
 						else if (colArray[i].formula){
 							
 						}
+						else if (colArray[i].color){
+							
+						}
 						else {
 							row[colArray[i].field]=Math.round(csvdata['states'][state][colArray[i].field]*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);
 							valMap[letters[i-1]]=csvdata['states'][state][colArray[i].field];
@@ -176,7 +236,42 @@ wss.on('connection', function connection(ws) {
 	
 						var solved = solvePostfix(colArray[i].formula[1],floatArray);
 						valMap[letters[i-1]]=solved;
-						row[colArray[i].field]=Math.round(solved*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);;
+						row[colArray[i].field]=Math.round(solved*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);
+
+					}
+					else if (colArray[i].color){
+						console.log(colArray[i].color);
+						var floatArray = [];
+						var color = colArray[i].color;
+						var colorStr = "";
+						var colorType = "";
+						for (var c in color){
+							colorStr = c+"(";
+							colorType = c;
+							break;
+						}
+						for (var iii=0;iii<color[colorType].length;iii++){
+							var strArray = color[colorType][iii][0];
+							for (var ii=0;ii<strArray.length;ii++){
+								if (strArray[ii] == ""){
+									continue;
+								}
+								else if (valMap[strArray[ii]] || valMap[strArray[ii]] == 0){
+									floatArray.push(valMap[strArray[ii]]);
+								}
+								else {
+									floatArray.push(parseFloat(strArray[ii]));
+								}
+							}
+							var solved = solvePostfix(color[colorType][iii][1],floatArray);
+							colorStr += solved;
+							if (iii+1<color[colorType].length){
+								colorStr += ",";
+							}
+						}
+						colorStr += ")";
+						
+						row[colArray[i].field]=colorStr;
 
 					}
 				}

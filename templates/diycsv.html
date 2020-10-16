@@ -46,20 +46,16 @@
 			Add column:
 			<input type="text" id="colName"></input>
 			<select id="col1">
-				<option value="">Type</option>
+				<option value="">----</option>
 				{% for first, val in colMap %}
 				<option value="{{ first }}">{{ val.displayName }}</option>
 				{% endfor %}
 			</select>
 			<select id="col2">
-				<option value="econPresDwin">Economist Pres D win%</option>
-				<option value="econPresRwin">Economist Pres R win%</option>
-				<option value="econPresDmov">Economist Pres D MOV</option>
-				<option value="econPresRmov">Economist Pres R MOV</option>
+				<option>----</option>
 			</select>
 			<select id="col3">
-				<option value="2020">2020</option>
-				<option value="2016">2016</option>
+				<option>----</option>
 			</select>
 			<button onclick="addColumn()">Submit</button>
 		</div>
@@ -70,9 +66,25 @@
 			<button onclick="computeColumn()">Submit</button>
 		</div>
 		<div>
+			Color column:
+			<select id="colorType">
+				<option value="fill">Fill</option>
+				<option value="stroke">Stroke</option>
+			</select>
+			<input type="text" id="colorFormula"></input>
+			<button onclick="colorColumn()">Submit</button>
+		</div>
+		<div>
+			Apportion column:
+			<input type="text" id="apportionName"></input>
+			<input type="text" id="apportionFormula"></input>
+			<button onclick="apportionColumn()">Submit</button>
+		</div>
+		<div>
 			<button onclick="saveTable()">Save Table</button>
 			<button onclick="downloadCSV()">Download CSV</button>
 			<button onclick="downloadJSON()">Download JSON</button>
+			<button onclick="downloadSVG()">Download SVG</button>
 		</div>
 		
 	</div>
@@ -195,9 +207,31 @@ function computeColumn() {
 	newDiv.textContent = letters[columns.length-1] + " ("+name+") "+formula;
 	el.appendChild(newDiv);
 }
+function colorColumn() {
+	
+	var name = document.getElementById('colorType').value;
+	var formula = document.getElementById('colorFormula').value;
+	var jsonmessage = {'type':'update','colorcolumn':formula,'name':name};
+	ws.send(JSON.stringify(jsonmessage));
+	var el = document.getElementById('columns');
+	var newDiv = document.createElement('div');
+	newDiv.textContent = letters[columns.length-1] + " ("+name+") "+formula;
+	el.appendChild(newDiv);
+}
+function apportionColumn() {
+	
+	var name = document.getElementById('computeName').value;
+	var formula = document.getElementById('computeFormula').value;
+	var jsonmessage = {'type':'update','computecolumn':formula,'name':name};
+	ws.send(JSON.stringify(jsonmessage));
+	var el = document.getElementById('columns');
+	var newDiv = document.createElement('div');
+	newDiv.textContent = letters[columns.length-1] + " ("+name+") "+formula;
+	el.appendChild(newDiv);
+}
 
 function saveTable() {
-
+	table.download("csv","data.csv");
 }
 function downloadCSV() {
 	table.download("csv","data.csv");
