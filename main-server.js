@@ -175,7 +175,8 @@ wss.on('connection', function connection(ws) {
 	
 	
 						var solved = solvePostfix(colArray[i].formula[1],floatArray);
-						row[colArray[i].field]=solved;
+						valMap[letters[i-1]]=solved;
+						row[colArray[i].field]=Math.round(solved*Math.pow(10,colArray[i].round))/Math.pow(10,colArray[i].round);;
 
 					}
 				}
