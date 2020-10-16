@@ -268,6 +268,7 @@ wss.on('connection', function connection(ws) {
 							if (iii+1<color[colorType].length){
 								colorStr += ",";
 							}
+							console.log(colorStr);
 						}
 						colorStr += ")";
 						
