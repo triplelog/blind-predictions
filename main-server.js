@@ -239,7 +239,6 @@ wss.on('connection', function connection(ws) {
 
 					}
 					else if (colArray[i].color){
-						var floatArray = [];
 						var color = colArray[i].color;
 						var colorStr = "";
 						var colorType = "";
@@ -248,9 +247,8 @@ wss.on('connection', function connection(ws) {
 							colorType = c;
 							break;
 						}
-						console.log(color[colorType]);
 						for (var iii=0;iii<color[colorType].length;iii++){
-							console.log(color[colorType][iii]);
+							var floatArray = [];
 							var strArray = color[colorType][iii][0];
 							for (var ii=0;ii<strArray.length;ii++){
 								if (strArray[ii] == ""){
@@ -268,7 +266,6 @@ wss.on('connection', function connection(ws) {
 							if (iii+1<color[colorType].length){
 								colorStr += ",";
 							}
-							console.log(colorStr);
 						}
 						colorStr += ")";
 						
