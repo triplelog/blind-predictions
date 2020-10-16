@@ -262,10 +262,22 @@ wss.on('connection', function connection(ws) {
 								}
 							}
 							var solved = solvePostfix(color[colorType][iii][1],floatArray);
-							colorStr += solved;
+							
+							if (colorType == "HSL" && iii==0){
+								colorStr += solved % 360;
+							}
+							else {
+								colorStr += solved;
+							}
+							
+							
+							if (colorType == "HSL" && iii>0){
+								colorStr += "%";
+							}
 							if (iii+1<color[colorType].length){
 								colorStr += ",";
 							}
+							
 						}
 						colorStr += ")";
 						
