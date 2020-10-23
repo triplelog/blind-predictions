@@ -110,7 +110,7 @@ for state in actuals.keys():
 	polls2012.append(pollArray)
 
 			
-clf = RandomForestClassifier(n_estimators=100)
+clf = RandomForestClassifier(n_estimators=1000)
 clf = clf.fit(polls2012,states2012)
 	
 
@@ -145,13 +145,16 @@ for state in actuals.keys():
 			pollArray.append(actuals[state][2012])
 
 	polls2016.append(pollArray)
+	print(state)
 
 predictions = clf.predict(polls2016)
 
 print(predictions)
 print(states2016)
+print(states2012)
 print(abs(predictions-states2016))
 print(numpy.mean(abs(predictions-states2016)))
+print(numpy.mean(abs(states2012-states2016)))
 print(soto)
 
 
