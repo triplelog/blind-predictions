@@ -4,8 +4,8 @@ import random
 import csv
 import math
 import json
-#import sklearn
-#from sklearn.ensemble import RandomForestClassifier
+import sklearn
+from sklearn.ensemble import RandomForestClassifier
 pollsters = {}
 actuals = {}
 
@@ -78,7 +78,12 @@ print(poppollsters)
 states2012 = []
 polls2012 = []
 for state in actuals.keys():
-	rperc = round(100.0-100.0*(actuals[state][2012]/2+.5))
+	try:
+		x = actuals[state][2012]
+		x = actuals[state][2008]
+	except:
+		continue
+	rperc = round(100.0-(actuals[state][2012]/2+50))
 	for i in range(0,rperc):
 		states2012.append(1)
 	for i in range(rperc,100):
@@ -100,9 +105,12 @@ for state in actuals.keys():
 			pollArray.append(polls[pollster][1])
 		except:
 			pollArray.append(actuals[state][2008])
-	print(state,pollArray)
+	for i in range(0,100):
+		polls2012.append(pollArray)
+
 			
-	
+clf = RandomForestClassifier(n_estimators=10)
+clf = clf.fit(polls2012,states2012)
 	
 
 
