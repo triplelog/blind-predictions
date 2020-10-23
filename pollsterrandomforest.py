@@ -112,12 +112,45 @@ for state in actuals.keys():
 clf = RandomForestClassifier(n_estimators=10)
 clf = clf.fit(polls2012,states2012)
 	
-print(clf)
 
+states2016 = []
+polls2016 = []
+for state in actuals.keys():
+	try:
+		x = actuals[state][2016]
+		x = actuals[state][2012]
+	except:
+		continue
+	rperc = round(100.0-(actuals[state][2016]/2+50))
 
+	states2016.append(rperc)
+	
+	polls = {}
+	pollArray = [actuals[state][2012]]
+	for pollster in poppollsters:
+		for poll in pollsters[pollster]['polls']:
+			if poll[1]==2016 and poll[2]==state:
+				try:
+					if polls[pollster][0]>=poll[0]:
+						continue
+				except:
+					pass
+				polls[pollster]=[poll[0],poll[5]]
+		
+		try:
+			x = polls[pollster]
+			pollArray.append(polls[pollster][1])
+		except:
+			pollArray.append(actuals[state][2012])
 
+	polls2016.append(pollArray)
 
+predictions = clf.predict(polls2016)
 
+print(predictions)
+print(states2016)
+print(abs(predictions-states2016))
+print(numpy.mean(abs(predictions-states2016)))
 print(soto)
 
 
