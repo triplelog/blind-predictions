@@ -112,7 +112,7 @@ for state in actuals.keys():
 clf = RandomForestClassifier(n_estimators=10)
 clf = clf.fit(polls2012,states2012)
 	
-
+print(clf)
 
 
 
