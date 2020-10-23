@@ -84,10 +84,11 @@ for state in actuals.keys():
 	except:
 		continue
 	rperc = round(100.0-(actuals[state][2012]/2+50))
-	for i in range(0,rperc):
-		states2012.append(1)
-	for i in range(rperc,100):
-		states2012.append(0)
+	#for i in range(0,rperc):
+	#	states2012.append(1)
+	#for i in range(rperc,100):
+	#	states2012.append(0)
+	states2012.append(rperc)
 	polls = {}
 	pollArray = [actuals[state][2008]]
 	for pollster in poppollsters:
@@ -105,11 +106,11 @@ for state in actuals.keys():
 			pollArray.append(polls[pollster][1])
 		except:
 			pollArray.append(actuals[state][2008])
-	for i in range(0,100):
-		polls2012.append(pollArray)
+	#for i in range(0,100):
+	polls2012.append(pollArray)
 
 			
-clf = RandomForestClassifier(n_estimators=10)
+clf = RandomForestClassifier(n_estimators=100)
 clf = clf.fit(polls2012,states2012)
 	
 
