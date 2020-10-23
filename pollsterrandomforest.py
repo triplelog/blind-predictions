@@ -159,7 +159,7 @@ print(numpy.mean(abs(predictions-states2016)))
 s = 0
 n = 0
 for i in range(0,len(states2012)):
-	s += abs(states2012-states2016)
+	s += abs(states2012[i]-states2016[i])
 	n += 1
 
 print(s*1.0/n)
