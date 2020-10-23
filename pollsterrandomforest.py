@@ -79,6 +79,7 @@ states2012 = []
 polls2012 = []
 for state in actuals.keys():
 	try:
+		x = actuals[state][2016]
 		x = actuals[state][2012]
 		x = actuals[state][2008]
 	except:
@@ -120,6 +121,7 @@ for state in actuals.keys():
 	try:
 		x = actuals[state][2016]
 		x = actuals[state][2012]
+		x = actuals[state][2008]
 	except:
 		continue
 	rperc = round(100.0-(actuals[state][2016]/2+50))
@@ -154,7 +156,13 @@ print(states2016)
 print(states2012)
 print(abs(predictions-states2016))
 print(numpy.mean(abs(predictions-states2016)))
-print(numpy.mean(abs(states2012-states2016)))
+s = 0
+n = 0
+for i in range(0,len(states2012)):
+	s += abs(states2012-states2016)
+	n += 1
+
+print(s*1.0/n)
 print(soto)
 
 
