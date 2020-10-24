@@ -124,18 +124,18 @@ for state in states.keys():
 	y = []
 	for i in range(0,9):
 		year = 1980+i*4
-		yearRow = [states[state]['dmov'+str(year-4)]]
+		yearRow = []
 		for ostate in states.keys():
 			if state != ostate:
 				yearRow.append(states[ostate]['dmov'+str(year)]-states[ostate]['dmov'+str(year-4)])
 		x.append(yearRow)
 		y.append(round(states[state]['dmov'+str(year)]))
-	clf = GradientBoostingRegressor(n_estimators=1000, learning_rate=0.1, max_depth=1, random_state=0, loss='ls')
+	clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
 	clf = clf.fit(x,y)
-	p = [states[state]['dmov'+str(predyear-4)]]
+	p = []
 	for ostate in states.keys():
 		if state != ostate:
 			p.append(states[ostate]['dmov'+str(predyear)]-states[ostate]['dmov'+str(predyear-4)])
 	predictions = clf.predict([p])
-	print(state,predictions,round(states[state]['dmov'+str(predyear)]))
+	print(state,predictions[0]+states[state]['dmov'+str(predyear-4)],round(states[state]['dmov'+str(predyear)]))
 
