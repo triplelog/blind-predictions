@@ -133,6 +133,9 @@ for state in states.keys():
 			y.append(round(states[state]['dmov'+str(year)]-states[state]['dmov'+str(year-4)]))
 	clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
 	clf = clf.fit(x,y)
+	imp = clf.feature_importances_
+	print(imp)
+	print(soto)
 	p = []
 	for ostate in states.keys():
 		if state != ostate:
