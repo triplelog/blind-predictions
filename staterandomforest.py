@@ -37,4 +37,102 @@ def readcsv(filen):
         return allgamesa
         
 allPres = readcsv("data/1976-2016-president.csv")
-print(allPres)
+
+
+candidates = {};
+states = {}
+for i in range(1,len(allPres)):
+	if (len(allPres[i]) < 10):
+		continue
+
+	year = int(allPres[i][0])
+	party = allPres[i][8][0:8].lower()
+	if (party == "democrat"):
+		party = "D"
+		try:
+			candidates[allPres[i][7]][year]="D"
+		except:
+			candidates[allPres[i][7]]={}
+			candidates[allPres[i][7]][year]="D"
+	if (party == "republic"):
+		party = "R"
+		try:
+			candidates[allPres[i][7]][year]="R"
+		except:
+			candidates[allPres[i][7]]={}
+			candidates[allPres[i][7]][year]="R"
+
+for i in range(1,len(allPres)):
+	if (len(allPres[i]) < 10):
+		continue
+
+	year = int(allPres[i][0])
+	party = allPres[i][8][0:8].lower()
+	if (party == "democrat"):
+		party = "D"
+	elif (party == "republic"):
+		party = "R"
+	else:
+		try:
+			party = candidates[allPres[i][7]][year]
+		except:
+			continue
+
+	
+	try:
+		x = states[allPres[i][2]]
+	except:
+		states[allPres[i][2]]={}
+	
+	
+	if (party == "D"):
+		try:
+			states[allPres[i][2]]['dvotes'+str(year)]+=int(allPres[i][10])
+		except:
+			states[allPres[i][2]]['dvotes'+str(year)]=int(allPres[i][10])
+
+		states[allPres[i][2]]['tvotes'+str(year)]=int(allPres[i][11])
+
+		try:
+			x = states[allPres[i][2]]['rvotes'+str(year)]
+			states[allPres[i][2]]['dmov'+str(year)]= 100*(states[allPres[i][2]]['dvotes'+str(year)]/states[allPres[i][2]]['tvotes'+str(year)] - states[allPres[i][2]]['rvotes'+str(year)]/states[allPres[i][2]]['tvotes'+str(year)])
+			states[allPres[i][2]]['rmov'+str(year)]= -1*states[allPres[i][2]]['dmov'+str(year)]
+		except:
+			pass
+
+	elif (party == "R"):
+		try:
+			states[allPres[i][2]]['rvotes'+str(year)]+=int(allPres[i][10]);
+		except:
+			states[allPres[i][2]]['rvotes'+str(year)]=int(allPres[i][10]);
+		states[allPres[i][2]]['tvotes'+str(year)]=int(allPres[i][11]);
+		
+		try:
+			x = states[allPres[i][2]]['dvotes'+str(year)]
+			states[allPres[i][2]]['dmov'+str(year)]= 100*(states[allPres[i][2]]['dvotes'+str(year)]/states[allPres[i][2]]['tvotes'+str(year)] - states[allPres[i][2]]['rvotes'+str(year)]/states[allPres[i][2]]['tvotes'+str(year)])
+			states[allPres[i][2]]['rmov'+str(year)]= -1*states[allPres[i][2]]['dmov'+str(year)]
+		except:
+			pass
+	
+
+predyear = 2016
+for state in states.keys():
+	x = []
+	y = []
+	for i in range(0,10):
+		year = 1976+i*4
+		yearRow = []
+		for ostate in states.keys():
+			if state != ostate:
+				yearRow.append(states[ostate]['dmov'+str(year)])
+		x.append(yearRow)
+		y.append(round(states[state]['dmov'+str(year)]))
+	clf = RandomForestClassifier(n_estimators=1000)
+	clf = clf.fit(x,y)
+	p = []
+	for ostate in states.keys():
+		if state != ostate:
+			p.append(states[ostate]['dmov'+str(predyear)])
+	predictions = clf.predict([p])
+	print(state,predictions,round(states[state]['dmov'+str(predyear)]))
+
