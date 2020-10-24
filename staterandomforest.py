@@ -119,20 +119,20 @@ predyear = 2016
 for state in states.keys():
 	x = []
 	y = []
-	for i in range(0,10):
-		year = 1976+i*4
-		yearRow = []
+	for i in range(0,9):
+		year = 1980+i*4
+		yearRow = [states[state]['dmov'+str(year-4)]]
 		for ostate in states.keys():
 			if state != ostate:
-				yearRow.append(states[ostate]['dmov'+str(year)])
+				yearRow.append(states[ostate]['dmov'+str(year)]-states[ostate]['dmov'+str(year-4)])
 		x.append(yearRow)
 		y.append(round(states[state]['dmov'+str(year)]))
 	clf = RandomForestClassifier(n_estimators=1000)
 	clf = clf.fit(x,y)
-	p = []
+	p = [states[state]['dmov'+str(predyear-4)]]
 	for ostate in states.keys():
 		if state != ostate:
-			p.append(states[ostate]['dmov'+str(predyear)])
+			p.append(states[ostate]['dmov'+str(predyear)]-states[ostate]['dmov'+str(predyear-4)])
 	predictions = clf.predict([p])
 	print(state,predictions,round(states[state]['dmov'+str(predyear)]))
 
