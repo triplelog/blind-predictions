@@ -134,7 +134,11 @@ for state in states.keys():
 	clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
 	clf = clf.fit(x,y)
 	imp = clf.feature_importances_
-	print(imp)
+	idx = 0
+	for ostate in states.keys():
+		if state != ostate:
+			print(ostate,imp[idx])
+			idx+=1
 	print(soto)
 	p = []
 	for ostate in states.keys():
