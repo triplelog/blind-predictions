@@ -137,9 +137,10 @@ for state in states.keys():
 	idx = 0
 	for ostate in states.keys():
 		if state != ostate:
-			print(ostate,imp[idx])
+			if state =="SC":
+				print(ostate,imp[idx])
 			idx+=1
-	print(soto)
+
 	p = []
 	for ostate in states.keys():
 		if state != ostate:
