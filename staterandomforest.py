@@ -129,7 +129,7 @@ for state in states.keys():
 			if state != ostate:
 				yearRow.append(states[ostate]['dmov'+str(year)]-states[ostate]['dmov'+str(year-4)])
 		x.append(yearRow)
-		y.append(round(states[state]['dmov'+str(year)]))
+		y.append(round(states[state]['dmov'+str(year)]-states[state]['dmov'+str(year-4)))
 	clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
 	clf = clf.fit(x,y)
 	p = []
