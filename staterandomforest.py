@@ -9,6 +9,7 @@ import sklearn
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestRegressor
+from sklearn.ensemble import AdaBoostRegressor
 
 def pywin(dperc):
 	return 1.0/(1.0+((1.01-dperc)/(dperc+.01))**7.5)
@@ -128,7 +129,7 @@ for state in states.keys():
 				yearRow.append(states[ostate]['dmov'+str(year)]-states[ostate]['dmov'+str(year-4)])
 		x.append(yearRow)
 		y.append(round(states[state]['dmov'+str(year)]))
-	clf = RandomForestRegressor(random_state=1, n_estimators=1000)
+	clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
 	clf = clf.fit(x,y)
 	p = [states[state]['dmov'+str(predyear-4)]]
 	for ostate in states.keys():
