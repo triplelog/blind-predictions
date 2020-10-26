@@ -161,9 +161,12 @@ print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 
 trainX = []
-testX = []
 trainY = []
+testX = []
 testY = []
+for i in range(0,10):
+	testX.append([])
+	testY.append([])
 for i in range(0,len(goodVoters)):
 	voter = goodVoters[i]
 	try:
@@ -172,20 +175,24 @@ for i in range(0,len(goodVoters)):
 		x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146])]
 	except:
 		continue
-	if random.random()<.25:
+	if random.random()<.2:
 		trainX.append(x)
 		trainY.append(int(voter[77]))
 	else:
-		testX.append(x)
-		testY.append(int(voter[77]))
+		g = random.randint(0,9)
+		testX[g].append(x)
+		testY[g].append(int(voter[77]))
 print(len(trainY))
 clf = GradientBoostingRegressor(n_estimators=1000)
 clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
 print(imp)
-predictions = clf.predict(testX)
-
-
-print(numpy.mean(abs(predictions-testY)))
+for i in range(0,10):
+	predictions = clf.predict(testX[g])
+	sumPred = 0
+	for ii in predictions:
+		sumPred += ii
+	print(sumPred,sum(testY[g]))
+	#print(numpy.mean(abs(predictions-testY)))
 
 
