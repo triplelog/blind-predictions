@@ -146,7 +146,7 @@ for ii in range(0,1000):
 	sse = 0
 	sseV = 0
 	wv = 0
-	while nv < 1000:
+	while nv < 2500:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
 		probAnswer = .33/float(voter[1])
@@ -197,7 +197,7 @@ for iii in range(0,50):
 	trainX = []
 	trainY = []
 	nv = 0
-	while nv < 1000:
+	while nv < 2500:
 		xx = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[xx]
 		try:
