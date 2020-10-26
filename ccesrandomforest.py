@@ -51,8 +51,9 @@ def readtsv(filen):
 allCCES = readtsv("data/cces2019.tsv")
 tree = ET.parse('data/cces2019vars.xml')
 root = tree.getroot()
-for var in root.iter():
-	print(var)
+for node in root.iter():
+	if node.tag == 'var':
+		print(node.name)
 
 
 
