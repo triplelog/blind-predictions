@@ -76,5 +76,14 @@ religion = {1:"Protestant",2:"Catholic",3:"Mormon",4:"Orthodox",5:"Jewish",6:"Mu
 for i in usedvars:
 	print(i, vars[i])
 
+partyID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+for i in range(0,len(allCCES)):
+	voter = allCCES[i]
+	if voter[139] > 7:
+		continue
+	partyID[voter[139]]+=1
+print(partyID)
+
+
 
 
