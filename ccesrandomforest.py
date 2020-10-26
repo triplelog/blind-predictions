@@ -196,6 +196,7 @@ for iii in range(0,50):
 		allGoodY.append(int(voter[77]))
 	trainX = []
 	trainY = []
+	nv = 0
 	while nv < 2000:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
