@@ -77,6 +77,7 @@ for i in usedvars:
 	print(i, vars[i])
 
 partyID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+goodVoters = []
 for i in range(0,len(allCCES)):
 	voter = allCCES[i]
 	try:
@@ -84,9 +85,10 @@ for i in range(0,len(allCCES)):
 			continue
 	except:
 		continue
-	partyID[voter[139]]+=1
+	partyID[int(voter[139])]+=1
+	goodVoters.append(voter)
 print(partyID)
-
+print(len(goodVoters))
 
 
 
