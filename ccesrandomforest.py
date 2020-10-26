@@ -201,7 +201,11 @@ for iii in range(0,10):
 	predVote = {1:0,2:0}
 	for ii in predTrain:
 		predVote[ii]+=1
-	print(15223*predVote[1]/(predVote[1]+predVote[2]))
+
+	actVote = {1:0,2:0}
+	for ii in trainY:
+		actVote[ii]+=1
+	print(15223*predVote[1]/(predVote[1]+predVote[2]),15223*actVote[1]/(actVote[1]+actVote[2]))
 	nv = 0
 	for ii in predAll:
 		sampleVote[ii]+=1
