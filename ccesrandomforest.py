@@ -71,7 +71,7 @@ usedvars = [1,3,4,5,6,8,18,77,139,140,147,151,250]
 races = {1:'White',2:'Black',3:'Hispanic',4:'Asian'}
 hispanic = {1:'Yes',2:'No'}
 party = {1:"D",7:'R'}
-ideology = {1"L",5:"C"}
+ideology = {1:"L",5:"C"}
 religion = {1:"Protestant",2:"Catholic",3:"Mormon",4:"Orthodox",5:"Jewish",6:"Muslim",7:"Buddhist",8:"Hindu",9:"Atheist",10:"Agnostic",11:"NIP",12:"Other"}
 for i in usedvars:
 	print(i, vars[i])
