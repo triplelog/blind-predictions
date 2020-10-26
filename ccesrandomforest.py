@@ -164,7 +164,7 @@ trainX = []
 trainY = []
 testX = []
 testY = []
-for i in range(0,20):
+for i in range(0,100):
 	testX.append([])
 	testY.append([])
 for i in range(0,len(goodVoters)):
@@ -179,7 +179,7 @@ for i in range(0,len(goodVoters)):
 		trainX.append(x)
 		trainY.append(int(voter[77]))
 	else:
-		g = random.randint(0,19)
+		g = random.randint(0,99)
 		testX[g].append(x)
 		testY[g].append(int(voter[77]))
 print(len(trainY))
@@ -189,7 +189,7 @@ imp = clf.feature_importances_
 print(imp)
 allX = []
 allY = []
-for i in range(0,20):
+for i in range(0,100):
 	predictions = clf.predict(testX[i])
 	sumPred = 0
 	for ii in predictions:
