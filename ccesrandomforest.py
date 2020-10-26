@@ -53,6 +53,8 @@ tree = ET.parse('data/cces2019vars.xml')
 root = tree.getroot()
 for node in root.findall('./*'):
 	print(node.tag)
+	for node2 in node.findall('./*'):
+		print(node2.tag)
 
 print("aaa")
 for node in root.findall('.'):
