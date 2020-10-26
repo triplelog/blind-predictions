@@ -164,7 +164,7 @@ trainX = []
 trainY = []
 testX = []
 testY = []
-for i in range(0,10):
+for i in range(0,20):
 	testX.append([])
 	testY.append([])
 for i in range(0,len(goodVoters)):
@@ -179,7 +179,7 @@ for i in range(0,len(goodVoters)):
 		trainX.append(x)
 		trainY.append(int(voter[77]))
 	else:
-		g = random.randint(0,9)
+		g = random.randint(0,19)
 		testX[g].append(x)
 		testY[g].append(int(voter[77]))
 print(len(trainY))
@@ -187,12 +187,16 @@ clf = GradientBoostingRegressor(n_estimators=1000)
 clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
 print(imp)
-for i in range(0,10):
+allX = []
+allY = []
+for i in range(0,20):
 	predictions = clf.predict(testX[i])
 	sumPred = 0
 	for ii in predictions:
 		sumPred += ii
 	print(sumPred,sum(testY[i]))
-	#print(numpy.mean(abs(predictions-testY)))
+	allX.append(sumPred)
+	allY.append(sum(testY[i]))
+print(numpy.corrcoef(allX,allY))
 
 
