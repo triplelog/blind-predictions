@@ -146,7 +146,7 @@ for ii in range(0,1000):
 	sse = 0
 	sseV = 0
 	wv = 0
-	while nv < 1000:
+	while nv < 2000:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
 		probAnswer = random.random()
@@ -165,7 +165,8 @@ print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 print(vote)
 asse = 0
-for iii in range(0,20):
+sseAll = []
+for iii in range(0,50):
 	trainX = []
 	trainY = []
 	testX = []
@@ -215,6 +216,7 @@ for iii in range(0,20):
 		se = (100*sampleVote[i]/nv-100*vote[i]/len(goodVoters))*(100*sampleVote[i]/nv-100*vote[i]/len(goodVoters))
 		sse+=se
 	print(sampleVote,sse)
+	sseAll.append(sse)
 	clf = GradientBoostingRegressor(n_estimators=1000)
 	clf = clf.fit(trainX,trainY)
 	imp = clf.feature_importances_
@@ -232,7 +234,8 @@ for iii in range(0,20):
 		allY.append(sum(testY[i]))
 		sse += (sumPred-sum(testY[i]))*(sumPred-sum(testY[i]))
 	#print(imp,numpy.corrcoef(allX,allY), sse)
-	asse += sse
-print(asse/4000)
+	#asse += sse
+print(numpy.mean(sseAll))
+print(numpy.std(sseAll))
 
 
