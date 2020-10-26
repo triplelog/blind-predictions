@@ -160,43 +160,44 @@ for ii in range(0,1000):
 print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 
-trainX = []
-trainY = []
-testX = []
-testY = []
-for i in range(0,100):
-	testX.append([])
-	testY.append([])
-for i in range(0,len(goodVoters)):
-	voter = goodVoters[i]
-	try:
-		#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
-		#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-		x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146])]
-	except:
-		continue
-	if random.random()<.2:
-		trainX.append(x)
-		trainY.append(int(voter[77]))
-	else:
-		g = random.randint(0,99)
-		testX[g].append(x)
-		testY[g].append(int(voter[77]))
-print(len(trainY))
-clf = GradientBoostingRegressor(n_estimators=1000)
-clf = clf.fit(trainX,trainY)
-imp = clf.feature_importances_
-print(imp)
-allX = []
-allY = []
-for i in range(0,100):
-	predictions = clf.predict(testX[i])
-	sumPred = 0
-	for ii in predictions:
-		sumPred += ii
-	print(sumPred,sum(testY[i]))
-	allX.append(sumPred)
-	allY.append(sum(testY[i]))
-print(numpy.corrcoef(allX,allY))
+for iii in range(0,10):
+	trainX = []
+	trainY = []
+	testX = []
+	testY = []
+	for i in range(0,100):
+		testX.append([])
+		testY.append([])
+	for i in range(0,len(goodVoters)):
+		voter = goodVoters[i]
+		try:
+			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
+			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
+			x = [int(voter[6])]
+		except:
+			continue
+		if random.random()<.2:
+			trainX.append(x)
+			trainY.append(int(voter[77]))
+		else:
+			g = random.randint(0,99)
+			testX[g].append(x)
+			testY[g].append(int(voter[77]))
+	#print(len(trainY))
+	clf = GradientBoostingRegressor(n_estimators=1000)
+	clf = clf.fit(trainX,trainY)
+	imp = clf.feature_importances_
+	#print(imp)
+	allX = []
+	allY = []
+	for i in range(0,100):
+		predictions = clf.predict(testX[i])
+		sumPred = 0
+		for ii in predictions:
+			sumPred += ii
+		#print(sumPred,sum(testY[i]))
+		allX.append(sumPred)
+		allY.append(sum(testY[i]))
+	print(imp,numpy.corrcoef(allX,allY))
 
 
