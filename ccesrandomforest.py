@@ -65,5 +65,8 @@ for node in root.findall('./*'):
 print(len(vars))
 print(len(allCCES[0]))
 
+for i in range(0,len(vars)):
+	print(i, vars[i])
+
 
 
