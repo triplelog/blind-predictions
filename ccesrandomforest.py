@@ -165,15 +165,16 @@ testY = []
 for i in range(0,len(goodVoters)):
 	voter = goodVoters[i]
 	try:
-		x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[147]),int(voter[151]),int(voter[250])]
+		x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[147]),int(voter[151])]
 	except:
 		continue
-	if random.random()<.5:
+	if random.random()<.25:
 		trainX.append(x)
 		trainY.append(int(voter[139]))
 	else:
 		testX.append(x)
 		testY.append(int(voter[139]))
+print(len(trainY))
 clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
 clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
