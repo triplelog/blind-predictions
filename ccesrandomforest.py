@@ -11,6 +11,7 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import AdaBoostRegressor
 from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.ensemble import GradientBoostingClassifier
 import xml.etree.ElementTree as ET
 
 def pywin(dperc):
@@ -166,6 +167,9 @@ for iii in range(0,10):
 	trainY = []
 	testX = []
 	testY = []
+	allGoodX = []
+	allGoodY = []
+	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 	for i in range(0,400):
 		testX.append([])
 		testY.append([])
@@ -177,14 +181,27 @@ for iii in range(0,10):
 			x = [int(voter[151])]
 		except:
 			continue
-		if random.random()<.2:
+		if random.random()<1000.0/15223:
 			trainX.append(x)
-			trainY.append(int(voter[77]))
+			trainY.append(int(voter[139]))
 		else:
 			g = random.randint(0,399)
 			testX[g].append(x)
-			testY[g].append(int(voter[77]))
+			testY[g].append(int(voter[139]))
+		allGoodX.append(x)
+		allGoodY.append(int(voter[139]))
 	#print(len(trainY))
+	clfC = GradientBoostingClassifier(n_estimators=1000)
+	clfC = clf.fit(trainX,trainY)
+	predAll = clf.predict(allGoodX)
+	for ii in predictions:
+		sampleID[ii]+=1
+		nv+=1
+	sse = 0
+	for i in range(1,8):
+		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
+		sse+=se
+	print(sse)
 	clf = GradientBoostingRegressor(n_estimators=1000)
 	clf = clf.fit(trainX,trainY)
 	imp = clf.feature_importances_
@@ -201,7 +218,7 @@ for iii in range(0,10):
 		allX.append(sumPred)
 		allY.append(sum(testY[i]))
 		sse += (sumPred-sum(testY[i]))*(sumPred-sum(testY[i]))
-	print(imp,numpy.corrcoef(allX,allY), sse)
+	#print(imp,numpy.corrcoef(allX,allY), sse)
 	asse += sse
 print(asse/4000)
 
