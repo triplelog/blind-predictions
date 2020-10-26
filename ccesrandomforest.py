@@ -60,10 +60,14 @@ for node in root.findall('./*'):
 			if node2.tag == '{http://www.icpsr.umich.edu/DDI}var':
 				#print(node2.attrib)
 				#print(node2.get('name'))
-				vars.append(node2.get('name'))
+				for node3 in node2.findall('./*'):
+					if node3.tag == '{http://www.icpsr.umich.edu/DDI}labl':
+						vars.append(node3.text)
 
 print(len(vars))
 print(len(allCCES[0]))
+
+usedvars = [1,3,4,5,6,7,8,147]
 
 for i in range(0,len(vars)):
 	print(i, vars[i])
