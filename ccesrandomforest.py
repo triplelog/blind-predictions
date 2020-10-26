@@ -198,8 +198,14 @@ for iii in range(0,50):
 	trainY = []
 	nv = 0
 	while nv < 2000:
-		x = random.randint(0,len(goodVoters)-1)
-		voter = goodVoters[x]
+		xx = random.randint(0,len(goodVoters)-1)
+		voter = goodVoters[xx]
+		try:
+			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
+			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
+			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
+		except:
+			continue
 		probAnswer = .33/float(voter[1])
 		r = random.random()
 		if r >= probAnswer:
@@ -207,7 +213,6 @@ for iii in range(0,50):
 		trainX.append(x)
 		trainY.append(int(voter[77]))
 		nv += 1
-	print(len(trainY))
 	clfC = AdaBoostClassifier(n_estimators=1000)
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
