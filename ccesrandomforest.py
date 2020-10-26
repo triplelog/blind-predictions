@@ -67,7 +67,7 @@ for node in root.findall('./*'):
 print(len(vars))
 print(len(allCCES[0]))
 
-usedvars = [1,3,4,5,6,8,18,77,139,140,147,151,250]
+usedvars = [1,3,4,5,6,8,18,77,139,140,146,147,151,250]
 races = {1:'White',2:'Black',3:'Hispanic',4:'Asian'}
 hispanic = {1:'Yes',2:'No'}
 party = {1:"D",7:'R'}
@@ -176,7 +176,7 @@ for i in range(0,len(goodVoters)):
 		testX.append(x)
 		testY.append(int(voter[139]))
 print(len(trainY))
-clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
+clf = RandomForestRegressor(n_estimators=1000)
 clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
 print(imp)
