@@ -147,9 +147,9 @@ for ii in range(0,1000):
 		r = random.random()
 		if r >= probAnswer:
 			continue
-		sampleID[int(voter[139])]+=1.0
+		sampleID[int(voter[139])]+=1.0/probAnswer
 		nv+=1
-		wv+=1.0
+		wv+=1.0/probAnswer
 
 	for i in range(1,8):
 		se = (100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))
@@ -157,5 +157,27 @@ for ii in range(0,1000):
 	sseAll.append(sse)
 print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
+
+trainX = []
+testX = []
+trainY = []
+testY = []
+for i in range(0,len(goodVoters)):
+	voter = goodVoters[i]
+	x = [voter[3],voter[4],voter[5],voter[6],voter[18],voter[147],voter[151],voter[250]]
+	if random.random()<.5:
+		trainX.append(x)
+		trainY.append(int(voter[139]))
+	else:
+		testX.append(x)
+		testY.append(int(voter[139]))
+clf = AdaBoostRegressor(random_state=1, n_estimators=1000)
+clf = clf.fit(trainX,trainY)
+imp = clf.feature_importances_
+print(imp)
+predictions = clf.predict(testX)
+
+
+print(numpy.mean(abs(predictions-testY)))
 
 
