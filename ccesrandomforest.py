@@ -143,7 +143,7 @@ for ii in range(0,1000):
 	while nv < 1000:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
-		probAnswer = .5/float(voter[1])
+		probAnswer = .1/float(voter[1])
 		r = random.random()
 		if r >= probAnswer:
 			continue
