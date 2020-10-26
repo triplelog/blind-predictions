@@ -208,7 +208,7 @@ for iii in range(0,10):
 	print(15223*predVote[1]/(predVote[1]+predVote[2]),15223*actVote[1]/(actVote[1]+actVote[2]))
 	nv = 0
 	for ii in predAll:
-		sampleVote[ii]+=1
+		sampleVote[ii]+=actVote[ii]/predVote[ii]
 		nv+=1
 	sse = 0
 	for i in range(1,3):
