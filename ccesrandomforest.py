@@ -153,9 +153,9 @@ for ii in range(0,1000):
 		r = random.random()
 		if r >= probAnswer:
 			continue
-		sampleVote[int(voter[77])]+=1.0
+		sampleVote[int(voter[77])]+=float(voter[1])
 		nv+=1
-		wv+=1.0
+		wv+=float(voter[1])
 
 	for i in range(1,3):
 		se = (100*sampleVote[i]/wv-100*vote[i]/len(goodVoters))*(100*sampleVote[i]/wv-100*vote[i]/len(goodVoters))
@@ -182,7 +182,7 @@ for iii in range(0,50):
 		try:
 			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
 			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146])]
+			x = [int(voter[6]),int(voter[151])]
 		except:
 			continue
 		if random.random()<2000.0/15223:
@@ -203,7 +203,7 @@ for iii in range(0,50):
 		try:
 			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
 			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146])]
+			x = [int(voter[6]),int(voter[151])]
 		except:
 			continue
 		probAnswer = .33/float(voter[1])
