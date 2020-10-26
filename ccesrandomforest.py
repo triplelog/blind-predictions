@@ -56,7 +56,8 @@ for node in root.findall('./*'):
 	if node.tag == '{http://www.icpsr.umich.edu/DDI}dataDscr':
 		for node2 in node.findall('./*'):
 			if node2.tag == '{http://www.icpsr.umich.edu/DDI}var':
-				print(node2.name)
+				print(node2.attrib)
+				print(node2.get('name'))
 
 print("aaa")
 for node in root.findall('.'):
