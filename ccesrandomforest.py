@@ -92,12 +92,20 @@ for i in range(1,8):
 	print(i,1000*partyID[i]/len(goodVoters))
 print(len(goodVoters))
 
-sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
-
-for i in range(0,1000):
-	x = random.randint(0,len(goodVoters)-1)
-	voter = goodVoters[x]
-	sampleID[int(voter[139])]+=1
-print(sampleID)
+sseTotal = 0
+for ii in range(0,1000):
+	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+	nv = 0
+	sse = 0
+	for i in range(0,1000):
+		x = random.randint(0,len(goodVoters)-1)
+		voter = goodVoters[x]
+		sampleID[int(voter[139])]+=1
+		nv+=1
+	for i in range(1,8):
+		se = (sampleID[i]/nv-partyID[i]/len(goodVoters))*(sampleID[i]/nv-partyID[i]/len(goodVoters))
+		sse+=se
+	sseTotal += sse
+print(sseTotal/1000)
 
 
