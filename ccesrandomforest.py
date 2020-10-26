@@ -176,7 +176,7 @@ for i in range(0,len(goodVoters)):
 		testX.append(x)
 		testY.append(int(voter[139]))
 print(len(trainY))
-clf = RandomForestRegressor(n_estimators=1000)
+clf = GradientBoostingRegressor(n_estimators=1000)
 clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
 print(imp)
