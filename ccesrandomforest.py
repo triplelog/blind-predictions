@@ -117,7 +117,7 @@ for ii in range(0,1000):
 	for i in range(0,1000):
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
-		probAnswer = 1.0/voter[1]
+		probAnswer = 1.0/float(voter[1])
 		r = random.random()
 		if r >= probAnswer:
 			continue
