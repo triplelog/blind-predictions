@@ -11,6 +11,7 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.ensemble import AdaBoostRegressor
 from sklearn.ensemble import GradientBoostingRegressor
+import xml.etree.ElementTree as ET
 
 def pywin(dperc):
 	return 1.0/(1.0+((1.01-dperc)/(dperc+.01))**7.5)
@@ -48,7 +49,7 @@ def readtsv(filen):
         return allgamesa
               
 allCCES = readtsv("data/cces2019.tsv")
-
-print(allCCES[0])
+tree = ET.parse('data/cces2019vars.xml')
+print(tree)
 
 
