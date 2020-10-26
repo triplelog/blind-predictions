@@ -194,6 +194,7 @@ for iii in range(0,10):
 	clfC = GradientBoostingClassifier(n_estimators=1000)
 	clfC = clf.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
+	nv = 0
 	for ii in predAll:
 		sampleID[ii]+=1
 		nv+=1
