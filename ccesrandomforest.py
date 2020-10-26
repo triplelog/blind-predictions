@@ -147,9 +147,9 @@ for ii in range(0,1000):
 		r = random.random()
 		if r >= probAnswer:
 			continue
-		sampleID[int(voter[139])]+=1.0/probAnswer
+		sampleID[int(voter[139])]+=1.0
 		nv+=1
-		wv+=1.0/probAnswer
+		wv+=1.0
 
 	for i in range(1,8):
 		se = (100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))
