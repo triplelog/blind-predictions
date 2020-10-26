@@ -54,7 +54,7 @@ root = tree.getroot()
 for node in root.findall('dataDscr'):
 	print(node.tag)
 print("aaa")
-for node in root.findall():
+for node in root.findall('.'):
 	print(node.tag)
 
 
