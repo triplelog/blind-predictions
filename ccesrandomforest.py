@@ -207,7 +207,7 @@ for iii in range(0,50):
 		trainX.append(x)
 		trainY.append(int(voter[77]))
 		nv += 1
-	#print(len(trainY))
+	print(len(trainY))
 	clfC = AdaBoostClassifier(n_estimators=1000)
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
