@@ -165,7 +165,7 @@ print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 print(vote)
 asse = 0
-for iii in range(0,10):
+for iii in range(0,20):
 	trainX = []
 	trainY = []
 	testX = []
@@ -184,7 +184,7 @@ for iii in range(0,10):
 			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
 		except:
 			continue
-		if random.random()<1000.0/15223:
+		if random.random()<2000.0/15223:
 			trainX.append(x)
 			trainY.append(int(voter[77]))
 		else:
@@ -205,7 +205,7 @@ for iii in range(0,10):
 	actVote = {1:0,2:0}
 	for ii in trainY:
 		actVote[ii]+=1
-	print(15223*predVote[1]/(predVote[1]+predVote[2]),15223*actVote[1]/(actVote[1]+actVote[2]))
+	#print(15223*predVote[1]/(predVote[1]+predVote[2]),15223*actVote[1]/(actVote[1]+actVote[2]))
 	nv = 0
 	for ii in predAll:
 		sampleVote[ii]+=actVote[ii]/predVote[ii]
