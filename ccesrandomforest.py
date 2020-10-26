@@ -83,6 +83,8 @@ for i in range(0,len(allCCES)):
 	try:
 		if int(voter[139]) > 7:
 			continue
+		if int(voter[77]) > 2:
+			continue
 	except:
 		continue
 	partyID[int(voter[139])]+=1
@@ -171,10 +173,10 @@ for i in range(0,len(goodVoters)):
 		continue
 	if random.random()<.25:
 		trainX.append(x)
-		trainY.append(int(voter[139]))
+		trainY.append(int(voter[77]))
 	else:
 		testX.append(x)
-		testY.append(int(voter[139]))
+		testY.append(int(voter[77]))
 print(len(trainY))
 clf = GradientBoostingRegressor(n_estimators=1000)
 clf = clf.fit(trainX,trainY)
