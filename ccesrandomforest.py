@@ -202,7 +202,7 @@ for iii in range(0,10):
 	for i in range(1,8):
 		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
 		sse+=se
-	print(sse)
+	print(sampleID,sse)
 	clf = GradientBoostingRegressor(n_estimators=1000)
 	clf = clf.fit(trainX,trainY)
 	imp = clf.feature_importances_
