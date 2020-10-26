@@ -194,7 +194,7 @@ for iii in range(0,10):
 		allGoodX.append(x)
 		allGoodY.append(int(voter[77]))
 	#print(len(trainY))
-	clfC = RandomForestClassifier(n_estimators=1000)
+	clfC = GradientBoostingClassifier(n_estimators=1000)
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
 	nv = 0
