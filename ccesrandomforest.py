@@ -49,6 +49,8 @@ def readtsv(filen):
         return allgamesa
               
 allCCES = readtsv("data/cces2019.tsv")
+
+vars = []
 tree = ET.parse('data/cces2019vars.xml')
 root = tree.getroot()
 for node in root.findall('./*'):
@@ -56,12 +58,12 @@ for node in root.findall('./*'):
 	if node.tag == '{http://www.icpsr.umich.edu/DDI}dataDscr':
 		for node2 in node.findall('./*'):
 			if node2.tag == '{http://www.icpsr.umich.edu/DDI}var':
-				print(node2.attrib)
-				print(node2.get('name'))
+				#print(node2.attrib)
+				#print(node2.get('name'))
+				vars.append(node2.get('name'))
 
-print("aaa")
-for node in root.findall('.'):
-	print(node.tag)
+print(len(vars))
+print(len(allCCES[0]))
 
 
 
