@@ -166,7 +166,7 @@ for i in range(0,len(goodVoters)):
 	voter = goodVoters[i]
 	try:
 		#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
-		x = [int(voter[1])]
+		x = [float(voter[1])]
 	except:
 		continue
 	if random.random()<.25:
