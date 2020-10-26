@@ -110,11 +110,12 @@ print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 
 sseAll = []
+
 for ii in range(0,1000):
 	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 	nv = 0
 	sse = 0
-	for i in range(0,1000):
+	while nv < 1000:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
 		probAnswer = 1.0/float(voter[1])
@@ -123,6 +124,7 @@ for ii in range(0,1000):
 			continue
 		sampleID[int(voter[139])]+=1
 		nv+=1
+
 	for i in range(1,8):
 		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
 		sse+=se
