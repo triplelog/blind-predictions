@@ -188,11 +188,11 @@ clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
 print(imp)
 for i in range(0,10):
-	predictions = clf.predict(testX[g])
+	predictions = clf.predict(testX[i])
 	sumPred = 0
 	for ii in predictions:
 		sumPred += ii
-	print(sumPred,sum(testY[g]))
+	print(sumPred,sum(testY[i]))
 	#print(numpy.mean(abs(predictions-testY)))
 
 
