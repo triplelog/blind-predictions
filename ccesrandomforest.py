@@ -160,6 +160,7 @@ for ii in range(0,1000):
 print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 
+asse = 0
 for iii in range(0,10):
 	trainX = []
 	trainY = []
@@ -201,5 +202,7 @@ for iii in range(0,10):
 		allY.append(sum(testY[i]))
 		sse += (sumPred-sum(testY[i]))*(sumPred-sum(testY[i]))
 	print(imp,numpy.corrcoef(allX,allY), sse)
+	asse += sse
+print(asse/4000)
 
 
