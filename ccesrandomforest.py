@@ -146,7 +146,7 @@ for ii in range(0,1000):
 	sse = 0
 	sseV = 0
 	wv = 0
-	while nv < 2000:
+	while nv < 1000:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
 		probAnswer = .33/float(voter[1])
@@ -182,10 +182,10 @@ for iii in range(0,50):
 		try:
 			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
 			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[151])]
+			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
 		except:
 			continue
-		if random.random()<2000.0/15223:
+		if random.random()<1000.0/15223:
 			trainX.append(x)
 			trainY.append(int(voter[77]))
 		else:
@@ -197,13 +197,13 @@ for iii in range(0,50):
 	trainX = []
 	trainY = []
 	nv = 0
-	while nv < 2000:
+	while nv < 1000:
 		xx = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[xx]
 		try:
 			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
 			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[151])]
+			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
 		except:
 			continue
 		probAnswer = .33/float(voter[1])
