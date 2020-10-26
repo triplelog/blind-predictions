@@ -51,7 +51,7 @@ def readtsv(filen):
 allCCES = readtsv("data/cces2019.tsv")
 tree = ET.parse('data/cces2019vars.xml')
 root = tree.getroot()
-for node in root.findall('codeBook'):
+for node in root.findall('./*'):
 	print(node.tag)
 
 print("aaa")
