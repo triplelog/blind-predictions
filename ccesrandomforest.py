@@ -195,7 +195,7 @@ for iii in range(0,50):
 		allGoodX.append(x)
 		allGoodY.append(int(voter[77]))
 	#print(len(trainY))
-	clfC = GradientBoostingClassifier(n_estimators=1000)
+	clfC = AdaBoostClassifier(n_estimators=1000)
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
 	predTrain = clfC.predict(trainX)
