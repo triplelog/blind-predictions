@@ -164,7 +164,10 @@ trainY = []
 testY = []
 for i in range(0,len(goodVoters)):
 	voter = goodVoters[i]
-	x = [voter[3],voter[4],voter[5],voter[6],voter[18],voter[147],voter[151],voter[250]]
+	try:
+		x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[147]),int(voter[151]),int(voter[250])]
+	except:
+		continue
 	if random.random()<.5:
 		trainX.append(x)
 		trainY.append(int(voter[139]))
