@@ -78,6 +78,7 @@ for i in usedvars:
 	print(i, vars[i])
 
 partyID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+vote = {1:0,2:0}
 goodVoters = []
 for i in range(0,len(allCCES)):
 	voter = allCCES[i]
@@ -89,6 +90,7 @@ for i in range(0,len(allCCES)):
 	except:
 		continue
 	partyID[int(voter[139])]+=1
+	vote[int(voter[77])]+=1
 	goodVoters.append(voter)
 print(partyID)
 for i in range(1,8):
@@ -139,9 +141,10 @@ print(numpy.std(sseAll))
 sseAll = []
 
 for ii in range(0,1000):
-	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+	sampleVote = {1:0,2:0}
 	nv = 0
 	sse = 0
+	sseV = 0
 	wv = 0
 	while nv < 1000:
 		x = random.randint(0,len(goodVoters)-1)
@@ -150,14 +153,14 @@ for ii in range(0,1000):
 		r = random.random()
 		if r >= probAnswer:
 			continue
-		sampleID[int(voter[139])]+=1.0/probAnswer
+		sampleVote[int(voter[77])]+=1.0
 		nv+=1
-		wv+=1.0/probAnswer
+		wv+=1.0
 
-	for i in range(1,8):
-		se = (100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))
-		sse+=se
-	sseAll.append(sse)
+	for i in range(1,3):
+		se = (100*sampleVote[i]/wv-100*vote[i]/len(goodVoters))*(100*sampleVote[i]/wv-100*vote[i]/len(goodVoters))
+		sseV+=se
+	sseAll.append(sseV)
 print(numpy.mean(sseAll))
 print(numpy.std(sseAll))
 
@@ -169,7 +172,7 @@ for iii in range(0,10):
 	testY = []
 	allGoodX = []
 	allGoodY = []
-	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+	sampleVote = {1:0,2:0}
 	for i in range(0,400):
 		testX.append([])
 		testY.append([])
@@ -183,26 +186,26 @@ for iii in range(0,10):
 			continue
 		if random.random()<1000.0/15223:
 			trainX.append(x)
-			trainY.append(int(voter[139]))
+			trainY.append(int(voter[77]))
 		else:
 			g = random.randint(0,399)
 			testX[g].append(x)
-			testY[g].append(int(voter[139]))
+			testY[g].append(int(voter[77]))
 		allGoodX.append(x)
-		allGoodY.append(int(voter[139]))
+		allGoodY.append(int(voter[77]))
 	#print(len(trainY))
 	clfC = RandomForestClassifier(n_estimators=1000)
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
 	nv = 0
 	for ii in predAll:
-		sampleID[ii]+=1
+		sampleVote[ii]+=1
 		nv+=1
 	sse = 0
-	for i in range(1,8):
-		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
+	for i in range(1,3):
+		se = (100*sampleVote[i]/nv-100*vote[i]/len(goodVoters))*(100*sampleVote[i]/nv-100*vote[i]/len(goodVoters))
 		sse+=se
-	print(sampleID,sse)
+	print(sampleVote,sse)
 	clf = GradientBoostingRegressor(n_estimators=1000)
 	clf = clf.fit(trainX,trainY)
 	imp = clf.feature_importances_
