@@ -178,7 +178,7 @@ for iii in range(0,10):
 		try:
 			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
 			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[151])]
+			x = [int(voter[6]),int(voter[151])]
 		except:
 			continue
 		if random.random()<1000.0/15223:
@@ -191,7 +191,7 @@ for iii in range(0,10):
 		allGoodX.append(x)
 		allGoodY.append(int(voter[139]))
 	#print(len(trainY))
-	clfC = GradientBoostingClassifier(n_estimators=1000)
+	clfC = RandomForestClassifier(n_estimators=1000)
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
 	nv = 0
