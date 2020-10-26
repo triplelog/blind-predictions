@@ -193,8 +193,8 @@ for iii in range(0,10):
 	#print(len(trainY))
 	clfC = GradientBoostingClassifier(n_estimators=1000)
 	clfC = clf.fit(trainX,trainY)
-	predAll = clf.predict(allGoodX)
-	for ii in predictions:
+	predAll = clfC.predict(allGoodX)
+	for ii in predAll:
 		sampleID[ii]+=1
 		nv+=1
 	sse = 0
