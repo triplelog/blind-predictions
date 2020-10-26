@@ -198,7 +198,10 @@ for iii in range(0,10):
 	clfC = clfC.fit(trainX,trainY)
 	predAll = clfC.predict(allGoodX)
 	predTrain = clfC.predict(trainX)
-	print(predTrain)
+	predVote = {1:0,2:0}
+	for ii in predTrain:
+		predVote[ii]+=1
+	print(15223*predVote[1]/(predVote[1]+predVote[2]))
 	nv = 0
 	for ii in predAll:
 		sampleVote[ii]+=1
