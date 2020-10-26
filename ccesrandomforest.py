@@ -89,10 +89,10 @@ for i in range(0,len(allCCES)):
 	goodVoters.append(voter)
 print(partyID)
 for i in range(1,8):
-	print(i,1000*partyID[i]/len(goodVoters))
+	print(i,100*partyID[i]/len(goodVoters))
 print(len(goodVoters))
 
-sseTotal = 0
+sseAll = []
 for ii in range(0,1000):
 	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 	nv = 0
@@ -103,9 +103,10 @@ for ii in range(0,1000):
 		sampleID[int(voter[139])]+=1
 		nv+=1
 	for i in range(1,8):
-		se = (sampleID[i]/nv-partyID[i]/len(goodVoters))*(sampleID[i]/nv-partyID[i]/len(goodVoters))
+		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
 		sse+=se
-	sseTotal += sse
-print(sseTotal/1000)
+	sseAll.append(sse)
+print(numpy.mean(sseAll))
+print(numpy.std(sseAll))
 
 
