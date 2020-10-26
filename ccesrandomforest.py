@@ -143,13 +143,13 @@ for ii in range(0,1000):
 	while nv < 1000:
 		x = random.randint(0,len(goodVoters)-1)
 		voter = goodVoters[x]
-		probAnswer = .1/float(voter[1])
+		probAnswer = random.random()
 		r = random.random()
 		if r >= probAnswer:
 			continue
-		sampleID[int(voter[139])]+=float(voter[1])
+		sampleID[int(voter[139])]+=1.0/probAnswer
 		nv+=1
-		wv+=float(voter[1])
+		wv+=1.0/probAnswer
 
 	for i in range(1,8):
 		se = (100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/wv-100*partyID[i]/len(goodVoters))
