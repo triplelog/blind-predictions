@@ -165,7 +165,7 @@ for iii in range(0,10):
 	trainY = []
 	testX = []
 	testY = []
-	for i in range(0,100):
+	for i in range(0,400):
 		testX.append([])
 		testY.append([])
 	for i in range(0,len(goodVoters)):
@@ -173,14 +173,14 @@ for iii in range(0,10):
 		try:
 			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
 			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[151])]
+			x = [int(voter[6])]
 		except:
 			continue
 		if random.random()<.2:
 			trainX.append(x)
 			trainY.append(int(voter[77]))
 		else:
-			g = random.randint(0,99)
+			g = random.randint(0,399)
 			testX[g].append(x)
 			testY[g].append(int(voter[77]))
 	#print(len(trainY))
@@ -190,7 +190,8 @@ for iii in range(0,10):
 	#print(imp)
 	allX = []
 	allY = []
-	for i in range(0,100):
+	sse = 0
+	for i in range(0,400):
 		predictions = clf.predict(testX[i])
 		sumPred = 0
 		for ii in predictions:
@@ -198,6 +199,7 @@ for iii in range(0,10):
 		#print(sumPred,sum(testY[i]))
 		allX.append(sumPred)
 		allY.append(sum(testY[i]))
-	print(imp,numpy.corrcoef(allX,allY))
+		sse += (sumPred-sum(testY[i]))*(sumPred-sum(testY[i]))
+	print(imp,numpy.corrcoef(allX,allY), sse)
 
 
