@@ -64,10 +64,13 @@ for node in root.findall('./*'):
 				for node3 in node2.findall('./*'):
 					if node3.tag == '{http://www.icpsr.umich.edu/DDI}labl':
 						vars.append(node3.text)
+						
 
 print(len(vars))
 print(len(allCCES[0]))
-
+for i in range(0,len(vars)):
+	print(i, vars[i])
+print(soto)
 usedvars = [1,3,4,5,6,8,18,77,139,140,146,147,151,250]
 races = {1:'White',2:'Black',3:'Hispanic',4:'Asian'}
 hispanic = {1:'Yes',2:'No'}
