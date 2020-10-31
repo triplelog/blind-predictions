@@ -167,7 +167,8 @@ testY = []
 testDistrict = []
 for voter in goodVoters:
 	try:
-		xArr = [int(voter[139]),int(voter[151])]
+		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151])]
+		xArr = [int(voter[75]),int(voter[139])]
 		error = voter[271]
 	
 	except:
