@@ -141,7 +141,10 @@ for i in range(0,len(allCCES)):
 	d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
 
 	try:
-		voter[271]=pollError[d][0]/pollError[d][1]
+		if pollError[d][1]>1:
+			voter[271]=pollError[d][0]/pollError[d][1]
+		else:
+			continue
 	except:
 		continue
 	goodVoters.append(voter)
