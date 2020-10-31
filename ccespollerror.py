@@ -143,7 +143,7 @@ for i in range(0,len(allCCES)):
 	try:
 		if pollError[d][1]>0:
 			voter[271]=pollError[d][0]/pollError[d][1]
-			voter[272]=d
+			voter[269]=d
 			try:
 				goodDistricts[d]+=1
 			except:
@@ -178,7 +178,7 @@ for voter in goodVoters:
 	else:
 		testX.append(xArr)
 		testY.append(error)
-		testDistrict.append(voter[272])
+		testDistrict.append(voter[269])
 	
 print(len(trainY))	
 
