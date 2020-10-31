@@ -174,10 +174,10 @@ for voter in goodVoters:
 		continue
 	if random.random()<.5:
 		trainX.append(xArr)
-		trainY.append(error)
+		trainY.append(error**2)
 	else:
 		testX.append(xArr)
-		testY.append(error)
+		testY.append(error**2)
 		testDistrict.append(voter[269])
 	
 print(len(trainY))	
@@ -205,7 +205,7 @@ xx = []
 yy = []
 for d in districtPred.keys():
 	p = districtPred[d][0]/districtPred[d][1]
-	a = pollError[d][0]/pollError[d][1]
+	a = (pollError[d][0]/pollError[d][1])**2
 	xx.append(p)
 	yy.append(a)
 	sse += (p-a)**2
