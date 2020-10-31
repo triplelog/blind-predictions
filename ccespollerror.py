@@ -161,14 +161,22 @@ print(len(goodVoters))
 
 trainX = []
 trainY = []
-
+testX = []
+testY = []
 for voter in goodVoters:
 	try:
 		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151]),int(voter[213])]
-		trainX.append(xArr)
-		trainY.append(int(voter[271]))
+		error = voter[271]
+	
 	except:
 		continue
+	if random.random()<.5:
+		trainX.append(xArr)
+		trainY.append(error)
+	else:
+		testX.append(xArr)
+		testY.append(error)
+	
 print(len(trainY))	
 
 
@@ -177,7 +185,12 @@ clf = clf.fit(trainX,trainY)
 imp = clf.feature_importances_
 print(imp)
 
-#predictions = clf.predict(testX[i])
+predictions = clf.predict(testX)
+sse = 0
+for i in range(0,len(predictions)):
+	err = predictions[i]-testY[i]
+	sse += err**2
+print(sse/len(predictions))
 
 
 
