@@ -163,9 +163,13 @@ trainX = []
 trainY = []
 
 for voter in goodVoters:
-	xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151]),int(voter[213])]
-	trainX.append(xArr)
-	trainY.append(int(voter[271]))
+	try:
+		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151]),int(voter[213])]
+		trainX.append(xArr)
+		trainY.append(int(voter[271]))
+	except:
+		continue
+print(len(trainY))	
 
 
 clf = GradientBoostingRegressor(n_estimators=1000)
