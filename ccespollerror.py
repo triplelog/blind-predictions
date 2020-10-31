@@ -141,7 +141,7 @@ for i in range(0,len(allCCES)):
 	d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
 
 	try:
-		if pollError[d][1]>1:
+		if pollError[d][1]>0:
 			voter[271]=pollError[d][0]/pollError[d][1]
 			voter[269]=d
 			try:
@@ -167,7 +167,7 @@ testY = []
 testDistrict = []
 for voter in goodVoters:
 	try:
-		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151]),int(voter[213])]
+		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151])]
 		error = voter[271]
 	
 	except:
@@ -208,8 +208,7 @@ for d in districtPred.keys():
 	a = pollError[d][0]/pollError[d][1]
 	xx.append(p)
 	yy.append(a)
-	print(p,a)
-	sse += (p*2-a)**2
+	sse += (p-a)**2
 print(sse/len(districtPred.keys()))
 print(numpy.corrcoef(xx,yy))
 
