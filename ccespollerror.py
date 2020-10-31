@@ -41,6 +41,29 @@ def readcsv(filen):
                         allgamesa.append(row)
         return allgamesa
 
+def readpolls(filen,year):
+    allgamesa  ={}
+    with open(filen, 'r') as csvfile:
+        spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        for row in spamreader:
+        	try:
+        		y = int(row[3])
+        		district = row[5]
+        		bias = float(row[25])
+        		partisan = row[28]
+        	except:
+        		continue
+        	if y != year or district == "US" or partisan != "":
+        		continue
+        	try:
+        		allgamesa[district][0]+=bias
+        		allgamesa[district][1]+=1
+        	except:
+        		allgamesa[district]=[0,0]
+        		allgamesa[district][0]+=bias
+        		allgamesa[district][1]+=1
+    return allgamesa
+        
 def readtsv(filen):
         allgamesa  =[]
         with open(filen, 'r') as csvfile:
@@ -50,7 +73,7 @@ def readtsv(filen):
         return allgamesa
               
 allCCES = readtsv("data/cces2019.tsv")
-
+pollError = readpolls("data/house-polls.csv",2018)
 vars = []
 tree = ET.parse('data/cces2019vars.xml')
 root = tree.getroot()
@@ -72,17 +95,21 @@ print(len(allCCES[0]))
 #	print(i, vars[i])
 
 usedvars = [1,3,4,5,6,8,18,25,64,65,75,77,137,139,140,146,147,151,198,212,213,249,250,251,270]
+usedvars.append(271)
+vars[271]="Poll Error"
 races = {1:'White',2:'Black',3:'Hispanic',4:'Asian'}
 hispanic = {1:'Yes',2:'No'}
 party = {1:"D",7:'R'}
 ideology = {1:"L",5:"C"}
 religion = {1:"Protestant",2:"Catholic",3:"Mormon",4:"Orthodox",5:"Jewish",6:"Muslim",7:"Buddhist",8:"Hindu",9:"Atheist",10:"Agnostic",11:"NIP",12:"Other"}
 for i in usedvars:
-	print(i, vars[i], allCCES[1][i])
-print(soto)
+	print(i, vars[i], allCCES[10][i], allCCES[100][i])
+
 partyID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 vote = {1:0,2:0}
 goodVoters = []
+
+
 for i in range(0,len(allCCES)):
 	voter = allCCES[i]
 	try:
@@ -90,16 +117,25 @@ for i in range(0,len(allCCES)):
 			continue
 		if int(voter[77]) > 2:
 			continue
+		if int(voter[249]) <0:
+			continue
+		if int(voter[251]) < 0:
+			continue
 	except:
 		continue
 	partyID[int(voter[139])]+=1
 	vote[int(voter[77])]+=1
+	
+	try:
+		voter[271]=pollError[str(voter[249])+"-"+str(voter[251])][0]/pollError[str(voter[249])+"-"+str(voter[251])][1]
+	except:
+		continue
 	goodVoters.append(voter)
 print(partyID)
 for i in range(1,8):
 	print(i,100*partyID[i]/len(goodVoters))
 print(len(goodVoters))
-
+print(soto)
 sseAll = []
 for ii in range(0,1000):
 	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
