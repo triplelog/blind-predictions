@@ -64,7 +64,7 @@ def readpolls(filen,year):
         		allgamesa[district][1]+=1
     return allgamesa
 
-def readtsv(filen):
+def readfips(filen):
 	allgamesa  =[]
 	with open(filen, 'r') as csvfile:
 		spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
@@ -73,7 +73,8 @@ def readtsv(filen):
 				allgamesa[int(row[3])]=row[2]
 			except:
 				continue
-	return allgamesa      
+	return allgamesa   
+	   
 def readtsv(filen):
         allgamesa  =[]
         with open(filen, 'r') as csvfile:
