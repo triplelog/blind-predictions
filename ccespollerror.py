@@ -121,7 +121,7 @@ partyID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 vote = {1:0,2:0}
 goodVoters = []
 
-
+goodDistricts = {}
 for i in range(0,len(allCCES)):
 	voter = allCCES[i]
 	try:
@@ -143,11 +143,17 @@ for i in range(0,len(allCCES)):
 	try:
 		if pollError[d][1]>1:
 			voter[271]=pollError[d][0]/pollError[d][1]
+			try:
+				goodDistricts[d]+=1
+			except:
+				goodDistricts[d]=1
 		else:
 			continue
 	except:
 		continue
 	goodVoters.append(voter)
+print(goodDistricts)
+print(len(goodDistricts.keys()))
 print(partyID)
 for i in range(1,8):
 	print(i,100*partyID[i]/len(goodVoters))
