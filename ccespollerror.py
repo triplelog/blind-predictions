@@ -141,7 +141,7 @@ for i in range(0,len(allCCES)):
 	d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
 
 	try:
-		if pollError[d][1]>1:
+		if pollError[d][1]>0:
 			voter[271]=pollError[d][0]/pollError[d][1]
 			try:
 				goodDistricts[d]+=1
@@ -158,164 +158,22 @@ print(partyID)
 for i in range(1,8):
 	print(i,100*partyID[i]/len(goodVoters))
 print(len(goodVoters))
-print(soto)
-sseAll = []
-for ii in range(0,1000):
-	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
-	nv = 0
-	sse = 0
-	for i in range(0,1000):
-		x = random.randint(0,len(goodVoters)-1)
-		voter = goodVoters[x]
-		sampleID[int(voter[139])]+=1
-		nv+=1
-	for i in range(1,8):
-		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
-		sse+=se
-	sseAll.append(sse)
-print(numpy.mean(sseAll))
-print(numpy.std(sseAll))
 
-sseAll = []
+trainX = []
+trainY = []
 
-for ii in range(0,1000):
-	sampleID = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
-	nv = 0
-	sse = 0
-	while nv < 1000:
-		x = random.randint(0,len(goodVoters)-1)
-		voter = goodVoters[x]
-		probAnswer = 1.0/float(voter[1])
-		r = random.random()
-		if r >= probAnswer:
-			continue
-		sampleID[int(voter[139])]+=1
-		nv+=1
-
-	for i in range(1,8):
-		se = (100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))*(100*sampleID[i]/nv-100*partyID[i]/len(goodVoters))
-		sse+=se
-	sseAll.append(sse)
-print(numpy.mean(sseAll))
-print(numpy.std(sseAll))
+for voter in goodVoters:
+	xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151]),int(voter[213])]
+	trainX.append(xArr)
+	trainY.append(int(voter[271]))
 
 
-sseAll = []
+clf = GradientBoostingRegressor(n_estimators=1000)
+clf = clf.fit(trainX,trainY)
+imp = clf.feature_importances_
+print(imp)
 
-for ii in range(0,1000):
-	sampleVote = {1:0,2:0}
-	nv = 0
-	sse = 0
-	sseV = 0
-	wv = 0
-	while nv < 2500:
-		x = random.randint(0,len(goodVoters)-1)
-		voter = goodVoters[x]
-		probAnswer = .33/float(voter[1])
-		r = random.random()
-		if r >= probAnswer:
-			continue
-		sampleVote[int(voter[77])]+=float(voter[1])
-		nv+=1
-		wv+=float(voter[1])
+#predictions = clf.predict(testX[i])
 
-	for i in range(1,3):
-		se = (100*sampleVote[i]/wv-100*vote[i]/len(goodVoters))*(100*sampleVote[i]/wv-100*vote[i]/len(goodVoters))
-		sseV+=se
-	sseAll.append(sseV)
-print(numpy.mean(sseAll))
-print(numpy.std(sseAll))
-print(vote)
-asse = 0
-sseAll = []
-for iii in range(0,50):
-	trainX = []
-	trainY = []
-	testX = []
-	testY = []
-	allGoodX = []
-	allGoodY = []
-	sampleVote = {1:0,2:0}
-	for i in range(0,400):
-		testX.append([])
-		testY.append([])
-	for i in range(0,len(goodVoters)):
-		voter = goodVoters[i]
-		try:
-			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
-			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-		except:
-			continue
-		if random.random()<1000.0/15223:
-			trainX.append(x)
-			trainY.append(int(voter[77]))
-		else:
-			g = random.randint(0,399)
-			testX[g].append(x)
-			testY[g].append(int(voter[77]))
-		allGoodX.append(x)
-		allGoodY.append(int(voter[77]))
-	trainX = []
-	trainY = []
-	nv = 0
-	while nv < 2500:
-		xx = random.randint(0,len(goodVoters)-1)
-		voter = goodVoters[xx]
-		try:
-			#x = [int(voter[3]),int(voter[4]),int(voter[5]),int(voter[6]),int(voter[18]),int(voter[151])]
-			#x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-			x = [int(voter[6]),int(voter[3]),int(voter[4]),int(voter[5]),int(voter[146]),int(voter[151])]
-		except:
-			continue
-		probAnswer = .33/float(voter[1])
-		r = random.random()
-		if r >= probAnswer:
-			continue
-		trainX.append(x)
-		trainY.append(int(voter[77]))
-		nv += 1
-	clfC = AdaBoostClassifier(n_estimators=1000)
-	clfC = clfC.fit(trainX,trainY)
-	predAll = clfC.predict(allGoodX)
-	predTrain = clfC.predict(trainX)
-	predVote = {1:0,2:0}
-	for ii in predTrain:
-		predVote[ii]+=1
-
-	actVote = {1:0,2:0}
-	for ii in trainY:
-		actVote[ii]+=1
-	#print(15223*predVote[1]/(predVote[1]+predVote[2]),15223*actVote[1]/(actVote[1]+actVote[2]))
-	nv = 0
-	for ii in predAll:
-		sampleVote[ii]+=actVote[ii]/predVote[ii]
-		nv+=1
-	sse = 0
-	for i in range(1,3):
-		se = (100*sampleVote[i]/nv-100*vote[i]/len(goodVoters))*(100*sampleVote[i]/nv-100*vote[i]/len(goodVoters))
-		sse+=se
-	print(sampleVote,sse)
-	sseAll.append(sse)
-	clf = GradientBoostingRegressor(n_estimators=1000)
-	clf = clf.fit(trainX,trainY)
-	imp = clf.feature_importances_
-	#print(imp)
-	allX = []
-	allY = []
-	sse = 0
-	for i in range(0,400):
-		predictions = clf.predict(testX[i])
-		sumPred = 0
-		for ii in predictions:
-			sumPred += ii
-		#print(sumPred,sum(testY[i]))
-		allX.append(sumPred)
-		allY.append(sum(testY[i]))
-		sse += (sumPred-sum(testY[i]))*(sumPred-sum(testY[i]))
-	#print(imp,numpy.corrcoef(allX,allY), sse)
-	#asse += sse
-print(numpy.mean(sseAll))
-print(numpy.std(sseAll))
 
 
