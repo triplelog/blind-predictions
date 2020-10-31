@@ -202,7 +202,7 @@ for i in range(0,len(predictions)):
 		districtPred[d][0]+=predictions[i]
 		districtPred[d][1]+=1
 for d in districtPred.keys():
-	p = districtPred[d]
+	p = districtPred[d][0]/districtPred[d][1]
 	a = pollError[d][0]/pollError[d][1]
 	print(p,a)
 	sse += (p-a)**2
