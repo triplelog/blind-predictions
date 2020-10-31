@@ -198,7 +198,7 @@ for i in range(0,len(predictions)):
 		districtPred[d][1]+=1
 	except:
 		d = testDistrict[i]
-		districtPred[d]={}
+		districtPred[d]=[0,0]
 		districtPred[d][0]+=predictions[i]
 		districtPred[d][1]+=1
 for d in districtPred.keys():
