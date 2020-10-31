@@ -167,17 +167,17 @@ testY = []
 testDistrict = []
 for voter in goodVoters:
 	try:
-		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151])]
+		xArr = [int(voter[139]),int(voter[151])]
 		error = voter[271]
 	
 	except:
 		continue
 	if random.random()<.5:
 		trainX.append(xArr)
-		trainY.append(error**2)
+		trainY.append(error)
 	else:
 		testX.append(xArr)
-		testY.append(error**2)
+		testY.append(error)
 		testDistrict.append(voter[269])
 	
 print(len(trainY))	
@@ -205,7 +205,7 @@ xx = []
 yy = []
 for d in districtPred.keys():
 	p = districtPred[d][0]/districtPred[d][1]
-	a = (pollError[d][0]/pollError[d][1])**2
+	a = (pollError[d][0]/pollError[d][1])**1
 	xx.append(p)
 	yy.append(a)
 	sse += (p-a)**2
