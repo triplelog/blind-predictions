@@ -137,17 +137,12 @@ for i in range(0,len(allCCES)):
 		continue
 	partyID[int(voter[139])]+=1
 	vote[int(voter[77])]+=1
-	try:
-		d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
-	except:
-		print(voter[249])
-		print(stateFIPS)
-		print(soto)
+
+	d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
+
 	try:
 		voter[271]=pollError[d][0]/pollError[d][1]
 	except:
-		print(d)
-		print(soto)
 		continue
 	goodVoters.append(voter)
 print(partyID)
