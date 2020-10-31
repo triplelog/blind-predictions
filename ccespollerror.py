@@ -63,7 +63,17 @@ def readpolls(filen,year):
         		allgamesa[district][0]+=bias
         		allgamesa[district][1]+=1
     return allgamesa
-        
+
+def readtsv(filen):
+	allgamesa  =[]
+	with open(filen, 'r') as csvfile:
+		spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+		for row in spamreader:
+			try:
+				allgamesa[int(row[3])]=row[2]
+			except:
+				continue
+	return allgamesa      
 def readtsv(filen):
         allgamesa  =[]
         with open(filen, 'r') as csvfile:
@@ -74,6 +84,7 @@ def readtsv(filen):
               
 allCCES = readtsv("data/cces2019.tsv")
 pollError = readpolls("data/house-polls.csv",2018)
+stateFIPS = readfips("data/1976-2016-president.csv")
 vars = []
 tree = ET.parse('data/cces2019vars.xml')
 root = tree.getroot()
@@ -125,7 +136,7 @@ for i in range(0,len(allCCES)):
 		continue
 	partyID[int(voter[139])]+=1
 	vote[int(voter[77])]+=1
-	d = str(voter[249])+"-"+str(voter[251])
+	d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
 	try:
 		voter[271]=pollError[d][0]/pollError[d][1]
 	except:
