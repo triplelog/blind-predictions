@@ -201,12 +201,17 @@ for i in range(0,len(predictions)):
 		districtPred[d]=[0,0]
 		districtPred[d][0]+=predictions[i]
 		districtPred[d][1]+=1
+xx = []
+yy = []
 for d in districtPred.keys():
 	p = districtPred[d][0]/districtPred[d][1]
 	a = pollError[d][0]/pollError[d][1]
+	xx.append(p)
+	yy.append(a)
 	print(p,a)
-	sse += (p*5-a)**2
+	sse += (p*2-a)**2
 print(sse/len(districtPred.keys()))
+print(numpy.corrcoef(xx,yy))
 
 
 
