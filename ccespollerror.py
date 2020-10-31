@@ -170,7 +170,7 @@ for voter in goodVoters:
 	
 	except:
 		continue
-	if random.random()<.5:
+	if random.random()<.9:
 		trainX.append(xArr)
 		trainY.append(error)
 	else:
@@ -190,6 +190,7 @@ sse = 0
 for i in range(0,len(predictions)):
 	err = predictions[i]-testY[i]
 	sse += err**2
+	print(predictions[i],testY[i])
 print(sse/len(predictions))
 
 
