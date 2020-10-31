@@ -205,7 +205,7 @@ for d in districtPred.keys():
 	p = districtPred[d][0]/districtPred[d][1]
 	a = pollError[d][0]/pollError[d][1]
 	print(p,a)
-	sse += (p-a)**2
+	sse += (p*5-a)**2
 print(sse/len(districtPred.keys()))
 
 
