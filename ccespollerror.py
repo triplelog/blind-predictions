@@ -65,7 +65,7 @@ def readpolls(filen,year):
     return allgamesa
 
 def readfips(filen):
-	allgamesa  =[]
+	allgamesa  ={}
 	with open(filen, 'r') as csvfile:
 		spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
 		for row in spamreader:
@@ -141,6 +141,7 @@ for i in range(0,len(allCCES)):
 		d = stateFIPS[int(voter[249])]+"-"+str(voter[251])
 	except:
 		print(voter[249])
+		print(stateFIPS)
 		print(soto)
 	try:
 		voter[271]=pollError[d][0]/pollError[d][1]
