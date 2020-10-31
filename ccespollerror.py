@@ -143,6 +143,7 @@ for i in range(0,len(allCCES)):
 	try:
 		if pollError[d][1]>0:
 			voter[271]=pollError[d][0]/pollError[d][1]
+			voter[272]=d
 			try:
 				goodDistricts[d]+=1
 			except:
@@ -163,6 +164,7 @@ trainX = []
 trainY = []
 testX = []
 testY = []
+testDistrict = []
 for voter in goodVoters:
 	try:
 		xArr = [int(voter[3]),int(voter[5]),int(voter[6]),int(voter[75]),int(voter[139]),int(voter[151]),int(voter[213])]
@@ -170,12 +172,13 @@ for voter in goodVoters:
 	
 	except:
 		continue
-	if random.random()<.9:
+	if random.random()<.5:
 		trainX.append(xArr)
 		trainY.append(error)
 	else:
 		testX.append(xArr)
 		testY.append(error)
+		testDistrict.append(voter[272])
 	
 print(len(trainY))	
 
@@ -187,11 +190,23 @@ print(imp)
 
 predictions = clf.predict(testX)
 sse = 0
+districtPred = {}
 for i in range(0,len(predictions)):
-	err = predictions[i]-testY[i]
-	sse += err**2
-	print(predictions[i],testY[i])
-print(sse/len(predictions))
+	try:
+		d = testDistrict[i]
+		districtPred[d][0]+=predictions[i]
+		districtPred[d][1]+=1
+	except:
+		d = testDistrict[i]
+		districtPred[d]={}
+		districtPred[d][0]+=predictions[i]
+		districtPred[d][1]+=1
+for d in districtPred.keys():
+	p = districtPred[d]
+	a = pollError[d][0]/pollError[d][1]
+	print(p,a)
+	sse += (p-a)**2
+print(sse/len(districtPred.keys()))
 
 
 
