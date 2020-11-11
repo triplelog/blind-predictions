@@ -125,6 +125,8 @@ for i in range(0,len(allCCES)):
 		T = int(allCCES[i][119])
 		D = int(allCCES[i][120])
 		R = int(allCCES[i][121])
+		if me > 7 or T > 7 or D > 7 or R > 7:
+			continue
 	except:
 		continue
 	ratings['T'][me][T]+=1
