@@ -106,7 +106,7 @@ print(len(allCCES[0]))
 for i in range(0,len(vars)):
 	print(i, vars[i])
 
-usedvars = [117,119,120,121]
+usedvars = [107,109,111,112]
 
 
 for i in usedvars:
@@ -121,10 +121,10 @@ for i in range(1,8):
 
 for i in range(0,len(allCCES)):
 	try:
-		me = int(allCCES[i][117])
-		T = int(allCCES[i][119])
-		D = int(allCCES[i][120])
-		R = int(allCCES[i][121])
+		me = int(allCCES[i][107])
+		T = int(allCCES[i][109])
+		D = int(allCCES[i][111])
+		R = int(allCCES[i][112])
 		if me > 7 or T > 7 or D > 7 or R > 7:
 			continue
 	except:
