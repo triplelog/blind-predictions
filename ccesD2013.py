@@ -123,6 +123,7 @@ for i in range(1,8):
 
 npeople = 0
 allV = []
+allValues = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 for i in range(0,len(allCCES)):
 	try:
 		me = int(allCCES[i][107])
@@ -147,6 +148,7 @@ for i in range(0,len(allCCES)):
 			ratings['RH'][me][H]+=1
 	npeople+=1
 	allV.append(me)
+	allValues[me]+=1
 
 
 for i in range(1,8):
@@ -175,6 +177,8 @@ for i in range(1,8):
 	print('DH ',ratings['DH'][i],s[4]/n[4])
 	print('RH ',ratings['RH'][i],s[5]/n[5])
 
-print(allV)
+print(allValues)
+print(allValues[1]+allValues[2]+allValues[3])
+print(allValues[5]+allValues[6]+allValues[7])
 print(numpy.median(allV))
 print(numpy.mean(allV))
