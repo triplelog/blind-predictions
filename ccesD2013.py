@@ -148,7 +148,7 @@ for i in range(1,8):
 		n[2]+=ratings['D'][i][ii]
 		s[2]+=ratings['D'][i][ii]*ii
 		n[3]+=ratings['R'][i][ii]
-		s[4]+=ratings['R'][i][ii]*ii
+		s[3]+=ratings['R'][i][ii]*ii
 		
 	print('T ',ratings['T'][i],s[0]/n[0])
 	print('Y ',ratings['Y'][i],s[1]/n[1])
