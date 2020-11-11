@@ -103,10 +103,10 @@ for node in root.findall('./*'):
 
 print(len(vars))
 print(len(allCCES[0]))
-for i in range(0,len(vars)):
-	print(i, vars[i])
+#for i in range(0,len(vars)):
+#	print(i, vars[i])
 
-usedvars = [107,109,110,111,112]
+usedvars = [107,109,110,111,112,115,116,117,212,214,216]
 
 
 for i in usedvars:
@@ -127,19 +127,27 @@ for i in range(0,len(allCCES)):
 		Y = int(allCCES[i][110])
 		D = int(allCCES[i][111])
 		R = int(allCCES[i][112])
+		H = int(allCCES[i][117])
 		if me > 7 or T > 7 or D > 7 or R > 7 or Y > 7:
 			continue
 	except:
 		continue
+	
 	ratings['T'][me][T]+=1
 	ratings['Y'][me][Y]+=1
 	ratings['D'][me][D]+=1
 	ratings['R'][me][R]+=1
+	if H < 8:
+		if allCCES[i][212][0:8] == "Democrat":
+			ratings['DH'][me][H]+=1
+		elif allCCES[i][212][0:8] == "Republic":
+			ratings['RH'][me][H]+=1
+
 
 for i in range(1,8):
 	print(i)
-	n = [0,0,0,0]
-	s = [0,0,0,0]
+	n = [0,0,0,0,0,0]
+	s = [0,0,0,0,0,0]
 	for ii in range(1,8):
 		n[0]+=ratings['T'][i][ii]
 		s[0]+=ratings['T'][i][ii]*ii
@@ -149,10 +157,16 @@ for i in range(1,8):
 		s[2]+=ratings['D'][i][ii]*ii
 		n[3]+=ratings['R'][i][ii]
 		s[3]+=ratings['R'][i][ii]*ii
+		n[4]+=ratings['DH'][i][ii]
+		s[4]+=ratings['DH'][i][ii]*ii
+		n[5]+=ratings['RH'][i][ii]
+		s[5]+=ratings['RH'][i][ii]*ii
 		
 	print('T ',ratings['T'][i],s[0]/n[0])
 	print('Y ',ratings['Y'][i],s[1]/n[1])
 	print('D ',ratings['D'][i],s[2]/n[2])
 	print('R ',ratings['R'][i],s[3]/n[3])
+	print('DH ',ratings['DH'][i],s[4]/n[4])
+	print('RH ',ratings['RH'][i],s[5]/n[5])
 
 
