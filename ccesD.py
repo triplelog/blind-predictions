@@ -105,20 +105,31 @@ print(len(vars))
 print(len(allCCES[0]))
 for i in range(0,len(vars)):
 	print(i, vars[i])
-print(soto)
-usedvars = [1,3,4,5,6,8,18,25,64,65,75,77,137,139,140,146,147,151,198,212,213,249,250,251,270]
-usedvars.append(271)
-vars[271]="Poll Error"
-races = {1:'White',2:'Black',3:'Hispanic',4:'Asian'}
-hispanic = {1:'Yes',2:'No'}
-party = {1:"D",7:'R'}
-ideology = {1:"L",5:"C"}
-religion = {1:"Protestant",2:"Catholic",3:"Mormon",4:"Orthodox",5:"Jewish",6:"Muslim",7:"Buddhist",8:"Hindu",9:"Atheist",10:"Agnostic",11:"NIP",12:"Other"}
+
+usedvars = [117,119,120,121]
+
+
 for i in usedvars:
 	print(i, vars[i], allCCES[10][i], allCCES[100][i])
 
+ratings = {'T':{},'D':{},'R':{}}
+for i in range(1,8):
+	ratings['T'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7;0}
+	ratings['D'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7;0}
+	ratings['R'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7;0}
 
 
-
+for i in range(0,len(allCCES)):
+	try:
+		me = int(allCCES[i][117])
+		T = int(allCCES[i][119])
+		D = int(allCCES[i][120])
+		R = int(allCCES[i][121])
+	except:
+		continue
+	ratings['T'][me][T]+=1
+	ratings['D'][me][D]+=1
+	ratings['R'][me][R]+=1
+print(ratings)
 
 
