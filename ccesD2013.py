@@ -121,7 +121,8 @@ for i in range(1,8):
 	ratings['DH'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 	ratings['RH'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 
-
+npeople = 0
+allV = []
 for i in range(0,len(allCCES)):
 	try:
 		me = int(allCCES[i][107])
@@ -144,12 +145,15 @@ for i in range(0,len(allCCES)):
 			ratings['DH'][me][H]+=1
 		elif allCCES[i][212][0:8] == "Republic":
 			ratings['RH'][me][H]+=1
+	npeople+=1
+	allV.append(me)
 
 
 for i in range(1,8):
 	print(i)
 	n = [0,0,0,0,0,0]
 	s = [0,0,0,0,0,0]
+	
 	for ii in range(1,8):
 		n[0]+=ratings['T'][i][ii]
 		s[0]+=ratings['T'][i][ii]*ii
@@ -171,4 +175,6 @@ for i in range(1,8):
 	print('DH ',ratings['DH'][i],s[4]/n[4])
 	print('RH ',ratings['RH'][i],s[5]/n[5])
 
-
+print(allV)
+print(numpy.median(allV))
+print(numpy.mean(allV))
