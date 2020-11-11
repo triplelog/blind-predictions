@@ -123,6 +123,8 @@ for i in range(1,8):
 npeople = 0
 allV = []
 allValues = {1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+dToD = {0:0,1:0,2:0,3:0,4:0,5:0,6:0}
+dToR = {0:0,1:0,2:0,3:0,4:0,5:0,6:0}
 for i in range(0,len(allCCES)):
 	try:
 		me = int(allCCES[i][117])
@@ -137,6 +139,8 @@ for i in range(0,len(allCCES)):
 	ratings['T'][me][T]+=1
 	ratings['D'][me][D]+=1
 	ratings['R'][me][R]+=1
+	dToD[abs(me-D)]+=1
+	dToR[abs(me-R)]+=1
 	if H < 8:
 		if allCCES[i][255][0:8] == "Democrat":
 			ratings['DH'][me][H]+=1
@@ -168,6 +172,8 @@ for i in range(1,8):
 	print('DH ',ratings['DH'][i],s[3]/n[3])
 	print('RH ',ratings['RH'][i],s[4]/n[4])
 
+print(dToD)
+print(dToR)
 print(allValues)
 print(allValues[1]+allValues[2]+allValues[3])
 print(allValues[5]+allValues[6]+allValues[7])
