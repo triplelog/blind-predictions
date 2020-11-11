@@ -106,17 +106,19 @@ print(len(allCCES[0]))
 for i in range(0,len(vars)):
 	print(i, vars[i])
 
-usedvars = [117,119,120,121]
+usedvars = [117,119,120,121,125,255]
 
 
 for i in usedvars:
 	print(i, vars[i], allCCES[10][i], allCCES[100][i])
 
-ratings = {'T':{},'D':{},'R':{}}
+ratings = {'T':{},'D':{},'R':{},'DH':{},'RH':{}}
 for i in range(1,8):
 	ratings['T'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 	ratings['D'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 	ratings['R'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+	ratings['DH'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
+	ratings['RH'][i]={1:0,2:0,3:0,4:0,5:0,6:0,7:0}
 
 
 for i in range(0,len(allCCES)):
@@ -125,6 +127,7 @@ for i in range(0,len(allCCES)):
 		T = int(allCCES[i][119])
 		D = int(allCCES[i][120])
 		R = int(allCCES[i][121])
+		H = int(allCCES[i][125])
 		if me > 7 or T > 7 or D > 7 or R > 7:
 			continue
 	except:
@@ -132,11 +135,16 @@ for i in range(0,len(allCCES)):
 	ratings['T'][me][T]+=1
 	ratings['D'][me][D]+=1
 	ratings['R'][me][R]+=1
+	if H < 8:
+		if allCCES[i][255][0:8] == "Democrat":
+			ratings['DH'][me][H]+=1
+		elif allCCES[i][255][0:8] == "Republic":
+			ratings['RH'][me][H]+=1
 
 for i in range(1,8):
 	print(i)
-	n = [0,0,0]
-	s = [0,0,0]
+	n = [0,0,0,0,0]
+	s = [0,0,0,0,0]
 	for ii in range(1,8):
 		n[0]+=ratings['T'][i][ii]
 		s[0]+=ratings['T'][i][ii]*ii
@@ -144,8 +152,15 @@ for i in range(1,8):
 		s[1]+=ratings['D'][i][ii]*ii
 		n[2]+=ratings['R'][i][ii]
 		s[2]+=ratings['R'][i][ii]*ii
+		n[3]+=ratings['DH'][i][ii]
+		s[3]+=ratings['DH'][i][ii]*ii
+		n[4]+=ratings['RH'][i][ii]
+		s[4]+=ratings['RH'][i][ii]*ii
+
 	print('T ',ratings['T'][i],s[0]/n[0])
 	print('D ',ratings['D'][i],s[1]/n[1])
 	print('R ',ratings['R'][i],s[2]/n[2])
+	print('DH ',ratings['DH'][i],s[3]/n[3])
+	print('RH ',ratings['RH'][i],s[4]/n[4])
 
 
