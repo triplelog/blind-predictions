@@ -132,6 +132,11 @@ for i in range(0,len(allCCES)):
 	ratings['T'][me][T]+=1
 	ratings['D'][me][D]+=1
 	ratings['R'][me][R]+=1
-print(ratings)
+
+for i in range(1,8):
+	print(i)
+	print('T ',ratings['T'][i])
+	print('D ',ratings['D'][i])
+	print('R ',ratings['R'][i])
 
 
